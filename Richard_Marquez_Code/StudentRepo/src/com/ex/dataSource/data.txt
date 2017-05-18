@@ -1,0 +1,4 @@
+1:Richard:Marquez:ram@me.com
+2:Bobert:dy:b@y.c
+4:saul:hudson:slash@g.nr
+3:axl:rose:ax@g.nr
