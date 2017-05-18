@@ -1,0 +1,19 @@
+package com.ex.p1;
+
+public class Fibonacci25 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			
+	}
+	public static int[] Fibonacci(int howmany){
+		int[] arrayOut=new int[howmany];
+		arrayOut[0]=1;
+		arrayOut[1]=1;
+		for(int i=0;i<howmany;i++){
+			arrayOut[i]=arrayOut[i-2]+arrayOut[i-2];
+		}
+		return arrayOut;
+	}
+
+}

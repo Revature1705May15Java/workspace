@@ -1,0 +1,12 @@
+
+public class Q1_3 {
+	static double n1=3;
+	static int n2=4;
+	public static void main(String args[]) {
+		int addints=n1+n2;
+		int mulints=n1*n2;
+		int divints= n1/n2;
+		System.out.print("added : "+addints+"\nmultiplied: "+mulints+"\ndivided: "+divints);
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.randomexercises.nested;
+
+public class LocalInner {
+
+}

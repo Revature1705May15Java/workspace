@@ -1,0 +1,13 @@
+package com.challenges;
+
+public class Challenge1 {
+	public static int[] chopSquares(int num){
+		int[] numout={1,2,3};
+		return numout;
+	} 
+	public static void main(String[] args) {
+		int[] chopped;
+		chopped=chopSquares(56);
+		System.out.println(chopped[1]);
+	}
+}

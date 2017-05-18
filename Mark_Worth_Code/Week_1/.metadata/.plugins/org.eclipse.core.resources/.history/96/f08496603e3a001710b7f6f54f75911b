@@ -1,0 +1,30 @@
+package com.ex.p1;
+
+public class BubbleSort {
+	
+	public static void main(String[] args) {
+		int nums[] =new int[]{1,0,5,6,3,2,3,7,9,8};
+		bubbleSort(nums);
+		System.out.println(nums[2]);
+		
+		
+	}
+	static public int[] bubbleSort(int[] unsortedarray){
+		boolean nosort=true;
+		for(int i=0;i<unsortedarray.length-1;i++){
+			int firstnum=unsortedarray[i];
+			int secondnum=unsortedarray[i+1];
+			if(firstnum>secondnum){
+				unsortedarray[i]=(int)secondnum;
+				unsortedarray[i+1]=(int)firstnum;
+				System.out.println(""+firstnum+secondnum);
+				nosort=false;
+			}
+			if(i==unsortedarray.length-2&&nosort==true){
+				bubbleSort(unsortedarray);
+			}
+		}
+		
+		return unsortedarray;
+	}
+}

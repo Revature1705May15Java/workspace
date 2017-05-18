@@ -1,0 +1,31 @@
+package com.exercises;
+
+import java.util.ArrayList;
+
+public class Q9 {
+	public static void main(String[] args) {
+		ArrayList<Integer> nums=new ArrayList<Integer>();
+		ArrayList<Integer> primes=new ArrayList<Integer>();
+		primes.add(1);
+		primes.add(2);
+		for(int i=0;i<100;i++){
+			nums.add(i);
+		}
+		for(Integer num:nums){
+			for(int i=2;i<num;i++){
+				if((i*i)>num){
+					break;
+				}
+				if((num%i)!=0){
+//					System.out.println(num);
+					primes.add(num);
+					break;
+				}
+			}
+		}
+		for(Integer prime:primes){
+//			System.out.println(prime);
+		}
+		
+	}
+}

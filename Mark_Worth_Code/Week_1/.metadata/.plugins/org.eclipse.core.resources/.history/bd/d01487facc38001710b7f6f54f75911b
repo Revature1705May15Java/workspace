@@ -1,0 +1,23 @@
+package rev1;
+
+public class Q4 {
+	
+		public double AddSubMultDiv(double num1,double num2,String op){
+			double numout;
+			if(op=="add"||op=="Add"){
+				numout=num1*num2;
+			}
+			if(op=="subtract"||op=="Subtract"){
+				numout=num1-num2;
+			}
+			if(op=="multiply"||op=="Multiply"){
+				numout=num1*num2;
+			}
+			if(op=="divide"||op=="Divide"){
+				numout=num1/num2;
+			}
+			return numout;	
+		}
+		
+		
+}

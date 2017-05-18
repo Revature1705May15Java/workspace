@@ -1,0 +1,8 @@
+public class Q3 {
+	static boolean a=true;
+	static boolean b=false;
+	boolean check1=!a;
+	boolean check2=(a|b);
+	boolean check3=(!(a&b)|(a&b)|(a|b));
+	System.out.println(""+check1+check2+check3);
+}

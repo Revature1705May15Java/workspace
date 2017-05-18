@@ -1,0 +1,83 @@
+package com.ex.serialization;
+
+ java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+
+import com.ex.pojos.Student;
+
+public class Serialize{
+	public static void main(String[] args) {
+		 String bytestream="src/com/ex/serialization/bytestream.txt";
+		 Student s = new Student();
+		 s.setId(0);
+		 s.setFirstName("B");
+		 s.setEmail("mrw@gmail.com");
+		 writeObject(bytestream,s);
+		 Student s2 = new Student();
+		 s2.setId(1);
+		 s2.setFirstName("a");
+		 s2.setEmail("ww@gmail.com");
+		 writeObject(bytestream,s2);
+		 readObject(bytestream);
+//		 ArrayList<Student> StudentList=new ArrayList<Student>();
+//		 StudentList.add(s);
+//		 StudentList.add(s2);
+		 
+	}
+	
+	static void writeObject(String bytestream,Object obj){
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream));){
+			oos.writeObject(obj);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	static void writeArrayList(String bytestream,ArrayList<Student> list){
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream));){
+			for(int i=0;i<list.size();i++){
+			oos.writeObject(list.get(i));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	static Student readObject(String bytestream){
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));){
+			Object obj =ois.readObject();
+			Student s = (Student) obj;
+			System.out.println(s.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	static Student readAllObjects(String bytestream){
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));){
+			Object obj =ois.readObject();
+			Student s = (Student) obj;
+			System.out.println(s.toString());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+}

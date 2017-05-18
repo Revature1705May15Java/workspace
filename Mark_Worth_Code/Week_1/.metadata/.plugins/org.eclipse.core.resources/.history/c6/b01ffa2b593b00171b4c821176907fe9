@@ -1,0 +1,39 @@
+
+package com.google.challenges; 
+import java.util.ArrayList;
+
+public class Answer {   
+	public static ArrayList<Double> choppedNums=new ArrayList<Double>();
+	public static double flooredOut=0;
+	
+	public static void chopSquares(double num){
+		double floored=Math.floor(Math.sqrt(num));
+		if(floored>1){
+			choppedNums.add(floored*floored);
+			flooredOut=flooredOut+(floored*floored);
+		}else{
+			double i =num;
+			while(i>0){
+				choppedNums.add((Double) 1.0);
+				flooredOut++;
+				i--;
+//				
+			}
+		}		
+		if((num-flooredOut)>0){
+			chopSquares(num-flooredOut);
+		}else{
+			flooredOut=0;
+		}
+	} 
+	public static void main(String[] args) {
+		chopSquares(12);
+		public static int[] answer=new int[choppedNums.size()];
+		
+		for(int i=0;i<answer.length;i++){
+			double newnum=choppedNums.get(i);
+			int newnum2=(int)newnum;
+			answer[i]=newnum2;
+		}
+	} 
+}

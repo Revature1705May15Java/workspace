@@ -1,0 +1,63 @@
+package com.randomexercises.nested.fourexamples;
+
+class Outer{
+	
+}
+
+class Animal{
+	class Dog{//inner class
+		void message(){
+			System.out.println("bark");
+		}
+	}
+}
+
+
+
+abstract class Person{
+	void speak(){
+		System.out.println("ordinary methods, nothing to see here");
+	}
+	
+}
+class ordinaryPerson extends Person{}
+
+
+
+public class FourInnerClassTypes {
+	
+	static class StaticInner{//static nested class 
+		void Talk(){
+			System.out.println("I can access static variables from the Outer class!");
+		}
+	}
+	class Inner{//nonstatic inner class
+		void Talk(){
+			System.out.println("You can use my methods from an object belonging to the outer class, but only from an object set to my class,created by an object of the outer class type.");
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		FourInnerClassTypes oi=new FourInnerClassTypes();
+		Inner i= oi.new Inner();
+		i.Talk();
+		StaticInner si = oi.new StaticInner();
+		si.Talk();
+		
+		
+		Person j = new Person(){
+			@Override
+			void speak(){
+				System.out.println("taking over the methods, but only within FourInnerClassTypes");
+			}
+		};
+		Person guy= new ordinaryPerson();
+		guy.speak();
+		j.speak();
+		
+		
+
+	}
+
+}

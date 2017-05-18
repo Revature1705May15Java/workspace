@@ -1,0 +1,53 @@
+package com.ex.dao;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.ex.pojos.Student;
+
+public class IoDAO implements DAO{
+	
+	static String filename="src/com/ex/datasource/data.txt";//data source location
+	
+	@Override
+	public Student addStudent(Student s) {
+		int id = s.getId();
+		String fName=s.getFirstName();
+		String lname=s.getLastName();
+		String email=s.getEmail();
+		try(BufferedWriter bw= new BufferedWriter(new FileWriter(filename,true));){
+			bw.write(""+id+":"fName+":"+lName+":"+email+"\n");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+
+	@Override
+	public boolean removeStudent(Student s) {
+		
+		return false;
+	}
+
+	@Override
+	public ArrayList<Student> getAllStudents() {
+		
+		return null;
+	}
+
+	@Override
+	public Student getStudentById(int id) {
+		
+		return null;
+	}
+
+	@Override
+	public Student updateStudent(Student updatedStudent) {
+		
+		return null;
+	}
+
+}

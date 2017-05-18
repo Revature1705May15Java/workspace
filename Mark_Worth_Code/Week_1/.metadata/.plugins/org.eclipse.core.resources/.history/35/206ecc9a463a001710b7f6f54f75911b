@@ -1,0 +1,31 @@
+package com.ex.p1;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class nFactorialTest {
+	nFactorial n;
+	@Before
+	public void setUp() throws Exception {
+		n=new nFactorial();
+		System.out.println("in setUp()");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		n=null;
+		System.out.println("in tearDown()");
+	}
+
+	@Test
+	public void test() {
+		int inputn1=4;
+		int expectedn1=24;
+		int actualn1=n.Factorial(inputn1);
+		assertArrayEquals(expectedn1,actualn1);
+	}
+
+}

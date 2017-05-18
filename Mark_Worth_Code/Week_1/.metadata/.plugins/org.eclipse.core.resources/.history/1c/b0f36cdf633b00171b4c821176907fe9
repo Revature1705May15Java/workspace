@@ -1,0 +1,42 @@
+
+package com.google.challenges; 
+
+public class Answer {   
+	public static int numOfRoots;
+    public static int[] answer(int area) { 
+    	numberOfRoots(area);
+    	double num2=area;
+    	int[] Solution=new int[numOfRoots];
+    	for(int i=0;i<numOfRoots;i++){
+        	boolean rootable=(Math.floor(Math.sqrt(num2))>1);
+        	if(rootable){
+        		Solution[i]=(int)Math.floor(Math.sqrt(num2));
+        		num2=num2-Math.floor(Math.sqrt(num2));
+        	}else{
+        		Solution[i]=1;
+        		}
+        	}
+    	return Solution;
+    	}
+
+    
+    public static void numberOfRoots(int num){
+    	double num2=num;
+    	boolean rootable=(Math.floor(Math.sqrt(num2))>1);
+    	if(rootable){
+    		numOfRoots++;
+    		numberOfRoots((int)Math.floor(Math.sqrt(num2)));
+    	}else{
+    		numOfRoots++;
+    		if(num>1){
+    			numberOfRoots(num-1);
+    		}
+    	}
+    }
+    public static void main(String[] args) {
+		int[] Solution=answer(572);
+		for(int i=0;i<Solution.length;i++){
+			System.out.println(Solution[i]);
+		}
+	}
+}

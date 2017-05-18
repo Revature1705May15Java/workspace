@@ -1,0 +1,11 @@
+
+package com.google.challenges; 
+
+public class Answer {   
+    public static int[] answer(int area) { 
+    	return null;
+    } 
+    public static void main(String[] args) {
+		
+	}
+}

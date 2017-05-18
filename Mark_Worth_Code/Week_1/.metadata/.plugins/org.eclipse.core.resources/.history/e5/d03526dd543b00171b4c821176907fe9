@@ -1,0 +1,43 @@
+package com.challenges;
+import java.util.ArrayList;
+
+public class Challenge1 {
+//	public static boolean isCompleted=false;
+	public static ArrayList<Double> choppedNums=new ArrayList<Double>();
+	public static double flooredOut=0;
+	
+	public static void chopSquares(double num){
+		double floored=Math.floor(Math.sqrt(num));
+		if(floored>1){
+			choppedNums.add(floored*floored);
+			System.out.println("floored value is "+floored);
+			flooredOut=flooredOut+(floored*floored);
+			System.out.println("flooredOut is "+flooredOut);
+		}else{
+			System.out.println("flooredOut in else statement is "+flooredOut);
+			System.out.println("num in else statement is "+num);
+			double i =num;
+			System.out.println("i in else statement is "+i);
+			while(i>0){
+				choppedNums.add((Double) 1.0);
+				flooredOut++;
+				System.out.println("1 was added");
+				i--;
+//				
+			}
+		}		
+		if((num-flooredOut)>0){
+			chopSquares(num-flooredOut);
+			System.out.println("looped");
+		}else{
+			System.out.println("ended");
+			flooredOut=0;
+		}
+	} 
+	public static void main(String[] args) {
+		chopSquares(5);
+		for(int i=0;i<choppedNums.size();i++){
+			System.out.println("in main "+choppedNums.get(i));
+		}
+	}
+}

@@ -1,0 +1,50 @@
+package com.randomexercises.nested.fourexamples;
+
+class Outer{
+	static class Inner{//static nested class 
+		
+	}
+}
+
+class Animal{
+	class Dog{//inner class
+		void message(){
+			System.out.println("bark");
+		}
+	}
+}
+
+
+
+abstract class Person{
+	void speak(){
+		System.out.println("ordinary methods, nothing to see here");
+	}
+	
+}
+class ordinaryPerson extends Person{
+	
+}
+
+
+
+public class FourInnerClassTypes {
+
+
+	public static void main(String[] args) {
+		Person j = new Person(){
+			@Override
+			void speak(){
+				System.out.println("taking over the methods");
+			}
+			
+		};
+		Person guy= new ordinaryPerson();
+		guy.speak();
+		j.speak();
+		
+		
+
+	}
+
+}
