@@ -1,0 +1,51 @@
+package com.ex.lambdas;
+
+public class myLambda {
+	
+	public static void main(String[] args) {
+		Maths m = new Maths();
+		
+		MathOperation addition = (int a, int b) -> a + b;
+		MathOperation subtraction = (int a, int b) -> a - b;
+		VarArgsOps multiply = (int[] x) -> {
+			int product = 1;
+			for(int i:x) product *= i;
+			
+			return product;
+		};
+		int[] nums = {1,2,3,4};
+		
+		int product = m.operation(multiply, nums);
+		System.out.println("Product: " + product);
+		
+		int sum = m.operate(addition, 5, 10);
+		System.out.println("Sum = " + sum);
+	}
+	
+	
+	private int operate(MathrOperation up, int a, int b){
+		return up.operation(a, b);
+	};
+	
+	private int operation(VarrArgsOps up, int... a){
+		return up.operation(a);
+	};
+	
+	
+}
+
+interface MathrOperation{
+	int operation(int a, int b);
+}
+
+interface VarrArgsOps{
+	int operation(int... args);
+}
+
+interface StringTogether{
+	String stringTogether(String a, String b);
+}
+
+interface CrazyTruth{
+	boolean crazyTruth(int... args);
+}

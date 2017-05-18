@@ -1,0 +1,45 @@
+package com.ex.lambdas;
+
+import javax.print.DocFlavor.INPUT_STREAM;
+
+public class Maths {
+	
+	public static void main(String[] args) {
+		Maths m = new Maths();
+		
+		MathOperation addition = (int a, int b) -> a + b;
+		MathOperation subtraction = (int a, int b) -> a - b;
+		VarArgsOps multiply = (int[] x) -> {
+			int product = 1;
+			for(int i:x) product *= i;
+			
+			return product;
+		};
+		int[] nums = {1,2,3,4,5};
+		
+		int product = m.operation(multiply, nums);
+		System.out.println("Product: " + product);
+		
+		int sum = m.operate(addition, 5, 10);
+		System.out.println("Sum = " + sum);
+	}
+	
+	
+	private int operate(MathOperation up, int a, int b){
+		return up.operation(a, b);
+	};
+	
+	private int operation(VarArgsOps up, int... a){
+		return up.operation(a);
+	};
+	
+	
+}
+
+interface MathOperation{
+	int operation(int a, int b);
+}
+
+interface VarArgsOps{
+	int operation(int... args);
+}

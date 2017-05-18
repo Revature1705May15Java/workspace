@@ -1,0 +1,58 @@
+package com.ex.nested;
+
+// All 4 types of nested classes
+abstract class Human{
+	abstract void eat();
+}
+
+public class AllFourTypes {
+	static int data = 41;
+	
+	
+	static class StaticNested{
+		static void message(){
+			System.out.println("In StaticNested, data is " + data);
+		}
+	}
+	
+	class MemberInner{
+		void message(){
+			System.out.println("In MemberInner method, data is " + data);
+		}
+	}
+	
+	void LocalInner(){
+		class Local{
+			void message(){
+				System.out.println("In LocalInner class method. data is " + data);
+			}
+		}
+		
+		Local l = new Local();
+		l.message();
+	}
+	
+	public static void main(String[] args) {
+		Human p = new Human(){ // anonymous class
+
+			@Override
+			void eat() {
+				System.out.println("yum!");
+			}
+			
+		};
+		p.eat(); //anonymous class
+		
+		StaticNested sN = new StaticNested();
+		sN.message();
+		
+		AllFourTypes aft = new AllFourTypes();
+		MemberInner mI = aft.new MemberInner();
+		mI.message();
+		
+		aft.LocalInner(); // for our local inner we can just use the instance of AllFourTypes already made.
+		
+		
+	}
+	
+}

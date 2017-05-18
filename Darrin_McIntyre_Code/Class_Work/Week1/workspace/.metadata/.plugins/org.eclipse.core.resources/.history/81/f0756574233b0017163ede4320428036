@@ -1,0 +1,32 @@
+package primeNumbers;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+public class primeTests {
+	primeNumbers prime;
+	
+	@Before
+	public void setUp() throws Exception {
+		prime = new primeNumbers();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		prime = null;
+	}
+
+	@Test
+	public void test() {
+		prime.setListSize(30);
+		ArrayList<Integer> result = prime.run();
+	}
+
+}

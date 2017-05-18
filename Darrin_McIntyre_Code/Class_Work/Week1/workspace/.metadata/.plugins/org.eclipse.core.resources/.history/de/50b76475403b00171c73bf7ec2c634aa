@@ -1,0 +1,27 @@
+package com.ex.lambdas;
+
+public class Maths {
+	
+	public static void main(String[] args) {
+		Maths m = new Maths();
+		
+		MathOperation addition = (int a, int b) -> a + b;
+		MathOperation subtraction = (int a, int b) -> a - b;
+		MathOperation multiplication = (int a, int b) -> a * b;
+		MathOperation division = (int a, int b) -> a / b;
+		
+		int sum = m.operate(addition, 5, 10);
+		System.out.println("Sum = " + sum);
+	}
+	
+	
+	private int operate(MathOperation up, int a, int b){
+		return up.operation(a, b);
+	};
+	
+	
+}
+
+interface MathOperation{
+	int operation(int a, int b);
+}

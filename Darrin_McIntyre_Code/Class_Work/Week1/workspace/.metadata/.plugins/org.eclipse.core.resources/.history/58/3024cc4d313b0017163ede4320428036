@@ -1,0 +1,37 @@
+package com.ex.nested;
+
+// All 4 types of nested classes
+
+public class AllFourTypes {
+	static int data = 41;
+	
+	static class B{
+		void message(){
+			System.out.println("In my inner class. Data is " + data);
+			System.out.println(this.getClass());
+		}
+	}
+	
+	void display(){
+		class C{
+			void message(){
+				System.out.println("In inner class method. data is " + data);
+			}
+		}
+		
+		C c = new C();
+		c.message();
+	}
+	
+	class MemberInner{
+		void message(){
+			System.out.println("In inner method, data is " + data);
+			System.out.println("In inner method, staticdata is " + staticdata);
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}

@@ -1,0 +1,28 @@
+package primeNumbers;
+
+import java.util.ArrayList;
+
+public class primeNumbers {
+	public static void main(String[] args) {
+//		Create an ArrayList which stores numbers from 1 to 100 and prints out all the prime numbers to the console.
+		int listSize = 100;
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		
+		for(int i = 0; i < listSize; i++){
+			nums.add(i+1);  // stores 1 to the size of listSize, i.e. if listSize is 100, adds numbers 1 through 100.
+		}
+		System.out.print("Prime Numes from 1 to " + listSize + ": ");
+		for(int i = 0; i < listSize; i++){
+			System.out.print(isPrime(nums.get(i)));
+		}
+	}
+	
+	public static String isPrime(int num) {
+		if(num % 2 == 0) return "";
+		for(int i = 3; i <= num; i += 2) {
+			if(num % i == 0) return new String(num + " ");
+		}
+			
+		return "";
+	}
+}

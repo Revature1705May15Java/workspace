@@ -1,0 +1,12 @@
+package com.ex.lambdas;
+
+public class Maths {
+	MathOperation addition = (int a, int b) -> a + b;
+	MathOperation subtraction = (int a, int b) -> a - b;
+	MathOperation multiplication = (int a, int b) -> a * b;
+	MathOperation division = (int a, int b) -> a / b;
+}
+
+interface MathOperation{
+	int operation(int a, int b);
+}

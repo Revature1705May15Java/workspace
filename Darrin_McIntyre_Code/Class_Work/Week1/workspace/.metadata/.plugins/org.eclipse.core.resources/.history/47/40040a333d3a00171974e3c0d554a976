@@ -1,0 +1,17 @@
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		// Fn = Fn-1 + Fn-2...
+		
+		int n = 3, result = 0;
+		int length = n-1;
+		
+		for(int i = 1; i < length; i++){
+			result += n;
+		}
+		if(n == 0 || n == 1) result = 1;
+		System.out.println("Fibonacci Number: " + result);
+	}
+
+}

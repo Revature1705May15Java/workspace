@@ -1,0 +1,28 @@
+package tests;
+
+import java.util.Scanner;
+
+public class tests {
+
+	public static void main(String[] args) {
+		int x = 0, y = 0, z = 0;
+		
+		checkInput checker = new checkInput();
+		
+		Scanner userInput = new Scanner(System.in);
+		System.out.print("X = ");
+		while(checker.check(userInput.nextLine())){
+			System.out.print("X = ");
+		}
+		x = Integer.parseInt(userInput.nextLine());
+		System.out.print("Y = ");
+		while(checker.check(userInput.nextLine())){
+			System.out.print("Y = ");
+		}
+		y = Integer.parseInt(userInput.nextLine());
+		
+		
+		
+	}
+
+}

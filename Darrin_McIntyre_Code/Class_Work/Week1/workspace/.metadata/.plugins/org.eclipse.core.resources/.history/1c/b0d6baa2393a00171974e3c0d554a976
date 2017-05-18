@@ -1,0 +1,13 @@
+ackage bubbleSort;
+
+public class bubbleSort {
+	public static void main (String[] args){
+		int[] something = {1,2,1,3,4};
+		bubbleSort(something);
+		
+	}
+	
+	public void bubbleSort(int[] anArray){
+		
+	}
+}

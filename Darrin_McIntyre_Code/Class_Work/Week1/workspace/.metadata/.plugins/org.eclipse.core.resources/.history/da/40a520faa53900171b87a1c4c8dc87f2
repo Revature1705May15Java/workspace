@@ -1,0 +1,14 @@
+package helloworld;
+
+
+
+public class helloworld {
+
+	public static void main(String[] args) {
+		System.out.println();   // ctrl+space after typing 'sysout'
+		System.out.println("Hello World!!");
+		int x = 100_000;
+		System.out.println(x);
+	}
+	
+}
