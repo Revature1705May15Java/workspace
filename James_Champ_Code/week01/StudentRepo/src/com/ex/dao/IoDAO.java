@@ -54,7 +54,6 @@ public class IoDAO implements DAO {
 				temp.setEmail(current[3]);
 				
 				students.add(temp);
-				System.out.println(temp.toString());
 			}
 		} 
 		catch (FileNotFoundException e) {

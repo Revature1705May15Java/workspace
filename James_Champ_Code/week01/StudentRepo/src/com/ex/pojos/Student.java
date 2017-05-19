@@ -5,6 +5,10 @@ import java.io.Serializable;
 
 public class Student implements Serializable {
 	/**
+	 * Version number of this class.
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 * This student's first name.
 	 */
 	String firstName;

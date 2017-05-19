@@ -10,6 +10,8 @@ import com.ex.service.StudentService;
 
 // TODO: Trim whitespace off of all user input.
 public class Main {
+	private static final int NOT_A_NUMBER = -1;
+	
 	private static StudentService service;
 	private static Scanner scan;
 	
@@ -31,13 +33,16 @@ public class Main {
 		do {
 			printMenu();
 			
-			String line = scan.nextLine();
+			String line = scan.nextLine().trim();
 			// TODO: Handle incorrect input
-			choice = Integer.parseInt(line);
+			choice = testInputForInt(line);
 			
 			System.out.println();
 			
 			switch(choice) {
+				case NOT_A_NUMBER:
+					printNANErrorMessage();
+					break;
 				case 1:
 					addStudent();
 					break;
@@ -92,11 +97,11 @@ public class Main {
 	 */
 	private static void addStudent() {
 		System.out.print("\tEnter student's first name: ");
-		String firstName = scan.nextLine();
+		String firstName = scan.nextLine().trim();
 		System.out.print("\n\tEnter student's last name: ");
-		String lastName = scan.nextLine();
+		String lastName = scan.nextLine().trim();
 		System.out.print("\n\tEnter student's email address: ");
-		String email = scan.nextLine();
+		String email = scan.nextLine().trim();
 		System.out.println();
 		
 		
@@ -107,12 +112,12 @@ public class Main {
 		catch (NonUniqueEmailException e) {
 			System.out.println("\tCould not add student.");
 			System.out.println("\tA student with the same email address already exists.\n");
-			e.printStackTrace();
+			//e.printStackTrace();
 		} 
 		catch (InvalidEmailException e) {
 			System.out.println("\tCould not add student.");
 			System.out.println("\tThe given email address is improperly formatted.\n");
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 	
@@ -126,7 +131,7 @@ public class Main {
 	private static void removeStudent() {
 		System.out.print("\tEnter the ID number of the student that you are removing:");
 		
-		String line = scan.nextLine();
+		String line = scan.nextLine().trim();
 		System.out.println();
 		// TODO: Handle improper input
 		int id = Integer.parseInt(line);
@@ -146,11 +151,11 @@ public class Main {
 	 */
 	private static void updateStudent() {
 		System.out.print("\tEnter the ID number of the student that is being updated: ");
-		String line = scan.nextLine();
+		String line = scan.nextLine().trim();
+		System.out.println();
+		
 		// TODO: Handle improper input
 		int id = Integer.parseInt(line);
-		
-		System.out.println();
 		
 		Student student = service.getStudentById(id);
 		
@@ -164,23 +169,26 @@ public class Main {
 		
 			do {
 				printUpdateMenu();
-				line = scan.nextLine();
-				choice = Integer.parseInt(line);
+				line = scan.nextLine().trim();
+				choice = testInputForInt(line);
 				
 				switch(choice) {
+					case NOT_A_NUMBER:
+						printNANErrorMessage();
+						break;
 					case 1:
 						System.out.print("\tEnter new first name: ");
-						String firstName = scan.nextLine();
+						String firstName = scan.nextLine().trim();
 						updatedStudent.setFirstName(firstName);
 						break;
 					case 2:
 						System.out.print("\tEnter new last name: ");
-						String lastName = scan.nextLine();
+						String lastName = scan.nextLine().trim();
 						updatedStudent.setLastName(lastName);
 						break;
 					case 3:
 						System.out.print("\tEnter new email address: ");
-						String email = scan.nextLine();
+						String email = scan.nextLine().trim();
 						updatedStudent.setEmail(email);
 						break;
 					case 4:
@@ -252,5 +260,23 @@ public class Main {
 	private static void shutDown() {
 		service.writeAllStudentsToFile();
 		System.out.println("\n\nProgram terminated...\n");
+	}
+	
+	private static int testInputForInt(String s) {
+		int result;
+		
+		try {
+			result = Integer.parseInt(s);
+		}
+		catch(NumberFormatException e) {
+			result = NOT_A_NUMBER;
+		}
+		
+		return result;
+	}
+	
+	private static void printNANErrorMessage() {
+		System.out.println("\tInvalid selection:");
+		System.out.println("\tPlease enter a whole number between 1 and 5\n\n");
 	}
 }

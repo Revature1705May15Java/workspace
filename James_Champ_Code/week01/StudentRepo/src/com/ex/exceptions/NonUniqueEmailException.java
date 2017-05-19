@@ -6,6 +6,7 @@ package com.ex.exceptions;
  * 
  * @author James Champ
  */
+@SuppressWarnings("serial")
 public class NonUniqueEmailException extends Exception {
 
 	public NonUniqueEmailException(String message) {

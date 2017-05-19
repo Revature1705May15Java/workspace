@@ -7,6 +7,7 @@ package com.ex.exceptions;
  * @author James Champ
  *
  */
+@SuppressWarnings("serial")
 public class InvalidEmailException extends Exception {
 
 	public InvalidEmailException(String message) {
