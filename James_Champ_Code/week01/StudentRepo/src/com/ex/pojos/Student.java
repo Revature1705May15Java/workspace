@@ -3,7 +3,8 @@ package com.ex.pojos;
 import java.io.Serializable;
 
 
-public class Student implements Serializable {
+public class Student implements Serializable,
+								Comparable<Student> {
 	/**
 	 * Version number of this class.
 	 */
@@ -11,19 +12,19 @@ public class Student implements Serializable {
 	/**
 	 * This student's first name.
 	 */
-	String firstName;
+	private String firstName;
 	/**
 	 * This student's last name.
 	 */
-	String lastName;
+	private String lastName;
 	/**
 	 * This student's email address.
 	 */
-	String email;
+	private String email;
 	/**
 	 * This student's unique ID number.
 	 */
-	int id;
+	private int id;
 	
 	/**
 	 * Creates a new student object, but does not initialize
@@ -140,7 +141,7 @@ public class Student implements Serializable {
 	
 	@Override
 	public boolean equals(Object obj) {
-		// TODO: Ensure that this works with null objects.
+		// TODO: Does not work for null objects. Fix.
 		
 		Student student = (Student) obj;
 		
@@ -153,5 +154,17 @@ public class Student implements Serializable {
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";
+	}
+
+	@Override
+	public int compareTo(Student stu) {
+		if(id > stu.getId()) {
+			return 1;
+		}
+		else if(id < stu.getId()) {
+			return -1;
+		}
+
+		return 0;
 	}
 }

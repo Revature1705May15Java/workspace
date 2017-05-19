@@ -1,11 +1,13 @@
 package com.ex.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.ex.dao.DAO;
 import com.ex.dao.IoDAO;
+import com.ex.exceptions.IllegalCharacterException;
 import com.ex.exceptions.InvalidEmailException;
 import com.ex.exceptions.NonUniqueEmailException;
 import com.ex.pojos.Student;
@@ -64,7 +66,6 @@ public class StudentService {
 	}
 	
 	// TODO: Check first and last name for ':' char.
-	// TODO: Validate email first, then check for uniqueness.
 	
 	/**
 	 * Creates and adds a new student to the list of all students.
@@ -78,22 +79,27 @@ public class StudentService {
 	 * 									as the given email address.
 	 * @throws InvalidEmailException	Thrown when the given email address is not properly formatted.
 	 */
-	public Student addStudent(String firstName, String lastName, String email) throws NonUniqueEmailException,
-																					 InvalidEmailException {
+	public Student addStudent(String firstName, String lastName, String email) throws 	NonUniqueEmailException,
+																						InvalidEmailException,
+																						IllegalCharacterException {
 		Student result = null;
-		boolean isUniqueEmail = isEmailUnique(email);
+		boolean isValid = isEmailValid(email);
 		
-		if(isUniqueEmail) {
-			if(isEmailValid(email)) {
+		if(firstName.contains(IoDAO.DELIMITER) || lastName.contains(IoDAO.DELIMITER)) {
+			throw new IllegalCharacterException("Student's name cannot contain '" +
+												IoDAO.DELIMITER + "'.");
+		}
+		if(isValid) {
+			if(isEmailUnique(email)) {
 				result = new Student(currentId++, firstName, lastName, email);
 				studentList.add(result);
 			}
 			else {
-				throw new InvalidEmailException("Given email improperly formatted.");
+				throw new NonUniqueEmailException("A student with the given email already exists.");
 			}
 		}
 		else {
-			throw new NonUniqueEmailException("A student with the given email already exists.");
+			throw new InvalidEmailException("Given email improperly formatted.");
 		}
 		
 		return result;
@@ -165,6 +171,9 @@ public class StudentService {
 	 * If the given {@code Student} has an ID number that does not match an existing
 	 * student's, the list of all students will remain unchanged and this method will return
 	 * a null {@code Student}.
+	 * <br>
+	 * If a student is ever added to the list of all students by this method, the list is 
+	 * sorted before this method returns.
 	 * 
 	 * @param updatedStudent	The new {@code Student} that will replace an existing student.
 	 * @return					The updated {@code Student} object, or a null student if no
@@ -175,7 +184,12 @@ public class StudentService {
 	 * 									with another existing student.
 	 */
 	public Student updateStudent(Student updatedStudent) throws InvalidEmailException,
-																NonUniqueEmailException {
+																NonUniqueEmailException,
+																IllegalCharacterException {
+		if(updatedStudent.getFirstName().contains(IoDAO.DELIMITER) || updatedStudent.getLastName().contains(IoDAO.DELIMITER)) {
+			throw new IllegalCharacterException("Student's name cannot contain '" +
+												IoDAO.DELIMITER + "'.");
+		}
 		if(!isEmailValid(updatedStudent.getEmail())) {
 			throw new InvalidEmailException("Improperly formatted email address.");
 		}
@@ -194,6 +208,9 @@ public class StudentService {
 				else {
 					studentList.add(updatedStudent);
 				}
+				
+				Collections.sort(studentList);
+				
 				return updatedStudent;
 			}
 		}
@@ -247,5 +264,4 @@ public class StudentService {
 		
 		return isUnique;
 	}
-	
 }

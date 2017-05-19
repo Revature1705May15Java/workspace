@@ -3,14 +3,26 @@ package com.ex.main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.ex.dao.IoDAO;
+import com.ex.exceptions.IllegalCharacterException;
 import com.ex.exceptions.InvalidEmailException;
 import com.ex.exceptions.NonUniqueEmailException;
 import com.ex.pojos.Student;
 import com.ex.service.StudentService;
 
-// TODO: Trim whitespace off of all user input.
 public class Main {
+	/**
+	 * Used when a user's selection was not an integer, as required.
+	 */
 	private static final int NOT_A_NUMBER = -1;
+	/**
+	 * The total number of main menu options.
+	 */
+	private static final int TOTAL_MAIN_MENU_OPTIONS = 5;
+	/**
+	 * The total number of update student menu options.
+	 */
+	private static final int TOTAL_UPDATE_MENU_OPTIONS = 4;
 	
 	private static StudentService service;
 	private static Scanner scan;
@@ -40,9 +52,6 @@ public class Main {
 			System.out.println();
 			
 			switch(choice) {
-				case NOT_A_NUMBER:
-					printNANErrorMessage();
-					break;
 				case 1:
 					addStudent();
 					break;
@@ -59,7 +68,7 @@ public class Main {
 					shutDown();
 					break;
 				default:
-					System.out.println("\tInvalid selection\n\n");
+					printInvalidSelectionMessage(TOTAL_MAIN_MENU_OPTIONS);
 			}
 		} while(choice != 5);
 		
@@ -92,8 +101,10 @@ public class Main {
 	 * Prompts the user for a new student's first name, last name, and
 	 * email address. If the email address is not properly formatted, or 
 	 * if another existing student has the same email address, an error 
-	 * message is printed to the console. Otherwise, a new student is 
-	 * created and added to memory.
+	 * message is printed to the console. Likewise, if a student's first
+	 * or last name contains the delimiter used to separate data in the
+	 * student storage file, an error message is printed to the console. 
+	 * Otherwise, a new student is created and added to memory.
 	 */
 	private static void addStudent() {
 		System.out.print("\tEnter student's first name: ");
@@ -109,15 +120,19 @@ public class Main {
 			service.addStudent(firstName, lastName, email);
 			System.out.println("\tStudent successfully added.\n");
 		} 
-		catch (NonUniqueEmailException e) {
+		catch(NonUniqueEmailException e) {
 			System.out.println("\tCould not add student.");
 			System.out.println("\tA student with the same email address already exists.\n");
 			//e.printStackTrace();
 		} 
-		catch (InvalidEmailException e) {
+		catch(InvalidEmailException e) {
 			System.out.println("\tCould not add student.");
 			System.out.println("\tThe given email address is improperly formatted.\n");
 			//e.printStackTrace();
+		}
+		catch(IllegalCharacterException e) {
+			System.out.println("\tCould not add student.");
+			System.out.println("\tStudent's name cannot contain '" + IoDAO.DELIMITER + "'.\n");
 		}
 	}
 	
@@ -148,78 +163,92 @@ public class Main {
 	 * Prompts the user for an existing student's ID number. If that student exists, the
 	 * update student menu is printed to the console. The user can then change the student's
 	 * first name, last name, and email address.
+	 * <br>
+	 * Students will not be updated if any of the following things occur:
+	 * <ol>
+	 * 	<li>Updated student has an email that is the same as another stored student's.</li>
+	 * 	<li>Updated student's email is not properly formatted.</li>
+	 * 	<li>Updated student's first or last name contains the delimiter used in the student
+	 * 		data text file.</li>
+	 * </ol>
 	 */
 	private static void updateStudent() {
 		System.out.print("\tEnter the ID number of the student that is being updated: ");
 		String line = scan.nextLine().trim();
 		System.out.println();
 		
-		// TODO: Handle improper input
-		int id = Integer.parseInt(line);
+		int id = testInputForInt(line);
 		
-		Student student = service.getStudentById(id);
-		
-		if(student == null) {
-			System.out.println("\tCould not find student with id number " + id + ".\n");
+		if(id == NOT_A_NUMBER) {
+			System.out.println("\tInvalid input:");
+			System.out.println("\tPlease enter whole numbers only.\n");
+			updateStudent();
 		}
 		else {
-			Student updatedStudent = student.makeCopy();
+			Student student = service.getStudentById(id);
 			
-			int choice;
-		
-			do {
-				printUpdateMenu();
-				line = scan.nextLine().trim();
-				choice = testInputForInt(line);
+			if(student == null) {
+				System.out.println("\tCould not find student with id number " + id + ".\n");
+			}
+			else {
+				Student updatedStudent = student.makeCopy();
+			
+				int choice;
 				
-				switch(choice) {
-					case NOT_A_NUMBER:
-						printNANErrorMessage();
-						break;
-					case 1:
-						System.out.print("\tEnter new first name: ");
-						String firstName = scan.nextLine().trim();
-						updatedStudent.setFirstName(firstName);
-						break;
-					case 2:
-						System.out.print("\tEnter new last name: ");
-						String lastName = scan.nextLine().trim();
-						updatedStudent.setLastName(lastName);
-						break;
-					case 3:
-						System.out.print("\tEnter new email address: ");
-						String email = scan.nextLine().trim();
-						updatedStudent.setEmail(email);
-						break;
-					case 4:
-						if(student.equals(updatedStudent)) {
-							System.out.println("\tNo changes made to student's data.\n");
-						}
-						else {
-							try {
-								service.updateStudent(updatedStudent);
-								System.out.println("\tUpdates completed.\n");
-							} 
-							catch (InvalidEmailException e) {
-								System.out.println("\tCould not update student's data.");
-								System.out.println("\tEmail address improperly formatted.\n");
-								e.printStackTrace();
-							} 
-							catch (NonUniqueEmailException e) {
-								System.out.println("\tCould not update student's data.");
-								System.out.println("\tA student with the given email address already exists.\n");
-								e.printStackTrace();
+				do {
+					printUpdateMenu();
+					line = scan.nextLine().trim();
+					choice = testInputForInt(line);
+				
+					switch(choice) {
+						case 1:
+							System.out.print("\tEnter new first name: ");
+							String firstName = scan.nextLine().trim();
+							updatedStudent.setFirstName(firstName);
+							break;
+						case 2:
+							System.out.print("\tEnter new last name: ");
+							String lastName = scan.nextLine().trim();
+							updatedStudent.setLastName(lastName);
+							break;
+						case 3:
+							System.out.print("\tEnter new email address: ");
+							String email = scan.nextLine().trim();
+							updatedStudent.setEmail(email);
+							break;
+						case 4:
+							if(student.equals(updatedStudent)) {
+								System.out.println("\tNo changes made to student's data.\n");
+							}
+							else {
+								try {
+									service.updateStudent(updatedStudent);
+									System.out.println("\tUpdates completed.\n");
+								} 
+								catch(InvalidEmailException e) {
+									System.out.println("\tCould not update student's data.");
+									System.out.println("\tEmail address improperly formatted.\n");
+									//e.printStackTrace();
+								} 
+								catch(NonUniqueEmailException e) {
+									System.out.println("\tCould not update student's data.");
+									System.out.println("\tA student with the given email address already exists.\n");
+									//e.printStackTrace();
+								}
+								catch(IllegalCharacterException e) {
+									System.out.println("\tCould not update student's data.");
+									System.out.println("\tStudent's name cannot contain '" + IoDAO.DELIMITER + "'.\n");
+								}
 							}
 						
-						}
-						
-						break;
-					default:
-						System.out.println("\tInvalid selection.\n");
-				}
+							break;
+						default:
+							printInvalidSelectionMessage(TOTAL_UPDATE_MENU_OPTIONS);
+					}
 				
-				System.out.println();
-			} while(choice != 4);
+					System.out.println();
+				} while(choice != 4);
+			}
 		}
 	}
 	
@@ -262,6 +291,8 @@ public class Main {
 		System.out.println("\n\nProgram terminated...\n");
 	}
 	
+	// TODO: Document the following methods:
+	
 	private static int testInputForInt(String s) {
 		int result;
 		
@@ -275,8 +306,8 @@ public class Main {
 		return result;
 	}
 	
-	private static void printNANErrorMessage() {
+	private static void printInvalidSelectionMessage(int totalSelections) {
 		System.out.println("\tInvalid selection:");
-		System.out.println("\tPlease enter a whole number between 1 and 5\n\n");
+		System.out.println("\tPlease enter a whole number between 1 and " + totalSelections + ".\n\n");
 	}
 }

@@ -14,6 +14,7 @@ import com.ex.pojos.Student;
 // TODO: Add comments.
 public class IoDAO implements DAO {
 	private static final String STUDENT_FILE_NAME = "src/com/ex/datasource/data.txt";
+	public static final String DELIMITER = ":";
 	
 	@Override
 	public Student addStudent(Student s) {
@@ -23,7 +24,10 @@ public class IoDAO implements DAO {
 		String email = s.getEmail();
 		
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter(STUDENT_FILE_NAME, true))) {
-			bw.write("" + id + ":" + firstName + ":" + lastName + ":" + email + "\n");
+			bw.write("" + id + DELIMITER + 
+					firstName + DELIMITER + 
+					lastName + DELIMITER + 
+					email + "\n");
 		} 
 		catch (IOException e) {
 			e.printStackTrace();
@@ -45,7 +49,7 @@ public class IoDAO implements DAO {
 		try(BufferedReader br = new BufferedReader(new FileReader(STUDENT_FILE_NAME))) {
 			String line;
 			while((line = br.readLine()) != null) {
-				String[] current = line.split(":");
+				String[] current = line.split(DELIMITER);
 				Student temp = new Student();
 				
 				temp.setId(Integer.parseInt(current[0]));
