@@ -10,21 +10,21 @@ public class studentService
 {
 	DAO dao = new IOdao(); 
 	
-	static int ID = 1; //where do
+	static int ID = 1;
 	//keeps track of ID
 	//increments by 1 after ID is assigned to ensure IDs remain unique  
 	
 	public Student addStudent(String fn, String ln, String email) //done
 	{
 		Student temp = new Student(ID++, fn, ln, email); 
-		System.out.println("current ID counter: " + ID);
+//		System.out.println("current ID counter: " + ID);
 		return dao.addStudent(temp);  
 		//the only time ID should be incremented
 	}
 	
+	// remove students by id, assumes user has correct student id 
 	// searches for given student and removes it from the database
-	// Because students have unique IDs, search with ID and then remove the student. 
-	public boolean removeStudent(Student s)//done [dao not done]
+	public boolean removeStudent(Student s)//done
 	{
 		int id = s.getId(); 
 		

@@ -43,36 +43,41 @@ public class IOdao implements DAO
 
 	//assumes that IDs will be unique 
 	@Override
-	public boolean removeStudent(Student s) //help computah 
+	public boolean removeStudent(Student s) //done 
 	{
-		File oldData = new File(filename); //what do
-		Integer i = s.getId(); //the id to be checked against
-		//using Integer seems sorta inelegant here
+		Integer id = s.getId(); 
+		//the id to be checked against
 		
 		try
 		{
 			//create temp file for copying 
-			File temp = File.createTempFile("temp", "");//new File("src/datasource/temp"); 
+			File temp = new File("src/datasource/temp"); 
 			BufferedReader br = new BufferedReader(new FileReader(filename)); 
-			BufferedWriter tempW = new BufferedWriter(new FileWriter(temp)); //buffered writer must write to temp
+			BufferedWriter tempW = new BufferedWriter(new FileWriter(temp, false)); // write to temp
 			String line = null; //placeholder
 			
 			while((line = br.readLine()) != null)
 			{
-				if(line.startsWith(i.toString()))
+				if(line.startsWith(id.toString()))
 				{
-					continue; //ignore this line of Student data and move on to next line
+					continue; //if a match, don't add this student 
 				}
 				tempW.write(line + "\n"); 
 			}
-			if(oldData.delete())//////////////////////////////////////
+			tempW.close(); 
+			
+			BufferedReader tempR = new BufferedReader(new FileReader(temp));
+			BufferedWriter dataW = new BufferedWriter(new FileWriter(filename, false)); // write contents from temp over to db
+			while((line = tempR.readLine()) != null)
 			{
-				System.out.println("it works " + oldData.getName());
-				temp.renameTo(oldData); 
+				dataW.write(line + "\n");
 			}
-			else
-				System.out.println("it doesn't work " + oldData.getPath());
-			return true;
+			
+			dataW.close();
+			tempR.close();
+			br.close();
+			
+			return true; //to signify student was removed successfully 
 		}
 		catch(FileNotFoundException e)	
 		{
@@ -122,7 +127,7 @@ public class IOdao implements DAO
 	}
 	
 	//I don't think I need to do anything for this? 
-	// shouldn't be handled by dao 
+	// shouldn't be handled by dao but by service class
 	@Override
 	public Student getStudentById(int id) 
 	{
@@ -134,7 +139,7 @@ public class IOdao implements DAO
 	@Override
 	public Student updateStudent(Student oldS, Student newS)
 	{
-		if(removeStudent(oldS)) //if removal was successful, add new student 
+		if(removeStudent(oldS)) //if removal was successful, add "new" student 
 		{
 			return addStudent(newS); 
 		}

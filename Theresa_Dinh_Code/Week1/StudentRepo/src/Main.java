@@ -9,11 +9,12 @@ public class Main
 {
 	public static void main(String[] args) 
 	{
-		//Scanner in = new Scanner(System.in); 
-		DAO dao = new IOdao(); 
+//		Scanner in = new Scanner(System.in); 
+//		DAO dao = new IOdao(); 
+		studentService ss = new studentService(); //should be using service instead of dao 
 		
 //		System.out.println("enter id: ");
-//		Integer i = Integer.parseInt(in.nextLine()); 
+//		Integer i = Integer.parseInt(in.nextLine());
 //		
 //		System.out.println("enter first name: ");
 //		String s = in.nextLine(); 
@@ -25,11 +26,13 @@ public class Main
 //		String u = in.nextLine(); 
 //		
 //		dao.addStudent(new Student(i, s, t, u)); 
+		ss.addStudent("gary", "stu","someone@gmail.com"); 
+		ss.addStudent("mary","sue","some@email.com");
 		
-		dao.getAllStudents(); 
+		System.out.println(ss.getAllStudents().toString()); 
 		
-		System.out.println(dao.removeStudent(new Student(222, "", "", ""))); 
-		dao.getAllStudents();
+		System.out.println(ss.removeStudent(new Student(1, " ", " ", " "))); 
+		System.out.println(ss.getAllStudents().toString());
 	}
 
 	void run()
