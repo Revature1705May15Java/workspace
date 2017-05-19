@@ -12,10 +12,9 @@ public class fibonacciTest
 {
 
 	fibonacci f;
-	static fibonacci fs;
+//	static fibonacci fs;
 	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception
+/*	public static void setUpBeforeClass() throws Exception
 	{
 		
 	}
@@ -25,23 +24,27 @@ public class fibonacciTest
 	{
 		
 	}
-
+*/
 	@Before
 	public void setUp() throws Exception 
 	{
-		
+		f = new fibonacci();
 	}
 
 	@After
 	public void tearDown() throws Exception 
 	{
-		
+		f = null;
 	}
 
 	@Test
 	public void test() 
 	{
-		fail("Not yet implemented");
+		int [] expected = {0,1,1,2,3};
+		int [] actual = f.sequence(5);
+		
+		assertArrayEquals(expected, actual);
+		
 	}
 
 }
