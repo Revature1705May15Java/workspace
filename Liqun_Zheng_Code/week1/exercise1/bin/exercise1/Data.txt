@@ -1,4 +1,0 @@
-John:Mouse:75:Arizona
-iuoui:Hogan:50:Virginia
-reter:Rabbit:22:California
-tyr:Woman:62:Montana
