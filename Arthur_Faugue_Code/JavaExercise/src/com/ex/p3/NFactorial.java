@@ -3,11 +3,12 @@ import java.util.Scanner;
 
 public class NFactorial {
 	
-	int Factorial(){
-		Scanner reader = new Scanner(System.in);
-		System.out.print(" Enter a number: ");
+	/*
+	 * Ask the user for an int and returns the 
+	 * factorial for that number.
+	 */
+	int Factorial(int Input){
 		
-		int Input = reader.nextInt();
 		int InputMinus = Input - 1;
 		int LoopCheck = Input;
 		int Temp = 0;
@@ -24,15 +25,23 @@ public class NFactorial {
 			
 		}
 		System.out.println(Temp);
-		//close scanner
-		reader.close();
 		return Temp;
 	}
+	
 	public static void main(String[] args) {
 		
 		NFactorial Fact = new NFactorial();
-		Fact.Factorial();
 		
+		/*
+		 * Ask the user to enter the number that they would want the
+		 * factorial of
+		*/
+		Scanner reader = new Scanner(System.in);
+		System.out.print("Enter a number: ");
 		
+		int Input = reader.nextInt();
+		Fact.Factorial(Input);
+		
+		reader.close();
 	}
 }

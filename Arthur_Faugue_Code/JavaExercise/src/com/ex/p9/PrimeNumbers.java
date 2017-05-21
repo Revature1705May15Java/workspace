@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 public class PrimeNumbers {
 	
-	//checks if a certain int is a prime number
+	/*
+	 * This method checks whether or not a given int is a 
+	 * prime number, and will return true or false.
+	 */
 	public boolean isPrime(int n){
 		if(n==2){
 			return true;

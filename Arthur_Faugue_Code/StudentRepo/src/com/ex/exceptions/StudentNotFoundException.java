@@ -2,6 +2,11 @@ package com.ex.exceptions;
 
 public class StudentNotFoundException extends Exception {
 
+	/*
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public StudentNotFoundException() {
 		super();
 		// TODO Auto-generated constructor stub

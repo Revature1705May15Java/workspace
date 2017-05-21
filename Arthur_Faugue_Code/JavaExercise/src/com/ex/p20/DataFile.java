@@ -5,33 +5,48 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
 
 public class DataFile {
 	
+	/*
+	 * Organizes the data of the given string to show the name, 
+	 * age, and the state in separate lines
+	 */
+	String printLine(String[] curr){
+		
+		String s = "Name: " + curr[0] + " " + curr[1] + "\n" + "Age: " + curr[2] + "\n" + "State: "
+				+ curr[3] + " State";
+		return s;
+	}
+	
 	public static void main(String[] args) {
-		try{
-			PrintWriter file = new PrintWriter("src/com/ex/p20/Data.txt", "UTF-8");
+		/*
+		 * Create the Data.txt file with 4 separate names added in
+		 */
+		try(PrintWriter file = new PrintWriter("src/com/ex/p20/Data.txt", "UTF-8");){
+			
 			file.println("Mickey:Mouse:35:Arizona");
 			file.println("Hulk:Hogan:50:Virginia");
 			file.println("Roger:Rabbit:22:California");
 			file.print("Wonder:Woman:18:Montana");
 			
-			file.close();
-			
 		}catch(IOException e){
-			
+			e.printStackTrace();
 		}
 		
-		try{
-			BufferedReader br = new BufferedReader(new FileReader("src/com/ex/p20/Data.txt"));
+		/*
+		 * Read the given txt file and prints it out to the console
+		 */
+		try(BufferedReader br = new BufferedReader(new FileReader("src/com/ex/p20/Data.txt"));){
+			
 			String line = null; //current line place holder
-			 while((line = br.readLine()) != null){
+			
+			DataFile file = new DataFile();
+			while((line = br.readLine()) != null){
 				 String[] curr = line.split(":");
-				 System.out.println("Name: " + curr[0] + " " + curr[1]); 
-				 System.out.println("Age: " + curr[2]);
-				 System.out.println("State: "+ curr[3] + " State");
-			 }
+				 System.out.println(file.printLine(curr));
+			}
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

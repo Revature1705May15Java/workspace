@@ -5,10 +5,16 @@ import com.ex.pojos.*;
 
 public interface DAO {
 	
+	/*
+	 * A simple DAO interface that will handle the 
+	 * database operations required to manipulate
+	 * the Student entity. 
+	 */
 	Student addStudent(Student s);
-	boolean removeStudent(Student s);
+	void removeStudent(int id);
 	ArrayList<Student> getAllStudents();
 	Student getStudentById(int id);
-	Student updateStudent(Student updatedStudent);
+	void updateStudent(Student s);
+	int checkId(int id);
 	
 }
