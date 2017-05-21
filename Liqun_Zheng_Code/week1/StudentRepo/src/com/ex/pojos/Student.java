@@ -4,10 +4,17 @@ import java.io.Serializable;
 
 public class Student implements Serializable{
 
+	/**
+	 * all class variables
+	 */
+	private static final long serialVersionUID = 1L;
 	String firstName, lastName, email;
 	int id;
+	
+	
 	public Student(){
 	}
+	// Override default constructor 
 	public Student(String firstName, String lastName, String email, int id) {
 		super();
 		this.firstName = firstName;
@@ -15,6 +22,9 @@ public class Student implements Serializable{
 		this.email = email;
 		this.id = id;
 	}
+	
+	
+	//geter and setter for each variables
 	public String getFirstName() {
 		return firstName;
 	}
@@ -39,6 +49,8 @@ public class Student implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	//Overrides toString method
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]\n";

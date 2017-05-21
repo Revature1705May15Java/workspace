@@ -20,12 +20,7 @@ public class ArrayListEx {
 		x.add("did");
 		System.out.println("Contents of x: " +x);
 		
-		for(int i = 0; i <x.size(); i++){
-			if(checkPalindromes(x.get(i))){
-				palindrome.add(x.get(i));
-			}
-		}
-		System.out.println("Contents of Palindromes: " + palindrome);
+		palindrome = returnArrayList(x);
 	}
 	public static boolean checkPalindromes(String s){
 		boolean result = false;
@@ -34,5 +29,15 @@ public class ArrayListEx {
 			result = true;
 		}
 		return result;
+	}
+	public static ArrayList<String> returnArrayList(ArrayList<String> x){
+		ArrayList<String> palindrome = new ArrayList<String>();
+		for(int i = 0; i <x.size(); i++){
+			if(checkPalindromes(x.get(i))){
+				palindrome.add(x.get(i));
+			}
+		}
+		System.out.println("Contents of Palindromes: " + palindrome);
+		return palindrome;
 	}
 }

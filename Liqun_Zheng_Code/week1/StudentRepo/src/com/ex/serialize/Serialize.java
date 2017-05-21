@@ -11,71 +11,31 @@ import java.util.ArrayList;
 import com.ex.pojos.Student;
 
 public class Serialize {
-	public static void main(String[] args) {
+
+	public static void main(String[] args) 
+	{
 		String bytestream = "src/com/ex/serialize/bytestream.txt";
+		ArrayList<Student> ss = new ArrayList<>();
+		ss.add(new Student("Drew", "Allen", "d@email.com", 60));
+		ss.add(new Student("Arthur", "Faugue", "af@email.com", 33));
 		
-		Student s = new Student();
-		s.setId(0);
-		s.setFirstName("uio");
-		s.setLastName("gjh");
-		s.setEmail("g.kjjk@gmail.com");
-		
-//		ArrayList<Student> st= new ArrayList<Student>();
-//		Student temp = new Student();
-//		temp.setFirstName("dan");
-//		temp.setLastName("k");
-//		temp.setEmail("g.bnds@gmail.com");
-//		st.add(temp);
-//		temp.setId(2);
-//		temp.setFirstName("van");
-//		temp.setLastName("in");
-//		temp.setEmail("g.bn4s@gmail.com");
-//		st.add(temp);
-//		temp.setId(4);
-//		temp.setFirstName("dn");
-//		temp.setLastName("pon");
-//		temp.setEmail("g.bn6s@gmail.com");
-//		st.add(temp);
-//		writeObject(bytestream, s);
-		//readObject(bytestream);
-		//writeMultiObject(bytestream, st);
+		writeObj(bytestream, ss);
 		readObj(bytestream);
 	}
 	
-	static void writeObject(String bytestream, Object obj){
-		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream));){
-			oos.writeObject(obj);
-			
-		} catch(IOException e){
+	static void writeObj(String bytestream, ArrayList<Student> ss)
+	{
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream, true));)
+		{
+			oos.writeObject(ss);
+			oos.close();
+		} 
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}
 	
-	static Student readObject(String bytestream){
-		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));){
-			Object obj = ois.readObject();
-			Student s = (Student) obj;
-			System.out.println(s.toString());
-		} catch (FileNotFoundException e){
-			e.printStackTrace();
-		} catch (IOException e){
-			e.printStackTrace();
-		} catch (ClassNotFoundException e){
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	static void writeMultiObject(String bytestream, ArrayList obj){
-		try(
-				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream));){
-			for(int i= 0; i<obj.size(); i++){
-				oos.writeObject(obj.get(i));
-			}
-		} catch(IOException e){
-			e.printStackTrace();
-		}
-	}
 
 	static ArrayList<Student> readObj(String bytestream)
 	{

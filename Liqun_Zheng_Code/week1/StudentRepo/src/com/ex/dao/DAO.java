@@ -7,9 +7,9 @@ import com.ex.pojos.Student;
 
 
 public interface DAO {
-	Student addStudent(Student s);
-	void removeStudent(Student s);
+	void addStudent(Student s);
+	Student removeStudent(int id);
 	ArrayList<Student> getAllStudents() throws FileNotFoundException;
-	Student getStudentById(int id);
-	void updateStudent(Student updatedStudent);
+	Student getStudentByEmail(String email);
+	Student updateStudent(Student updatedStudent);
 }
