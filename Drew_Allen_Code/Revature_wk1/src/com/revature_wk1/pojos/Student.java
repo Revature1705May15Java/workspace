@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 public class Student implements Serializable
 {
+	/**
+	 * 
+	 */
 	String fname, lname, email;
 	int id;
 

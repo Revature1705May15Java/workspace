@@ -12,11 +12,23 @@ import com.revature_wk1.pojos.Student;
 
 public class ConcreteDAO implements DAO
 {
-	
 	static String filename = "src/com/revature/datasrc/Datr.txt";
 
+	/*
+	 * addStudent (Student s)
+	 * This method reads and writes to a data text file to add a
+	 * Student object to the data file
+	 * 
+	 * Takes in a Student object
+	 * Returns a Student object
+	 * Adds the Student object to the data text file
+	 * 
+	 * Created by Drew Allen
+	 */
+	
 	@Override
-	public Student addStudent(Student s) {
+	public Student addStudent(Student s) 
+	{
 		int id = s.getId();
 		String fName = s.getFname();
 		String lName = s.getLname();
@@ -32,36 +44,20 @@ public class ConcreteDAO implements DAO
 			return null;
 		}
 	}
-	
-	/*@Override
-	public boolean removeStudent(Student s)
-	{
-		try
-		{
-			BufferedReader rmReader = new BufferedReader(new FileReader(filename));
-			BufferedWriter rmBuffer = new BufferedWriter(new FileWriter(filename, true));
-			
-			String line = null;
-			
-			while((line = rmReader.readLine())!= null)
-			{
-				if(line.trim().equals(s))
-					continue;
-				
-				rmBuffer.write(line + System.getProperty("line.separator"));
-			}
-		}
-		catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		} 
-		catch (IOException e) 
-		{
-			e.printStackTrace();
-		}
-		return false;
-	}*/
 
+	/*
+	 * removeStudent(int id)
+	 * This method will read from a existing file containing information of Student objects
+	 * that will allow the user to remove a Student from their student ID value.
+	 * 
+	 * Takes in a int value for the id
+	 * Returns nothing
+	 * Updates the existing file of Students from the ArrayList of Student objects and return
+	 * the file where the selected Student is removed
+	 * 
+	 * Created by Drew Allen
+	 */
+	
 	@Override
 	public void removeStudent(int id) 
 	{
@@ -70,7 +66,6 @@ public class ConcreteDAO implements DAO
 		try
 		{
 			BufferedReader rmReader = new BufferedReader(new FileReader(filename));
-			//BufferedWriter rmBuffer = new BufferedWriter(new FileWriter(filename, true));
 			
 			String line = null;
 			
@@ -88,16 +83,9 @@ public class ConcreteDAO implements DAO
 				
 				if(rStudent.getId() == id)
 				{
-					//rStudent.setId(0);
-					/*rStudent.setId(0);
-					rStudent.setFname(null);
-					rStudent.setLname(null);
-					rStudent.setEmail(null);*/
 					rStudents.remove(rStudent);
 				}
 				
-				/*rmBuffer.write("" + rStudent.getId() + ":" + rStudent.getFname() + ":" + rStudent.getLname() + ":" + 
-				rStudent.getEmail() + "\n");*/
 			}
 			
 			BufferedWriter rmBuffer = new BufferedWriter(new FileWriter(filename));
@@ -123,6 +111,18 @@ public class ConcreteDAO implements DAO
 		
 	}
 
+	/*
+	 * getAllStudents
+	 * This method reads from a data text file that will
+	 * display the information of all the Student objects
+	 * inside the file back to the user
+	 * 
+	 * Takes and returns nothing
+	 * Prints out the Student objects in a specific format
+	 * 
+	 * Created by Drew Allen
+	 */
+	
 	@Override
 	public ArrayList<Student> getAllStudents() {
 		ArrayList<Student> gStudents = new ArrayList<Student>();
@@ -131,6 +131,7 @@ public class ConcreteDAO implements DAO
 		{
 			BufferedReader bufferR = new BufferedReader(new FileReader(filename));
 			String line = null;
+			
 			while((line = bufferR.readLine()) != null)
 			{
 				String[] str = line.split(":");
@@ -143,6 +144,8 @@ public class ConcreteDAO implements DAO
 				gStudents.add(s2);
 				System.out.println(s2);
 			}
+			
+			bufferR.close();
 		}
 		catch (FileNotFoundException e)
 		{
@@ -156,14 +159,111 @@ public class ConcreteDAO implements DAO
 		return gStudents;
 	}
 
+	/*
+	 * getStudentById (int id)
+	 * This method reads from a data text file to search for
+	 * a specific Student object by their unique ID
+	 * 
+	 * Takes in a integer
+	 * Returns a Student object
+	 * Displays one Student object from the data file
+	 * 
+	 * Created by Arthur Faugue
+	 */
+	
 	@Override
-	public Student getStudentById(int id) {
-		return null;
+	public Student getStudentById(int id) 
+	{
+		Student temp = new Student();
+		try(BufferedReader br = new BufferedReader(new FileReader(filename));){
+			
+			String line = null; //current line place holder
+			
+			while((line = br.readLine()) != null){
+				String[] curr = line.split(":");
+				
+				
+				if(Integer.parseInt(curr[0])==id)
+				{
+					temp.setId(Integer.parseInt(curr[0]));
+					temp.setFname(curr[1]);
+					temp.setLname(curr[2]);
+					temp.setEmail(curr[3]);
+					System.out.println(temp.toString());
+				}
+				
+			}
+
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return temp;
 	}
+	
+	/*
+	 * updateStudent (Student updatedStudent)
+	 * This method reads and writes to a data text file to update the
+	 * content of a specific Student object
+	 * 
+	 * Takes in a Student object
+	 * Returns nothing
+	 * Updates the existing Student object with new data from the user
+	 * 
+	 * Created by Liqun(Lee) Zheng
+	 */
 
 	@Override
-	public Student updateStudent(Student updatedStudent) {
-		return null;
-	}
+    public void updateStudent(Student updatedStudent) 
+	{
+        try(BufferedReader br = new BufferedReader(new FileReader(filename));) 
+        {
+            ArrayList<Student> st = new ArrayList<Student>();
+            String line = null; //current line place holder
+            
+            while((line = br.readLine())!=null){
+                String[] curr = line.split(":");
+                
+                Student temp = new Student();
+                temp.setId(Integer.parseInt(curr[0]));
+                temp.setFname(curr[1]);
+                temp.setLname(curr[2]);
+                temp.setEmail(curr[3]);
+                st.add(temp);
+            }
+            
+            for(int i =0; i< st.size(); i++)
+            {
+                if(st.get(i).getId() == updatedStudent.getId())
+                {
+                    st.get(i).setFname(updatedStudent.getFname());
+                    st.get(i).setLname(updatedStudent.getLname());
+                    st.get(i).setEmail(updatedStudent.getEmail());
+                }
+                System.out.println("New table" + st.get(i).toString());
+            }
+            
+            int id;
+            String fName, lname, email;
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
+            for(int i=0; i<st.size();i++)
+            {
+                id = st.get(i).getId();
+                fName = st.get(i).getFname();
+                lname = st.get(i).getLname();
+                email = st.get(i).getEmail();
+            
+                bw.write(""+id+":"+fName+":"+lname+":"+email +"\n");
+            }
+            bw.flush();
+            bw.close();
+        } 
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        }
+    }
 
 }

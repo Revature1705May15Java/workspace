@@ -10,5 +10,5 @@ public interface DAO
 	void removeStudent (int id);
 	ArrayList<Student> getAllStudents();
 	Student getStudentById (int id);
-	Student updateStudent(Student updatedStudent);
+	void updateStudent(Student updatedStudent);
 }

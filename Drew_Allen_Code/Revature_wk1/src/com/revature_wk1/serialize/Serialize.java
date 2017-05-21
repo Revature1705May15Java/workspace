@@ -15,15 +15,17 @@ public class Serialize {
 	public static void main(String[] args) 
 	{
 		String bytestream = "src/com/revature/serialize/bytestream.txt";
-		ArrayList<Student> ss = new ArrayList<>();
-		ss.add(new Student("Drew", "Allen", "d@email.com", 60));
-		ss.add(new Student("Arthur", "Faugue", "af@email.com", 33));
+		Student ss = new Student();
+		ArrayList<Student> ss_1 = new ArrayList<>();
 		
 		writeObj(bytestream, ss);
 		readObj(bytestream);
+		
+		writeObjs(bytestream, ss_1);
+		readObjs(bytestream);
 	}
 	
-	static void writeObj(String bytestream, ArrayList<Student> ss)
+	public static void writeObj(String bytestream, Student ss)
 	{
 		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream, true));)
 		{
@@ -36,7 +38,48 @@ public class Serialize {
 		}
 	}
 	
-	static ArrayList<Student> readObj(String bytestream)
+	public static void writeObjs(String bytestream, ArrayList<Student> ss)
+	{
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream, true));)
+		{
+			oos.writeObject(ss);
+			oos.close();
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static Student readObj(String bytestream)
+	{
+		Student ss = null;
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));)
+		{
+//			ss = (ArrayList<Student>) ois.readObject();
+			ss = (Student) ois.readObject();
+			System.out.println(ss.toString());
+			ois.close();
+		} 
+		catch (FileNotFoundException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		catch (IOException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ss;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static ArrayList<Student> readObjs(String bytestream)
 	{
 		ArrayList<Student> ss = null;
 		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));)

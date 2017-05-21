@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class PrimeNumbers 
 {
-
 	public static void main(String[] args) 
 	{
 		ArrayList<Integer> primeNumbers = new ArrayList<>();
 		
+		//int num = Integer.parseInt(args[0].toString()); For testing
 		int num = 100;
 		
 		for(int i = 2; i <= num; i++)

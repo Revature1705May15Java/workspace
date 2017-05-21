@@ -5,19 +5,19 @@ import java.util.Arrays;
 
 public class Palindrome 
 {
-	public static void main(String[] args) 
+	public void main(String[] args) 
 	{
-		ArrayList<String> input = new ArrayList<>(Arrays.asList("karan", "madam", "tom", "civic", "radar", "sexes",
-				"jimmy", "kayak", "john", "refer", "billy", "did"));
+		/*ArrayList<String> input = new ArrayList<>(Arrays.asList("karan", "madam", "tom", "civic", "radar", "sexes",
+				"jimmy", "kayak", "john", "refer", "billy", "did"));*/
 		
 		ArrayList<String> palindromes = new ArrayList<>();
 		
 		int i = 0;
 		
-		for(String str : input)
+		for(String str : args)
 		{
 			str = new StringBuffer(str).reverse().toString();
-			if(input.get(i).toString().equals(str))
+			if(args[i].equals(str))
 			{
 				palindromes.add(str);
 			}
