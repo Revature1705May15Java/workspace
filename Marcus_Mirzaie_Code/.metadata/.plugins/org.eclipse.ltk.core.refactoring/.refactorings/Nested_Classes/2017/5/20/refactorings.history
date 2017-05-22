@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.rev.lambda.Runnable.java&apos; to &apos;RunnableTest.java&apos;&#x0D;&#x0A;- Original project: &apos;Nested_Classes&apos;&#x0D;&#x0A;- Original element: &apos;com.rev.lambda.Runnable.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.rev.lambda.RunnableTest.java&apos;" description="Rename compilation unit &apos;Runnable.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.rev.lambda{Runnable.java" name="RunnableTest.java" references="false" stamp="1495051789118" version="1.0"/>
+</session>

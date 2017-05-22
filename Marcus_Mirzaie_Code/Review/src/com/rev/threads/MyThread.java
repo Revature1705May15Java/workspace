@@ -1,14 +1,21 @@
 package com.rev.threads;
 
-public class MyThread extends Thread{
+public class MyThread implements Runnable{
 	
-	StringBuffer sb = new StringBuffer("thread");
+	AbstractStringBuilder sb;
+	String saywhat;
+	
+	MyThread(StringBuffer sb, String a){
+		this.sb = sb;
+		this.saywhat = a;
+	}
+	
 	@Override
 	public void run(){
 		
-		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < 100; i++){
 			
-			System.out.println(sb.append(i));
+			System.out.println(sb.append(saywhat));
 			
 		}
 		

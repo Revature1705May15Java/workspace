@@ -1,0 +1,49 @@
+package com.ex.serialize;
+
+import java.io.*;
+
+import com.ex.pojos.Student;
+
+public class Serialization {
+	
+	public static void main(String[] args) {
+		String bytestream = "src/com/ex/serialize/bytestream.txt";
+		
+//		Student s = new Student();
+//		s.setId(0);
+//		s.setFirstName("Marcus");
+//		s.setLastName("Mirzaie");
+//		s.setEmail("Marcus.Mirzaie@outlook.com");
+//		
+//		writeObject(bytestream, s);
+		readObject(bytestream);
+	}
+	
+	static void writeObject(String bs, Object ob){
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bs))){
+			oos.writeObject(ob);
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+	static Student readObject(String bs){
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bs))){
+			Object ob = ois.readObject();
+			Student s = (Student) ob;
+			System.out.println(s);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+}

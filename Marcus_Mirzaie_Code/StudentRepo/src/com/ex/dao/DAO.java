@@ -10,6 +10,7 @@ public interface DAO {
 	boolean removeStudent(Student s);
 	Student updateStudent(Student s);
 	Student getStudentById(int id);
+	Student getStudentByEmail(String email);
 	ArrayList<Student> getAllStudents();
 	
 }

@@ -1,0 +1,11 @@
+package com.rev.patterns;
+
+public class IndustrialPlan extends Plan {
+
+	@Override
+	public double getRate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

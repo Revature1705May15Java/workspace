@@ -1,0 +1,31 @@
+package com.ex.serialize;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+import com.ex.pojos.Student;
+
+public class Serialization {
+	
+	public static void main(String[] args) {
+		String bytestream = "src/com/ex/serialize/bytestream.txt";
+		
+		Student s = new Student();
+		s.setId(0);
+		s.setFirstName("Marcus");
+		s.setLastName("Mirzaie");
+		s.setEmail("Marcus.Mirzaie@outlook.com");
+		
+		writeObject(bytestream, s);
+	}
+	
+	static void writeObject(String bs, Object ob){
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bs))){
+			oos.writeObject(ob);
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+}

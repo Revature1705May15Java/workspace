@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.ex.dao.DAO;
 import com.ex.dao.IoDAO;
 import com.ex.pojos.Student;
+import com.ex.serialize.Serialization;
 
 public class StudentService {
 	private DAO dao;
@@ -92,6 +93,7 @@ public class StudentService {
 			if(s.getEmail().toLowerCase().equals(email.toLowerCase())){
 				s.setId(id); s.setFirstName(fn); s.setLastName(ln);
 				dao.updateStudent(s);
+				dao.getAllStudents();
 			}
 		}
 	}
@@ -114,5 +116,15 @@ public class StudentService {
 		for(Student s: students){
 			System.out.println(s);
 		}
+	}
+	
+	public String getStudentByEmail(String email){
+		return (dao.getStudentByEmail(email)).toString();
+	}
+	
+	public void serializeStudents(){
+		String bytestream = "src/com/ex/serialize/bytestream.txt";
+		Serialization helper = new Serialization();
+		helper.writeObject(bytestream, students);
 	}
 }

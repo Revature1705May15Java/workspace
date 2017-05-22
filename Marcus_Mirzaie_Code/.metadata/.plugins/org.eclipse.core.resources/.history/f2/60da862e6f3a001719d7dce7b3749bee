@@ -1,0 +1,23 @@
+package com.ex.main;
+
+import java.util.Scanner;
+
+import com.ex.exceptions.StudentNotFoundException;
+
+public class Main {
+
+	public static void main(String[] args) throws StudentNotFoundException{
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("enter student Id:");
+		int id = Integer.parseInt(in.nextLine());
+		System.out.println("enter student firstname:");
+		String fn = in.nextLine();
+		System.out.println("enter student lastname:");
+		String ln = in.nextLine();
+		System.out.println("enter student email:");
+		String e = in.nextLine();
+
+	}
+
+}

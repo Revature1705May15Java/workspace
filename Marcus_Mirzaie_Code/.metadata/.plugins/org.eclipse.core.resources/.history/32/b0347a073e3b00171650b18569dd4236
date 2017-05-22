@@ -1,0 +1,14 @@
+package com.rev.lambda;
+
+public class RunnableTest {
+
+	public static void main(String[] args) {
+		
+		// Annonymous class runnable
+		Runnable r1 = new Runnnable(){
+			
+			@Override
+			
+		};
+	}
+}

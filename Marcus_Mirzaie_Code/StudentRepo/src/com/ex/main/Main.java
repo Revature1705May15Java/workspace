@@ -53,7 +53,10 @@ class View{
 	}
 	
 	private int select(){
-		return in.nextInt();
+		try{ return in.nextInt(); }
+		catch(Exception e){
+			return 0;
+		}
 	}
 	
 	void displayMenu(){
@@ -61,32 +64,17 @@ class View{
 				+ "1: add student\n"
 				+ "2: delete student\n"
 				+ "3: update student\n"
-				+ "4: view all students\n"
-				+ "5: exit");
+				+ "4: view student by email\n"
+				+ "5: view all students\n"
+				+ "6: exit");
 	}
 	
 	private void addStudent(){
-		System.out.println("How would you like to add the student?\n"
-				+ "1: Specify ID\n"
-				+ "2: Generate next ID");
-		int id; String fn, ln, email;
-		switch(select()){
-		case(1):
-			System.out.print("ID:  "); id = select();
-			System.out.print("First Name: "); fn = in.next();
-			System.out.print("Last Name: "); ln = in.next();
-			System.out.print("Email: "); email = in.next();
-			serv.addStudent(id, fn, ln, email);
-			break;
-		case(2):
+		String fn, ln, email;
 			System.out.print("First Name: "); fn = in.next();
 			System.out.print("Last Name: "); ln = in.next();
 			System.out.print("Email: "); email = in.next();
 			serv.addStudent(fn, ln, email);
-			break;
-		default:
-			System.out.println("Invalid choice.");
-		}
 	}
 	
 	private void deleteStudent(){
@@ -123,10 +111,14 @@ class View{
 			updateStudent();
 			break;
 		case(4):
-			viewStudents();
+			getStudentByEmail();
 			break;
 		case(5):
+			viewStudents();
+			break;
+		case(6):
 			System.out.println("Exiting...");
+			serv.serializeStudents();
 			setRunning(false);
 			break;
 		default:
@@ -134,6 +126,15 @@ class View{
 		}
 	}
 	
+	private void getStudentByEmail() {
+		String email;
+		System.out.print("Email: "); email = in.next();
+		try{ System.out.println(serv.getStudentByEmail(email)); }
+		catch(NullPointerException e){
+			System.out.println("No students with that email.");
+		}	
+	}
+
 	private void setRunning(boolean running) {
 		this.running = running;
 	}

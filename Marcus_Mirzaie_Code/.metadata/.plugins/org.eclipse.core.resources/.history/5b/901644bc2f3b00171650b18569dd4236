@@ -1,0 +1,5 @@
+package com.rev.nested;
+
+public class MemberInner {
+
+}

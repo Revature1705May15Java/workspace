@@ -1,0 +1,23 @@
+package q2q;
+
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		fibonacci(0,1,25);
+	}
+	
+	public static void fibonacci(int fibN1, int fibN2, int fibLim){
+		fibLim -= 1;
+		if(fibLim == 0){
+			System.out.print(fibN2);
+		}
+		else{
+			System.out.print(fibN1 + ", ");
+		}
+	}
+	public static int addFib(int fibN1, int fibN2){
+		return fibN1+fibN2;
+	}
+
+}

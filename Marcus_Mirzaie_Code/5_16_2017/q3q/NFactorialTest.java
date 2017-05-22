@@ -33,5 +33,10 @@ public class NFactorialTest {
 		assertFalse(actual);
 		
 	}
+	
+	@Test
+	public void test3(){
+		assertEquals()
+	}
 
 }

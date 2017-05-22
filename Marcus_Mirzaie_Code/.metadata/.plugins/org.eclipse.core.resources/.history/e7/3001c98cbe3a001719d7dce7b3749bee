@@ -1,0 +1,34 @@
+package com.ex.main;
+
+import java.util.Scanner;
+
+import com.ex.dao.DAO;
+import com.ex.dao.IoDAO;
+import com.ex.exceptions.StudentNotFoundException;
+import com.ex.pojos.Student;
+
+public class Main {
+
+	public static void main(String[] args) throws StudentNotFoundException{
+		
+		Scanner in = new Scanner(System.in);
+		DAO dao = new IoDAO();
+		
+//		System.out.println("enter student Id:");
+//		int id = Integer.parseInt(in.nextLine());
+//		System.out.println("enter student firstname:");
+//		String fn = in.nextLine();
+//		System.out.println("enter student lastname:");
+//		String ln = in.nextLine();
+//		System.out.println("enter student email:");
+//		String e = in.nextLine();
+//		
+//		Student temp = new Student(fn,ln, e, id);
+//		
+//		dao.addStudent(temp);
+
+		dao.getAllStudents();
+		
+	}
+
+}

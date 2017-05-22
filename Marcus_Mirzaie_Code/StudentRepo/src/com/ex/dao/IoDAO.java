@@ -37,20 +37,12 @@ public class IoDAO implements DAO{
 		boolean success = false;
 		try {
 			FileWriter fw = new FileWriter(filename,false);fw.close();
-			BufferedWriter bw;
 			for(Student st: students){
 				if(st.getEmail().toLowerCase().equals(s.getEmail().toLowerCase())){
 					success = true;
 				}
 				else{
-					int id = st.getId();
-					String fName = st.getFirstName();
-					String lName = st.getLastName();
-					String email = st.getEmail();
-					
-					bw = new BufferedWriter(new FileWriter(filename,true));
-					bw.write("" + id + ":" + fName + ":" + lName + ":" + email + ":\n");
-					bw.close();
+					addStudent(st);
 				}
 			}
 		} catch (IOException e1) {
@@ -65,19 +57,11 @@ public class IoDAO implements DAO{
 		ArrayList<Student> students = getAllStudents();
 		try {
 			FileWriter fw = new FileWriter(filename,false);fw.close();
-			BufferedWriter bw;
 			for(Student st: students){
 				if(st.getEmail().toLowerCase().equals(s.getEmail().toLowerCase())){
 					st = s;
 				}
-				int id = st.getId();
-				String fName = st.getFirstName();
-				String lName = st.getLastName();
-				String email = st.getEmail();
-				
-				bw = new BufferedWriter(new FileWriter(filename,true));
-				bw.write("" + id + ":" + fName + ":" + lName + ":" + email + ":\n");
-				bw.close();
+				addStudent(st);
 			}
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
@@ -137,6 +121,16 @@ public class IoDAO implements DAO{
 		}
 		
 		return students;
+	}
+
+	@Override
+	public Student getStudentByEmail(String email) {
+		ArrayList<Student> students = getAllStudents();
+		for(Student s: students){
+			if(s.getEmail().toLowerCase().equals(email.toLowerCase()))
+				return s;
+		}
+		return null;
 	}
 
 }

@@ -1,0 +1,10 @@
+package com.rev.lambda;
+
+public class LabdaEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

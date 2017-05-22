@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="fis"/>\r\n<expression enabled\="true" text\="build"/>\r\n<expression enabled\="true" text\="ob"/>\r\n<expression enabled\="true" text\="s"/>\r\n<expression enabled\="true" text\="(dao.getStudentByEmail(email))"/>\r\n<expression enabled\="true" text\="(dao.getStudentByEmail(email)).toString()"/>\r\n</watchExpressions>\r\n

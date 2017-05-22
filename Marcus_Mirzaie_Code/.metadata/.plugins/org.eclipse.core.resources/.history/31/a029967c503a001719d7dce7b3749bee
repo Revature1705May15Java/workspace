@@ -1,0 +1,15 @@
+package q3q;
+
+import java.util.Scanner;
+
+public class NFactorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+	
+	public int nFact(int n){
+		return nFact(n*(n-1));
+	}
+
+}

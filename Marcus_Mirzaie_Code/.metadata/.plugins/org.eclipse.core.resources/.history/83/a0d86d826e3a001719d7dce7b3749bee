@@ -1,0 +1,12 @@
+package com.ex.main;
+
+import com.ex.exceptions.StudentNotFoundException;
+
+public class Main {
+
+	public static void main(String[] args) throws StudentNotFoundException{
+		// TODO Auto-generated method stub
+
+	}
+
+}

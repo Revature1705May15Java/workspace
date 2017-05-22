@@ -1,0 +1,180 @@
+package com.ex.dao;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ex.pojos.Student;
+
+public class IoDAO implements DAO{
+
+	static String filename = "src/com/ex/datasource/data.txt"; //data source location
+	
+	@Override
+	public Student addStudent(Student s) {
+		int id = s.getId();
+		String fName = s.getFirstName();
+		String lName = s.getLastName();
+		String email = s.getEmail();
+		
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename,true));){
+			bw.write("" + id + ":" + fName + ":" + lName + ":" + email + "\n");
+			return s;
+		} catch(IOException e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	@Override
+	public boolean removeStudent(Student s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Student updateStudent(Student s) {
+		BufferedReader br = null;
+		try{
+			br = new BufferedReader(new FileReader(filename));
+			String line = null;
+			int count = 0;
+			while((line = br.readLine())!=null){
+				String[] curr = line.split(":");
+				if(curr[3].toLowerCase().trim() == s.getEmail().toLowerCase().trim()){
+					System.out.println("RECORD FOUND");
+					try {
+						br.close();
+						List<String> lines = new ArrayList<>(Files.readAllLines(Path.class.newInstance().resolve(filename)));
+						Student temp = new Student();
+						temp.setId(Integer.parseInt(curr[0]));
+						temp.setFirstName(curr[1]);
+						temp.setLastName(curr[2]);
+						temp.setEmail(curr[3]);
+						System.out.println(temp);
+						
+						lines.set(count, "" + temp.getId() + ":" + temp.getFirstName()
+							+ ":" + temp.getLastName() + ":" + temp.getEmail() + "\n");
+						Files.write(Path.class.newInstance().resolve(filename), lines);
+						return temp;
+					} catch (InstantiationException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (IllegalAccessException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename,true));){
+						bw.write("" + Integer.parseInt(curr[0]) + ":" + curr[1] + ":" + curr[2] + ":" + curr[3] + "\n");
+						return s;
+					} catch(IOException e){
+						e.printStackTrace();
+						return null;
+					}					
+				}
+				count += 1;
+			}
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		catch(NumberFormatException e){
+			e.printStackTrace();
+		}
+		finally{
+			if(br != null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		return null;
+	}
+
+	@Override
+	public Student getStudentById(int id) {
+		BufferedReader br = null;
+		try{
+			br = new BufferedReader(new FileReader(filename));
+			String line = null;
+			
+			while((line = br.readLine())!=null){
+				String[] curr = line.split(":");
+				if(Integer.parseInt(curr[0]) == id) return new Student(curr[1], curr[2], curr[3], id);
+			}
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		catch(NumberFormatException e){
+			e.printStackTrace();
+		}
+		finally{
+			if(br != null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		return null;
+	}
+
+	@Override
+	public ArrayList<Student> getAllStudents() {
+		ArrayList<Student> students = new ArrayList<Student>();
+		BufferedReader br = null;
+		try{
+			br = new BufferedReader(new FileReader(filename));
+			String line = null;
+			
+			while((line = br.readLine())!=null){
+				String[] curr = line.replaceAll("[\n\r]", "").split(":");
+				
+				Student temp = new Student();
+				temp.setId(Integer.parseInt(curr[0]));
+				temp.setFirstName(curr[1]);
+				temp.setLastName(curr[2]);
+				temp.setEmail(curr[3]);
+				
+				students.add(temp);
+				System.out.println(temp);
+			}
+		}
+		catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		catch(NumberFormatException e){
+			e.printStackTrace();
+		}
+		finally{
+			if(br != null)
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+		}
+		
+		return students;
+	}
+
+}

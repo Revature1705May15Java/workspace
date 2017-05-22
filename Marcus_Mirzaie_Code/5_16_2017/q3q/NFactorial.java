@@ -7,8 +7,8 @@ public class NFactorial {
 	}
 	
 	public int nFact(int n){
-		if(n>0)	return n*nFact(n-1);
-		else return 1;
+		if(n==1)	return 1;
+		else return n*nFact(n-1);
 	}
 
 }
