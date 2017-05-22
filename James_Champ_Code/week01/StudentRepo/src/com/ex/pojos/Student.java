@@ -139,10 +139,9 @@ public class Student implements Serializable,
 		return result;
 	}
 	
-	// TODO: Change output to make it more user-friendly.
 	@Override
 	public String toString() {
-		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";
+		return id + "\t" + lastName + ", " + firstName + "\t" + email;
 	}
 
 	@Override
