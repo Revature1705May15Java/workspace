@@ -5,7 +5,6 @@ public class Main {
 	protected static StringBuffer unsynchBuffer;
 	protected static char synchChar;
 	protected static char unsynchChar;
-	protected static int threadNumber;
 	
 	public static void main(String[] args) {
 		run();
@@ -21,11 +20,9 @@ public class Main {
 		Thread[] threads = new StringThread[26];
 		
 		for(int i = 0; i < threads.length; i++) {
-			threads[i] = new StringThread();
+			threads[i] = new StringThread(i + 1);
 		}
-		
-		threadNumber = 1;
-		
+				
 		for(int i = 0; i < threads.length; i++) {
 			threads[i].start();
 		}

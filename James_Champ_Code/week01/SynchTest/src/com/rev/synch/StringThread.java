@@ -6,10 +6,15 @@ public class StringThread extends Thread {
 	private static final int MAX_WAIT_TIME = 500;
 	
 	private static Random rand;
+	private int id;
+	
+	public StringThread(int id) {
+		this.id = id;
+	}
 	
 	@Override
 	public void run() {
-		String threadName = "Thread " + Main.threadNumber++;
+		String threadName = "Thread " + id;
 		System.out.println(threadName + " entered run()");
 
 		synchRun(threadName);
