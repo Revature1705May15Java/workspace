@@ -6,5 +6,5 @@ abstract public class Gabo
 	
 	abstract String makeLowercase(String s); 
 	
-	abstract void doMaths(String s); 
+	abstract int doMaths(String s); 
 }

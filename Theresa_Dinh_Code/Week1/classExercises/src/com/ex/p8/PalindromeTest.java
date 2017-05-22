@@ -35,7 +35,6 @@ public class PalindromeTest
 		ArrayList<String> expected= new ArrayList<String> (); 
 		expected.addAll(Arrays.asList("madam","civic","radar","sexes","kayak","refer","did"));
 
-//		assertFalse(false); 
 		assertTrue(results.containsAll(expected) && expected.containsAll(results)); 
 	}
 

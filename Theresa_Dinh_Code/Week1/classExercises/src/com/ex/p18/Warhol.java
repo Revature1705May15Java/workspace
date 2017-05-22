@@ -16,21 +16,25 @@ public class Warhol extends Gabo
 	}
 	
 	@Override
+	// returns true if the given String contains any capital letters at all 
 	boolean hasUppercase(String s)
 	{
 		return Pattern.matches(".*[A-Z]+.*",s); 
 	}
 	
 	@Override
+	// returns the given String with all letter lowercase
 	String makeLowercase(String s) 
 	{
 		return s.toLowerCase(); 
 	}
 
 	@Override
-	void doMaths(String s) 
+	// prints the given String of a number + 10
+	int doMaths(String s) 
 	{
 		System.out.println(Integer.parseInt(s) + 10);
+		return (Integer.parseInt(s) + 10); 
 	}
 
 }

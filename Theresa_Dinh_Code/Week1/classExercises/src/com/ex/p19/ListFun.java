@@ -15,7 +15,7 @@ public class ListFun
 		System.out.println(list.toString()); 
 		System.out.println(l.addEvens(list));
 		System.out.println(l.removePrimes(list).toString());
-//		System.out.println(list.toString()); 
+		System.out.println(l.addOdds(list)); 
 	}
 	
 	int addEvens(ArrayList<Integer> list)
@@ -44,18 +44,27 @@ public class ListFun
 	// the prime numbers removed 
 	ArrayList<Integer> removePrimes(ArrayList<Integer> list)
 	{
-		ArrayList<Integer> primeless = list; 
+		ArrayList<Integer> primeless = new ArrayList<Integer>();
 		
-		for(int i = 0; i < list.size(); i++)
+		for(Integer i : list)
+			primeless.add(i); 
+
+		
+		for(int i = 0; i < primeless.size(); i++)
 		{
-			if(list.get(i) == 2 | list.get(i) == 3)
+			if(primeless.get(i) == 1)
+			{
+				
+				continue;
+			}
+			if(primeless.get(i) == 2 || primeless.get(i) == 3)
 			{
 				primeless.remove(i--);
 				continue; 
 			}
-			for(double j = 2; j <= Math.sqrt(list.get(i)); j++)
+			for(double j = 2; j <= Math.sqrt(primeless.get(i)); j++)
 			{
-				if(list.get(i) % j == 0)
+				if(primeless.get(i) % j == 0)
 					break;
 				else
 					primeless.remove(i--); 
