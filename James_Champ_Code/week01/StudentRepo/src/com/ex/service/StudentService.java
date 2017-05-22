@@ -2,8 +2,6 @@ package com.ex.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.ex.dao.DAO;
 import com.ex.dao.IoDAO;
@@ -11,15 +9,12 @@ import com.ex.exceptions.IllegalCharacterException;
 import com.ex.exceptions.InvalidEmailException;
 import com.ex.exceptions.NonUniqueEmailException;
 import com.ex.pojos.Student;
+import com.ex.utilities.InputValidator;
 
 public class StudentService {
 	/**
-	 * Regular expression used to validate that email addresses are properly formatted.
+	 * Data access object used to persist data in this project.
 	 */
-	private static final String EMAIL_PATTERN =
-			"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-	
 	private static DAO dao;
 	/**
 	 * The current ID number used for new students. ID numbers are not
@@ -81,9 +76,9 @@ public class StudentService {
 																						InvalidEmailException,
 																						IllegalCharacterException {
 		Student result = null;
-		boolean isValid = isEmailValid(email);
+		boolean isValid = InputValidator.validateEmail(email);
 		
-		if(firstName.contains(IoDAO.DELIMITER) || lastName.contains(IoDAO.DELIMITER)) {
+		if(InputValidator.validateName(firstName) || InputValidator.validateName(lastName)) {
 			throw new IllegalCharacterException("Student's name cannot contain '" +
 												IoDAO.DELIMITER + "'.");
 		}
@@ -184,11 +179,12 @@ public class StudentService {
 	public Student updateStudent(Student updatedStudent) throws InvalidEmailException,
 																NonUniqueEmailException,
 																IllegalCharacterException {
-		if(updatedStudent.getFirstName().contains(IoDAO.DELIMITER) || updatedStudent.getLastName().contains(IoDAO.DELIMITER)) {
+		if(InputValidator.validateName(updatedStudent.getFirstName())
+			|| InputValidator.validateName(updatedStudent.getLastName())) {
 			throw new IllegalCharacterException("Student's name cannot contain '" +
 												IoDAO.DELIMITER + "'.");
 		}
-		if(!isEmailValid(updatedStudent.getEmail())) {
+		if(!InputValidator.validateEmail(updatedStudent.getEmail())) {
 			throw new InvalidEmailException("Improperly formatted email address.");
 		}
 
@@ -240,20 +236,6 @@ public class StudentService {
 		for(Student s : studentList) {
 			dao.addStudent(s);
 		}
-	}
-	
-	/**
-	 * Checks the given String to see if it is a properly formed email address.
-	 * 
-	 * @param email	The String that is to be tested.
-	 * @return	{@code true} if the given String is a properly formatted email 
-	 * 			address, otherwise {@code false}.
-	 */
-	private boolean isEmailValid(String email) {
-		Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-		Matcher matcher = pattern.matcher(email);
-		
-		return matcher.matches();
 	}
 	
 	/**
