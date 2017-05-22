@@ -98,7 +98,8 @@ public class Main {
 		System.out.println("\t5. View All Students");
 		System.out.println("\t6. Exit Program\n");
 		
-		System.out.print("\tEnter the number of the task that you would like to perform [1 - 6]: ");
+		System.out.print("\tEnter the number of the task that you would like to perform [1 - " 
+						+ TOTAL_MAIN_MENU_OPTIONS +"]: ");
 	}
 	
 	/**
@@ -266,7 +267,8 @@ public class Main {
 		System.out.println("\t3. Update student's email");
 		System.out.println("\t4. Finish updating student's information");
 		
-		System.out.print("\n\tEnter your selection [1 - 4]: ");
+		System.out.print("\n\tEnter your selection [1 - " + 
+						TOTAL_UPDATE_MENU_OPTIONS + "]: ");
 	}
 	
 	/**
