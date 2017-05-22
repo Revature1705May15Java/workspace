@@ -3,7 +3,7 @@ package com.rev.synch;
 import java.util.Random;
 
 public class StringThread extends Thread {
-	private static final int MAX_WAIT_TIME = 750;
+	private static final int MAX_WAIT_TIME = 500;
 	
 	private static Random rand;
 	
@@ -22,27 +22,31 @@ public class StringThread extends Thread {
 		System.out.println(threadName + " entered synchRun()");
 		rand = new Random();
 		
-		int waitTime = rand.nextInt(MAX_WAIT_TIME);
+		int waitTime = rand.nextInt(MAX_WAIT_TIME) + 1;
 		
 		try {
+			System.out.println(threadName + " sleeps for " + waitTime + "ms");
 			sleep(waitTime);
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println(threadName + " is running again");
 		
 		Main.synchBuffer.append(Main.synchChar);
-		System.out.println(threadName + " appended char to synchBuilder --- result: " + Main.synchBuffer);
+		System.out.println(threadName + " appended char to synchBuffer --- result: " + Main.synchBuffer);
 
-		waitTime = rand.nextInt(MAX_WAIT_TIME);
+		waitTime = rand.nextInt(MAX_WAIT_TIME) + 1;
 		
 		try {
+			System.out.println(threadName + " sleeps for " + waitTime + "ms");
 			sleep(waitTime);
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
-				
+		
+		System.out.println(threadName + " is running again");
 		System.out.println(threadName + " incremented synchChar --- result: " + ++Main.synchChar);
 		
 		System.out.println(threadName + " exiting synchRun()");
@@ -52,27 +56,31 @@ public class StringThread extends Thread {
 		System.out.println(threadName + " entered unsynchRun()");
 		rand = new Random();
 		
-		int waitTime = rand.nextInt(MAX_WAIT_TIME);
+		int waitTime = rand.nextInt(MAX_WAIT_TIME) + 1;
 		
 		try {
+			System.out.println(threadName + " sleeps for " + waitTime + "ms");
 			sleep(waitTime);
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println(threadName + " is running again");
 		
 		Main.unsynchBuffer.append(Main.unsynchChar);
-		System.out.println(threadName + " appended char to unsynchBuilder --- result: " + Main.unsynchBuffer);
+		System.out.println(threadName + " appended char to unsynchBuffer --- result: " + Main.unsynchBuffer);
 
-		waitTime = rand.nextInt(MAX_WAIT_TIME);
+		waitTime = rand.nextInt(MAX_WAIT_TIME) + 1;
 		
 		try {
+			System.out.println(threadName + " sleeps for " + waitTime + "ms");
 			sleep(waitTime);
 		}
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
-				
+		System.out.println(threadName + " is running again");
+		
 		System.out.println(threadName + " incremented unsynchChar --- result: " + ++Main.unsynchChar);
 		
 		System.out.println(threadName + " exiting unsynchRun()");
