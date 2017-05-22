@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import com.ex.pojos.Student;
 
 // TODO: Add comments.
+// TODO: Serialize data before written / De-serialize data after read.
 public class IoDAO implements DAO {
 	private static final String STUDENT_FILE_NAME = "src/com/ex/datasource/data.txt";
 	public static final String DELIMITER = ":";

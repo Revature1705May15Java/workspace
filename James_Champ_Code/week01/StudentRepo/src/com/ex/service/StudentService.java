@@ -64,9 +64,7 @@ public class StudentService {
 			return ++result;
 		}
 	}
-	
-	// TODO: Check first and last name for ':' char.
-	
+		
 	/**
 	 * Creates and adds a new student to the list of all students.
 	 * 
@@ -216,6 +214,19 @@ public class StudentService {
 		}
 		
 		return null;
+	}
+	
+	// TODO: Add comments to this method.
+	public Student getStudentByEmail(String email) {
+		Student result = null;
+		
+		for(int i = 0; i < studentList.size() && result == null; i++) {
+			if(email.equals(studentList.get(i).getEmail())) {
+				result = studentList.get(i);
+			}
+		}
+		
+		return result;
 	}
 	
 	/**

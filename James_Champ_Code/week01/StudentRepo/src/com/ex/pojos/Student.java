@@ -139,18 +139,7 @@ public class Student implements Serializable,
 		return result;
 	}
 	
-	@Override
-	public boolean equals(Object obj) {
-		// TODO: Does not work for null objects. Fix.
-		
-		Student student = (Student) obj;
-		
-		return (id == student.getId()) &&
-				(firstName == student.getFirstName()) &&
-				(lastName == student.getLastName()) &&
-				(email == student.getEmail());
-	}
-	
+	// TODO: Change output to make it more user-friendly.
 	@Override
 	public String toString() {
 		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";

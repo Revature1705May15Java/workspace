@@ -10,6 +10,7 @@ import com.ex.exceptions.NonUniqueEmailException;
 import com.ex.pojos.Student;
 import com.ex.service.StudentService;
 
+// TODO: Consider making utility class in order to validate user input.
 public class Main {
 	/**
 	 * Used when a user's selection was not an integer, as required.
@@ -18,7 +19,7 @@ public class Main {
 	/**
 	 * The total number of main menu options.
 	 */
-	private static final int TOTAL_MAIN_MENU_OPTIONS = 5;
+	private static final int TOTAL_MAIN_MENU_OPTIONS = 6;
 	/**
 	 * The total number of update student menu options.
 	 */
@@ -46,7 +47,6 @@ public class Main {
 			printMenu();
 			
 			String line = scan.nextLine().trim();
-			// TODO: Handle incorrect input
 			choice = testInputForInt(line);
 			
 			System.out.println();
@@ -62,15 +62,18 @@ public class Main {
 					updateStudent();
 					break;
 				case 4:
-					printAllStudents();
+					findStudentByEmail();
 					break;
 				case 5:
+					printAllStudents();
+					break;
+				case 6:
 					shutDown();
 					break;
 				default:
 					printInvalidSelectionMessage(TOTAL_MAIN_MENU_OPTIONS);
 			}
-		} while(choice != 5);
+		} while(choice != TOTAL_MAIN_MENU_OPTIONS);
 		
 		scan.close();
 	}
@@ -91,10 +94,11 @@ public class Main {
 		System.out.println("\t1. Add Student");
 		System.out.println("\t2. Remove Student");
 		System.out.println("\t3. Update Student");
-		System.out.println("\t4. View All Students");
-		System.out.println("\t5. Exit Program\n");
+		System.out.println("\t4. Find Student By Email");
+		System.out.println("\t5. View All Students");
+		System.out.println("\t6. Exit Program\n");
 		
-		System.out.print("\tEnter the number of the task that you would like to perform [1 - 5]: ");
+		System.out.print("\tEnter the number of the task that you would like to perform [1 - 6]: ");
 	}
 	
 	/**
@@ -279,6 +283,25 @@ public class Main {
 		}
 		
 		System.out.println();
+	}
+	
+	// TODO: Comment method
+	// TODO: Check for valid email
+	private static void findStudentByEmail() {
+		System.out.print("\tEnter student's email address: ");
+		String email = scan.nextLine();
+		
+		System.out.println("\n");
+		
+		Student s = service.getStudentByEmail(email);
+		
+		if(s == null) {
+			System.out.println("\tNo student exists with the email: " + email + ".\n\n");
+		}
+		else {
+			System.out.println("Student found: ");
+			System.out.println("\t" + s.toString() + "\n");
+		}
 	}
 	
 	/**
