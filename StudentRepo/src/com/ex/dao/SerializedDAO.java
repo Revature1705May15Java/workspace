@@ -11,14 +11,22 @@ import com.ex.exceptions.StudentNotFoundException;
 import com.ex.pojos.Student;
 import com.ex.serialization.StudentSerializer;
 
+/**
+ * This class is currently not in use.
+ * @author Eric Christie
+ *
+ */
 public class SerializedDAO implements DAO {
 	
 	static String filename = "src/com/ex/datasource/serialized-data.txt";
 	
+	
 	private ArrayList<Student> students;
+	private StudentSerializer serializer;
 	
 	SerializedDAO() {
-		this.students = 
+		this.serializer = StudentSerializer.getInstance();
+		this.students = getAllStudentsFromFile();
 	}
 
 	@Override
@@ -29,7 +37,7 @@ public class SerializedDAO implements DAO {
 	@Override
 	public Student addStudent(Student s) {
 		students.add(s);
-		StudentSerializer.writeAllStudents(filename, students);
+		serializer.writeAllStudents(filename, students);
 		return s;
 	}
 
@@ -110,28 +118,36 @@ public class SerializedDAO implements DAO {
 		}
 	}
 	
-	/*
-	 * this method reads in all the Student objects from the file and returns an ArrayList containing them
+	/**
+	 * read in all the Student objects from the file and returns an ArrayList containing them
+	 * @return an ArrayList of all the Student objects contained in the file when reading the file
+	 * is successful, null otherwise
 	 */
 	private ArrayList<Student> getAllStudentsFromFile() {
-		return StudentSerializer.readAllStudents(filename);
+		return serializer.readAllStudents(filename);
+	}
+
+	@Override
+	public boolean persistAllStudents() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	/**
-	 * checks if the students instance variable contains all the Student objects from the file
+	 * check if the students instance variable contains all the Student objects from the file
 	 * @return true if all Student objects from the file are in the list of students, false otherwise
 	 */
-	private boolean hasAllStudents() {
-		
-	}
+//	private boolean hasAllStudents() {
+//		
+//	}
 	
 	/**
-	 * checks if the students instance variable contains all the Student objects from the file
+	 * check if the students instance variable contains all the Student objects from the file
 	 * in the same order as they are in the file
 	 * @return true if the list of students contains all the Student objects from the file
 	 * in the correct order, false otherwise
 	 */
-	private boolean hasCorrectStudentsList() {
-		
-	}
+//	private boolean hasCorrectStudentsList() {
+//		
+//	}
 }

@@ -9,86 +9,120 @@ import com.ex.dao.IoDAO;
 import com.ex.exceptions.StudentNotFoundException;
 import com.ex.pojos.Student;
 
-/*
- * how much of this class can be made static?
- * dao, nextId, getAllStudents(), getNextId() ?
- */
 public class StudentService {
 	
-	DAO dao = new IoDAO(); // does it create a singleton if this is made static?
-	int nextId = getNextId();
+	private static final StudentService INSTANCE = new StudentService();
 	
+	public static StudentService getInstance() {
+		return StudentService.INSTANCE;
+	}
 	
-	/** TODO (try to finish tonight, have done by Friday at latest)
+	/**
 	 * create student object taking in only 3 params: firstName, lastName, email
-	 * service layer aka business logic layer handles functionality of getting the most recently
-	 * used ID and assigning a new student the next value
+	 * service layer aka business logic layer handles functionality of getting 
+	 * the most recently used ID and assigning a new student the next value
 	 * -- should also only accept a unique email address
 	 * 
 	 * StudentService will ensure that no two students have the same id
 	 */
 	
-	public ArrayList<Student> getAllStudents() {
+	private DAO dao;
+	private int nextId;
+	
+	private StudentService() {
+		this.dao = new IoDAO();
+		this.nextId  = getNextId();
+	}
+	
+	
+	public ArrayList<Student> getStudentsList() {
 		return dao.getAllStudents();
 	}
 	
-	public Student addStudent(String fName, String lName, String email) {
-		if (dao.getStudent(email) == null) {
-			Student s = new Student(fName, lName, email, getNextId());
-			dao.addStudent(s);
-			return s;
-		} else {
-			return null;
-		}
-		
+	public boolean saveStudents() {
+		return dao.persistAllStudents();
 	}
 	
-	public Student getStudentById(int id) {
-		return dao.getStudent(id);
+	public Student addStudent(String fName, String lName, String email) {
+		try {
+			dao.getStudent(email); // throws StudentNotFoundException if no student is found
+			return null;
+		} catch (StudentNotFoundException e) {
+			// add the student only if there are no existing students with the specified email
+			Student s = new Student(fName, lName, email, this.nextId);
+			dao.addStudent(s);
+			this.nextId++;
+			return s;
+		}		
 	}
 	
 	public Student getStudentByEmail(String email) {
-		return dao.getStudent(email);
-	}
-	
-	public boolean removeStudent(Student s) {
-		return dao.removeStudent(s);
-	}
-	
-	public boolean removeStudentById(int id) {
-		return dao.removeStudent(dao.getStudent(id));
+		try {
+			return dao.getStudent(email);
+		} catch (StudentNotFoundException e) {
+			System.out.println("Something went wrong. " + e.getMessage());
+			return null;
+		}
 	}
 	
 	public boolean removeStudentByEmail(String email) {
-		return dao.removeStudent(dao.getStudent(email));
+		try {
+			return dao.removeStudent(dao.getStudent(email));
+		} catch (StudentNotFoundException e) {
+			System.out.println("Something went wrong. " + e.getMessage());
+			return false;
+		}
 	}
 	
-	public Student updateStudentById(int id, Student updated) {
+	public Student updateStudentByEmail(String email, String newFirstName, String newLastName, String newEmail) {
 		try {
-			return dao.updateStudent(id, updated);
+			int id = dao.getStudent(email).getId();
+			return dao.updateStudent(email, new Student(newFirstName, newLastName, newEmail, id));
 		} catch (StudentNotFoundException e) {
+			System.out.println("Something went wrong. " + e.getMessage());
 			return null;
 		}
 		
 	}
 	
-	public Student updateStudentByEmail(String email, Student updated) {
-		try {
-			return dao.updateStudent(email, updated);
-		} catch (StudentNotFoundException e) {
-			return null;
-		}
-		
-	}
+//	public Student getStudentById(int id) {
+//		try {
+//			return dao.getStudent(id);
+//		} catch (StudentNotFoundException e) {
+//			System.out.println("Something went wrong. " + e.getMessage());
+//			return null;
+//		}
+//	}
+//	
+//	public boolean removeStudentById(int id) {
+//		try {
+//			return dao.removeStudent(dao.getStudent(id));
+//		} catch (StudentNotFoundException e) {
+//			System.out.println("Something went wrong. " + e.getMessage());
+//			return false;
+//		}
+//	}
+//	
+//	public Student updateStudentById(int id, Student updated) {
+//		try {
+//			return dao.updateStudent(id, updated);
+//		} catch (StudentNotFoundException e) {
+//			System.out.println("Something went wrong. " + e.getMessage());
+//			return null;
+//		}
+//		
+//	}
 	
 	private int getNextId() {
-		Student newest = max(getAllStudents(), (s1, s2) -> {
-			return (s1.getId() - s2.getId());
-		});
-		return newest.getId() + 1;
+		if (dao.getAllStudents().isEmpty()) {
+			return 0;
+		} else {
+			Student newest = max(dao.getAllStudents(), (s1, s2) -> {
+				return (s1.getId() - s2.getId());
+			});
+			return newest.getId() + 1;
+		}
 	}
-	
-	
 	
 }
 	

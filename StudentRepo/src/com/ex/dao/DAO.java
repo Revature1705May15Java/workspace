@@ -9,13 +9,15 @@ public interface DAO {
 
 	ArrayList<Student> getAllStudents();
 	
+	boolean persistAllStudents();
+	
 	Student addStudent(Student s);
 	
-	boolean removeStudent(Student s);
+	boolean removeStudent(Student s) throws StudentNotFoundException;
 	
-	Student getStudent(int id);
+	Student getStudent(int id) throws StudentNotFoundException;
 	
-	Student getStudent(String email);
+	Student getStudent(String email) throws StudentNotFoundException;
 	
 	Student updateStudent(int id, Student updted) throws StudentNotFoundException;
 	

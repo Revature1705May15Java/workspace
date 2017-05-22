@@ -10,6 +10,11 @@ import java.util.ArrayList;
 
 import com.ex.pojos.Student;
 
+/**
+ * StudentSerializer is currently used in place of this class.
+ * @author Eric Christie
+ *
+ */
 public class Serializer {
 	
 	public static void writeArrayList(String bytestream, ArrayList<Serializable> list) {
@@ -40,6 +45,7 @@ public class Serializer {
 	
 	public static ArrayList<Serializable> readArrayList(String bytestream) {
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(bytestream));) {
+			@SuppressWarnings("unchecked")
 			ArrayList<Serializable> list = (ArrayList<Serializable>) ois.readObject(); // how to I check the cast?
 			System.out.println(list);
 			return list;
@@ -69,21 +75,21 @@ public class Serializer {
 //		}
 //	}
 	
-	public static void main(String[] args) {
-		String bytestream = "src/com/ex/serialization/bytestream.txt";
-		
-		ArrayList<Student> students = new ArrayList<Student>();
-		for (int i = 0; i < 10; i++) {
-			String fname = "Student" + i;
-			String lname = "S" + i;
-			String email = fname + "." + lname + "@email.com";
-			students.add(new Student(fname, lname, email, i));
-		}
-		
-		
-		
-//		writeObject(bytestream, o);
-//		readObject(bytestream);
-	}
+//	public static void main(String[] args) {
+//		String bytestream = "src/com/ex/serialization/bytestream.txt";
+//		
+//		ArrayList<Student> students = new ArrayList<Student>();
+//		for (int i = 0; i < 10; i++) {
+//			String fname = "Student" + i;
+//			String lname = "S" + i;
+//			String email = fname + "." + lname + "@email.com";
+//			students.add(new Student(fname, lname, email, i));
+//		}
+//		
+//		
+//		
+////		writeObject(bytestream, o);
+////		readObject(bytestream);
+//	}
 
 }
