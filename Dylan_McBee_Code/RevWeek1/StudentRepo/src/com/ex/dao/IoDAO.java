@@ -72,6 +72,7 @@ public class IoDAO implements DAO {
 	public ArrayList<Student> getAllStudents() {
 		ArrayList<Student> students = new ArrayList<Student>();
 		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter(fileName,true));
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			String line = null; // current line - placeholder
 
@@ -88,6 +89,7 @@ public class IoDAO implements DAO {
 				
 
 			}
+			br.close();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

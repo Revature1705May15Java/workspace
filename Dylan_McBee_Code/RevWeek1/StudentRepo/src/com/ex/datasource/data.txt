@@ -1,3 +1,1 @@
-1:Dylan:McBee:dm@gmail.com
-2:D:M:dy@gmail.com
-3:D:A:mack
+1:Dylan:mcb:mcb
