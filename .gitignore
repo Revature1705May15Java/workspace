@@ -3,5 +3,6 @@
 */bin/
 */*/bin/
 
-Eric_Christie_Code/.metadata/
-Eric_Christie_Code/.recommenders/
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
