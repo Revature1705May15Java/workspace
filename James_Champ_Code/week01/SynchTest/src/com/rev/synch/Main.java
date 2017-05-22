@@ -30,12 +30,41 @@ public class Main {
 			threads[i].start();
 		}
 		
-		for(long i = 0; i < 2_000_000_000; i++) {
-			// Do nothing...
-		}
+		
+		// Print results when all threads are dead
+		boolean doesThreadLive;
+		
+		do {
+			doesThreadLive = false;
+			
+			for(Thread t : threads) {
+				if(t.isAlive()) {
+					doesThreadLive = true;
+				}
+			}
+		} while(doesThreadLive);
 		
 		System.out.println("\nsynchBuffer final result:\t" + synchBuffer);
 		System.out.println("unsynchBuffer final result:\t" + unsynchBuffer);
+		System.out.println("Buffers contain same String: " + synchBuffer.equals(unsynchBuffer));
+		
+		System.out.println("\nDifference: ");
+		displayMismatchedCharacters(synchBuffer.toString(), unsynchBuffer.toString());
+	}
+	
+	private static void displayMismatchedCharacters(String a, String b) {
+		System.out.println(a);
+		
+		for(int i = 0; i < a.length(); i++) {
+			if(a.charAt(i) != b.charAt(i)) {
+				System.out.print('|');
+			}
+			else {
+				System.out.print(' ');
+			}
+		}
+		
+		System.out.println("\n" + b);
 	}
 }
 

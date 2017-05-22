@@ -3,7 +3,7 @@ package com.rev.synch;
 import java.util.Random;
 
 public class StringThread extends Thread {
-	private static final int MAX_WAIT_TIME = 10_000;
+	private static final int MAX_WAIT_TIME = 750;
 	
 	private static Random rand;
 	
@@ -24,8 +24,11 @@ public class StringThread extends Thread {
 		
 		int waitTime = rand.nextInt(MAX_WAIT_TIME);
 		
-		for(int i = 0; i < waitTime; i++) {
-			// Do nothing
+		try {
+			sleep(waitTime);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
 		}
 		
 		Main.synchBuffer.append(Main.synchChar);
@@ -33,8 +36,11 @@ public class StringThread extends Thread {
 
 		waitTime = rand.nextInt(MAX_WAIT_TIME);
 		
-		for(int i = 0; i < waitTime; i++) {
-			// Do nothing
+		try {
+			sleep(waitTime);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
 		}
 				
 		System.out.println(threadName + " incremented synchChar --- result: " + ++Main.synchChar);
@@ -48,8 +54,11 @@ public class StringThread extends Thread {
 		
 		int waitTime = rand.nextInt(MAX_WAIT_TIME);
 		
-		for(int i = 0; i < waitTime; i++) {
-			// Do nothing
+		try {
+			sleep(waitTime);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
 		}
 		
 		Main.unsynchBuffer.append(Main.unsynchChar);
@@ -57,8 +66,11 @@ public class StringThread extends Thread {
 
 		waitTime = rand.nextInt(MAX_WAIT_TIME);
 		
-		for(int i = 0; i < waitTime; i++) {
-			// Do nothing
+		try {
+			sleep(waitTime);
+		}
+		catch(InterruptedException e) {
+			e.printStackTrace();
 		}
 				
 		System.out.println(threadName + " incremented unsynchChar --- result: " + ++Main.unsynchChar);
