@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import pojos.Student;
+import studentService.StudentService;
 
 public class Serialization 
 {
@@ -15,11 +16,13 @@ public class Serialization
 	{
 		String byteStream = "src/serialization/bytestream.txt"; 
 		
-		Student s = new Student();
-		s.setId(1);
-		s.setFirstName("a");
-		s.setLastName("s");
-		s.setEmail("c");
+		StudentService ss = new StudentService(); 
+		Student s = ss.addStudent("Jane", "Doe", "doe@email.com");
+//		Student s = new Student();
+//		s.setId(1);
+//		s.setFirstName("a");
+//		s.setLastName("s");
+//		s.setEmail("c");
 		
 		//writeObject(byteStream, s); 
 		readObject(byteStream); 

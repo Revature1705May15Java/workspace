@@ -6,7 +6,7 @@ import dao.IOdao;
 import pojos.Student; 
 
 // service class to do all the work 
-public class studentService 
+public class StudentService 
 {
 	DAO dao = new IOdao(); 
 	
@@ -16,6 +16,11 @@ public class studentService
 	
 	public Student addStudent(String fn, String ln, String email) //done
 	{
+		for(Student s : getAllStudents())  //refuse to create new student if email is already in db 
+		{
+			if(email.equals(s.getEmail()))
+				return null; 
+		}
 		Student temp = new Student(ID++, fn, ln, email); 
 //		System.out.println("current ID counter: " + ID);
 		return dao.addStudent(temp);  
@@ -60,6 +65,11 @@ public class studentService
 	//dao should handle the removal and addition of old/new students in database
 	public Student updateStudent(Student oldS, Student newS)//done
 	{
+		for(Student s : getAllStudents())  //refuse to create new student if email is already in db 
+		{
+			if(newS.getEmail().equals(s.getEmail()))
+				return null; 
+		}
 		return dao.updateStudent(oldS, newS); 
 	}
 }

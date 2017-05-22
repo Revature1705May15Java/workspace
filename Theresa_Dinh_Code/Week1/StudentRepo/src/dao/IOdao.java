@@ -112,7 +112,7 @@ public class IOdao implements DAO
 				students.add(temp); 
 				//System.out.println(temp.toString());
 			}
-				
+			br.close(); 	
 		}
 		catch(FileNotFoundException e)
 		{

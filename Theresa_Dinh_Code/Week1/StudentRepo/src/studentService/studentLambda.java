@@ -9,7 +9,7 @@ public class studentLambda
 	public static void main(String[] args)
 	{
 		studentLambda sl = new studentLambda(); 
-		studentService ss = new studentService(); 
+		StudentService ss = new StudentService(); 
 		ss.addStudent("p", "p", "me@email.com"); 
 		ArrayList<Student> list = ss.getAllStudents(); 
 		
