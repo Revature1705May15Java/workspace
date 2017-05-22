@@ -11,24 +11,10 @@ import com.rev.pojo.Student;
 
 public class Serialize 
 {
-	public static void main(String[] args)
+
+	public static void writeObject(String bytestream, Object obj)
 	{
-		String bytestream = "src/com/rev/serialize/bytestream.txt";
-		
-		Student s = new Student();
-		s.setId(0);
-		s.setFirstName("Gen");
-		s.setLastName("B");
-		s.setEmail("genisis.b@gmail.com");
-		
-		//writeObject(bytestream,s);
-		//readObject(bytestream);
-		readMultiObject(bytestream);
-	}
-	
-	static void writeObject(String bytestream, Object obj)
-	{
-		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream,true)))
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(bytestream)))
 		{
 			oos.writeObject(obj);
 			

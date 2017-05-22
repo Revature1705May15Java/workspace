@@ -8,9 +8,9 @@ public interface DAO
 {
 	
 	Student addStudent (Student s);
-	boolean removeStudent(Student s);
+	void removeStudent(ArrayList<Student> s);
 	ArrayList <Student> getAllStudents();
 	Student getStudentById(int id);
-	Student updateStudent(Student updateStudent);
+	void updateStudent(ArrayList<Student> updateStudent);
 
 }

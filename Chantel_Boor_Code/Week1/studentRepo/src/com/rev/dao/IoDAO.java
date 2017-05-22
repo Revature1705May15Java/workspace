@@ -14,8 +14,7 @@ import com.rev.pojo.Student;
 public class IoDAO implements DAO
 {
 	
-	static String filename = "src/com/rev/dataSource/data.txt";
-	static String tempFilename = "src/com/rev/dataSource/tempData.txt";// data source location
+	static String filename = "src/com/rev/dataSource/data.txt"; // data source location
 
 	@Override
 	public Student addStudent(Student s) {
@@ -40,11 +39,29 @@ public class IoDAO implements DAO
 	}
 
 	@Override
-	public boolean removeStudent(Student s)
+	 public void removeStudent(ArrayList <Student> s)
 	{
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename)))
+		{
+			
+			//used to write student object to file
+			Student c = null;
+			
+			//goes through list
+			for(int i = 0;i<s.size();i++)
+			{
+				c = s.get(i);
+				
+				//writes current student to file
+				bw.write(""+ c.getId() + ":" + c.getFirstName() + ":"  + c.getLastName() + ":" + c.getEmail()+"\n");
+			}
+			
+
+			
+		}catch (IOException e){
+			e.printStackTrace();
+		}
 		
-		
-		return false;
 	}
 
 	@Override
@@ -74,7 +91,6 @@ public class IoDAO implements DAO
 				
 				//adds the built object to the array
 				students.add(temp);
-				System.out.println(temp.toString());
 				
 				
 			}
@@ -131,9 +147,29 @@ public class IoDAO implements DAO
 	}
 
 	@Override
-	public Student updateStudent(Student updateStudent) {
-		// TODO Auto-generated method stub
-		return null;
+	public void updateStudent(ArrayList<Student> updateStudent) 
+	{
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename)))
+		{
+			
+			//used to write student object to file
+			Student c = null;
+			
+			//goes through list
+			for(int i = 0;i<updateStudent.size();i++)
+			{
+				c = updateStudent.get(i);
+				
+				//writes current student to file
+				bw.write(""+ c.getId() + ":" + c.getFirstName() + ":"  + c.getLastName() + ":" + c.getEmail()+"\n");
+			}
+			
+
+			
+		}catch (IOException e){
+			e.printStackTrace();
+		}
+		
 	}
 
 }
