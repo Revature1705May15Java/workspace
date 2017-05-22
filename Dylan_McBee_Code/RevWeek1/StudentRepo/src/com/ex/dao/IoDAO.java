@@ -7,13 +7,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.ex.pojos.Student;
+import com.ex.service.StudentService;
 
 public class IoDAO implements DAO {
 
 	static String fileName = "src/com/ex/datasource/data.txt"; // data source
-																// location
+															// location
 
 	@Override
 	public Student addStudent(Student s) {
@@ -37,9 +39,33 @@ public class IoDAO implements DAO {
 	}
 
 	@Override
-	public boolean removeStudent(Student s) {
+	public boolean removeStudent(String email) {
+		List<Student> studentList = getAllStudents();
+		boolean removed = false;	
+		for(Student s: studentList){
+				if(email.equals(s.getEmail())){
+					studentList.remove(s);
+					removed = true;
+					break;
+				}
+			}
+			
+		if(removed){
+			try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));){
+				for(Student s: studentList){
+					bw.write("" + s.getId() + ":" + s.getFirstName() + ":" + s.getLastName() + ":" + s.getEmail() + "\n");
+				}
+			}catch (IOException e) {
+				e.printStackTrace();
+				
+			}
 
-		return false;
+		}
+		
+			return removed;
+			
+		
+		
 	}
 
 	@Override
@@ -59,7 +85,7 @@ public class IoDAO implements DAO {
 				temp.setEmail(curr[3]);
 
 				students.add(temp);
-				System.out.println(temp);
+				
 
 			}
 
@@ -68,31 +94,17 @@ public class IoDAO implements DAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-
+			
 		}
 		return students;
 	}
 
 	@Override
-	public Student updateStudent(Student updateStudent, int id, String fn, String ln, String email,
-			ArrayList<Student> student) {
-
-		return null;
-	}
-
-	@Override
-	public Student getStudentById(int id) {
-		ArrayList<Student> s = getAllStudents();
-		for (Student student : s) {
-			if (id == student.getId()) {
-				System.out.println(student.toString());
-				return student;
-			} 
-
-		}
+	public boolean updateStudent(Student updateStudent) {
 		
-		return null;
-
+		return false;
 	}
+
+	
 
 }

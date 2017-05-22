@@ -43,7 +43,8 @@ public class Student implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";
+		return "[Student firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]\n";
+		
 	}
 	
 	

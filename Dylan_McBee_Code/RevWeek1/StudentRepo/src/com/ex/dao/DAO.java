@@ -1,6 +1,7 @@
 package com.ex.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.ex.pojos.Student;
 
@@ -8,14 +9,12 @@ public interface DAO {
 
 	Student addStudent(Student s);
 
-	boolean removeStudent(Student s);
+	boolean removeStudent(String email);
 
 	ArrayList<Student> getAllStudents();
 
-	Student getStudentById(int id);
-
-	Student updateStudent(Student updateStudent, int id, String fn, String ln, String email,
-			ArrayList<Student> student);
+	
+	boolean updateStudent(Student updateStudent);
 
 
 }
