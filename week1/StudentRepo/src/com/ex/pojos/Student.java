@@ -2,12 +2,13 @@ package com.ex.pojos;
 
 import java.io.Serializable;
 
-public class Student implements Serializable {
+public class Student implements Serializable{
 	
 	String firstName, lastName, email;
 	int id;
 	
-	public Student() {
+	public Student(){
+		
 	}
 	
 	public Student(String firstName, String lastName, String email, int id) {
@@ -16,6 +17,11 @@ public class Student implements Serializable {
 		this.lastName = lastName;
 		this.email = email;
 		this.id = id;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";
 	}
 
 	public String getFirstName() {
@@ -49,12 +55,5 @@ public class Student implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	@Override
-	public String toString() {
-		return "Student [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", id=" + id + "]";
-	}
 	
-	
-
 }
