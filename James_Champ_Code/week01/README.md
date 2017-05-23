@@ -1,4 +1,4 @@
-#Week 1 Projects:
+# Week 1 Projects:
 + DesignPatterns
   + Examples of design patterns that we went over in class.
 + Examples
