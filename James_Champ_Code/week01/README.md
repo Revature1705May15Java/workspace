@@ -1,6 +1,4 @@
 # Week 1 Projects:
-+ DesignPatterns
-  + Examples of design patterns that we went over in class.
 + Examples
   + Examples of various Java concepts and classes.
 + Excercises
