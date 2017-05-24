@@ -1,9 +1,9 @@
 package com.ex.designpatterns.factory;
 
 public class Plan {
-	
-	double getRate() {
-		return 0.0;
-	}
-	
+
+  double getRate() {
+    return 0.0;
+  }
+
 }

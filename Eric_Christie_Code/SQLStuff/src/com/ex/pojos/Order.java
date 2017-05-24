@@ -3,65 +3,65 @@ package com.ex.pojos;
 import java.sql.Date;
 
 public class Order {
-	int id;
-	Date dateOrdered;
-	double total;
-	Customer customer;
-	
-	public Order() { super(); }
+  int id;
+  Date dateOrdered;
+  double total;
+  Customer customer;
 
-	public Order(int id, Date dateOrdered, double total, Customer customer) {
-		super();
-		this.id = id;
-		this.dateOrdered = dateOrdered;
-		this.total = total;
-		this.customer = customer;
-	}
+  public Order() {
+    super();
+  }
 
-	public Order(Date dateOrdered, double total, Customer customer) {
-		super();
-		this.dateOrdered = dateOrdered;
-		this.total = total;
-		this.customer = customer;
-	}
+  public Order(int id, Date dateOrdered, double total, Customer customer) {
+    super();
+    this.id = id;
+    this.dateOrdered = dateOrdered;
+    this.total = total;
+    this.customer = customer;
+  }
 
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", dateOrdered=" + dateOrdered + ", total=" + total + ", customer=" + customer + "]";
-	}
+  public Order(Date dateOrdered, double total, Customer customer) {
+    super();
+    this.dateOrdered = dateOrdered;
+    this.total = total;
+    this.customer = customer;
+  }
 
-	public int getId() {
-		return id;
-	}
+  @Override
+  public String toString() {
+    return "Order [id=" + id + ", dateOrdered=" + dateOrdered + ", total=" + total + ", customer=" + customer + "]";
+  }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+  public int getId() {
+    return id;
+  }
 
-	public Date getDateOrdered() {
-		return dateOrdered;
-	}
+  public void setId(int id) {
+    this.id = id;
+  }
 
-	public void setDateOrdered(Date dateOrdered) {
-		this.dateOrdered = dateOrdered;
-	}
+  public Date getDateOrdered() {
+    return dateOrdered;
+  }
 
-	public double getTotal() {
-		return total;
-	}
+  public void setDateOrdered(Date dateOrdered) {
+    this.dateOrdered = dateOrdered;
+  }
 
-	public void setTotal(double total) {
-		this.total = total;
-	}
+  public double getTotal() {
+    return total;
+  }
 
-	public Customer getCustomer() {
-		return customer;
-	}
+  public void setTotal(double total) {
+    this.total = total;
+  }
 
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	
-	
-	
+  public Customer getCustomer() {
+    return customer;
+  }
+
+  public void setCustomer(Customer customer) {
+    this.customer = customer;
+  }
+
 }
