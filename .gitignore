@@ -1,9 +1,9 @@
-#Eric_Christie_Code/*/build/
-#*/*/build/
-#Eric_Christie_Code/*/bin/
-#*/*/bin/
+Eric_Christie_Code/*/build/
+*/*/build/
+Eric_Christie_Code/*/bin/
+*/*/bin/
 
-#**/*.class
+**/*.class
 
 Eric_Christie_Code/.metadata/
 Eric_Christie_Code/.recommenders/
