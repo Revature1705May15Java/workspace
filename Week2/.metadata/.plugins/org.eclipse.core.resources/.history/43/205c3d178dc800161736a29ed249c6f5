@@ -1,0 +1,10 @@
+package com.revature.DAO;
+
+import com.revature.POJO.User;
+
+public interface DAOInterface {
+	
+	public boolean createUser(String username, String password, String
+			fisrtname, String lastname, String email);
+
+}

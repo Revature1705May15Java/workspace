@@ -1,0 +1,22 @@
+package com.revature.DAO;
+
+import com.revature.POJO.User;
+
+public class DAO implements DAOInterface{
+
+
+	@Override
+	public boolean createUser(String username, String password, String firstname, String lastname, String email) {
+
+		
+		
+		
+		return false;
+	}
+
+	
+		
+		
+	
+
+}

@@ -1,0 +1,22 @@
+package com.revature.DAO;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.revature.UTIL.ConnectionUtil;
+
+public class DAO implements DAOInterface{
+
+	@Override
+	public String getStatus(int statuskey) throws SQLException {
+		
+
+		try (Connection connect = ConnectionUtil.getConnection();){
+			
+		}
+		
+		
+		return null;
+	}
+
+}

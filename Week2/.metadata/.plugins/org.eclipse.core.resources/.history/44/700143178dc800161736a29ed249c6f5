@@ -1,0 +1,23 @@
+package com.revature.Service;
+
+import com.revature.DAO.DAO;
+import com.revature.POJO.User;
+
+public class Service {
+	
+	DAO dao = new DAO();
+	
+	public boolean newUser(User u){
+		
+		String username = u.getUsername();
+		String password = u.getPassword();
+		String fn = u.getFirstname();
+		String ln = u.getLastname();
+		
+		
+		
+		return false;
+		
+	}
+
+}

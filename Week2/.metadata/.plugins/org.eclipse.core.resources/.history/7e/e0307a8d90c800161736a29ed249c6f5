@@ -1,0 +1,35 @@
+package com.revature.DAO;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import com.revature.POJO.User;
+import com.revature.UTIL.ConnectionUtil;
+
+public class DAO implements DAOInterface {
+
+	@Override
+	public User createUser(String username, String password, String firstname, String lastname, String email) {
+
+		try (Connection connect = ConnectionUtil.getConnection()) {
+
+			// Step 1 in update methods, set autocommit to false
+			connect.setAutoCommit(false);
+
+			// step 2. account for automatic Primary key insert
+			String[] pk = new String[1];
+			pk[0] = "u_id";// string = name of pk column
+			// does this need to be an array, can it be a string?
+
+			String sql = "insert into users (username, password, firstname, lastname, email)"
+					+ "values('?', '?', '?', '?', '?')";
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+}
