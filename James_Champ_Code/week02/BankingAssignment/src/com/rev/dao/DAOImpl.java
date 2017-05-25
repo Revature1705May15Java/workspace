@@ -2,10 +2,13 @@ package com.rev.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.rev.log.Logger;
 import com.rev.pojos.Account;
+import com.rev.pojos.User;
 import com.rev.util.ConnectionUtil;
 
 public class DAOImpl implements DAO{
@@ -42,4 +45,32 @@ public class DAOImpl implements DAO{
 		return 0;
 	}
 
+	public User getUser(String email) {
+		try(Connection conn = ConnectionUtil.getConnection()){
+			String sql =	"SELECT * FROM users " +
+							"WHERE email = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, email);
+			
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			
+			User user = new User();
+			user.setId(rs.getInt(1));
+			user.setFirstName(rs.getString(2));
+			user.setLastName(rs.getString(3));
+			user.setPassword(rs.getString(4));
+			user.setEmail(rs.getString(5));
+
+			// TODO: Log results
+			
+			return user;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }
