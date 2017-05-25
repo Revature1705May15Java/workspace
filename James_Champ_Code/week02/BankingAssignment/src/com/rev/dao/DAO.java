@@ -4,5 +4,5 @@ import com.rev.pojos.Account;
 
 public interface DAO {
 	public int updateBalance(Account account, double newBalance);
-	public int addUser(String firstName, String lastName, String email, String password);
+	public int addUser(String firstName, String lastName, String password, String email);
 }
