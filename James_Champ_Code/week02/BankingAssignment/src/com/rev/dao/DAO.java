@@ -1,5 +1,7 @@
 package com.rev.dao;
 
-public interface DAO {
+import com.rev.pojos.Account;
 
+public interface DAO {
+	public int updateBalance(Account account);
 }
