@@ -11,7 +11,6 @@ Eric Christie Revature Associate Workbook assignment
 */
 -- Section 1
 -- Problem 1.1: write script to do x
-/
 drop table demo_order;
 drop table demo_customer;
 /
@@ -135,3 +134,10 @@ begin
 end get_customer;
 /
 call create_order(8, 2329.00); -- THIS IS HOW YOU USE A STORED PROCEDURE
+/
+update demo_customer set cust_first_name='customer', cust_last_name='eleven', cust_state='GA', credit_limit=2, cust_email='eleven@email.com'
+where customer_id=11;
+update demo_customer set cust_first_name='john', cust_last_name='doe', cust_state='VA', credit_limit=11, cust_email='jd@email.com'
+where customer_id=11;
+
+select * from demo_customer where customer_id=11;

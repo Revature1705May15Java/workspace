@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 
 import com.ex.pojos.Customer;
@@ -78,19 +79,19 @@ public class ImplementedDAO {
   public Customer getCustomer(int id) {
     try (Connection connection = ConnectionUtil.getConnection();) {
       Customer result = null;
-      String sql = "select * from demo_customer where customer_id=?";
+      String sql = "select customer_id, cust_first_name, cust_last_name, cust_state, "
+          + "credit_limit, cust_email from demo_customer where customer_id=?";
       PreparedStatement ps = connection.prepareStatement(sql);
       ps.setInt(1, id);
 
       ResultSet info = ps.executeQuery();
-      // id, fn, ln, state, credit, email
       // the order and names of the fields can also be determined by specifying
       // the columns
       // in the select statement and giving them aliases
       while (info.next()) { // must call .next() before trying to access result
                             // fields
-        result = new Customer(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
-            info.getDouble(5), info.getString(6));
+        result = new Customer(info.getInt(1), info.getString(2), info.getString(3),
+            info.getString(4), info.getDouble(5), info.getString(6));
       }
       return result;
     } catch (SQLException e) {
@@ -156,5 +157,110 @@ public class ImplementedDAO {
       return null;
     }
   }
+  
+  /**
+   * specify which fields to set to NULL for a specific customer
+   * @param id The id of the customer being updated
+   * @param nullState Whether or not cust_state should be set to NULL
+   * @param nullEmail Whether or not cust_email should be set to NULL
+   * @param nullCredit Whether or not credit_limit should be set to NULL
+   * @return true if successful, false otherwise
+   */
+  public boolean updateToNull(int id, boolean nullState, boolean nullEmail, boolean nullCredit) {
+    Customer old = getCustomer(id);
+    try (Connection connection = ConnectionUtil.getConnection();) {
+      String sql = "update demo_customer set "
+          + "cust_state=?, cust_email=?, credit_limit=? "
+          + "where customer_id=?";
 
+      PreparedStatement ps = connection.prepareStatement(sql);
+      if (nullState) {
+        ps.setNull(1, Types.VARCHAR);
+      } else {
+        ps.setString(1, old.getState());
+      }
+      if (nullEmail) {
+        ps.setNull(2, Types.VARCHAR);
+      } else {
+        ps.setString(2, old.getEmail());
+      }
+      if (nullCredit) {
+        ps.setNull(3, Types.NUMERIC);
+      } else {
+        ps.setDouble(3, old.getCredit());
+      }
+      ps.setInt(4, old.getId());
+
+      int num = ps.executeUpdate();
+      System.out.println(num);
+      if (num > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
+  
+  /**
+   * update the fields for a specific customer
+   * Input null for the new value of a field to keep the current value.
+   * Use updateToNull() to set the state, email, or credit limit to null in the database.
+   * @param id ID of the customer to be updated
+   * @param fName Customer's new first name
+   * @param lName Customer's new last name
+   * @param state Customer's new state
+   * @param email Customer's new email
+   * @param credit Customer's new credit limit
+   * @return true if successful false otherwise
+   */
+  public boolean updateCustomer(int id, String newFirstname, String newLastname,
+      String newState, String newEmail, Double newCredit) {
+    Customer old = getCustomer(id);
+//    newFirstname = (newFirstname != null) ? newFirstname : old.getFirstname();
+//    newLastname = (newLastname != null) ? newLastname : old.getLastname();
+//    newState = (newState != null) ? newState : old.getState();
+//    newEmail = (newEmail != null) ? newEmail : old.getEmail();
+//    newCredit = (newCredit != null) ? newCredit : old.getCredit();
+    
+    Customer updated = new Customer(newFirstname, newLastname, newState, newEmail, newCredit);
+    return updateCustomer(old, updated);
+  }
+  
+  /**
+   * PREPARED STATEMENT
+   * only the first name, last name, state, email, and credit from newCustomer will 
+   * actually be used in the update statement
+   * @param oldCustomer The customer being updated
+   * @param newCustomer The desired result of the update
+   * @return true if successful, false otherwise
+   */
+  private boolean updateCustomer(Customer oldCustomer, Customer newCustomer) {
+    try (Connection connection = ConnectionUtil.getConnection();) {
+      String sql = "update demo_customer set "
+          + "cust_first_name=?, cust_last_name=?, cust_state=?, cust_email=?, credit_limit=? "
+          + "where customer_id=?";
+
+      PreparedStatement ps = connection.prepareStatement(sql);
+      ps.setString(1, newCustomer.getFirstname());
+      ps.setString(2, newCustomer.getLastname());
+      ps.setString(3, newCustomer.getState());
+      ps.setString(4, newCustomer.getEmail());
+      ps.setDouble(5, newCustomer.getCredit());
+      ps.setInt(6, oldCustomer.getId());
+
+      int num = ps.executeUpdate();
+      System.out.println(num);
+      if (num > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+      return false;
+    }
+  }
 }
