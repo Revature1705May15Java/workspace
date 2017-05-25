@@ -1,0 +1,12 @@
+2017-05-25T16:22:15.812 1 users added
+2017-05-25T16:27:05.972 1 users added
+2017-05-25T16:39:37.530 Retrieved user by username User [id=120, fn=test2, ln=test2, pw=test2, uname=test2, userAccounts=null]
+2017-05-25T16:42:03.288 Retrieved user by username User [id=0, fn=null, ln=null, pw=null, uname=null, userAccounts=null]
+2017-05-25T16:43:30.641 Retrieved user by username User [id=0, fn=null, ln=null, pw=null, uname=null, userAccounts=null]
+2017-05-25T16:45:58.292 Attempted to retrieve non-existent user
+2017-05-25T16:48:56.559 Attempted to retrieve non-existent user
+2017-05-25T16:49:15.621 Attempted to retrieve non-existent user
+2017-05-25T16:50:14.530 Attempted to retrieve non-existent user
+2017-05-25T17:00:44.835 Attempted to retrieve non-existent user
+2017-05-25T17:00:44.883 1 users added
+2017-05-25T17:00:44.919 Retrieved user by username User [id=125, fn=Gen, ln=Bo, pw=1233535, uname=qeretrytu@gmail.com, userAccounts=null]

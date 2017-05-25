@@ -1,0 +1,9 @@
+package com.bank.logs;
+
+public class Logger {
+	
+	String filename = "src/com/bank/logs/log.txt";
+	
+	
+
+}

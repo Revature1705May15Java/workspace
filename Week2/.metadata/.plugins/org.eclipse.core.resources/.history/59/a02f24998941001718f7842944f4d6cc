@@ -1,0 +1,77 @@
+package com.bank.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.bank.logs.Logger;
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionUtil;
+
+public class DaoImpl implements DAO {
+	
+	static Logger logger = new Logger();
+
+
+	@Override
+	public int updateBalance(Account account, double newbal) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public int addUser(String fn, String ln, String uname, String pw) {
+		try(Connection connection = ConnectionUtil.getConnection();){
+			
+			String sql = "  insert into users(first_name, last_name, password, username)"
+					+ " values(?, ?, ?, ?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, fn );
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uname);
+			
+			int num = ps.executeUpdate();
+			
+			logger.log(num + " users added");
+			return num;
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.log(e.getStackTrace().toString());
+		}
+		
+		
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String uname) {
+		User u = new User();
+		uname = uname.toLowerCase();
+		try(Connection connect = ConnectionUtil.getConnection();){
+			String sql = "select * from users where lower(username) = 'test'";
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return null;
+		
+		
+	}
+
+	@Override
+	public User getUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

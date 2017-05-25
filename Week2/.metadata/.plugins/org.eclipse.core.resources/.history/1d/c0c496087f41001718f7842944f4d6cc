@@ -1,0 +1,15 @@
+package com.bank.pojos;
+
+import java.sql.Date;
+import java.util.ArrayList;
+
+public class Account {
+	int id;
+	double balance;
+	AccountType type;
+	Date dateOpened, dateClosed;
+	ArrayList<User> account_holders;
+	
+	
+
+}
