@@ -69,4 +69,13 @@ public class User {
 	public void setAccounts(ArrayList<Account> accounts) {
 		this.accounts = accounts;
 	}
+
+	// TODO: Clean up output
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", password=" + password
+				+ ", email=" + email + ", accounts=" + accounts + "]";
+	}
+	
+	
 }
