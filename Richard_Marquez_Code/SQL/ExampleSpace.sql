@@ -208,8 +208,12 @@ SELECT * FROM DEMO_CUSTOMERS WHERE CUST_EMAIL NOT LIKE '%@%.%';
 SELECT SUM(DEMO_ORDERS.ORDER_TOTAL) as "Total", DEMO_CUSTOMERS.CUST_EMAIL, DEMO_ORDERS.CUSTOMER_ID
   FROM DEMO_ORDERS
   INNER JOIN DEMO_CUSTOMERS ON DEMO_ORDERS.CUSTOMER_ID = DEMO_CUSTOMERS.CUSTOMER_ID
+  WHERE DEMO_CUSTOMERS.CUSTOMER_ID > 5
   GROUP BY DEMO_ORDERS.CUSTOMER_ID, DEMO_CUSTOMERS.CUST_EMAIL
-  HAVING SUM(DEMO_ORDERS.ORDER_TOTAL) > 200;
+  HAVING SUM(DEMO_ORDERS.ORDER_TOTAL) > 200
+  ORDER BY "Total" ASC;
+
+
   
 SELECT dc.CUST_EMAIL FROM DEMO_ORDERS INNER JOIN DEMO_CUSTOMERS dc ON DEMO_ORDERS.CUSTOMER_ID = dc.CUSTOMER_ID WHERE ORDER_TOTAL > 100;
 SELECT AVG(DEMO_ORDERS.ORDER_TOTAL) FROM DEMO_ORDERS;
@@ -222,3 +226,78 @@ SELECT DEMO_CUSTOMERS.CUST_EMAIL, DEMO_CUSTOMERS.CUSTOMER_ID, ORDER_ID
 SELECT CUST_LAST_NAME, CREDIT_LIMIT
   FROM DEMO_CUSTOMERS
   ORDER BY CREDIT_LIMIT DESC;
+
+
+select * from demo_customers;
+select sysdate from dual;
+
+create sequence dc_seq
+  start with 15
+  increment by 1;
+/
+create or replace trigger dc_seq_trigger
+  before insert on demo_customers
+  for each row
+  begin
+    if inserting and :new.customer_id is null then
+      select dc_seq.nextval into :new.customer_id from dual;
+    end if;
+  end;
+/
+
+create or replace trigger do_date_trg
+  before insert on demo_orders
+  for each row
+  begin
+    if :new.order_timestamp is null then
+      select current_date into :new.order_timestamp from dual;
+    end if;
+  end;
+/
+
+drop trigger dc_seq_trigger;
+
+alter table demo_customers
+  add constraint qu_cust_email unique (cust_email);
+  
+  
+create or replace procedure
+  create_order(c_id IN number, o_t In number)
+  is
+  begin
+    insert into demo_orders(customer_id, order_total)
+    values(c_id, o_t);
+  commit;
+  end create_order;
+/
+
+create or replace procedure
+  get_customer(c_id IN number, customer out SYS_REFCURSOR)
+  is
+  begin
+    open customer for
+    select * from demo_customers where customer_id = c_id;
+  end get_customer;
+/
+create or replace trigger do_date_trg
+  before insert on demo_orders
+  for each row
+  begin
+    if :new.order_timestamp is null then
+      select current_date into :new.order_timestamp from dual;
+    end if;
+  end;
+/
+
+insert into demo_orders(customer_id, order_total) values(2, 12.34);
+insert into demo_customers(cust_first_name, cust_last_name, cust_state, credit_limit, cust_email) values('asdf', 'qwerty', 'CA', 2000, 'a.q@c.dom');
+alter table demo_orders drop column user_id;
+
+call create_order(20, 55.22);
+
+SELECT *
+FROM demo_orders
+INNER JOIN demo_customers ON demo_orders.customer_id=demo_customers.customer_id
+WHERE demo_customers.customer_id=10;
+
+select * from demo_customers;
