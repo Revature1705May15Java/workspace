@@ -20,6 +20,8 @@ public class Account {
 		this.type = type;
 		this.balance = balance;
 		this.openDate = openDate;
+		
+		// create array list
 	}
 	
 	public int getAccountId() {
