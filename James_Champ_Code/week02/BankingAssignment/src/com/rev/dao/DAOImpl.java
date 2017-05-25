@@ -45,6 +45,7 @@ public class DAOImpl implements DAO{
 		return 0;
 	}
 
+	// TODO: Test with bad input (non-existent email)
 	public User getUser(String email) {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			String sql =	"SELECT * FROM users " +
@@ -54,14 +55,16 @@ public class DAOImpl implements DAO{
 			ps.setString(1, email);
 			
 			ResultSet rs = ps.executeQuery();
-			rs.next();
+			User user = null;
 			
-			User user = new User();
-			user.setId(rs.getInt(1));
-			user.setFirstName(rs.getString(2));
-			user.setLastName(rs.getString(3));
-			user.setPassword(rs.getString(4));
-			user.setEmail(rs.getString(5));
+			while(rs.next()){
+				user = new User();
+				user.setId(rs.getInt(1));
+				user.setFirstName(rs.getString(2));
+				user.setLastName(rs.getString(3));
+				user.setPassword(rs.getString(4));
+				user.setEmail(rs.getString(5));
+			}
 
 			// TODO: Log results
 			
