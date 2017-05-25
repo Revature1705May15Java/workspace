@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -198,5 +199,26 @@ public class DaoImpl {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void transactions() {
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			// need to turn off auto-commit to use transactions
+			conn.setAutoCommit(false);
+			
+			String sql = "";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			Savepoint s = conn.setSavepoint();
+			int num = pstmt.executeUpdate();
+			if (num > 1) {
+				conn.rollback(s);
+			}
+			
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

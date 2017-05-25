@@ -1,0 +1,26 @@
+2017-05-25T16:10:30.929 : 1 user added
+2017-05-25T16:21:31.025 : 1 user added
+2017-05-25T16:26:59.225 : retrieved user w/ email richard92m@me.com
+2017-05-25T16:54:27.580 : retrieved user w/ id 4
+2017-05-25T16:55:09.205 : retrieved user w/ id 1
+2017-05-25T16:56:20.235 : retrieved user w/ id 1
+2017-05-25T16:56:20.286 : retrieved account w/ id 1
+2017-05-25T16:56:27.938 : retrieved user w/ id 4
+2017-05-25T16:56:27.985 : retrieved account w/ id 3
+2017-05-25T16:57:13.163 : retrieved user w/ id 4
+2017-05-25T16:57:13.210 : retrieved account w/ id 3
+2017-05-25T16:57:32.710 : retrieved user w/ email richard92m@me.com
+2017-05-25T16:57:40.878 : retrieved user w/ email richard92m@me.com
+2017-05-25T16:58:26.654 : retrieved user w/ id 1
+2017-05-25T16:58:26.695 : retrieved account w/ id 1
+2017-05-25T16:58:47.547 : retrieved user w/ id 1
+2017-05-25T16:58:47.578 : retrieved account w/ id 1
+2017-05-25T16:59:04.937 : retrieved user w/ id 1
+2017-05-25T16:59:04.974 : retrieved account w/ id 1
+2017-05-25T16:59:04.974 : retrieved account w/ id 2
+2017-05-25T18:17:12.265 : retrieved user w/ email richard92m@me.com
+2017-05-25T18:20:00.004 : retrieved user w/ email richard92m@me.com
+2017-05-25T18:20:09.625 : retrieved user w/ email richard92m@me.com
+2017-05-25T18:28:08.931 : 1 user added
+2017-05-25T18:28:09.074 : retrieved user w/ email eric.clapton@me.com
+2017-05-25T18:42:57.137 : retrieved user w/ email eric.clapton@me.com
