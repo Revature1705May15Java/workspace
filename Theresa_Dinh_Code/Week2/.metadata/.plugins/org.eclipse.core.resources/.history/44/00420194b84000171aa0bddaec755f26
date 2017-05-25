@@ -1,0 +1,55 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import connectionUtil.ConnectionUtil;
+
+// 
+
+public class Dao 
+{
+	public void addOrder(int custID, double total)
+	{
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "INSERT INTO DEMO_ORDERS(CUSTOMER_ID, ORDER_TOTAL)"
+					+ " VALUES(" + custID + ", " + total + ");";
+			Statement statement = connect.createStatement(); 
+			
+			int numRowsAffected = statement.executeUpdate(sql); 
+			System.out.println("Rows affected " + numRowsAffected); 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	//prepared statement used to update 
+	// add customer to demo-customers table4
+	public void addCustomer(String fn, String ln, String state, double credit, String email)
+	{
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "INSERT INTO DEMO_CUSTOMERS (CUST_FIRST_NAME, "
+					+ "CUST_LAST_NAME, CUST_STATE, CREDIT_LIMIT, CUST_EMAIL)"
+					+ "VALUES(?, ?, ?', ?, ?);";
+			PreparedStatement ps = connect.prepareStatement(sql); 
+			ps.setString(1, fn);
+			ps.setString(2, ln); 
+			ps.setString(3, state);
+			ps.setDouble(4, credit);
+			ps.setString(5, email);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+

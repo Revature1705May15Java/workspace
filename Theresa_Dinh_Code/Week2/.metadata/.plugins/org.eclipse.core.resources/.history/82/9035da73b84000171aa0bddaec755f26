@@ -1,0 +1,38 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import connectionUtil.ConnectionUtil;
+
+// 
+
+public class Dao 
+{
+	public void addOrder(int custID, double total)
+	{
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "INSERT INTO DEMO_ORDERS(CUSTOMER_ID, ORDER_TOTAL)"
+					+ " VALUES(" + custID + ", " + total + ");";
+			Statement statement = connect.createStatement(); 
+			
+			int numRowsAffected = statement.executeUpdate(sql); 
+			System.out.println("Rows affected " + numRowsAffected); 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void addCustomer(String fn, String ln, String state, double credit, String e)
+	{
+		
+	}
+}
+
+//prepared statement used to update 
+// add customer to demo-customers table
+

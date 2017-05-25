@@ -1,0 +1,19 @@
+package main;
+
+import java.sql.ResultSet;
+
+import dao.Dao;
+
+public class Main 
+{
+	public static void main(String[] args)
+	{
+		Dao dao = new Dao(); 
+//		dao.addOrder(1, 1000.0); 
+//		dao.addCustomer("test", "test", "test", 2.0, "test");
+//		Customer c = dao.getCustomerByID(1); 
+//		System.out.println(c); 
+		
+		dao.getAllCustomers(); 
+	}
+}

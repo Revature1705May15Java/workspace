@@ -1,0 +1,141 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import connectionUtil.ConnectionUtil;
+import pojos.Customer;
+
+// 
+
+public class Dao 
+{
+	// statement to add order to demo_orders table
+	public void addOrder(int custID, double total)
+	{
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "INSERT INTO DEMO_ORDERS(CUSTOMER_ID, ORDER_TOTAL)"
+					+ " VALUES(" + custID + ", " + total + ")";
+			Statement statement = connect.createStatement(); 
+			
+			int numRowsAffected = statement.executeUpdate(sql); 
+			System.out.println("Rows affected " + numRowsAffected); 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	//prepared statement used to update 
+	// add customer to demo-customers table
+	public void addCustomer(String fn, String ln, String state, double credit, String email)
+	{
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "INSERT INTO DEMO_CUSTOMERS (CUST_FIRST_NAME, "
+					+ "CUST_LAST_NAME, CUST_STATE, CREDIT_LIMIT, CUST_EMAIL)"
+					+ "VALUES(?, ?, ?, ?, ?)";
+			PreparedStatement ps = connect.prepareStatement(sql); 
+			ps.setString(1, fn);
+			ps.setString(2, ln); 
+			ps.setString(3, state);
+			ps.setDouble(4, credit);
+			ps.setString(5, email);
+			
+			int numRowsAffected = ps.executeUpdate(sql); 
+			System.out.println("Rows affected " + numRowsAffected);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	// prepared statement to 
+	public Customer getCustomerByID(int id)
+	{
+		Customer c = new Customer(); 
+		
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "select * from DEMO_CUSTOMERS WHERE CUSTOMER_ID = ?";
+			PreparedStatement ps = connect.prepareStatement(sql); 
+			ps.setInt(1, id);
+			ResultSet info = ps.executeQuery(); 
+			
+			// id, fn, ln, state, credit, mail
+			while(info.next())
+			{
+				c.setID(info.getInt(1));
+				c.setFirstName(info.getString(2));
+				c.setLastName(info.getString(3));
+				c.setState(info.getString(4));
+				c.setCredit(info.getDouble(5));
+				c.setEmail(info.getString(5));
+			}
+			return c;
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		System.out.println("ERROR");
+		return null; 
+	}
+	
+//	public ResultSet getAllCustomers()
+//	{
+//		ResultSet rs; 
+//		
+//		try(Connection connect = ConnectionUtil.getConnection();)
+//		{
+//			String sql = "select * from DEMO_CUSTOMERS"; 
+//			PreparedStatement ps = connect.prepareStatement(sql); 
+//			
+//			rs = ps.executeQuery(sql); 
+//			return rs; 
+//		}
+//		catch(SQLException e)
+//		{
+//			e.printStackTrace();
+//		}
+//		return null; 
+//	}
+	
+	public void getAllCustomers()
+	{ 		
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "select * from DEMO_CUSTOMERS"; 
+			PreparedStatement ps = connect.prepareStatement(sql); 
+			
+			int count = 0; 
+			ResultSet rs = ps.executeQuery(); 
+			while(rs.next())
+			{
+				System.out.println(++count);
+				// id, fn, ln, state, credit, mail
+				Customer c = new Customer(); 
+				c.setID(rs.getInt(1));
+				c.setFirstName(rs.getString(2));
+				c.setLastName(rs.getString(3));
+				c.setState(rs.getString(4));
+				c.setCredit(rs.getDouble(5));
+				c.setEmail(rs.getString(6));
+				System.out.println(c.toString());
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+}
+
+
+
