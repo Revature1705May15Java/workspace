@@ -1,0 +1,24 @@
+package com.ex.test;
+
+import java.util.List;
+
+import com.ex.dao.DaoImpl;
+import com.ex.pojos.Customer;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		DaoImpl dao = new DaoImpl();
+		
+		//dao.addOrder(1005, 10001.00);
+		//dao.addCustomer("D", "M", "IN", 590.15, "email@email.com");
+		
+		//Customer temp = dao.getCustomerById(1000);
+		//System.out.println(temp.toString());
+		
+		List<Customer> tempCustomers = dao.getAllCustomers();
+		tempCustomers.forEach(c->System.out.println(c));
+	}
+
+}
