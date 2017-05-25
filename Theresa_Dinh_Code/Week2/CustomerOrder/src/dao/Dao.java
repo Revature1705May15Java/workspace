@@ -34,7 +34,7 @@ public class Dao
 		}
 	}
 	
-	//prepared statement used to update 
+	//prepared statement used to update ?????????????????
 	// add customer to demo-customers table
 	public void addCustomer(String fn, String ln, String state, 
 			double credit, String email)
@@ -42,9 +42,6 @@ public class Dao
 		try(Connection connect = ConnectionUtil.getConnection();)
 		{
 			// fn, ln, state, credit, mail
-//			String sql = "INSERT INTO DEMO_CUSTOMERS (CUST_FIRST_NAME, "
-//					+ "CUST_LAST_NAME, CUST_STATE, CREDIT_LIMIT, CUST_EMAIL)"
-//					+ "VALUES(?, ?, ?, ?, ?)";
 			String sql = "INSERT INTO DEMO_CUSTOMERS(CUST_FIRST_NAME, CUST_LAST_NAME, "
 					+ "CUST_STATE, CREDIT_LIMIT, CUST_EMAIL)VALUES"
 					+ "(?, ?, ?, ?, ?)";
@@ -242,13 +239,19 @@ public class Dao
 	}
 	
 	// given a Customer's data, change it to the new data 
-	public Customer updateCustomer(Customer old, Customer n)	
+	public Customer updateCustomer(Customer old, Customer nc)	
 	{
 		try(Connection connect = ConnectionUtil.getConnection();)
 			{
 			String sql = "UPDATE CUSTOMER SET CUST_FIRST_NAME = ?, "
-					+ "CUST_LAST_NAME = ?, CUST_STATE = ? WHERE CUSTOMER_ID = ?"; 
+					+ "CUST_LAST_NAME = ?, CUST_STATE = ?, CUST_EMAIL = ? "
+					+ "WHERE CUSTOMER_ID = ?"; 
 			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, nc.getFirstName());
+			ps.setString(2, nc.getLastName());
+			ps.setString(3, nc.getState());
+			ps.setString(4, nc.getEmail());
+			ps.setInt(5, old.getId());
 		}
 		catch(SQLException e)
 		{

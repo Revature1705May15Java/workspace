@@ -1,0 +1,10 @@
+package dao;
+
+import pojos.Account;
+import pojos.User;
+
+public interface Dao 
+{
+	public int updateBalance(Account account, double newBalance);
+	public int addUser(User newUser); 
+}

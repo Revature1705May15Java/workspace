@@ -1,0 +1,6 @@
+package dao;
+
+public interface Dao 
+{
+	public int updateBalance(Account account, double newBalance);
+}

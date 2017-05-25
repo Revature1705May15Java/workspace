@@ -1,0 +1,11 @@
+package servicelayer;
+
+import pojos.User;
+
+public class BankService 
+{
+	public User addUser(String fn, String ln, String pw, String email)
+	{
+		return null; 
+	}
+}

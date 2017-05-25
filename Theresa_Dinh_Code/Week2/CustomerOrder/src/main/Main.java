@@ -18,6 +18,9 @@ public class Main
 //		dao.getAllCustomers(); 
 //		dao.createOrder(c, 333.00);
 //		System.out.print(dao.getAllOrders());
-		System.out.println(dao.getAllOrdersByCustomer(1)); // ??
+//		System.out.println(dao.getAllOrdersByCustomer(1)); // ??
+//		Customer oc = new Customer(); 
+//		Customer nc = new Customer(); 
+//		System.out.print(dao.updateCustomer(oc, nc));
 	}
 }

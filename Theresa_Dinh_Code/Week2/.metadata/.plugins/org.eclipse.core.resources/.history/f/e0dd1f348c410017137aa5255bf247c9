@@ -1,0 +1,11 @@
+package servicelayer;
+
+import dao.BankDao;
+import dao.Dao;
+
+public class BankService 
+{
+	Dao dao = new BankDao(); 
+	
+	
+}

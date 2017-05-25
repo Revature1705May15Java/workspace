@@ -1,0 +1,10 @@
+package pojos;
+
+import java.util.ArrayList;
+
+public class User 
+{
+	int id; 
+	String fName, lName, password, email; 
+	ArrayList<Account> userAccounts; 
+}

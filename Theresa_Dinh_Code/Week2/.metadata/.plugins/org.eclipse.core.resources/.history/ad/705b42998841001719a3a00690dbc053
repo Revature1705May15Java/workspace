@@ -1,0 +1,72 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import bankUtil.ConnectionUtil;
+import pojos.Account;
+import pojos.User;
+
+public class BankDao implements Dao
+{
+	@Override
+	public int updateBalance(Account account, double newBalance) 
+	{
+		try(Connection c = ConnectionUtil.getConnection())
+		{
+			String statement = ""; 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
+
+	@Override
+	public User addUser(String fn, String ln, String pw, String email) 
+	{
+		try(Connection c = ConnectionUtil.getConnection())
+		{
+			String s = "INSERT INTO Users (FNAME, LNAME, PASSWORD, USERID)"
+					+ "VALUES(?, ?, ?, ?)";
+			PreparedStatement ps = c.prepareStatement(s);
+			ps.setString(1, fn);
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, email);
+			
+			int rowCheck = ps.executeUpdate(s); 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	
+	@Override
+	public User addUser(User newUser) 
+	{
+		try(Connection c = ConnectionUtil.getConnection())
+		{
+			String s = "INSERT INTO USERS VALUES(?, ?, ?, ?, ?)";
+//			PreparedStatement ps = ; 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public User getUser(int id) 
+	{
+		return null;
+	}
+
+}

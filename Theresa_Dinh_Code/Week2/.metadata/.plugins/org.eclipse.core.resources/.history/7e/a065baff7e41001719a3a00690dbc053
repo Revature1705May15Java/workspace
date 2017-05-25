@@ -1,0 +1,14 @@
+package pojos;
+
+import java.sql.Date;
+import java.util.ArrayList;
+
+public class Account 
+{
+	int id; 
+	double balance; 
+//	public enum AccountTypes{CHECKING, SAVINGS, CREDIT}
+	AccountType type; 
+	Date dateOpened, dateClosed; 
+	ArrayList<User> accountUsers; 
+}

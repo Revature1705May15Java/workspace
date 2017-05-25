@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;n&apos; in &apos;dao.Dao.updateCustomer(...)&apos; to &apos;nc&apos;&#x0D;&#x0A;- Original project: &apos;CustomerOrder&apos;&#x0D;&#x0A;- Original element: &apos;dao.Dao.updateCustomer(Customer, Customer).n&apos;&#x0D;&#x0A;- Renamed element: &apos;n&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;n&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;dao{Dao.java[Dao~updateCustomer~QCustomer;~QCustomer;@n!6578!6587!6587!6587!QCustomer;!0!true" name="nc" references="true" stamp="1495719629687" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package pojos;
+
+public class AccountType 
+{
+	int id; 
+	String name; 
+}
