@@ -1,0 +1,190 @@
+--2.1 a
+select *
+from employee;
+/
+
+--2.1 b
+select * 
+from employee
+where employee.lastname = 'King';
+/
+
+--2.1 c
+select *
+from employee
+where EMPLOYEE.firstname = 'Andrew' AND employee.reportsto IS NULL;
+/
+
+--2.2 a
+select *
+from album
+order by album.title desc;
+/
+
+--2.2 b 
+select customer.firstname
+from customer
+order by customer.city asc;
+/
+
+--2.3 a
+insert into genre 
+values ('26', 'A');
+insert into genre 
+values ('27', 'B');
+/
+
+--2.3 b 
+insert into employee
+values('9', 'zheng', 'liqun', 'IT Manager', '','28-FEB-91', '25-MAY-17',
+'212 APACHE BLVD', 'Tempe', 'AZ', 'United States', '85040', '+1 (464) 565-1640',
+'+1 (334) 232-3432', 'liqunzheng@live.cn');
+insert into employee
+values('10', 'john', 'lee', 'IT Manager', '','28-FEB-97', '25-MAY-17',
+'212 APACHE BLVD', 'Tempe', 'AZ', 'United States', '85040', '+1 (464) 565-1640',
+'+1 (334) 232-3432', 'liqunzheng@live.cn');
+/
+
+--2.3 c
+insert into customer
+values('60', 'liqun', 'zheng', 'Revature', '212 APACHE BLVD','Tempe', 'AZ',
+'United States', '85040', '+1 (464) 565-1640', '+1 (334) 232-3432', 
+'liqunzheng@live.cn', 3);
+insert into customer
+values('61', 'john', 'lee', 'Revature', '212 sdfa BLVD','Tempe', 'AZ',
+'United States', '85040', '+1 (464) 565-1640', '+1 (334) 232-3432', 
+'liqunzheng@live.cn', 4);
+/
+
+--2.4 a
+update customer 
+set customer.firstname = 'Robert', customer.lastname = 'Walter'
+where customer.firstname = 'Aaron' and customer.lastname = 'Mitchell';
+/
+
+--2.4 b
+update artist 
+set artist.name = 'CCR'
+where artist.name = 'Creedence Clearwater Revival';
+/
+
+--2.5 a
+select *
+from invoice
+where invoice.billingaddress like 'T%';
+/
+
+--2.6 a
+select *
+from invoice
+where invoice.total between 15 and 50;
+/
+
+--2.6 b 
+select *
+from employee
+where employee.hiredate between '01-JUL-03' and '01-MAR-04';
+/
+
+--2.7 a 
+select *
+from artist
+where artist.artistid = (select*  from album
+where album.albumid = (select*  from track 
+where track.trackid = (select*  from invoiceline
+where invoiceline.invoicelineid = (select*  from invoice
+where inovice.invoiceid = (select* from customer
+where customer.firstname = 'Robert' and customer.lastname = 'Walter'))))
+);
+
+
+delete from customer
+where customer.firstname = 'Robert' and customer.lastname = 'Walter';
+
+/
+
+--3.1 a
+select current_timestamp from dual;
+--3.1 b
+
+
+----4.1
+--create or replace procedure
+--  create_name_Employee(e_first_name IN VARCHAR2, e_last_name IN VARCHAR2)
+--is
+--begin
+--open employ for
+--select * from employee where firstname = e_first_name and lastname = e_last_name;
+--end create_name_Employee;
+
+--6.1 a
+--Task - Create an after insert trigger on the employee table fired 
+--after a new record is inserted into the table.
+ CREATE SEQUENCE cus_seq -- create sequence of name de_seq
+  start with 100 -- start value
+  increment by 100; --increment value
+/
+
+CREATE OR REPLACE TRIGGER cus_seq_trigger
+BEFORE INSERT ON employee -- on what occasion do you want ot trigger an event
+FOR EACH ROW
+BEGIN
+
+IF :new.employeeid IS NULL THEN 
+
+  SELECT cus_seq.nextval INTO :new.employeeid FROM DUAL;
+  
+  END IF;
+
+
+  END;
+  /
+  
+insert into employee(lastname, firstname, title, reportsto, birthdate, hiredate,
+  address, city, state, country, postalcode, phone, fax, email)
+  values('test', 'test', 'test', '1', '21-FEB-95', '21-MAY-17',
+  'test', 'test', 'VA', 'test', 'test', 'test','test', 'test');
+  
+--6.1 b
+--Task – Create an after update trigger on the album table 
+--that fires after a row is inserted in the table
+-- CREATE SEQUENCE alb_seq -- create sequence of name de_seq
+--  start with 100 -- start value
+--  increment by 100; --increment value
+--/
+--
+--CREATE OR REPLACE TRIGGER alb_seq_trigger
+--AFTER UPDATE ON album -- on what occasion do you want ot trigger an event
+--FOR EACH ROW
+--BEGIN
+--  insert into ALBUM.TITLE values('test');
+--
+--  END;
+--  /
+--  
+  
+  --7.1 INNER
+SELECT INVOICE.CUSTOMERID, CUSTOMER.FIRSTNAME,
+  INVOICE.INVOICEID
+FROM CUSTOMER
+INNER JOIN INVOICE ON INVOICE.CUSTOMERID = CUSTOMER.CUSTOMERID;
+/
+--7.2 OUTER
+SELECT INVOICE.CUSTOMERID, CUSTOMER.FIRSTNAME,
+  CUSTOMER.LASTNAME, INVOICE.INVOICEID, INVOICE.TOTAL
+FROM CUSTOMER
+FULL OUTER JOIN INVOICE ON INVOICE.CUSTOMERID = CUSTOMER.CUSTOMERID;
+/
+--7.3 RIGHT
+SELECT * FROM ARTIST
+RIGHT OUTER JOIN ALBUM ON ALBUM.ARTISTID = ARTIST.ARTISTID;
+/
+--7.4 CROSS
+SELECT * FROM ARTIST
+CROSS JOIN ALBUM ORDER BY ARTIST.NAME ASC;
+/
+--7.5 SELF
+SELECT * FROM EMPLOYEE
+WHERE EMPLOYEE.EMPLOYEEID = EMPLOYEE.REPORTSTO;
+/
+  
