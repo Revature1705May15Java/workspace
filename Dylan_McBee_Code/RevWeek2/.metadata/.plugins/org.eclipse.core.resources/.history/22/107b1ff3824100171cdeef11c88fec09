@@ -1,0 +1,11 @@
+package com.bank.dao;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+
+public interface DAO {
+
+	public int updateBalance(Account account ,double newBal);
+	public int addUser(String fn, String ln ,String uname, String pw);
+	
+}

@@ -1,0 +1,22 @@
+package com.bank.pojos;
+
+import java.util.ArrayList;
+
+public class User {
+
+	int id; 
+	String fn, ln, pw, uName;
+	ArrayList<Account> userAccounts;
+	public User(){
+		
+	}
+	public User(int id, String fn, String ln, String pw, String uName, ArrayList<Account> userAccounts) {
+		super();
+		this.id = id;
+		this.fn = fn;
+		this.ln = ln;
+		this.pw = pw;
+		this.uName = uName;
+		this.userAccounts = userAccounts;
+	}
+}

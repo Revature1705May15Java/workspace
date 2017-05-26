@@ -1,0 +1,36 @@
+--DDL Bank Script
+
+CREATE TABLE AccountType
+(
+	TypeId NUMBER,
+	Name VARCHAR2(20),
+	CONSTRAINT PK_AccountType PRIMARY KEY (TypeId)
+
+);
+
+CREATE TABLE Account
+(
+	AccountId NUMBER,
+	Balance NUMBER(10,2) DEFAULT = 0.00,
+	TypeId NUMBER NOT NULL,
+	OpenDate DATE NOT NULL,
+	CloseDate DATE,
+	CONSTRAINT PK_Account PRIMARY KEY (AccountId), 
+	CONSTRAINT FK_AccountTypeId FOREIGN KEY (TypeId) REFERENCES AcountType (TypeId);
+	
+
+);
+
+CREATE TABLE Users
+(
+
+	UserId NUMBER,
+	FirstName VARCHAR2(40) NOT NULL,
+	LastName VARCHAR2(40) NOT NULL,
+	Password VARCHAR2(60) NOT NULL,
+	Email VARCHAR2(60) NOT NULL UNIQUE,
+	CONSTRAINT PK_User PRIMARY KEY (UserId)
+
+);
+
+CREATE TABLE

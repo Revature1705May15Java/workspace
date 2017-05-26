@@ -1,0 +1,7 @@
+2017-05-25T16:27:50.043 1 users added
+2017-05-25T16:41:33.537 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-25T16:46:27.602 User does not exist
+2017-05-25T16:53:07.221 User does not exist
+2017-05-25T17:01:52.089 User does not exist
+2017-05-25T17:01:52.109 1 users added
+2017-05-25T17:01:52.125 retrieved user by username: User [id=110, fn=James, ln=Jam, pw=password, uName=jj@j.com, userAccounts=null]

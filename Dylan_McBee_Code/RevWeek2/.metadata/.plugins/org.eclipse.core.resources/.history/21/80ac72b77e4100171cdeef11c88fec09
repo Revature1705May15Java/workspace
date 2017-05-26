@@ -1,0 +1,12 @@
+package com.bank.pojos;
+
+import java.sql.Date;
+
+}
+
+public class Account {
+	 int id;
+	 double balance;
+	 String type;
+	 Date dateOpened, dateClosed;
+}
