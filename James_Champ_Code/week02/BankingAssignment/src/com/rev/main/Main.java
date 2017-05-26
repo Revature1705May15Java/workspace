@@ -9,6 +9,7 @@ import com.rev.util.InputValidator;
 public class Main {
 	private static final String BANK_NAME = "[Placeholder Bank Name]";
 	
+	private static final int MAX_LOGIN_ATTEMPTS = 3;
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
 	
@@ -30,7 +31,7 @@ public class Main {
 	private static void displayInitialMenu() {
 		switch(printInitialOptions()) {
 			case 1:
-				// log in
+				login();
 				break;
 			case 2:
 				signUp();
@@ -74,11 +75,53 @@ public class Main {
 		return result;
 	}
 	
-	private static void logIn() {
+	private static void login() {
 		String email;
 		String password;
 		
+		email = promptForEmail();
 		
+		if(service.isEmailUnique(email)) {
+			System.out.println("\tYou are not a member of " + BANK_NAME + ".\n");
+			displayInitialMenu();
+		}
+		else {
+			User user = service.getUser(email);
+			int count = MAX_LOGIN_ATTEMPTS;
+			boolean isPasswordCorrect = false;
+			
+			do {
+				count--; 
+				
+				System.out.print("\tEnter your password: ");
+				password = scan.nextLine().trim();
+				System.out.println();
+				
+				if(password.equals(user.getPassword())) {
+					isPasswordCorrect = true;
+				}
+				else {
+					System.out.println("\tIncorrect password.");
+					System.out.print("\t" + count);
+					
+					if(count != 1){
+						System.out.println(" attempts remaining.\n");
+					}
+					else {
+						System.out.println(" attempt remaing.\n");
+					}
+				}
+				
+			} while(count > 0 && !isPasswordCorrect);
+			
+			if(isPasswordCorrect) {
+				// Display user menu
+			}
+			else {
+				System.out.println("\tMaximum login attempts reached.\n");
+				exitProgram();
+			}
+		}
 	}
 	
 	private static void signUp() {
@@ -86,20 +129,9 @@ public class Main {
 		String firstName;
 		String lastName;
 		String password;
-		
-		boolean isValidInput = false;
-		
+				
 		// Get email
-		do {
-			email = promptForEmail();
-			
-			if(InputValidator.validateEmail(email)) {
-				isValidInput = true;
-			}
-			else {
-				System.out.println("\n\tYour email address was improperly formed.\n");
-			}
-		} while(!isValidInput);
+		email = promptForEmail();
 		
 		
 		if(service.isEmailUnique(email)) {	// Email is unique.
@@ -132,7 +164,7 @@ public class Main {
 			// TODO: Either log in or go to account holder menu
 		}
 		else {	// Email exists in the database.
-			System.out.println("\tYou are already a member.\n");
+			System.out.println("\tYou are already a member of " + BANK_NAME + ".\n");
 			displayInitialMenu();
 		}
 	}
@@ -153,10 +185,20 @@ public class Main {
 	
 	private static String promptForEmail() {
 		String email;
-		
-		System.out.print("\tEnter your email address: ");
-		email = scan.nextLine().trim();
-		System.out.println();
+		boolean isValidInput = false;
+				
+		do {
+			System.out.print("\tEnter your email address: ");
+			email = scan.nextLine().trim();
+			System.out.println();
+			
+			if(InputValidator.validateEmail(email)) {
+				isValidInput = true;
+			}
+			else {
+				System.out.println("\tYour email address was improperly formed.\n");
+			}
+		} while(!isValidInput);
 		
 		return email;
 	}
