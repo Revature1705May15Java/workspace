@@ -226,15 +226,63 @@ END;
 -- 6.2 : INSTEAD OF
 CREATE VIEW invView AS
   SELECT * FROM INVOICE;
-  
-CREATE OR REPLACE TRIGGER delOver50
+
+CREATE OR REPLACE TRIGGER delOver20
 INSTEAD OF DELETE
 ON invView
 FOR EACH ROW
 BEGIN
-  IF :OLD.total < 50 THEN
+  IF :OLD.total < 20 THEN
     DELETE FROM INVOICE WHERE INVOICEID=:OLD.INVOICEID;
   END IF;
 END;
 /
-SELECT * FROM INVOICE WHERE TOTAL > 50;
+DELETE FROM invView WHERE TOTAL > 17;
+
+-- Section 7 : Joins
+-- 7.1 : Inner
+SELECT (CUSTOMER.LASTNAME || ', ' || CUSTOMER.FIRSTNAME) AS "Name",
+  INVOICE.INVOICEID
+  FROM CUSTOMER
+  INNER JOIN INVOICE ON CUSTOMER.CUSTOMERID = INVOICE.CUSTOMERID;
+-- 7.2 : Outer
+SELECT (CUSTOMER.LASTNAME || ', ' || CUSTOMER.FIRSTNAME) AS "Name",
+  INVOICE.INVOICEID, INVOICE.TOTAL
+  FROM CUSTOMER
+  FULL OUTER JOIN INVOICE ON CUSTOMER.CUSTOMERID=INVOICE.CUSTOMERID;
+-- 7.3 : Right
+SELECT ARTIST.NAME, ALBUM.TITLE
+  FROM ARTIST
+  RIGHT JOIN ALBUM ON ARTIST.ARTISTID=ALBUM.ARTISTID;
+-- 7.4 : Cross
+SELECT ARTIST.NAME, ALBUM.TITLE
+  FROM ARTIST
+  CROSS JOIN ALBUM
+  ORDER BY ARTIST.NAME ASC;
+-- 7.5 : Self
+SELECT A.LASTNAME AS EmployeeName1, B.LASTNAME AS EmployeeName2, A.REPORTSTO
+  FROM EMPLOYEE A, EMPLOYEE B
+  WHERE A.EMPLOYEEID <> B.EMPLOYEEID
+  AND A.REPORTSTO = B.REPORTSTO;
+
+-- Section 8 : Indexes
+-- 8.1 : Clustered Indexes
+-- Oracle uses Index Organized Tables
+-- Add the following after your schema definition in create table clause:
+--  create table asdf(....)
+--  organization index;
+
+-- Section 9 : Administration
+-- run rman from console
+--RMAN> run 
+--2> {
+--3> shutdown immediate
+--4> startup mount
+--5> backup database;
+--6> SQL 'ALTER DATABASE OPEN';
+--7>}
+-- to restore .bkp:
+-- RMAN> restore database from tag 'TAGXXXXXXXX';
+-- tag found in C:\oraclexe\app\oracle\fast_recovery_area\...
+
+commit;
