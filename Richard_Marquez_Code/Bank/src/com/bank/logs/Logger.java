@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class Logger {
 	private static String filename = "src/com/bank/logs/log.txt";
-	
+
 	public static void log(String log) {
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, true))) {
 			LocalDateTime now = LocalDateTime.now();

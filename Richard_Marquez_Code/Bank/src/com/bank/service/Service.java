@@ -30,16 +30,4 @@ public class Service {
 		return result;
 	}
 	
-	public static void main(String[] args) {
-		Service s = new Service();
-		
-//		boolean result = dao.addUser("richard", "marquez", "password", "richard92m@me.com");
-//		System.out.println(result);
-//		User u = s.login("richard92m@me.com", "password");
-		User u = dao.getUser(1);
-		System.out.println(u);
-		System.out.println(dao.getAccountsForUser(u));
-	}
-	
-	
 }

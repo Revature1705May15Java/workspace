@@ -24,3 +24,7 @@
 2017-05-25T18:28:08.931 : 1 user added
 2017-05-25T18:28:09.074 : retrieved user w/ email eric.clapton@me.com
 2017-05-25T18:42:57.137 : retrieved user w/ email eric.clapton@me.com
+2017-05-26T10:18:02.293 : retrieved user w/ email richard92m@me.com
+2017-05-26T11:29:16.962 : retrieved user w/ email richard92m@me.com
+2017-05-26T11:39:53.986 : retrieved user w/ email richard92m@me.com
+2017-05-26T11:46:56.383 : retrieved user w/ email richard92m@me.com

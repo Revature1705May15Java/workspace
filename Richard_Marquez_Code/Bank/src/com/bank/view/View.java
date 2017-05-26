@@ -67,7 +67,7 @@ public class View {
 		
 		do {
 			System.out.println(
-					"\t1. Manage account\n" +
+					"\t1. Manage an account\n" +
 					"\t2. Create new account\n" +
 					"\t3. Back\n"
 					);
@@ -76,10 +76,10 @@ public class View {
 			int choice = Integer.parseInt(scan.nextLine());
 			switch (choice) {
 			case 1:
-				manageAccount();
+				manageAccount(u);
 				break;
 			case 2:
-				createAccount();
+				createAccount(u);
 				break;
 			case 3:
 				running = false;
@@ -160,10 +160,45 @@ public class View {
 		}
 	}
 	
-	private void manageAccount() {
+	private void manageAccount(User u) {
+		for (Account a : u.getAccounts()) {
+			System.out.println(a);
+		}
 	}
 	
-	private void createAccount() {
+	private void createAccount(User u) {
+		boolean running = true;
+		
+		do {
+			System.out.println(
+					"\t1. Checking\n" +
+					"\t2. Savings\n" +
+					"\t3. Credit\n" +
+					"\t4. Back\n"
+					);
+			System.out.print("Select an action: ");
+			
+			int choice = Integer.parseInt(scan.nextLine());
+			switch (choice) {
+			case 1:
+				manageAccount(u);
+				break;
+			case 2:
+				createAccount(u);
+				break;
+			case 3:
+				running = false;
+				break;
+			default:
+				System.out.println("Please enter a valid option.");
+			}
+			
+			System.out.println();
+		} while (running);
+		
+		System.out.println();
+		System.out.print("What type of account would you like to open: ");
+		
 	}
 	
 	private void deposit() {
