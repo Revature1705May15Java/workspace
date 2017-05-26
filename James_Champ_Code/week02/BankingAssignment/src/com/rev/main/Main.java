@@ -3,6 +3,7 @@ package com.rev.main;
 import java.util.Scanner;
 
 import com.rev.pojos.User;
+import com.rev.service.Service;
 import com.rev.util.InputValidator;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
 	private static final int INITIAL_MENU_ITEMS = 3;
 	
 	private static Scanner scan;
+	private static Service service;
 	
 	public static void main(String[] args) {
 		run();
@@ -19,6 +21,7 @@ public class Main {
 
 	public static void run() {
 		scan = new Scanner(System.in);
+		service = new Service();
 		
 		System.out.println("\tWelcome to " + BANK_NAME + "'s portal.\n");
 		
@@ -72,6 +75,14 @@ public class Main {
 		return result;
 	}
 	
+	private static void logIn() {
+		String email;
+		String password;
+		
+		
+	}
+	
+	
 	private static void signUp() {
 		String email;
 		String firstName;
@@ -114,21 +125,16 @@ public class Main {
 		} while(password.length() == 0);
 		// TODO: Ensure password is strong before continuing.
 
-		User user = new User(firstName, lastName, password, email);
-		
-		// TODO: Persist new user.
-		
+		User user = service.addUser(firstName, lastName, password, email);
+				
 		System.out.println("\tYou have successfully became a member of " + BANK_NAME);
 		
 		// TODO: Either log in or go to account holder menu
 	}
-	// If no:
-		// Sign up (Logged in after successful sign-up)
-			// Create account
-	// Else:
+	// Flow:
 		// Create new account
-			// Is joint account
-			// Account type	
+			// Is joint account?
+			// Account type?
 		// List accounts
 		// View account details (List account holders)
 			// Choose account if more than one
