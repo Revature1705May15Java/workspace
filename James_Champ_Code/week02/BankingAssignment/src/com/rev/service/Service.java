@@ -17,6 +17,11 @@ public class Service {
 		return null;
 	}
 	
+	public User getUser(String email) {
+		// TODO: Set user's accounts
+		return dao.getUser(email);
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getUser(email) == null) {
 			return true;
