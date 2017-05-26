@@ -1,6 +1,6 @@
 package com.ex.test;
 
-import com.ex.dao.ImplementedDAO;
+import com.ex.demodao.ImplementedDAO;
 
 public class Main {
 

@@ -1,7 +1,7 @@
 --DCL for examples
 --create user examples
 --identified by p4ssw0rd;
---
+
 --grant connect to examples;
 --grant resource to examples;
 
@@ -83,7 +83,7 @@ values ('customer', 'ten', 'ten@email.com');
 insert into demo_order(customer_id, order_total)
 values ((select customer_id from demo_customer where cust_email='ten@email.com'), 100.00);
 /
-drop if exists sequence dc_seq;
+drop sequence dc_seq;
 create sequence dc_seq
 start with 1
 increment by 1;

@@ -1,4 +1,4 @@
-package com.ex.dao;
+package com.ex.demodao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -261,6 +261,25 @@ public class ImplementedDAO {
     } catch (SQLException e) {
       e.printStackTrace();
       return false;
+    }
+  }
+  
+  public void addOrder(Order o) {
+    try (Connection connection = ConnectionUtil.getConnection();) {
+      connection.setAutoCommit(false);
+      
+      String sql = "insert into demo_order(orer_id, customer_id, order_total, order_timestamp) "
+          + "values (?, ?, ?, ?)";
+      PreparedStatement ps = connection.prepareStatement(sql);
+      ps.setInt(1, o.getId());
+      ps.setInt(2, o.getCustomer().getId());
+      ps.setDouble(3, o.getTotal());
+      ps.setDate(4, o.getDateOrdered());
+      
+      
+      
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
   }
 }

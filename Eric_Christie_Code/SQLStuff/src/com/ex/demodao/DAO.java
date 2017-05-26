@@ -1,4 +1,4 @@
-package com.ex.dao;
+package com.ex.demodao;
 
 public interface DAO {
 
