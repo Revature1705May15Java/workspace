@@ -16,4 +16,12 @@ public class Service {
 		
 		return null;
 	}
+	
+	public boolean isEmailUnique(String email) {
+		if(dao.getUser(email) == null) {
+			return true;
+		}
+		
+		return false;
+	}
 }
