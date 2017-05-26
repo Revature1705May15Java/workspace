@@ -1,0 +1,15 @@
+package com.ex.p1;
+
+public class BubbleSort {
+	
+	/*
+	 * In Eclipse, create one Java project for the homework with a separate package 
+	 * for each question, and use comments liberally in your code:
+	 * 
+Q1. Perform a bubble sort on the following integer array:  1,0,5,6,3,2,3,7,9,8,4
+Q2. Write a program to display the first 25 Fibonacci numbers beginning at 0. 
+Q4. Write a program to compute N factorial.
+
+	 */
+
+}

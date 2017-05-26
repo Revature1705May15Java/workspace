@@ -1,0 +1,12 @@
+package com.rev.primitives;
+
+public class Ints {
+	
+	int price = 78000;
+	
+	char a = '\u0008';
+	int c = a; // implicit cast from char to integer 
+	
+	byte wheelbase 
+
+}

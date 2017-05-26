@@ -1,17 +1,20 @@
 package com.bank.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 
 import com.bank.logs.Logger;
 import com.bank.pojos.Account;
 import com.bank.pojos.User;
+import com.bank.util.ConnectionFactory;
 import com.bank.util.ConnectionUtil;
 
 public class DaoImpl implements DAO {
-	
+
 	static Logger logger = new Logger();
 
 
@@ -23,7 +26,7 @@ public class DaoImpl implements DAO {
 	@Override
 	public int addUser(String fn, String ln, String uname, String pw) {
 		try(Connection connection = ConnectionUtil.getConnection();){
-			
+
 			String sql = "  insert into users(first_name, last_name, password, username)"
 					+ " values(?, ?, ?, ?)";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -31,20 +34,20 @@ public class DaoImpl implements DAO {
 			ps.setString(2, ln);
 			ps.setString(3, pw);
 			ps.setString(4, uname);
-			
+
 			int num = ps.executeUpdate();
-			
+
 			logger.log(num + " users added");
 			return num;
-			
-			
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			logger.log(e.getSQLState());
 		}
-		
-		
-		
+
+
+
 		return 0;
 	}
 
@@ -55,33 +58,33 @@ public class DaoImpl implements DAO {
 			String sql = "select * from users where lower(username) = ?";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setString(1, uname.toLowerCase());
-			
+
 			ResultSet userinfo = ps.executeQuery();
 			// id, fn, ln, pw, uname
 			while(userinfo.next()){
-				
+
 				u.setId(userinfo.getInt(1));
 				u.setFn(userinfo.getString(2));
 				u.setLn(userinfo.getString(3));
 				u.setPw(userinfo.getString(4));
 				u.setUname(userinfo.getString(5));
 			}
-			
+
 			if(u.getUname()!=null){
-			logger.log("Retrieved user by username " + u.toString());}
+				logger.log("Retrieved user by username " + u.toString());}
 			else {logger.log("Attempted to retrieve non-existent user");
 			return null;}
-			
+
 			return u;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			logger.log(e.getSQLState());
 		}
-		
+
 		return null;
-		
-		
+
+
 	}
 
 	@Override
@@ -89,7 +92,35 @@ public class DaoImpl implements DAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
 
+
+	/*
+	 * CALLABLE STATEMENT - calls function 
+	 * ALSO**** this uses a the connection factory object instead of just the connection 
+	 */
+	public int getAccounts(int id){
+		Connection connect = null;
+		CallableStatement cs = null;
+		int accounts = 0;
+		try{
+			connect = ConnectionFactory.getInstance().getConnection();
+
+			cs = connect.prepareCall("{? = call get_num_accounts(?)}");
+			cs.registerOutParameter(1, Types.NUMERIC);
+			cs.setInt(2, id);
+			cs.execute();
+			accounts = cs.getInt(1);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try{cs.close();} catch(Exception e){e.printStackTrace();}
+			try{connect.close();} catch(Exception e){e.printStackTrace();
+			}
+			return accounts;
+		}
+
+
+
+	}
 }

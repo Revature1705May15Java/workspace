@@ -10,12 +10,14 @@ public class Test {
 		// TODO Auto-generated method stub
 		
 		
-		DAO dao = new DaoImpl();
+		DaoImpl dao = new DaoImpl();
 		
 	//	dao.addUser("test2", "test2", "test2", "test2");
 		
-	User temp = dao.getUser("");
-	System.out.println(temp==null);
+//	User temp = dao.getUser("");
+
+
+		System.out.println(dao.getAccounts(105));
 	
 		
 

@@ -1,0 +1,11 @@
+INDEX VERSION 1.127+C:\Users\Genesis\workspace\1705May15Java\Week1\.metadata\.plugins\org.eclipse.jdt.core
+718410402.index
+1817888510.index
+4217494497.index
+2294802244.index
+2428788463.index
+578670880.index
+3940114114.index
+1657330681.index
+3423488461.index
+4074303522.index
