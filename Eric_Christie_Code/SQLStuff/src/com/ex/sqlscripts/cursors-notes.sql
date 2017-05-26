@@ -26,3 +26,5 @@ end;
 /
 
 -- indexes allow for faster searching through non-key fields (columns that aren't not null unique)
+  --indexes slow down insert and update operations on the tables
+-- clusters are groups of one or more tables that are physically stored together
