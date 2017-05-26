@@ -95,23 +95,31 @@ public class Main {
 		
 		//TODO: Ensure email address is unique before continuing.
 		
-		System.out.print("\tEnter your first name: ");
-		firstName = scan.nextLine().trim();
-		System.out.println();
-		// TODO: Ensure name is not empty.
+		do{
+			System.out.print("\tEnter your first name: ");
+			firstName = scan.nextLine().trim();
+			System.out.println();
+		} while(firstName.length() == 0);
 		
-		System.out.print("\tEnter your last name: ");
-		lastName = scan.nextLine().trim();
-		System.out.println();
-		// TODO: Ensure name is not empty.
+		do{
+			System.out.print("\tEnter your last name: ");
+			lastName = scan.nextLine().trim();
+			System.out.println();
+		} while(lastName.length() == 0);
 		
-		System.out.print("\tEnter your password: ");
-		password = scan.nextLine().trim();
-		System.out.println();
-		// TODO: Ensure password is strong.
+		do{
+			System.out.print("\tEnter your password: ");
+			password = scan.nextLine().trim();
+			System.out.println();
+		} while(password.length() == 0);
+		// TODO: Ensure password is strong before continuing.
 
 		User user = new User(firstName, lastName, password, email);
+		
 		// TODO: Persist new user.
+		
+		System.out.println("\tYou have successfully became a member of " + BANK_NAME);
+		
 		// TODO: Either log in or go to account holder menu
 	}
 	// If no:
