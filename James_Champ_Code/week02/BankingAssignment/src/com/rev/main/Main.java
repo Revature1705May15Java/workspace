@@ -3,6 +3,7 @@ package com.rev.main;
 import java.util.Scanner;
 
 import com.rev.pojos.User;
+import com.rev.util.InputValidator;
 
 public class Main {
 	private static final String BANK_NAME = "[Placeholder Bank Name]";
@@ -77,10 +78,22 @@ public class Main {
 		String lastName;
 		String password;
 		
-		System.out.print("\tEnter your email address: ");
-		email = scan.nextLine().trim();
-		System.out.println();
-		// TODO: Validate email before continuing.
+		boolean isValidInput = false;
+		
+		do {
+			System.out.print("\tEnter your email address: ");
+			email = scan.nextLine().trim();
+			System.out.println();
+			
+			if(InputValidator.validateEmail(email)) {
+				isValidInput = true;
+			}
+			else {
+				System.out.println("\n\tYour email address was improperly formed.\n");
+			}
+		} while(!isValidInput);
+		
+		//TODO: Ensure email address is unique before continuing.
 		
 		System.out.print("\tEnter your first name: ");
 		firstName = scan.nextLine().trim();
