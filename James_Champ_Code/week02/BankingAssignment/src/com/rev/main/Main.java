@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
 	private static final String BANK_NAME = "Placeholder Bank Name";
 	private static final int INVALID_SELECTION = -1;
+	private static final int INITIAL_MENU_ITEMS = 3;
 	
 	private static Scanner scan;
 	
@@ -15,10 +16,18 @@ public class Main {
 	public static void run() {
 		scan = new Scanner(System.in);
 		
-		System.out.println("\tWelcome to " + BANK_NAME + " portal.\n");
+		System.out.println("\tWelcome to " + BANK_NAME + "'s portal.\n");
 		
-		while(true) {
-			System.out.println(printInitialOptions());
+		switch(printInitialOptions()) {
+			case 1:
+				// log in
+				break;
+			case 2:
+				// create account
+				break;
+			case 3:
+				exitProgram();
+				break;
 		}
 	}
 	
@@ -32,9 +41,10 @@ public class Main {
 		do {
 			
 			System.out.println("\t1. Log in to existing account.");
-			System.out.println("\t2. Become a member.\n");
+			System.out.println("\t2. Become a member.");
+			System.out.println("\t3. Exit program.\n");
 			
-			System.out.print("\tMake a selection [1 - 2]: ");
+			System.out.print("\tMake a selection [1 - " + INITIAL_MENU_ITEMS + "]: ");
 			
 			line = scan.nextLine();
 			System.out.println();
@@ -42,7 +52,7 @@ public class Main {
 			try {
 				result = Integer.parseInt(line);
 				
-				if(result < 1 || result > 2) {
+				if(validateSelection(result, INITIAL_MENU_ITEMS)) {
 					result = INVALID_SELECTION;
 					printErrorMessage(2);
 				}
@@ -57,12 +67,14 @@ public class Main {
 		
 		return result;
 	}
-	// Prompt for account holder
 	
 	// If no:
 		// Sign up (Logged in after successful sign-up)
 			// Create account
 	// Else:
+		// Create new account
+			// Is joint account
+			// Account type	
 		// List accounts
 		// View account details (List account holders)
 			// Choose account if more than one
@@ -72,10 +84,20 @@ public class Main {
 				// Transfer funds
 				// Close account
 				// Add account holder
-		// Create new account
-			// Is joint account
-			// Account type
 		// Log out
+	
+	private static void exitProgram() {
+		scan.close();
+		
+		System.out.println("\tThanks for visiting " + BANK_NAME + ".");
+		System.out.println("\tHave a great day!\n");
+		
+		System.out.println("\nProgram terminated...");
+	}
+	
+	private static boolean validateSelection(int input, int totalSelections) {
+		return input < 1 || input > totalSelections;
+	}
 	
 	private static void printErrorMessage(int totalSelections) {
 		System.out.println("\n\tInvalid selection.\n" +
