@@ -2,8 +2,11 @@ package com.rev.main;
 
 import java.util.Scanner;
 
+import com.rev.pojos.User;
+
 public class Main {
-	private static final String BANK_NAME = "Placeholder Bank Name";
+	private static final String BANK_NAME = "[Placeholder Bank Name]";
+	
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
 	
@@ -23,7 +26,7 @@ public class Main {
 				// log in
 				break;
 			case 2:
-				// create account
+				signUp();
 				break;
 			case 3:
 				exitProgram();
@@ -46,7 +49,7 @@ public class Main {
 			
 			System.out.print("\tMake a selection [1 - " + INITIAL_MENU_ITEMS + "]: ");
 			
-			line = scan.nextLine();
+			line = scan.nextLine().trim();
 			System.out.println();
 			
 			try {
@@ -68,6 +71,36 @@ public class Main {
 		return result;
 	}
 	
+	private static void signUp() {
+		String email;
+		String firstName;
+		String lastName;
+		String password;
+		
+		System.out.print("\tEnter your email address: ");
+		email = scan.nextLine().trim();
+		System.out.println();
+		// TODO: Validate email before continuing.
+		
+		System.out.print("\tEnter your first name: ");
+		firstName = scan.nextLine().trim();
+		System.out.println();
+		// TODO: Ensure name is not empty.
+		
+		System.out.print("\tEnter your last name: ");
+		lastName = scan.nextLine().trim();
+		System.out.println();
+		// TODO: Ensure name is not empty.
+		
+		System.out.print("\tEnter your password: ");
+		password = scan.nextLine().trim();
+		System.out.println();
+		// TODO: Ensure password is strong.
+
+		User user = new User(firstName, lastName, password, email);
+		// TODO: Persist new user.
+		// TODO: Either log in or go to account holder menu
+	}
 	// If no:
 		// Sign up (Logged in after successful sign-up)
 			// Create account
