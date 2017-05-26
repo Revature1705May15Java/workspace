@@ -19,12 +19,15 @@ public class Main {
 		run();
 	}
 
-	public static void run() {
+	private static void run() {
 		scan = new Scanner(System.in);
 		service = new Service();
 		
 		System.out.println("\tWelcome to " + BANK_NAME + "'s portal.\n");
-		
+		displayInitialMenu();
+	}
+	
+	private static void displayInitialMenu() {
 		switch(printInitialOptions()) {
 			case 1:
 				// log in
@@ -38,7 +41,6 @@ public class Main {
 		}
 	}
 	
-	// TODO: Add ability to exit program.
 	private static int printInitialOptions() {
 		int result;
 		String line;
@@ -46,7 +48,6 @@ public class Main {
 		System.out.println("\tWhat would you like to do?\n");
 
 		do {
-			
 			System.out.println("\t1. Log in to existing account.");
 			System.out.println("\t2. Become a member.");
 			System.out.println("\t3. Exit program.\n");
@@ -61,15 +62,13 @@ public class Main {
 				
 				if(validateMenuSelection(result, INITIAL_MENU_ITEMS)) {
 					result = INVALID_SELECTION;
-					printErrorMessage(2);
+					printErrorMessage(INITIAL_MENU_ITEMS);
 				}
 			}
 			catch(NumberFormatException e) {
 				result = INVALID_SELECTION;
-				printErrorMessage(2);
+				printErrorMessage(INITIAL_MENU_ITEMS);
 			}
-			
-
 		} while(result == INVALID_SELECTION);
 		
 		return result;
@@ -82,7 +81,6 @@ public class Main {
 		
 	}
 	
-	
 	private static void signUp() {
 		String email;
 		String firstName;
@@ -91,10 +89,9 @@ public class Main {
 		
 		boolean isValidInput = false;
 		
+		// Get email
 		do {
-			System.out.print("\tEnter your email address: ");
-			email = scan.nextLine().trim();
-			System.out.println();
+			email = promptForEmail();
 			
 			if(InputValidator.validateEmail(email)) {
 				isValidInput = true;
@@ -104,32 +101,40 @@ public class Main {
 			}
 		} while(!isValidInput);
 		
-		//TODO: Ensure email address is unique before continuing.
 		
-		do{
-			System.out.print("\tEnter your first name: ");
-			firstName = scan.nextLine().trim();
-			System.out.println();
-		} while(firstName.length() == 0);
-		
-		do{
-			System.out.print("\tEnter your last name: ");
-			lastName = scan.nextLine().trim();
-			System.out.println();
-		} while(lastName.length() == 0);
-		
-		do{
-			System.out.print("\tEnter your password: ");
-			password = scan.nextLine().trim();
-			System.out.println();
-		} while(password.length() == 0);
-		// TODO: Ensure password is strong before continuing.
-
-		User user = service.addUser(firstName, lastName, password, email);
-
-		System.out.println("\tYou have successfully became a member of " + BANK_NAME);
-		
-		// TODO: Either log in or go to account holder menu
+		if(service.isEmailUnique(email)) {	// Email is unique.
+			// Get first name:
+			do{
+				System.out.print("\tEnter your first name: ");
+				firstName = scan.nextLine().trim();
+				System.out.println();
+			} while(firstName.length() == 0);
+			
+			// Get last name:
+			do{
+				System.out.print("\tEnter your last name: ");
+				lastName = scan.nextLine().trim();
+				System.out.println();
+			} while(lastName.length() == 0);
+			
+			// Get password:
+			do{
+				System.out.print("\tEnter your password: ");
+				password = scan.nextLine().trim();
+				System.out.println();
+			} while(password.length() == 0);
+			// TODO: Ensure password is strong before continuing.
+	
+			User user = service.addUser(firstName, lastName, password, email);
+	
+			System.out.println("\tYou have successfully became a member of " + BANK_NAME);
+			
+			// TODO: Either log in or go to account holder menu
+		}
+		else {	// Email exists in the database.
+			System.out.println("\tYou are already a member.\n");
+			displayInitialMenu();
+		}
 	}
 	// Flow:
 		// Create new account
@@ -146,6 +151,20 @@ public class Main {
 				// Add account holder
 		// Log out
 	
+	private static String promptForEmail() {
+		String email;
+		
+		System.out.print("\tEnter your email address: ");
+		email = scan.nextLine().trim();
+		System.out.println();
+		
+		return email;
+	}
+	
+	/**
+	 * Used to end this program. Closes the Scanner and prints a message 
+	 * that bids the user adieu.
+	 */
 	private static void exitProgram() {
 		scan.close();
 		
