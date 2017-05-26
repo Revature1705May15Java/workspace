@@ -59,7 +59,7 @@ public class Main {
 			try {
 				result = Integer.parseInt(line);
 				
-				if(validateSelection(result, INITIAL_MENU_ITEMS)) {
+				if(validateMenuSelection(result, INITIAL_MENU_ITEMS)) {
 					result = INVALID_SELECTION;
 					printErrorMessage(2);
 				}
@@ -126,7 +126,7 @@ public class Main {
 		// TODO: Ensure password is strong before continuing.
 
 		User user = service.addUser(firstName, lastName, password, email);
-				
+
 		System.out.println("\tYou have successfully became a member of " + BANK_NAME);
 		
 		// TODO: Either log in or go to account holder menu
@@ -155,10 +155,25 @@ public class Main {
 		System.out.println("\nProgram terminated...");
 	}
 	
-	private static boolean validateSelection(int input, int totalSelections) {
+	/**
+	 * Determines whether a user's menu item selection is within range.
+	 * 
+	 * @param input				The number that the user entered.
+	 * @param totalSelections	The total number of menu items in the current menu.
+	 * @return					{@code true} if the user's selection is valid, {@code false}
+	 * 							otherwise.
+	 */
+	private static boolean validateMenuSelection(int input, int totalSelections) {
 		return input < 1 || input > totalSelections;
 	}
 	
+	/**
+	 * Prints an error message when a user attempts to choose a menu item that
+	 * is out of range.
+	 * 
+	 * @param totalSelections	The total number of selections in the current
+	 * 							menu.
+	 */
 	private static void printErrorMessage(int totalSelections) {
 		System.out.println("\n\tInvalid selection.\n" +
 						 	"\tPlease enter a whole number between 1 and " +
