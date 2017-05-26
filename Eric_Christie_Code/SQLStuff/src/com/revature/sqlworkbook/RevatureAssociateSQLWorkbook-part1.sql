@@ -203,10 +203,11 @@ after insert on employee for each row
 declare ex exception;
 begin
   if :new.email is null then
-    raise ex;
+    dbms_output.put_line('please provide your email address');
   end if;
 end;
 /
+insert into employee(employeeid, firstname, lastname) values (11, 'person', 'eleven');
 --Task – Create an after update trigger on the album table that fires after a row is inserted in the table
 create or replace trigger updated_album_trigger
 after update of artistid on album for each row
