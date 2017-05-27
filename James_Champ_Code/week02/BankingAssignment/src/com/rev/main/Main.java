@@ -456,23 +456,45 @@ public class Main {
 	}
 	
 	private static void depositFunds(User user, Account account) {
+		// Determine amount
 		
+		// Call service.deposit(account, amount);
+		
+		// Go back to account menu
 	}
 	
 	private static void withdrawFunds(User user, Account account) {
+		// Determine amount
 		
+		// Call service.withdraw(account, amount);
+		
+		// Go back to account menu
 	}
 	
 	private static void transferFunds(User user, Account account) {
+		// Determine amount
 		
+		// Determine recipient account id
+		
+		// Call service.transfer(account, toAccount, amount);
+		
+		// Go back to account menu
 	}
 	
 	private static void addAccountHolder(User user, Account account) {
+		// Determine new account holder's id (This seems somewhat unrealistic...)
 		
+		// Call service.addAccountHolder(account, newAccountHolder);
+		
+		// Go back to account menu
 	}
 	
 	private static void closeAccount(User user, Account account) {
+		// Prompt for confirmation
 		
+		// Call service.closeAccount(account);
+		
+		// Go back to user menu
 	}
 	
 	/**
