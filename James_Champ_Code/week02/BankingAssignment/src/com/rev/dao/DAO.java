@@ -6,6 +6,7 @@ import com.rev.pojos.Account;
 import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
 
+// TODO: Add comments.
 public interface DAO {
 	public int updateBalance(Account account, double newBalance);
 	public int addUser(String firstName, String lastName, String password, String email);

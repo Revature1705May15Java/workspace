@@ -1,6 +1,8 @@
 package com.rev.pojos;
 
+// TODO: Add comments
 public class AccountType {
+	// TODO: Move constants to another class.
 	public static final int CHECKING = 1;
 	public static final int SAVINGS = 2;
 	public static final int CREDIT = 3;

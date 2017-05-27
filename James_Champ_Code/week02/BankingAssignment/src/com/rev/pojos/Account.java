@@ -3,6 +3,7 @@ package com.rev.pojos;
 import java.sql.Date;
 import java.util.ArrayList;
 
+// TODO: Add comments
 public class Account {	
 	private int accountId;
 	private AccountType type;

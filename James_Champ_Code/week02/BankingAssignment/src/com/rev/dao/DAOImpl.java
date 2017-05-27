@@ -13,6 +13,7 @@ import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
 import com.rev.util.ConnectionUtil;
 
+// TODO: Add comments.
 public class DAOImpl implements DAO{
 	private static Logger log = new Logger();
 	

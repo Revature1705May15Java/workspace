@@ -6,6 +6,7 @@ import com.rev.pojos.User;
 import com.rev.service.Service;
 import com.rev.util.InputValidator;
 
+// TODO: Add comments.
 public class Main {
 	private static final String BANK_NAME = "[Placeholder Bank Name]";
 	
@@ -13,7 +14,7 @@ public class Main {
 	
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
-	private static final int USER_MENU_ITEMS = 4;
+	private static final int USER_MENU_ITEMS = 3;
 	private static final int ACCOUNT_MENU_ITEMS = 7;
 	
 	private static Scanner scan;
@@ -42,6 +43,7 @@ public class Main {
 		displayInitialMenu();
 	}
 	
+	// TODO: Rename and add comments.
 	private static void displayInitialMenu() {
 		switch(printInitialOptions()) {
 			case 1:
@@ -56,6 +58,13 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Displays the initial menu and prompts the user
+	 * for a selection. Once a valid selection is made,
+	 * the value of the selection is returned.
+	 * 
+	 * @return	The user's menu item selection.
+	 */
 	private static int printInitialOptions() {
 		int result;
 		String line;
@@ -75,7 +84,7 @@ public class Main {
 			try {
 				result = Integer.parseInt(line);
 				
-				if(validateMenuSelection(result, INITIAL_MENU_ITEMS)) {
+				if(!validateMenuSelection(result, INITIAL_MENU_ITEMS)) {
 					result = INVALID_SELECTION;
 					printErrorMessage(INITIAL_MENU_ITEMS);
 				}
@@ -89,6 +98,22 @@ public class Main {
 		return result;
 	}
 	
+	/**
+	 * Logs a user into the banking system, allowing them
+	 * to access and modify their accounts.
+	 * <p>
+	 * This method gets an email from the user. If the email is
+	 * valid and matches that of an existing user, the user is then
+	 * prompted for a password. If the password is correct, the user
+	 * will have access to their accounts.
+	 * </p>
+	 * <p>
+	 * If the password is incorrectly entered three times, the program
+	 * will end. This is to simulate a user being locked out of a 
+	 * banking system for some amount of time after too many 
+	 * unsuccessful login attempts.
+	 * </p>
+	 */
 	private static void login() {
 		String email;
 		String password;
@@ -138,6 +163,26 @@ public class Main {
 		}
 	}
 	
+	/**
+	 * Signs a new user up as a member of the bank. Logs 
+	 * the newly created user into the banking system on
+	 * success.
+	 * <p>
+	 * This method first prompts a user for their email 
+	 * address. If the given address is not already in the
+	 * database, the user is then prompted for their first
+	 * name, last name, and a password.
+	 * </p>
+	 * <p>
+	 * If all of the user's input is valid, a new {@code User}
+	 * object is created, and the user is added to the database.
+	 * The user is then logged into the banking system.
+	 * </p>
+	 * <p>
+	 * If the user enters an email that is already in the database,
+	 * the user is taken back to the previous menu.
+	 * </p>
+	 */
 	private static void signUp() {
 		String email;
 		String firstName;
@@ -183,9 +228,60 @@ public class Main {
 		}
 	}
 	
+	// TODO: Comments
 	public static void displayUserMenu(User user) {
+		String line;
+		int selection;
+		
+		System.out.println("\tWelcome, " + user.getFirstName() + 
+							" " + user.getLastName() + ".\n");
+		
+		do {
+			System.out.println("\tWhat would you like to do today?\n");
+			
+			System.out.println("\t1. Create a new account.");
+			System.out.println("\t2. View account details.");
+			System.out.println("\t3. Log out.");
+			
+			System.out.print("\n\tMake a selection [1 - " + USER_MENU_ITEMS + "]: ");
+			line = scan.nextLine().trim();
+			System.out.println();
+			
+			try {
+				selection = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				selection = INVALID_SELECTION;
+			}
+		} while(!validateMenuSelection(selection, USER_MENU_ITEMS));
+		
+		switch(selection) {
+			case 1:
+				createNewAccount(user);
+				break;
+			case 2:
+				viewAccountDetails(user);
+				break;
+			case 3:
+				exitProgram();
+				break;
+		}
+	}
+	
+	private static void createNewAccount(User user) {
 		
 	}
+	
+
+	
+	private static void viewAccountDetails(User user) {
+		
+	}
+	
+	private static void listAccounts(User user) {
+		
+	}
+	
 	// Flow:
 		// Create new account
 			// Is joint account?
@@ -201,6 +297,14 @@ public class Main {
 				// Add account holder
 		// Log out
 	
+	/**
+	 * Prompts the user for an email address, and returns the
+	 * address if it is properly formed. While the input is
+	 * not properly formed, the user will be prompted for an
+	 * email.
+	 * 
+	 * @return	The user's email address.
+	 */
 	private static String promptForEmail() {
 		String email;
 		boolean isValidInput = false;
@@ -243,7 +347,7 @@ public class Main {
 	 * 							otherwise.
 	 */
 	private static boolean validateMenuSelection(int input, int totalSelections) {
-		return input < 1 || input > totalSelections;
+		return input >= 1 || input <= totalSelections;
 	}
 	
 	/**

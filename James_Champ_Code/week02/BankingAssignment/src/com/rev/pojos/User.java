@@ -2,6 +2,7 @@ package com.rev.pojos;
 
 import java.util.ArrayList;
 
+// TODO: Add comments
 public class User {
 	private int id;
 	private String firstName;
@@ -11,6 +12,10 @@ public class User {
 	
 	private ArrayList<Account> accounts;
 
+	public User() {
+		
+	}
+	
 	public User(int id, String firstName, String lastName) {
 		this.id = id;
 		this.firstName = firstName;

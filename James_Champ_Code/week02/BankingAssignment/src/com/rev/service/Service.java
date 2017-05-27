@@ -4,6 +4,7 @@ import com.rev.dao.DAO;
 import com.rev.dao.DAOImpl;
 import com.rev.pojos.User;
 
+// TODO: Add comments
 public class Service {
 	private static DAO dao = new DAOImpl();
 	

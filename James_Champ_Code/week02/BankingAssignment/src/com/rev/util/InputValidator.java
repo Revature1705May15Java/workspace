@@ -3,6 +3,7 @@ package com.rev.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// TODO: Add comments.
 public class InputValidator {
 	/**
 	 * Regular expression used to validate that email addresses are properly formatted.
