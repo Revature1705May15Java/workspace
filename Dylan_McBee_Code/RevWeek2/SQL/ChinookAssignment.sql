@@ -92,3 +92,53 @@ WHERE HIREDATE BETWEEN '01-JUN-03' AND '01-MAR-04';
 --Problem 2.7
 --Delete a record in Customer table where the name is Robert Walter 
 --(There may be constraints that rely on this, find out how to resolve them).
+
+alter table invoice
+drop constraint FK_INVOICECUSTOMERID;
+/
+alter table invoice
+add constraint FK_INVOICECUSTOMERID
+foreign key (customerid)
+references customer (customerid)
+on delete cascade;
+/
+alter table invoiceline
+drop constraint FK_INVOICELINEINVOICEID;
+/
+alter table invoiceline
+add constraint FK_INVOICELINEINVOICEID
+foreign key (invoiceid)
+references invoice (invoiceid)
+on delete cascade;
+/
+delete from customer
+where customerid = 32;
+/
+--Problem 3.1
+--Create a function that returns the current time.
+create or replace function getSysdate
+return varchar2 is
+
+  l_sysdate varchar2(60);
+
+begin
+
+  SELECT TO_CHAR(SYSTIMESTAMP, 'HH24:MI:SS')
+  into l_sysdate
+  from dual;
+  
+
+  return l_sysdate;
+
+end;
+/
+DECLARE
+  v_Return varchar2(60);
+BEGIN
+
+  v_Return := GETSYSDATE();
+DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
+
+  :v_Return := v_Return;
+END;
+
