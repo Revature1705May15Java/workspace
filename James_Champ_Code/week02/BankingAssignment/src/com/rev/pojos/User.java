@@ -11,8 +11,10 @@ public class User {
 	
 	private ArrayList<Account> accounts;
 
-	public User() {
-		// create array list
+	public User(int id, String firstName, String lastName) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 	
 	public User(String firstName, String lastName, String password, String email) {
