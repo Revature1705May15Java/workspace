@@ -83,40 +83,73 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public ArrayList<Account> getUserAccounts(User user) {
+		ArrayList<Account> accounts = new ArrayList<Account>();
+		
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			String sql = "SELECT * FROM user_accounts " +
+			String sql = "SELECT account_id FROM user_accounts " +
 						 "WHERE user_id = ?";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, user.getId());
 			
 			ResultSet rs = ps.executeQuery();
-			ArrayList<Account> accounts = new ArrayList<Account>();
 			
 			while(rs.next()) {
-				Account a = new Account();
+				int accountNumber = rs.getInt(1);
+				Account a = getAccount(accountNumber);
 				
-				a.setAccountId(rs.getInt(1));
-				a.setType(new AccountType(rs.getInt(2)));
-				a.setBalance(rs.getDouble(3));
-				a.setOpenDate(rs.getDate(4));
-				a.setCloseDate(rs.getDate(5));
-				
-				accounts.add(a);
-			}
-			
-			return accounts;
+				if(a != null) {
+					accounts.add(a);
+				}
+			}			
 		}
 		catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return accounts;
 	}
 
 	@Override
 	public ArrayList<User> getAccountUsers(Account account) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Account addAccount(Account account, User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account getAccount(int accountId) {
+		Account account = null;
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "SELECT * FROM accounts " +
+						 "WHERE account_id = ? AND close_date IS NULL";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, accountId);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				account = new Account();
+				account.setAccountId(rs.getInt(1));
+				account.setType(new AccountType(rs.getInt(2)));
+				account.setBalance(rs.getDouble(3));
+				account.setOpenDate(rs.getDate(4));
+				account.setCloseDate(rs.getDate(5));
+			}
+			
+			return account;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return account;
 	}
 }

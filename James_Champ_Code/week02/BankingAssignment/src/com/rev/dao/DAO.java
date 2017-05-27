@@ -13,5 +13,7 @@ public interface DAO {
 	public User getUser(String email);
 	public ArrayList<Account> getUserAccounts(User user);
 	public ArrayList<User> getAccountUsers(Account account);
+	public Account addAccount(Account account, User user);
+	public Account getAccount(int accountId);
 }
 
