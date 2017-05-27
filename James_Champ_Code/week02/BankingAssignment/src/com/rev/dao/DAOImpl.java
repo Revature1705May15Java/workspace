@@ -18,7 +18,7 @@ public class DAOImpl implements DAO{
 	private static Logger log = new Logger();
 	
 	@Override
-	public int updateBalance(Account account, double newBalance) {
+	public int updateBalance(Account account) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -99,6 +99,7 @@ public class DAOImpl implements DAO{
 				Account a = getAccount(accountNumber);
 				
 				if(a != null) {
+					a.setAccountHolders(getAccountHolders(a));
 					accounts.add(a);
 				}
 			}			
@@ -110,10 +111,45 @@ public class DAOImpl implements DAO{
 		return accounts;
 	}
 
+	// TODO: Make a stored procedure for this query.
 	@Override
-	public ArrayList<User> getAccountUsers(Account account) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<User> getAccountHolders(Account account) {
+		ArrayList<User> accountHolders = new ArrayList<User>();
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "SELECT user_id FROM user_accounts " +
+						"WHERE account_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, account.getAccountId());
+			
+			ResultSet rs = ps.executeQuery();
+			ArrayList<Integer> accountIds = new ArrayList<Integer>();
+			
+			while(rs.next()) {
+				accountIds.add(rs.getInt(1));
+			}
+			
+			sql = "SELECT user_id, first_name, last_name FROM users"
+					+ "WHERE user_id = ?";
+			
+			ps = conn.prepareStatement(sql);
+			
+			for(int i : accountIds) {
+				ps.setInt(i, 1);
+				
+				rs = ps.executeQuery();
+				rs.next();
+				User u = new User(rs.getInt(1), rs.getString(2), rs.getString(3));
+				accountHolders.add(u);
+			}
+					
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return accountHolders;
 	}
 
 	@Override
@@ -144,6 +180,7 @@ public class DAOImpl implements DAO{
 				account.setCloseDate(rs.getDate(5));
 			}
 			
+			// TODO: populate account with account holders.
 			return account;
 		}
 		catch(SQLException e) {
