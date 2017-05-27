@@ -1,0 +1,15 @@
+package com.revature.Service;
+
+import com.revature.DAO.DAO;
+import com.revature.POJO.User;
+
+public class Service {
+	
+	DAO dao = new DAO();
+	
+	public boolean newUser(User u){
+		return false;
+		
+	}
+
+}

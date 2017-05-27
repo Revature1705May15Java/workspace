@@ -1,0 +1,36 @@
+package com.rev.intro;
+
+import java.util.Scanner;
+
+abstract class Helper{
+	
+	
+}
+
+public class HelloWorld extends Helper {
+	
+	public static void main(String[] args) {
+		
+
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please enter an integer");
+		int x = input.nextInt();
+		
+		//Switch
+		switch(x){
+		case(1):
+			System.out.println("right");
+		//	break;
+		
+		case(2):
+			System.out.println("wrong");
+			break;
+			
+		default:
+			System.out.println("default");
+		
+		}
+		
+		
+	}
+}

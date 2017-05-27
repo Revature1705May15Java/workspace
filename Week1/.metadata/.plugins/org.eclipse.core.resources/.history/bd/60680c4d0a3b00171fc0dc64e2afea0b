@@ -1,0 +1,56 @@
+package com.ex.main;
+
+import java.util.Scanner;
+
+import com.ex.service.StudentService;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+
+		
+//		System.out.println("enter student Id:");
+//		int id = Integer.parseInt(in.nextLine());
+//		System.out.println("enter student firstname:");
+//		String fn = in.nextLine();
+//		System.out.println("enter student lastname:");
+//		String ls = in.nextLine();
+//		System.out.println("enter student emailaddress:");
+//		String e = in.nextLine();
+//		
+//		Student temp = new Student(fn, ls, e, id);
+//		
+
+		
+	}
+	
+	void run(){
+		StudentService service = new StudentService();
+		System.out.println("What would you like to do \n"
+				+ "1: add user"
+				+ "2: delete user"
+				+ "3: update users"
+				+ "4: view all";
+	
+		switch(input):
+			
+			case(1):
+				addUser();
+			
+			case(4): service.getAll();
+				
+	}
+	
+	
+	add(){
+		
+	}
+	
+	
+
+
+
+}

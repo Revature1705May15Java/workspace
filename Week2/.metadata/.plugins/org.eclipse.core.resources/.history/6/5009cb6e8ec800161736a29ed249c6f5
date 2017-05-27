@@ -1,0 +1,29 @@
+package com.revature.DAO;
+
+import java.sql.Connection;
+
+import com.revature.POJO.User;
+import com.revature.UTIL.ConnectionUtil;
+
+public class DAO implements DAOInterface{
+
+
+	@Override
+	public User createUser(String username, String password, String firstname, String lastname, String email) {
+
+		try(Connection connect = ConnectionUtil.getConnection()){
+			
+		}
+		
+		
+		
+		
+		return null;
+	}
+
+	
+		
+		
+	
+
+}

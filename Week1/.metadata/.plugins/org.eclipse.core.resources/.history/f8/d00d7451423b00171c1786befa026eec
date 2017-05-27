@@ -1,0 +1,24 @@
+package com.rev.operators;
+
+public class Operators {
+	public static void main(String[] args) {
+		
+	 int x = 17;
+	
+	
+	
+	
+	
+	
+	String y = (x > 10) ? (x < 20 ? "oaifjo" : "no") : "no";
+	
+	System.out.println(y);
+	
+	}
+	
+
+	
+
+}
+
+

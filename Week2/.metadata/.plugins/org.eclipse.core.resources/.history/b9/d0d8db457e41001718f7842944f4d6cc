@@ -1,0 +1,12 @@
+package com.bank.pojos;
+
+
+
+
+public class Account {
+	int id;
+	double balance;
+	String type;
+	
+
+}

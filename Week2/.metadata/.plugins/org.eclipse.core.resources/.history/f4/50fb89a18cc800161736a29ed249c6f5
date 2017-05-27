@@ -1,0 +1,18 @@
+package com.revature.DAO;
+
+import com.revature.POJO.User;
+
+public class DAO implements DAOInterface{
+
+	@Override
+	public boolean createUser() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+		
+		
+	}
+
+}

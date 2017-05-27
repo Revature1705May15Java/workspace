@@ -1,0 +1,10 @@
+package com.bank.dao;
+
+import com.bank.pojos.Account;
+
+public interface DAO {
+	
+	public int updateBalance(Account account, double newbal);
+	
+
+}

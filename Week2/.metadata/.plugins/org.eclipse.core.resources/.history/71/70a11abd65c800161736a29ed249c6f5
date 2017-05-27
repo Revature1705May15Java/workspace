@@ -1,0 +1,7 @@
+package com.revature.DAO;
+
+public interface DAOInterface {
+	
+	public String getStatus(int statuskey);
+
+}
