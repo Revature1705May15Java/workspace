@@ -83,8 +83,16 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountId=" + accountId + ", type=" + type + ", balance=" + balance + ", openDate=" + openDate
-				+ ", closeDate=" + closeDate + ", accountHolders=" + accountHolders + "]";
+		// TODO: Test for proper formatting
+		String result = String.format("\t%9s%15s%15s%15s%n", "Type:", "Balance:", "Acct. Number:", "Date Opened:");
+		result += String.format("\t%9s%15f%15d%15s%n", type.getName(), balance, accountId, openDate.toString());
+		
+		result += "\tAccount Holders: ";
+		for(User u : accountHolders) {
+			result += " " + u.getFirstName() + " " + u.getLastName() + ",";
+		}
+		
+		return result.substring(0, result.length() - 1);
 	}
 	
 	
