@@ -2,6 +2,7 @@ package com.rev.main;
 
 import java.util.Scanner;
 
+import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
 import com.rev.service.Service;
 import com.rev.util.InputValidator;
@@ -11,11 +12,13 @@ public class Main {
 	private static final String BANK_NAME = "[Placeholder Bank Name]";
 	
 	private static final int MAX_LOGIN_ATTEMPTS = 3;
+	private static final int MAX_NUMBER_OF_ACCOUNTS = 6;
 	
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
 	private static final int USER_MENU_ITEMS = 3;
 	private static final int ACCOUNT_MENU_ITEMS = 7;
+	private static final int ACCOUNT_TYPE_MENU_ITEMS = 4;
 	
 	private static Scanner scan;
 	private static Service service;
@@ -252,7 +255,10 @@ public class Main {
 			}
 			catch(NumberFormatException e) {
 				selection = INVALID_SELECTION;
+				// TODO: Print error message.
 			}
+			
+			// TODO: Print error message if selection is not valid.
 		} while(!validateMenuSelection(selection, USER_MENU_ITEMS));
 		
 		switch(selection) {
@@ -269,9 +275,69 @@ public class Main {
 	}
 	
 	private static void createNewAccount(User user) {
-		
+		if(user.getAccounts().size() == MAX_NUMBER_OF_ACCOUNTS) {
+			System.out.println("\tCannot create new account.");
+			System.out.println("\tYou currently have the maximum allowable number of accounts.\n");
+		}
+		else {
+			// TODO: Test this once database triggers are set.
+			AccountType type = selectAccountType();
+			
+			if(type == null) {	// User cancelled account creation
+				displayUserMenu(user);
+			}
+			else {
+				// TODO: Pass new account to service.
+				
+				// TODO: After account is created, go to account details screen.
+			}
+		}
 	}
 	
+	private static AccountType selectAccountType() {
+		int selection;
+		String line;
+		
+		do {
+			System.out.println("\tWhat type of account would you like to create?\n");
+			System.out.println("\t1. Checking");
+			System.out.println("\t2. Savings");
+			System.out.println("\t3. Credit");
+			System.out.println("\t4. Cancel account creation");
+			
+			System.out.print("\n\tMake a selection [1 - " + ACCOUNT_TYPE_MENU_ITEMS + "]: ");
+			line = scan.nextLine().trim();
+			System.out.println();
+			
+			try {
+				selection = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				selection = INVALID_SELECTION;
+				// TODO: Print error message
+			}
+			
+			// TODO: Print error message if not selection is not valid.
+		} while(!validateMenuSelection(selection, ACCOUNT_TYPE_MENU_ITEMS));
+		
+		AccountType type;
+		
+		switch(selection) {
+			case AccountType.CHECKING:
+				type = new AccountType(AccountType.CHECKING);
+				break;
+			case AccountType.SAVINGS:
+				type = new AccountType(AccountType.SAVINGS);
+				break;
+			case AccountType.CREDIT:
+				type = new AccountType(AccountType.CREDIT);
+				break;
+			default:
+				return null;
+		}
+		
+		return type;
+	}
 
 	
 	private static void viewAccountDetails(User user) {
