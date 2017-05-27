@@ -1,7 +1,9 @@
 package com.rev.main;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.rev.pojos.Account;
 import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
 import com.rev.service.Service;
@@ -232,7 +234,7 @@ public class Main {
 	}
 	
 	// TODO: Comments
-	public static void displayUserMenu(User user) {
+	private static void displayUserMenu(User user) {
 		String line;
 		int selection;
 		
@@ -243,6 +245,7 @@ public class Main {
 			System.out.println("\tWhat would you like to do today?\n");
 			
 			System.out.println("\t1. Create a new account.");
+			// TODO: Rename option to something more appropriate
 			System.out.println("\t2. View account details.");
 			System.out.println("\t3. Log out.");
 			
@@ -341,10 +344,64 @@ public class Main {
 
 	
 	private static void viewAccountDetails(User user) {
+		int selection = selectAccount(user);
 		
+		if(selection == 0) { // User has no accounts
+			displayUserMenu(user);
+		}
+		else if(selection > user.getAccounts().size()) { // User has cancelled view account details
+			displayUserMenu(user);
+		}
+		else {
+			displayAccountActions(user, user.getAccounts().get(--selection));
+		}
 	}
 	
-	private static void listAccounts(User user) {
+	// TODO: Test this method
+	private static int selectAccount(User user) {
+		ArrayList<Account> accounts = user.getAccounts();
+		int selection;
+		
+		if(accounts.size() == 0) {
+			System.out.println("\tYou currently have no open accounts.\n");
+			selection = 0;
+		}
+		else {
+			String line;
+			
+			do {
+				System.out.println("\tWhich account would you like to view?\n");
+				System.out.printf("\t%13s%17s%18s%n", "Type", "Balance", "Acct. Number");
+				System.out.println("\t     -------------------------------------------");
+				
+				for (int i = 1; i <= user.getAccounts().size(); i++) {
+					Account a = accounts.get(i - 1);
+					System.out.printf("\t%d.%11s%17.2f%18d%n", i, a.getType().getName(), a.getBalance(),
+							a.getAccountId());
+				} 
+				
+				System.out.println("\n\t" + (accounts.size() + 1) + ". Cancel view account.");
+				
+				System.out.print("\n\tMake a selection [1 - " + (accounts.size() + 1) + "]: ");
+				line = scan.nextLine();
+				System.out.println();
+				
+				try {
+					selection = Integer.parseInt(line);
+				}
+				catch(NumberFormatException e) {
+					selection = INVALID_SELECTION;
+					// TODO: Print error message
+				}
+				
+				// TODO: Print error message if selection is out of range
+			} while(!validateMenuSelection(selection, accounts.size() + 1));
+		}
+		
+		return selection;
+	}
+	
+	private static void displayAccountActions(User user, Account account) {
 		
 	}
 	
