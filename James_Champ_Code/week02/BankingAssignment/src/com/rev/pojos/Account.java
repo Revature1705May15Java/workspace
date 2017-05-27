@@ -17,6 +17,14 @@ public class Account {
 		// create array list
 	}
 	
+	// Used when user creates new account
+	public Account(AccountType type, User accountHolder) {
+		this.type = type;
+		
+		accountHolders = new ArrayList<User>();
+		accountHolders.add(accountHolder);
+	}
+	
 	public Account(AccountType type, double balance, Date openDate) {
 		this.type = type;
 		this.balance = balance;
