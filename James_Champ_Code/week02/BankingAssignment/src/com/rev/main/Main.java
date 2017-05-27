@@ -19,7 +19,7 @@ public class Main {
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
 	private static final int USER_MENU_ITEMS = 3;
-	private static final int ACCOUNT_MENU_ITEMS = 7;
+	private static final int ACCOUNT_MENU_ITEMS = 6;
 	private static final int ACCOUNT_TYPE_MENU_ITEMS = 4;
 	
 	private static Scanner scan;
@@ -376,6 +376,7 @@ public class Main {
 				
 				for (int i = 1; i <= user.getAccounts().size(); i++) {
 					Account a = accounts.get(i - 1);
+					// TODO: See what adding a dollar sign would look like
 					System.out.printf("\t%d.%11s%17.2f%18d%n", i, a.getType().getName(), a.getBalance(),
 							a.getAccountId());
 				} 
@@ -402,23 +403,77 @@ public class Main {
 	}
 	
 	private static void displayAccountActions(User user, Account account) {
+		String line;
+		int selection;
+		
+		do {
+			System.out.println(account.toString() + "\n\n");
+			
+			System.out.println("\tAccount actions:\n");
+			
+			System.out.println("\t1. Deposit funds");
+			System.out.println("\t2. Withdraw funds");
+			System.out.println("\t3. Transfer funds");
+			System.out.println("\t4. Add account holder");
+			System.out.println("\t5. Close account");
+			System.out.println("\t6. Back");
+			
+			System.out.print("\n\tMake a selection [1 - " + ACCOUNT_MENU_ITEMS + "]: ");
+			line = scan.nextLine().trim();
+			System.out.println();
+			
+			try {
+				selection = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				selection = INVALID_SELECTION;
+				// TODO: Print error message
+			}
+			
+			// TODO: Print error message if selection is out of range
+		} while(!validateMenuSelection(selection, ACCOUNT_MENU_ITEMS));
+		
+		switch(selection) {
+			case 1:
+				depositFunds(user, account);
+				break;
+			case 2:
+				withdrawFunds(user, account);
+				break;
+			case 3:
+				transferFunds(user, account);
+				break;
+			case 4:
+				addAccountHolder(user, account);
+				break;
+			case 5:
+				closeAccount(user, account);
+				break;
+			case 6:
+				displayUserMenu(user);
+				break;
+		}
+	}
+	
+	private static void depositFunds(User user, Account account) {
 		
 	}
 	
-	// Flow:
-		// Create new account
-			// Is joint account?
-			// Account type?
-		// List accounts
-		// View account details (List account holders)
-			// Choose account if more than one
-				// Check balance
-				// Deposit
-				// Withdraw
-				// Transfer funds
-				// Close account
-				// Add account holder
-		// Log out
+	private static void withdrawFunds(User user, Account account) {
+		
+	}
+	
+	private static void transferFunds(User user, Account account) {
+		
+	}
+	
+	private static void addAccountHolder(User user, Account account) {
+		
+	}
+	
+	private static void closeAccount(User user, Account account) {
+		
+	}
 	
 	/**
 	 * Prompts the user for an email address, and returns the
