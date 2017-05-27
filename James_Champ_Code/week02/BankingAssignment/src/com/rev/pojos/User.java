@@ -13,13 +13,15 @@ public class User {
 	private ArrayList<Account> accounts;
 
 	public User() {
-		
+		accounts = new ArrayList<Account>();
 	}
 	
 	public User(int id, String firstName, String lastName) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		
+		accounts = new ArrayList<Account>();
 	}
 	
 	public User(String firstName, String lastName, String password, String email) {
@@ -27,6 +29,8 @@ public class User {
 		this.lastName = lastName;
 		this.password = password;
 		this.email = email;
+		
+		accounts = new ArrayList<Account>();
 	}
 	
 	public int getId() {

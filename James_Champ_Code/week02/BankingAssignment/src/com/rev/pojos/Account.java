@@ -14,7 +14,7 @@ public class Account {
 	private ArrayList<User> accountHolders;
 
 	public Account() {
-		// create array list
+		accountHolders = new ArrayList<User>();
 	}
 	
 	// Used when user creates new account
@@ -30,7 +30,7 @@ public class Account {
 		this.balance = balance;
 		this.openDate = openDate;
 		
-		// create array list
+		accountHolders = new ArrayList<User>();
 	}
 	
 	public int getAccountId() {
