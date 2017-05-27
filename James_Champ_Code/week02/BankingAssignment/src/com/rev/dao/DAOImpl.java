@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.rev.log.Logger;
 import com.rev.pojos.Account;
+import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
 import com.rev.util.ConnectionUtil;
 
@@ -22,7 +24,6 @@ public class DAOImpl implements DAO{
 
 	@Override
 	public int addUser(String firstName, String lastName, String password, String email) {
-		// TODO Auto-generated method stub
 		try(Connection conn = ConnectionUtil.getConnection()){
 			String sql = "{CALL create_new_user(?, ?, ?, ?)}";
 		
@@ -45,7 +46,6 @@ public class DAOImpl implements DAO{
 		return 0;
 	}
 
-	// TODO: Test with bad input (non-existent email)
 	public User getUser(String email) {
 		try(Connection conn = ConnectionUtil.getConnection()){
 			String sql =	"SELECT * FROM users " +
@@ -65,7 +65,10 @@ public class DAOImpl implements DAO{
 				user.setPassword(rs.getString(4));
 				user.setEmail(rs.getString(5));
 			}
-
+			
+			user.setAccounts(getUserAccounts(user));
+			
+			// set each 
 			// TODO: Log results
 			
 			return user;
@@ -74,6 +77,45 @@ public class DAOImpl implements DAO{
 			e.printStackTrace();
 		}
 		
+		return null;
+	}
+
+	@Override
+	public ArrayList<Account> getUserAccounts(User user) {
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "SELECT * FROM user_accounts " +
+						 "WHERE user_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, user.getId());
+			
+			ResultSet rs = ps.executeQuery();
+			ArrayList<Account> accounts = new ArrayList<Account>();
+			
+			while(rs.next()) {
+				Account a = new Account();
+				
+				a.setAccountId(rs.getInt(1));
+				a.setType(new AccountType(rs.getInt(2)));
+				a.setBalance(rs.getDouble(3));
+				a.setOpenDate(rs.getDate(4));
+				a.setCloseDate(rs.getDate(5));
+				
+				accounts.add(a);
+			}
+			
+			return accounts;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public ArrayList<User> getAccountUsers(Account account) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

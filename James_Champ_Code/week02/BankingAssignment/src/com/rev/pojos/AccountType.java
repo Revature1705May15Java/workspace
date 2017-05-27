@@ -8,6 +8,7 @@ public class AccountType {
 	private int typeId;
 	private String name;
 	
+	// TODO: Test with incorrect type
 	public AccountType(int type) {
 		typeId = type;
 		

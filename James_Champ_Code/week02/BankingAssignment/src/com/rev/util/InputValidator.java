@@ -13,6 +13,7 @@ public class InputValidator {
 	
 	/**
 	 * Checks the given String to see if it is a properly formed email address.
+	 * Addresses are not checked for proper top-level domains.
 	 * 
 	 * @param email	The String that is to be tested.
 	 * @return	{@code true} if the given String is a properly formatted email 

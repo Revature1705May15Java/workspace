@@ -18,8 +18,14 @@ public class Service {
 	}
 	
 	public User getUser(String email) {
-		// TODO: Set user's accounts
-		return dao.getUser(email);
+		User user = dao.getUser(email);
+		
+		// Get all user's accounts
+		
+		// For each account, get associated users
+		
+		
+		return user;
 	}
 	
 	public boolean isEmailUnique(String email) {

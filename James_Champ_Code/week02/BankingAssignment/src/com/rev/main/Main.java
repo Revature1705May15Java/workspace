@@ -10,8 +10,11 @@ public class Main {
 	private static final String BANK_NAME = "[Placeholder Bank Name]";
 	
 	private static final int MAX_LOGIN_ATTEMPTS = 3;
+	
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
+	private static final int USER_MENU_ITEMS = 4;
+	private static final int ACCOUNT_MENU_ITEMS = 7;
 	
 	private static Scanner scan;
 	private static Service service;
@@ -115,7 +118,7 @@ public class Main {
 			} while(count > 0 && !isPasswordCorrect);
 			
 			if(isPasswordCorrect) {
-				// Display user menu
+				displayUserMenu(user);
 			}
 			else {
 				System.out.println("\tMaximum login attempts reached.\n");
@@ -161,12 +164,16 @@ public class Main {
 	
 			System.out.println("\tYou have successfully became a member of " + BANK_NAME);
 			
-			// TODO: Either log in or go to account holder menu
+			displayUserMenu(user);
 		}
 		else {	// Email exists in the database.
 			System.out.println("\tYou are already a member of " + BANK_NAME + ".\n");
 			displayInitialMenu();
 		}
+	}
+	
+	public static void displayUserMenu(User user) {
+		
 	}
 	// Flow:
 		// Create new account
