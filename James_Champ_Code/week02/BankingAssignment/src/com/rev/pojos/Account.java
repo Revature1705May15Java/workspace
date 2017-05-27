@@ -73,11 +73,11 @@ public class Account {
 		this.closeDate = closeDate;
 	}
 
-	public ArrayList<User> getAccountHolderIds() {
+	public ArrayList<User> getAccountHolders() {
 		return accountHolders;
 	}
 
-	public void setAccountHolderIds(ArrayList<User> accountHolders) {
+	public void setAccountHolders(ArrayList<User> accountHolders) {
 		this.accountHolders = accountHolders;
 	}
 
