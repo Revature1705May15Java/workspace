@@ -141,4 +141,306 @@ DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
 
   :v_Return := v_Return;
 END;
+/
+--create a function that returns the length of a mediatype from the mediatype table
+create or replace function getLengthMediaType(id in number)
+return number is
 
+  mtLength number;
+
+begin
+
+  select length(name) 
+  into mtLength
+  from mediatype
+  where mediatypeid = id;
+  
+
+  return mtLength;
+
+end;
+/
+DECLARE
+  ID NUMBER;
+  v_Return NUMBER;
+BEGIN
+  ID := 1;
+
+  v_Return := GETLENGTHMEDIATYPE(
+    ID => ID
+  );
+
+DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
+
+  :v_Return := v_Return;
+END;
+/
+--Problem 3.2
+--Create a function that returns the average total of all invoices
+create or replace function averageTotal
+return number is
+
+  avgTotal number(7,2);
+
+begin
+
+  select avg(total) 
+  into avgTotal
+  from invoice;
+  
+
+  return avgTotal;
+
+end;
+/
+DECLARE
+  v_Return NUMBER;
+BEGIN
+
+  v_Return := AVERAGETOTAL();
+
+DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
+
+  :v_Return := v_Return;
+END;
+/
+--Create a function that returns the most expensive track
+CREATE OR REPLACE FUNCTION maxTrack
+return number is
+  bigTrack number;
+begin
+
+select max(unitprice) 
+into bigTrack
+from track;
+
+return bigTrack;
+
+end;
+/
+DECLARE
+  v_Return NUMBER;
+BEGIN
+
+  v_Return := MAXTRACK();
+DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
+
+  :v_Return := v_Return;
+
+END;
+/
+--Problem 3.3
+--Create a function that returns the average price of invoiceline items 
+--in the invoiceline table
+create or replace function averagePrice
+return number is
+
+  avgPrice number(7,2);
+
+begin
+
+  select avg(unitprice) 
+  into avgPrice
+  from invoiceline;
+  
+
+  return avgPrice;
+
+end;
+/
+DECLARE
+  v_Return NUMBER;
+BEGIN
+
+  v_Return := AVERAGEPRICE();
+
+DBMS_OUTPUT.PUT_LINE('v_Return = ' || v_Return);
+  :v_Return := v_Return;
+
+END;
+/
+--Problem 3.4
+--Create a function that returns all employees who are born after 1968.
+select * from employee
+where birthdate > '31-DEC-68';
+/
+
+CREATE OR REPLACE FUNCTION youngEmployees
+RETURN SYS_REFCURSOR
+    AS st_cursor SYS_REFCURSOR;
+    BEGIN
+      OPEN st_cursor FOR
+      SELECT * FROM Employee WHERE birthdate >= '01-JAN-69';
+      RETURN st_cursor;
+    END;
+/
+
+select youngemployees from dual;
+/
+--Problem 4.1
+--Create a stored procedure that selects the first and last names of all the employees
+create or replace procedure getFirstAndLast(sys_cur out SYS_REFCURSOR)
+  is
+  begin
+    open sys_cur for
+    select firstname, lastname from employee;
+  end;
+/
+variable rc refcursor;
+exec getfirstandlast( :rc );
+print rc;
+
+--Problem 4.2
+-- Create a stored procedure that updates the personal information of an employee.
+create or replace PROCEDURE updateEmployee (e_id number, e_ln varchar2, 
+e_fn varchar2, e_address varchar2, e_city varchar2, e_state varchar2, 
+e_country varchar2, e_postalcode varchar2, e_phone varchar2, 
+e_fax varchar2, e_email varchar2)
+ 
+ as
+ begin 
+ 
+ update employee
+ set lastname = e_ln, firstname = e_fn, address = e_address, city = e_city, 
+ state = e_state, country = e_country, postalcode = e_postalcode, phone = e_phone,
+ fax = e_fax, email = e_email
+ where employeeid = e_id;
+ 
+ end;
+/
+call updateEmployee(10, 'McBee', 'John', '1311 W 300 S', 'Tiptoe', 'IN',
+'United States', '46073', '+1 (316) 384-2508', '+1 (666) 666-6666', 'md@gmail.com');
+/
+-- Create a stored procedure that returns the managers of an employee.
+create or replace procedure getManagers(e_id in number,  m_id  out number)
+as
+begin
+  select reportsto 
+  into m_id
+  from employee
+  where employeeid = e_id;
+end;
+/
+--Problem 4.3
+--Create a stored procedure that returns the name and company of a customer.
+create or replace procedure getCustomer(c_id in number, c_fn out varchar2, 
+c_ln out varchar2, c_company out varchar2)
+as
+begin
+  select firstname, lastname, company
+  into c_fn, c_ln, c_company
+  from customer
+  where customerid = c_id;
+end;
+/
+--Problem 5.0
+--Create a transaction that given a invoiceId will delete that invoice
+--(There may be constraints that rely on this, find out how to resolve them).
+CREATE OR REPLACE PROCEDURE deleteInvoice(id IN NUMBER)
+  IS
+  BEGIN
+    SAVEPOINT start_tran;
+    DELETE FROM Invoice WHERE invoiceid = id;
+  EXCEPTION
+  WHEN OTHERS THEN
+    ROLLBACK TO start_tran;
+    RAISE;
+  END;
+/
+--Create a transaction nested within a stored procedure that inserts 
+--a new record in the Customer table
+CREATE OR REPLACE PROCEDURE addCustomer(c_id NUMBER, c_fn varchar2, c_ln varchar2,
+c_company varchar2, c_address varchar2, c_city varchar2, c_state varchar2,
+c_country varchar2, c_pc varchar2, c_phone varchar2, c_fax varchar2, c_email varchar2,
+c_repid number)
+  IS
+  BEGIN
+    SAVEPOINT start_tran;
+    insert into customer values (c_id, c_fn, c_ln, c_company, c_address, c_city, c_state,
+    c_country, c_pc, c_phone, c_fax, c_email, c_repid);
+  EXCEPTION
+  WHEN OTHERS THEN
+  ROLLBACK TO start_tran;
+  RAISE;
+END;
+/
+--Problem 6.1
+--Create an after insert trigger on the employee table fired after 
+--a new record is inserted into the table.
+CREATE OR REPLACE TRIGGER em_after_trigger
+AFTER INSERT ON Employee
+FOR EACH ROW
+BEGIN
+  dbms_output.put_line('Did something');
+END;
+/
+--Create an after update trigger on the album table that fires 
+--after a row is inserted in the table
+CREATE OR REPLACE TRIGGER em_afterupdate_trigger
+AFTER UPDATE ON Album
+FOR EACH ROW
+BEGIN
+  dbms_output.put_line('Did something');
+END;
+/
+--Create an after delete trigger on the customer table 
+--that fires after a row is deleted from the table.
+CREATE OR REPLACE TRIGGER em_afterdelete_trigger
+AFTER DELETE ON Customer
+FOR EACH ROW
+BEGIN
+  dbms_output.put_line('Did something');
+END;
+/
+--Problem 6.2
+--Create an instead of trigger that restricts the deletion of any invoice 
+--that is priced over 50 dollars
+CREATE OR REPLACE TRIGGER inv_instead_trigger
+INSTEAD OF DELETE ON INVOICE
+BEGIN
+IF
+INVOICE.TOTAL <= 50
+THEN
+DELETE FROM INVOICE; 
+END;
+/
+--Problem 7.1
+--Create an inner join that joins customers and orders 
+--and specifies the name of the customer and the invoiceId.
+select cu.firstname, cu.lastname, inv.invoiceid
+from customer cu
+inner join invoice inv on cu.customerid = inv.customerid;
+/
+--Problem 7.2
+--Create an outer join that joins the customer and invoice table, 
+--specifying the CustomerId, firstname, lastname, invoiceId, and total.
+select cu.customerid, cu.firstname, cu.lastname, inv.invoiceid, inv.total
+from customer cu
+full outer join invoice inv on cu.customerid = inv.customerid;
+/
+--Problem 7.3
+--Create a right join that joins album and artist specifying artist name and title.
+select art.name, al.title
+from album al
+right join artist art on al.artistid  = art.artistid;
+/
+--Problem 7.4
+--Create a cross join that joins album and artist and sorts by 
+--artist name in ascending order.
+select *
+from album al
+cross join artist art
+order by art.name asc;
+/
+--Problem 7.5
+--Perform a self-join on the employee table, joining on the reportsto column.
+SELECT *
+FROM employee e1, employee e2
+WHERE e1.reportsto=e2.employeeid;
+/
+--Problem 8.1
+--Create a clustered index on of table of your choice
+
+
+--Problem 9.1
+--Create a .bak file for the Chinook database.
