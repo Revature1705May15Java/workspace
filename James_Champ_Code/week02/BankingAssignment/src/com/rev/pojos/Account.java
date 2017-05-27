@@ -10,7 +10,7 @@ public class Account {
 	private Date openDate;
 	private Date closeDate;
 	
-	private ArrayList<Integer> accountHolderIds;
+	private ArrayList<User> accountHolders;
 
 	public Account() {
 		// create array list
@@ -64,18 +64,18 @@ public class Account {
 		this.closeDate = closeDate;
 	}
 
-	public ArrayList<Integer> getAccountHolderIds() {
-		return accountHolderIds;
+	public ArrayList<User> getAccountHolderIds() {
+		return accountHolders;
 	}
 
-	public void setAccountHolderIds(ArrayList<Integer> accountHolders) {
-		this.accountHolderIds = accountHolders;
+	public void setAccountHolderIds(ArrayList<User> accountHolders) {
+		this.accountHolders = accountHolders;
 	}
 
 	@Override
 	public String toString() {
 		return "Account [accountId=" + accountId + ", type=" + type + ", balance=" + balance + ", openDate=" + openDate
-				+ ", closeDate=" + closeDate + ", accountHolders=" + accountHolderIds + "]";
+				+ ", closeDate=" + closeDate + ", accountHolders=" + accountHolders + "]";
 	}
 	
 	
