@@ -19,10 +19,21 @@ public class Main {
 	private static Scanner scan;
 	private static Service service;
 	
+	/**
+	 * Main entry point for this program.
+	 * 
+	 * @param args	Command line arguments.
+	 */
 	public static void main(String[] args) {
 		run();
 	}
 
+	/**
+	 * Begins the banking program. Opens the Scanner,
+	 * creates a new Service object, prints a welcome
+	 * message to the user, and displays the initial
+	 * menu.
+	 */
 	private static void run() {
 		scan = new Scanner(System.in);
 		service = new Service();
