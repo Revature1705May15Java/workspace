@@ -8,12 +8,12 @@ public class User {
 	String lastName;
 	String password;
 	String email;
-	ArrayList<Account> accounts;
+	ArrayList<Integer> accounts;
 	
 	public User() {}
 	
 	public User(int id, String firstName, String lastName, String password, String email,
-			ArrayList<Account> accounts) {
+			ArrayList<Integer> accounts) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -30,6 +30,7 @@ public class User {
 		this.lastName = lastName;
 		this.password = password;
 		this.email = email;
+		this.accounts = new ArrayList<>();
 	}
 	
 	public int getId() {
@@ -62,17 +63,17 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public ArrayList<Account> getAccounts() {
+	public ArrayList<Integer> getAccounts() {
 		return accounts;
 	}
-	public void setAccounts(ArrayList<Account> accounts) {
+	public void setAccounts(ArrayList<Integer> accounts) {
 		this.accounts = accounts;
 	}
 
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", password=" + password
-				+ ", email=" + email + ", accounts=" + accounts + "]";
+				+ ", email=" + email + ", accounts=" + accounts.size() + "]";
 	}
 
 }

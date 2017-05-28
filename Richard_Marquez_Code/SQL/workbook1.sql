@@ -169,8 +169,8 @@ BEGIN
     WHERE CUSTOMERID=custId;
 END getNameAndComp;
 /
-VARIABLE name VARCHAR2;
-VARIABLE comp VARCHAR2;
+VARIABLE name VARCHAR2(100);
+VARIABLE comp VARCHAR2(100);
 EXEC getNameAndComp(1, :name, :comp);
 PRINT name;
 PRINT comp;

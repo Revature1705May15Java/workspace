@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 public class Palindromes {
 
-	public static void main(String[] args) {
-		//
-	}
-	
 	static boolean isPalindrome(String str) {
 		StringBuilder sb = new StringBuilder(str);
 		sb.reverse();

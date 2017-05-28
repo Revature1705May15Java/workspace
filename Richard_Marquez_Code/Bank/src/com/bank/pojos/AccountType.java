@@ -26,7 +26,9 @@ public class AccountType {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
+
+	public String toString() {
+		// return capitalized type name
+		return (name.charAt(0)+"").toUpperCase() + name.substring(1);
+	}
 }

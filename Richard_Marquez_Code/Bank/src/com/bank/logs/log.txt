@@ -28,3 +28,253 @@
 2017-05-26T11:29:16.962 : retrieved user w/ email richard92m@me.com
 2017-05-26T11:39:53.986 : retrieved user w/ email richard92m@me.com
 2017-05-26T11:46:56.383 : retrieved user w/ email richard92m@me.com
+2017-05-26T12:35:50.341 : retrieved user w/ email richard92m@me.com
+2017-05-26T13:47:15.154 : retrieved user w/ email richard92m@me.com
+2017-05-26T13:48:09.292 : retrieved user w/ email richard92m@me.com
+2017-05-26T13:49:43.721 : retrieved user w/ email richard92m@me.com
+2017-05-26T13:51:27.092 : retrieved account w/ id 1
+2017-05-26T13:51:27.107 : retrieved account w/ id 2
+2017-05-26T13:51:27.107 : retrieved user w/ email rci@me.cs
+2017-05-26T13:54:25.330 : retrieved account w/ id 1
+2017-05-26T13:54:25.330 : retrieved account w/ id 2
+2017-05-26T13:54:25.346 : retrieved user w/ email rci@me.cs
+2017-05-26T15:02:15.563 : retrieved user w/ id 1
+2017-05-26T15:02:15.579 : retrieved user w/ id 4
+2017-05-26T15:02:15.579 : retrieved user w/ id 1
+2017-05-26T15:02:15.657 : retrieved user w/ id 1
+2017-05-26T15:02:15.672 : retrieved user w/ id 4
+2017-05-26T15:06:05.736 : retrieved user w/ id 1
+2017-05-26T15:06:05.752 : retrieved user w/ id 4
+2017-05-26T15:06:05.768 : retrieved user w/ id 1
+2017-05-26T15:06:05.846 : retrieved user w/ id 1
+2017-05-26T15:06:05.893 : retrieved user w/ id 4
+2017-05-26T15:07:51.237 : retrieved account w/ id 1
+2017-05-26T15:07:51.267 : retrieved account w/ id 2
+2017-05-26T15:07:51.275 : retrieved user w/ id 1
+2017-05-26T15:07:51.389 : retrieved account w/ id 1
+2017-05-26T15:07:51.406 : retrieved account w/ id 2
+2017-05-27T12:10:11.570 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:14:05.598 : retrieved account w/ id 1
+2017-05-27T12:14:05.613 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:31:09.785 : retrieved acct id 1
+2017-05-27T12:31:09.800 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:31:11.425 : retrieved account w/ id 1
+2017-05-27T12:34:41.353 : retrieved acct id 1
+2017-05-27T12:34:41.353 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:34:42.840 : retrieved user id 1
+2017-05-27T12:34:42.855 : retrieved user id 4
+2017-05-27T12:34:42.855 : retrieved user id 5
+2017-05-27T12:34:42.878 : retrieved account w/ id 1
+2017-05-27T12:46:44.391 : retrieved acct id 1
+2017-05-27T12:46:44.406 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:46:46.754 : retrieved user id 1
+2017-05-27T12:46:46.754 : retrieved user id 4
+2017-05-27T12:46:46.754 : retrieved user id 5
+2017-05-27T12:46:46.770 : retrieved account w/ id 1
+2017-05-27T12:50:11.204 : retrieved acct id 1
+2017-05-27T12:50:11.220 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:50:18.093 : retrieved user id 1
+2017-05-27T12:50:18.109 : retrieved user id 4
+2017-05-27T12:50:18.109 : retrieved user id 5
+2017-05-27T12:50:18.109 : retrieved account w/ id 1
+2017-05-27T12:57:16.866 : retrieved acct id 1
+2017-05-27T12:57:16.881 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:57:18.266 : retrieved user id 1
+2017-05-27T12:57:18.266 : retrieved user id 4
+2017-05-27T12:57:18.266 : retrieved user id 5
+2017-05-27T12:57:18.282 : retrieved account w/ id 1
+2017-05-27T12:58:08.250 : retrieved acct id 1
+2017-05-27T12:58:08.265 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:58:10.413 : retrieved user id 1
+2017-05-27T12:58:10.413 : retrieved user id 4
+2017-05-27T12:58:10.413 : retrieved user id 5
+2017-05-27T12:58:10.429 : retrieved account w/ id 1
+2017-05-27T12:59:08.804 : retrieved acct id 1
+2017-05-27T12:59:08.820 : retrieved user w/ email richard92m@me.com
+2017-05-27T12:59:12.237 : retrieved user id 1
+2017-05-27T12:59:12.253 : retrieved user id 4
+2017-05-27T12:59:12.259 : retrieved user id 5
+2017-05-27T12:59:12.259 : retrieved account w/ id 1
+2017-05-27T13:00:18.895 : retrieved acct id 1
+2017-05-27T13:00:18.911 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:00:20.366 : retrieved user id 1
+2017-05-27T13:00:20.382 : retrieved user id 4
+2017-05-27T13:00:20.382 : retrieved user id 5
+2017-05-27T13:00:20.382 : retrieved account w/ id 1
+2017-05-27T13:00:23.352 : retrieved user id 1
+2017-05-27T13:00:23.352 : retrieved user id 4
+2017-05-27T13:00:23.368 : retrieved user id 5
+2017-05-27T13:00:23.368 : retrieved account w/ id 1
+2017-05-27T13:00:26.101 : retrieved user id 1
+2017-05-27T13:00:26.101 : retrieved user id 4
+2017-05-27T13:00:26.117 : retrieved user id 5
+2017-05-27T13:00:26.117 : retrieved account w/ id 1
+2017-05-27T13:00:33.890 : retrieved user id 1
+2017-05-27T13:00:33.905 : retrieved user id 4
+2017-05-27T13:00:33.905 : retrieved user id 5
+2017-05-27T13:00:33.938 : retrieved account w/ id 1
+2017-05-27T13:01:07.556 : retrieved acct id 1
+2017-05-27T13:01:07.571 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:01:09.696 : retrieved user id 1
+2017-05-27T13:01:09.711 : retrieved user id 4
+2017-05-27T13:01:09.711 : retrieved user id 5
+2017-05-27T13:01:09.711 : retrieved account w/ id 1
+2017-05-27T13:01:12.130 : retrieved user id 1
+2017-05-27T13:01:12.145 : retrieved user id 4
+2017-05-27T13:01:12.145 : retrieved user id 5
+2017-05-27T13:01:12.145 : retrieved account w/ id 1
+2017-05-27T13:35:39.282 : retrieved acct id 1
+2017-05-27T13:35:39.283 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:35:43.387 : retrieved user id 1
+2017-05-27T13:35:43.387 : retrieved user id 4
+2017-05-27T13:35:43.403 : retrieved user id 5
+2017-05-27T13:35:43.403 : retrieved account w/ id 1
+2017-05-27T13:37:32.866 : retrieved acct id 1
+2017-05-27T13:37:32.889 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:40:27.290 : retrieved acct id 1
+2017-05-27T13:40:27.307 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:41:15.045 : retrieved acct id 1
+2017-05-27T13:41:15.060 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:41:22.630 : retrieved user id 1
+2017-05-27T13:41:22.637 : retrieved user id 4
+2017-05-27T13:41:22.637 : retrieved user id 5
+2017-05-27T13:41:22.637 : retrieved account w/ id 1
+2017-05-27T13:41:25.254 : retrieved user id 1
+2017-05-27T13:41:25.254 : retrieved user id 4
+2017-05-27T13:41:25.270 : retrieved user id 5
+2017-05-27T13:41:25.270 : retrieved account w/ id 1
+2017-05-27T13:41:37.451 : retrieved user id 1
+2017-05-27T13:41:37.451 : retrieved user id 4
+2017-05-27T13:41:37.451 : retrieved user id 5
+2017-05-27T13:41:37.466 : retrieved account w/ id 1
+2017-05-27T13:42:14.202 : retrieved acct id 1
+2017-05-27T13:42:14.206 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:42:17.440 : retrieved user id 1
+2017-05-27T13:42:17.456 : retrieved user id 4
+2017-05-27T13:42:17.456 : retrieved user id 5
+2017-05-27T13:42:17.471 : retrieved account w/ id 1
+2017-05-27T13:42:20.243 : retrieved user id 1
+2017-05-27T13:42:20.243 : retrieved user id 4
+2017-05-27T13:42:20.243 : retrieved user id 5
+2017-05-27T13:42:20.258 : retrieved account w/ id 1
+2017-05-27T13:43:14.836 : 1 user added
+2017-05-27T13:43:15.005 : retrieved user w/ email bob.dylan@me.com
+2017-05-27T13:43:41.714 : retrieved user w/ email bob.dylan@me.com
+2017-05-27T13:56:56.506 : retrieved acct id 1
+2017-05-27T13:56:56.521 : retrieved user w/ email richard92m@me.com
+2017-05-27T13:59:02.907 : retrieved acct id 1
+2017-05-27T13:59:02.922 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:18:50.872 : retrieved acct id 1
+2017-05-27T14:18:50.889 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:20:14.707 : retrieved acct id 1
+2017-05-27T14:20:14.723 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:20:21.146 : retrieved acct id 1
+2017-05-27T14:20:21.162 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:20:55.919 : retrieved acct id 1
+2017-05-27T14:20:55.933 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:27:21.005 : retrieved acct id 1
+2017-05-27T14:27:21.021 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:28:00.130 : retrieved acct id 1
+2017-05-27T14:28:00.150 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:29:39.616 : retrieved acct id 1
+2017-05-27T14:29:39.620 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:32:45.256 : retrieved acct id 1
+2017-05-27T14:32:45.271 : retrieved user w/ email richard92m@me.com
+2017-05-27T14:33:52.473 : retrieved acct id 1
+2017-05-27T14:33:52.473 : retrieved user w/ email richard92m@me.com
+2017-05-27T22:53:27.520 : retrieved acct id 1
+2017-05-27T22:53:27.536 : retrieved user w/ email richard92m@me.com
+2017-05-27T22:53:36.818 : retrieved acct id 1
+2017-05-27T22:53:36.818 : retrieved user w/ email richard92m@me.com
+2017-05-27T22:53:39.771 : retrieved user id 1
+2017-05-27T22:53:39.771 : retrieved user id 4
+2017-05-27T22:53:39.787 : retrieved user id 5
+2017-05-27T22:53:39.787 : retrieved account w/ id 1
+2017-05-27T22:54:56.479 : retrieved acct id 1
+2017-05-27T22:54:56.495 : retrieved user w/ email richard92m@me.com
+2017-05-27T22:57:53.914 : retrieved acct id 1
+2017-05-27T22:57:53.929 : retrieved acct id 6
+2017-05-27T22:57:53.929 : retrieved user w/ email richard92m@me.com
+2017-05-27T22:57:57.617 : retrieved user id 1
+2017-05-27T22:57:57.617 : retrieved user id 4
+2017-05-27T22:57:57.633 : retrieved user id 5
+2017-05-27T22:57:57.633 : retrieved account w/ id 1
+2017-05-27T22:57:57.664 : retrieved user id 5
+2017-05-27T22:57:57.664 : retrieved account w/ id 6
+2017-05-27T22:58:12.915 : retrieved user id 1
+2017-05-27T22:58:12.915 : retrieved user id 4
+2017-05-27T22:58:12.931 : retrieved user id 5
+2017-05-27T22:58:12.931 : retrieved account w/ id 1
+2017-05-27T22:58:12.946 : retrieved user id 5
+2017-05-27T22:58:12.962 : retrieved account w/ id 6
+2017-05-27T22:58:12.978 : retrieved user id 5
+2017-05-27T22:58:12.993 : retrieved account w/ id 8
+2017-05-27T23:01:43.788 : retrieved acct id 1
+2017-05-27T23:01:43.804 : retrieved acct id 6
+2017-05-27T23:01:43.820 : retrieved acct id 8
+2017-05-27T23:01:43.820 : retrieved user w/ email richard92m@me.com
+2017-05-27T23:01:45.460 : retrieved user id 1
+2017-05-27T23:01:45.460 : retrieved user id 4
+2017-05-27T23:01:45.476 : retrieved user id 5
+2017-05-27T23:01:45.476 : retrieved account w/ id 1
+2017-05-27T23:01:45.492 : retrieved user id 5
+2017-05-27T23:01:45.507 : retrieved account w/ id 6
+2017-05-27T23:01:45.523 : retrieved user id 5
+2017-05-27T23:01:45.539 : retrieved account w/ id 8
+2017-05-27T23:01:56.258 : retrieved user id 5
+2017-05-27T23:01:56.258 : retrieved acct w/ id 9
+2017-05-27T23:02:10.103 : retrieved user id 1
+2017-05-27T23:02:10.103 : retrieved user id 4
+2017-05-27T23:02:10.103 : retrieved user id 5
+2017-05-27T23:02:10.119 : retrieved account w/ id 1
+2017-05-27T23:02:10.134 : retrieved user id 5
+2017-05-27T23:02:10.150 : retrieved account w/ id 6
+2017-05-27T23:02:10.166 : retrieved user id 5
+2017-05-27T23:02:10.166 : retrieved account w/ id 8
+2017-05-27T23:02:10.197 : retrieved user id 5
+2017-05-27T23:02:10.197 : retrieved account w/ id 9
+2017-05-27T23:08:55.236 : retrieved acct id 1
+2017-05-27T23:08:55.252 : retrieved acct id 6
+2017-05-27T23:08:55.267 : retrieved acct id 8
+2017-05-27T23:08:55.267 : retrieved acct id 9
+2017-05-27T23:08:55.267 : retrieved user w/ email richard92m@me.com
+2017-05-27T23:08:56.439 : retrieved user id 1
+2017-05-27T23:08:56.439 : retrieved user id 4
+2017-05-27T23:08:56.455 : retrieved user id 5
+2017-05-27T23:08:56.455 : retrieved account w/ id 1
+2017-05-27T23:08:56.486 : retrieved user id 5
+2017-05-27T23:08:56.486 : retrieved account w/ id 6
+2017-05-27T23:08:56.517 : retrieved user id 5
+2017-05-27T23:08:56.517 : retrieved account w/ id 8
+2017-05-27T23:08:56.549 : retrieved user id 5
+2017-05-27T23:08:56.549 : retrieved account w/ id 9
+2017-05-27T23:14:25.243 : retrieved acct id 1
+2017-05-27T23:14:25.259 : retrieved acct id 6
+2017-05-27T23:14:25.274 : retrieved acct id 8
+2017-05-27T23:14:25.274 : retrieved acct id 9
+2017-05-27T23:14:25.274 : retrieved user w/ email richard92m@me.com
+2017-05-27T23:14:26.931 : retrieved user id 1
+2017-05-27T23:14:26.931 : retrieved user id 4
+2017-05-27T23:14:26.946 : retrieved user id 5
+2017-05-27T23:14:26.946 : retrieved account w/ id 1
+2017-05-27T23:14:26.978 : retrieved user id 5
+2017-05-27T23:14:26.978 : retrieved account w/ id 6
+2017-05-27T23:14:27.009 : retrieved user id 5
+2017-05-27T23:14:27.009 : retrieved account w/ id 8
+2017-05-27T23:14:27.025 : retrieved user id 5
+2017-05-27T23:14:27.040 : retrieved account w/ id 9
+2017-05-27T23:15:02.326 : retrieved acct id 1
+2017-05-27T23:15:02.342 : retrieved acct id 6
+2017-05-27T23:15:02.342 : retrieved acct id 8
+2017-05-27T23:15:02.358 : retrieved acct id 9
+2017-05-27T23:15:02.358 : retrieved user w/ email richard92m@me.com
+2017-05-27T23:15:03.764 : retrieved user id 1
+2017-05-27T23:15:03.764 : retrieved user id 4
+2017-05-27T23:15:03.780 : retrieved user id 5
+2017-05-27T23:15:03.780 : retrieved account w/ id 1
+2017-05-27T23:15:03.811 : retrieved user id 5
+2017-05-27T23:15:03.826 : retrieved account w/ id 6
+2017-05-27T23:15:03.842 : retrieved user id 5
+2017-05-27T23:15:03.858 : retrieved account w/ id 8
+2017-05-27T23:15:03.873 : retrieved user id 5
+2017-05-27T23:15:03.873 : retrieved account w/ id 9

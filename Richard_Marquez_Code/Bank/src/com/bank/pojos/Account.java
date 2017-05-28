@@ -9,19 +9,19 @@ public class Account {
 	AccountType type;
 	LocalDate opened;
 	LocalDate closed;
-	ArrayList<User> holders;
+	ArrayList<Integer> users;
 	
 	public Account() {}
 	
 	public Account(int id, double balance, LocalDate opened, LocalDate closed, AccountType type,
-			ArrayList<User> holders) {
+			ArrayList<Integer> users) {
 		super();
 		this.id = id;
 		this.balance = balance;
 		this.type = type;
 		this.opened = opened;
 		this.closed = closed;
-		this.holders = holders;
+		this.users = users;
 	}
 
 	public Account(int id, double balance, LocalDate opened, LocalDate closed, AccountType type) {
@@ -31,7 +31,7 @@ public class Account {
 		this.type = type;
 		this.opened = opened;
 		this.closed = closed;
-		this.holders = holders;
+		this.users = new ArrayList<>();
 	}
 	
 	public int getId() {
@@ -74,18 +74,18 @@ public class Account {
 		this.closed = closed;
 	}
 
-	public ArrayList<User> getHolders() {
-		return holders;
+	public ArrayList<Integer> getUsers() {
+		return users;
 	}
 
-	public void setHolders(ArrayList<User> holders) {
-		this.holders = holders;
+	public void setUsers(ArrayList<Integer> users) {
+		this.users = users;
 	}
 
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", balance=" + balance + ", type=" + type + ", opened=" + opened + ", closed="
-				+ closed + ", holders=" + holders + "]";
+				+ closed + ", users=" + users + "]";
 	}
 	
 }
