@@ -1,0 +1,27 @@
+package com.ex.DaoImpl;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.ex.util.ConnectionUtil;
+
+public class DecImpl 
+{
+	public void addOrder (int cust_id, double total)
+	{
+		try (Connection connect = ConnectionUtil.getConnection())
+		{
+			String sql = "inser into demo_orders(customer_id,order_total "
+					+ "values (" + cust_id + "," + total + ")";
+			Statement statement = connect.createStatement();
+			
+			int numRowsAffected = statement.executeUpdate(sql);
+			System.out.println("Rows affected " + numRowsAffected);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

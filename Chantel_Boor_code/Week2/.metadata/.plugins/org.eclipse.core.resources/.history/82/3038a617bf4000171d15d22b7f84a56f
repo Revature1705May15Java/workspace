@@ -1,0 +1,70 @@
+package com.ex.DaoImpl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.ex.pojo.Customer;
+import com.ex.util.ConnectionUtil;
+
+public class DecImpl 
+{
+	public void addOrder (int cust_id, double total)
+	{
+		try (Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "inser into demo_orders(customer_id,order_total "
+					+ "values (" + cust_id + "," + total + ")";
+			Statement statement = connect.createStatement();
+			
+			int numRowsAffected = statement.executeUpdate(sql);
+			System.out.println("Rows affected " + numRowsAffected);
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void addCustomer ()
+	{
+		
+	}
+	
+	public Customer getCustomerById (int id)
+	{
+		Customer c = new Customer();
+		
+		try(Connection connect = ConnectionUtil.getConnection();)
+		{
+			String sql = "select * from demo_customers where customer_id = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet info = ps.executeQuery();
+			
+			while(info.next())
+			{
+				c.setId(info.getInt(1));
+				c.setFn(info.getString(2));
+				c.setLn(info.getString(3));
+				c.setState(info.getString(4));
+				c.setCredit(info.getDouble(5));
+				c.setEmail(info.getString(6));
+			}
+			
+			return c;
+		} 
+		catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("ERROR");
+		return null;
+		
+	}
+}

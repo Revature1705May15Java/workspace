@@ -1,0 +1,15 @@
+package com.ex.util;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+
+public class ConnectionUtil 
+{
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	
+	public String getConnection ()
+	{
+		return url;
+	}
+}

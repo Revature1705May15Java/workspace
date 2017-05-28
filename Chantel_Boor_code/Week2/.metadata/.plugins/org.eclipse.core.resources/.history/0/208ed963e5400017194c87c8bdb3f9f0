@@ -1,0 +1,21 @@
+package com.ex.test;
+
+import com.ex.DaoImpl.DecImpl;
+import com.ex.pojo.Customer;;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		DecImpl d = new DecImpl();
+		
+		//d.addOrder(1, 1000);
+		
+		//Customer temp = d.getCustomerById(1);
+		
+		
+	}
+
+}

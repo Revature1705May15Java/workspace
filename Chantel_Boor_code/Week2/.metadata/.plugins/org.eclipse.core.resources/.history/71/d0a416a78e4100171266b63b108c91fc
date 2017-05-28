@@ -1,0 +1,35 @@
+package com.bank.run;
+
+import java.util.Scanner;
+
+import com.bank.service.Service;
+
+public class RunBank 
+{
+	static Scanner scan;
+	
+	public static void main(String[] args) 
+	{
+		
+	}
+	
+	void joinBank ()
+	{
+		scan = new Scanner (System.in);
+		System.out.println("Please enter your first name");
+		String fn = scan.nextLine();
+		System.out.println("Please enter your last name");
+		String ln = scan.nextLine();
+		System.out.println("Please enter your email");
+		String email = scan.nextLine();
+		System.out.println("Please enter your password");
+		String pw = scan.nextLine();
+		
+		scan.close();
+		
+		Service service = new Service ();
+		
+		service.AddUser(fn, ln, email, pw);
+		
+	}
+}

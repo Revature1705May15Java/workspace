@@ -1,0 +1,17 @@
+package com.ex.DaoImpl.copy;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class DecImpl 
+{
+	public void addOrder (int cust_id, double total)
+	{
+		try (Connection connections = connectionUtil.getConnection())
+		{
+			String sql = "inser into demo_orders(customer_id,order_total "
+					+ "values (" + cust_id + "," + total + ")";
+			Statement 
+		}
+	}
+}

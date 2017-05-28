@@ -1,0 +1,72 @@
+package com.bank.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.bank.logs.Logger;
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionUtil;
+
+public class DaoImp implements DAO
+{
+
+	static Logger logger = new Logger();
+	
+	
+	@Override
+	public int updateBalance(Account account, double amount) 
+	{
+		
+		
+		return 0;
+	}
+
+	@Override
+	public int addUser(String fn, String ln, String email, String pass) 
+	{
+		
+		try(Connection connection = ConnectionUtil.getConnection();)
+		{
+			
+			String sql = " insert into users (fName, lName, password, email)"
+						+ "values (?,?,?,?)";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, fn);
+			ps.setString(2, ln);
+			ps.setString(3, pass);
+			ps.setString(4, email);
+			
+			int num = ps.executeUpdate();
+			
+			logger.log(num + " users added");
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String email)
+	{
+		
+		
+		return null;
+	}
+
+	@Override
+	public User getUser(int id) 
+	{
+		
+		
+		return null;
+	}
+	
+
+}

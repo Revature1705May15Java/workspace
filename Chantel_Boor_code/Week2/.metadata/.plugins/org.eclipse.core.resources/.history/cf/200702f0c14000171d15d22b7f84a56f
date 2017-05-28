@@ -1,0 +1,16 @@
+package com.ex.test;
+
+import com.ex.DaoImpl.DecImpl;;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+		DecImpl d = new DecImpl();
+		
+		d.addOrder(1, 1000);
+	}
+
+}

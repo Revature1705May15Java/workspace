@@ -1,0 +1,42 @@
+package com.bank.dao;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+
+public class DaoImp implements DAO
+{
+
+	@Override
+	public int updateBalance(Account account, double amount) 
+	{
+		
+		
+		return 0;
+	}
+
+	@Override
+	public int addUser(String fn, String ln, String email, String pass) 
+	{
+		
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String email)
+	{
+		
+		
+		return null;
+	}
+
+	@Override
+	public User getUser(int id) 
+	{
+		
+		
+		return null;
+	}
+	
+
+}

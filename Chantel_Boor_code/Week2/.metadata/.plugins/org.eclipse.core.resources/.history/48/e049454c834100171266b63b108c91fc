@@ -1,0 +1,10 @@
+package com.bank.dao;
+
+import com.bank.pojos.Account;
+
+public interface DAO 
+{
+	public double updateBalance (Account account,double amount);
+	
+	public void createUser();
+}
