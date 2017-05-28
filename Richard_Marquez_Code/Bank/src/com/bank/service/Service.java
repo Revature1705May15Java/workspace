@@ -114,4 +114,23 @@ public class Service {
 		return result;
 	}
 
+	public Account transfer(Account a, int recipientAccountId, double amt) {
+		Account result = null;
+
+		Account aCopy = new Account(
+				a.getId(),
+				a.getBalance() - amt,
+				a.getOpened(),
+				null,
+				a.getType()
+		);
+
+		if (aCopy.getBalance() >= 0 && dao.transferFunds(a.getId(), recipientAccountId, amt)) {
+			result = aCopy;
+			a.setBalance(result.getBalance());
+		}
+
+		return result;
+	}
+
 }

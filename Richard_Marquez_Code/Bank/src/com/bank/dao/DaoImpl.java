@@ -410,4 +410,27 @@ public class DaoImpl implements Dao {
 
 		return types;
 	}
+
+	@Override
+	public boolean transferFunds(int fromId, int toId, double amt) {
+		boolean result = false;
+
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "{ call transferFunds(?, ?, ?) }";
+
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, fromId);
+			cs.setInt(2, toId);
+			cs.setDouble(3, amt);
+
+			cs.execute();
+			result = true;
+
+		} catch (SQLException e) {
+//			e.printStackTrace();
+			Logger.log("failed to transfer funds from " + fromId + " to " + toId);
+		}
+
+		return result;
+	}
 }

@@ -204,10 +204,11 @@ public class View {
 	}
 	
 	private void manageAccount(User u) {
-	    ArrayList<Account> accounts = svc.getAccounts(u);
 		boolean running = true;
 
 		do {
+			ArrayList<Account> accounts = svc.getAccounts(u);
+
 			for (int i = 0; i < accounts.size(); i++) {
 				Account a = accounts.get(i);
 				System.out.printf("\t%d. %-15s [ACCT#%d]\n", (i+1), a.getType(), a.getId());
@@ -273,7 +274,6 @@ public class View {
 
 			System.out.println();
 		} while (running);
-		
 	}
 	
 	private void deposit(Account a) {
@@ -292,7 +292,6 @@ public class View {
 		} catch (Exception e) {
 			System.out.println("Please enter a number.\n");
 		}
-
 	}
 	
 	private void withdraw(Account a) {
@@ -302,7 +301,7 @@ public class View {
 		try {
 			amt = Double.parseDouble(scan.nextLine());
 
-			a =  svc.withdraw(a, amt);
+			a = svc.withdraw(a, amt);
 			if (a != null) {
 				System.out.printf("Withdraw successful.\nNew balance: $%.2f\n\n", a.getBalance());
 			} else {
@@ -314,6 +313,22 @@ public class View {
 	}
 	
 	private void transfer(Account a) {
+		try {
+			System.out.print("Enter transfer amount: $");
+			double amt = Double.parseDouble(scan.nextLine());
+
+			System.out.print("Enter recipient account ID: ");
+			int recipientAccountId = Integer.parseInt(scan.nextLine());
+
+			a = svc.transfer(a, recipientAccountId, amt);
+			if (a != null) {
+				System.out.printf("Transfer successful.\nNew balance: $%.2f\n\n", a.getBalance());
+			} else {
+				System.out.println("Unable to transfer funds. Please try again.");
+			}
+		} catch (Exception e) {
+			System.out.println("Please enter a number.\n");
+		}
 	}
 	
 	private void addJointAccountHolder(Account a) {

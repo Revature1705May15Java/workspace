@@ -17,6 +17,8 @@ public interface Dao {
 	User getUser(String email);
 	User getUser(int id);
 
+	boolean transferFunds(int fromId, int toId, double amt);
+
 	Account getAccount(int id);
 	int getNumOfAccounts(User u);
 

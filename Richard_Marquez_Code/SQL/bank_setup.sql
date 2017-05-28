@@ -1,80 +1,131 @@
 -- DCL
-drop user bank cascade;
+DROP USER bank CASCADE;
 
-create user bank
-identified by p4ssw0rd;
+CREATE USER bank
+IDENTIFIED BY p4ssw0rd;
 
-grant connect to bank;
-grant resource to bank;
-grant create session to bank;
-grant create table to bank;
-grant create view to bank;
+GRANT CONNECT TO bank;
+GRANT RESOURCE TO bank;
+GRANT CREATE SESSION TO bank;
+GRANT CREATE TABLE TO bank;
+GRANT CREATE VIEW TO bank;
 
-conn bank/p4ssw0rd;
+CONN bank/p4ssw0rd;
 
 -- DDL
-create table banker (
-  userid number primary key,
-  fname varchar(100) not null,
-  lname varchar(100) not null,
-  password varchar(100) not null,
-  email varchar(100) not null unique
+CREATE TABLE banker (
+  userid   NUMBER PRIMARY KEY,
+  fname    VARCHAR(100) NOT NULL,
+  lname    VARCHAR(100) NOT NULL,
+  password VARCHAR(100) NOT NULL,
+  email    VARCHAR(100) NOT NULL UNIQUE
 );
 
-create table accounttype (
-  typeid number primary key,
-  name varchar(50)
+CREATE TABLE accounttype (
+  typeid NUMBER PRIMARY KEY,
+  name   VARCHAR(50)
 );
 
-create table bankaccount (
-  accountid number primary key,
-  balance number(12,2) default 0.0,
-  typeid number not null,
-  opened date default sysdate,
-  closed date,
-  constraint fk_accounttype foreign key (typeid) references accounttype(typeid)
+CREATE TABLE bankaccount (
+  accountid NUMBER PRIMARY KEY,
+  balance   NUMBER(12, 2) DEFAULT 0.0,
+  typeid    NUMBER NOT NULL,
+  opened    DATE          DEFAULT sysdate,
+  closed    DATE,
+  CONSTRAINT fk_accounttype FOREIGN KEY (typeid) REFERENCES accounttype (typeid)
 );
 
-create table bankeraccount (
-  userid number,
-  accountid number,
-  constraint pk_bankeraccount primary key (userid, accountid),
-  constraint fk_user foreign key (userid) references banker(userid),
-  constraint fk_account foreign key (accountid) references account(accountid)
+CREATE TABLE bankeraccount (
+  userid    NUMBER,
+  accountid NUMBER,
+  CONSTRAINT pk_bankeraccount PRIMARY KEY (userid, accountid),
+  CONSTRAINT fk_user FOREIGN KEY (userid) REFERENCES banker (userid),
+  CONSTRAINT fk_account FOREIGN KEY (accountid) REFERENCES account (accountid)
 );
+
 /
 
 -- banker auto-increment
-create sequence banker_seq
-  start with 1
-  increment by 1;
+CREATE SEQUENCE banker_seq
+START WITH 1
+INCREMENT BY 1;
+
 /
-create or replace trigger banker_seq_trg
-  before insert on banker
-  for each row
-  begin
-    if inserting and :new.userid is null then
-      select banker_seq.nextval into :new.userid from dual;
-    end if;
-  end;
+CREATE OR REPLACE TRIGGER banker_seq_trg
+BEFORE INSERT ON banker
+FOR EACH ROW
+  BEGIN
+    IF INSERTING AND :new.userid IS NULL
+    THEN
+      SELECT banker_seq.nextval
+      INTO :new.userid
+      FROM dual;
+    END IF;
+  END;
 /
 
 -- bankaccount auto-increment
-create sequence account_seq
-  start with 1
-  increment by 1;
+CREATE SEQUENCE account_seq
+START WITH 1
+INCREMENT BY 1;
+
 /
-create or replace trigger account_seq_trg
-  before insert on account
-  for each row
-  begin
-    if inserting and :new.accountid is null then
-      select account_seq.nextval into :new.accountid from dual;
-    end if;
-  end;
+CREATE OR REPLACE TRIGGER account_seq_trg
+BEFORE INSERT ON account
+FOR EACH ROW
+  BEGIN
+    IF INSERTING AND :new.accountid IS NULL
+    THEN
+      SELECT account_seq.nextval
+      INTO :new.accountid
+      FROM dual;
+    END IF;
+  END;
 /
 
-select * from banker;
+SELECT *
+FROM banker;
 
-commit;
-exit;
+CREATE OR REPLACE PROCEDURE transferFunds(fromId IN NUMBER, toId IN NUMBER, amt IN NUMBER)
+IS
+  fromOldBal NUMBER;
+  fromNewBal NUMBER;
+  toOldBal   NUMBER;
+  toNewBal   NUMBER;
+  BEGIN
+    SAVEPOINT transferTransaction;
+
+    SELECT balance
+    INTO fromOldBal
+    FROM account
+    WHERE accountid = fromId;
+    SELECT balance
+    INTO toOldBal
+    FROM account
+    WHERE accountid = toId;
+
+    fromNewBal := fromOldBal - amt;
+    toNewBal := toOldBal + amt;
+
+    UPDATE account
+    SET balance = fromNewBal
+    WHERE account.accountid = fromId;
+
+    UPDATE account
+    SET balance = toNewBal
+    WHERE account.accountid = toId;
+
+    COMMIT;
+
+    EXCEPTION
+    WHEN OTHERS THEN
+    ROLLBACK TO transferTransaction;
+    RAISE;
+  END transferFunds;
+/
+
+select * from account;
+call transferFunds(1, 2, 9.64);
+
+COMMIT;
+EXIT;
