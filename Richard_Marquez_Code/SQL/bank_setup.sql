@@ -124,8 +124,5 @@ IS
   END transferFunds;
 /
 
-select * from account;
-call transferFunds(1, 2, 9.64);
-
 COMMIT;
 EXIT;
