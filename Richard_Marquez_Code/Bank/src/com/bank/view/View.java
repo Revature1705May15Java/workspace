@@ -342,6 +342,14 @@ public class View {
 	}
 	
 	private void addJointAccountHolder(Account a) {
+		System.out.print("Enter email of new acct holder: ");
+		String holderEmail = scan.nextLine();
+
+		if (svc.addJointAccountHolder(a, holderEmail)) {
+            System.out.println("Successfully added " + holderEmail + " to this account.");
+        } else {
+            System.out.println("Unable to add account holder; please try again.");
+        }
 	}
 	
 	private void viewBalance(Account a) {

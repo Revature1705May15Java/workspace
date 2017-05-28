@@ -15,7 +15,25 @@ public class DaoImpl implements Dao {
 
     @Override
     public boolean addUserToAccount(User u, Account a) {
-        return false;
+        boolean result = false;
+
+        try (Connection conn = ConnectionUtil.getConnection()) {
+            String sql = "insert into bankeraccount values(?, ?)";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, u.getId());
+            ps.setInt(2, a.getId());
+
+            if (ps.executeUpdate() == 1) {
+                Logger.log(u.getEmail() + " added as holder of acct " + a.getId());
+                result = true;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
     @Override

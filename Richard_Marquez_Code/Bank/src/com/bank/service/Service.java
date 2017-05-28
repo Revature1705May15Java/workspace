@@ -152,4 +152,37 @@ public class Service {
 
 		return result;
 	}
+
+	public boolean addJointAccountHolder(Account a, String email) {
+		boolean result = false;
+
+		Account aCopy = new Account(
+				a.getId(),
+				a.getBalance(),
+				a.getOpened(),
+				null,
+				a.getType()
+		);
+
+		User newHolder = dao.getUser(email);
+
+		if (newHolder != null && !userIsAccountHolder(newHolder, a)) {
+			result = dao.addUserToAccount(newHolder, a);
+		}
+
+		return result;
+	}
+
+	private boolean userIsAccountHolder(User u, Account a) {
+		boolean result = false;
+
+		for (int possibleAccountId : u.getAccounts()) {
+		    if (possibleAccountId == a.getId()) {
+		    	result = true;
+		    	break;
+			}
+		}
+
+		return result;
+	}
 }
