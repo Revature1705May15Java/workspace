@@ -1,0 +1,10 @@
+package com.bank.service;
+
+import com.bank.pojos.User;
+
+public class Service {
+	static DAO dao = new DaoImpl();
+	public User addUser(String fn, String ln, String uname, String pw){
+		return null;
+	}
+}

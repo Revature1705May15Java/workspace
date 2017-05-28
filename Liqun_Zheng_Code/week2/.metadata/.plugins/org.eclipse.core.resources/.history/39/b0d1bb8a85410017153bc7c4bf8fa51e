@@ -1,0 +1,5 @@
+package com.bank.logs;
+
+public class Logger {
+
+}

@@ -1,0 +1,11 @@
+package com.ex.pojos;
+
+import java.sql.Date;
+
+public class Order {
+	int id;
+	Date dateOrdered;
+	Customer st;
+	double total;
+	
+}

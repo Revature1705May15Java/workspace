@@ -24,8 +24,8 @@ public class Main {
 //		ArrayList<Order> temp = dao.getOrders();
 //		System.out.println(temp.toString());
 //		
-		Customer c = dao.updateCustomer(1015, "test3", "test3", "VA", 1000, "test3");
-		System.out.println(c.toString());
+//		Customer c = dao.updateCustomer(1015, "test3", "test3", "VA", 1000, "test3");
+//		System.out.println(c.toString());
 		
 	//	ArrayList<Order> list = dao.getOrdersByCustomer(temp);
 	//	System.out.println(list.toString());

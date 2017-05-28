@@ -1,40 +1,40 @@
---2.1 a
+--2.1 a Task – Select all records from the Employee table.
 select *
 from employee;
 /
 
---2.1 b
+--2.1 b Task – Select all records from the Employee table where last name is King.
 select * 
 from employee
 where employee.lastname = 'King';
 /
 
---2.1 c
+--2.1 c Task – Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL
 select *
 from employee
 where EMPLOYEE.firstname = 'Andrew' AND employee.reportsto IS NULL;
 /
 
---2.2 a
+--2.2 a Task – Select all albums in Album table and sort result set in descending order by title.
 select *
 from album
 order by album.title desc;
 /
 
---2.2 b 
+--2.2 b Task – Select first name from Customer and sort result set in ascending order by city
 select customer.firstname
 from customer
 order by customer.city asc;
 /
 
---2.3 a
+--2.3 a Task – Insert two new records into Genre table
 insert into genre 
 values ('26', 'A');
 insert into genre 
 values ('27', 'B');
 /
 
---2.3 b 
+--2.3 b Task – Insert two new records into Employee table
 insert into employee
 values('9', 'zheng', 'liqun', 'IT Manager', '','28-FEB-91', '25-MAY-17',
 '212 APACHE BLVD', 'Tempe', 'AZ', 'United States', '85040', '+1 (464) 565-1640',
@@ -45,7 +45,7 @@ values('10', 'john', 'lee', 'IT Manager', '','28-FEB-97', '25-MAY-17',
 '+1 (334) 232-3432', 'liqunzheng@live.cn');
 /
 
---2.3 c
+--2.3 c Task – Insert two new records into Customer table
 insert into customer
 values('60', 'liqun', 'zheng', 'Revature', '212 APACHE BLVD','Tempe', 'AZ',
 'United States', '85040', '+1 (464) 565-1640', '+1 (334) 232-3432', 
@@ -56,113 +56,289 @@ values('61', 'john', 'lee', 'Revature', '212 sdfa BLVD','Tempe', 'AZ',
 'liqunzheng@live.cn', 4);
 /
 
---2.4 a
+--2.4 a Task – Update Aaron Mitchell in Customer table to Robert Walter
 update customer 
 set customer.firstname = 'Robert', customer.lastname = 'Walter'
 where customer.firstname = 'Aaron' and customer.lastname = 'Mitchell';
 /
 
---2.4 b
+--2.4 b Task – Update name of artist in the Artist table “Creedence Clearwater Revival” to “CCR”
 update artist 
 set artist.name = 'CCR'
 where artist.name = 'Creedence Clearwater Revival';
 /
 
---2.5 a
+--2.5 a Task – Select all invoices with a billing address like “T%”
 select *
 from invoice
 where invoice.billingaddress like 'T%';
 /
 
---2.6 a
+--2.6 a Task – Select all invoices that have a total between 15 and 50
 select *
 from invoice
 where invoice.total between 15 and 50;
 /
 
---2.6 b 
+--2.6 b Task – Select all employees hired between 1st of June 2003 and 1st of March 2004
 select *
 from employee
 where employee.hiredate between '01-JUL-03' and '01-MAR-04';
 /
 
---2.7 a 
-select *
-from artist
-where artist.artistid = (select*  from album
-where album.albumid = (select*  from track 
-where track.trackid = (select*  from invoiceline
-where invoiceline.invoicelineid = (select*  from invoice
-where inovice.invoiceid = (select* from customer
-where customer.firstname = 'Robert' and customer.lastname = 'Walter'))))
-);
+--2.7 a Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
 
+alter table invoice 
+drop constraint fk_invoicecustomerid;
+/
+alter table invoice 
+add constraint fk_invoicecustomerid 
+FOREIGN key(customerid)REFERENCES customer (customerid) on delete cascade;
+
+alter table invoiceline
+drop constraint fk_invoicelineinvoiceid;
+/
+alter table invoiceline
+add constraint fk_invoicelineinvoiceid
+foreign key(invoiceid) references invoice (invoiceid) on delete cascade;
 
 delete from customer
 where customer.firstname = 'Robert' and customer.lastname = 'Walter';
 
 /
 
---3.1 a
-select current_timestamp from dual;
---3.1 b
+--3.1 a Task – Create a function that returns the current time.
+CREATE FUNCTION get_curr_time
+  return TIMESTAMP 
+  is 
+  begin
+    return current_timestamp;
+  END;
+  /
+select get_curr_time
+from dual;
+ /
 
+--3.1 b Task – create a function that returns the length of a mediatype from the mediatype table
+CREATE or replace FUNCTION get_media_len(m_id in number)
+  return number 
+  is 
+  leng number;
+  begin
+    select length(mediatype.name)
+    into leng
+    from mediatype
+    where MEDIATYPEID = m_id;
+    return leng;
+  END;
+  /
 
-----4.1
---create or replace procedure
---  create_name_Employee(e_first_name IN VARCHAR2, e_last_name IN VARCHAR2)
---is
---begin
---open employ for
---select * from employee where firstname = e_first_name and lastname = e_last_name;
---end create_name_Employee;
-
---6.1 a
---Task - Create an after insert trigger on the employee table fired 
---after a new record is inserted into the table.
- CREATE SEQUENCE cus_seq -- create sequence of name de_seq
-  start with 100 -- start value
-  increment by 100; --increment value
+select get_media_len(2)
+from dual;
 /
 
-CREATE OR REPLACE TRIGGER cus_seq_trigger
-BEFORE INSERT ON employee -- on what occasion do you want ot trigger an event
-FOR EACH ROW
-BEGIN
-
-IF :new.employeeid IS NULL THEN 
-
-  SELECT cus_seq.nextval INTO :new.employeeid FROM DUAL;
-  
-  END IF;
-
-
+--3.2 Task – Create a function that returns the average total of all invoices
+CREATE or replace FUNCTION ave_all_invoice
+  return number 
+  is 
+  ave number;
+  begin
+    select avg(total)
+    into ave
+    from invoice;
+    return ave;
   END;
   /
   
-insert into employee(lastname, firstname, title, reportsto, birthdate, hiredate,
-  address, city, state, country, postalcode, phone, fax, email)
-  values('test', 'test', 'test', '1', '21-FEB-95', '21-MAY-17',
-  'test', 'test', 'VA', 'test', 'test', 'test','test', 'test');
-  
---6.1 b
---Task – Create an after update trigger on the album table 
---that fires after a row is inserted in the table
--- CREATE SEQUENCE alb_seq -- create sequence of name de_seq
---  start with 100 -- start value
---  increment by 100; --increment value
+  select ave_all_invoice
+  from dual;
+  /
+--select avg(total)
+--from invoice;
 --/
---
---CREATE OR REPLACE TRIGGER alb_seq_trigger
---AFTER UPDATE ON album -- on what occasion do you want ot trigger an event
---FOR EACH ROW
---BEGIN
---  insert into ALBUM.TITLE values('test');
---
---  END;
---  /
---  
+
+--3.2 Task – Create a function that returns the most expensive track
+
+CREATE or replace FUNCTION max_price_track
+  return number 
+  is 
+  maxi number(10,2);
+  begin
+    select max(unitprice)
+    into maxi
+    from track;
+    return maxi;
+  END;
+  /
+
+select max_price_track
+from dual;
+/
+--select max(unitprice)
+--from track;
+
+--3.3 Create a function that returns the average price of invoiceline items in the invoiceline table
+
+CREATE or replace FUNCTION ave_unit_price
+  return number 
+  is 
+  ave number(10,2);
+  begin
+    select avg(unitprice)
+    into ave
+    from invoiceline;
+    return ave;
+  END;
+  /
   
+  select ave_unit_price
+  from dual;
+  /
+--select avg(unitprice)
+--from invoiceline;
+--/
+
+--3.4 Task – Create a function that returns all employees who are born after 1968.
+
+  
+  select return_employees
+  from dual;/
+  
+create or replace type t_employee as object(
+  employeeid number,
+  lastname varchar2(20),
+  firstname varchar2(20),
+  title varchar2(30),
+  reportsto number,
+  birthdate date, 
+  hiredate date,
+  address varchar2(70),
+  city varchar2(40),
+  state varchar2(40),
+  country varchar2(40),
+  postalcode varchar2(10),
+  phone varchar2(24),
+  fax varchar2(24),
+  email varchar2(60)
+  );
+  /
+  
+  create or replace type t_nested_table as table of t_employee;
+  /
+  
+ CREATE or replace FUNCTION return_employees
+  return  t_nested_table pipelined
+  is
+  begin
+    for i in (
+    select *
+    from employee
+    where employee.birthdate < '01-JAN-1968') loop
+    pipe row (t_employee(i.employeeid, i.lastname, i.firstname, i.title, i.reportsto,
+      i.birthdate, i.hiredate, i.address, i.city, i.state, i.country, i.postalcode, 
+      i.phone, i.fax, i.email));
+    end loop;
+    return;
+  END return_employees;
+  /
+
+select *
+from table (return_employees);
+/
+--select *
+--from employee
+--where employee.birthdate < '01-JAN-1968';
+
+----4.1 Task – Create a stored procedure that selects the first and last names of all the employees.
+CREATE OR REPLACE PROCEDURE First_Last_Names(emp OUT SYS_REFCURSOR)
+IS
+  BEGIN
+    OPEN emp FOR
+    SELECT
+      FIRSTNAME,
+      LASTNAME
+    FROM EMPLOYEE;
+  END First_Last_Names;
+/
+VARIABLE names REFCURSOR;
+EXEC First_Last_Names(:names);
+PRINT names;
+
+--4.2 a Task – Create a stored procedure that updates the personal information of an employee.
+CREATE OR REPLACE PROCEDURE update_Employee(eid IN NUMBER, fName IN VARCHAR2, lName IN VARCHAR2, 
+  e_mail IN VARCHAR2)
+IS
+  BEGIN
+    UPDATE EMPLOYEE
+    SET EMPLOYEE.FIRSTNAME = fName, EMPLOYEE.LASTNAME = lName, EMPLOYEE.EMAIL = e_mail
+    WHERE EMPLOYEE.EMPLOYEEID = eid;
+  END update_Employee;
+/
+CALL update_Employee(100, 'aa', 'bb', 'cc');
+/
+select *
+from employee
+where employee.employeeid = 100;
+/
+
+
+--4.3 Task – Create a stored procedure that returns the name and company of a customer
+CREATE OR REPLACE PROCEDURE Name_Comp_cust(cust_Id IN NUMBER, name OUT VARCHAR2, company OUT VARCHAR2)
+IS
+  BEGIN
+    SELECT
+      (LASTNAME || ', ' || FIRSTNAME),
+      COMPANY
+    INTO name, company
+    FROM CUSTOMER
+    WHERE CUSTOMERID = cust_Id;
+  END Name_Comp_cust;
+/
+VARIABLE name VARCHAR2(40);
+VARIABLE comp VARCHAR2(20);
+EXEC Name_Comp_cust(58, :name, :comp);
+PRINT name;
+PRINT comp;
+/
+--6.0 TRIGGERS
+--6.1 AFTER/FOR
+CREATE SEQUENCE CUST_SEQ
+START WITH 100 INCREMENT BY 100;
+/
+CREATE OR REPLACE TRIGGER CUST_SEQ_TRIGGER
+BEFORE INSERT ON EMPLOYEE
+FOR EACH ROW
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('');
+END;
+/
+CREATE OR REPLACE TRIGGER INSRT_ROW_UPDATE
+AFTER INSERT ON ALBUM
+FOR EACH ROW
+BEGIN
+  DBMS_OUTPUT.PUT_LINE('INSERTED INTO ALBUM');
+END;
+/
+CREATE OR REPLACE TRIGGER DELT_ROW_UPDATE
+AFTER DELETE ON CUSTOMER
+FOR EACH ROW
+BEGIN
+      DBMS_OUTPUT.PUT_LINE('');
+END;
+/
+--6.2 INSTEAD OF 
+CREATE OR REPLACE VIEW VIEW_ALL 
+AS SELECT * FROM INVOICE;
+/
+CREATE OR REPLACE TRIGGER NO_DELETE
+INSTEAD OF DELETE ON VIEW_ALL
+FOR EACH ROW
+BEGIN
+  IF :NEW.TOTAL > 50 THEN
+    DBMS_OUTPUT.PUT_LINE('');
+  END IF;
+END;
+/
   --7.1 INNER
 SELECT INVOICE.CUSTOMERID, CUSTOMER.FIRSTNAME,
   INVOICE.INVOICEID
@@ -187,4 +363,20 @@ CROSS JOIN ALBUM ORDER BY ARTIST.NAME ASC;
 SELECT * FROM EMPLOYEE
 WHERE EMPLOYEE.EMPLOYEEID = EMPLOYEE.REPORTSTO;
 /
+
+--8.0 INDEXES
+--8.1 CLUSTERED INDEXES
+CREATE CLUSTER CLUST_ALBUM
+   (ARTISTNAME VARCHAR(100))
+SIZE 512 
+STORAGE (initial 100K next 50K);
+/
+CREATE INDEX ALBUM_INDEX
+ON CLUSTER CLUST_ALBUM;
+/
+
+--9 Task – Create a .bak file for the Chinook database.
+--backup.bak created under Liqun_Zheng_Code\week2
+
+COMMIT;
   

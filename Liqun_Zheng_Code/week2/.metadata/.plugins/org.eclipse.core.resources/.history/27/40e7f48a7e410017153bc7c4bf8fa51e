@@ -1,0 +1,8 @@
+package com.bank.pojos;
+
+public class User {
+	int id;
+	String fn, ln, pw, uname;
+	ArrayList<Account> user_holder;
+
+}
