@@ -4,7 +4,7 @@ import com.bank.logs.Logger;
 import com.bank.pojos.Account;
 import com.bank.pojos.AccountType;
 import com.bank.pojos.User;
-import com.bank.util.ConnectionUtil;
+import com.bank.util.ConnectionFactory;
 import oracle.jdbc.OraclePreparedStatement;
 import oracle.jdbc.OracleTypes;
 
@@ -17,7 +17,7 @@ public class DaoImpl implements Dao {
     public boolean addUserToAccount(User u, Account a) {
         boolean result = false;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "INSERT INTO bankeraccount VALUES(?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -40,7 +40,7 @@ public class DaoImpl implements Dao {
     public boolean removeUserFromAccount(User u, Account a) {
         boolean result = false;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "DELETE FROM bankeraccount WHERE USERID=? AND ACCOUNTID=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -63,7 +63,7 @@ public class DaoImpl implements Dao {
     public boolean addUser(String fName, String lName, String password, String email) {
         boolean result = false;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "INSERT INTO banker(fname, lname, password, email) VALUES(?, ?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -88,7 +88,7 @@ public class DaoImpl implements Dao {
     public Account addAccount(User u, int typeId) {
         Account a = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "INSERT INTO account(typeid) VALUES(?) RETURNING accountid INTO ?";
 
             OraclePreparedStatement ps = (OraclePreparedStatement) conn.prepareStatement(sql);
@@ -128,7 +128,7 @@ public class DaoImpl implements Dao {
     public User updateUser(User u) {
         User result = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "UPDATE banker SET fname=?, lname=?, password=?, email=? WHERE userid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -156,7 +156,7 @@ public class DaoImpl implements Dao {
     public Account updateAccount(Account a) {
         Account result = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "UPDATE account SET balance=?, closed=? WHERE accountid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -182,7 +182,7 @@ public class DaoImpl implements Dao {
     public User getUser(String email) {
         User result = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT * FROM banker WHERE email=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -212,7 +212,7 @@ public class DaoImpl implements Dao {
     private ArrayList<Integer> getAccountIdsForUser(User u) {
         ArrayList<Integer> accountIds = new ArrayList<>();
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT BANKERACCOUNT.ACCOUNTID FROM bankeraccount WHERE USERID=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -236,7 +236,7 @@ public class DaoImpl implements Dao {
     private ArrayList<Integer> getUserIdsForAccount(Account a) {
         ArrayList<Integer> userIds = new ArrayList<>();
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT BANKERACCOUNT.USERID FROM bankeraccount WHERE ACCOUNTID=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -260,7 +260,7 @@ public class DaoImpl implements Dao {
     public User getUser(int id) {
         User result = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT * FROM banker WHERE userid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -291,7 +291,7 @@ public class DaoImpl implements Dao {
     public Account getAccount(int id) {
         Account result = null;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT * FROM account INNER JOIN ACCOUNTTYPE ON ACCOUNT.TYPEID=ACCOUNTTYPE.TYPEID " +
                     "WHERE account.accountid=?";
 
@@ -323,7 +323,7 @@ public class DaoImpl implements Dao {
     public ArrayList<Account> getAccountsForUser(User u) {
         ArrayList<Account> accounts = new ArrayList<>();
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT account.accountid, account.balance, account.opened, account.closed, accounttype.typeid, accounttype.name " +
                     "FROM bankeraccount " +
                     "INNER JOIN banker ON bankeraccount.userid = banker.userid " +
@@ -361,7 +361,7 @@ public class DaoImpl implements Dao {
     public ArrayList<User> getUsersForAccount(Account a) {
         ArrayList<User> users = new ArrayList<>();
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT banker.userId, banker.fName, banker.lName, banker.password, banker.email, account.accountid " +
                     "FROM bankeraccount " +
                     "INNER JOIN banker ON bankeraccount.userid = banker.userid " +
@@ -399,7 +399,7 @@ public class DaoImpl implements Dao {
     public int getNumOfAccounts(User u) {
         int result = 0;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "{ ? = CALL getNumAccounts(?) }";
 
             CallableStatement cs = conn.prepareCall(sql);
@@ -420,7 +420,7 @@ public class DaoImpl implements Dao {
     public ArrayList<AccountType> getAccountTypes() {
         ArrayList<AccountType> types = new ArrayList<>();
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "SELECT * FROM ACCOUNTTYPE";
 
             Statement s = conn.createStatement();
@@ -445,7 +445,7 @@ public class DaoImpl implements Dao {
     public boolean transferFunds(int fromId, int toId, double amt) {
         boolean result = false;
 
-        try (Connection conn = ConnectionUtil.getConnection()) {
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
             String sql = "{ CALL transferFunds(?, ?, ?) }";
 
             CallableStatement cs = conn.prepareCall(sql);
