@@ -29,7 +29,7 @@ public class DaoImpl implements Dao {
                 result = true;
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -52,7 +52,7 @@ public class DaoImpl implements Dao {
                 result = true;
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -77,7 +77,7 @@ public class DaoImpl implements Dao {
                 result = true;
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -117,7 +117,7 @@ public class DaoImpl implements Dao {
                 }
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -145,7 +145,7 @@ public class DaoImpl implements Dao {
                 Logger.log("updated user w/ id " + u.getId());
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -171,7 +171,7 @@ public class DaoImpl implements Dao {
                 Logger.log("updated acct w/ id " + a.getId());
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -202,7 +202,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved user w/ email " + email);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -225,7 +225,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved acct id " + rs.getInt(1));
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -249,7 +249,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved user id " + rs.getInt(1));
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -280,7 +280,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved user w/ id " + id);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -312,7 +312,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved acct w/ id " + id);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -350,7 +350,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved account w/ id " + a.getId());
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -388,7 +388,7 @@ public class DaoImpl implements Dao {
                 Logger.log("retrieved user w/ id " + u.getId());
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -409,7 +409,7 @@ public class DaoImpl implements Dao {
             cs.execute();
             result = cs.getInt(1);
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -434,7 +434,7 @@ public class DaoImpl implements Dao {
                 types.add(at);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 
@@ -456,7 +456,7 @@ public class DaoImpl implements Dao {
             cs.execute();
             result = true;
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             Logger.log(e.getMessage());
         }
 

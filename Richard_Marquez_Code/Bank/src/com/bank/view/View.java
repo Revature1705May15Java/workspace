@@ -59,9 +59,9 @@ public class View {
 		currUser = svc.login(email, password);
 
 		if (currUser == null) {
-			System.out.println("Invalid login information; please try again.");
+			System.out.println("\nInvalid login information; please try again.");
 		} else {
-			System.out.println("Welcome, " + currUser.getFirstName() + " " + currUser.getLastName());
+			System.out.println("\nWelcome, " + currUser.getFirstName() + " " + currUser.getLastName() + "\n");
 			showUserActionPage();
 		}
 	}
@@ -131,6 +131,7 @@ public class View {
 	}
 
 	private void showAccountActionPage() {
+		System.out.println();
 		boolean running = true;
 
 		do {
@@ -210,6 +211,7 @@ public class View {
 	}
 
 	private void showAccountsListingPage() {
+		System.out.println();
 		boolean running = true;
 
 		do {
@@ -300,7 +302,7 @@ public class View {
 
 			Account updatedAcct = svc.deposit(currAcct, amt);
 			if (updatedAcct != null) {
-				System.out.printf("Deposit successful.\nNew balance: $%.2f\n\n", updatedAcct.getBalance());
+				System.out.printf("Deposit successful.\nNew balance: $%.2f\n", updatedAcct.getBalance());
 				currAcct = updatedAcct;
 			} else {
 				System.out.println("Unable to deposit money. Please try again.");
@@ -318,7 +320,7 @@ public class View {
 
 			Account updatedAcct = svc.withdraw(currAcct, amt);
 			if (updatedAcct != null) {
-				System.out.printf("Withdraw successful.\nNew balance: $%.2f\n\n", updatedAcct.getBalance());
+				System.out.printf("Withdraw successful.\nNew balance: $%.2f\n", updatedAcct.getBalance());
 				currAcct = updatedAcct;
 			} else {
 				System.out.println("Unable to withdraw money. Please try again.");
@@ -338,13 +340,13 @@ public class View {
 
 			Account updatedAcct = svc.transfer(currAcct, recipientAccountId, amt);
 			if (updatedAcct != null) {
-				System.out.printf("Transfer successful.\nNew balance: $%.2f\n\n", updatedAcct.getBalance());
+				System.out.printf("Transfer successful.\nNew balance: $%.2f\n", updatedAcct.getBalance());
 				currAcct = updatedAcct;
 			} else {
 				System.out.println("Unable to transfer funds. Please try again.");
 			}
 		} catch (Exception e) {
-			System.out.println("Please enter a number.\n");
+			System.out.println("Please enter a number.");
 		}
 	}
 
@@ -379,7 +381,7 @@ public class View {
 	}
 
 	private void showBalancePage() {
-		System.out.printf("Balance for ACCT#%d: $%.2f\n\n", currAcct.getId(), currAcct.getBalance());
+		System.out.printf("Balance for ACCT#%d: $%.2f\n", currAcct.getId(), currAcct.getBalance());
 	}
 
 	private boolean showCloseAccountPage() {
