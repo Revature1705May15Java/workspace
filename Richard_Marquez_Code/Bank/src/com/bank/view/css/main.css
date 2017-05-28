@@ -10,37 +10,22 @@ input.button {
   margin: auto;
   -webkit-appearance: none; }
 
-em {
-  font-weight: bold;
-  font-style: normal;
-  text-transform: uppercase;
-  color: #474480; }
-
-a, a:visited, a:hover, a:focus, a:active {
-  text-decoration: none; }
-
-.blurb {
-  line-height: 1.4em;
-  font-size: 1em; }
-  .blurb p {
-    margin-bottom: 1em; }
-
-.social-media a {
-  display: inline-block; }
-  .social-media a img {
-    width: 1.3em;
-    margin-right: 4px;
-    opacity: 0.8; }
-    .social-media a img:hover {
-      opacity: 1; }
-
 .clear {
   clear: both; }
 
-.square {
-  padding: 0;
-  margin: 0;
-  height: 0;
-  box-shadow: inset -15px 0px 30px -20px rgba(0, 0, 0, 0.6); }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+#main-desc {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 4em;
+  width: 50%;
+  margin-left: 25%; }
+  #main-desc h3 {
+    margin-bottom: 0.5em; }
 
 /*# sourceMappingURL=main.css.map */
