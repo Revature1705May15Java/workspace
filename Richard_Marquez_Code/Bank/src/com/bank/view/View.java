@@ -206,6 +206,7 @@ public class View {
 			System.out.println("Unable to create new user; please try again.");
 		} else {
 			System.out.println("Successfully created new user.");
+			System.out.println("A confirmation email has been sent to " + email + "\n");
 			showUserActionPage();
 		}
 	}

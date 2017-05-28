@@ -6,6 +6,7 @@ import com.bank.logs.Logger;
 import com.bank.pojos.Account;
 import com.bank.pojos.AccountType;
 import com.bank.pojos.User;
+import com.bank.util.Mailer;
 import com.bank.util.PasswordStorage;
 
 import java.time.LocalDate;
@@ -24,6 +25,8 @@ public class Service {
 			String hashedPassword = PasswordStorage.createHash(password);
 			if (dao.addUser(fName, lName, hashedPassword, email)) {
 				newUser = dao.getUser(email);
+
+				Mailer.sendMail(email, "Bank - Revature", "You successfully created an account.");
 			}
 		} catch(Exception e) {
 			Logger.log(e.getMessage());
