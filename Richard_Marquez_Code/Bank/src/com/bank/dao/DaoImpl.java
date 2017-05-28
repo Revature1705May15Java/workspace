@@ -85,12 +85,58 @@ public class DaoImpl implements Dao {
 
 	@Override
 	public boolean updateUser(User u) {
-		return false;
+		boolean result = false;
+
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "update banker set fname=?, lname=?, password=?, email=? where userid=?";
+
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, u.getFirstName());
+			ps.setString(2, u.getLastName());
+			ps.setString(3, u.getPassword());
+			ps.setString(4, u.getEmail());
+			ps.setInt(5, u.getId());
+
+			int count = ps.executeUpdate();
+
+			if (count == 1) {
+				result = true;
+				Logger.log("updated user w/ id " + u.getId());
+			}
+
+		} catch (SQLException e) {
+			//e.printStackTrace();
+			Logger.log("failed to update user w/ id " + u.getId());
+		}
+
+		return result;
 	}
 
 	@Override
 	public boolean updateAccount(Account a) {
-		return false;
+		boolean result = false;
+
+		try (Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "update account set balance=?, closed=? where accountid=?";
+
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setDouble(1, a.getBalance());
+			ps.setDate(2, (a.getClosed() == null) ? null : Date.valueOf(a.getClosed()));
+			ps.setInt(3, a.getId());
+
+			int count = ps.executeUpdate();
+
+			if (count == 1) {
+				result = true;
+				Logger.log("updated acct w/ id " + a.getId());
+			}
+
+		} catch (SQLException e) {
+			//e.printStackTrace();
+			Logger.log("failed to update acct w/ id " + a.getId());
+		}
+
+		return result;
 	}
 
 	@Override

@@ -53,4 +53,65 @@ public class Service {
 
 		return a;
 	}
+
+	public boolean updateUser(User u, String fName, String lName, String email, String password) {
+		boolean result = false;
+
+		User updatedUser = new User(
+				u.getId(),
+				fName,
+				lName,
+				password,
+				email,
+				u.getAccounts()
+		);
+
+	    if (dao.updateUser(updatedUser)) {
+	        result = true;
+	        u.setFirstName(fName);
+	        u.setLastName(lName);
+	        u.setEmail(email);
+	        u.setPassword(password);
+		}
+
+		return result;
+	}
+
+	public Account deposit(Account a, double amt) {
+	    Account aCopy = new Account(
+	    		a.getId(),
+				a.getBalance() + amt,
+				a.getOpened(),
+				null,
+				a.getType()
+		);
+
+	    Account result = null;
+	    if (dao.updateAccount(aCopy)) {
+	    	result = aCopy;
+	    	a.setBalance(result.getBalance());
+		}
+
+		return result;
+	}
+
+	public Account withdraw(Account a, double amt) {
+		Account result = null;
+
+		Account aCopy = new Account(
+				a.getId(),
+				a.getBalance() - amt,
+				a.getOpened(),
+				null,
+				a.getType()
+		);
+
+		if (aCopy.getBalance() >= 0 && dao.updateAccount(aCopy)) {
+			result = aCopy;
+			a.setBalance(result.getBalance());
+		}
+
+		return result;
+	}
+
 }

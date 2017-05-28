@@ -1,5 +1,6 @@
 package com.bank.view;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -60,6 +61,7 @@ public class View {
 		if (u == null) {
 			System.out.println("Invalid login information; please try again.");
 		} else {
+			System.out.println("Welcome, " + u.getFirstName() + " " + u.getLastName());
 			userActionPage(u);
 		}
 	}
@@ -71,11 +73,19 @@ public class View {
 			System.out.println(
 					"\t1. Manage an account\n" +
 					"\t2. Create new account\n" +
-					"\t3. Log out\n"
+                    "\t3. Update information\n" +
+					"\t4. Log out\n"
 					);
 			System.out.print("Select an action: ");
 			
-			int choice = Integer.parseInt(scan.nextLine());
+			int choice;
+			try {
+				choice = Integer.parseInt(scan.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a number.\n");
+				continue;
+			}
+
 			switch (choice) {
 			case 1:
 				manageAccount(u);
@@ -83,7 +93,10 @@ public class View {
 			case 2:
 				createAccount(u);
 				break;
-			case 3:
+            case 3:
+            	updateInformation(u);
+                break;
+			case 4:
 				running = false;
 				break;
 			default:
@@ -92,6 +105,27 @@ public class View {
 			
 			System.out.println();
 		} while (running);
+	}
+
+	private void updateInformation(User u) {
+		System.out.print("First name: ");
+		String fName = scan.nextLine();
+
+		System.out.print("Last name: ");
+		String lName = scan.nextLine();
+
+		System.out.print("Email: ");
+		String email = scan.nextLine();
+
+		System.out.print("Password: ");
+		String password = scan.nextLine();
+
+		if (svc.updateUser(u, fName, lName, email, password)) {
+			System.out.println("Successfully updated information.");
+			userActionPage(u);
+		} else {
+			System.out.println("Unable to update information; please try again.");
+		}
 	}
 	
 	private void accountActionPage(User u, Account a) {
@@ -109,25 +143,32 @@ public class View {
 					);
 			System.out.print("Select an action: ");
 			
-			int choice = Integer.parseInt(scan.nextLine());
+			int choice;
+			try {
+				choice = Integer.parseInt(scan.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a number.\n");
+				continue;
+			}
+
 			switch (choice) {
 			case 1:
-				deposit();
+				deposit(a);
 				break;
 			case 2:
-				withdraw();
+				withdraw(a);
 				break;
 			case 3:
-				transfer();
+				transfer(a);
 				break;
 			case 4:
-				addJointAccountHolder();
+				addJointAccountHolder(a);
 				break;
 			case 5:
-				viewBalance();
+				viewBalance(a);
 				break;
 			case 6:
-				closeAccount();
+				closeAccount(a);
 				break;
 			case 7:
 				running = false;
@@ -169,13 +210,19 @@ public class View {
 		do {
 			for (int i = 0; i < accounts.size(); i++) {
 				Account a = accounts.get(i);
-				System.out.printf("\t%d. %-15s [$%-8.2f] [ACCT#%d]\n", (i+1), a.getType(), a.getBalance(), a.getId());
+				System.out.printf("\t%d. %-15s [ACCT#%d]\n", (i+1), a.getType(), a.getId());
 			}
 			System.out.println("\t" + (accounts.size()+1) + ". Back\n");
 
-			System.out.print("Select an action: ");
+			System.out.print("Select an account: ");
 
-			int choice = Integer.parseInt(scan.nextLine());
+			int choice;
+			try {
+				choice = Integer.parseInt(scan.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a number.\n");
+				continue;
+			}
 
 			if (choice <= accounts.size() && choice > 0) {
 			    accountActionPage(u, accounts.get(choice-1));
@@ -187,9 +234,6 @@ public class View {
 
 			System.out.println();
 		} while (running);
-
-
-
 	}
 
 	private void createAccount(User u) {
@@ -205,7 +249,13 @@ public class View {
 
 			System.out.print("What type of account would you like to open: ");
 
-			int choice = Integer.parseInt(scan.nextLine());
+			int choice;
+			try {
+				choice = Integer.parseInt(scan.nextLine());
+			} catch (Exception e) {
+				System.out.println("Please enter a number.\n");
+				continue;
+			}
 
 			if (choice >= 1 && choice <= types.size()) {
 				Account a = svc.addAccount(u, choice);
@@ -226,22 +276,54 @@ public class View {
 		
 	}
 	
-	private void deposit() {
+	private void deposit(Account a) {
+	    System.out.print("Enter deposit amount: $");
+
+		double amt;
+		try {
+			amt = Double.parseDouble(scan.nextLine());
+
+			a =  svc.deposit(a, amt);
+			if (a != null) {
+			    System.out.printf("Deposit successful.\nNew balance: $%.2f\n\n", a.getBalance());
+			} else {
+				System.out.println("Unable to deposit money. Please try again.");
+			}
+		} catch (Exception e) {
+			System.out.println("Please enter a number.\n");
+		}
+
 	}
 	
-	private void withdraw() {
+	private void withdraw(Account a) {
+		System.out.print("Enter withdraw amount: $");
+
+		double amt;
+		try {
+			amt = Double.parseDouble(scan.nextLine());
+
+			a =  svc.withdraw(a, amt);
+			if (a != null) {
+				System.out.printf("Withdraw successful.\nNew balance: $%.2f\n\n", a.getBalance());
+			} else {
+				System.out.println("Unable to withdraw money. Please try again.");
+			}
+		} catch (Exception e) {
+			System.out.println("Please enter a number.\n");
+		}
 	}
 	
-	private void transfer() {
+	private void transfer(Account a) {
 	}
 	
-	private void addJointAccountHolder() {
+	private void addJointAccountHolder(Account a) {
 	}
 	
-	private void viewBalance() {
+	private void viewBalance(Account a) {
+		System.out.printf("Balance for ACCT#%d: $%.2f\n\n", a.getId(), a.getBalance());
 	}
 
-	private void closeAccount() {
+	private void closeAccount(Account a) {
 	}
 
 }
