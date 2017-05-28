@@ -16273,6 +16273,20 @@ ALTER TRIGGER "CHINOOK"."NO_DELETE" ENABLE;
 
 /
 --------------------------------------------------------
+--  DDL for Function RETURN_BOSS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "CHINOOK"."RETURN_BOSS" (EID NUMBER)
+RETURN NUMBER
+IS TEMP NUMBER;
+BEGIN
+  SELECT REPORTSTO INTO TEMP
+  FROM EMPLOYEE WHERE EMPLOYEEID = EID;
+  RETURN TEMP;
+END;
+
+/
+--------------------------------------------------------
 --  DDL for Function RETURN_EMPLOYEES
 --------------------------------------------------------
 
@@ -16341,6 +16355,20 @@ IS
     ROLLBACK TO insert_save;
     RAISE;
   END insert_Customer;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure MY_MANAGER
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "CHINOOK"."MY_MANAGER" (EID IN NUMBER)
+IS TEMP NUMBER;
+BEGIN
+  TEMP := RETURN_BOSS(EID);
+  DBMS_OUTPUT.PUT('EMPLOYEEID OF BOSS IS ');
+  DBMS_OUTPUT.PUT_LINE(TEMP);
+END;
 
 /
 --------------------------------------------------------

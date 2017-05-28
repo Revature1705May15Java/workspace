@@ -299,7 +299,26 @@ VARIABLE comp VARCHAR2(20);
 EXEC Name_Comp_cust(58, :name, :comp);
 PRINT name;
 PRINT comp;
+
+--Task – Create a stored procedure that returns the managers of an employee.
+CREATE OR REPLACE FUNCTION RETURN_BOSS(EID NUMBER)
+RETURN NUMBER
+IS TEMP NUMBER;
+BEGIN
+  SELECT REPORTSTO INTO TEMP
+  FROM EMPLOYEE WHERE EMPLOYEEID = EID;
+  RETURN TEMP;
+END;
 /
+CREATE OR REPLACE PROCEDURE MY_MANAGER(EID IN NUMBER)
+IS TEMP NUMBER;
+BEGIN
+  TEMP := RETURN_BOSS(EID);
+  DBMS_OUTPUT.PUT('EMPLOYEEID OF BOSS IS ');
+  DBMS_OUTPUT.PUT_LINE(TEMP);
+END;
+/
+
 
 --5 Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them).
 CREATE OR REPLACE PROCEDURE d_Invoice(i_Id IN NUMBER)
@@ -388,7 +407,7 @@ INSTEAD OF DELETE ON VIEW_ALL
 FOR EACH ROW
 BEGIN
   IF :NEW.TOTAL > 50 THEN
-    DBMS_OUTPUT.PUT_LINE('');
+    DBMS_OUTPUT.PUT_LINE('No delete price over 50!');
   END IF;
 END;
 /
@@ -432,4 +451,4 @@ ON CLUSTER CLUST_ALBUM;
 --backup.bak created under Liqun_Zheng_Code\week2
 
 COMMIT;
-  
+/
