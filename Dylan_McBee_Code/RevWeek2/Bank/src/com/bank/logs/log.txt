@@ -5,3 +5,25 @@
 2017-05-25T17:01:52.089 User does not exist
 2017-05-25T17:01:52.109 1 users added
 2017-05-25T17:01:52.125 retrieved user by username: User [id=110, fn=James, ln=Jam, pw=password, uName=jj@j.com, userAccounts=null]
+2017-05-28T12:25:46.633 User does not exist
+2017-05-28T12:27:36.501 User does not exist
+2017-05-28T12:30:04.341 User does not exist
+2017-05-28T12:31:58.593 User does not exist
+2017-05-28T12:32:06.514 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:04:56.913 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:04:59.362 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:06:55.637 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:06:56.805 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:07:03.626 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:07:05.295 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:07:05.314 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:13:28.947 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:13:33.400 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:20:11.882 User does not exist
+2017-05-28T13:22:45.108 User does not exist
+2017-05-28T13:22:54.406 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:22:56.213 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:22:56.232 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:23:39.932 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:23:41.209 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T13:23:41.226 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]

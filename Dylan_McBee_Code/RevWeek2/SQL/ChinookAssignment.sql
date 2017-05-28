@@ -444,3 +444,8 @@ WHERE e1.reportsto=e2.employeeid;
 
 --Problem 9.1
 --Create a .bak file for the Chinook database.
+CREATE CLUSTER personnel
+   (department NUMBER(4))
+SIZE 512 
+STORAGE (initial 100K next 50K);
+/
