@@ -44,7 +44,7 @@ public class Account {
 	}
 
 	public double getBalance() {
-		return balance;
+        return balance;
 	}
 
 	public void setBalance(double balance) {

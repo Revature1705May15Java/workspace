@@ -91,25 +91,29 @@ public class Service {
 	}
 
 	public Account deposit(Account a, double amt) {
-		Account updatedAcct = null;
+	    Account result = null;
+		Account updatedAcct = new Account(
+				a.getId(),
+				a.getBalance() + amt,
+				a.getOpened(),
+				null,
+				a.getType(),
+				a.getUsers()
+		);
 
-		if (amt >= 0.01) {
-			updatedAcct = new Account(
-					a.getId(),
-					a.getBalance() + amt,
-					a.getOpened(),
-					null,
-					a.getType(),
-					a.getUsers()
-			);
+		if (a.getType().getName().toLowerCase().equals("credit")) {
+		    if (amt >= 0.01 && a.getBalance() + amt <= 0.001) {
+				result = dao.updateAccount(updatedAcct);
+			}
+		} else if (amt >= 0.01) {
+			result = dao.updateAccount(updatedAcct);
 		}
 
-		return dao.updateAccount(updatedAcct);
+		return result;
 	}
 
 	public Account withdraw(Account a, double amt) {
 		Account result = null;
-
 		Account updatedAcct = new Account(
 				a.getId(),
 				a.getBalance() - amt,
@@ -118,7 +122,11 @@ public class Service {
 				a.getType()
 		);
 
-		if (amt >= 0.01 && updatedAcct.getBalance() >= -0.001) {
+		if (a.getType().getName().toLowerCase().equals("credit")) {
+			if (amt >= 0.01) {
+				result = dao.updateAccount(updatedAcct);
+			}
+		} else if (amt >= 0.01 && updatedAcct.getBalance() >= -0.001) {
 			result = dao.updateAccount(updatedAcct);
 		}
 
@@ -126,6 +134,11 @@ public class Service {
 	}
 
 	public Account transfer(Account a, int recipientAccountId, double amt) {
+		// Disallow transferring from credit accts
+		if (a.getType().getName().toLowerCase().equals("credit")) {
+		    return null;
+        }
+
 		Account result = null;
 
 		Account updatedAcct = new Account(

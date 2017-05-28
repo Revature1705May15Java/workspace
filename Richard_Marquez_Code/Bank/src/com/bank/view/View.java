@@ -382,7 +382,7 @@ public class View {
 	}
 
 	private void showBalancePage() {
-		System.out.printf("Balance for ACCT#%d: $%.2f\n", currAcct.getId(), currAcct.getBalance());
+        System.out.printf("Balance for ACCT#%d: $%.2f\n", currAcct.getId(), currAcct.getBalance());
 	}
 
 	private boolean showCloseAccountPage() {
