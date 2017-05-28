@@ -300,30 +300,83 @@ EXEC Name_Comp_cust(58, :name, :comp);
 PRINT name;
 PRINT comp;
 /
---6.0 TRIGGERS
---6.1 AFTER/FOR
+
+--5 Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them).
+CREATE OR REPLACE PROCEDURE d_Invoice(i_Id IN NUMBER)
+IS
+  BEGIN
+    SAVEPOINT d_save;
+    DELETE FROM INVOICE
+    WHERE INVOICEID = i_Id;
+    EXCEPTION
+    WHEN OTHERS THEN
+    ROLLBACK TO d_save;
+    RAISE;
+  END d_Invoice;
+/
+CALL d_Invoice(412);
+
+/
+--Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
 CREATE SEQUENCE CUST_SEQ
 START WITH 100 INCREMENT BY 100;
 /
 CREATE OR REPLACE TRIGGER CUST_SEQ_TRIGGER
-BEFORE INSERT ON EMPLOYEE
+BEFORE INSERT ON customer
 FOR EACH ROW
-BEGIN
-  DBMS_OUTPUT.PUT_LINE('');
-END;
+begin
+if:new.customerid is null then 
+  select cust_seq.nextval into :new.customerid from dual;
+  end if;
+  end;
+/
+CREATE OR REPLACE PROCEDURE insert_Customer(fName IN VARCHAR2, lName IN VARCHAR2, e_mail IN VARCHAR2)
+IS
+  BEGIN
+    SAVEPOINT insert_save;
+    INSERT INTO CUSTOMER (FIRSTNAME, LASTNAME, EMAIL) VALUES (fName, lName, e_mail);
+    EXCEPTION
+    WHEN OTHERS THEN
+    ROLLBACK TO insert_save;
+    RAISE;
+  END insert_Customer;
+/
+CALL insert_Customer('aaa', 'bbb', 'ccc');
+
+--6.0 TRIGGERS
+--6.1 AFTER/FOR
+--CREATE SEQUENCE Employee_SEQ
+--START WITH 101 INCREMENT BY 1;
+--/
+--CREATE OR REPLACE TRIGGER Employee_SEQ_TRIGGER
+--BEFORE INSERT ON Employee
+--FOR EACH ROW
+--begin
+--if:new.employeeid is null then 
+--  select cust_seq.nextval into :new.employeeid from dual;
+--  end if;
+--  end;
+--/  
+CREATE OR REPLACE TRIGGER after_Insert_Employee
+AFTER INSERT ON EMPLOYEE
+FOR EACH ROW
+  BEGIN
+    DBMS_OUTPUT.PUT_LINE('A ROW HAS BEEN INSERTED!');
+  END;
+/ 
 /
 CREATE OR REPLACE TRIGGER INSRT_ROW_UPDATE
-AFTER INSERT ON ALBUM
+AFTER UPDATE ON ALBUM
 FOR EACH ROW
 BEGIN
-  DBMS_OUTPUT.PUT_LINE('INSERTED INTO ALBUM');
+  DBMS_OUTPUT.PUT_LINE('UPDATE HAS BEEN MADE TO ALBUM ROW!');
 END;
 /
 CREATE OR REPLACE TRIGGER DELT_ROW_UPDATE
 AFTER DELETE ON CUSTOMER
 FOR EACH ROW
 BEGIN
-      DBMS_OUTPUT.PUT_LINE('');
+      DBMS_OUTPUT.PUT_LINE('A CUSTOMER HAS BEEN DELETED!');
 END;
 /
 --6.2 INSTEAD OF 
