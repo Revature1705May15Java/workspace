@@ -13,6 +13,7 @@ public interface Dao {
     boolean addUser(String fName, String lName, String password, String email);
     boolean updateUser(User u);
     boolean addUserToAccount(User u, Account a);
+    boolean removeUserFromAccount(User u, Account a);
 
     Account getAccount(int id);
     ArrayList<Account> getAccountsForUser(User u);

@@ -137,9 +137,10 @@ public class View {
 					"\t2. Withdraw\n" +
 					"\t3. Transfer\n" +
 					"\t4. Add joint account holder\n"+
-					"\t5. View balance\n" +
-					"\t6. Close account\n" +
-					"\t7. Back\n"
+                    "\t5. Remove joint account holder\n"+
+					"\t6. View balance\n" +
+					"\t7. Close account\n" +
+					"\t8. Back\n"
 					);
 			System.out.print("Select an action: ");
 			
@@ -164,15 +165,20 @@ public class View {
 			case 4:
 				addJointAccountHolder(a);
 				break;
-			case 5:
+            case 5:
+                if (removeJointAccountHolder(u, a)) {
+                	running = false;
+				}
+                break;
+			case 6:
 				viewBalance(a);
 				break;
-			case 6:
+			case 7:
 				if (closeAccount(a)) {
 					running = false;
 				}
 				break;
-			case 7:
+			case 8:
 				running = false;
 				break;
 			default:
@@ -342,7 +348,7 @@ public class View {
 	}
 	
 	private void addJointAccountHolder(Account a) {
-		System.out.print("Enter email of new acct holder: ");
+		System.out.print("Enter email of new account holder: ");
 		String holderEmail = scan.nextLine();
 
 		if (svc.addJointAccountHolder(a, holderEmail)) {
@@ -351,7 +357,26 @@ public class View {
             System.out.println("Unable to add account holder; please try again.");
         }
 	}
-	
+
+	// returns true if user removed self from account
+	private boolean removeJointAccountHolder(User u, Account a) {
+		boolean result = false;
+
+		System.out.print("Enter email of account holder to remove: ");
+		String holderEmail = scan.nextLine();
+
+		if (svc.removeJointAccountHolder(a, holderEmail)) {
+			System.out.println("Successfully removed " + holderEmail + " from this account.");
+			if (u.getEmail().equals(holderEmail)) {
+				result = true;
+			}
+		} else {
+			System.out.println("Unable to remove account holder; please try again.");
+		}
+
+		return result;
+	}
+
 	private void viewBalance(Account a) {
 		System.out.printf("Balance for ACCT#%d: $%.2f\n\n", a.getId(), a.getBalance());
 	}

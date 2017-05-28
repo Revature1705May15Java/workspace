@@ -155,22 +155,29 @@ public class Service {
 
 	public boolean addJointAccountHolder(Account a, String email) {
 		boolean result = false;
-
-		Account aCopy = new Account(
-				a.getId(),
-				a.getBalance(),
-				a.getOpened(),
-				null,
-				a.getType()
-		);
-
 		User newHolder = dao.getUser(email);
 
-		if (newHolder != null && !userIsAccountHolder(newHolder, a)) {
+		if (newHolder != null && !userIsAccountHolder(newHolder, a) && dao.getNumOfAccounts(newHolder) < MAX_ACCOUNTS) {
 			result = dao.addUserToAccount(newHolder, a);
 		}
 
 		return result;
+	}
+
+	public boolean removeJointAccountHolder(Account a, String email) {
+		boolean result = false;
+		User holder = dao.getUser(email);
+
+		if (holder != null && userIsAccountHolder(holder, a) && getNumAccountHolders(a) > 1) {
+			result = dao.removeUserFromAccount(holder, a);
+		}
+
+		return result;
+	}
+
+	private int getNumAccountHolders(Account a) {
+		Account mostRecentAcct = dao.getAccount(a.getId());
+		return mostRecentAcct.getUsers().size();
 	}
 
 	private boolean userIsAccountHolder(User u, Account a) {
