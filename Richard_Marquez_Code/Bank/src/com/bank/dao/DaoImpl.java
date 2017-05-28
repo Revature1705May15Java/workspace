@@ -18,7 +18,7 @@ public class DaoImpl implements Dao {
         boolean result = false;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "insert into bankeraccount values(?, ?)";
+            String sql = "INSERT INTO bankeraccount VALUES(?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, u.getId());
@@ -30,7 +30,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -41,7 +41,7 @@ public class DaoImpl implements Dao {
         boolean result = false;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "delete from bankeraccount where USERID=? and ACCOUNTID=?";
+            String sql = "DELETE FROM bankeraccount WHERE USERID=? AND ACCOUNTID=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, u.getId());
@@ -53,7 +53,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -78,7 +78,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -89,7 +89,7 @@ public class DaoImpl implements Dao {
         Account a = null;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "insert into account(typeid) values(?) returning accountid into ?";
+            String sql = "INSERT INTO account(typeid) VALUES(?) RETURNING accountid INTO ?";
 
             OraclePreparedStatement ps = (OraclePreparedStatement) conn.prepareStatement(sql);
             ps.setInt(1, typeId);
@@ -104,7 +104,7 @@ public class DaoImpl implements Dao {
                 if (rs.next()) {
                     int newAccountId = rs.getInt(1);
 
-                    String sql2 = "insert into bankeraccount values(?, ?)";
+                    String sql2 = "INSERT INTO bankeraccount VALUES(?, ?)";
 
                     PreparedStatement ps2 = conn.prepareStatement(sql2);
                     ps2.setInt(1, u.getId());
@@ -118,18 +118,18 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.log(e.getMessage());
         }
 
         return a;
     }
 
     @Override
-    public boolean updateUser(User u) {
-        boolean result = false;
+    public User updateUser(User u) {
+        User result = null;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "update banker set fname=?, lname=?, password=?, email=? where userid=?";
+            String sql = "UPDATE banker SET fname=?, lname=?, password=?, email=? WHERE userid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, u.getFirstName());
@@ -141,24 +141,23 @@ public class DaoImpl implements Dao {
             int count = ps.executeUpdate();
 
             if (count == 1) {
-                result = true;
+                result = u;
                 Logger.log("updated user w/ id " + u.getId());
             }
 
         } catch (SQLException e) {
-            //e.printStackTrace();
-            Logger.log("failed to update user w/ id " + u.getId());
+            Logger.log(e.getMessage());
         }
 
         return result;
     }
 
     @Override
-    public boolean updateAccount(Account a) {
-        boolean result = false;
+    public Account updateAccount(Account a) {
+        Account result = null;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "update account set balance=?, closed=? where accountid=?";
+            String sql = "UPDATE account SET balance=?, closed=? WHERE accountid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setDouble(1, a.getBalance());
@@ -168,13 +167,12 @@ public class DaoImpl implements Dao {
             int count = ps.executeUpdate();
 
             if (count == 1) {
-                result = true;
+                result = a;
                 Logger.log("updated acct w/ id " + a.getId());
             }
 
         } catch (SQLException e) {
-            //e.printStackTrace();
-            Logger.log("failed to update acct w/ id " + a.getId());
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -205,8 +203,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve user w/ email " + email);
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -229,8 +226,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve acct ids for user " + u);
+            Logger.log(e.getMessage());
         }
 
         return accountIds;
@@ -254,8 +250,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve user ids for user " + a);
+            Logger.log(e.getMessage());
         }
 
         return userIds;
@@ -286,8 +281,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve user w/ id " + id);
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -298,8 +292,8 @@ public class DaoImpl implements Dao {
         Account result = null;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "SELECT * FROM account inner join ACCOUNTTYPE on ACCOUNT.TYPEID=ACCOUNTTYPE.TYPEID " +
-                    "where account.accountid=?";
+            String sql = "SELECT * FROM account INNER JOIN ACCOUNTTYPE ON ACCOUNT.TYPEID=ACCOUNTTYPE.TYPEID " +
+                    "WHERE account.accountid=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
@@ -319,8 +313,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve acct w/ id " + id);
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -331,12 +324,12 @@ public class DaoImpl implements Dao {
         ArrayList<Account> accounts = new ArrayList<>();
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "select account.accountid, account.balance, account.opened, account.closed, accounttype.typeid, accounttype.name " +
-                    "from bankeraccount " +
-                    "inner join banker on bankeraccount.userid = banker.userid " +
-                    "inner join account on bankeraccount.accountid = account.accountid " +
-                    "inner join accounttype on accounttype.typeid = account.typeid " +
-                    "where banker.userId=?";
+            String sql = "SELECT account.accountid, account.balance, account.opened, account.closed, accounttype.typeid, accounttype.name " +
+                    "FROM bankeraccount " +
+                    "INNER JOIN banker ON bankeraccount.userid = banker.userid " +
+                    "INNER JOIN account ON bankeraccount.accountid = account.accountid " +
+                    "INNER JOIN accounttype ON accounttype.typeid = account.typeid " +
+                    "WHERE banker.userId=?";
 
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -358,8 +351,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve accts associate w/ " + u.getEmail());
+            Logger.log(e.getMessage());
         }
 
         return accounts;
@@ -370,11 +362,11 @@ public class DaoImpl implements Dao {
         ArrayList<User> users = new ArrayList<>();
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "select banker.userId, banker.fName, banker.lName, banker.password, banker.email, account.accountid " +
-                    "from bankeraccount " +
-                    "inner join banker on bankeraccount.userid = banker.userid " +
-                    "inner join account on bankeraccount.accountid = account.accountid " +
-                    "where account.accountId=?";
+            String sql = "SELECT banker.userId, banker.fName, banker.lName, banker.password, banker.email, account.accountid " +
+                    "FROM bankeraccount " +
+                    "INNER JOIN banker ON bankeraccount.userid = banker.userid " +
+                    "INNER JOIN account ON bankeraccount.accountid = account.accountid " +
+                    "WHERE account.accountId=?";
 
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -397,8 +389,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve users associated w/ " + a.getId());
+            Logger.log(e.getMessage());
         }
 
         return users;
@@ -409,7 +400,7 @@ public class DaoImpl implements Dao {
         int result = 0;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "{ ? = call getNumAccounts(?) }";
+            String sql = "{ ? = CALL getNumAccounts(?) }";
 
             CallableStatement cs = conn.prepareCall(sql);
             cs.setInt(2, u.getId());
@@ -419,8 +410,7 @@ public class DaoImpl implements Dao {
             result = cs.getInt(1);
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve  number of accts for userid w/ " + u.getId());
+            Logger.log(e.getMessage());
         }
 
         return result;
@@ -431,7 +421,7 @@ public class DaoImpl implements Dao {
         ArrayList<AccountType> types = new ArrayList<>();
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "select * from ACCOUNTTYPE";
+            String sql = "SELECT * FROM ACCOUNTTYPE";
 
             Statement s = conn.createStatement();
             ResultSet rs = s.executeQuery(sql);
@@ -445,8 +435,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            Logger.log("failed to retrieve acct types");
+            Logger.log(e.getMessage());
         }
 
         return types;
@@ -457,7 +446,7 @@ public class DaoImpl implements Dao {
         boolean result = false;
 
         try (Connection conn = ConnectionUtil.getConnection()) {
-            String sql = "{ call transferFunds(?, ?, ?) }";
+            String sql = "{ CALL transferFunds(?, ?, ?) }";
 
             CallableStatement cs = conn.prepareCall(sql);
             cs.setInt(1, fromId);
@@ -468,10 +457,10 @@ public class DaoImpl implements Dao {
             result = true;
 
         } catch (SQLException e) {
-//			e.printStackTrace();
-            Logger.log("failed to transfer funds from " + fromId + " to " + toId);
+            Logger.log(e.getMessage());
         }
 
         return result;
     }
 }
+

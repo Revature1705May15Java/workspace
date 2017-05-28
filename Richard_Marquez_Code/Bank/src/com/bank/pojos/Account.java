@@ -10,11 +10,12 @@ public class Account {
 	LocalDate opened;
 	LocalDate closed;
 	ArrayList<Integer> users;
-	
-	public Account() {}
-	
+
+	public Account() {
+	}
+
 	public Account(int id, double balance, LocalDate opened, LocalDate closed, AccountType type,
-			ArrayList<Integer> users) {
+				   ArrayList<Integer> users) {
 		super();
 		this.id = id;
 		this.balance = balance;
@@ -33,7 +34,7 @@ public class Account {
 		this.closed = closed;
 		this.users = new ArrayList<>();
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -87,5 +88,5 @@ public class Account {
 		return "Account [id=" + id + ", balance=" + balance + ", type=" + type + ", opened=" + opened + ", closed="
 				+ closed + ", users=" + users + "]";
 	}
-	
+
 }

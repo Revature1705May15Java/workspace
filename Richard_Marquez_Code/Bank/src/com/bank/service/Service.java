@@ -15,24 +15,23 @@ public class Service {
 	static Dao dao = new DaoImpl();
 
 	public User addUser(String fName, String lName, String password, String email) {
-		//TODO: ensure unique email
 		User newUser = null;
-		
+
 		if (dao.addUser(fName, lName, password, email)) {
 			newUser = dao.getUser(email);
 		}
-		
+
 		return newUser;
 	}
-	
+
 	public User login(String email, String password) {
 		User possibleUser = dao.getUser(email);
 		User result = null;
-		
+
 		if (possibleUser != null && possibleUser.getPassword().equals(password) && possibleUser.getEmail().equals(email)) {
 			result = possibleUser;
 		}
-		
+
 		return result;
 	}
 
@@ -46,18 +45,16 @@ public class Service {
 
 	public Account addAccount(User u, int typeId) {
 		Account a = null;
-	    int numAccounts = dao.getNumOfAccounts(u);
+		int numAccounts = dao.getNumOfAccounts(u);
 
-	    if (numAccounts < MAX_ACCOUNTS) {
+		if (numAccounts < MAX_ACCOUNTS) {
 			a = dao.addAccount(u, typeId);
 		}
 
 		return a;
 	}
 
-	public boolean updateUser(User u, String fName, String lName, String email, String password) {
-		boolean result = false;
-
+	public User updateUser(User u, String fName, String lName, String email, String password) {
 		User updatedUser = new User(
 				u.getId(),
 				fName,
@@ -67,39 +64,26 @@ public class Service {
 				u.getAccounts()
 		);
 
-	    if (dao.updateUser(updatedUser)) {
-	        result = true;
-	        u.setFirstName(fName);
-	        u.setLastName(lName);
-	        u.setEmail(email);
-	        u.setPassword(password);
-		}
-
-		return result;
+		return dao.updateUser(updatedUser);
 	}
 
 	public Account deposit(Account a, double amt) {
-	    Account aCopy = new Account(
-	    		a.getId(),
+		Account updatedAcct = new Account(
+				a.getId(),
 				a.getBalance() + amt,
 				a.getOpened(),
 				null,
-				a.getType()
+				a.getType(),
+				a.getUsers()
 		);
 
-	    Account result = null;
-	    if (dao.updateAccount(aCopy)) {
-	    	result = aCopy;
-	    	a.setBalance(result.getBalance());
-		}
-
-		return result;
+		return dao.updateAccount(updatedAcct);
 	}
 
 	public Account withdraw(Account a, double amt) {
 		Account result = null;
 
-		Account aCopy = new Account(
+		Account updatedAcct = new Account(
 				a.getId(),
 				a.getBalance() - amt,
 				a.getOpened(),
@@ -107,9 +91,8 @@ public class Service {
 				a.getType()
 		);
 
-		if (amt >= 0.01 && aCopy.getBalance() >= -0.001 && dao.updateAccount(aCopy)) {
-			result = aCopy;
-			a.setBalance(result.getBalance());
+		if (amt >= 0.01 && updatedAcct.getBalance() >= -0.001) {
+			result = dao.updateAccount(updatedAcct);
 		}
 
 		return result;
@@ -118,7 +101,7 @@ public class Service {
 	public Account transfer(Account a, int recipientAccountId, double amt) {
 		Account result = null;
 
-		Account aCopy = new Account(
+		Account updatedAcct = new Account(
 				a.getId(),
 				a.getBalance() - amt,
 				a.getOpened(),
@@ -126,18 +109,17 @@ public class Service {
 				a.getType()
 		);
 
-		if (aCopy.getBalance() >= 0 && dao.transferFunds(a.getId(), recipientAccountId, amt)) {
-			result = aCopy;
-			a.setBalance(result.getBalance());
+		if (amt >= 0.01 && updatedAcct.getBalance() >= 0.001 && dao.transferFunds(a.getId(), recipientAccountId, amt)) {
+			result = updatedAcct;
 		}
 
 		return result;
 	}
 
-	public Account closeAccount(Account a) {
-		Account result = null;
+	public boolean closeAccount(Account a) {
+		boolean result = false;
 
-		Account aCopy = new Account(
+		Account updatedAcct = new Account(
 				a.getId(),
 				a.getBalance(),
 				a.getOpened(),
@@ -145,9 +127,9 @@ public class Service {
 				a.getType()
 		);
 
-		if (aCopy.getBalance() == 0 && dao.updateAccount(aCopy)) {
-			result = aCopy;
-			a.setClosed(result.getClosed());
+		if (updatedAcct.getBalance() == 0 && dao.updateAccount(updatedAcct) != null) {
+			result = true;
+			a.setClosed(updatedAcct.getClosed());
 		}
 
 		return result;
@@ -182,11 +164,12 @@ public class Service {
 
 	private boolean userIsAccountHolder(User u, Account a) {
 		boolean result = false;
+		User mostRecentUser = dao.getUser(u.getId());
 
-		for (int possibleAccountId : u.getAccounts()) {
-		    if (possibleAccountId == a.getId()) {
-		    	result = true;
-		    	break;
+		for (int possibleAccountId : mostRecentUser.getAccounts()) {
+			if (possibleAccountId == a.getId()) {
+				result = true;
+				break;
 			}
 		}
 
