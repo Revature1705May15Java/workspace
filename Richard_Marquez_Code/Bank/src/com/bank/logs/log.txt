@@ -2182,3 +2182,192 @@
 2017-05-28T14:40:07.370 : retrieved user id 5
 2017-05-28T14:40:07.370 : retrieved user id 7
 2017-05-28T14:40:07.385 : retrieved account w/ id 15
+2017-05-28T14:47:11.031 : retrieved acct id 1
+2017-05-28T14:47:11.031 : retrieved acct id 6
+2017-05-28T14:47:11.031 : retrieved acct id 8
+2017-05-28T14:47:11.031 : retrieved acct id 9
+2017-05-28T14:47:11.031 : retrieved acct id 10
+2017-05-28T14:47:11.031 : retrieved acct id 11
+2017-05-28T14:47:11.031 : retrieved acct id 12
+2017-05-28T14:47:11.031 : retrieved acct id 13
+2017-05-28T14:47:11.031 : retrieved acct id 14
+2017-05-28T14:47:11.031 : retrieved acct id 15
+2017-05-28T14:47:11.046 : retrieved user w/ email richard92m@me.com
+2017-05-28T14:47:12.517 : retrieved user id 1
+2017-05-28T14:47:12.533 : retrieved user id 4
+2017-05-28T14:47:12.533 : retrieved user id 5
+2017-05-28T14:47:12.533 : retrieved account w/ id 1
+2017-05-28T14:47:12.564 : retrieved user id 5
+2017-05-28T14:47:12.564 : retrieved account w/ id 6
+2017-05-28T14:47:12.602 : retrieved user id 5
+2017-05-28T14:47:12.602 : retrieved account w/ id 8
+2017-05-28T14:47:12.633 : retrieved user id 5
+2017-05-28T14:47:12.633 : retrieved account w/ id 9
+2017-05-28T14:47:12.648 : retrieved user id 5
+2017-05-28T14:47:12.648 : retrieved account w/ id 10
+2017-05-28T14:47:12.664 : retrieved user id 5
+2017-05-28T14:47:12.664 : retrieved account w/ id 11
+2017-05-28T14:47:12.686 : retrieved user id 5
+2017-05-28T14:47:12.701 : retrieved account w/ id 12
+2017-05-28T14:47:12.717 : retrieved user id 5
+2017-05-28T14:47:12.717 : retrieved account w/ id 13
+2017-05-28T14:47:12.733 : retrieved user id 5
+2017-05-28T14:47:12.733 : retrieved account w/ id 14
+2017-05-28T14:47:12.748 : retrieved user id 5
+2017-05-28T14:47:12.748 : retrieved user id 7
+2017-05-28T14:47:12.764 : retrieved account w/ id 15
+2017-05-28T14:47:25.068 : retrieved acct id 1
+2017-05-28T14:47:25.068 : retrieved acct id 6
+2017-05-28T14:47:25.068 : retrieved acct id 8
+2017-05-28T14:47:25.068 : retrieved acct id 9
+2017-05-28T14:47:25.068 : retrieved acct id 10
+2017-05-28T14:47:25.068 : retrieved acct id 11
+2017-05-28T14:47:25.068 : retrieved acct id 12
+2017-05-28T14:47:25.068 : retrieved acct id 13
+2017-05-28T14:47:25.068 : retrieved acct id 14
+2017-05-28T14:47:25.068 : retrieved acct id 15
+2017-05-28T14:47:25.068 : retrieved user w/ id 5
+2017-05-28T14:47:25.121 : retrieved acct id 3
+2017-05-28T14:47:25.121 : retrieved acct id 15
+2017-05-28T14:47:25.121 : retrieved acct id 16
+2017-05-28T14:47:25.121 : retrieved user w/ email eric.clapton@me.com
+2017-05-28T14:47:25.152 : retrieved acct id 3
+2017-05-28T14:47:25.152 : retrieved acct id 15
+2017-05-28T14:47:25.152 : retrieved acct id 16
+2017-05-28T14:47:25.152 : retrieved user w/ id 7
+2017-05-28T14:47:25.184 : Malformed SQL92 string at position: 6. Expecting "call"
+2017-05-28T14:47:25.206 : eric.clapton@me.com added as holder of acct 9
+2017-05-28T14:47:36.644 : retrieved acct id 1
+2017-05-28T14:47:36.644 : retrieved acct id 6
+2017-05-28T14:47:36.644 : retrieved acct id 8
+2017-05-28T14:47:36.644 : retrieved acct id 9
+2017-05-28T14:47:36.660 : retrieved acct id 10
+2017-05-28T14:47:36.660 : retrieved acct id 11
+2017-05-28T14:47:36.660 : retrieved acct id 12
+2017-05-28T14:47:36.660 : retrieved acct id 13
+2017-05-28T14:47:36.660 : retrieved acct id 14
+2017-05-28T14:47:36.660 : retrieved acct id 15
+2017-05-28T14:47:36.660 : retrieved user w/ id 5
+2017-05-28T14:47:36.691 : retrieved acct id 3
+2017-05-28T14:47:36.691 : retrieved acct id 9
+2017-05-28T14:47:36.691 : retrieved acct id 15
+2017-05-28T14:47:36.691 : retrieved acct id 16
+2017-05-28T14:47:36.691 : retrieved user w/ id 7
+2017-05-28T14:47:36.728 : retrieved acct id 16
+2017-05-28T14:47:36.728 : retrieved acct id 17
+2017-05-28T14:47:36.744 : retrieved user w/ email slash@gmail.com
+2017-05-28T14:47:36.791 : retrieved acct id 16
+2017-05-28T14:47:36.791 : retrieved acct id 17
+2017-05-28T14:47:36.791 : retrieved user w/ id 9
+2017-05-28T14:47:36.806 : Malformed SQL92 string at position: 6. Expecting "call"
+2017-05-28T14:47:36.829 : slash@gmail.com added as holder of acct 9
+2017-05-28T14:47:50.476 : retrieved acct id 1
+2017-05-28T14:47:50.476 : retrieved acct id 6
+2017-05-28T14:47:50.476 : retrieved acct id 8
+2017-05-28T14:47:50.476 : retrieved acct id 9
+2017-05-28T14:47:50.476 : retrieved acct id 10
+2017-05-28T14:47:50.476 : retrieved acct id 11
+2017-05-28T14:47:50.492 : retrieved acct id 12
+2017-05-28T14:47:50.492 : retrieved acct id 13
+2017-05-28T14:47:50.492 : retrieved acct id 14
+2017-05-28T14:47:50.492 : retrieved acct id 15
+2017-05-28T14:47:50.492 : retrieved user w/ id 5
+2017-05-28T14:47:50.508 : retrieved acct id 3
+2017-05-28T14:47:50.523 : retrieved acct id 9
+2017-05-28T14:47:50.523 : retrieved acct id 15
+2017-05-28T14:47:50.523 : retrieved acct id 16
+2017-05-28T14:47:50.523 : retrieved user w/ id 7
+2017-05-28T14:47:50.545 : retrieved acct id 9
+2017-05-28T14:47:50.545 : retrieved acct id 16
+2017-05-28T14:47:50.545 : retrieved acct id 17
+2017-05-28T14:47:50.561 : retrieved user w/ id 9
+2017-05-28T14:47:50.608 : retrieved user w/ email bob.dylan@me.com
+2017-05-28T14:47:50.661 : retrieved user w/ id 8
+2017-05-28T14:47:50.676 : Malformed SQL92 string at position: 6. Expecting "call"
+2017-05-28T14:47:50.708 : bob.dylan@me.com added as holder of acct 9
+2017-05-28T14:48:06.872 : retrieved acct id 1
+2017-05-28T14:48:06.872 : retrieved acct id 6
+2017-05-28T14:48:06.872 : retrieved acct id 8
+2017-05-28T14:48:06.872 : retrieved acct id 9
+2017-05-28T14:48:06.872 : retrieved acct id 10
+2017-05-28T14:48:06.872 : retrieved acct id 11
+2017-05-28T14:48:06.872 : retrieved acct id 12
+2017-05-28T14:48:06.888 : retrieved acct id 13
+2017-05-28T14:48:06.888 : retrieved acct id 14
+2017-05-28T14:48:06.888 : retrieved acct id 15
+2017-05-28T14:48:06.888 : retrieved user w/ id 5
+2017-05-28T14:48:06.904 : retrieved acct id 3
+2017-05-28T14:48:06.904 : retrieved acct id 9
+2017-05-28T14:48:06.919 : retrieved acct id 15
+2017-05-28T14:48:06.919 : retrieved acct id 16
+2017-05-28T14:48:06.919 : retrieved user w/ id 7
+2017-05-28T14:48:06.935 : retrieved acct id 9
+2017-05-28T14:48:06.935 : retrieved user w/ id 8
+2017-05-28T14:48:06.957 : retrieved acct id 9
+2017-05-28T14:48:06.957 : retrieved acct id 16
+2017-05-28T14:48:06.957 : retrieved acct id 17
+2017-05-28T14:48:06.973 : retrieved user w/ id 9
+2017-05-28T14:48:07.004 : retrieved acct id 17
+2017-05-28T14:48:07.004 : retrieved user w/ email lennon@me.com
+2017-05-28T14:48:13.720 : retrieved acct id 9
+2017-05-28T14:48:13.720 : retrieved acct id 16
+2017-05-28T14:48:13.720 : retrieved acct id 17
+2017-05-28T14:48:13.720 : retrieved user w/ email slash@gmail.com
+2017-05-28T14:48:13.789 : retrieved acct id 9
+2017-05-28T14:48:13.789 : retrieved acct id 16
+2017-05-28T14:48:13.789 : retrieved acct id 17
+2017-05-28T14:48:13.789 : retrieved user w/ id 9
+2017-05-28T14:48:13.836 : retrieved user id 5
+2017-05-28T14:48:13.836 : retrieved user id 7
+2017-05-28T14:48:13.836 : retrieved user id 8
+2017-05-28T14:48:13.836 : retrieved user id 9
+2017-05-28T14:48:13.836 : retrieved acct w/ id 9
+2017-05-28T14:48:13.858 : slash@gmail.com removed as holder of acct 9
+2017-05-28T14:48:19.820 : retrieved acct id 1
+2017-05-28T14:48:19.836 : retrieved acct id 6
+2017-05-28T14:48:19.836 : retrieved acct id 8
+2017-05-28T14:48:19.836 : retrieved acct id 9
+2017-05-28T14:48:19.836 : retrieved acct id 10
+2017-05-28T14:48:19.836 : retrieved acct id 11
+2017-05-28T14:48:19.836 : retrieved acct id 12
+2017-05-28T14:48:19.836 : retrieved acct id 13
+2017-05-28T14:48:19.836 : retrieved acct id 14
+2017-05-28T14:48:19.836 : retrieved acct id 15
+2017-05-28T14:48:19.836 : retrieved user w/ id 5
+2017-05-28T14:48:19.858 : retrieved acct id 3
+2017-05-28T14:48:19.858 : retrieved acct id 9
+2017-05-28T14:48:19.858 : retrieved acct id 15
+2017-05-28T14:48:19.858 : retrieved acct id 16
+2017-05-28T14:48:19.858 : retrieved user w/ id 7
+2017-05-28T14:48:19.874 : retrieved acct id 9
+2017-05-28T14:48:19.874 : retrieved user w/ id 8
+2017-05-28T14:48:19.936 : retrieved acct id 17
+2017-05-28T14:48:19.936 : retrieved user w/ email lennon@me.com
+2017-05-28T14:48:19.974 : retrieved acct id 17
+2017-05-28T14:48:19.974 : retrieved user w/ id 10
+2017-05-28T14:48:20.005 : Malformed SQL92 string at position: 6. Expecting "call"
+2017-05-28T14:48:20.021 : lennon@me.com added as holder of acct 9
+2017-05-28T14:48:28.472 : retrieved acct id 1
+2017-05-28T14:48:28.472 : retrieved acct id 6
+2017-05-28T14:48:28.472 : retrieved acct id 8
+2017-05-28T14:48:28.472 : retrieved acct id 9
+2017-05-28T14:48:28.472 : retrieved acct id 10
+2017-05-28T14:48:28.472 : retrieved acct id 11
+2017-05-28T14:48:28.472 : retrieved acct id 12
+2017-05-28T14:48:28.472 : retrieved acct id 13
+2017-05-28T14:48:28.472 : retrieved acct id 14
+2017-05-28T14:48:28.472 : retrieved acct id 15
+2017-05-28T14:48:28.472 : retrieved user w/ id 5
+2017-05-28T14:48:28.503 : retrieved acct id 3
+2017-05-28T14:48:28.503 : retrieved acct id 9
+2017-05-28T14:48:28.503 : retrieved acct id 15
+2017-05-28T14:48:28.503 : retrieved acct id 16
+2017-05-28T14:48:28.503 : retrieved user w/ id 7
+2017-05-28T14:48:28.534 : retrieved acct id 9
+2017-05-28T14:48:28.534 : retrieved user w/ id 8
+2017-05-28T14:48:28.550 : retrieved acct id 9
+2017-05-28T14:48:28.550 : retrieved acct id 17
+2017-05-28T14:48:28.550 : retrieved user w/ id 10
+2017-05-28T14:48:28.588 : retrieved acct id 16
+2017-05-28T14:48:28.588 : retrieved acct id 17
+2017-05-28T14:48:28.588 : retrieved user w/ email slash@gmail.com

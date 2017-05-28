@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Service {
 
 	private static final int MAX_ACCOUNTS = 6;
+	private static final int MAX_HOLDERS = 4;
 	private static Dao dao = new DaoImpl();
 
 	public User addUser(String fName, String lName, String password, String email) {
@@ -160,9 +161,11 @@ public class Service {
 
 	public boolean addJointAccountHolder(Account a, String email) {
 		boolean result = false;
+
+		int numHolders = dao.getUsersForAccount(a).size();
 		User newHolder = dao.getUser(email);
 
-		if (newHolder != null && !userIsAccountHolder(newHolder, a) && dao.getNumOfAccounts(newHolder) < MAX_ACCOUNTS) {
+		if (newHolder != null && numHolders < MAX_HOLDERS && !userIsAccountHolder(newHolder, a) && dao.getNumOfAccounts(newHolder) < MAX_ACCOUNTS) {
 			result = dao.addUserToAccount(newHolder, a);
 		}
 
