@@ -168,7 +168,9 @@ public class View {
 				viewBalance(a);
 				break;
 			case 6:
-				closeAccount(a);
+				if (closeAccount(a)) {
+					running = false;
+				}
 				break;
 			case 7:
 				running = false;
@@ -209,11 +211,19 @@ public class View {
 		do {
 			ArrayList<Account> accounts = svc.getAccounts(u);
 
-			for (int i = 0; i < accounts.size(); i++) {
-				Account a = accounts.get(i);
-				System.out.printf("\t%d. %-15s [ACCT#%d]\n", (i+1), a.getType(), a.getId());
+			// Don't show closed accounts
+			ArrayList<Account> openAccounts = new ArrayList<>();
+			for (Account a : accounts) {
+				if (a.getClosed() == null) {
+					openAccounts.add(a);
+				}
 			}
-			System.out.println("\t" + (accounts.size()+1) + ". Back\n");
+
+			for (int i = 0; i < openAccounts.size(); i++) {
+				Account a = openAccounts.get(i);
+                System.out.printf("\t%d. %-15s [ACCT#%d]\n", (i + 1), a.getType(), a.getId());
+			}
+			System.out.println("\t" + (openAccounts.size()+1) + ". Back\n");
 
 			System.out.print("Select an account: ");
 
@@ -225,9 +235,9 @@ public class View {
 				continue;
 			}
 
-			if (choice <= accounts.size() && choice > 0) {
-			    accountActionPage(u, accounts.get(choice-1));
-            } else if (choice == accounts.size()+1) {
+			if (choice <= openAccounts.size() && choice > 0) {
+			    accountActionPage(u, openAccounts.get(choice-1));
+            } else if (choice == openAccounts.size()+1) {
 			    running = false;
 			} else {
 				System.out.println("Please enter a valid option.");
@@ -244,7 +254,7 @@ public class View {
 		do {
 			for (int i = 0; i < types.size(); i++) {
 				AccountType a = types.get(i);
-				System.out.println("\t" + (i + 1) + ". " + a.getName());
+				System.out.println("\t" + (i + 1) + ". " + a);
 			}
 			System.out.println("\t" + (types.size()+1) + ". Back\n");
 
@@ -338,7 +348,26 @@ public class View {
 		System.out.printf("Balance for ACCT#%d: $%.2f\n\n", a.getId(), a.getBalance());
 	}
 
-	private void closeAccount(Account a) {
+	private boolean closeAccount(Account a) {
+		boolean result = false;
+
+	    System.out.print("Are you sure you want to close this account? (y/n): ");
+	    String answer = scan.nextLine().toLowerCase();
+
+	    switch(answer) {
+			case "y":
+				if (svc.closeAccount(a) != null) {
+					result = true;
+					System.out.println("Successfully closed account");
+				} else {
+					System.out.println("Unable to close account; please try again.");
+				}
+				break;
+			default:
+			    break;
+		}
+
+		return result;
 	}
 
 }

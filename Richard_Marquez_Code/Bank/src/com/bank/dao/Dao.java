@@ -1,29 +1,25 @@
 package com.bank.dao;
 
-import java.util.ArrayList;
-
 import com.bank.pojos.Account;
 import com.bank.pojos.AccountType;
 import com.bank.pojos.User;
 
+import java.util.ArrayList;
+
 public interface Dao {
-	boolean addUser(String fName, String lName, String password, String email);
-	Account addAccount(User u, int typeId);
-	boolean addUserToAccount(User u, Account a);
+    User getUser(String email);
+    User getUser(int id);
+    ArrayList<User> getUsersForAccount(Account a);
+    boolean addUser(String fName, String lName, String password, String email);
+    boolean updateUser(User u);
+    boolean addUserToAccount(User u, Account a);
 
-	boolean updateUser(User u);
-	boolean updateAccount(Account a);
+    Account getAccount(int id);
+    ArrayList<Account> getAccountsForUser(User u);
+    int getNumOfAccounts(User u);
+    Account addAccount(User u, int typeId);
+    boolean updateAccount(Account a);
 
-	User getUser(String email);
-	User getUser(int id);
-
-	boolean transferFunds(int fromId, int toId, double amt);
-
-	Account getAccount(int id);
-	int getNumOfAccounts(User u);
-
-	ArrayList<Account> getAccountsForUser(User u);
-	ArrayList<User> getUsersForAccount(Account a);
-
-	ArrayList<AccountType> getAccountTypes();
+    boolean transferFunds(int fromId, int toId, double amt);
+    ArrayList<AccountType> getAccountTypes();
 }

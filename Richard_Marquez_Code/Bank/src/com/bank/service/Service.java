@@ -6,6 +6,7 @@ import com.bank.pojos.Account;
 import com.bank.pojos.AccountType;
 import com.bank.pojos.User;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Service {
@@ -47,7 +48,7 @@ public class Service {
 		Account a = null;
 	    int numAccounts = dao.getNumOfAccounts(u);
 
-	    if (numAccounts <= MAX_ACCOUNTS) {
+	    if (numAccounts < MAX_ACCOUNTS) {
 			a = dao.addAccount(u, typeId);
 		}
 
@@ -106,7 +107,7 @@ public class Service {
 				a.getType()
 		);
 
-		if (aCopy.getBalance() >= 0 && dao.updateAccount(aCopy)) {
+		if (amt >= 0.01 && aCopy.getBalance() >= -0.001 && dao.updateAccount(aCopy)) {
 			result = aCopy;
 			a.setBalance(result.getBalance());
 		}
@@ -133,4 +134,22 @@ public class Service {
 		return result;
 	}
 
+	public Account closeAccount(Account a) {
+		Account result = null;
+
+		Account aCopy = new Account(
+				a.getId(),
+				a.getBalance(),
+				a.getOpened(),
+				LocalDate.now(),
+				a.getType()
+		);
+
+		if (aCopy.getBalance() == 0 && dao.updateAccount(aCopy)) {
+			result = aCopy;
+			a.setClosed(result.getClosed());
+		}
+
+		return result;
+	}
 }
