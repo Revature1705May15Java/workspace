@@ -1,0 +1,21 @@
+package com.bank.main;
+
+import com.bank.pojos.User;
+
+import java.sql.Date;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.Type;
+
+public class BankMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		User user = new User();
+		Account a = new Account(1, 100, Type.CHECKING, new Date(2017, 6, 28));
+		user.addAccount(a);
+		ArrayList<Account> accounts = user.getAllAccounts();
+		for 
+	}
+
+}

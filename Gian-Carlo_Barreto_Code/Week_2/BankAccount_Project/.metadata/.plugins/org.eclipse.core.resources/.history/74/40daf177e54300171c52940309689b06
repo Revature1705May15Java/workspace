@@ -1,0 +1,71 @@
+package com.bank.service;
+
+import java.util.ArrayList;
+
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+import com.bank.pojos.User;
+
+public class BankService {
+	private DAO dao;
+	
+	/**
+	 * Creates an instance of this class
+	 */
+	public BankService() {
+		this.dao = new DaoImpl();
+	}
+	
+	/**
+	 * Calls the addUser method of the DaoImpl class to add a user into the Bank_User table
+	 * @param firstName
+	 * @param lastName
+	 * @param username
+	 * @param password
+	 * @param email
+	 * @return the User that was added
+	 */
+	public User createNewUser(String firstName, String lastName, String username, String password, String email) {
+		return dao.addUser(firstName, lastName, username, password, email);
+	}
+	
+	/**
+	 * Checks to see if a username has not been used
+	 * @param username
+	 * @return true if the username is available, false otherwise
+	 */
+	public boolean isUsernameAvailable(String username) {
+		ArrayList<User> users = dao.getAllUsers();
+		boolean available = true;
+		for (User u : users) {
+			if (username.equals(u.getUsername())) {
+				available = false;
+				break;
+			}
+		}
+		return available;
+	}
+	
+	/**
+	 * Checks to see if an email has not been used
+	 * @param email
+	 * @return true if the emailis available, false otherwise
+	 */
+	public boolean isEmailAvailable(String email) {
+		ArrayList<User> users = dao.getAllUsers();
+		boolean available = true;
+		for (User u : users) {
+			if (email.equals(u.getEmail())) {
+				available = false;
+				break;
+			}
+		}
+		return available;
+	}
+	
+	public boolean confirmLogin(String username, String password) {
+		boolean confirm = false;
+		User user = dao.con
+		return confirm;
+	}
+}

@@ -1,0 +1,7 @@
+package com.bank.dao;
+
+import com.bank.pojos.User;
+
+public interface DAO {
+	User addUser(String firstName, String lastName, String username, String password, String email);
+}

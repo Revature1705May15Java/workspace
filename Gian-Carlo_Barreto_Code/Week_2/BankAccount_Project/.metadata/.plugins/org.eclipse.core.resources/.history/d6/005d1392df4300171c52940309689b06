@@ -1,0 +1,17 @@
+package com.bank.service;
+
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+import com.bank.pojos.User;
+
+public class BankService {
+	private DAO dao;
+	
+	BankService() {
+		this.dao = new DaoImpl();
+	}
+	
+	public User createNewUser(String firstName, String lastName, String username, String password, String email) {
+		return dao.addUser(firstName, lastName, username, password, email);
+	}
+}

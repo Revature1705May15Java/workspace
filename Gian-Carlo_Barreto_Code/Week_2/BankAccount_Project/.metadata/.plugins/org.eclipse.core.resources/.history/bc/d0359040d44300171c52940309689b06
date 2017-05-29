@@ -1,0 +1,26 @@
+package com.bank.main;
+
+import com.bank.pojos.User;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.Type;
+
+public class BankMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Account a = new Account();
+		User user = new User(1, "John", "Doe", "jd344", "sdkfja", "johndoe@gmail.com");
+		System.out.println(a.getNumOfUsers());
+		a.addUser(user);
+		System.out.println(a.getNumOfUsers());
+		ArrayList<User> users = a.getAllUsers();
+		users.forEach(u -> System.out.println(u));
+		if (a.removeUser(user))
+			System.out.println("Removed");
+		System.out.println(a.getNumOfUsers());
+	}
+}

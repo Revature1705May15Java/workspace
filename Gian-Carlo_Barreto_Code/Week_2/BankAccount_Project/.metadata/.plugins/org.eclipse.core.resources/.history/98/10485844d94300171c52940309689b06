@@ -1,0 +1,22 @@
+package com.bank.main;
+
+public class BankClient {
+	private int userId;
+	
+	private void displayWelcomeScreen() {
+		System.out.println("Welcome to The Bank...");
+		System.out.println("What would you like to do? Please choose from the menu below: ");
+		System.out.println("1. Login");
+		System.out.println("2. Create a new user");
+		System.out.println("3. Exit");
+	}
+	
+	
+	
+	/**
+	 * Runs the Online Banking Program
+	 */
+	public void run() {
+		
+	}
+}

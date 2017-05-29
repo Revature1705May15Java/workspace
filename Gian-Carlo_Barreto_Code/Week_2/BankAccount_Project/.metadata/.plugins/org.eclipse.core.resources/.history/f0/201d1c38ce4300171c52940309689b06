@@ -1,0 +1,123 @@
+package com.bank.pojos;
+
+import java.util.Date;
+
+/**
+ * This class contains information about an account
+ * @author Gian-Carlo
+ *
+ */
+public class Account {
+	private int id;
+	private double balance;
+	private Type type;
+	private Date openDate;
+	private Date closeDate;
+	
+	/**
+	 * Creates an instance of Account with default values
+	 */
+	public Account() {
+		super();
+		this.id = 0;
+		this.balance = 0;
+		this.type = null;
+		this.openDate = null;
+		this.closeDate = null;
+	}
+	
+	/**
+	 * Creates an instance of Account with specific values
+	 * @param id
+	 * @param balance
+	 * @param type
+	 * @param openDate
+	 * @param closeDate
+	 */
+	public Account(int id, double balance, Type type, Date openDate, Date closeDate) {
+		super();
+		this.id = id;
+		this.balance = balance;
+		this.type = type;
+		this.openDate = openDate;
+		this.closeDate = closeDate;
+	}
+	
+	/**
+	 * Gets the account id
+	 * @return account id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Sets the account id
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * Gets the account balance
+	 * @return account balance
+	 */
+	public double getBalance() {
+		return balance;
+	}
+
+	/**
+	 * Sets the account balance
+	 * @param balance
+	 */
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	/**
+	 * Gets the account type
+	 * @return account type
+	 */
+	public Type getType() {
+		return type;
+	}
+
+	/**
+	 * Sets the account type
+	 * @param type
+	 */
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	/**
+	 * Gets the account's open date
+	 * @return account's open date
+	 */
+	public Date getOpenDate() {
+		return openDate;
+	}
+
+	/**
+	 * Sets the account's open date
+	 * @param openDate
+	 */
+	public void setOpenDate(Date openDate) {
+		this.openDate = openDate;
+	}
+
+	/**
+	 * Gets the a
+	 * @return
+	 */
+	public Date getCloseDate() {
+		return closeDate;
+	}
+
+	public void setCloseDate(Date closeDate) {
+		this.closeDate = closeDate;
+	}
+	
+	
+}

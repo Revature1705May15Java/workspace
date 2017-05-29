@@ -1,0 +1,64 @@
+package com.bank.main;
+
+import java.util.Scanner;
+
+public class BankClient {
+	private int userId;
+	private Scanner in;
+	private static final int EXIT = -1;
+	
+	BankClient() {
+		this.in = new Scanner(System.in);
+	}
+	
+	/**
+	 * Displays the welcome screen
+	 */
+	private void displayWelcomeScreen() {
+		System.out.println("Welcome to The Bank...");
+		System.out.println("What would you like to do? Please choose from the menu below: ");
+		System.out.println("1. Login");
+		System.out.println("2. Create a new user");
+		System.out.println("3. Exit");
+	}
+	
+	/**
+	 * Gets the user's menu choice
+	 * @return user's menu choice
+	 */
+	private int getUserWindowChoice() {
+		int choice = Integer.parseInt(this.in.next());
+		while (choice < 1 || choice > 3) {
+			System.out.println("Choice not valid.  Please enter valid choice");
+			choice = Integer.parseInt(this.in.next());
+		}
+		return choice;
+	}
+	
+	private int executeWelcomeChoice(int choice) {
+		switch (choice) {
+			case 1: 
+				login();
+				break;
+			case 2:
+				createNewUser();
+				break;
+			case 3:
+				return EXIT;
+		}
+		return 0;
+	}
+	
+	/**
+	 * Runs the Online Banking Program
+	 */
+	public void run() {
+		while (true) {
+			displayWelcomeScreen();
+			int choice = getUserWindowChoice();
+			int shouldExit = executeWelcomeChoice(choice);
+			if (shouldExit == EXIT)
+				break;
+		}
+	}
+}

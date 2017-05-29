@@ -1,0 +1,183 @@
+package com.bank.pojos;
+
+import java.util.ArrayList;
+import java.sql.Date;
+
+/**
+ * This class contains information about an account
+ * @author Gian-Carlo
+ *
+ */
+public class Account {
+	private int id;
+	private int numOfUsers;
+	private double balance;
+	private Type type;
+	private Date openDate;
+	private Date closeDate;
+	private ArrayList<User> users;
+	
+	/**
+	 * Creates an instance of Account with default values
+	 */
+	public Account() {
+		super();
+		this.id = 0;
+		this.numOfUsers = 1;
+		this.balance = 0;
+		this.type = null;
+		this.openDate = null;
+		this.closeDate = null;
+	}
+	
+	/**
+	 * Creates an instance of Account with specific values
+	 * @param id
+	 * @param numUsers
+	 * @param balance
+	 * @param type
+	 * @param openDate
+	 * @param closeDate
+	 */
+	public Account(int id, double balance, Type type, Date openDate) {
+		super();
+		this.id = id;
+		this.numOfUsers = 1;
+		this.balance = balance;
+		this.type = type;
+		this.openDate = openDate;
+		this.closeDate = null;
+	}
+	
+	/**
+	 * Gets the account id
+	 * @return account id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Sets the account id
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * Gets the account balance
+	 * @return account balance
+	 */
+	public double getBalance() {
+		return balance;
+	}
+
+	/**
+	 * Sets the account balance
+	 * @param balance
+	 */
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	/**
+	 * Gets the account type
+	 * @return account type
+	 */
+	public Type getType() {
+		return type;
+	}
+
+	/**
+	 * Sets the account type
+	 * @param type
+	 */
+	public void setType(Type type) {
+		this.type = type;
+	}
+
+	/**
+	 * Gets the account's open date
+	 * @return account's open date
+	 */
+	public Date getOpenDate() {
+		return openDate;
+	}
+
+	/**
+	 * Sets the account's open date
+	 * @param openDate
+	 */
+	public void setOpenDate(Date openDate) {
+		this.openDate = openDate;
+	}
+
+	/**
+	 * Gets the account's close date
+	 * @return account's close date
+	 */
+	public Date getCloseDate() {
+		return closeDate;
+	}
+
+	/**
+	 * Gets the account's close date
+	 * @param closeDate
+	 */
+	public void setCloseDate(Date closeDate) {
+		this.closeDate = closeDate;
+	}
+
+	/**
+	 * Adds a user to the list of users and increment
+	 * numOfUsers by 1.
+	 * @param user
+	 */
+	public void addUser(User user) {
+		this.users.add(user);
+		this.numOfUsers++;
+	}
+	
+	/**
+	 * Remove a user from the list of users and decrement
+	 * numOfUsers by 1.
+	 * @param user
+	 * @return true if user removed, false otherwise
+	 */
+	public boolean removeUser(User user) {
+		boolean removed = false;
+		
+		if (this.users.size() > 0 && user != null) {
+			for (User u : this.users) {
+				if (u.getId() == user.getId()) {
+					this.users.remove(u);
+					this.numOfUsers--;
+					removed = true;
+					break;
+				}
+			}
+		}
+		
+		return removed;
+	}
+	
+	/**
+	 * Get all of the account's users
+	 * @return account's users
+	 */
+	public ArrayList<User> getAllUsers() {
+		return this.users;
+	}
+	
+	/**
+	 * @return a string representation of this Account
+	 */
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", balance=" + balance + ", type=" + type + ", openDate=" + openDate
+				+ ", closeDate=" + closeDate + "]";
+	}
+	
+	
+}

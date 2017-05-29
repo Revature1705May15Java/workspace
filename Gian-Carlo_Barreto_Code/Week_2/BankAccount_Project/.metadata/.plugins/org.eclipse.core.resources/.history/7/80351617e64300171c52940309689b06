@@ -1,0 +1,126 @@
+package com.bank.main;
+
+import java.util.Scanner;
+
+import com.bank.pojos.User;
+import com.bank.service.BankService;
+
+public class BankClient {
+	private int userId;
+	private Scanner in;
+	private static final int EXIT = -1;
+	private BankService service;
+	
+	BankClient() {
+		this.in = new Scanner(System.in);
+		this.service = new BankService();
+	}
+	
+	/**
+	 * Displays the welcome screen
+	 */
+	private void displayWelcomeScreen() {
+		System.out.println("Welcome to The Bank...");
+		System.out.println("What would you like to do? Please choose from the menu below: ");
+		System.out.println("1. Login");
+		System.out.println("2. Create a new user");
+		System.out.println("3. Exit");
+	}
+	
+	/**
+	 * Gets the user's menu choice
+	 * @return user's menu choice
+	 */
+	private int getUserWindowChoice() {
+		int choice = Integer.parseInt(this.in.nextLine());
+		while (choice < 1 || choice > 3) {
+			System.out.println("Choice not valid.  Please enter valid choice");
+			choice = Integer.parseInt(this.in.next());
+		}
+		return choice;
+	}
+	
+	/**
+	 * Executes the user's window menu choice
+	 * @param choice
+	 * @return EXIT if user wants to exit program, 0 otherwise
+	 */
+	private int executeWelcomeChoice(int choice) {
+		switch (choice) {
+			case 1: 
+				login();
+				
+				break;
+			case 2:
+				createNewUser();
+				break;
+			case 3:
+				return EXIT;
+		}
+		return 0;
+	}
+	
+	private void login() {
+		String username = "";
+		String password = "";
+		boolean valid = false;
+		while (!valid) {
+			System.out.print("Please enter your username: ");
+			username = this.in.nextLine();
+			System.out.print("Please enter your password: ");
+			User u = this.service.confirmLogin(username, password);
+			if (u == null)
+				System.out.println("Your login credentials are incorrect");
+			else {
+				this.userId = u.getId();
+				valid = true;
+			}
+		}
+		System.out.println("You are logged in");
+	}
+	
+	/**
+	 * Asks the user for new user information and sends the new user request to the BankService
+	 * class.
+	 */
+	private void createNewUser() {
+		String firstName, lastName, username = null, password, email = null;
+		System.out.print("\nPlease enter your first name: ");
+		firstName = this.in.nextLine();
+		System.out.print("Please enter your last name: ");
+		lastName = this.in.nextLine();
+		boolean available = false;
+		while (!available) {
+			System.out.print("Please enter a username: ");
+			username = this.in.nextLine();
+			available = service.isUsernameAvailable(username);
+			if (!available)
+				System.out.println("Username not available");
+		}
+		System.out.print("Please enter a password: ");
+		password = this.in.nextLine();
+		available = false;
+		while (!available) {
+			System.out.print("Please enter an email: ");
+			email = this.in.nextLine();
+			available = service.isEmailAvailable(email);
+			if (!available)
+				System.out.println("Email not available");
+		}
+		User user = this.service.createNewUser(firstName, lastName, username, password, email);
+		System.out.println(user);
+	}
+	
+	/**
+	 * Runs the Online Banking Program
+	 */
+	public void run() {
+		while (true) {
+			displayWelcomeScreen();
+			int choice = getUserWindowChoice();
+			int shouldExit = executeWelcomeChoice(choice);
+			if (shouldExit == EXIT)
+				break;
+		}
+	}
+}

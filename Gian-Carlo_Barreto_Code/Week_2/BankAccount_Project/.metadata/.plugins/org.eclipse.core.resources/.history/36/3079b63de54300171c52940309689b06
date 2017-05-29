@@ -1,0 +1,10 @@
+package com.bank.dao;
+
+import java.util.ArrayList;
+
+import com.bank.pojos.User;
+
+public interface DAO {
+	User addUser(String firstName, String lastName, String username, String password, String email);
+	ArrayList<User> getAllUsers();
+}

@@ -1,0 +1,153 @@
+package com.bank.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionUtil;
+
+public class DaoImpl implements DAO {
+	
+	/**
+	 * Adds a user to the Bank_User table
+	 * @param user
+	 * @return the user that was added
+	 */
+	public User addUser(String firstName, String lastName, String username, String password, String email) {
+		User user = new User();
+		// Creates a connection to the database
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			// SQL statement for getting all the users in the Bank User table
+			String sql = "INSERT INTO Bank_User (first_name, last_name, user_name, password, email)"
+					+ "VALUES (?, ?, ?, ?, ?)";
+			String generatedColumns[] = { "user_id" };
+			
+			// Creates a PreparedStatement object for sending SQL statements to the database
+			PreparedStatement ps = connect.prepareStatement(sql, generatedColumns);
+			ps.setString(1, firstName);
+			ps.setString(2, lastName);
+			ps.setString(3, username);
+			ps.setString(4, password);
+			ps.setString(5, email);
+			
+			// Sets the fields of the User
+			int row = ps.executeUpdate();
+			if (row == 1) {
+				ResultSet rs = ps.getGeneratedKeys();
+				if (rs.next()) {
+					int id = rs.getInt(1);
+					user.setId(id);
+					user.setFirstName(firstName);
+					user.setLastName(lastName);
+					user.setUsername(username);
+					user.setPassword(password);
+					user.setEmail(email);
+				}
+			}
+			return user;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * Get all the users from the Bank_User table
+	 * @return a list of bank users
+	 */
+	public ArrayList<User> getAllUsers() {
+		ArrayList<User> users = new ArrayList<User>();
+		// Creates a connection to the database
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			// SQL statement for getting all the users in the Bank User table
+			String sql = "SELECT * FROM Bank_User";
+			
+			// Creates a Statement object for sending SQL statements to the database
+			Statement stmt = connect.createStatement();
+			
+			// Executes the query and gets all the selected records and adds them to
+			// the users ArrayList
+			ResultSet info = stmt.executeQuery(sql);
+			while (info.next()) {
+				User u = new User();
+				u.setId(info.getInt(1));
+				u.setFirstName(info.getString(2));
+				u.setLastName(info.getString(3));
+				u.setUsername(info.getString(4));
+				u.setPassword(info.getString(5));
+				u.setEmail(info.getString(6));
+				users.add(u);
+			}
+			return users;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * Gets the record of a user with the specified username and password
+	 * @param username
+	 * @param password
+	 * @return a user
+	 */
+	public User getUser(String username, String password) {
+		User u = null;
+		// Creates a connection to the database
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			// SQL statement for getting specific user
+			String sql = "SELECT * FROM Bank_User WHERE user_name = ? AND password = ?";
+			
+			// Creates a PreparedStatement object for sending SQL statements to the database
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(2,  password);
+			
+			// Results from the sql query
+			ResultSet info = ps.executeQuery();
+			while (info.next()) {
+				u = new User();
+				u.setId(info.getInt(1));
+				u.setFirstName(info.getString(2));
+				u.setLastName(info.getString(3));
+				u.setUsername(info.getString(4));
+				u.setPassword(info.getString(5));
+				u.setEmail(info.getString(6));
+			}
+			return u;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	/**
+	 * Get all the accounts associated with the given user
+	 * @param userId
+	 * @return list of accounts
+	 */
+	public ArrayList<Account> getAllAccounts(int userId) {
+		ArrayList<Account> accounts = new ArrayList<Account>();
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			String sql = "SELECT * FROM Account ac INNER JOIN User_Account u ON ac.account_id = u.account_id AND u.user_id = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setInt(1, userId);
+			
+			ResultSet info = ps.executeQuery();
+			while (info.next()) {
+				Account a = new Account();
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+}
