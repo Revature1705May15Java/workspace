@@ -1,12 +1,37 @@
-$font-stack: Montserrat,calibri,helvetica-neue,helvetica,arial,sans-serif
+$font-stack: 'Poppins',calibri,helvetica-neue,helvetica,arial,sans-serif
+$font-stack2: 'Montserrat',calibri,helvetica-neue,helvetica,arial,sans-serif
 
 html *
   margin: 0
 
+h1, h2, h3, h4, p
+  font-family: $font-stack !important
+  letter-spacing: 1px
+  line-height: 1.8em
+
+nav a
+  font-family: $font-stack2 !important
+h3, h4
+  font-weight: bold
+  letter-spaceing: 0
+h3
+  text-align: center
+  margin-bottom: 1em
+  font-size: 2.5em
+  &:before
+    content: '< '
+  &:after
+    content: ' >'
+h4
+  font-size: 1.5em
+
+#storyContainer
+  width: 90%
+  margin-left: 5%
+
 body
-  font-family: $font-stack
   font-size: medium
-  color: #292e36
+  color: rgb(71, 76, 85)
 
 input.button
   margin: auto
@@ -17,6 +42,9 @@ input.button
 
 header
   margin-bottom: 0 !important
+  background-color: rgba(150, 150, 150, .12) !important
+  h2
+    margin-left: 1em
 
 nav
   transition: opacity .2s ease-out
@@ -26,31 +54,31 @@ nav
   top: 0
   left: 0
   width: 100%
-  background-color: #3a3a3a
+  background-color: rgb(72,76,85)
   border-bottom: 1px solid #505050
   ul
     margin-left: 20%
     list-style-type: none
     padding: 0
     a
-      border-right: 1px solid #505050
+      border-right: 1px solid #707070
       width: 10%
       float: left
       text-align: center
       font-size: .8em
       min-height: 3em
+      padding: 1em 0 1em 0
       text-decoration: none
       font-weight: bold
       text-transform: uppercase
       color: #bbb
       &:hover
         text-decoration: none
-        color: #fff
+        color: #ffaedf
       &:last-child
         border: none
       li
         padding: 0
-        padding-top: .8em
 
 section
   padding-top: 5em
@@ -58,21 +86,21 @@ section
   margin-top: 0
   margin-bottom: 0
 
-h3
-  text-align: center
-  margin-bottom: 1em
-
 #main-desc
   position: relative
   overflow: hidden
   background-color: #222 !important
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1)
+  h4
+    margin-bottom: 1em
   video
-    opacity: .1
+    opacity: .15
     z-index: 15
     position: absolute
     top: 0
     left: 0
-    width: 100%
+    min-height: 100%
+    min-width: 100%
     overflow: hidden
   #desc
     color: #fff
@@ -83,18 +111,40 @@ h3
     width: 50%
     margin-left: 25%
 
+$gridColor: #becaff
 #userStories
-  //background-color: rgba(0, 140, 186, .15)
+  background-color: rgb(86, 128, 154)
+  color: #fff
+  font-size: small
+  padding-top: 8em
+  .row
+    border-bottom: 2px dotted $gridColor
+    &:last-child
+      border-bottom: none
+    .col-xs-4
+      border-right: 2px dotted $gridColor
+      &:last-child
+        border-right: none
+  h4
+    text-transform: uppercase
+    padding-top: 2.5em
+    margin-bottom: 1em
+    letter-spacing: 0
+    .glyphicon
+      margin-right: 1em
+  p
+    padding: 0 2em 0 2em
+    margin-bottom: 3.5em
 
 #specialFeatures
-  background-color: rgba(147, 200, 6, .15)
+  background-color: rgba(150, 150, 150, .12)
 
 #ERD
   text-align: center
   background-color: #fff !important
 
 #SQLSnippets
-  background-color: rgba(147, 200, 6, .15)
+  background-color: rgba(150, 150, 150, .12)
   .row
     margin-bottom: 3em
     &:last-child
@@ -103,7 +153,9 @@ h3
       font-family: monospace
 
 #patterns
-  background-color: rgba(0, 140, 186, .15)
+  background-color: rgb(86, 128, 154)
+  color: #fff
+  //background: linear-gradient(to bottom , rgba(147, 200, 6, .15), #fff)
   #patternDesc
     text-align: center
     width: 50%

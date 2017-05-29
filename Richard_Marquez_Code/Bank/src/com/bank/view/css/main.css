@@ -1,10 +1,37 @@
 html * {
   margin: 0; }
 
+h1, h2, h3, h4, p {
+  font-family: "Poppins", calibri, helvetica-neue, helvetica, arial, sans-serif !important;
+  letter-spacing: 1px;
+  line-height: 1.8em; }
+
+nav a {
+  font-family: "Montserrat", calibri, helvetica-neue, helvetica, arial, sans-serif !important; }
+
+h3, h4 {
+  font-weight: bold;
+  letter-spaceing: 0; }
+
+h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.5em; }
+  h3:before {
+    content: "< "; }
+  h3:after {
+    content: " >"; }
+
+h4 {
+  font-size: 1.5em; }
+
+#storyContainer {
+  width: 90%;
+  margin-left: 5%; }
+
 body {
-  font-family: Montserrat, calibri, helvetica-neue, helvetica, arial, sans-serif;
   font-size: medium;
-  color: #292e36; }
+  color: #474c55; }
 
 input.button {
   margin: auto;
@@ -14,7 +41,10 @@ input.button {
   clear: both; }
 
 header {
-  margin-bottom: 0 !important; }
+  margin-bottom: 0 !important;
+  background-color: rgba(150, 150, 150, 0.12) !important; }
+  header h2 {
+    margin-left: 1em; }
 
 nav {
   transition: opacity 0.2s ease-out;
@@ -24,31 +54,31 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #3a3a3a;
+  background-color: #484c55;
   border-bottom: 1px solid #505050; }
   nav ul {
     margin-left: 20%;
     list-style-type: none;
     padding: 0; }
     nav ul a {
-      border-right: 1px solid #505050;
+      border-right: 1px solid #707070;
       width: 10%;
       float: left;
       text-align: center;
       font-size: 0.8em;
       min-height: 3em;
+      padding: 1em 0 1em 0;
       text-decoration: none;
       font-weight: bold;
       text-transform: uppercase;
       color: #bbb; }
       nav ul a:hover {
         text-decoration: none;
-        color: #fff; }
+        color: #ffaedf; }
       nav ul a:last-child {
         border: none; }
       nav ul a li {
-        padding: 0;
-        padding-top: 0.8em; }
+        padding: 0; }
 
 section {
   padding-top: 5em;
@@ -56,21 +86,21 @@ section {
   margin-top: 0;
   margin-bottom: 0; }
 
-h3 {
-  text-align: center;
-  margin-bottom: 1em; }
-
 #main-desc {
   position: relative;
   overflow: hidden;
-  background-color: #222 !important; }
+  background-color: #222 !important;
+  text-shadow: 1px 1px 0px black; }
+  #main-desc h4 {
+    margin-bottom: 1em; }
   #main-desc video {
-    opacity: 0.1;
+    opacity: 0.15;
     z-index: 15;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    min-height: 100%;
+    min-width: 100%;
     overflow: hidden; }
   #main-desc #desc {
     color: #fff;
@@ -81,15 +111,39 @@ h3 {
     width: 50%;
     margin-left: 25%; }
 
+#userStories {
+  background-color: #56809a;
+  color: #fff;
+  font-size: small;
+  padding-top: 8em; }
+  #userStories .row {
+    border-bottom: 2px dotted #becaff; }
+    #userStories .row:last-child {
+      border-bottom: none; }
+    #userStories .row .col-xs-4 {
+      border-right: 2px dotted #becaff; }
+      #userStories .row .col-xs-4:last-child {
+        border-right: none; }
+  #userStories h4 {
+    text-transform: uppercase;
+    padding-top: 2.5em;
+    margin-bottom: 1em;
+    letter-spacing: 0; }
+    #userStories h4 .glyphicon {
+      margin-right: 1em; }
+  #userStories p {
+    padding: 0 2em 0 2em;
+    margin-bottom: 3.5em; }
+
 #specialFeatures {
-  background-color: rgba(147, 200, 6, 0.15); }
+  background-color: rgba(150, 150, 150, 0.12); }
 
 #ERD {
   text-align: center;
   background-color: #fff !important; }
 
 #SQLSnippets {
-  background-color: rgba(147, 200, 6, 0.15); }
+  background-color: rgba(150, 150, 150, 0.12); }
   #SQLSnippets .row {
     margin-bottom: 3em; }
     #SQLSnippets .row:last-child {
@@ -98,7 +152,8 @@ h3 {
       font-family: monospace; }
 
 #patterns {
-  background-color: rgba(0, 140, 186, 0.15); }
+  background-color: #56809a;
+  color: #fff; }
   #patterns #patternDesc {
     text-align: center;
     width: 50%;

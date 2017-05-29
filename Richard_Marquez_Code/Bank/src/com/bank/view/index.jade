@@ -12,12 +12,13 @@ html
 
         title Bank &middot; Revature
 
+        link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Poppins')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Montserrat:400,700')
         link(rel='apple-touch-icon', href='./img/favicon.png')
         link(rel='stylesheet', href='./css/main.css')
     body
         header#top.jumbotron.container-fluid
-            h2 Bank &middot; REVATURE &nbsp;&nbsp;
+            h2 BANK &middot; REVATURE &nbsp;&nbsp;
                 small Richard Marquez [<a href="https://github.com/Revature1705May15Java/1705May15Java/tree/Richard_Marquez/Richard_Marquez_Code/Bank">1705May15Java</a>]
 
         nav
@@ -42,7 +43,7 @@ html
                 video(muted, loop, autoplay, poster='./img/puppersnap.png')
                     source(src='./img/pupper.mp4')
                 div#desc
-                    h3 A console-based banking application
+                    h4 A console-based banking application
                     p lorem ipsum dolor sit amet sklj s flks fsjfjskldjfs
                         | lskdj fsdjfkls jdfsjjsldkls df
                         | sldjf lsd jflsj df sjldk fsl df
@@ -52,100 +53,119 @@ html
                         | skdjlfks jfjs
 
             section#userStories.container-fluid
-                //h3 User Stories
-                div.row
-                    div.col-xs-4
-                        h4 Create User
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Log In/Out
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Create Account
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                div.row
-                    div.col-xs-4
-                        h4 Check Balance
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Deposit
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Withdraw
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                div.row
-                    div.col-xs-4
-                        h4 Transfer Funds
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Joint Accounts
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
-                    div.col-xs-4
-                        h4 Close Account
-                        p
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                div#storyContainer.container-fluid
+                    //h3 User Stories
+                    div.row
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-user
+                                | Create User
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-log-in
+                                | Log In/Out
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-piggy-bank
+                                | Create Account
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                    div.row
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-usd
+                                | Check Balance
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-plus
+                                | Deposit
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-minus
+                                | Withdraw
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                    div.row
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-transfer
+                                | Transfer Funds
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-paperclip
+                                | Joint Accounts
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.col-xs-4
+                            h4
+                                span.glyphicon.glyphicon-remove
+                                | Close Account
+                            p
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | lskdj fsdjfkls jdfsjjsldkls df
+                                | sldjf lsd jflsj df sjldk fsl df
+                                | skdjlfks jfjs
+                                | alsjflksd fls dlfj sdlkjflksdjf ksjd
 
             section#specialFeatures.container-fluid
                 h3 Special Features
