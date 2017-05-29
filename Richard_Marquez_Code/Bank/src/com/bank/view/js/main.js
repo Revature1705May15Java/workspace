@@ -1,6 +1,6 @@
 $(document).ready(function() {
   initScrollWatcher();
-  initSections();
+  //initSections();
 });
 
 function initScrollWatcher() {
