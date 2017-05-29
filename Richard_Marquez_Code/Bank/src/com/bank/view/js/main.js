@@ -1,5 +1,6 @@
 $(document).ready(function() {
   initScrollWatcher();
+  initSections();
 });
 
 function initScrollWatcher() {
@@ -12,6 +13,21 @@ function initScrollWatcher() {
   });
 }
 
+function initSections() {
+  $('section').each(function() {
+      //$(this).css('background-color', getRandomColor()+""+"ff");
+      $(this).css('background-color', getRandomRGBA(.18));
+  });
+}
+
+function getRandomRGBA(alpha) {
+    var rand1 = Math.floor(Math.random() * 200) + 55;
+    var rand2 = Math.floor(Math.random() * 200) + 55;
+    var rand3 = Math.floor(Math.random() * 200) + 55;
+    var rgba = 'rgba(' + rand1 + ',' + rand2 + ',' + rand3 + ',' + alpha + ')';
+
+    return rgba;
+}
 // Get random 6-digit hex color e.g. "#a82df1"
 function getRandomColor() {
   var letters = '0123456789ABCDEF'.split('');
