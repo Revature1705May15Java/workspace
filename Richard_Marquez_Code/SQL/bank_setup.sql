@@ -43,12 +43,14 @@ CREATE TABLE bankeraccount (
   CONSTRAINT fk_account FOREIGN KEY (accountid) REFERENCES account (accountid)
 );
 
+
 /
 
 -- banker auto-increment
 CREATE SEQUENCE banker_seq
 START WITH 1
 INCREMENT BY 1;
+
 
 /
 CREATE OR REPLACE TRIGGER banker_seq_trg
@@ -68,6 +70,7 @@ FOR EACH ROW
 CREATE SEQUENCE account_seq
 START WITH 1
 INCREMENT BY 1;
+
 
 /
 CREATE OR REPLACE TRIGGER account_seq_trg
@@ -122,6 +125,24 @@ IS
     ROLLBACK TO transferTransaction;
     RAISE;
   END transferFunds;
+/
+
+CREATE OR REPLACE FUNCTION getNumAccounts(uId IN NUMBER)
+  RETURN NUMBER
+IS
+  numAccounts NUMBER;
+  BEGIN
+
+    SELECT count(*)
+    INTO numAccounts
+    FROM account
+    WHERE accountId IN
+          (SELECT accountId
+           FROM bankerAccount
+           WHERE userId = uId)
+          AND closed IS NULL;
+    RETURN numAccounts;
+  END;
 /
 
 COMMIT;

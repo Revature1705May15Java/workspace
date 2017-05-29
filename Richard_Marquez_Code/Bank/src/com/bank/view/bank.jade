@@ -5,17 +5,13 @@ html
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1')
 
-        link(rel='stylesheet', href='./lib/bootstrap/bootstrap.min.css')
-        link(rel='stylesheet', href='./lib/jquery-ui/jquery-ui.min.css')
-        link(rel='stylesheet', href='./lib/jquery-ui/jquery-ui.structure.min.css')
-        //link(rel='stylesheet', href='./lib/jquery-ui/jquery-ui.theme.min.css')
-
         title Bank &middot; Revature
 
+        link(rel='stylesheet', href='./lib/bootstrap/bootstrap.min.css')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Poppins')
         link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Montserrat:400,700')
         link(rel='apple-touch-icon', href='./img/favicon.png')
-        link(rel='stylesheet', href='./css/main.css')
+        link(rel='stylesheet', href='./css/bank.css')
     body
         header#top.jumbotron.container-fluid
             h2 BANK &middot; REVATURE &nbsp;&nbsp;
@@ -175,19 +171,64 @@ html
                             div.panel-heading
                                 span Password Hashing
                             div.panel-body
-                                p asdf
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
                     div.col-xs-4
                         div.panel.panel-success
                             div.panel-heading
                                 span Emails
                             div.panel-body
-                                p asdf
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
                     div.col-xs-3
                         div.panel.panel-info
                             div.panel-heading
                                 span Logging
                             div.panel-body
-                                p asdf
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                p
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | lskdj fsdjfkls jdfsjjsldkls df
+                                    | sldjf lsd jflsj df sjldk fsl df
+                                    | skdjlfks jfjs
+                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
 
             section#ERD
                 h3 Entity-Relationship Diagram
@@ -197,41 +238,41 @@ html
                 h3 SQL Snippets
                 div.row
                     div.col-xs-3.col-xs-offset-2
-                        h4 Statements
+                        h4 Statement
                     div.col-xs-5
-                        p.well
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.well
+                            pre SELECT * FROM AccountType
 
                 div.row
                     div.col-xs-3.col-xs-offset-2
-                        h4 PreparedStatements
+                        h4 PreparedStatement
                     div.col-xs-5
-                        p.well
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.well
+                            pre INSERT INTO banker(fName, lName, password, email) VALUES(?, ?, ?, ?)
+                            pre UPDATE banker SET fName=?, lName=?, password=?, email=? WHERE userId=?
+                            pre DELETE FROM bankerAccount WHERE userId=? AND accountId=?
                 div.row
                     div.col-xs-3.col-xs-offset-2
-                        h4 CallableStatements
+                        h4 CallableStatement
                     div.col-xs-5
-                        p.well
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | lskdj fsdjfkls jdfsjjsldkls df
-                            | sldjf lsd jflsj df sjldk fsl df
-                            | skdjlfks jfjs
-                            | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        div.well
+                            pre { ? = CALL getNumAccounts(?) }
+                            pre
+                                | CREATE OR REPLACE FUNCTION getNumAccounts(uId IN NUMBER)
+                                |     RETURN NUMBER
+                                | IS
+                                |     numAccounts NUMBER;
+                                |     BEGIN
+                                |         SELECT count(*)
+                                |         INTO numAccounts
+                                |         FROM account
+                                |         WHERE accountId IN
+                                |         (SELECT accountId
+                                |             FROM bankerAccount
+                                |             WHERE userId = uId)
+                                |         AND closed IS NULL;
+                                |         RETURN numAccounts;
+                                |     END;
 
             section#patterns
                 h3 Design Patterns
@@ -275,5 +316,4 @@ html
 
         script(src='./lib/jquery.min.js')
         script(src='./lib/bootstrap/bootstrap.min.js')
-        script(src='./lib/jquery-ui/jquery-ui.min.js')
-        script(src='./js/main.js')
+        script(src='./js/bank.js')
