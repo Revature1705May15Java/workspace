@@ -109,3 +109,30 @@
 2017-05-28T13:53:22.099 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
 2017-05-28T13:53:23.489 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
 2017-05-28T13:53:23.507 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:34:16.112 User does not exist
+2017-05-28T14:34:18.616 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:34:19.902 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:34:23.613 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:34:25.035 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:34:25.054 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:36:08.273 User does not exist
+2017-05-28T14:36:12.660 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:36:13.553 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:36:15.510 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:36:16.622 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T14:36:16.641 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:15.029 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:17.667 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:17.686 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:26.892 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:28.959 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:09:28.979 retrieved user by username: User [id=105, fn=test, ln=test, pw=test, uName=test, userAccounts=null]
+2017-05-28T17:10:05.895 retrieved user by username: User [id=110, fn=James, ln=Jam, pw=password, uName=jj@j.com, userAccounts=null]
+2017-05-28T17:10:11.701 retrieved user by username: User [id=110, fn=James, ln=Jam, pw=password, uName=jj@j.com, userAccounts=null]
+2017-05-28T17:10:11.719 retrieved user by username: User [id=110, fn=James, ln=Jam, pw=password, uName=jj@j.com, userAccounts=null]
+2017-05-28T17:49:24.529 User does not exist
+2017-05-28T17:49:24.610 1 users added
+2017-05-28T17:49:24.666 retrieved user by username: User [id=200, fn=test1, ln=test1, pw=test1, uName=test1, userAccounts=null]
+2017-05-28T17:52:00.580 User does not exist
+2017-05-28T17:52:00.598 1 users added
+2017-05-28T17:52:00.614 retrieved user by username: User [id=205, fn=test2, ln=test2, pw=test2, uName=test2, userAccounts=null]

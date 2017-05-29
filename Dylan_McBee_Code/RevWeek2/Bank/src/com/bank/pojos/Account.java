@@ -1,6 +1,6 @@
 package com.bank.pojos;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 
@@ -8,14 +8,14 @@ import java.util.ArrayList;
 public class Account {
 	 int id;
 	 double balance;
-	 AccountType type;
-	 Date dateOpened, dateClosed;
+	 Type type;
+	 LocalDate dateOpened, dateClosed;
 	 ArrayList<User> account_holders;
 	
 	 public Account(){
 		 
 	 }
-	 public Account(int id, double balance, AccountType type, Date dateOpened, Date dateClosed,
+	 public Account(int id, double balance, Type type, LocalDate dateOpened, LocalDate dateClosed,
 			ArrayList<User> account_holders) {
 		super();
 		this.id = id;
@@ -24,6 +24,14 @@ public class Account {
 		this.dateOpened = dateOpened;
 		this.dateClosed = dateClosed;
 		this.account_holders = account_holders;
+	}
+	public Account(int id, double balance, Type type, LocalDate dateOpened, LocalDate dateClosed) {
+		super();
+		this.id = id;
+		this.balance = balance;
+		this.type = type;
+		this.dateOpened = dateOpened;
+		this.dateClosed = dateClosed;
 	}
 	public int getId() {
 		return id;
@@ -37,22 +45,22 @@ public class Account {
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public AccountType getType() {
+	public Type getType() {
 		return type;
 	}
-	public void setType(AccountType type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
-	public Date getDateOpened() {
+	public LocalDate getDateOpened() {
 		return dateOpened;
 	}
-	public void setDateOpened(Date dateOpened) {
+	public void setDateOpened(LocalDate dateOpened) {
 		this.dateOpened = dateOpened;
 	}
-	public Date getDateClosed() {
+	public LocalDate getDateClosed() {
 		return dateClosed;
 	}
-	public void setDateClosed(Date dateClosed) {
+	public void setDateClosed(LocalDate dateClosed) {
 		this.dateClosed = dateClosed;
 	}
 	public ArrayList<User> getAccount_holders() {

@@ -89,3 +89,17 @@ INSERT INTO USERS(first_name, last_name, password, username)
 values('D', 'M', 'password', 'dm@uname.com');
 /
 select * from users;
+/
+CREATE OR REPLACE TRIGGER ACCT_DATE_TRIGGER
+BEFORE INSERT ON ACCOUNT--on what occasion do you want to trigger event
+FOR EACH ROW
+BEGIN
+
+IF :new.OPENED IS NULL THEN
+
+  SELECT current_date INTO :new.OPENED FROM DUAL;
+  
+  END IF;
+  
+END;
+/

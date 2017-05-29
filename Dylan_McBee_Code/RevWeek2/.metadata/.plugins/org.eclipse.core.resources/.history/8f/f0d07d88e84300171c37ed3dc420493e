@@ -1,0 +1,149 @@
+package com.bank.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.bank.logs.Logger;
+import com.bank.pojos.Account;
+import com.bank.pojos.AccountType;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionUtil;
+
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleTypes;
+
+public class DaoImpl implements DAO {
+
+	static Logger logger = new Logger();
+
+	@Override
+	public int updateBalance(Account account, double newBal) {
+		return 0;
+	}
+
+	@Override
+	public int addUser(String fn, String ln, String uName, String pw) {
+		try (Connection connection = ConnectionUtil.getConnection();) {
+			String sql = "INSERT INTO USERS(first_name, last_name, password, username) values(?, ?, ?, ?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+
+			ps.setString(1, fn);
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uName);
+
+			int num = ps.executeUpdate();
+			logger.log(num + " users added");
+			return num;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public User getUser(String uName) {
+		User u = new User();
+		try (Connection connection = ConnectionUtil.getConnection();) {
+			String sql = "select * from users where USERNAME = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, uName.toLowerCase());
+			ResultSet info = ps.executeQuery();
+
+			// id fn ln pw uname
+			while (info.next()) {
+				u.setId(info.getInt(1));
+				u.setFn(info.getString(2));
+				u.setLn(info.getString(3));
+				u.setPw(info.getString(4));
+				u.setuName(info.getString(5));
+			}
+
+			if (u.getuName() != null) {
+				logger.log("retrieved user by username: " + u.toString());
+			} else {
+				logger.log("User does not exist");
+				return null;
+			}
+			return u;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("ERROR!");
+
+		return null;
+
+	}
+
+	@Override
+	public User getUser(int id) {
+		return null;
+	}
+
+	@Override
+	public Account openAccount(User u, int id) {
+		Account a = new Account();
+		try (Connection connection = ConnectionUtil.getConnection();) {
+
+			String sql = "insert into account(typeid) VALUES(?) RETURNING acct_id INTO ?";
+			OraclePreparedStatement ops = (OraclePreparedStatement) connection.prepareStatement(sql);
+			ops.setInt(1, id);
+			ops.registerReturnParameter(2, OracleTypes.NUMBER);
+
+			int num = ops.executeUpdate();
+
+			if (num > 0) {
+				ResultSet rs = ops.getReturnResultSet();
+				if (rs.next()) {
+					int newAccountId = rs.getInt(1);
+
+					String sql2 = "INSERT INTO USER_ACCOUNT VALUES(?, ?)";
+
+					PreparedStatement ps = connection.prepareStatement(sql2);
+					ps.setInt(1, u.getId());
+					ps.setInt(2, newAccountId);
+
+					ps.executeUpdate();
+					a = getAccount(newAccountId);
+
+					logger.log("added account " + newAccountId);
+				}
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	private Account getAccount(int newAccountId) {
+		Account target = null;
+		try(Connection connection = ConnectionUtil.getConnection();){
+		String	sql = "select * from account inner join accounttype on account.type_id = accounttype.t_id"
+				+ " where account.acct_id = ?";
+		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setInt(1, newAccountId);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()){
+			target = new Account(rs.getInt(1), rs.getDouble(2), rs.getDate(4).toLocalDate(),
+					rs.getDate(5) == null ? null : rs.getDate(5).toLocalDate(), new AccountType(rs.getInt(3), rs.getString(7));
+		}
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return target;
+	}
+
+	@Override
+	public int getNumOfAccounts(User u) {
+		return 0;
+	}
+
+}

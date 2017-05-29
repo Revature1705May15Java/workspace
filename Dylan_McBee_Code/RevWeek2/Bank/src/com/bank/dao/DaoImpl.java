@@ -4,17 +4,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.bank.logs.Logger;
 import com.bank.pojos.Account;
+import com.bank.pojos.Type;
 import com.bank.pojos.User;
 import com.bank.util.ConnectionUtil;
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleTypes;
 
-public class DaoImpl implements DAO{
+public class DaoImpl implements DAO {
 
 	static Logger logger = new Logger();
-	
+
 	@Override
 	public int updateBalance(Account account, double newBal) {
 		return 0;
@@ -22,7 +26,7 @@ public class DaoImpl implements DAO{
 
 	@Override
 	public int addUser(String fn, String ln, String uName, String pw) {
-		try (Connection connection = ConnectionUtil.getConnection();){
+		try (Connection connection = ConnectionUtil.getConnection();) {
 			String sql = "INSERT INTO USERS(first_name, last_name, password, username) values(?, ?, ?, ?)";
 			PreparedStatement ps = connection.prepareStatement(sql);
 
@@ -30,7 +34,7 @@ public class DaoImpl implements DAO{
 			ps.setString(2, ln);
 			ps.setString(3, pw);
 			ps.setString(4, uName);
-			
+
 			int num = ps.executeUpdate();
 			logger.log(num + " users added");
 			return num;
@@ -43,14 +47,13 @@ public class DaoImpl implements DAO{
 	@Override
 	public User getUser(String uName) {
 		User u = new User();
-		try (Connection connection = ConnectionUtil.getConnection();){
+		try (Connection connection = ConnectionUtil.getConnection();) {
 			String sql = "select * from users where USERNAME = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, uName.toLowerCase());
 			ResultSet info = ps.executeQuery();
 
-			
-			//id fn ln pw uname
+			// id fn ln pw uname
 			while (info.next()) {
 				u.setId(info.getInt(1));
 				u.setFn(info.getString(2));
@@ -58,11 +61,13 @@ public class DaoImpl implements DAO{
 				u.setPw(info.getString(4));
 				u.setuName(info.getString(5));
 			}
-			
-			if(u.getuName() !=null){
-			logger.log("retrieved user by username: " + u.toString());}
-			else{logger.log("User does not exist");
-			return null;}
+
+			if (u.getuName() != null) {
+				logger.log("retrieved user by username: " + u.toString());
+			} else {
+				logger.log("User does not exist");
+				return null;
+			}
 			return u;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,13 +75,94 @@ public class DaoImpl implements DAO{
 		System.out.println("ERROR!");
 
 		return null;
-		
-		
+
 	}
 
 	@Override
 	public User getUser(int id) {
 		return null;
 	}
-	
+
+	@Override
+	public int openAccount(User u, int id) {
+		return 0;
+		
+	}
+
+	public Account getAccountById(int newAccountId) {
+		return null;
+		
+	}
+
+	@Override
+	public int getNumOfAccounts(User u) {
+		return 0;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> users = new ArrayList<User>();
+
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			String sql = "select * from users";
+			PreparedStatement ps = connect.prepareStatement(sql);
+
+			ResultSet info = ps.executeQuery();
+
+			// id, fn, ln, state, credit, email
+
+			while (info.next()) {
+				User u = new User();
+				u.setId(info.getInt(1));
+				u.setFn(info.getString(2));
+				u.setLn(info.getString(3));
+				u.setPw(info.getString(4));
+				u.setuName(info.getString(5));
+				users.add(u);
+			}
+			return users;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("ERROR!");
+
+		return null;
+	}
+
+	@Override
+	public ArrayList<Account> getAllAccounts(int currId) {
+		ArrayList<Account> userAccounts = new ArrayList<Account>();
+		try (Connection connection = ConnectionUtil.getConnection();){
+			String sql = "select * from account inner join user_account on account.acct_id = user_account.account_id"
+					+ " and user_account.user_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, currId);
+			
+			ResultSet info = ps.executeQuery();
+			
+			while(info.next()){
+				Account account = new Account();
+				account.setId(info.getInt(1));
+				account.setBalance(info.getDouble(2));
+				int num = info.getInt(3);
+				Type type;
+				if (num == 1) {type = Type.CHECKING;}
+				else if (num == 2) {type = Type.SAVINGS;}
+				else {type = Type.CREDIT;}
+				account.setType(type);
+				account.setDateOpened(info.getDate(4).toLocalDate());
+				if(info.getDate(5)!=null){
+					account.setDateClosed(info.getDate(5).toLocalDate());
+				}
+				else{
+					account.setDateClosed(null);
+				}
+				userAccounts.add(account);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return userAccounts;
+	}
+
 }

@@ -1,7 +1,11 @@
 package com.bank.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.bank.dao.DAO;
 import com.bank.dao.DaoImpl;
+import com.bank.pojos.Account;
 import com.bank.pojos.User;
 
 public class Service {
@@ -48,5 +52,29 @@ public class Service {
 	
 	public User getUser(String uName){
 		return dao.getUser(uName);
+	}
+	
+	public Account openAccount(User u, int type_id){
+		int accountId = dao.openAccount(u, type_id);
+		if(accountId != -1){
+			return dao.getAccountById(accountId);
+		}
+		return null;
+	}
+
+	public boolean isUserNameAvailable(String uName) {
+		List<User> users = dao.getAllUsers();
+		boolean available = true;
+		for(User user : users){
+			if(uName.equals(user.getuName())){
+				available = false;
+				break;
+			}
+		}
+		return available;
+	}
+
+	public ArrayList<Account> getAllAccounts(int currId) {
+		return dao.getAllAccounts(currId);
 	}
 }
