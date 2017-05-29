@@ -70,12 +70,19 @@ h3 {
 
 #tools {
   text-align: center; }
-  #tools img {
-    height: 4em;
-    max-width: 20%;
-    margin-right: 5em;
+  #tools div {
+    width: 80%;
+    margin-left: 10%;
     margin-bottom: 3em; }
-    #tools img:last-child {
-      margin-right: 0; }
+    #tools div a {
+      max-width: 20%;
+      margin-right: 5em;
+      margin-bottom: 3em; }
+      #tools div a:last-child {
+        margin-right: 0; }
+    #tools div img {
+      max-height: 4em;
+      max-width: 20%;
+      margin-bottom: 3em; }
 
 /*# sourceMappingURL=main.css.map */
