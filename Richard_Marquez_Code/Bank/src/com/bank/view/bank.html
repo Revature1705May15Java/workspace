@@ -46,16 +46,8 @@ IS
             WHERE userId = uId)
         AND closed IS NULL;
         RETURN numAccounts;
-    END;</pre></div></div></div></section><section id="patterns"><h3>Design Patterns</h3><div id="patternDesc"><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p></div></section><section id="tools"><h3>Tools</h3><div><a href="http://java.com"><img src="./img/tech_logos/java.jpg"></a><a href="http://www.oracle.com/database/"><img src="./img/tech_logos/oracle.png"></a><a href="https://jquery.com"><img src="./img/tech_logos/jquery.png"></a><a href="http://github.com"><img src="./img/tech_logos/github.png"></a><a href="https://pugjs.org"><img src="./img/tech_logos/jade.png"></a><a href="http://sass-lang.com"><img src="./img/tech_logos/sass.png"></a><a href="http://getbootstrap.com"><img src="./img/tech_logos/bootstrap.png"></a></div></section></main><script src="./lib/jquery.min.js"></script><script src="./lib/bootstrap/bootstrap.min.js"></script><script src="./js/bank.js"></script></body></html>
+    END;</pre></div></div></div></section><section id="patterns"><h3>Design Patterns</h3><div id="patternDesc"><p>This application makes extensive use of the Data Access Object (DAO) design pattern.
+The DAO is represented by the Dao.java interface and implemented by DaoImpl.java.
+Service.java acts as the service layer which contains the business logic that is, in turn,
+needed by View.java which is the console-based front-end.</p><p>In addition, the Singleton and Factory patterns are made use of in ConnectionFactory.java
+to serve as a single access point for acquiring a connection to the database.</p></div></section><section id="tools"><h3>Tools</h3><div><a href="http://java.com"><img src="./img/tech_logos/java.jpg"></a><a href="http://www.oracle.com/database/"><img src="./img/tech_logos/oracle.png"></a><a href="https://jquery.com"><img src="./img/tech_logos/jquery.png"></a><a href="http://github.com"><img src="./img/tech_logos/github.png"></a><a href="https://pugjs.org"><img src="./img/tech_logos/jade.png"></a><a href="http://sass-lang.com"><img src="./img/tech_logos/sass.png"></a><a href="http://getbootstrap.com"><img src="./img/tech_logos/bootstrap.png"></a></div></section></main><script src="./lib/jquery.min.js"></script><script src="./lib/bootstrap/bootstrap.min.js"></script><script src="./js/bank.js"></script></body></html>

@@ -216,21 +216,13 @@ html
                 h3 Design Patterns
                 div#patternDesc
                     p
-                        | lskdj fsdjfkls jdfsjjsldkls df
-                        | sldjf lsd jflsj df sjldk fsl df
-                        | skdjlfks jfjs
-                        | lskdj fsdjfkls jdfsjjsldkls df
-                        | sldjf lsd jflsj df sjldk fsl df
-                        | skdjlfks jfjs
-                        | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        | This application makes extensive use of the Data Access Object (DAO) design pattern.
+                        | The DAO is represented by the Dao.java interface and implemented by DaoImpl.java.
+                        | Service.java acts as the service layer which contains the business logic that is, in turn,
+                        | needed by View.java which is the console-based front-end.
                     p
-                        | lskdj fsdjfkls jdfsjjsldkls df
-                        | sldjf lsd jflsj df sjldk fsl df
-                        | skdjlfks jfjs
-                        | lskdj fsdjfkls jdfsjjsldkls df
-                        | sldjf lsd jflsj df sjldk fsl df
-                        | skdjlfks jfjs
-                        | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                        | In addition, the Singleton and Factory patterns are made use of in ConnectionFactory.java
+                        | to serve as a single access point for acquiring a connection to the database.
 
             section#tools
                 h3 Tools
