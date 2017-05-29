@@ -1,0 +1,233 @@
+-- Darrin McIntyre - SQL workbook problems
+
+
+--2.1 SELECT
+--Task – Select all records from the Employee table.
+SELECT * FROM employee;
+/
+
+--Task – Select all records from the Employee table where last name is King.
+SELECT * FROM employee WHERE lastname = 'King';
+/
+
+--Task – Select all records from the Employee table where first name is Andrew and REPORTSTO is NULL.
+SELECT * FROM employee WHERE firstname = 'Andrew' AND reportsto IS NULL;
+/
+
+--2.2 ORDER BY
+--Task – Select all albums in Album table and sort result set in descending order by title.
+SELECT * FROM albums ORDER BY DESC;
+/
+
+--Task – Select first name from Customer and sort result set in ascending order by city
+SELECT firstname FROM customer ORDER BY ASC;
+/
+
+--2.3 INSERT INTO
+--Task – Insert two new records into Genre table
+INSERT INTO genre VALUES (99,'Anonymous');
+INSERT INTO genre VALUES (98,'Nonsense');
+/
+
+--Task – Insert two new records into Employee table
+INSERT INTO employee VALUES (999,'Hero','Saitama','OPM',NULL,'1992-05-05','2016-07-06','unknown','Z-city','Tokyo','Japan','154-0021','none','none','3much@opm.com');
+INSERT INTO employee VALUES (998,'Smoe','Joe', 'worker',1,'1990-01-01','2017-05-16','152 Street','Segaya','Tokyo','Japan','60421','219-515-5111','219-555-1122','notEnough@tookiteasy.com');
+/
+
+--Task – Insert two new records into Customer table
+INSERT INTO customer VALUES (999,'Orex','Xero','Culvers','15557 Road Street','Matteson','IL','USA','45572','703-111-2992',NULL,'clearlyarealemail@nope.com',NULL);
+INSERT INTO customer VALUES (998,'Rexo','Erxo','Mcdonalds','5151 Temporary Street','Cicero','IL','USA','40502','703-121-2501',NULL,'false@real.com',NULL);
+/
+
+--2.4 UPDATE
+--Task – Update Aaron Mitchell in Customer table to Robert Walter
+UPDATE customer SET phone = '111-111-1111' WHERE firstname = 'Aaron' AND lastname = 'Mitchell';
+/
+--Task – Update name of artist in the Artist table “Creedence Clearwater Revival” to “CCR”
+UPDATE artist SET name = 'ccr' WHERE name = 'Creedence Clearwater Revival';
+/
+
+--2.5 LIKE
+--Task – Select all invoices with a billing address like “T%”
+SELECT * FROM invoice WHERE billingaddress LIKE 'T%';
+/
+
+--2.6 BETWEEN
+--Task – Select all invoices that have a total between 15 and 50
+SELECT * FROM invoice WHERE total BETWEEN 15 AND 50;
+/
+
+--Task – Select all employees hired between 1st of June 2003 and 1st of March 2004
+SELECT * FROM employee WHERE hiredate BETWEEN '2003-06-01' AND '2004-03-01';
+/
+
+--2.7 DELETE
+--Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to resolve them).
+DELETE FROM customer WHERE firstname = 'Robert' AND lastname = 'Walter';
+/
+
+--3.0	SQL Functions
+--In this section you will be using the Oracle system functions, as well as your own functions, to perform various actions against the database
+--3.1 System Defined Functions
+--Task – Create a function that returns the current time.
+SELECT current_date FROM DUAL;
+/
+
+--Task – create a function that returns the length of a mediatype from the mediatype table
+SELECT COUNT(*) FROM mediatype;
+/
+
+--3.2 System Defined Aggregate Functions
+--Task – Create a function that returns the average total of all invoices
+SELECT AVG(total) FROM invoice;
+/
+
+--Task – Create a function that returns the most expensive track
+--3.3 User Defined Scalar Functions
+--Task – Create a function that returns the average price of invoiceline items in the invoiceline table
+SELECT Trackid, AVG(unitprice) FROM invoiceline GROUP BY trackid;
+/
+
+--3.4 User Defined Table Valued Functions
+--Task – Create a function that returns all employees who are born after 1968.
+SELECT * FROM employee WHERE birthdate >= '01-JAN-1968';
+
+--4.0 Stored Procedures
+-- In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
+--4.1 Basic Stored Procedure
+--Task – Create a stored procedure that selects the first and last names of all the employees.
+CREATE OR REPLACE PROCEDURE select_names
+IS
+DECLARE something VARCHAR(512);
+BEGIN
+  SELECT firstname, lastname INTO something FROM employee;
+END select_names; -- INTO clause expected???
+/
+SELECT firstname,lastname FROM employee;
+/
+CALL select_names;
+/ 
+
+--4.2 Stored Procedure Input Parameters
+--Task – Create a stored procedure that updates the personal information of an employee.
+CREATE OR REPLACE PROCEDURE update_employee(emp_id IN NUMBER)
+IS
+BEGIN
+  UPDATE employee SET state = 'NA' WHERE employeeid = emp_id;
+END update_employee;
+/
+CALL update_employee(1);
+/
+
+--Task – Create a stored procedure that returns the managers of an employee.
+--4.3 Stored Procedure Output Parameters
+--Task – Create a stored procedure that returns the name and company of a customer.
+CREATE OR REPLACE PROCEDURE customer_info(cust_id IN NUMBER)
+IS
+BEGIN
+  SELECT * FROM customer WHERE customerid = cust_id;
+END; -- INTO clause expected.........
+/
+
+--5.0 Transactions
+--In this section you will be working with transactions. Transactions are usually nested within a stored procedure. You will also be working with handling errors in your SQL.
+--Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them).
+
+
+
+--Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+SELECT * FROM customer, employee;
+/
+
+
+
+--6.0 Triggers
+--In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
+--6.1 AFTER/FOR
+--Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+CREATE OR REPLACE TRIGGER a_trigger
+AFTER INSERT ON employee
+FOR EACH ROW
+BEGIN
+  -- whatever the trigger would need to do here
+END a_trigger;
+/
+--Task – Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER a_trigger
+AFTER INSERT ON album
+FOR EACH ROW
+BEGIN
+  -- whatever the trigger would need to do here
+END a_trigger;
+/
+--Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+CREATE OR REPLACE TRIGGER a_trigger
+AFTER DELETE ON customer
+FOR EACH ROW
+BEGIN
+  -- whatever the trigger would need to do here
+END a_trigger;
+/
+
+--6.2 INSTEAD OF
+--Task – Create an instead of trigger that restricts the deletion of any invoice that is priced over 50 dollars.
+
+--7.0 JOINS
+--In this section you will be working with combing various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
+--7.1 INNER
+--Task – Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+SELECT invoiceId FROM invoice INNER JOIN customer ON invoice.customerid = customer.customerid;
+/
+--7.2 OUTER
+--Task – Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total.
+SELECT invoice.customerid, customer.firstname, customer.lastname, invoice.invoiceid, invoice.total 
+FROM invoice 
+FULL OUTER JOIN customer 
+ON invoice.customerid = customer.customerid;
+/
+--7.3 RIGHT
+--Task – Create a right join that joins album and artist specifying artist name and title.
+SELECT artist.name, album.title
+FROM artist
+RIGHT JOIN album
+ON artist.artistid = album.artistid;
+/
+--7.4 CROSS
+--Task – Create a cross join that joins album and artist and sorts by artist name in ascending order.
+SELECT artist.name FROM album 
+LEFT OUTER JOIN artist 
+ON artist.artistid = album.artistid ORDER BY artist.name ASC;
+--7.5 SELF
+--Task – Perform a self-join on the employee table, joining on the reportsto column.
+SELECT e1.employeeid, e2.reportsto
+FROM employee e1
+LEFT OUTER JOIN employee e2
+ON e1.employeeid = e2.reportsto;
+
+/
+--8.0 Indexes
+--In this section you will be creating Indexes on various tables. Indexes can speed up performance of reading data.
+--8.1 Clustered Indexes
+--Task – Create a clustered index on of table of your choice
+
+/
+--9.0 Administration
+--In this section you will be creating backup files of your database. After you create the backup file you will also restore the database.
+--Task – Create a .bak file for the Chinook database.
+-- Go to 'Tools' and selct 'Export Database'.
+-- Be sure to select 'chinook'.
+-- next, next, finish.
+
+
+/-----------------------
+
+
+
+
+
+
+
+
+
+
+
