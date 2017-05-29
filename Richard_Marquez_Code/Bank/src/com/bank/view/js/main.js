@@ -1,31 +1,14 @@
 $(document).ready(function() {
-  initColorBlocks();
+  initScrollWatcher();
 });
 
-$(window).resize(function() {
-  initColorBlocks();
-});
-
-function initColorBlocks() {
-  $('#colors .square').each(function() {
-    var colorBlock = $(this);
-    var timerId;
-
-    // Assign initial random color
-    colorBlock.css('background-color', getRandomColor());
-    // Set block height to 1/5 viewport y
-    colorBlock.css('height', $(window).height() / 5);
-
-    // Continuously change block color when hovered over
-    colorBlock.mouseover(function() {
-      timerId = setInterval(function() {
-        colorBlock.css('background-color', getRandomColor());
-      }, 100);
-    });
-
-    colorBlock.mouseleave(function() {
-      clearInterval(timerId);
-    });
+function initScrollWatcher() {
+  $(window).scroll(function() {
+    if ($(window).scrollTop() <= 20) {
+      $('nav').css('opacity', '0');
+    } else {
+      $('nav').css('opacity', '1');
+    }
   });
 }
 
