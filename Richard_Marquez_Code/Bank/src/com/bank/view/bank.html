@@ -21,43 +21,18 @@ email address. An account may
 have up to four simultaneous holders. New holder must already
 exist in the system.</p></div><div class="col-xs-4"><h4><span class="glyphicon glyphicon-remove"></span>Close Account</h4><p>User may close an account that has a $0.00 balance. This account may no
 longer be managed from the front-end, but will still exist in the database.
-For eternity.</p></div></div></div></section><section id="specialFeatures" class="container-fluid"><h3>Special Features</h3><div class="row"><div class="col-xs-3 col-xs-offset-1"><div class="panel panel-primary"><div class="panel-heading"><span>Password Hashing</span></div><div class="panel-body"><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p></div></div></div><div class="col-xs-4"><div class="panel panel-success"><div class="panel-heading"><span>Emails</span></div><div class="panel-body"><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p></div></div></div><div class="col-xs-3"><div class="panel panel-info"><div class="panel-heading"><span>Logging</span></div><div class="panel-body"><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p><p>lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-lskdj fsdjfkls jdfsjjsldkls df
-sldjf lsd jflsj df sjldk fsl df
-skdjlfks jfjs
-alsjflksd fls dlfj sdlkjflksdjf ksjd</p></div></div></div></div></section><section id="ERD"><h3>Entity-Relationship Diagram</h3><img src="./img/erd.png" alt="ERD"></section><section id="SQLSnippets" class="container-fluid"><h3>SQL Snippets</h3><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>Statement</h4></div><div class="col-xs-5"><div class="well"><pre>SELECT * FROM AccountType</pre></div></div></div><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>PreparedStatement</h4></div><div class="col-xs-5"><div class="well"><pre>INSERT INTO banker(fName, lName, password, email) VALUES(?, ?, ?, ?)</pre><pre>UPDATE banker SET fName=?, lName=?, password=?, email=? WHERE userId=?</pre><pre>DELETE FROM bankerAccount WHERE userId=? AND accountId=?</pre></div></div></div><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>CallableStatement</h4></div><div class="col-xs-5"><div class="well"><pre>{ ? = CALL getNumAccounts(?) }</pre><pre>CREATE OR REPLACE FUNCTION getNumAccounts(uId IN NUMBER)
+For eternity.</p></div></div></div></section><section id="specialFeatures" class="container-fluid"><h3>Special Features</h3><div class="row"><div class="col-xs-3 col-xs-offset-1"><div class="panel panel-primary"><div class="panel-heading"><span>Password Hashing</span></div><div class="panel-body"><p>When a user first creates his account the password is hashed before it
+is stored in the database. The Java code uses the <a href="https://github.com/defuse/password-hashing">
+PBKDF2 algorithm (including salt)</a> to securely hash the password.</p><p>When the user attempts to log in he enters a password which is then
+hashed using the same algorithm and compared to the password stored
+in the database.</p></div></div></div><div class="col-xs-4"><div class="panel panel-success"><div class="panel-heading"><span>Emails</span></div><div class="panel-body"><p>When a user successfully registers with the bank an email is sent
+to the address entered during registration as confirmation.</p><p>The email is sent from 1705May15Java@gmail.com via the Gmail SMTP
+servers. Most of the code, including the necessary .jars, to implement
+this functionality can be found
+<a href="https://www.javatpoint.com/example-of-sending-email-using-java-mail-api">
+here</a>.</p></div></div></div><div class="col-xs-3"><div class="panel panel-info"><div class="panel-heading"><span>Logging</span></div><div class="panel-body"><p>Any attempt to access the database is logged into log.txt in the com.bank.logs
+package. This includes successful as well as failed attempts.</p><p>Logging is currently implemented using a custom logger class with static methods.
+Future development will make use of log4j instead of this custom class.</p></div></div></div></div></section><section id="ERD"><h3>Entity-Relationship Diagram</h3><img src="./img/erd.png" alt="ERD"></section><section id="SQLSnippets" class="container-fluid"><h3>SQL Snippets</h3><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>Statement</h4></div><div class="col-xs-5"><div class="well"><pre>SELECT * FROM AccountType</pre></div></div></div><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>PreparedStatement</h4></div><div class="col-xs-5"><div class="well"><pre>INSERT INTO banker(fName, lName, password, email) VALUES(?, ?, ?, ?)</pre><pre>UPDATE banker SET fName=?, lName=?, password=?, email=? WHERE userId=?</pre><pre>DELETE FROM bankerAccount WHERE userId=? AND accountId=?</pre></div></div></div><div class="row"><div class="col-xs-3 col-xs-offset-2"><h4>CallableStatement</h4></div><div class="col-xs-5"><div class="well"><pre>{ ? = CALL getNumAccounts(?) }</pre><pre>CREATE OR REPLACE FUNCTION getNumAccounts(uId IN NUMBER)
     RETURN NUMBER
 IS
     numAccounts NUMBER;

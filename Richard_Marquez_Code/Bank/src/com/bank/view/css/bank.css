@@ -154,6 +154,9 @@ section {
 
 #specialFeatures {
   background-color: rgba(150, 150, 150, 0.12); }
+  #specialFeatures .panel-heading {
+    font-weight: bold;
+    text-transform: uppercase; }
 
 #ERD {
   text-align: center; }

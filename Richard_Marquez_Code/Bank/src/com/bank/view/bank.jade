@@ -135,63 +135,38 @@ html
                                 span Password Hashing
                             div.panel-body
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | When a user first creates his account the password is hashed before it
+                                    | is stored in the database. The Java code uses the <a href="https://github.com/defuse/password-hashing">
+                                    | PBKDF2 algorithm (including salt)</a> to securely hash the password.
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | When the user attempts to log in he enters a password which is then
+                                    | hashed using the same algorithm and compared to the password stored
+                                    | in the database.
                     div.col-xs-4
                         div.panel.panel-success
                             div.panel-heading
                                 span Emails
                             div.panel-body
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | When a user successfully registers with the bank an email is sent
+                                    | to the address entered during registration as confirmation.
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | The email is sent from 1705May15Java@gmail.com via the Gmail SMTP
+                                    | servers. Most of the code, including the necessary .jars, to implement
+                                    | this functionality can be found
+                                    | <a href="https://www.javatpoint.com/example-of-sending-email-using-java-mail-api">
+                                    | here</a>.
                     div.col-xs-3
                         div.panel.panel-info
                             div.panel-heading
                                 span Logging
                             div.panel-body
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | Any attempt to access the database is logged into log.txt in the com.bank.logs
+                                    | package. This includes successful as well as failed attempts.
                                 p
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | lskdj fsdjfkls jdfsjjsldkls df
-                                    | sldjf lsd jflsj df sjldk fsl df
-                                    | skdjlfks jfjs
-                                    | alsjflksd fls dlfj sdlkjflksdjf ksjd
+                                    | Logging is currently implemented using a custom logger class with static methods.
+                                    | Future development will make use of log4j instead of this custom class.
 
             section#ERD
                 h3 Entity-Relationship Diagram
