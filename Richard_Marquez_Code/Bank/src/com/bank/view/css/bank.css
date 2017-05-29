@@ -99,7 +99,9 @@ section {
     left: 0;
     min-height: 100%;
     min-width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    background: #222 url("../img/puppersnap.png");
+    background-size: 100%; }
   #main-desc #desc {
     z-index: 20;
     width: 50%;
@@ -118,9 +120,15 @@ section {
   padding-top: 8em;
   background: #326a87 url("../img/tile.png");
   color: #fff;
-  font-size: small; }
+  font-size: small;
+  text-shadow: 1px 1px 0px black; }
   #userStories .row {
     border-bottom: 1px solid #becaff; }
+    #userStories .row.matchedCols {
+      overflow: hidden; }
+    #userStories .row.matchedCols [class*="col-"] {
+      margin-bottom: -9999px;
+      padding-bottom: 9999px; }
     #userStories .row:first-child .col-xs-4:first-child {
       border-right: none; }
     #userStories .row:nth-child(2) .col-xs-4:nth-child(2) {
@@ -163,7 +171,8 @@ section {
 
 #patterns {
   background: #326a87 url("../img/tile.png");
-  color: #fff; }
+  color: #fff;
+  text-shadow: 1px 1px 0px black; }
   #patterns #patternDesc {
     text-align: center;
     width: 50%;

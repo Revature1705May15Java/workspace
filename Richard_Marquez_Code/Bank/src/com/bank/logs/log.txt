@@ -2576,3 +2576,16 @@
 2017-05-28T16:04:53.955 : retrieved user id 7
 2017-05-28T16:04:53.955 : retrieved account w/ id 15
 2017-05-28T16:05:07.063 : updated acct w/ id 10
+2017-05-29T17:17:23.144 : ORA-00001: unique constraint (BANK.SYS_C007077) violated
+
+2017-05-29T17:22:42.419 : retrieved acct id 1
+2017-05-29T17:22:42.449 : retrieved acct id 6
+2017-05-29T17:22:42.450 : retrieved acct id 8
+2017-05-29T17:22:42.450 : retrieved acct id 9
+2017-05-29T17:22:42.465 : retrieved acct id 10
+2017-05-29T17:22:42.465 : retrieved acct id 11
+2017-05-29T17:22:42.465 : retrieved acct id 12
+2017-05-29T17:22:42.481 : retrieved acct id 13
+2017-05-29T17:22:42.481 : retrieved acct id 14
+2017-05-29T17:22:42.481 : retrieved acct id 15
+2017-05-29T17:22:42.512 : retrieved user w/ email richard92m@me.com
