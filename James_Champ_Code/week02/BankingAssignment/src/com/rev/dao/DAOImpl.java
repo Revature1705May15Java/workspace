@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.rev.log.Logger;
@@ -148,26 +149,57 @@ public class DAOImpl implements DAO{
 		return accountHolders;
 	}
 
-	// TODO: Fix this method. Create a procedure in oracle that returns a single accounts row.
 	@Override
 	public Account addAccount(Account account, User user) {	
 		Account newAccount = null;
 		
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			String sql = "{create_new_account(?, ?)}";
+			String sql = "INSERT INTO accounts(type_id) " +
+						 "VALUES(?)";
+		
+			String[] key = {"account_id"};
+			PreparedStatement ps = conn.prepareStatement(sql, key);
+			ps.setInt(1, account.getType().getTypeId());
 			
-			CallableStatement cs = conn.prepareCall(sql);
-			cs.setInt(1, account.getType().getTypeId());
-			cs.setInt(2, user.getId());
+			int result = ps.executeUpdate();
 			
-			int numCreated = cs.executeUpdate();
-			ResultSet rs = cs.getResultSet();
+			if(result != 1) {
+				// TODO: Indicate that something went wrong.
+			}
+			
+			ResultSet rs = ps.getGeneratedKeys();
+
+			rs.next();
+			
+			int accountId = rs.getInt(1);
+			
+			sql = "INSERT INTO user_accounts(user_id, account_id) " +
+					"VALUES(?, ?)";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, user.getId());
+			ps.setInt(2, accountId);
+			
+			result = ps.executeUpdate();
+			
+			if(result != 1) {
+				// TODO: Indicate that something went wrong.
+			}
+			
+			sql = "SELECT * FROM accounts " +
+					"WHERE account_id = ?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, accountId);
+			
+			rs = ps.executeQuery();
+			
 			while(rs.next()) {
-				System.out.println(numCreated);
-				System.out.println(rs.getInt(1));
-				System.out.println(rs.getInt(2));
-				System.out.println(rs.getDouble(3));
-				System.out.println(rs.getDate(4).toString());
+				newAccount = new Account();
+				newAccount.setAccountId(rs.getInt(1));
+				newAccount.setType(new AccountType(rs.getInt(2)));
+				newAccount.setBalance(rs.getDouble(3));
+				newAccount.setOpenDate(rs.getDate(4));
 			}
 		}
 		catch(SQLException e) {

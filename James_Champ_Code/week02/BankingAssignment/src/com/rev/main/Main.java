@@ -282,9 +282,10 @@ public class Main {
 				displayUserMenu(user);
 			}
 			else {
-				// TODO: Pass new account to service.
-				
-				// TODO: After account is created, go to account details screen.
+				Account account = new Account(type, user);
+				account = service.openAccount(user, account);
+				user.addAccount(account);
+				displayAccountActions(user, account);
 			}
 		}
 	}

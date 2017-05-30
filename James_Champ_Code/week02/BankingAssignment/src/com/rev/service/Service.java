@@ -45,6 +45,17 @@ public class Service {
 		// TODO: Throw exception otherwise.
 	}
 	
+	public Account openAccount(User user, Account account) {
+		account = dao.addAccount(account, user);
+		
+		if(account != null) {
+			account.setAccountHolders(dao.getAccountHolders(account));
+			return account;
+		}
+		// TODO: Throw exception otherwise
+		return null;
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getUser(email) == null) {
 			return true;
