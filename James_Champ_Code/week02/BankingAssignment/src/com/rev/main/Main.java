@@ -491,10 +491,38 @@ public class Main {
 	
 	private static void closeAccount(User user, Account account) {
 		// Prompt for confirmation
+		String line;
+		int selection;
 		
-		// Call service.closeAccount(account);
+		do {
+			System.out.println("\tAre you sure that you want to close this account?\n");
+			
+			System.out.println("\t1. Yes");
+			System.out.println("\t2. Cancel");
+			
+			System.out.print("\n\tMake a selection [1 - 2]: ");
+			line = scan.nextLine().trim();
+			System.out.println();
+			
+			try {
+				selection = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				selection = INVALID_SELECTION;
+				// TODO: Print error message.
+			}
+			
+			// TODO: Print error message if out of range.
+		} while(!validateMenuSelection(selection, 2));
 		
-		// Go back to user menu
+		if(selection == 1) {
+			// TODO: Call service.closeAccount(account);
+			
+			// Go back to user menu
+		}
+		else {
+			displayAccountActions(user, account);
+		}		
 	}
 	
 	/**
