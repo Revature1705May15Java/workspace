@@ -71,8 +71,8 @@ public class Main {
 	 * @return	The user's menu item selection.
 	 */
 	private static int printInitialOptions() {
-		int result;
-		String line;
+		int selection;
+		boolean isValid = false;
 		
 		System.out.println("\tWhat would you like to do?\n");
 
@@ -81,26 +81,17 @@ public class Main {
 			System.out.println("\t2. Become a member.");
 			System.out.println("\t3. Exit program.\n");
 			
-			System.out.print("\tMake a selection [1 - " + INITIAL_MENU_ITEMS + "]: ");
+			selection = promptForSelection(INITIAL_MENU_ITEMS);
 			
-			line = scan.nextLine().trim();
-			System.out.println();
-			
-			try {
-				result = Integer.parseInt(line);
-				
-				if(!validateMenuSelection(result, INITIAL_MENU_ITEMS)) {
-					result = INVALID_SELECTION;
-					printErrorMessage(INITIAL_MENU_ITEMS);
-				}
+			if(validateMenuSelection(selection, INITIAL_MENU_ITEMS)) {
+				isValid = true;
 			}
-			catch(NumberFormatException e) {
-				result = INVALID_SELECTION;
+			else {
 				printErrorMessage(INITIAL_MENU_ITEMS);
 			}
-		} while(result == INVALID_SELECTION);
+		} while(!isValid);
 		
-		return result;
+		return selection;
 	}
 	
 	/**
@@ -225,6 +216,7 @@ public class Main {
 	
 			System.out.println("\tYou have successfully became a member of " + BANK_NAME);
 			
+			printWelcomeMessage(user);
 			displayUserMenu(user);
 		}
 		else {	// Email exists in the database.
@@ -233,13 +225,15 @@ public class Main {
 		}
 	}
 	
-	// TODO: Comments
-	private static void displayUserMenu(User user) {
-		String line;
-		int selection;
-		
+	private static void printWelcomeMessage(User user) {
 		System.out.println("\tWelcome, " + user.getFirstName() + 
 							" " + user.getLastName() + ".\n");
+	}
+	
+	// TODO: Comments
+	private static void displayUserMenu(User user) {
+		int selection;
+		boolean isValid = false;
 		
 		do {
 			System.out.println("\tWhat would you like to do today?\n");
@@ -249,20 +243,15 @@ public class Main {
 			System.out.println("\t2. View account details.");
 			System.out.println("\t3. Log out.");
 			
-			System.out.print("\n\tMake a selection [1 - " + USER_MENU_ITEMS + "]: ");
-			line = scan.nextLine().trim();
-			System.out.println();
+			selection = promptForSelection(USER_MENU_ITEMS);
 			
-			try {
-				selection = Integer.parseInt(line);
+			if(validateMenuSelection(selection, USER_MENU_ITEMS)) {
+				isValid = true;
 			}
-			catch(NumberFormatException e) {
-				selection = INVALID_SELECTION;
-				// TODO: Print error message.
+			else {
+				printErrorMessage(USER_MENU_ITEMS);
 			}
-			
-			// TODO: Print error message if selection is not valid.
-		} while(!validateMenuSelection(selection, USER_MENU_ITEMS));
+		} while(!isValid);
 		
 		switch(selection) {
 			case 1:
@@ -299,7 +288,7 @@ public class Main {
 	
 	private static AccountType selectAccountType() {
 		int selection;
-		String line;
+		boolean isValid = false;
 		
 		do {
 			System.out.println("\tWhat type of account would you like to create?\n");
@@ -308,19 +297,14 @@ public class Main {
 			System.out.println("\t3. Credit");
 			System.out.println("\t4. Cancel account creation");
 			
-			System.out.print("\n\tMake a selection [1 - " + ACCOUNT_TYPE_MENU_ITEMS + "]: ");
-			line = scan.nextLine().trim();
-			System.out.println();
+			selection = promptForSelection(ACCOUNT_TYPE_MENU_ITEMS);
 			
-			try {
-				selection = Integer.parseInt(line);
+			if(validateMenuSelection(selection, ACCOUNT_TYPE_MENU_ITEMS)) {
+				isValid = true;
 			}
-			catch(NumberFormatException e) {
-				selection = INVALID_SELECTION;
-				// TODO: Print error message
+			else {
+				printErrorMessage(ACCOUNT_TYPE_MENU_ITEMS);
 			}
-			
-			// TODO: Print error message if not selection is not valid.
 		} while(!validateMenuSelection(selection, ACCOUNT_TYPE_MENU_ITEMS));
 		
 		AccountType type;
@@ -361,14 +345,13 @@ public class Main {
 	private static int selectAccount(User user) {
 		ArrayList<Account> accounts = user.getAccounts();
 		int selection;
+		boolean isValid = false;
 		
 		if(accounts.size() == 0) {
 			System.out.println("\tYou currently have no open accounts.\n");
 			selection = 0;
 		}
-		else {
-			String line;
-			
+		else {			
 			do {
 				System.out.println("\tWhich account would you like to view?\n");
 				System.out.printf("\t%13s%17s%18s%n", "Type", "Balance", "Acct. Number");
@@ -383,28 +366,23 @@ public class Main {
 				
 				System.out.println("\n\t" + (accounts.size() + 1) + ". Cancel view account.");
 				
-				System.out.print("\n\tMake a selection [1 - " + (accounts.size() + 1) + "]: ");
-				line = scan.nextLine();
-				System.out.println();
+				selection = promptForSelection(accounts.size() + 1);
 				
-				try {
-					selection = Integer.parseInt(line);
+				if(validateMenuSelection(selection, accounts.size() + 1)) {
+					isValid = true;
 				}
-				catch(NumberFormatException e) {
-					selection = INVALID_SELECTION;
-					// TODO: Print error message
+				else {
+					printErrorMessage(accounts.size() + 1);
 				}
-				
-				// TODO: Print error message if selection is out of range
-			} while(!validateMenuSelection(selection, accounts.size() + 1));
+			} while(!isValid);
 		}
 		
 		return selection;
 	}
 	
 	private static void displayAccountActions(User user, Account account) {
-		String line;
 		int selection;
+		boolean isValid = false;
 		
 		do {
 			System.out.println(account.toString() + "\n\n");
@@ -418,20 +396,15 @@ public class Main {
 			System.out.println("\t5. Close account");
 			System.out.println("\t6. Back");
 			
-			System.out.print("\n\tMake a selection [1 - " + ACCOUNT_MENU_ITEMS + "]: ");
-			line = scan.nextLine().trim();
-			System.out.println();
+			selection = promptForSelection(ACCOUNT_MENU_ITEMS);
 			
-			try {
-				selection = Integer.parseInt(line);
+			if(validateMenuSelection(selection, ACCOUNT_MENU_ITEMS)) {
+				isValid = true;
 			}
-			catch(NumberFormatException e) {
-				selection = INVALID_SELECTION;
-				// TODO: Print error message
+			else {
+				printErrorMessage(ACCOUNT_MENU_ITEMS);
 			}
-			
-			// TODO: Print error message if selection is out of range
-		} while(!validateMenuSelection(selection, ACCOUNT_MENU_ITEMS));
+		} while(!isValid);
 		
 		switch(selection) {
 			case 1:
@@ -490,9 +463,8 @@ public class Main {
 	}
 	
 	private static void closeAccount(User user, Account account) {
-		// Prompt for confirmation
-		String line;
 		int selection;
+		boolean isValid = false;
 		
 		do {
 			System.out.println("\tAre you sure that you want to close this account?\n");
@@ -500,20 +472,15 @@ public class Main {
 			System.out.println("\t1. Yes");
 			System.out.println("\t2. Cancel");
 			
-			System.out.print("\n\tMake a selection [1 - 2]: ");
-			line = scan.nextLine().trim();
-			System.out.println();
+			selection = promptForSelection(2);
 			
-			try {
-				selection = Integer.parseInt(line);
+			if(validateMenuSelection(selection, 2)) {
+				isValid = true;
 			}
-			catch(NumberFormatException e) {
-				selection = INVALID_SELECTION;
-				// TODO: Print error message.
-			}
-			
-			// TODO: Print error message if out of range.
-		} while(!validateMenuSelection(selection, 2));
+			else {
+				printErrorMessage(2);
+			}			
+		} while(!isValid);
 		
 		if(selection == 1) {
 			// TODO: Call service.closeAccount(account);
@@ -523,6 +490,32 @@ public class Main {
 		else {
 			displayAccountActions(user, account);
 		}		
+	}
+	
+	/**
+	 * Prompts the user for an integer that represents a menu item selection.
+	 * If the user enters a valid integer (between 1 and the given argument),
+	 * that integer is returned. Otherwise -1 is returned.
+	 * 
+	 * @param totalMenuItems	The total number of menu items available to choose.
+	 * @return	The user's selection, or -1 if the selection was invalid.
+	 */
+	private static int promptForSelection(int totalMenuItems) {
+		String line;
+		int selection;
+		
+		System.out.print("\n\tMake a selection [1 - " + totalMenuItems + "]: ");
+		line = scan.nextLine().trim();
+		System.out.println();
+		
+		try {
+			selection = Integer.parseInt(line);
+		}
+		catch(NumberFormatException e) {
+			selection = INVALID_SELECTION;
+		}
+		
+		return selection;
 	}
 	
 	/**
