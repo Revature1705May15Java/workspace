@@ -445,7 +445,7 @@ public class Main {
 			amount = promptForAmount();
 		} while(amount == null);
 		
-		// TODO: Call service.deposit(account, amount);
+		service.depositFunds(account, amount.doubleValue());
 		
 		displayAccountActions(user, account);
 	}
@@ -518,7 +518,6 @@ public class Main {
 				}
 			} while (id == INVALID_ID || id == user.getId());
 			
-			// TODO: Call service.addAccountHolder(account, newAccountHolder);
 			service.addAccountHolder(account, id);
 		}
 		else {

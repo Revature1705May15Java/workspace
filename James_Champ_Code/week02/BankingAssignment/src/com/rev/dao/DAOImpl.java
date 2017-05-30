@@ -20,7 +20,27 @@ public class DAOImpl implements DAO{
 	
 	@Override
 	public int updateBalance(Account account) {
-		// TODO Auto-generated method stub
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "UPDATE accounts " +
+						"SET balance = ? " +
+						"WHERE account_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setDouble(1, account.getBalance());
+			ps.setInt(2, account.getAccountId());
+			
+			int numUpdated = ps.executeUpdate();
+			
+			if(numUpdated != 1) {
+				// TODO: Throw exception
+			}
+			
+			return numUpdated;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
 		return 0;
 	}
 

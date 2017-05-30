@@ -65,6 +65,16 @@ public class Service {
 		account.addAccountHolder(accountHolder);
 	}
 	
+	public double depositFunds(Account account, double amount) {
+		double total = account.getBalance() + amount;
+		account.setBalance(total);
+		dao.updateBalance(account);
+		
+		// TODO: Error checking
+		
+		return total;
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getUser(email) == null) {
 			return true;
