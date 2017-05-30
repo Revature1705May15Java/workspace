@@ -1,5 +1,6 @@
 package com.rev.main;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class Main {
 	private static final int MAX_LOGIN_ATTEMPTS = 3;
 	private static final int MAX_NUMBER_OF_ACCOUNTS = 6;
 	
+	private static final int INVALID_ID = -1;
 	private static final int INVALID_SELECTION = -1;
 	private static final int INITIAL_MENU_ITEMS = 3;
 	private static final int USER_MENU_ITEMS = 3;
@@ -305,7 +307,7 @@ public class Main {
 			else {
 				printErrorMessage(ACCOUNT_TYPE_MENU_ITEMS);
 			}
-		} while(!validateMenuSelection(selection, ACCOUNT_TYPE_MENU_ITEMS));
+		} while(!isValid);
 		
 		AccountType type;
 		
@@ -341,7 +343,7 @@ public class Main {
 		}
 	}
 	
-	// TODO: Test this method
+	// TODO: Test this method for form and function
 	private static int selectAccount(User user) {
 		ArrayList<Account> accounts = user.getAccounts();
 		int selection;
@@ -428,38 +430,91 @@ public class Main {
 		}
 	}
 	
+	// TODO: Give user a way to cancel
 	private static void depositFunds(User user, Account account) {
-		// Determine amount
+		BigDecimal amount;
 		
-		// Call service.deposit(account, amount);
+		System.out.println("\tHow much money would you like to deposit?");
 		
-		// Go back to account menu
+		do {
+			amount = promptForAmount();
+		} while(amount != null);
+		
+		// TODO: Call service.deposit(account, amount);
+		
+		displayAccountActions(user, account);
 	}
 	
+	// TODO: Give user a way to cancel
 	private static void withdrawFunds(User user, Account account) {
-		// Determine amount
+		BigDecimal amount;
 		
-		// Call service.withdraw(account, amount);
+		System.out.println("\tHow much money would you like to deposit?");
 		
-		// Go back to account menu
+		do {
+			amount = promptForAmount();
+		} while(amount != null);
+		
+		// TODO: Call service.withdraw(account, amount);
+		
+		displayAccountActions(user, account);
 	}
 	
 	private static void transferFunds(User user, Account account) {
-		// Determine amount
+		int recipientId;
+		BigDecimal amount;
 		
-		// Determine recipient account id
+		System.out.println("\tHow much money would you like to transfer?");
 		
-		// Call service.transfer(account, toAccount, amount);
+		do {
+			amount = promptForAmount();
+		} while(amount != null);
 		
-		// Go back to account menu
+		System.out.println("\tWhat account would you like to transfer these funds to?");
+		
+		do {
+			System.out.print("\n\tEnter an account number: ");
+			String line = scan.nextLine();
+			System.out.println();
+			
+			try {
+				recipientId = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				recipientId = INVALID_ID;
+				System.out.println("\n\tInvalid selection. Please enter an integer.\n");
+			}	
+		} while(recipientId != INVALID_ID);
+	
+		
+		// TODO: Call service.transfer(account, toAccount, amount);
+		
+		displayAccountActions(user, account);
 	}
 	
 	private static void addAccountHolder(User user, Account account) {
-		// Determine new account holder's id (This seems somewhat unrealistic...)
+		String line;
+		int id;
 		
-		// Call service.addAccountHolder(account, newAccountHolder);
+		System.out.println("\tWho would you like to add?");
 		
-		// Go back to account menu
+		do {
+			System.out.print("\n\tEnter the user ID number of an existing member: ");
+			line = scan.nextLine();
+			System.out.println();
+			
+			try {
+				id = Integer.parseInt(line);
+			}
+			catch(NumberFormatException e) {
+				id = INVALID_ID;
+				System.out.println("\n\tInvalid selection. Please enter an integer.\n");
+			}
+		} while(id != INVALID_ID);
+		
+		// TODO: Call service.addAccountHolder(account, newAccountHolder);
+		
+		displayAccountActions(user, account);
 	}
 	
 	private static void closeAccount(User user, Account account) {
@@ -485,11 +540,29 @@ public class Main {
 		if(selection == 1) {
 			// TODO: Call service.closeAccount(account);
 			
-			// Go back to user menu
+			displayUserMenu(user);
 		}
 		else {
 			displayAccountActions(user, account);
 		}		
+	}
+	
+	// TODO: Restrict decimal places to two
+	private static BigDecimal promptForAmount() {
+		String line;
+		BigDecimal amount;
+		
+		System.out.print("\n\tEnter a dollar amount: $");
+		line = scan.nextLine().trim();
+		
+		try {
+			amount = new BigDecimal(line);
+		}
+		catch(NumberFormatException e) {
+			amount = null;
+		}
+		
+		return amount;
 	}
 	
 	/**
