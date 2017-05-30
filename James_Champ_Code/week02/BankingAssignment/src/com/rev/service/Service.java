@@ -2,6 +2,7 @@ package com.rev.service;
 
 import com.rev.dao.DAO;
 import com.rev.dao.DAOImpl;
+import com.rev.exceptions.InsufficientFundsException;
 import com.rev.pojos.Account;
 import com.rev.pojos.User;
 
@@ -73,6 +74,20 @@ public class Service {
 		// TODO: Error checking
 		
 		return total;
+	}
+	
+	public double withdrawFunds(Account account, double amount) throws InsufficientFundsException {
+		double total = account.getBalance() - amount;
+		
+		if(total < 0) {
+			throw new InsufficientFundsException("Insuffient funds available for this action.");
+		}
+		else {
+			account.setBalance(total);
+			dao.updateBalance(account);
+			
+			return total;
+		}
 	}
 	
 	public boolean isEmailUnique(String email) {

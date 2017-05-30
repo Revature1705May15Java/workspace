@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.rev.exceptions.InsufficientFundsException;
 import com.rev.pojos.Account;
 import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
@@ -454,13 +455,19 @@ public class Main {
 	private static void withdrawFunds(User user, Account account) {
 		BigDecimal amount;
 		
-		System.out.println("\tHow much money would you like to deposit?");
+		System.out.println("\tHow much money would you like to withdraw?");
 		
 		do {
 			amount = promptForAmount();
 		} while(amount == null);
 		
-		// TODO: Call service.withdraw(account, amount);
+		try {
+			service.withdrawFunds(account, amount.doubleValue());
+		}
+		catch(InsufficientFundsException e) {
+			System.out.println("\n\n\tWithdrawal cancelled:");
+			System.out.println("\tYour withdrawal amount exceeds the funds available in your account.\n");
+		}
 		
 		displayAccountActions(user, account);
 	}
@@ -489,7 +496,7 @@ public class Main {
 				recipientId = INVALID_ID;
 				System.out.println("\n\tInvalid selection. Please enter an integer.\n");
 			}	
-		} while(recipientId == INVALID_ID);
+		} while(recipientId == INVALID_ID && recipientId != account.getAccountId());
 	
 		
 		// TODO: Call service.transfer(account, toAccount, amount);
