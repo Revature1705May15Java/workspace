@@ -95,3 +95,87 @@ TEST DML Scripts for JDBC statements
   /
   
   select * from users where lower(username) = 'test';
+
+commit;
+/
+  CREATE OR REPLACE TRIGGER open_date_trigger
+BEFORE INSERT ON account -- on what occasion do you want ot trigger an event
+FOR EACH ROW
+BEGIN
+IF :new.opened IS NULL THEN 
+  SELECT current_date INTO :new.opened FROM DUAL;
+  END IF;
+  END;
+  /
+  
+  create sequence acc_id_seq
+  start with 100 
+  increment by 10;
+  /
+  
+  CREATE OR REPLACE TRIGGER acc_id_trigger
+BEFORE INSERT ON account -- on what occasion do you want ot trigger an event
+FOR EACH ROW
+BEGIN
+IF :new.acc_id IS NULL THEN 
+  SELECT acc_id_seq.nextval INTO :new.acc_id FROM DUAL;
+  END IF;
+  END;
+  /
+  
+--  INSERT INTO account(type_id) VALUES(1) RETURNING acc_id INTO word;
+--create procedure insert_acc_pro(type_id in number, acc_id out number)
+--as 
+--begin 
+CREATE or replace FUNCTION get_recent_accid
+  return number
+  is 
+  accid number;
+  begin
+    select max(acc_id) 
+    into accid
+    from ACCOUNT;
+    return accid;
+  END;
+  /
+  
+ CREATE or replace FUNCTION get_recent_userid
+  return number
+  is 
+  userid number;
+  begin
+    select max(u_id) 
+    into userid
+    from users;
+    return userid;
+  END;
+  / 
+  
+ select get_recent_accid() from dual;
+ /
+INSERT INTO account (type_id) VALUES (1);
+
+select max(acc_id) from account;
+commit;
+
+insert into user_account values(100,100);
+
+select * from account where acc_id = 100;
+
+select type_name from accounttype where t_id = 1;
+
+
+select* 
+from account
+where ACC_ID in (select account_id
+from user_account
+where user_id = 100);
+/
+
+select* from Users where U_ID in (select USER_id
+					from user_account where ACCOUNT_id = 100);
+          /
+          
+   UPDATE account
+    SET balance = 0
+    WHERE acc_id = 100;

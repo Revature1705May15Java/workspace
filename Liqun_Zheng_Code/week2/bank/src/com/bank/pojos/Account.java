@@ -59,7 +59,7 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", balance=" + balance + ", type=" + type + ", dateOpened=" + dateOpened
-				+ ", dateClosed=" + dateClosed + ", account_holder=" + account_holder + "]";
+				+ ", dateClosed=" + dateClosed + ", account_holder=" + account_holder + "]\n";
 	}
 	
 	

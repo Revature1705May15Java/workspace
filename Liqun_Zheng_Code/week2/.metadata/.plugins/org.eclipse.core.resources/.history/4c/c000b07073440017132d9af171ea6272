@@ -1,0 +1,22 @@
+package com.rev.test;
+import static java.lang.Integer.*;
+import static java.lang.System.*;
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+import com.bank.pojos.User;
+
+public class test {
+    private int j;     void showJ(){         while(j<=5){             for(int j=1; j <= 5;){                 System.out.print(j+" ");                 j++;             }             j++;         }     }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new test().showJ();
+//		DAO dao = new DaoImpl();
+//		//dao.addUser("test", "test", "test", "test");
+//		User temp = dao.getUser(100);
+//		System.out.println(temp);
+
+		
+
+	}
+
+}

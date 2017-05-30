@@ -23,7 +23,7 @@ public class AccountType {
 	}
 	@Override
 	public String toString() {
-		return "AccountType [id=" + id + ", name=" + name + "]";
+		return "AccountType [id=" + id + ", name=" + name + "]\n";
 	}
 	
 	

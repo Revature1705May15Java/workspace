@@ -56,7 +56,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", fn=" + fn + ", ln=" + ln + ", pw=" + pw + ", uname=" + uname + ", userAccounts="
-				+ userAccounts + "]";
+				+ userAccounts + "]\n";
 	}
 	
 	
