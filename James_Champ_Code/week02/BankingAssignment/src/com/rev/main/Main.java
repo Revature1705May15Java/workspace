@@ -285,6 +285,9 @@ public class Main {
 				Account account = new Account(type, user);
 				account = service.openAccount(user, account);
 				user.addAccount(account);
+				
+				System.out.println("\tNew account created.\n");
+				
 				displayAccountActions(user, account);
 			}
 		}
@@ -497,24 +500,31 @@ public class Main {
 	private static void addAccountHolder(User user, Account account) {
 		String line;
 		int id;
-		
-		System.out.println("\tWho would you like to add?");
-		
-		do {
-			System.out.print("\n\tEnter the user ID number of an existing member: ");
-			line = scan.nextLine();
-			System.out.println();
+				
+		if (service.canAccountHaveMoreOwners(account)) {
+			System.out.println("\tWho would you like to add?");
 			
-			try {
-				id = Integer.parseInt(line);
-			}
-			catch(NumberFormatException e) {
-				id = INVALID_ID;
-				System.out.println("\n\tInvalid selection. Please enter an integer.\n");
-			}
-		} while(id != INVALID_ID);
-		
-		// TODO: Call service.addAccountHolder(account, newAccountHolder);
+			do {
+				System.out.print("\n\tEnter the user ID number of an existing member: ");
+				line = scan.nextLine().trim();
+				System.out.println();
+
+				try {
+					id = Integer.parseInt(line);
+					// TODO: Test if user exists.
+				} catch (NumberFormatException e) {
+					id = INVALID_ID;
+					System.out.println("\n\tInvalid selection. Please enter an integer.\n");
+				}
+			} while (id == INVALID_ID || id == user.getId());
+			
+			// TODO: Call service.addAccountHolder(account, newAccountHolder);
+			service.addAccountHolder(account, id);
+		}
+		else {
+			System.out.println("\tCannot add new account holder.");
+			System.out.println("\tMaximum account holders reached\n");
+		}
 		
 		displayAccountActions(user, account);
 	}
@@ -541,7 +551,7 @@ public class Main {
 		
 		if(selection == 1) {
 			service.closeAccount(user, account);
-			// TODO: Call service.closeAccount(account);
+			// TODO: Display helpful message.
 			
 			displayUserMenu(user);
 		}

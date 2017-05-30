@@ -7,6 +7,8 @@ import com.rev.pojos.User;
 
 // TODO: Add comments
 public class Service {
+	private static final int MAX_ACCOUNT_HOLDERS = 4;
+	
 	private static DAO dao = new DAOImpl();
 	
 	public User addUser(String firstName, String lastName, String password, String email) {
@@ -56,11 +58,22 @@ public class Service {
 		return null;
 	}
 	
+	public void addAccountHolder(Account account, int holderId) {
+		User accountHolder = dao.getUser(holderId);
+		
+		dao.addAccountHolder(account, accountHolder);
+		account.addAccountHolder(accountHolder);
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getUser(email) == null) {
 			return true;
 		}
 		
 		return false;
+	}
+	
+	public boolean canAccountHaveMoreOwners(Account account) {
+		return account.getAccountHolders().size() <= MAX_ACCOUNT_HOLDERS;
 	}
 }

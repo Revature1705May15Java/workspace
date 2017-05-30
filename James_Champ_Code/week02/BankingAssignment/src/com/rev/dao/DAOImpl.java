@@ -80,6 +80,34 @@ public class DAOImpl implements DAO{
 	}
 
 	@Override
+	public User getUser(int id) {
+		User result = null;
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "SELECT first_name, last_name " +
+						"FROM users WHERE user_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				result = new User();
+				result.setId(id);
+				result.setFirstName(rs.getString(1));
+				result.setLastName(rs.getString(2));
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	
+	@Override
 	public ArrayList<Account> getUserAccounts(User user) {
 		ArrayList<Account> accounts = new ArrayList<Account>();
 		
@@ -252,6 +280,27 @@ public class DAOImpl implements DAO{
 			int numClosed = cs.executeUpdate();
 			
 			return numClosed;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	@Override
+	public int addAccountHolder(Account account, User accountHolder) {
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "INSERT INTO user_accounts " +
+						"VALUES(?, ?)";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, accountHolder.getId());
+			ps.setInt(2, account.getAccountId());
+			
+			int numInserted = ps.executeUpdate();
+			
+			return numInserted;
 		}
 		catch(SQLException e) {
 			e.printStackTrace();

@@ -81,6 +81,10 @@ public class Account {
 		this.accountHolders = accountHolders;
 	}
 
+	public void addAccountHolder(User accountHolder) {
+		accountHolders.add(accountHolder);
+	}
+	
 	@Override
 	public String toString() {
 		// TODO: Test for proper formatting
