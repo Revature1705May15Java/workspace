@@ -141,40 +141,4 @@ public class BankService {
 		}
 		return false;	
 	}
-	
-	/**
-	 * Get the account's users
-	 * @param id
-	 * @return list of users
-	 */
-	public ArrayList<User> getAccountUsers(int id) {
-		return this.dao.getAccountUsers(id);
-	}
-	
-	/**
-	 * Get the number of accounts a user has
-	 * @param username
-	 * @return number of accounts
-	 */
-	public int getNumOfAccounts(String username) {
-		return this.dao.getNumOfAccounts(username);
-	}
-	
-	/**
-	 * Add a user to an account
-	 * @param accountId
-	 * @param username
-	 * @return true if user added, false otherwise
-	 */
-	public boolean addUser(int accountId, String username) {
-		int userId = this.dao.getUserId(username);
-		if (userId != -1) {
-			if (this.dao.addAccountUser(accountId, userId)) {
-				return true;
-			}
-			else 
-				return false;
-		}
-		return false;
-	}
 }

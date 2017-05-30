@@ -156,7 +156,7 @@ public class BankService {
 	 * @param username
 	 * @return number of accounts
 	 */
-	public int getNumOfAccounts(String username) {
+	public int getNumOfAccounts(int accountId, String username) {
 		return this.dao.getNumOfAccounts(username);
 	}
 	

@@ -376,7 +376,7 @@ public class DaoImpl implements DAO {
 	 */
 	public int getUserId(String username) {
 		try (Connection connect = ConnectionUtil.getConnection();) {
-			String sql = "SELECT user_id FROM Bank_user WHERE user_name = ?";
+			String sql = "SELECT user_id FROM Bank_user WHERE user_name = ?;";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setString(1, username);
 			

@@ -195,7 +195,6 @@ public class BankClient {
 			case 8:
 				// Sign out
 				this.userId = 0;
-				this.user = null;
 				return LOGOUT;
 		}
 		return 0;
@@ -400,8 +399,7 @@ public class BankClient {
 					else
 						System.out.println("User was unable to be added");
 				}
-				else
-					System.out.println("User has max number of accounts");
+				System.out.println("User was unable to be added");
 			}
 			else
 				System.out.println("User is already on this account");

@@ -401,7 +401,7 @@ public class BankClient {
 						System.out.println("User was unable to be added");
 				}
 				else
-					System.out.println("User has max number of accounts");
+					System.out.println("User was unable to be added");
 			}
 			else
 				System.out.println("User is already on this account");

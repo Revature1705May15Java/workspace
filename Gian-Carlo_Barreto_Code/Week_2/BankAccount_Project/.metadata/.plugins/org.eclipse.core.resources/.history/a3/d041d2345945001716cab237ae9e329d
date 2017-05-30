@@ -17,5 +17,4 @@ public interface DAO {
 	ArrayList<User> getAccountUsers(int id);
 	int getNumOfAccounts(String username);
 	int getUserId(String username);
-	boolean addAccountUser(int accountId, int userId);
 }

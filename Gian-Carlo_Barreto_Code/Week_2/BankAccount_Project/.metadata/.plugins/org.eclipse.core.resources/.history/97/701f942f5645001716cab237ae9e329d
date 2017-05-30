@@ -15,7 +15,4 @@ public interface DAO {
 	boolean updateBalance(int id, double amount);
 	boolean closeAccount(int id);
 	ArrayList<User> getAccountUsers(int id);
-	int getNumOfAccounts(String username);
-	int getUserId(String username);
-	boolean addAccountUser(int accountId, int userId);
 }

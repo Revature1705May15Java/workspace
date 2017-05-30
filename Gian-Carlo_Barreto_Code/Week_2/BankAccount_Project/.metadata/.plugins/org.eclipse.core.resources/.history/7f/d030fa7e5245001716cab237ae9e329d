@@ -195,7 +195,6 @@ public class BankClient {
 			case 8:
 				// Sign out
 				this.userId = 0;
-				this.user = null;
 				return LOGOUT;
 		}
 		return 0;
@@ -377,37 +376,7 @@ public class BankClient {
 		int choice = getUserChoice(this.user.getNumOfAccounts());
 		int index = choice - 1;
 		Account a = this.user.getAllAccounts().get(index);
-		ArrayList<User> users = this.service.getAccountUsers(a.getId());
-		for (User u : users) {
-			a.addUser(u);
-		}
-		
-		if (a.getNumOfUsers() < 4) {
-			System.out.print("What is the username of the user you would like to add? ");
-			String username = this.in.nextLine();
-			boolean member = false;
-			for (User u : users) {
-				if (username.equals(u.getUsername())) {
-					member = true;
-					break;
-				}
-			}
-			if (!member) {
-				int numAccounts = this.service.getNumOfAccounts(username);
-				if (numAccounts != -1 && numAccounts < 3) {
-					if (this.service.addUser(a.getId(), username))
-						System.out.println("User added successfully");
-					else
-						System.out.println("User was unable to be added");
-				}
-				else
-					System.out.println("User has max number of accounts");
-			}
-			else
-				System.out.println("User is already on this account");
-		}
-		else
-			System.out.println("ERROR: Account has max number of users");
+		ArrayList<User> users = this.service.getAccountUsers(a);
 }
 	
 	/**

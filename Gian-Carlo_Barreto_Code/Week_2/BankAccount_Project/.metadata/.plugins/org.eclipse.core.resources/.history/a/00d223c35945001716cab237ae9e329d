@@ -376,7 +376,7 @@ public class DaoImpl implements DAO {
 	 */
 	public int getUserId(String username) {
 		try (Connection connect = ConnectionUtil.getConnection();) {
-			String sql = "SELECT user_id FROM Bank_user WHERE user_name = ?";
+			String sql = "SELECT user_id FROM Bank_user WHERE user_name = ?;";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setString(1, username);
 			
@@ -387,27 +387,5 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 		return -1;
-	}
-	
-	/**
-	 * Add a user to an account by adding a record to the User_Account table
-	 * @param accountId, userId
-	 * @return true if account added, false otherwise
-	 */
-	public boolean addAccountUser(int accountId, int userId) {
-		try (Connection connect = ConnectionUtil.getConnection();) {
-			String sql = "INSERT INTO User_Account VALUES (?, ?)";
-			PreparedStatement ps = connect.prepareStatement(sql);
-			ps.setInt(1, userId);
-			ps.setInt(2,  accountId);
-			
-			int row = ps.executeUpdate();
-			if (row == 1)
-				return true;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
 	}
 }
