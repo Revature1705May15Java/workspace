@@ -443,7 +443,7 @@ public class Main {
 		
 		do {
 			amount = promptForAmount();
-		} while(amount != null);
+		} while(amount == null);
 		
 		// TODO: Call service.deposit(account, amount);
 		
@@ -458,7 +458,7 @@ public class Main {
 		
 		do {
 			amount = promptForAmount();
-		} while(amount != null);
+		} while(amount == null);
 		
 		// TODO: Call service.withdraw(account, amount);
 		
@@ -489,7 +489,7 @@ public class Main {
 				recipientId = INVALID_ID;
 				System.out.println("\n\tInvalid selection. Please enter an integer.\n");
 			}	
-		} while(recipientId != INVALID_ID);
+		} while(recipientId == INVALID_ID);
 	
 		
 		// TODO: Call service.transfer(account, toAccount, amount);
