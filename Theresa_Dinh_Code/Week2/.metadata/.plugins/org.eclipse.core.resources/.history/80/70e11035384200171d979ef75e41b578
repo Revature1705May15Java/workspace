@@ -1,0 +1,39 @@
+package servicelayer;
+
+import dao.BankDao;
+import pojos.Account;
+import pojos.User;
+
+public class BankService 
+{
+	BankDao dao = new BankDao(); 
+	
+	public User addUser(String fn, String ln, String pw, String email)
+	{
+		User temp = new User(); 
+		temp = dao.getUser(email); 
+		if(temp != null)
+		{
+			System.out.println("Username already exists. Try again with a new username."); 
+		}
+		else
+			dao.addUser(fn, ln, pw, email); 
+		return dao.getUser(email); 
+	}
+	
+	
+	// takes int amount to be removed from balance, returns the new balane? 
+	public double withdraw(Account account, int amount)
+	{
+		double newBalance = account.getBalance() - amount; 
+		newBalance = dao.updateBalance(account, newBalance); 
+		return newBalance; 
+	}
+	
+	public double deposit(Account account, int amount)
+	{
+		double newBalance = account.getBalance() + amount; 
+		newBalance = dao.updateBalance(account, newBalance);
+		return newBalance; 
+	}
+}

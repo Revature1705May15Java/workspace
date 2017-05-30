@@ -1,0 +1,113 @@
+package servicelayer;
+
+//import java.sql.Date;
+import java.util.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import dao.BankDao;
+import pojos.Account;
+import pojos.AccountType;
+import pojos.User;
+
+public class BankService 
+{
+	BankDao dao = new BankDao(); 
+	
+	// create new User to dao 
+	public User addUser(String fn, String ln, String pw, String email)
+	{
+		User temp = new User(); 
+		temp = dao.getUser(email); 
+		if(temp != null)
+		{
+			System.out.println("Username already exists. Try again with a new username."); 
+		}
+		else
+			dao.addUser(fn, ln, pw, email); /////edit later 
+		return dao.getUser(email); 
+	}
+	
+	//done ?
+	public boolean createAccount(AccountType type, User user)
+	{
+		Date date = new Date(); 
+		Timestamp ts = new Timestamp(date.getTime()); 
+		Account temp = new Account(); 
+		temp.setType(type);
+		temp.setDateOpened(ts);
+		temp.addUser(user); //
+		
+		if(dao.createAccount(temp)) //confirm that db insertion was success first
+			return true;
+		else
+			return false; 
+	}
+	
+	//done 
+	public boolean deleteAccount(Account account)
+	{
+		if(dao.deleteAccount(account))
+			return true;
+		else 
+			return false; 
+	}
+	
+	//
+	public void viewBalance(Account account)	//no check for non-existing account
+	{
+		System.out.println("Account Balance: " + dao.viewBalance(account));
+	}
+
+	//done 
+	public void viewAccounts(User user)
+	{
+		ArrayList<Account> list = user.getUserAccounts(); 
+		for(Account a : list)
+		{
+			System.out.println(a.toString());
+		}
+	}
+	
+	// done
+	public void viewUser(User user)
+	{
+		System.out.println(user.toString());
+	}
+	
+	// takes amount to be removed from given account balance, returns the new balane
+	public boolean withdraw(Account account, double amount)
+	{
+		double newBalance = dao.viewBalance(account) - amount; 
+		newBalance = dao.updateBalance(account, newBalance); 
+		account.setBalance(newBalance);
+		
+		if(dao.viewBalance(account) == account.getBalance())  //check that the balances are correct in both
+			return true;
+		else
+			return false;  
+	}
+	
+	// takes amount to be added to given account balance, returns the new balane
+	public boolean deposit(Account account, double amount)
+	{
+		double newBalance = dao.viewBalance(account) + amount; 
+		newBalance = dao.updateBalance(account, newBalance);
+		account.setBalance(newBalance);
+		
+		if(dao.viewBalance(account) == account.getBalance())  //check that the balances are correct in both
+			return true;
+		else
+			return false; 
+	}
+	
+	public boolean transfer(Account from, Account to, double amount)
+	{
+		if(withdraw(from, amount) & deposit(to, amount))
+			return true;
+		else
+			return false; 
+	}
+	
+}

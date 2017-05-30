@@ -1,0 +1,175 @@
+package run;
+
+import java.util.Scanner;
+
+import pojos.User;
+import servicelayer.BankService;
+
+public class RunBank 
+{
+	static Scanner in; 
+	static BankService service = new BankService(); 
+	static User currentUser = new User(); 
+	
+	public static void main(String[] args)
+	{
+		welcome(); 
+	}
+	
+	static void welcome()
+	{
+		in = new Scanner(System.in); 
+		
+		System.out.println("Welcome to Nacho Bank. "
+				+ "Enter a number to choose to login or to create a new "
+				+ "user account if you don't already have one. \n"
+				+ "1: Login to user account \n"
+				+ "2: Create a new user account \n"
+				+ "3: Exit \n");
+		int choice = in.nextInt(); 
+//		while(choice != 3)
+		switch(choice)
+		{
+			case 1: 
+			{
+				login();
+				break;
+			}
+			case 2: 
+			{
+				joinBank();
+				break;
+			}
+			case 3:
+			{
+				exit();
+				break;
+			}
+			default: 
+			{
+				System.out.println("Please enter a valid number choice \n"
+				+ "1: Login to user account \n"
+				+ "2: Create a new user account \n"
+				+ "3: Exit \n");
+			}
+		}
+	}
+	
+	static void login()
+	{
+		in = new Scanner(System.in);  
+		
+		System.out.println("Please enter your login credentials \n"
+				+ "User email: ");
+		String email = in.nextLine(); 
+		System.out.println("Password: ");
+		String password = in.nextLine(); 
+		currentUser.setEmail(email);
+		currentUser.setPassword(password);
+		
+		if(service.viewUser(currentUser) != null)  //FIX LATER
+		{
+			System.out.println("Login successful");
+			mainmenu(); 
+		}
+		else
+		{
+			System.out.println("Login failed. Please try again.");
+			login(); 
+		}
+	}
+	
+	static void joinBank()
+	{
+		in = new Scanner(System.in); 
+		//print out prompts and accept user response
+		System.out.println("Enter your first name:");
+		String fn = in.nextLine(); 
+		System.out.println("Enter your last name");
+		String ln = in.nextLine();
+		System.out.println("Enter a password");
+		String pw = in.nextLine();
+		System.out.println("Enter an email");
+		String email = in.nextLine(); 
+		
+		service.addUser(fn, ln, pw, email); 
+		System.out.println("Account creation successful. "
+				+ "Please log in with your new account now");
+		login(); 
+	}
+	
+	static void mainmenu()
+	{
+		in = new Scanner(System.in); 
+		
+		System.out.println("What would you like to do next? \n"
+				+ "Enter a number to choose \n"
+				+ "1: View all your bank accounts \n"
+				+ "2: View your user information \n"
+				+ "3: Check the balance of an account \n"
+				+ "4: Make a withdrawal \n"
+				+ "5: Make a deposit \n"
+				+ "6: Transfer funds \n"
+				+ "7: Create a new bank account \n"
+				+ "8: Delete a bank account \n"
+				+ "9: Logout");
+		
+		int choice = in.nextInt();
+		switch(choice)
+		{
+			case 1:
+			{
+				service.viewAccounts(currentUser);
+				break; 
+			}
+			case 2: 
+			{
+				service.viewUser(currentUser);
+				break;
+			}
+			case 3: 
+			{
+				//needs more work to function 
+//				service.viewBalance(account);
+			}
+			case 4: 
+			{
+				System.out.print("Enter the amount you would like to withdraw \n"
+						+ "$ ");
+				double amount = in.nextDouble(); 
+//				service.withdraw(account, amount);
+			}
+			case 5:
+			{
+				
+			}
+			case 6:
+			{
+				
+			}
+			case 7: 
+			{
+				
+			}
+			case 8: 
+			{
+				
+			}
+			case 9:
+			{
+				exit(); 
+				break; 
+			}
+			default: 
+			{
+				System.out.println("Please enter a valid number choice");
+				mainmenu(); 
+			}
+		}
+	}
+	
+	static void exit()
+	{
+		System.out.println("Thank you for using Nacho Bank.");
+	}
+}

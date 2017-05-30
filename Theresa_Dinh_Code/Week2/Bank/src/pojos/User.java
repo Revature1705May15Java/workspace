@@ -1,4 +1,4 @@
-package pojos;
+	package pojos;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,8 @@ public class User
 	int id; 
 	String fName, lName, password, email; 
 	ArrayList<Account> userAccounts;
+//	int accountsOwned; 
+	
 	public User() {
 		super();
 	}
@@ -18,23 +20,41 @@ public class User
 		this.password = password;
 		this.email = email;
 		this.userAccounts = userAccounts;
+//		accountsOwned = 0; 
 	}
-
+	
+//	public int getAccountsOwned() {
+//		return accountsOwned;
+//	}
+//	public void incAccountsOwned() {
+//		accountsOwned++;
+//	}
+//	
+//	public void decAccountsOwned()
+//	{
+//		accountsOwned--; 
+//	}
+	
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getfName() {
 		return fName;
 	}
+	
 	public void setfName(String fName) {
 		this.fName = fName;
 	}
+	
 	public String getlName() {
 		return lName;
 	}
+	
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
@@ -56,10 +76,21 @@ public class User
 	public void setUserAccounts(ArrayList<Account> userAccounts) {
 		this.userAccounts = userAccounts;
 	} 
+	
+	public void addUserAccount(Account account)
+	{
+		userAccounts.add(account);
+	}
+	
+	public void removeUserAccount(Account account)
+	{
+		userAccounts.remove(account); 
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", fName=" + fName + ", lName=" + lName + ", password=" + password + ", email="
-				+ email + ", userAccounts=" + userAccounts + "]";
+		return "User ID: " + id + ", First Name: " + fName + ", Last Name: " + lName + ", "
+				+ "Password: " + password + ", Email: "	+ email + 
+				", Number of Accounts Owned:" + userAccounts.size() + "]";
 	}
 	
 }

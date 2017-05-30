@@ -1,0 +1,91 @@
+package run;
+
+import java.util.Scanner;
+
+import pojos.User;
+import servicelayer.BankService;
+
+public class RunBank 
+{
+	static Scanner in; 
+	static BankService service = new BankService(); 
+	
+	public static void main(String[] args)
+	{
+		welcome(); 
+	}
+	
+	static void welcome()
+	{
+		in = new Scanner(System.in); 
+		
+		System.out.println("Welcome to Nacho Bank. "
+				+ "Enter a number to choose to login or to create a new "
+				+ "user account if you don't already have one. \n"
+				+ "1: Login to user account \n"
+				+ "2: Create a new user account \n"
+				+ "3: Exit \n");
+		int choice = in.nextInt(); 
+//		while(choice != 3)
+		switch(choice)
+		{
+			case 1: 
+			{
+				login();
+				break;
+			}
+			case 2: 
+			{
+				joinBank();
+				break;
+			}
+			case 3:
+			{
+				exit();
+				break;
+			}
+			default: 
+			{
+				System.out.println("Please enter a valid number choice \n"
+				+ "1: Login to user account \n"
+				+ "2: Create a new user account \n"
+				+ "3: Exit \n");
+			}
+		}
+	}
+	
+	static void login()
+	{
+		in = new Scanner(System.in); 
+		User currentUser = new User(); 
+		
+		System.out.println("Please enter your login credentials \n"
+				+ "User email: ");
+		String email = in.nextLine(); 
+		System.out.println("Password: ");
+		String password = in.nextLine(); 
+		currentUser.setEmail(email);
+		currentUser.setPassword(password);
+	}
+	
+	static void joinBank()
+	{
+		in = new Scanner(System.in); 
+		//print out prompts and accept user response
+		System.out.println("Enter your first name:");
+		String fn = in.nextLine(); 
+		System.out.println("Enter your last name");
+		String ln = in.nextLine();
+		System.out.println("Enter a password");
+		String pw = in.nextLine();
+		System.out.println("Enter an email");
+		String email = in.nextLine(); 
+		
+		service.addUser(fn, ln, pw, email); 
+	}
+	
+	static void exit()
+	{
+		System.out.println("Thank you for using Nacho Bank");
+	}
+}

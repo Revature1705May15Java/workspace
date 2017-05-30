@@ -1,5 +1,5 @@
 CREATE USER bankdb
-IDENTIFIED BY pass
+IDENTIFIED BY pass;
 
 GRANT CONNECT TO bankdb; 
 GRANT RESOURCE TO bankdb; 
