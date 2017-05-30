@@ -66,8 +66,9 @@ public class DAOImpl implements DAO{
 				user.setPassword(rs.getString(4));
 				user.setEmail(rs.getString(5));
 			}
-			
-			user.setAccounts(getUserAccounts(user));
+			if(user != null){
+				user.setAccounts(getUserAccounts(user));
+			}
 			
 			// set each 
 			// TODO: Log results
@@ -152,10 +153,33 @@ public class DAOImpl implements DAO{
 		return accountHolders;
 	}
 
+	// TODO: Fix this method. Create a procedure in oracle that returns a single accounts row.
 	@Override
-	public Account addAccount(Account account, User user) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account addAccount(Account account, User user) {	
+		Account newAccount = null;
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "{create_new_account(?, ?)}";
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, account.getType().getTypeId());
+			cs.setInt(2, user.getId());
+			
+			int numCreated = cs.executeUpdate();
+			ResultSet rs = cs.getResultSet();
+			while(rs.next()) {
+				System.out.println(numCreated);
+				System.out.println(rs.getInt(1));
+				System.out.println(rs.getInt(2));
+				System.out.println(rs.getDouble(3));
+				System.out.println(rs.getDate(4).toString());
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return newAccount;
 	}
 
 	@Override
