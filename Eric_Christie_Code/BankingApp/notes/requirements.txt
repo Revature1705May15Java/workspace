@@ -1,26 +1,22 @@
 As a user I can:
-- register/signup
-- login/logout
-- create up to 6 bank accounts (checking, savings, credit)
-- close an account
-- create a joint account or add another user to one of my existing accounts (with up to 4 people per account)
-- view account balance
-- withdraw
-- deposit
-- transfer
+-x register/signup
+-x login/logout
+-x create up to 6 bank accounts (checking, savings, credit)
+-x close an account
+-x create a joint account or add another user to one of my existing accounts (with up to 4 people per account)
+-x view account balance
+-x withdraw
+-x deposit
+-x transfer
 
 Required:
 -- all user stories should be successfully met
--- use at least one of each kind of statement (Statement, PreparedStatement, CallableStatement)
--- properly organized java project
--- follow DAO design patter
+--x use at least one of each kind of statement (Statement, PreparedStatement, CallableStatement)
+--x properly organized java project
+--x follow DAO design patter
 
 Optional:
--- encrypt user passwords
+--x encrypt user passwords
 -- implement email validation and verification
 -- log transactions and other stuff in a file/use log4j
 -- username/password recovery
-
-Self-Assigned:
--- try using stored procedures, functions, and transactions
--- when adding new users to an account the users being added should be notified and asked if they want to be added

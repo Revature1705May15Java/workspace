@@ -1,0 +1,43 @@
+Unfortunately, Transparent Data Encryption does not appear to be an available feature for Oracle 11g XE.
+
+1. Locate the sqlnet.ora file for your database and create a backup copy of it.
+  For me the file was located in C:\Oracle\exe\app\oracle\product\11.2.0\server\network\ADMIN,
+  and according to documentation from Oracle, it should be in $ORACLE_HOME/network/admin.
+
+2. In your ORACLE_HOME directory, create a directory where you will store the wallet
+  containing your master encryption key. You can name it whatever you want, just don't forget what it's for.
+
+3. Modify the sqlnet.ora file in $ORACLE_HOME/network/admin by adding the following to the end of it
+  (replace $ORACLE_HOME and $WALLET_DIRECTORY with whatever they are in your case):
+ENCRYPTION_WALLET_LOCATION=
+ (SOURCE=
+  (METHOD=file)
+   (METHOD_DATA=
+    (DIRECTORY=$ORACLE_HOME\$WALLET_DIRECTORY)))
+
+4. To create the wallet, you must connect to your database as the SYSTEM user then run the following statement
+  (replace your_password with whatever you want to use as the password for the wallet):
+ALTER SYSTEM SET ENCRYPTION KEY IDENTIFIED BY "your_password";
+  Note: the wallet will be open after you create it, but in case you ever restart your database:
+  To open the wallet:
+ALTER SYSTEM SET ENCRYPTION WALLET OPEN IDENTIFIED BY "your_password";
+  To close the wallet:
+ALTER SYSTEM SET ENCRYPTION WALLET CLOSE IDENTIFIED BY "your_password";
+
+5. Decide what columns you want to encrypt. Encrypted columns cannot be used as foreign keys.
+  You can only encrypt columns of the following data types: BINARY_FLOAT, NUMBER, BINARY_DOUBLE, NVARCHAR2,
+  CHAR, RAW, DATE, TIMESTAMP, NCHAR, VARCHAR2, BLOB, CLOB.
+  
+6. If you have not created any tables yet, then you can specify encryption on columns 
+  when you create your tables. For example:
+CREATE TABLE employee (
+first_name VARCHAR2(128),
+last_name VARCHAR2(128),
+empID NUMBER,
+salary NUMBER(6) ENCRYPT
+);
+  If you have already created the table that contains the column you wish to encrypt, then you will 
+  have alter the table to encrypt the column. For example:
+ALTER TABLE employee ADD (ssn VARCHAR2(11) ENCRYPT);
+  or
+ALTER TABLE employee MODIFY (first_name ENCRYPT);

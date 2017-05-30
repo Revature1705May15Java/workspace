@@ -13,7 +13,7 @@ declare
 begin
   update users set first_name='Genesis' where u_id=100;
   commit;
-  
+end;
 /
 declare
   user_fn users.first_name%time;
