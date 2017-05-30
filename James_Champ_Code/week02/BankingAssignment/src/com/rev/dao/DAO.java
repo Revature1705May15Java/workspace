@@ -14,5 +14,6 @@ public interface DAO {
 	public ArrayList<User> getAccountHolders(Account account);
 	public Account addAccount(Account account, User user);
 	public Account getAccount(int accountId);
+	public int closeAccount(Account account);
 }
 

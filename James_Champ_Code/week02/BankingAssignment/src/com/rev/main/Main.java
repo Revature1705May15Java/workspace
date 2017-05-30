@@ -19,6 +19,7 @@ public class Main {
 	
 	private static final int INVALID_ID = -1;
 	private static final int INVALID_SELECTION = -1;
+	
 	private static final int INITIAL_MENU_ITEMS = 3;
 	private static final int USER_MENU_ITEMS = 3;
 	private static final int ACCOUNT_MENU_ITEMS = 6;
@@ -366,7 +367,7 @@ public class Main {
 							a.getAccountId());
 				} 
 				
-				System.out.println("\n\t" + (accounts.size() + 1) + ". Cancel view account.");
+				System.out.println("\n\t" + (accounts.size() + 1) + ".   Cancel view account.");
 				
 				selection = promptForSelection(accounts.size() + 1);
 				
@@ -538,6 +539,7 @@ public class Main {
 		} while(!isValid);
 		
 		if(selection == 1) {
+			service.closeAccount(user, account);
 			// TODO: Call service.closeAccount(account);
 			
 			displayUserMenu(user);

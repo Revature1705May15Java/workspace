@@ -6,7 +6,7 @@ public class AccountType {
 	public static final int CHECKING = 1;
 	public static final int SAVINGS = 2;
 	public static final int CREDIT = 3;
-	
+		
 	private int typeId;
 	private String name;
 	
@@ -25,6 +25,10 @@ public class AccountType {
 				name = "Credit";
 				break;
 		}
+	}
+	
+	public int getTypeId() {
+		return typeId;
 	}
 	
 	public String getName() {

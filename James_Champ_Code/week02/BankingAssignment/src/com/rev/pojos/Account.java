@@ -84,10 +84,11 @@ public class Account {
 	@Override
 	public String toString() {
 		// TODO: Test for proper formatting
-		String result = String.format("\t%9s%15s%15s%15s%n", "Type:", "Balance:", "Acct. Number:", "Date Opened:");
-		result += String.format("\t%9s%15f%15d%15s%n", type.getName(), balance, accountId, openDate.toString());
+		// TODO: Format double for currency
+		String result = String.format("\t%9s%15s%18s%15s%n", "Type:", "Balance:", "Acct. Number:", "Date Opened:");
+		result += String.format("\t%9s%15f%18d%15s%n", type.getName(), balance, accountId, openDate.toString());
 		
-		result += "\tAccount Holders: ";
+		result += "\n\tAccount Holders: ";
 		for(User u : accountHolders) {
 			result += " " + u.getFirstName() + " " + u.getLastName() + ",";
 		}

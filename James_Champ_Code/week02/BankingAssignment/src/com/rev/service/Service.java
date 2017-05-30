@@ -2,6 +2,7 @@ package com.rev.service;
 
 import com.rev.dao.DAO;
 import com.rev.dao.DAOImpl;
+import com.rev.pojos.Account;
 import com.rev.pojos.User;
 
 // TODO: Add comments
@@ -22,11 +23,26 @@ public class Service {
 		User user = dao.getUser(email);
 		
 		// Get all user's accounts
-		
-		// For each account, get associated users
+		if(user != null) {
+			user.setAccounts(dao.getUserAccounts(user));
+			
+			// Set each Account's users
+			for(Account a : user.getAccounts()) {
+				a.setAccountHolders(dao.getAccountHolders(a));
+			}
+		}
 		
 		
 		return user;
+	}
+	
+	public void closeAccount(User user, Account account) {
+		int numClosed = dao.closeAccount(account);
+		
+		if(numClosed == 1) {
+			user.removeAccount(account);
+		}
+		// TODO: Throw exception otherwise.
 	}
 	
 	public boolean isEmailUnique(String email) {

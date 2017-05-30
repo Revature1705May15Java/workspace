@@ -66,11 +66,7 @@ public class DAOImpl implements DAO{
 				user.setPassword(rs.getString(4));
 				user.setEmail(rs.getString(5));
 			}
-			if(user != null){
-				user.setAccounts(getUserAccounts(user));
-			}
 			
-			// set each 
 			// TODO: Log results
 			
 			return user;
@@ -100,7 +96,6 @@ public class DAOImpl implements DAO{
 				Account a = getAccount(accountNumber);
 				
 				if(a != null) {
-					a.setAccountHolders(getAccountHolders(a));
 					accounts.add(a);
 				}
 			}			
@@ -131,13 +126,13 @@ public class DAOImpl implements DAO{
 				accountIds.add(rs.getInt(1));
 			}
 			
-			sql = "SELECT user_id, first_name, last_name FROM users"
+			sql = "SELECT user_id, first_name, last_name FROM users "
 					+ "WHERE user_id = ?";
 			
 			ps = conn.prepareStatement(sql);
 			
 			for(int i : accountIds) {
-				ps.setInt(i, 1);
+				ps.setInt(1, i);
 				
 				rs = ps.executeQuery();
 				rs.next();
@@ -204,7 +199,6 @@ public class DAOImpl implements DAO{
 				account.setCloseDate(rs.getDate(5));
 			}
 			
-			// TODO: populate account with account holders.
 			return account;
 		}
 		catch(SQLException e) {
@@ -212,5 +206,25 @@ public class DAOImpl implements DAO{
 		}
 		
 		return account;
+	}
+	
+	@Override
+	public int closeAccount(Account account) {
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "{CALL close_account(?)}";
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, account.getAccountId());
+			
+			int numClosed = cs.executeUpdate();
+			
+			return numClosed;
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return 0;
 	}
 }

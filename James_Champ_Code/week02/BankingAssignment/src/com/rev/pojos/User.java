@@ -81,6 +81,10 @@ public class User {
 		this.accounts = accounts;
 	}
 
+	public void removeAccount(Account account) {
+		accounts.remove(account);
+	}
+	
 	// TODO: Clean up output
 	@Override
 	public String toString() {
