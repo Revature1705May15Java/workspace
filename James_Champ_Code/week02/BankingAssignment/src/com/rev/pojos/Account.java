@@ -91,7 +91,7 @@ public class Account {
 		// TODO: Test for proper formatting
 		// TODO: Format double for currency
 		String result = String.format("\t%9s%15s%18s%15s%n", "Type:", "Balance:", "Acct. Number:", "Date Opened:");
-		result += String.format("\t%9s%15f%18d%15s%n", type.getName(), balance, accountId, openDate.toString());
+		result += String.format("\t%9s%15.2f%18d%15s%n", type.getName(), balance, accountId, openDate.toString());
 		
 		result += "\n\tAccount Holders: ";
 		for(User u : accountHolders) {
