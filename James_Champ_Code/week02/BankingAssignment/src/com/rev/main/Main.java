@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.rev.exceptions.InsufficientFundsException;
+import com.rev.exceptions.NonexistentAccountException;
 import com.rev.pojos.Account;
 import com.rev.pojos.AccountType;
 import com.rev.pojos.User;
@@ -480,7 +481,7 @@ public class Main {
 		
 		do {
 			amount = promptForAmount();
-		} while(amount != null);
+		} while(amount == null);
 		
 		System.out.println("\tWhat account would you like to transfer these funds to?");
 		
@@ -499,7 +500,17 @@ public class Main {
 		} while(recipientId == INVALID_ID && recipientId != account.getAccountId());
 	
 		
-		// TODO: Call service.transfer(account, toAccount, amount);
+		try {
+			service.transferFunds(user, account, amount.doubleValue(), recipientId);
+		}
+		catch(InsufficientFundsException e) {
+			System.out.println("\n\n\tTransfer cancelled:");
+			System.out.println("\tYour withdrawal amount exceeds the funds available in your account.\n");
+		}
+		catch(NonexistentAccountException e) {
+			System.out.println("\n\n\tTransfer cancelled:");
+			System.out.println("\tAccount number " + recipientId + " does not exist.\n");
+		}
 		
 		displayAccountActions(user, account);
 	}

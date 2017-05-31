@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 // TODO: Add comments
+// TODO: Implement comparable for sorting
 public class Account {	
 	private int accountId;
 	private AccountType type;

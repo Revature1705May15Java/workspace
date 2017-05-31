@@ -3,6 +3,7 @@ package com.rev.service;
 import com.rev.dao.DAO;
 import com.rev.dao.DAOImpl;
 import com.rev.exceptions.InsufficientFundsException;
+import com.rev.exceptions.NonexistentAccountException;
 import com.rev.pojos.Account;
 import com.rev.pojos.User;
 
@@ -80,7 +81,7 @@ public class Service {
 		double total = account.getBalance() - amount;
 		
 		if(total < 0) {
-			throw new InsufficientFundsException("Insuffient funds available for this action.");
+			throw new InsufficientFundsException("Insufficent funds available for this action.");
 		}
 		else {
 			account.setBalance(total);
@@ -88,6 +89,51 @@ public class Service {
 			
 			return total;
 		}
+	}
+	
+	public double transferFunds(User user, Account account, double amount, int recipientAccountId) 
+			throws InsufficientFundsException, 
+					NonexistentAccountException {
+		double total = account.getBalance() - amount;
+		
+		if(total < 0) {
+			throw new InsufficientFundsException("Insufficent funds available for this action.");
+		}
+		
+		Account recipientAccount = dao.getAccount(recipientAccountId);
+		
+		if(recipientAccount == null) {
+			throw new NonexistentAccountException("Recipient does not exist.");
+		}
+		
+		boolean userIsOwner = false;
+		
+		for(Account a : user.getAccounts()) {
+			if(a.getAccountId() == recipientAccountId) {
+				userIsOwner = true;
+			}
+		}
+		
+		double recipientTotal = recipientAccount.getBalance() + amount;
+		recipientAccount.setBalance(recipientTotal);
+		dao.updateBalance(recipientAccount);
+		
+		if(userIsOwner) {
+			for(int i = 0; i < user.getAccounts().size(); i++) {
+				Account a = user.getAccounts().get(i);
+				
+				if(a.getAccountId() == recipientAccountId) {
+					user.removeAccount(a);
+					user.addAccount(recipientAccount);
+					break;
+				}
+			}
+		}
+		
+		account.setBalance(total);
+		dao.updateBalance(account);
+		
+		return total;
 	}
 	
 	public boolean isEmailUnique(String email) {
