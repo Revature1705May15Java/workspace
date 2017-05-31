@@ -8,6 +8,6 @@
 <fullyQualifiedTypeName name="dao.Dao"/>
 <fullyQualifiedTypeName name="pojos.Account"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="pojos.AccountType"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="pojos.AccountType"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,25 @@
+body 
+{
+    background-color: #e6b0e6;
+/*    padding-top: 50px;*/
+    padding-bottom: 20px;
+}
+h1 
+{
+    color: rgb(70, 201, 104);
+    text-align: center;
+}
+p 
+{
+    color: #1c1c1c;
+    text-align: justify;
+    font-family: "Arial", Arial, sans-serif;  
+    font-size: 20px; 
+}
+p1
+{
+    font-size: 20px; 
+}
+img
+{
+}

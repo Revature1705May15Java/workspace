@@ -1,9 +1,60 @@
-<html>
-    <head>
-    Banking Project Documentation
-    </head>
-    <title> 
-    
-    
-    </title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bank Assignment Documentation</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+    <link rel="stylesheet" href="external.css">  
+
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
+      
+      
+    <style>
+    body {background-color: powderblue;}
+    h1   {color: blue;}
+    </style>
+      
+  </head>
+  <body>
+       <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>Documentation of the Banking assignment is here. </p>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+      </div>
+    </div>
+      
+<!--    <h1 style="color:#377bac;">Hi</h1>-->
+      
+      <p1>Some of the functions included in this assignment allow a usesr to: create a new account; open and close bank accounts; withdraw, deposit, and transfer money, and check the balance of a bank account. <br> <br> </p1>
+      <p2>The addUser method is implemented in the service layer, where it takes the information needed to create a new user account and passes it on to the DAO so it can write the data to the database.<br>
+      In this method, its paramters are Strings containing the information for the new User. We create a temporary User object to store a User's information as we check the database to ensure that the User doesn't already exists. After calling the DAO to read the database records and make sure there doesn't exist one already with the same username/email. If the addition of a new User is written to the database, then the method returns the new User, otherwise it returns a null object.  </p2>
+      <img src="adduser.png" alt="addUser method" style="width:100;height:100;">
+      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
