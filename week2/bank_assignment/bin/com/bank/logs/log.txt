@@ -1,0 +1,104 @@
+2017-05-25T16:22:20.883 - Num rows affected: 1
+2017-05-25T16:41:11.381 - Num rows affected: 10
+2017-05-25T16:42:17.030 - Num rows affected: 10
+2017-05-25T16:47:16.958 - Retrieved user by username: 100
+2017-05-25T16:47:56.400 - Failed to retrieve user by username: 0
+2017-05-26T11:48:18.930 - Failed to retrieve user by username: HKiba
+2017-05-26T11:48:18.946 - Failed to retrieve user by username: HKiba
+2017-05-26T11:52:37.354 - Failed to retrieve user by username: HKiba
+2017-05-26T11:52:37.370 - Num rows affected: 1
+2017-05-26T11:58:12.082 - Failed to retrieve user by username: jcruz
+2017-05-26T11:58:12.097 - Num rows affected: 1
+2017-05-26T14:02:39.860 - Retrieved user by username: LeiRaion
+2017-05-26T14:03:44.181 - Failed to retrieve user by username: Leiraion
+2017-05-26T14:11:52.640 - Retrieved user by username: LeiRaion
+2017-05-26T14:12:02.066 - Failed to retrieve user by username: Leiraion
+2017-05-26T14:13:23.046 - Failed to retrieve user by username: leiraion
+2017-05-26T14:13:51.051 - Failed to retrieve user by username: y
+2017-05-26T14:14:15.546 - Failed to retrieve user by username: y
+2017-05-26T14:14:28.247 - Failed to retrieve user by username: y
+2017-05-26T14:14:55.136 - Failed to retrieve user by username: clatham
+2017-05-26T14:14:55.152 - Num rows affected: 1
+2017-05-26T14:15:47.251 - Retrieved user by username: clatham
+2017-05-26T14:39:49.815 - Failed to retrieve user by username: leiraion
+2017-05-26T14:40:01.165 - Retrieved user by username: clatham
+2017-05-26T14:40:46.439 - Retrieved user by username: clatham
+2017-05-26T14:41:55.080 - Retrieved user by username: clatham
+2017-05-26T14:42:54.381 - Retrieved user by username: LeiRaion
+2017-05-26T14:43:05.079 - Retrieved user by username: clatham
+2017-05-26T14:44:47.456 - Retrieved user by username: LeiRaion
+2017-05-26T14:45:42.666 - Retrieved user by username: LeiRaion
+2017-05-26T14:46:26.067 - Retrieved user by username: LeiRaion
+2017-05-26T14:47:31.673 - Retrieved user by username: LeiRaion
+2017-05-26T15:09:52.989 - Retrieved user by username: LeiRaion
+2017-05-26T15:10:23.918 - Retrieved user by username: LeiRaion
+2017-05-26T15:47:02.129 - Retrieved user by username: LeiRaion
+2017-05-26T15:49:37.003 - Retrieved user by username: LeiRaion
+2017-05-28T09:17:46.059 - Retrieved user by username: LeiRaion
+2017-05-28T09:21:27.489 - Retrieved user by username: LeiRaion
+2017-05-28T09:21:40.990 - Retrieved user by username: LeiRaion
+2017-05-28T09:26:03.664 - Retrieved user by username: LeiRaion
+2017-05-28T09:26:25.496 - Retrieved user by username: LeiRaion
+2017-05-28T09:26:57.133 - Retrieved user by username: LeiRaion
+2017-05-28T09:27:41.116 - Retrieved user by username: LeiRaion
+2017-05-28T09:28:13.823 - Retrieved user by username: LeiRaion
+2017-05-28T09:28:32.631 - Retrieved user by username: LeiRaion
+2017-05-28T09:29:00.984 - Retrieved user by username: LeiRaion
+2017-05-28T09:29:41.097 - Retrieved user by username: LeiRaion
+2017-05-28T09:30:32.507 - Retrieved user by username: LeiRaion
+2017-05-28T09:31:07.648 - Retrieved user by username: LeiRaion
+2017-05-28T09:33:00.471 - Retrieved user by username: LeiRaion
+2017-05-28T09:33:25.249 - Retrieved user by username: LeiRaion
+2017-05-28T09:34:42.647 - Retrieved user by username: LeiRaion
+2017-05-28T09:38:10.521 - Retrieved user by username: LeiRaion
+2017-05-28T09:39:05.529 - Retrieved user by username: LeiRaion
+2017-05-29T10:28:35.908 - Retrieved user by username: LeiRaion
+2017-05-29T10:31:56.049 - Retrieved user by username: LeiRaion
+2017-05-29T10:33:00.510 - Retrieved user by username: LeiRaion
+2017-05-29T10:33:38.584 - Retrieved user by username: LeiRaion
+2017-05-29T10:33:51.120 - Retrieved user by username: LeiRaion
+2017-05-29T10:33:59.424 - New Accounts added: 1
+2017-05-29T10:34:18.165 - Retrieved user by username: LeiRaion
+2017-05-29T10:41:43.541 - Retrieved user by username: LeiRaion
+2017-05-29T10:43:48.903 - Retrieved user by username: LeiRaion
+2017-05-29T10:45:08.148 - Retrieved user by username: LeiRaion
+2017-05-29T10:45:29.245 - Retrieved user by username: LeiRaion
+2017-05-29T10:47:09.893 - Retrieved user by username: LeiRaion
+2017-05-29T10:48:57.087 - Retrieved user by username: LeiRaion
+2017-05-29T10:51:15.977 - Retrieved user by username: LeiRaion
+2017-05-29T10:51:20.816 - New Accounts added: 1
+2017-05-29T10:52:51.058 - Retrieved user by username: LeiRaion
+2017-05-29T10:53:59.465 - Retrieved user by username: LeiRaion
+2017-05-29T10:54:57.616 - Retrieved user by username: LeiRaion
+2017-05-29T10:55:55.530 - Retrieved user by username: LeiRaion
+2017-05-29T11:21:11.162 - Retrieved user by username: LeiRaion
+2017-05-29T11:23:13.582 - Retrieved user by username: LeiRaion
+2017-05-29T11:24:17.429 - Retrieved user by username: LeiRaion
+2017-05-29T11:25:12.922 - Retrieved user by username: LeiRaion
+2017-05-29T11:51:04.141 - Retrieved user by username: LeiRaion
+2017-05-29T11:51:35.186 - Retrieved user by username: LeiRaion
+2017-05-29T11:51:45.451 - Account 1021 closed: 1
+2017-05-29T11:53:10.645 - Retrieved user by username: LeiRaion
+2017-05-29T11:53:21.893 - Account 1023 closed: 1
+2017-05-29T11:53:29.276 - Account 1023 closed: 1
+2017-05-29T11:59:54.433 - Retrieved user by username: LeiRaion
+2017-05-29T12:00:05.830 - Account 1023 closed: 1
+2017-05-29T12:00:05.875 - Retrieved user by username: LeiRaion
+2017-05-29T12:02:32.806 - Retrieved user by username: LeiRaion
+2017-05-29T12:02:39.932 - Account 1021 closed: 1
+2017-05-29T12:02:39.978 - Retrieved user by username: LeiRaion
+2017-05-29T12:05:08.575 - Retrieved user by username: LeiRaion
+2017-05-29T12:08:06.255 - Retrieved user by username: LeiRaion
+2017-05-29T12:09:05.868 - Retrieved user by username: LeiRaion
+2017-05-29T12:10:02.633 - Retrieved user by username: LeiRaion
+2017-05-29T12:10:28.370 - New Accounts added: 1
+2017-05-29T12:20:11.946 - Retrieved user by username: LeiRaion
+2017-05-29T12:20:35.600 - New Accounts added: 1
+2017-05-29T12:20:35.646 - Retrieved user by username: LeiRaion
+2017-05-29T12:20:46.950 - Account 1025 closed: 1
+2017-05-29T12:20:46.996 - Retrieved user by username: LeiRaion
+2017-05-29T12:24:17.738 - Retrieved user by username: LeiRaion
+2017-05-29T13:31:03.683 - Retrieved user by username: LeiRaion
+2017-05-29T13:31:14.151 - Updated acc #1001 balance by 57
+2017-05-29T21:14:39.518 - Retrieved user by username: LeiRaion
+2017-05-29T21:14:54.501 - Reduced acc #1001 balance by -6
