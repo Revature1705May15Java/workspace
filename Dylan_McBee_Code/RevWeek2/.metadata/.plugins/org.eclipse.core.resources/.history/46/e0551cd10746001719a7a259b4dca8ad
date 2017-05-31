@@ -169,7 +169,6 @@ public class RunBank {
 		scan = new Scanner(System.in);
 		int choice;
 		Account account = new Account();
-		//Checks if user has any open accounts. If so, executes
 		if (u.getUserAccounts().size() != 0) {
 			System.out.println("Choose which account to close");
 			viewAccounts(u);
@@ -178,7 +177,6 @@ public class RunBank {
 			switch (choice) {
 
 			case 1:
-				//Finds accounts by looking at chosen index of array list of accounts
 				account = u.getUserAccounts().get(index);
 
 				if (service.closeAccount(account)) {
@@ -275,7 +273,7 @@ public class RunBank {
 
 		}
 	}
-	//shows user their open accounts
+
 	private static void viewAccounts(User u) {
 		int count = 1;
 		for (Account a : service.getAllAccounts(u.getId())) {

@@ -178,7 +178,6 @@ public class RunBank {
 			switch (choice) {
 
 			case 1:
-				//Finds accounts by looking at chosen index of array list of accounts
 				account = u.getUserAccounts().get(index);
 
 				if (service.closeAccount(account)) {
@@ -275,7 +274,7 @@ public class RunBank {
 
 		}
 	}
-	//shows user their open accounts
+
 	private static void viewAccounts(User u) {
 		int count = 1;
 		for (Account a : service.getAllAccounts(u.getId())) {

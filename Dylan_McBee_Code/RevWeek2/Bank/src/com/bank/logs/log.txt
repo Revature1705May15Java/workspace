@@ -270,3 +270,6 @@
 2017-05-31T01:07:57.574 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
 2017-05-31T01:07:58.693 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
 2017-05-31T01:07:58.709 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
+2017-05-31T01:17:17.103 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
+2017-05-31T01:17:19.569 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
+2017-05-31T01:17:19.589 retrieved user by username: User [id=305, fn=test4, ln=test4, pw=test4, uName=test4, userAccounts=null]
