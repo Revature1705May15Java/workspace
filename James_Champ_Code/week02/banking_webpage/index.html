@@ -25,7 +25,7 @@
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<ul class="nav navbar-nav">
-						<li><a href="#Top">Top</a></li>
+						<li><a href="#Overview">Overview</a></li>
 						<li><a href="#Menus">Menus</a></li>
 						<li><a href="#Code">Code</a></li>
 						<li><a href="#Repo">Repository</a></li>												
@@ -35,7 +35,7 @@
 		</nav>
 	</div>
 	
-	<div class="Gap"><div id="Top"></div></div>
+	<div class="Gap"><div id="Overview"></div></div>
 	<div class="Linked">
 		<div>
 			<h1>Overview</h1>
@@ -110,8 +110,18 @@
 			<div id="SQL">
 				<h2>SQL Stored Procedures</h2>
 				<p>[Short description of stored procedures used in this project]</p>
-				<h3>[Procedure name:]</h3>
-				<code>[Procedure's code]</code>
+				<div class="StoredProcedure">
+					<h3>close_account</h3>
+					<code>
+					CREATE OR REPLACE PROCEDURE close_account(<var>a_id</var> IN NUMBER)<br>
+					&emsp;IS<br>
+					&emsp;&emsp;BEGIN<br>
+					&emsp;&emsp;&emsp;UPDATE accounts<br>
+					&emsp;&emsp;&emsp;SET close_date = sysdate<br>
+					&emsp;&emsp;&emsp;WHERE account_id = <var>a_id</var>;<br>
+					&emsp;&emsp;END close_account;<br>
+					</code>
+				</div>
 			</div>
 			
 			<div id="JDBCStatements">
@@ -120,19 +130,19 @@
 				
 				<div id="Statement">
 					<h3>Statement</h3>
-					<code>[Statement code]</code>
-					<p>Since this statement does not require input from the user and is not susceptible to SQL injection attacks, a Statement object can be used.</p>
+					<img src="images/statementCode.png" alt="Screenshot of code using a Statement object">
+					<p>Since this statement does not require input from the user and is not susceptible to SQL injection attacks, a Statement object can safely be used.</p>
 					<p><b>Note:</b> This method is not yet used in this project.</p>
 				</div>
 				
 				<div id="PreparedStatement">
 					<h3>PreparedStatement</h3>
-					<code>[PreparedStatement code]</code>
+					<img src="images/preparedStatementCode.png" alt="Screenshot of code using a PreparedStatement object">
 				</div>
 				
 				<div id="CallableStatement">
 					<h3>CallableStatement</h3>
-					<code>[CallableStatement code]</code>
+					<img src="images/callableStatementCode.png" alt="Screenshot of code using a CallableStatement object">
 				</div>
 			</div>
 		</div>
