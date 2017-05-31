@@ -66,18 +66,18 @@ public class Account
 		this.dateClosed = dateClosed;
 	}
 
-	public ArrayList<User> getAccount_holders() {
-		return account_holders;
+	public ArrayList <Integer> getAccount_holders() {
+		return userID;
 	}
 
-	public void setAccount_holders(ArrayList<User> account_holders) {
-		this.account_holders = account_holders;
+	public void setAccount_holders(ArrayList <Integer> userID) {
+		this.userID = userID;
 	}
 
 	@Override
 	public String toString() {
 		return "Account [id=" + id + ", balance=" + balance + ", type=" + type + ", dateOpened=" + dateOpened
-				+ ", dateClosed=" + dateClosed + ", account_holders=" + account_holders + "]";
+				+ ", dateClosed=" + dateClosed + ", account_holders=" + userID + "]";
 	}
 	
 	
