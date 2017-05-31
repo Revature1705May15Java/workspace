@@ -19,8 +19,21 @@ public class DaoImpl implements DAO {
 	static Logger logger = new Logger();
 
 	@Override
-	public int updateBalance(Account account, double newBal) {
-		return 0;
+	public boolean updateBalance(int id, double newBal) {
+		try (Connection connection = ConnectionUtil.getConnection();) {
+			// SQL query for updating the balance of a specific account
+			String sql = "UPDATE Account SET balance = ? WHERE acct_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setDouble(1, newBal);
+			ps.setInt(2, id);
+			
+			int row = ps.executeUpdate();
+			if (row == 1)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	@Override

@@ -81,4 +81,13 @@ public class Service {
 	public ArrayList<Account> getAllAccounts(int currId) {
 		return dao.getAllAccounts(currId);
 	}
+
+	public boolean deposit(Account account, double amount) {
+		if (dao.updateBalance(account.getId(), (account.getBalance() + amount))) {
+			account.setBalance(account.getBalance() + amount);
+			return true;
+		}
+		else
+			return false;
+	}
 }

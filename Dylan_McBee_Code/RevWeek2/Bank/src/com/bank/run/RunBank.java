@@ -105,7 +105,8 @@ public class RunBank {
 			System.out.println("What would you like to do today " + u.getFn() + "?");
 			System.out.println("1: Open Account");
 			System.out.println("2: Check Balance");
-			System.out.println("3: Logout");
+			System.out.println("3: Deposit Funds");
+			System.out.println("4: Logout");
 			decision = Integer.parseInt(scan.nextLine());
 			switch (decision) {
 
@@ -142,10 +143,13 @@ public class RunBank {
 				viewAccounts(u);
 				break;
 			case 3:
+				deposit(u);
+				break;
+			case 4:
 				System.out.println("Logging out...");
 				logged = false;
 				break;
-			case 4:
+			case 5:
 				System.out.println(userAccounts.toString());
 
 			}
@@ -161,6 +165,62 @@ public class RunBank {
 				count++;
 			}
 		}
+	}
+	private static void deposit(User u) {
+		scan = new Scanner(System.in);
+		int choice;
+		double amount;
+		Account account = new Account();
+		System.out.println("Which account do you want to deposit to? Choose from the following: ");
+		viewAccounts(u);
+		choice = Integer.parseInt(scan.nextLine());
+		int index = choice - 1;
+		switch(choice){
+		
+		case 1:
+			
+			account = u.getUserAccounts().get(index);
+			System.out.print("Please enter deposit amount: ");
+			amount = Double.parseDouble(scan.nextLine());
+			if (service.deposit(account, amount)) {
+				System.out.println("Your new balance is: " + account.getBalance());
+				
+			}
+			else {
+				System.out.println("Error: Unable to deposit amount");
+				
+			}
+			break;
+		case 2:
+			account = u.getUserAccounts().get(index);
+			System.out.print("Please enter deposit amount: ");
+			amount = Double.parseDouble(scan.nextLine());
+			if (service.deposit(account, amount)) {
+				System.out.println("Your new balance is: " + account.getBalance());
+				
+			}
+			else {
+				System.out.println("Error: Unable to deposit amount");
+				
+			}
+			break;
+		case 3:
+			account = u.getUserAccounts().get(index);
+			System.out.print("Please enter deposit amount: ");
+			amount = Double.parseDouble(scan.nextLine());
+			if (service.deposit(account, amount)) {
+				System.out.println("Your new balance is: " + account.getBalance());
+				
+			}
+			else {
+				System.out.println("Error: Unable to deposit amount");
+				
+			}
+			break;
+			
+		}
+		
+		
 	}
 
 }
