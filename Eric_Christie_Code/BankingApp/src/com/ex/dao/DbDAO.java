@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.HashSet;
@@ -28,10 +29,10 @@ public class DbDAO implements DAO {
   
   private Logger logger = Logger.getInstance();
   private ConnectionFactory factory = ConnectionFactory.getInstance();
-//  private OracleConnectionFactory ocf = OracleConnectionFactory.getInstance();
   
   @Override
-  public int addUser(String email, String passwordHash, String firstname, String lastname) {
+  public boolean addUser(String email, String passwordHash, String firstname, String lastname) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "insert into bankUser(email, passwordHash, firstname, lastname) "
@@ -43,18 +44,19 @@ public class DbDAO implements DAO {
       ps.setString(4, lastname);
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
-
-  // change the return type/value for this method to something more useful
-  //consider using a transaction for this method
+  
   @Override
-  public int addAccount(User u, AccountType type) {
-    int rowsAffected = 0;
+  public Integer addAccount(User u, AccountType type) {
+    Integer accountId = null;
     try (Connection conn = factory.getConnection();) {
+      conn.setAutoCommit(false);
+      Savepoint save = conn.setSavepoint("before_add_account");
       // this could also be done as a callable statement
       String sql1 = "insert into account(typeid) values (?) returning id into ?";
       String sql2 = "insert into accountHolder(accountId, accountHolderId) values (?, ?)";
@@ -62,25 +64,32 @@ public class DbDAO implements DAO {
       ps1.setInt(1, type.getId());
       ps1.registerReturnParameter(2, OracleTypes.NUMBER);
       
-      rowsAffected += ps1.executeUpdate();
-      if (rowsAffected > 0) {
+      if (ps1.executeUpdate() == 0) {
         ResultSet info = ps1.getReturnResultSet();
         if (info.next()) {
           PreparedStatement ps2 = conn.prepareStatement(sql2);
           ps2.setInt(1, info.getInt(1));
           ps2.setInt(2, u.getId());
           
-          rowsAffected += ps2.executeUpdate();
+          if (ps2.executeUpdate() == 2) {
+            conn.commit();
+            accountId = info.getInt(1);
+          } else {
+            conn.rollback(save);
+          }
         }
+      } else {
+        conn.rollback(save);
       }
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return accountId;
   }
 
   @Override
-  public int addAccountHolder(Account a, int accountHolderId) {
+  public boolean addAccountHolder(Account a, int accountHolderId) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "insert into accountHolder(accountId, accountHolderId) values (?, ?)";
@@ -89,14 +98,16 @@ public class DbDAO implements DAO {
       ps.setInt(2, accountHolderId);
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
   @Override
-  public int addAccountHolder(Account a, String accountHolderEmail) {
+  public boolean addAccountHolder(Account a, String accountHolderEmail) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "insert into accountHolder(accountId, accountHolderId) values (?, "
@@ -106,10 +117,11 @@ public class DbDAO implements DAO {
       ps.setString(2, accountHolderEmail);
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
   @Override
@@ -223,7 +235,45 @@ public class DbDAO implements DAO {
     }
     return result;
   }
+  
+  @Override
+  public String getUserPasswordHash(String email) {
+    String result = null;
+    try (Connection conn = factory.getConnection();) {
+      String sql = "select passwordHash from bankUser where email=?";
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setString(1, email);
+      
+      ResultSet info = ps.executeQuery();
+      while (info.next()) {
+        result = info.getString(1);
+      }
+    } catch (SQLException e) {
+      logger.alert(e.getSQLState());
+    }
+    return result;
+  }
 
+  public Account getAccount(int id) {
+    Account result = null;
+    try (Connection conn = factory.getConnection();) {
+      String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
+          + "from account a, accoutType t where a.id=? and a.typeid=t.id";
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setInt(1, id);
+      
+      ResultSet info = ps.executeQuery();
+      while (info.next()) {
+        result = new Account(info.getInt(1), info.getBigDecimal(2),
+            new AccountType(info.getInt(3), info.getString(4)),
+            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate());
+      }
+    } catch (SQLException e) {
+      logger.alert(e.getSQLState());
+    }
+    return result;
+  }
+  
   @Override
   public HashSet<Account> getAccountsForUser(int id) {
     HashSet<Account> accounts = new HashSet<>();
@@ -357,7 +407,8 @@ public class DbDAO implements DAO {
 
  
   @Override
-  public int updateUser(User old, String email, String passwordHash, String firstname, String lastname) {
+  public boolean updateUser(User old, String email, String passwordHash, String firstname, String lastname) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       if (email == null) { email = old.getEmail(); }
@@ -374,14 +425,16 @@ public class DbDAO implements DAO {
       ps.setInt(5, old.getId());
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
   @Override
-  public int updateBalance(Account a, BigDecimal balance) {
+  public boolean updateBalance(Account a, BigDecimal balance) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "update account set balance=? where id=?";
@@ -390,34 +443,35 @@ public class DbDAO implements DAO {
       ps.setInt(2, a.getId());
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
   @Override
-  public int performTransfer(Account from, Account to, BigDecimal amount) {
-    int rowsAffected = 0;
+  public boolean performTransfer(Account from, Account to, BigDecimal amount) {
+    boolean success = false;
     try (Connection conn = factory.getConnection();) {
       String sql = "{? = call transfer_money(?, ?, ?)}";
       CallableStatement cs = conn.prepareCall(sql);
-      cs.registerOutParameter(1, Types.NUMERIC);
+      cs.registerOutParameter(1, Types.BOOLEAN);
       cs.setInt(2, from.getId());
       cs.setInt(3, to.getId());
       cs.setBigDecimal(4, amount);
       
       cs.execute();
-      rowsAffected = cs.getInt(1);
+      success = cs.getBoolean(1);
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
-  // consider using a transaction for this method
   @Override
-  public int unlinkAccount(User u, Account a) {
+  public boolean unlinkAccount(User u, Account a) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "update accountHolder set unlinkDate=current_date "
@@ -427,15 +481,16 @@ public class DbDAO implements DAO {
       ps.setInt(2, a.getId());
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
-  // consider using a transaction for this method
   @Override
-  public int closeAccount(Account a) {
+  public boolean closeAccount(Account a) {
+    boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "update account set closeDate=current_date where id=?";
@@ -443,10 +498,11 @@ public class DbDAO implements DAO {
       ps.setInt(1, a.getId());
       
       rowsAffected = ps.executeUpdate();
+      success = rowsAffected == 1;
     } catch (SQLException e) {
       logger.alert(e.getSQLState());
     }
-    return rowsAffected;
+    return success;
   }
 
   @Override

@@ -116,33 +116,33 @@ begin
   end if;
 end;
 /
-create or replace function transfer_money(from_id number, to_id number, amount number) return number
-is rows_affected number;
+create or replace function transfer_money(from_id number, to_id number, amount number) return boolean
+is answer boolean;
 row_count1 number;
 row_count2 number;
 begin
   savepoint before_transfer;
   update account set balance=(select balance from account where id=from_id)-amount where id=from_id;
   row_count1 := sql%rowcount;
-  if row_count1 > 0 then
+  if row_count1 = 1 then
     update account set balance=(select balance from account where id=to_id)+amount where id=to_id;
     row_count2 := sql%rowcount;
-    if row_count2 > 0 then
-      rows_affected := row_count1 + row_count2;
+    if row_count2 = 1 then
+      answer := true;
     else
       rollback to savepoint before_transfer;
-      rows_affected := 0;
+      answer := false;
     end if;
   else
     rollback to savepoint before_transfer;
-    rows_affected := 0;
+    answer := false;
   end if;
-  return rows_affected;
+  return answer;
 exception
   when others then
     rollback to savepoint before_transfer;
-    rows_affected := 0;
-    return rows_affected;
+    answer := false;
+    return answer;
 end;
 /
 create or replace function check_password_hash(eml varchar2, pHash varchar2) return boolean

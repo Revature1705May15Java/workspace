@@ -20,45 +20,45 @@ public interface DAO {
    * @param passwordHash The encrypted salted hash of the user's passwordHash.
    * @param firstname
    * @param lastname
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int addUser(String email, String passwordHash, String firstname, String lastname);
+  public boolean addUser(String email, String passwordHash, String firstname, String lastname);
   
   /**
    * Add a record to the account table and the accountHolder table. A new account cannot be created
    * without specifying an accountHolder. A successful operation will affect 2 rows.
    * @param u
    * @param type
-   * @return The number of rows affected.
+   * @return The id of the newly created account, or null if no account was created.
    */
-  public int addAccount(User u, AccountType type);
+  public Integer addAccount(User u, AccountType type);
   
   /**
    * Avoid using this method.
    * Add a record to the accountHolder table.
    * @param a
    * @param accountHolderId
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int addAccountHolder(Account a, int accountHolderId);
+  public boolean addAccountHolder(Account a, int accountHolderId);
   
   /**
    * Add an accountHolder for an account.
    * @param a
    * @param accountHolderEmail
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int addAccountHolder(Account a, String accountHolderEmail);
+  public boolean addAccountHolder(Account a, String accountHolderEmail);
   
   /**
-   * Do not use this method.
+   * Avoid using this method.
    * Retrieve every user's information. This does not retrieve passwords or accounts.
    * @return A set containing all users.
    */
   public HashSet<User> getAllUsers();
   
   /**
-   * Do not use this method.
+   * Avoid using this method.
    * Retrieve all accounts. This does not retrieve the account holders for an account.
    * @return A set containing all accounts.
    */
@@ -71,7 +71,6 @@ public interface DAO {
   public HashSet<AccountType> getAllAccountTypes();
   
   /**
-   * Avoid using this method.
    * Retrieve a user's information. This does not retrieve a user's passwordHash.
    * @param id
    * @return The user with the specified id, or null if no such user exists.
@@ -93,6 +92,21 @@ public interface DAO {
    * or the email/passwordHash combination was incorrect.
    */
   public User getUser(String email, String passwordHash);
+  
+  /**
+   * Retrieve a user's passwordHash.
+   * @param email
+   * @return The passwordHash field for a user, or null if no such user exists.
+   */
+  public String getUserPasswordHash(String email);
+  
+  /**
+   * Retrieve an account.
+   * @param id
+   * @return A single Account object for the account with the given id, 
+   * or null if no such table exists.
+   */
+  public Account getAccount(int id);
   
   /**
    * Avoid using this method.
@@ -145,27 +159,27 @@ public interface DAO {
    * @param passwordHash
    * @param firstname
    * @param lastname
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int updateUser(User old, String email, String passwordHash,
+  public boolean updateUser(User old, String email, String passwordHash,
       String firstname, String lastname);
   
   /**
    * Update the balance for an account.
    * @param a
    * @param balance
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int updateBalance(Account a, BigDecimal balance);
+  public boolean updateBalance(Account a, BigDecimal balance);
   
   /**
    * Perform a transfer between two accounts.
    * @param from
    * @param to
    * @param amount
-   * @return The number of rows affected
+   * @return true if successful, false otherwise.
    */
-  public int performTransfer(Account from, Account to, BigDecimal amount);
+  public boolean performTransfer(Account from, Account to, BigDecimal amount);
   
   /**
    * Cancel a user's connection to an account. Sets the unlink date for an account holder 
@@ -173,16 +187,16 @@ public interface DAO {
    * This action should only be possible if the user is not the only account holder for the account.
    * @param u
    * @param a
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int unlinkAccount(User u, Account a);
+  public boolean unlinkAccount(User u, Account a);
   
   /**
    * Set the close date of an account to the current date.
    * @param a The account being closed.
-   * @return The number of rows affected.
+   * @return true if successful, false otherwise.
    */
-  public int closeAccount(Account a);
+  public boolean closeAccount(Account a);
 
   /**
    * Compare a String with the stored passwordHash for a user.
