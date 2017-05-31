@@ -247,7 +247,7 @@ public class DaoImpl implements DAO {
 	public int recentCreated(){
 		int acc_id=0;
 		try(Connection connection = ConnectionUtil.getConnection();){
-			String addOrder = "	";
+			String addOrder = "{ ? = call get_recent_accid}";
 			CallableStatement cs = connection.prepareCall(addOrder);
 			cs.registerOutParameter(1, Types.INTEGER);
 			cs.execute();

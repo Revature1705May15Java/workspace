@@ -18,13 +18,13 @@
 <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
 <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="com.bank.dao.DAO"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.bank.pojos.User"/>
 <fullyQualifiedTypeName name="java.sql.Types"/>
 <fullyQualifiedTypeName name="com.bank.pojos.AccountType"/>
 <fullyQualifiedTypeName name="com.bank.pojos.Account"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.bank.service.Service"/>
 <fullyQualifiedTypeName name="com.bank.dao.DaoImpl"/>
+<fullyQualifiedTypeName name="com.bank.service.Service"/>
+<fullyQualifiedTypeName name="com.bank.dao.DAO"/>
 </qualifiedTypeNameHistroy>

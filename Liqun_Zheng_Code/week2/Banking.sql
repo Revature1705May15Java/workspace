@@ -226,3 +226,13 @@ select get_num_accounts(100) from dual;
                     INNER JOIN account ON user_account.account_id = account.acc_id
                     INNER JOIN accounttype ON accounttype.t_id = account.type_id
                     WHERE users.u_Id=105;
+                    /
+   SELECT users.u_id, users.first_name, users.last_name, users.username, users.password
+                    FROM user_account
+                    INNER JOIN users ON user_account.user_id = users.u_id
+                    INNER JOIN account ON user_account.account_id = account.acc_id
+                    WHERE account.acc_Id=370;
+                    /
+insert into user_account values(300, 370);
+
+commit;
