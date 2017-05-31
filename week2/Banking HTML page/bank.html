@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+function hidecolumn(columnid,btnid){
+	var x = document.getElementById(columnid);
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+	var y = document.getElementById(btnid);
+    if (y.style.background == 'gray') {
+        y.style.background = '#7FFFD4';
+    } else {
+        y.style.background = 'gray';
+    }
+}
+</script>
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Mark Worth Bank Project</h1>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example" style="float: left;">
+<div class="container">
+  <div class="row">
+	  
+	  <button type="button" class="btn btn-secondary" style ="background: gray" id="btn1" onclick=hidecolumn("col1","btn1"); >Variable layout and table creation</button>
+	  <button type="button" class="btn btn-secondary" style ="background: gray" id="btn2" onclick=hidecolumn("col2","btn2");>Implementation of statements</button>
+	  <button type="button" class="btn btn-secondary" style ="background: gray" id="btn3" onclick=hidecolumn("col3","btn3");>Bank interface</button>
+	</div>
+    <div class="col-sm-4 col-md-6" style="display:none" id="col1">
+      <h3>Variable Layout and Table creation:</h3>
+      <p>These tables were created to hold the user and account information in Oracle SQL</p>
+      <p>We used the user_account join table to hold the account information for certain users and the user information for certain accounts as it represents an n:n relationship</p>
+	  <img src="usersimg.png" class = "img-responsive" width="300" height = "200"></img>
+	  <img src="accountimg.png" class = "img-responsive" width="302" height = "200"></img>
+	  <img src="useraccountimg.png" class = "img-responsive" width="298" height = "200"></img>
+	  <img src="accounttypeimg.png" class = "img-responsive" width="300" height = "200"></img>
+	  <p></p>
+    </div>
+    <div class="col-sm-4 col-md-6" style="display:none" id ="col2">
+      <h3>Code implementation of statements through jdbc</h3>
+      <p>Simple statements are useful for run-once code so they are particularly useful for fetching lookup table data such as the account type table which holds the name related to certain account types, saving some queries</p>
+      
+	  <img src="statementimg.png" class = "img-responsive" width="500" height = "200"></img>
+	  <p>Prepared statements are generally useful for most queries and are less susceptible to SQL injection than regular statements. These were used for the majority of database queries and updates.</p>
+	  <img src="preparedstatementimg.png" class = "img-responsive" width="500" height = "300"></img>
+	  
+	  <p>The callable statement is particularly useful in the case of complete events which we need to ensure happen on the database side, such as account creation, 
+	  as we don't want an account which doesn't have a user or some such problem to occur.</p>
+	  <img src="callablestatementimg.png" class = "img-responsive" width="500" height = "200"></img>
+	  <img src="procedure.png" class = "img-responsive" width="500" height = "200"></img>
+    </div>
+	<div class="col-sm-4 col-md-6" style="display:none" id ="col3">
+      <h3>Functionality of the program</h3>
+      <p>Users can log into their account or create a new account,</p>
+      
+	  <img src="bankmenu1.png" class = "img-responsive" width="300" height = "200"></img>
+	  <p>View all of their available accounts,</p>
+	  <img src="bankmenu2.png" class = "img-responsive" width="300" height = "200"></img>
+	  
+	  <p>and withdraw,deposit, or close an account.</p>
+	  <img src="bankmenu3.png" class = "img-responsive" width="300" height = "200"></img>
+    </div>
+	 </div>
+  </div>
+</div>
+
+</body>
+</html>
