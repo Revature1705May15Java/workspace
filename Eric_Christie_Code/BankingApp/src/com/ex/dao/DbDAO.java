@@ -66,14 +66,14 @@ public class DbDAO implements DAO {
       ps1.setInt(1, type.getId());
       ps1.registerReturnParameter(2, OracleTypes.NUMBER);
       
-      if (ps1.executeUpdate() == 0) {
+      if (ps1.executeUpdate() == 1) {
         ResultSet info = ps1.getReturnResultSet();
         if (info.next()) {
           PreparedStatement ps2 = conn.prepareStatement(sql2);
           ps2.setInt(1, info.getInt(1));
           ps2.setInt(2, u.getId());
           
-          if (ps2.executeUpdate() == 2) {
+          if (ps2.executeUpdate() == 1) {
             conn.commit();
             accountId = info.getInt(1);
           } else {
@@ -159,7 +159,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         accounts.add(new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -190,14 +190,14 @@ public class DbDAO implements DAO {
   public User getUser(int id) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname "
+      String sql = "select id, email, passwordHash, firstname, lastname "
           + "from bankUser where id=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setInt(1, id);
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
+        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -210,14 +210,14 @@ public class DbDAO implements DAO {
   public User getUser(String email) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname "
+      String sql = "select id, email, passwordHash, firstname, lastname "
           + "from bankUser where email=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
+        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -230,7 +230,7 @@ public class DbDAO implements DAO {
   public User getUser(String email, String passwordHash) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname "
+      String sql = "select id, email, passwordHash firstname, lastname "
           + "from bankUser where email=? and passwordHash=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
@@ -238,7 +238,7 @@ public class DbDAO implements DAO {
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
+        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -270,7 +270,7 @@ public class DbDAO implements DAO {
     Account result = null;
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
-          + "from account a, accoutType t where a.id=? and a.typeid=t.id";
+          + "from account a, accountType t where a.id=? and a.typeid=t.id";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setInt(1, id);
       
@@ -278,7 +278,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         result = new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate());
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate());
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -301,7 +301,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         accounts.add(new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -324,7 +324,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         accounts.add(new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -349,7 +349,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         currentAccounts.add(new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
       e.printStackTrace();
@@ -374,7 +374,7 @@ public class DbDAO implements DAO {
       while (info.next()) {
         currentAccounts.add(new Account(info.getInt(1), info.getBigDecimal(2),
             new AccountType(info.getInt(3), info.getString(4)),
-            info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
+            info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
       e.printStackTrace();

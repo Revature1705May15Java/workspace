@@ -174,6 +174,7 @@ public class Main {
         case HOME:
           if (current != null) {
             current.setAccounts(service.getCurrentAccounts(current));
+            System.out.println(current);
             List<Account> currentAccounts = new ArrayList<>();
             currentAccounts.addAll(current.getAccounts());
             int i;
@@ -230,7 +231,6 @@ public class Main {
             }
             User result = service.updateUser(current, email, pass, fname, lname);
             if (result != null) {
-              System.out.println("Updated user's information.");
               current = result;
               view = View.HOME;
             } else {

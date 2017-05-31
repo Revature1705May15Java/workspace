@@ -6,36 +6,27 @@
 -- Lookup table
 create table accountType (
   id number primary key,
-  name varchar2(20) unique not null--,
---  interestRate number not null -- only include this if interestRate is determined solely by accountType
+  name varchar2(20) unique not null
 );
 /
 create table bankUser (
 	id number primary key,
---	SSN number unique not null, -- is there a way to verify a user's ssn?
-	email varchar2(50) unique not null, -- try to implement validation and verification
+	email varchar2(50) unique not null,
 	passwordHash varchar2(100) not null,
 	firstname varchar2(100) not null,
-	lastname varchar2(100) not null--,
---  joinDate date not null--,
---	birthdate date,
---	streetAddress varchar2(80),
---	city varchar2(40),
---	state varchar2(2),
---	zipcode varchar2(10),
---	phone varchar2(10)
+	lastname varchar2(100) not null
 );
 /
 create table account (
 	id number primary key,
 	typeid number not null,
-  balance number(12,2) default 0.00, -- default to 0
-	openDate date not null,-- default current_date, -- default to current_date/current_timestamp
+  balance number(12,2) default 0.00,
+	openDate date not null,
 	closeDate date,
 	constraint FK_accountType foreign key(typeid) references accountType(id)
 );
 /
-create table accountHolder ( -- only allow one user to be connected to six open accounts
+create table accountHolder (
 	accountId number not null,
 	accountHolderId number not null,
   linkDate date not null,
