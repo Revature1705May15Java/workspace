@@ -1,5 +1,6 @@
 package com.bank.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,5 +99,13 @@ public class Service {
 		}
 		else
 			return false;
+	}
+
+	public boolean closeAccount(Account account) {
+		if (dao.closeAccount(account.getId())) {
+			account.setDateClosed(LocalDate.now());
+			return true;
+		}
+		return false;	
 	}
 }

@@ -61,4 +61,19 @@ public class User {
 		return "User [id=" + id + ", fn=" + fn + ", ln=" + ln + ", pw=" + pw + ", uName=" + uName + ", userAccounts="
 				+ userAccounts + "]";
 	}
+	public boolean removeAccount(Account account) {
+		boolean removed = false;
+		
+		if (userAccounts.size() > 0 && account != null) {
+			for (Account a : userAccounts) {
+				if (a.getId() == account.getId()) {
+					userAccounts.remove(a);
+					removed = true;
+					break;
+				}
+			}
+		}
+		
+		return removed;
+	}
 }

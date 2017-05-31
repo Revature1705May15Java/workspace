@@ -107,7 +107,8 @@ public class RunBank {
 			System.out.println("2: Check Balance");
 			System.out.println("3: Deposit Funds");
 			System.out.println("4: Withdraw Funds");
-			System.out.println("5: Logout");
+			System.out.println("5: Close Account");
+			System.out.println("6: Logout");
 			decision = Integer.parseInt(scan.nextLine());
 			switch (decision) {
 
@@ -150,15 +151,63 @@ public class RunBank {
 				withdraw(u);
 				break;
 			case 5:
+				closeAccount(u);
+				break;
+			case 6:
 				System.out.println("Logging out...");
 				logged = false;
 				break;
-			case 6:
+			case 7:
 				System.out.println(userAccounts.toString());
 
 			}
 		}
 
+	}
+
+	private static void closeAccount(User u) {
+		scan = new Scanner(System.in);
+		int choice;
+		Account account = new Account();
+		if (u.getUserAccounts().size() != 0) {
+			System.out.println("Choose which account to close");
+			viewAccounts(u);
+			choice = Integer.parseInt(scan.nextLine());
+			int index = choice - 1;
+			switch (choice) {
+
+			case 1:
+				account = u.getUserAccounts().get(index);
+
+				if (service.closeAccount(account)) {
+					u.removeAccount(account);
+					System.out.println("Account has been closed");
+				} else
+					System.out.println("ERROR in closing account");
+				break;
+			case 2:
+				account = u.getUserAccounts().get(index);
+
+				if (service.closeAccount(account)) {
+					u.removeAccount(account);
+					System.out.println("Account has been closed");
+				} else
+					System.out.println("ERROR in closing account");
+				break;
+			case 3:
+				account = u.getUserAccounts().get(index);
+
+				if (service.closeAccount(account)) {
+					u.removeAccount(account);
+					System.out.println("Account has been closed");
+				} else
+					System.out.println("ERROR in closing account");
+				break;
+
+			}
+
+		} else
+			System.out.println("No accounts to close");
 	}
 
 	private static void withdraw(User u) {
@@ -201,6 +250,8 @@ public class RunBank {
 					System.out.println("Error: Unable to withdraw amount");
 
 				}
+			} else {
+				System.out.println("Insufficient Funds.");
 			}
 			break;
 		case 3:
@@ -215,6 +266,8 @@ public class RunBank {
 					System.out.println("Error: Unable to withdraw amount");
 
 				}
+			} else {
+				System.out.println("Insufficient Funds.");
 			}
 			break;
 

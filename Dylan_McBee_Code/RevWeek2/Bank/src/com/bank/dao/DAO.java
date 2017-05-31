@@ -16,4 +16,5 @@ public interface DAO {
 	public List<User> getAllUsers();
 	public ArrayList<Account> getAllAccounts(int currId);
 	public Account getAccountById(int accountId);
+	public boolean closeAccount(int id);
 }

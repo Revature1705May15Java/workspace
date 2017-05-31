@@ -1,5 +1,6 @@
 package com.bank.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -220,6 +221,23 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 		return userAccounts;
+	}
+
+	@Override
+	public boolean closeAccount(int id) {
+		try (Connection connection = ConnectionUtil.getConnection();) {
+			 String sql = "{call close_account(?)}";
+			
+			CallableStatement cs = connection.prepareCall(sql);
+			cs.setInt(1, id);
+			
+			int num = cs.executeUpdate();
+			if (num == 1)
+				return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

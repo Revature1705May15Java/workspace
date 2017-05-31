@@ -103,3 +103,9 @@ IF :new.OPENED IS NULL THEN
   
 END;
 /
+CREATE OR REPLACE PROCEDURE close_account(id IN NUMBER)
+  IS
+  BEGIN
+    UPDATE Account SET closed = CURRENT_TIMESTAMP WHERE acct_id = id;
+    COMMIT;
+  END close_account;
