@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.Properties;
 
+import com.ex.logging.Logger;
+
 public class ConnectionFactory {
 
   private static Boolean build = true;
@@ -12,15 +14,18 @@ public class ConnectionFactory {
   private static String propertiesFile = "C:Users/Eric/Employment/Revature/workspace/Eric_Christie_Code/"
       + "BankingApp/src/com/ex/util/database.properties";
   
-  private ConnectionFactory() {
-    build = false;
-  }
-  
   public static synchronized ConnectionFactory getInstance() {
     if (build == true) {
       INSTANCE = new ConnectionFactory();
     }
     return INSTANCE;
+  }
+  
+  private Logger logger;
+  
+  private ConnectionFactory() {
+    build = false;
+    logger = Logger.getInstance();
   }
   
   public Connection getConnection() {
@@ -32,6 +37,7 @@ public class ConnectionFactory {
       connection = DriverManager.getConnection(p.getProperty("url"), p.getProperty("user"),
           p.getProperty("password"));
     } catch (Exception e) {
+      logger.alert(e.getMessage());
       e.printStackTrace();
     }
     return connection;
