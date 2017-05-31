@@ -1,0 +1,182 @@
+<html>
+
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+h1 {color:#00008B; font-weight:bold}
+h2 {color:#00008B;}
+p {word-wrap: break-Words;}
+</style>
+
+</head>
+
+<body>
+
+<h1> Chantel Boor Bank Project </h1>
+
+<h2>Walk Through UX</h2>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="Login.png" alt="Login">
+    </div>
+  </div>
+</div>
+
+<p>User begins with a prompt to say if they are a member. Mebers are directed to login and non-members to join. On login page program will take input
+and find the user by their email. If the email is found the user is logged in, if not the program says login is incorrect and prompts to try again. 
+Email and password must be correct in order to login</p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="NewUser.png" alt="create user">
+    </div>
+  </div>
+</div>
+
+<p>If a User says they are not a member they will be directed to the new users page. This takes in user info and passes it to service layer.
+Service layer checks if email is in use then allows the dao to call the database and create a new entry if the email is not taken. User enters
+all info except primary key. The Primay key is handeled by a trigger and sequence within the database. Once finished user is taken to login screen</P>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="MainMenu.png" alt="main menu">
+    </div>
+  </div>
+</div>
+
+<p>Here the service layer is automatically called so it can call the necessary dao methods to display current accounts or the text no accounts if the 
+user has none. From here the user can input one of eight menu options to preform the functions avalible to them. Below a few examples will be
+disscussed since all menu choices behave in a simular way, by going through service layer and then doa to call appropriate database actions. </P>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="MenuChoice1.png" alt="choice 1">
+    </div>
+  </div>
+</div>
+
+
+<p>Here the user chooses to add a new account. The service layer method that displays classes is called at the beging and printed here for the users.
+The user inputs their choice of what account type and between the service layer and database triggers the other info is filled in for them.
+The service layer also checks if the account type is valid and if the user is allowed to have more accounts before allowing the 
+account to be created.</p>
+
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="MenuChoice2.png" alt="choice 2">
+    </div>
+  </div>
+</div>
+
+
+<p>Here the user closes an account by inputing the id of an account displayed above. The service layer will check if the account number exists and 
+if the balance is zero and then call the dao. The dao then calls a prepared statement that change the close date to current date and then
+removes the account from the join table where the dao searches for accounts that a user has.</p>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="MenuChoice3.png" alt="choice 3">
+    </div>
+  </div>
+</div>
+
+<p>Here the user deposits money in an account by inputing one of the account numbers above and the amount. From here the service layer is called
+which will check if the account exists and fetch an account object. It then sets the balance by added the deposit amount to the current amount.
+Then the dao is called to update the value in the table with a prepared statement</p>
+
+<h2>Statement Examples</h2>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="Statement.png" alt="Statement.">
+      <div class="caption">
+        <h3>Statement</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" style = "background-color: #00008B;">
+      <img src="Callable.png" alt="Callable Statemen">
+      <div class="caption">
+        <h3 style = "color: white;">Callable Statement</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="Prepared.png" alt="Prepared Statement">
+      <div class="caption">
+        <h3>Prepared Statement</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>PL/SqL Examples</h2>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="Trigger.png" alt="Trigger">
+      <div class="caption">
+        <h3>Trigger</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" style = "background-color: #00008B;">
+      <img src="Function.png" alt="Function">
+      <div class="caption">
+        <h3 style = "color: white;">Function</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="Procedure.png" alt="Stored Procedure">
+      <div class="caption">
+        <h3>Stored Procedure</h3>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h2>Sources</h2>
+
+<p><a href = "https://www.w3schools.com/html/html_css.asp"> Basic HTML</a></P>
+
+<p><a href = "http://getbootstrap.com/components/" > Fancy HTML</a></P>
+
+<p><a href = "https://docs.oracle.com/cloud/latest/db112/LNPLS/toc.htm"> PL/SQL</a></P>
+
+<p><a href = "https://www.tutorialspoint.com/jdbc/jdbc-statements.htm"> Statements</a></P>
+
+<p><a href = "https://docs.oracle.com/javase/tutorial/jdbc/basics/storedprocedures.html"> Stored procedures </a></P>
+
+</body>
+
+</html>

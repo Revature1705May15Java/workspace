@@ -1,0 +1,116 @@
+--Banking DB DDL
+create table AccountType
+(
+  typeID NUMBER,
+  typeName VARCHAR2(50) NOT NULL,
+  CONSTRAINT PK_Atype PRIMARY KEY (typeID)
+);
+/
+create table account
+(
+  accountID NUMBER PRIMARY KEY,
+  balance NUMBER(12,2) DEFAULT 0.00,
+  typeId NUMBER NOT NULL, 
+  Opened DATE,
+  closed DATE,
+  
+  CONSTRAINT FK_acct_type FOREIGN KEY (typeID) REFERENCES accountType (typeID)
+);
+/
+create table users
+(
+  userID NUMBER PRIMARY KEY,
+  fName VARCHAR2 (100) NOT NULL,
+  lName VARCHAR2 (100) NOT NULL,
+  passWord VARCHAR2 (50) NOT NULL,
+  email VARCHAR2 (100) NOT NULL UNIQUE
+);
+/
+create table user_Account
+(
+  userID NUMBER,
+  accountID NUMBER,
+  
+  CONSTRAINT PK_joined PRIMARY KEY (userID,accountId),
+  CONSTRAINT FK_user FOREIGN KEY (userID) REFERENCES users (userID),
+  CONSTRAINT FK_account FOREIGN KEY (accountID) REFERENCES account (accountID)
+);
+/
+
+-- Add values to lookup table
+-- DML Script
+
+INSERT INTO accountType VALUES (1,'Checking');
+INSERT INTO accountType VALUES (2,'Savings');
+INSERT INTO accountType VALUES (3,'Credit');
+select * from accountType;
+
+/*
+pl/sql block for triggers and sequences
+*/
+
+CREATE SEQUENCE u_seq
+start with 100
+INCREMENT by 5;
+/
+CREATE SEQUENCE a_seq
+start with 10000
+increment by 1;
+/
+CREATE OR REPLACE TRIGGER u_seq_trigger
+before insert on users
+for each row
+begin 
+if :new.userID is null then
+select u_seq.nextval into :new.userID from dual;
+end if;
+end;
+/
+CREATE OR REPLACE TRIGGER a_seq_trigger
+before insert on account
+for each row
+begin 
+if :new.accountID is null then
+select a_seq.nextval into :new.accountID from dual;
+end if;
+if :new.opened is null then
+select current_date into :new.Opened from dual;
+end if;
+end;
+/
+
+--test DML Scripts for javaDB
+insert into users (fName, lName, password, email) values (?,?,?,?);
+select * from users;
+/
+create or replace function
+getAccountNum(uid in Number)
+return Number
+as
+aNum number;
+begin
+select count(accountid) into aNum from user_account where USERID = uid;
+return aNum;
+end;
+/
+create or replace procedure
+createAccount (uid in number, type in number)
+as 
+aId number;
+begin
+insert into account (typeid,closed) values(type,null);
+select max(accountID) into aId from account;
+insert into user_account (userid,accountid) values (uid,aid);
+end;
+/
+create or replace procedure
+closeAccount (aid in number)
+as
+begin
+update account set closed = current_date where accountId = aid;
+delete user_account where accountId = aid;
+end;
+/
+select * from account;
+select * from user_account;
+select * from users;
