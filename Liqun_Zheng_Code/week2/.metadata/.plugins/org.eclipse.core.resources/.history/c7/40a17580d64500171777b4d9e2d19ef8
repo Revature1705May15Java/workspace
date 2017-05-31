@@ -45,8 +45,6 @@ public class RunBank {
 		user = userPage(user);
 		
 	}
-	
-	//userpage after a user has been logged in
 	static User userPage(User user){
 		boolean loop = true;
 		int input;
@@ -100,9 +98,7 @@ public class RunBank {
 		}while(loop);
 		return user;
 	}
-	
-	
-	//method of user create joint accounts
+
 	static User createJoinAcc(User user){
 		scan = new Scanner(System.in);
 		int join;
@@ -140,7 +136,6 @@ public class RunBank {
 		return user;
 	}
 	
-	//transfer money between different accounts in same user.
 	static User transferMoney(User user){
 		scan = new Scanner(System.in);
 		int out, in;
@@ -184,7 +179,6 @@ public class RunBank {
 		return user;
 	}
 	
-	//withdraw from account 
 	static User withdraw(User user){
 		scan = new Scanner(System.in);
 		int input;
@@ -217,7 +211,6 @@ public class RunBank {
 		return user;
 	}
 	
-	//deposit to a account
 	static User deposit(User user){
 		scan = new Scanner(System.in);
 		int input;
@@ -247,7 +240,6 @@ public class RunBank {
 		return user;
 	}
 	
-	//check balance of account
 	static User checkBala(User user){
 		scan = new Scanner(System.in);
 		String input;
@@ -263,7 +255,6 @@ public class RunBank {
 		return user;
 	}
 	
-	//close an account
 	static User closeAcc(User user){
 		scan = new Scanner(System.in);
 		int input;
@@ -288,7 +279,6 @@ public class RunBank {
 		
 	}
 	
-	//open an account
 	static Account openAcc(User user){
 		if(service.CheckUserLimit(user)){
 			scan = new Scanner(System.in);
@@ -309,7 +299,6 @@ public class RunBank {
 			return null;
 	}
 	
-	//sign up user
 	static User joinBank(){
 		scan = new Scanner(System.in);
 		System.out.println("Please enter your first name");
@@ -324,7 +313,6 @@ public class RunBank {
 		return service.addUser(fn, ln, uname, pw);
 		
 	}
-	//sign in to bank
 	static User signinBank(){
 		scan = new Scanner(System.in);
 		System.out.println("Please enter your username");

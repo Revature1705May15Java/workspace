@@ -33,9 +33,8 @@ public class Service {
 			dao.addUser(fn, ln, pw, uname);
 			System.out.println("User account create succussfully!");
 			temp = dao.getUser(uname);
-			return temp;
 		}
-		return null;
+		return temp;
 	}
 	public Account addAccount(User user, int typeId){
 		Service s = new Service();

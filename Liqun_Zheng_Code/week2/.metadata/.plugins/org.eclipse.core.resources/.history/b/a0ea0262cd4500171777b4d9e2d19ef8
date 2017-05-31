@@ -86,9 +86,8 @@ public class DaoImpl implements DAO {
 				u.setId(userinfo.getInt(1));
 				u.setFn(userinfo.getString(2));
 				u.setLn(userinfo.getString(3));
-				u.setUname(userinfo.getString(4));
-				u.setPw(userinfo.getString(5));
-				
+				u.setPw(userinfo.getString(4));
+				u.setUname(userinfo.getString(5));
 			}
 			if(u.getUname()!=null){
 			logger.log("Retrieved user by username " + u.toString());}
@@ -315,11 +314,8 @@ public class DaoImpl implements DAO {
 		ArrayList<User> user = new ArrayList<User>();
 		User u = new User();
 		try(Connection connect = ConnectionUtil.getConnection();){
-			String sql =    " SELECT users.u_id, users.first_name, users.last_name, users.username, users.password " +
-                    " FROM user_account " +
-                    " INNER JOIN users ON user_account.user_id = users.u_id " +
-                    " INNER JOIN account ON user_account.account_id = account.acc_id " +
-                    " WHERE account.acc_Id= ? ";
+			String sql = "select* from Users where U_ID in (select USER_id " +
+					"from user_account where ACCOUNT_id = ? ) ";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setInt(1, accId);
 			ResultSet info = ps.executeQuery();
@@ -332,7 +328,6 @@ public class DaoImpl implements DAO {
 				u.setUname(info.getString(4));
 				u.setPw(info.getString(5));
 				user.add(u);
-				u= new User();
 			}
 			logger.log("Retrieved users by accountId " + user.toString());
 			return user;

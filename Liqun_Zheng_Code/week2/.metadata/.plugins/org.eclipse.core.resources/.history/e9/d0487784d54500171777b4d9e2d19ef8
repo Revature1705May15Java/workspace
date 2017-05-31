@@ -86,9 +86,8 @@ public class DaoImpl implements DAO {
 				u.setId(userinfo.getInt(1));
 				u.setFn(userinfo.getString(2));
 				u.setLn(userinfo.getString(3));
-				u.setUname(userinfo.getString(4));
-				u.setPw(userinfo.getString(5));
-				
+				u.setPw(userinfo.getString(4));
+				u.setUname(userinfo.getString(5));
 			}
 			if(u.getUname()!=null){
 			logger.log("Retrieved user by username " + u.toString());}

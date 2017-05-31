@@ -19,8 +19,8 @@ public class test {
 //		ArrayList<Account> accs = dao.findAccByUserId(105);
 //		System.out.println(accs.toString());
 //		//dao.addUser("test", "test", "test", "test");
-//		User temp = dao.getUser("lzheng");
-//		System.out.println(temp);
+		User temp = dao.getUser("lzheng");
+		System.out.println(temp);
 // 		int i = dao.recentCreated();
 //		System.out.println(i);
 //		ArrayList<User> user = dao.findUserByAccId(370);

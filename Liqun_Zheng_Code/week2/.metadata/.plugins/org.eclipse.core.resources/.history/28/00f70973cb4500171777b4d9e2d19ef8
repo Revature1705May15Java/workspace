@@ -10,7 +10,7 @@ import com.bank.pojos.User;
 public class Service {
 	static DAO dao = new DaoImpl();
 	final int AccountLimit = 3;
-	final int UserLimitPerAcc = 4;
+	
 	
 	//return all accounts by userid
 	public ArrayList<Account> getAllAccByUserId(int userId){
@@ -33,9 +33,8 @@ public class Service {
 			dao.addUser(fn, ln, pw, uname);
 			System.out.println("User account create succussfully!");
 			temp = dao.getUser(uname);
-			return temp;
 		}
-		return null;
+		return temp;
 	}
 	public Account addAccount(User user, int typeId){
 		Service s = new Service();
@@ -49,12 +48,6 @@ public class Service {
 	//return true if limit is not excess.
 	public boolean CheckUserLimit(User user){
 		if(dao.coutAccByUserId(user.getId()) < AccountLimit){
-			return true;
-		}
-		else return false;
-	}
-	public boolean CheckAccLimit(int accId){
-		if(dao.findUserByAccId(accId).size() < AccountLimit){
 			return true;
 		}
 		else return false;
@@ -100,7 +93,7 @@ public class Service {
 	}
 	public User withdraw(User user, int accId, double amount){
 		double curr = dao.getAccByAccId(accId).getBalance();
-		curr = dao.updateBalance(accId, (curr - amount));
+		curr = dao.updateBalance(accId, (amount-curr));
 		
 		for(int i= 0; i<user.getUserAccounts().size(); i++){
 			if(user.getUserAccounts().get(i).getId() == accId){
@@ -112,15 +105,5 @@ public class Service {
 		return user;
 		
 	}
-	
-	public User joinAcc(User user2, int accId){
-		Service s = new Service();
-		dao.addUserAccount(user2.getId(), accId);
-		user2.setUserAccounts(s.getAllAccByUserId(user2.getId()));
-		return user2;
-		
-	}
-	
-	
 
 }
