@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class AssertionExamples {
 
   public static void main(String[] args) {
+    @SuppressWarnings("resource")
     Scanner in = new Scanner(System.in);
     System.out.println("enter an integer >= 0:");
 
