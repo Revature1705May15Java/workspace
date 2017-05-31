@@ -25,6 +25,7 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getFn() {
 		return fn;
 	}
@@ -50,7 +51,7 @@ public class User {
 		this.uName = uName;
 	}
 	public ArrayList<Account> getUserAccounts() {
-		return userAccounts;
+		return this.userAccounts;
 	}
 	public void setUserAccounts(ArrayList<Account> userAccounts) {
 		this.userAccounts = userAccounts;

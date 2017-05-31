@@ -1,7 +1,6 @@
 package com.bank.run;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import com.bank.pojos.Account;
@@ -9,7 +8,6 @@ import com.bank.pojos.User;
 import com.bank.service.Service;
 
 public class RunBank {
-//CURRENTLY WORKING ON OPENING ACCOUNT, GETACCOUNTBYID, DAO OPEN ACCOUNT
 	static Scanner scan;
 	static Service service = new Service();
 
@@ -20,33 +18,33 @@ public class RunBank {
 
 	public static void run() {
 		scan = new Scanner(System.in);
-		int decision;
+		String decision;
 		boolean prompt = true;
 		System.out.println("WELCOME TO DOGGO BANK" + "\n" + " Are you already a member?");
 		while (prompt) {
 			System.out.println("1: New Member");
 			System.out.println("2: Returning Member");
 			System.out.println("3: Terminate Program");
-			decision = scan.nextInt();
+			decision = scan.nextLine();
 			switch (decision) {
 
-			case 1:
+			case "1":
 				User newUser = joinBank();
 				System.out.println(newUser);
 				break;
-			case 2:
+			case "2":
 				User currentUser = login();
 				if (currentUser.getFn() != null) {
 					loggedIn(currentUser);
 				}
 
 				break;
-			case 3:
+			case "3":
 				prompt = false;
-
 				break;
 			default:
 				System.out.println("Invalid input, please try again");
+				break;
 
 			}
 		}
@@ -108,40 +106,61 @@ public class RunBank {
 			System.out.println("1: Open Account");
 			System.out.println("2: Check Balance");
 			System.out.println("3: Logout");
-			decision = scan.nextInt();
+			decision = Integer.parseInt(scan.nextLine());
 			switch (decision) {
 
 			case 1:
-				if(u.getUserAccounts().size() < 3){
-				int openAccount;
-				System.out.println("What type of account would you like to open?");
-				System.out.println("1: Checking");
-				System.out.println("2: Savings");
-				System.out.println("3: Credit");
-				openAccount = scan.nextInt();
-				switch (openAccount) {
-				case 1:
-					
-					service.openAccount(u, openAccount);
-					break;
-				}
-				}
-				else{
+				if (userAccounts.size() < 3) {
+					Account newAccount = null;
+					int openAccount;
+					System.out.println("What type of account would you like to open?");
+					System.out.println("1: Checking");
+					System.out.println("2: Savings");
+					System.out.println("3: Credit");
+					openAccount = Integer.parseInt(scan.nextLine());
+					switch (openAccount) {
+					case 1:
+						newAccount = service.openAccount(u, openAccount);
+						userAccounts.add(newAccount);
+						
+						break;
+					case 2:
+						newAccount = service.openAccount(u, openAccount);
+						userAccounts.add(newAccount);
+						break;
+					case 3:
+						newAccount = service.openAccount(u, openAccount);
+						userAccounts.add(newAccount);
+						break;
+					}
+				} else {
 					System.out.println("You have the maximum number of accounts. Please close an account");
 				}
 				break;
-			
 
 			case 2:
+				viewAccounts(u);
 				break;
 			case 3:
 				System.out.println("Logging out...");
 				logged = false;
 				break;
-			
-		}
+			case 4:
+				System.out.println(userAccounts.toString());
+
+			}
 		}
 
+	}
+	
+	private static void viewAccounts(User u) {
+		int count = 1;
+		for (Account a : service.getAllAccounts(u.getId())) {
+			if (a.getDateClosed() == null) {
+				System.out.println(count + ". Account type: " + a.getType().name() + "\tBalance: " + a.getBalance());
+				count++;
+			}
+		}
 	}
 
 }

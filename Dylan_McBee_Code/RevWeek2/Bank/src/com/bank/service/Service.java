@@ -55,11 +55,15 @@ public class Service {
 	}
 	
 	public Account openAccount(User u, int type_id){
-		int accountId = dao.openAccount(u, type_id);
+		int userId = u.getId();
+		int accountId = dao.openAccount(userId, type_id);
 		if(accountId != -1){
 			return dao.getAccountById(accountId);
 		}
-		return null;
+		else{
+			return null;
+		}
+		
 	}
 
 	public boolean isUserNameAvailable(String uName) {

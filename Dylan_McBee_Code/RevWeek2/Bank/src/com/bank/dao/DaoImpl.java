@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,6 @@ import com.bank.pojos.Account;
 import com.bank.pojos.Type;
 import com.bank.pojos.User;
 import com.bank.util.ConnectionUtil;
-import oracle.jdbc.OraclePreparedStatement;
-import oracle.jdbc.OracleTypes;
 
 public class DaoImpl implements DAO {
 
@@ -84,20 +83,60 @@ public class DaoImpl implements DAO {
 	}
 
 	@Override
-	public int openAccount(User u, int id) {
-		return 0;
-		
+	public int openAccount(int userId, int type_id) {
+		int accountId = -1;
+		try (Connection connection = ConnectionUtil.getConnection();) {
+			connection.setAutoCommit(false);
+
+			// savepoint
+			Savepoint s = connection.setSavepoint();
+
+			String sql = "insert into account(type_id) values(?)";
+
+			String generatedColumns[] = { "acct_id" };
+
+			PreparedStatement ps = connection.prepareStatement(sql, generatedColumns);
+			ps.setInt(1, type_id);
+
+			int num = ps.executeUpdate();
+			if (num == 1) {
+				ResultSet info = ps.getGeneratedKeys();
+				if (info.next()) {
+					int id = info.getInt(1);
+
+					String sql2 = "insert into user_account values(?,?)";
+
+					PreparedStatement ps2 = connection.prepareStatement(sql2);
+					ps2.setInt(1, userId);
+					ps2.setInt(2, id);
+
+					int num2 = ps2.executeUpdate();
+					if (num2 == 1) {
+						accountId = id;
+					} else
+						connection.rollback(s);
+
+				}
+			} else {
+				System.out.println("Error");
+				connection.rollback(s);
+			}
+			connection.commit();
+		}
+
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return accountId;
+
 	}
 
 	public Account getAccountById(int newAccountId) {
 		return null;
-		
+
 	}
 
-	@Override
-	public int getNumOfAccounts(User u) {
-		return 0;
-	}
+
 
 	@Override
 	public List<User> getAllUsers() {
@@ -132,32 +171,37 @@ public class DaoImpl implements DAO {
 	@Override
 	public ArrayList<Account> getAllAccounts(int currId) {
 		ArrayList<Account> userAccounts = new ArrayList<Account>();
-		try (Connection connection = ConnectionUtil.getConnection();){
+		try (Connection connection = ConnectionUtil.getConnection();) {
 			String sql = "select * from account inner join user_account on account.acct_id = user_account.account_id"
 					+ " and user_account.user_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, currId);
-			
+
 			ResultSet info = ps.executeQuery();
-			
-			while(info.next()){
+
+			while (info.next()) {
 				Account account = new Account();
 				account.setId(info.getInt(1));
 				account.setBalance(info.getDouble(2));
 				int num = info.getInt(3);
 				Type type;
-				if (num == 1) {type = Type.CHECKING;}
-				else if (num == 2) {type = Type.SAVINGS;}
-				else {type = Type.CREDIT;}
+				if (num == 1) {
+					type = Type.CHECKING;
+				} else if (num == 2) {
+					type = Type.SAVINGS;
+				} else {
+					type = Type.CREDIT;
+				}
 				account.setType(type);
 				account.setDateOpened(info.getDate(4).toLocalDate());
-				if(info.getDate(5)!=null){
+				if (info.getDate(5) != null) {
 					account.setDateClosed(info.getDate(5).toLocalDate());
-				}
-				else{
+				} else {
 					account.setDateClosed(null);
 				}
+				if(account.getDateClosed() ==null){
 				userAccounts.add(account);
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
