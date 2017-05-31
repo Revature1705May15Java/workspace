@@ -1,0 +1,18 @@
+package com.bank.logs;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Logger {
+	
+	static String filename = "src/com/bank/logs/log.txt";
+	
+	public void log(String filename,String log){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename,true));){
+			bw.write(log+"\n");
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+}

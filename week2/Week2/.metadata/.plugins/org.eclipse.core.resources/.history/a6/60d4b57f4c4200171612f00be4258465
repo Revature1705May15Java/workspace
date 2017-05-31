@@ -1,0 +1,12 @@
+package com.google.jallenges;
+
+public class golf {
+	public static void main(String[] args) {
+		double a=20;
+		double b=20;
+		boolean r;
+		r=b>a?a-b/2<7:b-a/2<7;
+		System.out.println(r);
+		
+	}
+}

@@ -1,0 +1,248 @@
+package com.bank.dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import com.bank.logs.Logger;
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionsUtil;
+
+public class DaoImpl implements DAO{
+	
+	static Logger logger = new Logger();
+	static DateTimeFormatter form = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+	static LocalDateTime now;
+	static Date today;
+	
+	public ArrayList<Integer> findAccounts(int userid){
+		ArrayList<Integer> accounts=new ArrayList<Integer>();
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			String sql=" select * from user_account where userid=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, userid);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				logger.log("User:ID:"+userid+": User has no accounts");
+				return null;
+			}
+			while(info.next()){
+				accounts.add(info.getInt(2));
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return accounts;
+	}
+	public ArrayList<Integer> findAccountHolders(int accountid){
+		ArrayList<Integer> holders=new ArrayList<Integer>();
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			String sql=" select * from user_account where accountid=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, accountid);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				logger.log("Account:ID:"+accountid+": User has no accounts");
+				return null;
+			}
+			while(info.next()){
+				holders.add(info.getInt(1));
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return holders;
+	}
+	public int updateBalance(Account account,double newbal){
+		return 0;
+	}
+	@Override
+	public int addUser(String fn,String ln, String uname, String pw){
+		
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			String sql=" insert into users(FIRSTNAME,LASTNAME,PASSWORD,USERNAME)"
+					+"values(?,?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, fn);
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uname);
+			
+			int num = ps.executeUpdate();
+			logger.log(num+" users added");
+			System.out.println();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	@Override
+	public User getUser(int id) {
+		User u = new User();
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			
+			String sql="select * from users where "
+					+"userid=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				logger.log("ID:"+id+": No User found");
+				return null;
+			}
+			while(info.next()){
+				u.setId(info.getInt(1));
+				u.setFn(info.getString(2));
+				u.setLn(info.getString(3));
+				u.setPw(info.getString(3));
+				u.setUname(info.getString(4));;
+				logger.log("User found by ID: User ID: "+u.getId()+" Name: "+u.getFn()+" "+u.getLn());
+				return u;
+			}
+				
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return u;
+	}
+	@Override
+	public User getUser(String uname){
+		User u = new User();
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			
+			String sql="select * from users where "
+					+"username=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, uname);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				logger.log("User: "+uname+" not found");
+				return null;
+			}
+			while(info.next()){
+				u.setId(info.getInt(1));
+				u.setFn(info.getString(2));
+				u.setLn(info.getString(3));
+				u.setPw(info.getString(3));
+				u.setUname(info.getString(4));
+				logger.log("User found by username: User ID: "+u.getId()+" Name: "+u.getFn()+" "+u.getLn());
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return u;
+	}
+	public Account getAccount(int id) {
+		Account a = new Account();
+		try(Connection connection =ConnectionsUtil.getConnection();){
+			
+			String sql="select * from accounts where "
+					+"accountid=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				logger.log("ID:"+id+": No Account found");
+				return null;
+			}
+			while(info.next()){
+				a.getAccountHolders();
+				a.getBalance();
+				a.getDateOpened();
+				a.getDateClosed();
+				a.getType();
+				logger.log("Account found: Account ID: "+id);
+				
+			}
+			
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return a;
+	}
+	private boolean changeUserInfo(String vartochange,String newinfo,String uname){
+		User u=new User();
+		u=getUser(uname);
+		if(u!=null){
+			try(Connection connection =ConnectionsUtil.getConnection();){
+				String sql="update users set "+vartochange+" = ? where username = ?";
+				PreparedStatement ps = connection.prepareStatement(sql);
+				ps.setString(1, newinfo);
+				ps.setString(2, uname);
+				ps.executeUpdate(sql);
+				}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return(u!=null);
+	}
+	private boolean changeAccountInfo(String vartochange, double newinfo, int id){
+		Account a=getAccount(id);
+		if(a!=null){
+			try(Connection connection =ConnectionsUtil.getConnection();){
+					if(vartochange=="closed"){
+						String sql="update account set "+vartochange+" = ? where accountid = ?";
+						PreparedStatement ps = connection.prepareStatement(sql);
+						ps.setDate(1, today);
+						ps.setInt(2, id);
+						ps.executeUpdate(sql);
+					}
+					if(vartochange=="balance"){
+						double newbalance=a.getBalance()+newinfo;
+						if(newbalance>0){
+							String sql="update account set balance = ? where accountid = ?";
+							PreparedStatement ps = connection.prepareStatement(sql);
+							ps.setDouble(1, newbalance);
+							ps.setInt(2, id);
+							if(newinfo>=0){
+								logger.log("Account "+id+" deposit made for $"+newinfo+", new balance is "+newbalance);
+							}else{
+								logger.log("Account "+id+" withdrawal made for $"+newinfo+", new balance is "+newbalance);
+							}
+							return true;
+						}else{
+							logger.log("Funds in account "+id+" insufficient for withdrawal, transaction declined.");
+							return false;
+						}
+					}
+					
+				}catch(SQLException e){
+				e.printStackTrace();
+				}
+		}
+		return(a!=null);
+	}
+	public boolean receiveGenericChange(String tabletochange,String vartochange,String newinfo,String idname){
+		if(tabletochange=="users"){
+			return changeUserInfo(vartochange,newinfo,idname);
+			
+		}
+		if(tabletochange=="account"){
+			return changeAccountInfo(vartochange,Double.parseDouble(newinfo),Integer.parseInt(idname));
+		}
+		return false;
+	}
+	
+	
+}

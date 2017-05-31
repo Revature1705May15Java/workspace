@@ -1,0 +1,7 @@
+package com.bank.dao;
+
+public class DAO {
+	public int updateBalance(){
+		
+	}
+}

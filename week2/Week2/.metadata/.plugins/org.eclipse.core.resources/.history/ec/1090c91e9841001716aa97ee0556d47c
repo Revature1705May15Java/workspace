@@ -1,0 +1,119 @@
+package com.google.challenges;
+
+public class Answer {
+	public static int[][] solutionsArray=new int[21][21];
+	public static int maxSimpleDestack(int num){
+		if(num%2==0){
+			return num/2;
+		}
+		else{
+			return Math.floorDiv(num, 2);
+		}
+	}
+	public int findComplexDestacks(int num,int length){
+		return 0;
+		
+	}
+	public static int maxDestack(int num, int length){
+		double num2=(double)num;
+		double length2=(double)length;
+		return (int)Math.floor(((length2-1)/length2)*num2);
+		
+	}
+	
+	public static int[] stackConstructor(){
+		return new int[]{1,1};
+	}
+	
+	public static int[][] startSolutionsArray(){
+		int[][] arr = new int[21][21];
+		for(int i=0;i<arr.length;i++){
+			arr[0][i]=1;
+			arr[1][i]=1;
+		}
+		for(int i=0;i<arr.length;i++){
+			arr[i][2]=(Math.floorDiv(i/2,1)+1);			
+		}
+		return arr;
+	}
+	public static int NumberOfComplexDestacks(int num,int length){
+		int mds=maxDestack(num,length);
+		int msds=maxSimpleDestack(num);
+		int numcds=mds-msds;
+		return numcds;
+	}
+	public static int solveComplexDestack(int num, int length){
+		
+		return length;
+		
+	}
+	public static int solveSimpleDestack(int num, int length){
+		System.out.println("solving size"+num+", length"+length);
+		int numOfSolutions=solutionsArray[num][length];
+		return numOfSolutions;
+	}
+	//takes the stackSize of the Destack which needs to be solved, returns the number of solutions for that stackSize
+	public static int singleDestackComplex(int originalStackSize,int currentStackSize, int length){
+		int[] stackSpace=new int[length];
+		stackSpace[0]=currentStackSize;
+		int numberOffStacked=originalStackSize-currentStackSize;
+		int i=1;
+		while(numberOffStacked>0){
+			if(stackSpace[i]<stackSpace[i-1]){
+					stackSpace[i]++;
+					numberOffStacked--;
+			}else{
+				i++;
+			}
+		}//after this while loop the destack is complete
+		for(int j=0;j<stackSpace.length;j++){
+			System.out.println("stackspace"+j+": "+stackSpace[j]);
+		}
+		int[] isoStack=findIsomorphicDestack(stackSpace);
+		int numSolutions=1;
+		if(isoStack[isoStack.length-1]>0){
+			numSolutions=1;
+		}else{
+			numSolutions=solveSimpleDestack(isoStack[isoStack.length-2],2);
+		}
+		return numSolutions;
+	}
+	
+	public static int[] findIsomorphicDestack(int[] complexDestack){
+		int[] destackedSpace=new int[complexDestack.length-1];
+		int lowestDestackHeight=complexDestack[complexDestack.length-1];
+		System.out.println("height subtracted is "+lowestDestackHeight);
+		for(int i=0;i<complexDestack.length;i++){
+			System.out.println(complexDestack[i]+" complex"+i);
+		}
+		for(int i=0;i<destackedSpace.length;i++){
+			destackedSpace[i]=complexDestack[i+1]-lowestDestackHeight;
+			System.out.println(destackedSpace[i]+" iso"+i);
+		}
+		
+		return destackedSpace;//this returns the isomorphic destack
+		
+	}
+	public static int findAllIsomorphicDestacks(){
+//		findIsomorphicDestack();
+		return 0;
+	}
+	public static void main(String[] args) {
+		
+		solutionsArray=startSolutionsArray();
+		int[] arrayin=new int[]{8,8,4};
+		System.out.println(solutionsArray[4][2]);
+		int cds=singleDestackComplex(20,6,5);
+		System.out.println("there are "+cds+" solutions");
+		System.out.println(solutionsArray[4][2]);
+//		int isostack[] =findIsomorphicDestack(arrayin);
+//		int cds2=solveSimpleDestack(2,2);
+//		for(int i=0;i<isostack.length;i++){
+//			System.out.println(isostack[i]);
+//		}
+//		for(int i=0;i<cds.length;i++){
+//				System.out.println(cds[i]);
+//		}
+	}
+
+}

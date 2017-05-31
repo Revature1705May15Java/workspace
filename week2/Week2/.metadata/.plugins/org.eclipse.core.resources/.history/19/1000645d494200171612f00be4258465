@@ -1,0 +1,9 @@
+package com.google.jallenges;
+
+public class golf {
+	public static void main(String[] args) {
+		int a=12;
+		int b=32;
+		System.out.println(Math.max(a,b)-Math.min(a,b)/2-7>0); 
+	}
+}
