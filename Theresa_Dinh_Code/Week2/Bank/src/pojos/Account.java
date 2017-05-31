@@ -1,6 +1,5 @@
 package pojos;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -14,7 +13,7 @@ public class Account
 	AccountType type; 
 	Timestamp dateOpened;
 	Timestamp dateClosed; 
-	ArrayList<User> accountUsers;
+	ArrayList<User> accountUsers = new ArrayList<User>();	//need a lookup table
 	
 	public Account() {
 		super();
@@ -92,9 +91,8 @@ public class Account
 
 	@Override
 	public String toString() {
-		return "Account ID: " + id + ", \n Balance: $" + balance + ", \n Account Type: " + type 
-				+ ", \n Date Opened: " + dateOpened + 
-				", \n Users with Access to this Account: " + accountUsers + "]";
+		return "Account ID: " + id + ",\n Balance: $" + balance + ", \nAccount Type: " + type 
+				+ ", \nUsers with Access to this Account: " + accountUsers;
 	} 
 	
 	

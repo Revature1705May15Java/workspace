@@ -10,7 +10,7 @@ public class RunBank
 {
 	static Scanner in; 
 	static BankService service = new BankService(); 
-	static User currentUser = new User(); 
+	static User currentUser = new User(); //holds email and password of current user
 	
 	public static void main(String[] args)
 	{
@@ -58,6 +58,7 @@ public class RunBank
 					+ "2: Create a new user account \n"
 					+ "3: Exit \n");
 					loop = true; 
+					break;
 				}
 			}
 		}while(loop); 
@@ -77,7 +78,7 @@ public class RunBank
 		
 		if(service.getUser(currentUser) != null)  
 		{
-			System.out.println("Login successful");
+			System.out.println("\nLogin successful");
 			mainmenu(); 
 		}
 		else 
@@ -139,7 +140,7 @@ public class RunBank
 		{
 			case 1: //view all accounts owned
 			{
-				service.viewAccounts(currentUser);
+				service.viewAccounts(currentUser);	//requires lookup table
 				mainmenu(); 
 				break; 
 			}
@@ -156,6 +157,7 @@ public class RunBank
 				int id = in.nextInt(); 
 				//needs a check for wrong ids 
 				service.viewBalance(new Account(id));
+				mainmenu(); 
 				break; 
 			}
 			case 4: //withdrawal 
@@ -195,6 +197,7 @@ public class RunBank
 						//another if else for ppl who can't type 1 or 2 ?
 					}
 				}while(loop); 
+				mainmenu(); 
 				break; 
 			}
 			case 5: //deposit
@@ -207,6 +210,7 @@ public class RunBank
 							+ "to deposit into");
 					int id = in.nextInt(); 
 					account.setId(id);
+					
 					System.out.print("Enter the amount you would like to deposit \n"
 							+ "$ ");
 					double amount = in.nextDouble(); 
@@ -234,6 +238,7 @@ public class RunBank
 						//another if else for ppl who can't type 1 or 2 
 					}
 				}while(loop); 
+				mainmenu(); 
 				break; 
 			}
 			case 6: //transfer
@@ -277,6 +282,7 @@ public class RunBank
 						}
 					}
 				}while(loop);
+				mainmenu(); 
 				break; 
 			}
 			case 7: //new bank account
@@ -290,7 +296,7 @@ public class RunBank
 				boolean loop = true; 
 				do
 				{
-					System.out.println("To begin creating a new bank account, please"
+					System.out.println("To begin creating a new bank account, please "
 							+ "select the kind of account you would like: \n"
 							+ "1: Checking \n"
 							+ "2: Savings \n"
@@ -302,16 +308,22 @@ public class RunBank
 						case 1: //checking
 						{
 							service.createAccount(1, currentUser);
+							System.out.println("Account created successfully"); 
+							loop = false; 
 							break; 
 						}
 						case 2: //savings
 						{
 							service.createAccount(2, currentUser);
+							System.out.println("Account created successfully"); 
+							loop = false; 
 							break;
 						}
 						case 3: //credit
 						{
 							service.createAccount(3, currentUser);
+							System.out.println("Account created successfully"); 
+							loop = false; 
 							break;
 						}
 						default: //
@@ -332,16 +344,20 @@ public class RunBank
 						}
 					}
 				}while(loop);
+				mainmenu(); 
+				break; 
 			}
 			case 8: //delete bank account
 			{
+				Account account = new Account(); 
 				boolean loop = true; 
 				do
 				{
 					System.out.println("Enter the id for the bank account you "
 							+ "would like to cancel: ");
 					int id = in.nextInt(); 
-					if(service.deleteAccount(new Account(id), currentUser))
+					account.setId(id);
+					if(service.deleteAccount(account, currentUser))
 					{
 						System.out.println("Cancellation successful");
 						loop = false; 
@@ -364,6 +380,7 @@ public class RunBank
 						}
 					}
 				}while(loop); 
+				mainmenu(); 
 				break; 
 			}
 			case 9: //logout 
@@ -373,14 +390,15 @@ public class RunBank
 			}
 			default: 
 			{
-				System.out.println("Please enter a valid number choice");
+				System.out.println("Please enter a valid number choice\n");
 				mainmenu(); 
+				break; 
 			}
 		}
 	}
 	
 	static void exit()
 	{
-		System.out.println("Thank you for using Nacho Bank.");
+		System.out.println("Thank you for using Nacho Bank.\n");
 	}
 }

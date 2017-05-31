@@ -40,7 +40,7 @@ public class BankService
 		Account temp = new Account(); 
 		temp.setType(at);
 		temp.setDateOpened(ts);
-		temp.addUser(user); 
+		temp.addUser(dao.getUser(user)); 
 		user.addUserAccount(temp); 
 		
 		if(dao.createAccount(temp)) //confirm that db insertion was success first
@@ -55,6 +55,7 @@ public class BankService
 		if(dao.deleteAccount(account))	
 		{
 			user.removeUserAccount(account); //need to remove from user's arraylist
+			
 			//need to remove user from Account's arraylist???
 			return true;
 		}
@@ -65,7 +66,7 @@ public class BankService
 	//
 	public void viewBalance(Account account)	//no check for non-existing account
 	{
-		System.out.println("Account Balance: " + dao.viewBalance(account));
+		System.out.println("Account Balance: " + dao.viewBalance(account) + "\n");
 	}
 
 	//done 
@@ -92,30 +93,26 @@ public class BankService
 	// done
 	public void viewUser(User user)
 	{
-		System.out.println(user.toString());
+		System.out.println(dao.getUser(user).toString());
 	}
 	
 	// takes amount to be removed from given account balance, returns the new balane
 	public boolean withdraw(Account account, double amount)
 	{
-		double newBalance = dao.viewBalance(account) - amount; 
-		newBalance = dao.updateBalance(account, newBalance); 
-		account.setBalance(newBalance);
-		
-		if(dao.viewBalance(account) == account.getBalance())  //check that the balances are correct in both
+		Account daoAccount = dao.getAccount(account);
+
+		if(dao.updateBalance(daoAccount, -amount))
 			return true;
 		else
-			return false;  
+			return false; 
 	}
 	
 	// takes amount to be added to given account balance, returns the new balane
 	public boolean deposit(Account account, double amount)
 	{
-		double newBalance = dao.viewBalance(account) + amount; 
-		newBalance = dao.updateBalance(account, newBalance);
-		account.setBalance(newBalance);
-		
-		if(dao.viewBalance(account) == account.getBalance())  //check that the balances are correct in both
+		Account daoAccount = dao.getAccount(account);
+
+		if(dao.updateBalance(daoAccount, amount))
 			return true;
 		else
 			return false; 
@@ -123,6 +120,10 @@ public class BankService
 	
 	public boolean transfer(Account from, Account to, double amount)
 	{
+		// no sure guarantee of safety. what if withdraw goes through but deposit fails? 
+		// because account doesn't exist? 
+		// what happens to data written to one account? 
+		// do account check beforehand or set up transaction??
 		if(withdraw(from, amount) & deposit(to, amount))
 			return true;
 		else

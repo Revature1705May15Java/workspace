@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 //import java.sql.Timestamp;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import bankUtil.ConnectionUtil;
 import pojos.Account;
+import pojos.AccountType;
 import pojos.User;
 
 // reads and writes to sql database 
@@ -31,36 +34,72 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace(); 
+//			e.printStackTrace(); 
 		}
-		return -0.00;	//how to tell when viewBalance fails??
+		return -0.00;	//how to tell when viewBalance fails
 	}
 
-	@Override
-	public double updateBalance(Account account, double newBalance) 
+	public Account getAccount(Account account)
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
+			String statement = "SELECT * FROM ACCOUNT WHERE ACCOUNTID = ?"; 
+			PreparedStatement ps = c.prepareStatement(statement);
+			ps.setInt(1, account.getId());
+			
+			ResultSet rs = ps.executeQuery(); 
+			
+			while(rs.next())
+			{
+				// account id, balance, accounttype, opendate, closedate
+				Account a = new Account(); 
+				a.setId(rs.getInt(1));
+				a.setBalance(rs.getDouble(2));
+				a.setType(new AccountType(rs.getInt(3)));
+				a.setDateOpened(rs.getTimestamp(4));
+				a.setDateClosed(rs.getTimestamp(5));
+				return a; 
+			}
+		}
+		catch(SQLException e)
+		{
+//			e.printStackTrace();
+		}
+		return null; 
+	}
+	
+	@Override
+	public boolean updateBalance(Account account, double newBalance) 
+	{
+		try(Connection c = ConnectionUtil.getConnection();)
+		{
+			c.setAutoCommit(false);
+			
 			String statement = "UPDATE ACCOUNT "
 					+ "SET BALANCE = ?"
-					+ "WHERE ACCOUNTID = ?; "; 
+					+ "WHERE ACCOUNTID = ?"; 
 			PreparedStatement ps = c.prepareStatement(statement); 
 			ps.setDouble(1, newBalance); 
 			ps.setInt(2, account.getId());
 			
-//			int rowCheck = 
-			ps.executeUpdate(statement); 
+			int rowCheck = ps.executeUpdate(); 
+			
 			c.commit(); 
+			ps.close();
+			c.setAutoCommit(true);
+			
+			if(rowCheck == 1)
+				return true;
+			else 
+				return false; 
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
-
-		return 0;
+		return false;
 	}
 
-	// not all variables bound - id trigger not working???
 	@Override
 	public User addUser(String fn, String ln, String pw, String email) 
 	{
@@ -69,12 +108,10 @@ public class BankDao implements Dao
 			c.setAutoCommit(false);
 			
 			User temp = new User(fn, ln, pw, email); 
-			System.out.println(temp.toString());
 			
-			String statement = "INSERT INTO Users"
+			String s = "INSERT INTO USERS (FNAME, LNAME, PASSWORD, EMAIL)"
 					+ "VALUES(?, ?, ?, ?)";
-//			"INSERT INTO USERS(FNAME, LNAME, PASSWORD, EMAIL) VALUES(?, ?, ?, ?)"
-			PreparedStatement ps = c.prepareStatement(statement);
+			PreparedStatement ps = c.prepareStatement(s);
 			ps.setString(1, fn);
 			ps.setString(2, ln);
 			ps.setString(3, pw);
@@ -95,7 +132,7 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return null;
 	}
@@ -106,7 +143,10 @@ public class BankDao implements Dao
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
-			String statement = "INSERT INTO USERS VALUES(?, ?, ?, ?)";
+			c.setAutoCommit(false);
+			
+			String statement = "INSERT INTO USERS (FNAME, LNAME, PASSWORD, EMAIL)"
+					+ "VALUES(?, ?, ?, ?)";
 			PreparedStatement ps = c.prepareStatement(statement);
 			ps.setString(1, newUser.getfName());
 			ps.setString(2, newUser.getlName());
@@ -114,7 +154,11 @@ public class BankDao implements Dao
 			ps.setString(4, newUser.getEmail());
 			
 			int rowCheck = ps.executeUpdate(); 
+			
 			c.commit();
+			ps.close(); 
+			c.setAutoCommit(true);
+
 			if(rowCheck != 1)
 			{
 				return null; 
@@ -125,18 +169,18 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	// screw Date, using Timestamp 
-	// ???????????????????????????
 	@Override
 	public boolean createAccount(Account account)
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
+			c.setAutoCommit(false);
+			
 			String statement = "INSERT INTO ACCOUNT (BALANCE, TYPEID, OPENDATE, CLOSEDATE)"
 					+ "VALUES (?, ?, ?, ?)"; 
 			PreparedStatement ps = c.prepareStatement(statement);
@@ -146,7 +190,11 @@ public class BankDao implements Dao
 			ps.setTimestamp(4, null);
 			
 			int rowCheck = ps.executeUpdate();
+
 			c.commit();
+			ps.close(); 
+			c.setAutoCommit(true);
+			
 			if(rowCheck != 1)
 				return false; 
 			else 
@@ -154,24 +202,33 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return false; 
 	}
 	
-	//HOW DO DATEEEEEEEEEEEEEEE
 	// only add closeDate without actually deleting record
 	@Override
 	public boolean deleteAccount(Account account)
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
+			c.setAutoCommit(false);
+			
+			Date date = new Date(); 
+			Timestamp ts = new Timestamp(date.getTime()); 
+			
 			String statement = "UPDATE ACCOUNT SET CLOSEDATE = ? WHERE ACCOUNTID = ?"; 
 			PreparedStatement ps = c.prepareStatement(statement);
-			/////
+			ps.setTimestamp(1, ts);
+			ps.setInt(2, account.getId());
 			
 			int rowCheck = ps.executeUpdate();
+			
 			c.commit();
+			ps.close();
+			c.setAutoCommit(true);
+			
 			if(rowCheck != 1)
 				return false; 
 			else 
@@ -184,7 +241,7 @@ public class BankDao implements Dao
 		return false; 
 	}
 
-	@Override
+//	@Override
 	public User getUser(int id) 
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
@@ -208,7 +265,36 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
+		} 
+		return null;
+	}
+	
+	@Override
+	public User getUser(User user) 
+	{
+		try(Connection c = ConnectionUtil.getConnection();)
+		{
+			String s = "SELECT * FROM USERS WHERE EMAIL = ?"; 
+			PreparedStatement ps = c.prepareStatement(s);
+			ps.setString(1, user.getEmail());
+			
+			ResultSet rs = ps.executeQuery(); 
+			while(rs.next())
+			{
+				// userid, fname, lname, password, email
+				User temp = new User(); 
+				temp.setId(rs.getInt(1));
+				temp.setfName(rs.getString(2)); 
+				temp.setlName(rs.getString(3));
+				temp.setPassword(rs.getString(4));
+				temp.setEmail(rs.getString(5));				
+				return temp; 
+			}
+		}
+		catch(SQLException e)
+		{
+//			e.printStackTrace();
 		} 
 		return null;
 	}
@@ -218,11 +304,11 @@ public class BankDao implements Dao
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
-			String s = "SELECT * FROM USERS WHERE USERID = ?"; 
+			String s = "SELECT * FROM USERS WHERE EMAIL = ?"; 
 			PreparedStatement ps = c.prepareStatement(s);
 			ps.setString(1, email);
 			
-			ResultSet rs = ps.executeQuery(s); 
+			ResultSet rs = ps.executeQuery(); 
 			while(rs.next())
 			{
 				// userid, fname, lname, password, email
@@ -237,7 +323,7 @@ public class BankDao implements Dao
 		}
 		catch(SQLException e)
 		{
-			e.printStackTrace();
+//			e.printStackTrace();
 		} 
 		return null;
 	}
