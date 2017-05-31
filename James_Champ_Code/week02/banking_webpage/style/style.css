@@ -1,12 +1,19 @@
-body 	{ 	position: relative; 
-			padding-top: 60px; 
-		}
+body { 	
+	position: relative; 
+	padding-top: 60px; 
+}
 		
-#Pinned { 	position: fixed; 
-			top: 0;
-			width: 10000px;
-		}
+#Pinned { 	
+	position: fixed; 
+	top: 0;
+	width: 10000px;
+}
 
-.Linked {	padding-top: 60px;
-		}
+.Linked {	
+	padding-top: 60px;
+}
+
+var {
+	color: #5d5493;
+}
 		

@@ -12,6 +12,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 	<link rel="StyleSheet" href="style/style.css" type="text/css">
+	
+	<!-- Internal styling -->
+	<style type="text/css">
+		section	{	
+			margin: auto;
+			width: 80%;		
+		}
+	</style>
 </head>
 
 <body>
@@ -45,140 +53,141 @@
 			</div>
 		</nav>
 	</div>
-	
-	<div class="Gap"><div id="Overview"></div></div>
-	<div class="Linked">
-		<div>
-			<h1>Overview</h1>
-			<p>[Short summary of banking project]</p>
-		</div>
-	</div>
-	
-	<div class="Gap"><div id="Menus"></div></div>
-	<div class="Linked">
-		<div>
-			<h1>Menus</h1>
-			<p>[Short description of menus section]</p>
-			
-			<div id="InitialMenu">
-				<h2>Initial Menu</h2>
-				<p>The initial menu welcomes the user and allows them to log in, become a member of the bank, or exit the program.</p>
-				<img src="images/initialMenu.png" alt="Screenshot of initial menu">
-				
-				<div id="Login">
-					<h3>Login Screen</h3>
-					<p>If the user selects the log in option, they are prompted for an email. If they enter an email that is not in the database, they are taken back to the initial menu. Otherwise, they are prompted for their password.</p>
-					<img src="images/loginScreen.png" alt="Screenshot of login screen">
-					<p>If the user enters an incorrect password three times, the program will terminate. This behavior is used to simulate a user being locked out of their account for too many failed login attempts in a short amount of time.</p>
-					<p>A successful login will take the user to the <a href="#UserMenu">user menu</a>.</p>
-				</div>
-				
-				<div id="NewMember">
-					<h3>New Member Screen</h3>
-					<p>Users that are not members of the bank can easily sign up. They need only provide a unique email address, their name, and a password. New users are added to the "Users" table of the database.</p>
-					<img src="images/newMember.png" alt="Screenshot of member creation screen">
-					<p>After successfully becoming a member of the bank, new users will be taken to the <a href="#UserMenu">user menu</a>.</p>
-				</div>
-				
-				<div id="Exit">
-					<h3>Exit Program</h3>
-					<p>Users can also choose to exit the program. Upon choosing this option, all open resources are closed and the user is presented a friendly message.</p>
-					<img src="images/exitProgram.png" alt="Screenshot of message displayed upon exiting program">
-				</div>
-			</div>
-			
-			<div id="UserMenu">
-				<h2>User Menu</h2>
-				<p>This menu is available to users who have successfully logged in and to new bank members.</p>
-				<img src="images/userMenu.png" alt="Screenshot of bank member options menu">
-				
-				<div id="CreateAccount">
-					<h3>Create New Account</h3>
-					<p>This option allows the user to create a new account. Once a new account is created, the user is taken to the <a href="#AccountActions">account actions</a> menu.</p>
-					<img src="images/createAccount.png" alt="Screenshot of create new account menu">
-				</div>
-				
-				<div id="AccountDetails">
-					<h3>View Account Details</h3>
-					<p>This menu lists all of the user's accounts, and prompts them to choose one. User's are taken to the <a href="#AccountActions">account actions</a> menu for the account that they have chosen.</p>
-					<img src="images/accountDetails.png" alt="Screenshot of view account details menu">
-				</div>
-			</div>
-			
-			<div id="AccountActions">
-				<h2>Account Actions Menu</h2>
-				<p>This menu displays the chosen account's information and allows users to perform a number of actions on the account.</p>
-				<img src="images/accountActions.png" alt="Screenshot of account actions menu">
+	<section>
+		<div class="Gap"><div id="Overview"></div></div>
+		<div class="Linked">
+			<div>
+				<h1>Overview</h1>
+				<p>[Short summary of banking project]</p>
 			</div>
 		</div>
-	</div>
-	
-	<div class="Gap"><div id="Code"></div></div>
-	<div class="Linked">
-		<div>
-			<h1>Code</h1>
-			<p>[Short description of project's design]</p>
-			
-			<div id="SQL">
-				<h2>SQL Stored Procedures</h2>
-				<p>[Short description of stored procedures used in this project]</p>
-				<div class="StoredProcedure">
-					<h3>close_account(<em>a_id</em> <b>IN NUMBER</b>)</h3>
-					<p>Given an account id number, <em>a_id</em>, this procedure will close an existing account.</p>
-					<code>
-					CREATE OR REPLACE PROCEDURE close_account(<var>a_id</var> IN NUMBER)<br>
-					&emsp;IS<br>
-					&emsp;&emsp;BEGIN<br>
-					&emsp;&emsp;&emsp;UPDATE accounts<br>
-					&emsp;&emsp;&emsp;SET close_date = sysdate<br>
-					&emsp;&emsp;&emsp;WHERE account_id = <var>a_id</var>;<br>
-					&emsp;&emsp;END close_account;<br>
-					</code>
+		
+		<div class="Gap"><div id="Menus"></div></div>
+		<div class="Linked">
+			<div>
+				<h1>Menus</h1>
+				<p>[Short description of menus section]</p>
+				
+				<div id="InitialMenu">
+					<h2>Initial Menu</h2>
+					<p>The initial menu welcomes the user and allows them to log in, become a member of the bank, or exit the program.</p>
+					<img src="images/initialMenu.png" alt="Screenshot of initial menu">
+					
+					<div id="Login">
+						<h3>Login Screen</h3>
+						<p>If the user selects the log in option, they are prompted for an email. If they enter an email that is not in the database, they are taken back to the initial menu. Otherwise, they are prompted for their password.</p>
+						<img src="images/loginScreen.png" alt="Screenshot of login screen">
+						<p>If the user enters an incorrect password three times, the program will terminate. This behavior is used to simulate a user being locked out of their account for too many failed login attempts in a short amount of time.</p>
+						<p>A successful login will take the user to the <a href="#UserMenu">user menu</a>.</p>
+					</div>
+					
+					<div id="NewMember">
+						<h3>New Member Screen</h3>
+						<p>Users that are not members of the bank can easily sign up. They need only provide a unique email address, their name, and a password. New users are added to the "Users" table of the database.</p>
+						<img src="images/newMember.png" alt="Screenshot of member creation screen">
+						<p>After successfully becoming a member of the bank, new users will be taken to the <a href="#UserMenu">user menu</a>.</p>
+					</div>
+					
+					<div id="Exit">
+						<h3>Exit Program</h3>
+						<p>Users can also choose to exit the program. Upon choosing this option, all open resources are closed and the user is presented a friendly message.</p>
+						<img src="images/exitProgram.png" alt="Screenshot of message displayed upon exiting program">
+					</div>
 				</div>
 				
-				<div class="StoredProcedure">
-				<h3>create_new_user(<em>fname</em> <b>IN VARCHAR2</b>, <em>lname</em> <b>IN VARCHAR2</b>, <em>pw</em> <b>IN VARCHAR2</b>, <em>email</em> <b>IN VARCHAR2</b>)</h3>
-				<p>This procedure will create a new user with the given first name (<em>fname</em>), last name (<em>lname</em>), password (<em>pw</em>), and email address (<em>email</em>)</p>
-				<code>
-				CREATE OR REPLACE PROCEDURE create_new_user(<var>fname</var> IN VARCHAR2, <var>lname</var> IN VARCHAR2, <var>pw</var> IN VARCHAR2, <var>email</var> IN VARCHAR2)<br>
-				&emsp;IS<br>
-				&emsp;&emsp;BEGIN<br>
-				&emsp;&emsp;&emsp;INSERT INTO users (first_name, last_name, password, email)<br>
-				&emsp;&emsp;&emsp;VALUES(<var>fname</var>, <var>lname</var>, <var>pw</var>, <var>email</var>);<br>
-				&emsp;&emsp;END create_new_user;<br>
-				</code>
-			</div>
-			
-			<div id="JDBCStatements">
-				<h2>JDBC Statements</h2>
-				<p>Here are examples of the three types of JDBC Statements that were used in this project:</p>
-				
-				<div id="Statement">
-					<h3>Statement</h3>
-					<img src="images/statementCode.png" alt="Screenshot of code using a Statement object">
-					<p>Since this statement does not require input from the user and is not susceptible to SQL injection attacks, a Statement object can safely be used.</p>
-					<p><b>Note:</b> This method is not yet used in this project.</p>
+				<div id="UserMenu">
+					<h2>User Menu</h2>
+					<p>This menu is available to users who have successfully logged in and to new bank members.</p>
+					<img src="images/userMenu.png" alt="Screenshot of bank member options menu">
+					
+					<div id="CreateAccount">
+						<h3>Create New Account</h3>
+						<p>This option allows the user to create a new account. Once a new account is created, the user is taken to the <a href="#AccountActions">account actions</a> menu.</p>
+						<img src="images/createAccount.png" alt="Screenshot of create new account menu">
+					</div>
+					
+					<div id="AccountDetails">
+						<h3>View Account Details</h3>
+						<p>This menu lists all of the user's accounts, and prompts them to choose one. User's are taken to the <a href="#AccountActions">account actions</a> menu for the account that they have chosen.</p>
+						<img src="images/accountDetails.png" alt="Screenshot of view account details menu">
+					</div>
 				</div>
 				
-				<div id="PreparedStatement">
-					<h3>PreparedStatement</h3>
-					<img src="images/preparedStatementCode.png" alt="Screenshot of code using a PreparedStatement object">
-				</div>
-				
-				<div id="CallableStatement">
-					<h3>CallableStatement</h3>
-					<img src="images/callableStatementCode.png" alt="Screenshot of code using a CallableStatement object">
+				<div id="AccountActions">
+					<h2>Account Actions Menu</h2>
+					<p>This menu displays the chosen account's information and allows users to perform a number of actions on the account.</p>
+					<img src="images/accountActions.png" alt="Screenshot of account actions menu">
 				</div>
 			</div>
 		</div>
-	</div>
-	
-	<div class="Gap"><div id="Repo"></div></div>
-	<div class="Linked">
-		<div>
-			<h1>Repository</h1>
-			<p>The code for this project is available at <a href="https://github.com/Revature1705May15Java/1705May15Java/tree/James_Champ/James_Champ_Code/week02/BankingAssignment">here</a>.</p>
+		
+		<div class="Gap"><div id="Code"></div></div>
+		<div class="Linked">
+			<div>
+				<h1>Code</h1>
+				<p>[Short description of project's design]</p>
+				
+				<div id="SQL">
+					<h2>SQL Stored Procedures</h2>
+					<p>[Short description of stored procedures used in this project]</p>
+					<div class="StoredProcedure">
+						<h3>close_account(<em>a_id</em> <b>IN NUMBER</b>)</h3>
+						<p>Given an account id number, <em>a_id</em>, this procedure will close an existing account.</p>
+						
+<pre><code>CREATE OR REPLACE PROCEDURE close_account(<var>a_id</var> IN NUMBER)
+	IS
+	BEGIN
+		UPDATE accounts
+		SET close_date = sysdate
+		WHERE account_id = <var>a_id</var>;
+	END close_account;
+</code></pre>
+					</div>
+					
+					<div class="StoredProcedure">
+					<h3>create_new_user(<em>fname</em> <b>IN VARCHAR2</b>, <em>lname</em> <b>IN VARCHAR2</b>, <em>pw</em> <b>IN VARCHAR2</b>, <em>email</em> <b>IN VARCHAR2</b>)</h3>
+					<p>This procedure will create a new user with the given first name (<em>fname</em>), last name (<em>lname</em>), password (<em>pw</em>), and email address (<em>email</em>)</p>
+					
+<pre><code>CREATE OR REPLACE PROCEDURE create_new_user (<var>fname</var> IN VARCHAR2, <var>lname</var> IN VARCHAR2, <var>pw</var> IN VARCHAR2, <var>email</var> IN VARCHAR2)
+	IS
+	BEGIN
+		INSERT INTO users (first_name, last_name, password, email)
+		VALUES(<var>fname</var>, <var>lname</var>, <var>pw</var>, <var>email</var>);
+		END create_new_user;
+</code></pre>
+				</div>
+				
+				<div id="JDBCStatements">
+					<h2>JDBC Statements</h2>
+					<p>Here are examples of the three types of JDBC Statements that were used in this project:</p>
+					
+					<div id="Statement">
+						<h3>Statement</h3>
+						<img src="images/statementCode.png" alt="Screenshot of code using a Statement object">
+						<p>Since this statement does not require input from the user and is not susceptible to SQL injection attacks, a Statement object can safely be used.</p>
+						<p><b>Note:</b> This method is not yet used in this project.</p>
+					</div>
+					
+					<div id="PreparedStatement">
+						<h3>PreparedStatement</h3>
+						<img src="images/preparedStatementCode.png" alt="Screenshot of code using a PreparedStatement object">
+					</div>
+					
+					<div id="CallableStatement">
+						<h3>CallableStatement</h3>
+						<img src="images/callableStatementCode.png" alt="Screenshot of code using a CallableStatement object">
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+		
+		<div class="Gap"><div id="Repo"></div></div>
+		<div class="Linked">
+			<div>
+				<h1>Repository</h1>
+				<p>The code for this project is available at <a href="https://github.com/Revature1705May15Java/1705May15Java/tree/James_Champ/James_Champ_Code/week02/BankingAssignment">here</a>.</p>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
