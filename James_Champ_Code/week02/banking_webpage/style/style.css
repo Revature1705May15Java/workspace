@@ -1,0 +1,12 @@
+body 	{ 	position: relative; 
+			padding-top: 60px; 
+		}
+		
+#Pinned { 	position: fixed; 
+			top: 0;
+			width: 10000px;
+		}
+
+.Linked {	padding-top: 60px;
+		}
+		
