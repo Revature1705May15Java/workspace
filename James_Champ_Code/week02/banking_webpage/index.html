@@ -111,7 +111,8 @@
 				<h2>SQL Stored Procedures</h2>
 				<p>[Short description of stored procedures used in this project]</p>
 				<div class="StoredProcedure">
-					<h3>close_account</h3>
+					<h3>close_account(<em>a_id</em> <b>IN NUMBER</b>)</h3>
+					<p>Given an account id number, <em>a_id</em>, this procedure will close an existing account.</p>
 					<code>
 					CREATE OR REPLACE PROCEDURE close_account(<var>a_id</var> IN NUMBER)<br>
 					&emsp;IS<br>
@@ -122,6 +123,18 @@
 					&emsp;&emsp;END close_account;<br>
 					</code>
 				</div>
+				
+				<div class="StoredProcedure">
+				<h3>create_new_user(<em>fname</em> <b>IN VARCHAR2</b>, <em>lname</em> <b>IN VARCHAR2</b>, <em>pw</em> <b>IN VARCHAR2</b>, <em>email</em> <b>IN VARCHAR2</b>)</h3>
+				<p>This procedure will create a new user with the given first name (<em>fname</em>), last name (<em>lname</em>), password (<em>pw</em>), and email address (<em>email</em>)</p>
+				<code>
+				CREATE OR REPLACE PROCEDURE create_new_user(<var>fname</var> IN VARCHAR2, <var>lname</var> IN VARCHAR2, <var>pw</var> IN VARCHAR2, <var>email</var> IN VARCHAR2)<br>
+				&emsp;IS<br>
+				&emsp;&emsp;BEGIN<br>
+				&emsp;&emsp;&emsp;INSERT INTO users (first_name, last_name, password, email)<br>
+				&emsp;&emsp;&emsp;VALUES(<var>fname</var>, <var>lname</var>, <var>pw</var>, <var>email</var>);<br>
+				&emsp;&emsp;END create_new_user;<br>
+				</code>
 			</div>
 			
 			<div id="JDBCStatements">
