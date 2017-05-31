@@ -179,3 +179,50 @@ select* from Users where U_ID in (select USER_id
    UPDATE account
     SET balance = 0
     WHERE acc_id = 100;
+    
+    
+create or replace function get_num_accounts (u_id IN Number)
+    return number 
+    is
+    num_accounts number;
+    
+    cursor c1 is 
+     select count(*) from account where ACC_ID IN
+    (select account_id from user_account where USER_ID = u_id)
+    AND CLOSED is NULL;
+    
+    begin 
+    
+    open c1;
+    fetch c1 into num_accounts;
+    
+    if c1%notfound then 
+      num_accounts :=0;
+    end if;
+    
+    close c1;
+    
+    return num_accounts;
+    end;
+    
+  /
+  
+select get_num_accounts(100) from dual;
+  /
+  
+  CREATE OR REPLACE PROCEDURE close_acc(id IN NUMBER)
+  IS
+  BEGIN
+    UPDATE Account SET closed = CURRENT_TIMESTAMP WHERE acc_id = id;
+    COMMIT;
+  END close_acc;
+  
+  /
+  commit;
+  
+  SELECT account.acc_id, account.balance, account.opened, account.closed, accounttype.t_id
+                    FROM user_account
+                    INNER JOIN users ON user_account.user_id = users.u_id
+                    INNER JOIN account ON user_account.account_id = account.acc_id
+                    INNER JOIN accounttype ON accounttype.t_id = account.type_id
+                    WHERE users.u_Id=105;

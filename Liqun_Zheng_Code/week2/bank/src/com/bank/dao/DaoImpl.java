@@ -46,14 +46,14 @@ public class DaoImpl implements DAO {
 	}
 
 	@Override
-	public int updateBalance(Account account, double newbal) {
+	public double updateBalance(int accId, double newbal) {
 		// TODO Auto-generated method stub
 		
 		try(Connection connect = ConnectionUtil.getConnection();){
 			String sql = " UPDATE account SET balance = ? WHERE acc_id = ? ";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setDouble(1, newbal);
-			ps.setInt(2, account.getId());
+			ps.setInt(2, accId);
 			
 			int affected = ps.executeUpdate();
 
@@ -72,7 +72,7 @@ public class DaoImpl implements DAO {
 	@Override
 	public User getUser(String uname) {
 		// TODO Auto-generated method stub
-		User u = new User();
+		User u = null;
 		uname = uname.toLowerCase();
 		try(Connection connect = ConnectionUtil.getConnection();){
 			String sql = "select * from users where lower(username) = ?";
@@ -81,7 +81,7 @@ public class DaoImpl implements DAO {
 			
 			ResultSet userinfo = ps.executeQuery();
 			//id, fn, ln, pw, uname
-			
+			u = new User();
 			while(userinfo.next()){
 				u.setId(userinfo.getInt(1));
 				u.setFn(userinfo.getString(2));
@@ -97,7 +97,7 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 			logger.log(e.getSQLState());
 		}
-		return null;
+		return u;
 	}
 
 	@Override
@@ -265,38 +265,48 @@ public class DaoImpl implements DAO {
 
 	@Override
 	public ArrayList<Account> findAccByUserId(int UserId) {
-		// TODO Auto-generated method stub
-		ArrayList<Account> acc = new ArrayList<Account>();
-		Account a = new Account();
-		DaoImpl dao = new DaoImpl();
-		try(Connection connect = ConnectionUtil.getConnection();){
-			String sql = "select* from account where ACC_ID in (select account_id " +
-					"from user_account where user_id = ? ) ";
-			PreparedStatement ps = connect.prepareStatement(sql);
-			ps.setInt(1, UserId);
-			ResultSet info = ps.executeQuery();
-			//id, fs, ls, state, credit, email
+		 ArrayList<Account> accounts = new ArrayList<Account>();
+		 DAO dao = new DaoImpl();
+		 Account acc = new Account();
+	        try (Connection conn = ConnectionUtil.getConnection()) {
+	            String sql = " SELECT account.acc_id, account.balance, account.opened, account.closed, accounttype.t_id "+
+                    " FROM user_account "+
+                    " INNER JOIN users ON user_account.user_id = users.u_id "+
+                    " INNER JOIN account ON user_account.account_id = account.acc_id "+
+                    " INNER JOIN accounttype ON accounttype.t_id = account.type_id " +
+                    " WHERE users.u_Id= ? ";
+	            PreparedStatement ps = conn.prepareStatement(sql);
+	            ps.setInt(1, UserId);
 
-			while(info.next()){
-				a.setId(info.getInt(1));
-				a.setBalance(info.getDouble(2));
-				a.setType(dao.getTypeName(info.getInt(3)));
-				a.setDateOpened(info.getDate(4));
-				a.setDateClosed(info.getDate(5));
-				acc.add(a);
-			}
-			logger.log("Retrieved all acounts by userId " + acc.toString());
-			return acc;
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			logger.log(e.getSQLState());
-		}
-		
-		
-		return acc;
-	}
+	            ResultSet rs = ps.executeQuery();
+	            
+	            while (rs.next()) {
+	               
+	            	acc.setId(rs.getInt(1));
+	            	acc.setBalance(rs.getDouble(2));
+	        
+	                acc.setDateOpened(rs.getDate(3));
+	        
+	                        
+	                acc.setDateClosed(rs.getDate(4));
+	 
+	                acc.setType(dao.getTypeName(rs.getInt(5)));
+	     
+	                        
+	                accounts.add(acc);
+	                acc = new Account();
+	            }
+	            return accounts;
+
+	        } catch (Exception e) {
+	        	
+	        }
+
+	        return null;
+	    }
+
+	
+	
 
 	@Override
 	public ArrayList<User> findUserByAccId(int accId) {
@@ -369,4 +379,23 @@ public class DaoImpl implements DAO {
 		}
 		return acc;
 	}
+	public boolean closeAccount(int accId){
+		try (Connection connect = ConnectionUtil.getConnection();) {
+			 String sql = "{call close_acc(?)";
+			
+			CallableStatement cs = connect.prepareCall(sql);
+			cs.setInt(1, accId);
+			
+			int row = cs.executeUpdate();
+			if (row == 1)
+				return true;
+			logger.log("Account deleted: " + accId);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.log(e.getSQLState());
+		}
+		return false;
+	}
+	
 }
