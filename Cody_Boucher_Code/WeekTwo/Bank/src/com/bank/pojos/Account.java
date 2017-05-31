@@ -12,6 +12,15 @@ public class Account {
 	ArrayList<Integer> userIDs;
 	
 	public Account() {}
+	
+	public Account(int id, double balance, int type, LocalDate openDate, LocalDate closeDate) {
+		super();
+		this.id = id;
+		this.balance = balance;
+		this.type = type;
+		this.openDate = openDate;
+		this.closeDate = closeDate;
+	}
 
 	public Account(int id, double balance, int type, LocalDate openDate, LocalDate closeDate, ArrayList<Integer> userIDs) {
 		super();
@@ -22,6 +31,7 @@ public class Account {
 		this.closeDate = closeDate;
 		this.userIDs = userIDs;
 	}
+	
 
 	public int getId() {
 		return id;

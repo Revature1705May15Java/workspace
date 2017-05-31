@@ -1,5 +1,6 @@
 package com.bank.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -19,22 +20,27 @@ import oracle.jdbc.OracleTypes;
 
 public class DaoImpl implements DAO{
 	static Logger logger = new Logger();
+	//basic bank functions
 
-	
-	
+	//update user account, used for all updates including deposit, withdraw, closing account
 	@Override
 	public Account upDateAccount(Account account) {
+		Account temp = null;
 		try (Connection connection = ConnectionUtil.getConnection();) {
 			String sql = "upDate account set balance = ?, closed_Date = ? where account_id = ?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setDouble(1, account.getBalance());
 			ps.setDate(2, (account.getCloseDate() == null) ? null : Date.valueOf(account.getCloseDate()));
+			ps.setInt(3, account.getId());
+			ps.execute();
+			temp = account;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return temp;
 	}
 
+	//add new user to the bank, does not automatically add an account
 	@Override
 	public User addUser(String firstName, String lastName, String userName, String password) {
 		try (Connection connection = ConnectionUtil.getConnection()) {
@@ -55,6 +61,7 @@ public class DaoImpl implements DAO{
 		return null;
 	}
 
+	//returns user based on username
 	@Override
 	public User getUser(String userName) {
 		User u = new User();
@@ -114,6 +121,7 @@ public class DaoImpl implements DAO{
 		return null;
 	}
 
+	//gets an account using account id
 	@Override
 	public Account getAccount(int id) {
 		Account a = new Account();
@@ -186,6 +194,7 @@ public class DaoImpl implements DAO{
 		return accounts;
 	}
 
+	//adds an account to a user
 	@Override
 	public Account addAcount(User user, int typeId) {
 		Account account = new Account();
@@ -217,8 +226,7 @@ public class DaoImpl implements DAO{
 	}
 	
 
-	
-	
+	//returns an arraylist of all user id's associated with an account
 	private ArrayList<Integer> getUserIds(Account a) {
 		ArrayList<Integer> userIds = new ArrayList<Integer>();
 		try(Connection connection = ConnectionUtil.getConnection();) {
@@ -235,6 +243,7 @@ public class DaoImpl implements DAO{
 		return userIds;
 	}
 	
+	//returns an arraylist of accounts associated with a user id
 	private ArrayList<Integer> getAccountIds(User u) {
 		ArrayList<Integer> accountIds = new ArrayList<Integer>();
 		try(Connection connection = ConnectionUtil.getConnection();) {
@@ -252,12 +261,7 @@ public class DaoImpl implements DAO{
 		
 	}
 
-	@Override
-	public User upDate(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	//returns all the account types from the lookup table
 	@Override
 	public ArrayList<AccountType> getAccountType() {
 		ArrayList<AccountType> types = new ArrayList<AccountType>();
@@ -279,15 +283,23 @@ public class DaoImpl implements DAO{
 		return null;
 	}
 
+	//calls a stored procedure to transfer funds from one account to another
 	@Override
-	public void transfer(int sendingId, int recievingId, double transferAmount) {
-//		try(Connection connection = ConnectionUtil.getConnection();) {
-//			String sql = ""
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
+	public void transfer(int sendingId, int recievingId, double amount) {
+		try(Connection connection = ConnectionUtil.getConnection();) {
+			String sql = "{call transfer(?, ?, ?)}";
+			CallableStatement info = connection.prepareCall(sql);
+			info.setInt(1, sendingId);
+			info.setInt(2, recievingId);
+			info.setDouble(3, amount);
+			info.execute();
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
 	}
 
+	//adds a user to an account to create a joint account
 	@Override
 	public void addAccountUser(User u, Account a) {
 		try(Connection connection = ConnectionUtil.getConnection();) {

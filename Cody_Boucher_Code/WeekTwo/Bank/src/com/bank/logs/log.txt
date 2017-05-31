@@ -123,3 +123,7 @@
 2017-05-29T21:14:30.077 Retrieved user by username User [id = 160, firstName = A, lastName = A, password = A, username = A, userAccounts = [21]]
 2017-05-29T21:14:30.097 Retrieved account by id Account [id = 21, balance = 0.0, type = 2, openDate = 2017-05-29, closeDate = null, UserIDs = null]
 2017-05-29T21:14:30.131 1 accounts retrieved for userID 160
+2017-05-30T17:39:26.233 1 users added.
+2017-05-30T17:39:58.700 Retrieved user by username User [id = 162, firstName = B, lastName = B, password = B, username = B, userAccounts = []]
+2017-05-30T17:39:58.725 account added with account id of 22
+2017-05-30T17:42:33.066 Retrieved user by username User [id = 162, firstName = B, lastName = B, password = B, username = B, userAccounts = [22]]
