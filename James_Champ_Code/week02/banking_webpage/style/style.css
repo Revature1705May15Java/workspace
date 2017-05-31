@@ -10,10 +10,13 @@ body {
 }
 
 .Linked {	
-	padding-top: 60px;
+	padding-top: 86px;
 }
 
 var {
 	color: #5d5493;
 }
-		
+	
+header {
+	font-size: 40px;
+}	

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<title>Banking Project Overview</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -26,7 +27,7 @@
 	<div id="Pinned">
 <!-- Inline css styling here: -->
 		<header style="background-color:white">
-			<div class="header">Banking Project</div>
+			<div>&nbsp;Banking Project</div>
 		</header>
 
 		<nav class ="navbar navbar-default">
@@ -58,7 +59,29 @@
 		<div class="Linked">
 			<div>
 				<h1>Overview</h1>
-				<p>[Short summary of banking project]</p>
+				<p>
+					This project simulates a banking application. The project was built with Java, and uses a database built with PL/SQL.
+					The simulation only allows the user to perform actions, which is to say that there is no admin piece.
+				</p>
+				
+				<p>
+					Users of this application can do the following:
+					<ul>
+						<li>Become a member of the bank</li>
+						<li>Log into the banking application</li>
+						<li>Create up to six account, of the following types:</li>
+							<ul>
+								<li>Checking</li>
+								<li>Savings</li>
+								<li>Credit</li>
+							</ul>
+						<li>Create a joint account (with up to four account holders)</li>
+						<li>View their accounts' balances</li>
+						<li>Withdraw and deposit funds</li>
+						<li>Transfer funds to an existing account</li>
+						<li>Close an account</li>
+					</ul>
+				</p>
 			</div>
 		</div>
 		
@@ -66,7 +89,7 @@
 		<div class="Linked">
 			<div>
 				<h1>Menus</h1>
-				<p>[Short description of menus section]</p>
+				<p>Users are able to access their accounts by navigating a series or menus. These menus are outlined below.</p>
 				
 				<div id="InitialMenu">
 					<h2>Initial Menu</h2>
@@ -125,11 +148,11 @@
 		<div class="Linked">
 			<div>
 				<h1>Code</h1>
-				<p>[Short description of project's design]</p>
+				<p>This project was made using Java and Oracle's PL/SQL.</p>
 				
 				<div id="SQL">
 					<h2>SQL Stored Procedures</h2>
-					<p>[Short description of stored procedures used in this project]</p>
+					<p>This project uses two stored procedures to operate on the database.</p>
 					<div class="StoredProcedure">
 						<h3>close_account(<em>a_id</em> <b>IN NUMBER</b>)</h3>
 						<p>Given an account id number, <em>a_id</em>, this procedure will close an existing account.</p>
