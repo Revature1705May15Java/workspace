@@ -90,9 +90,6 @@ public class Service {
 		return user;
 		
 	}
-	
-	//deposit to account by account id and amount user want to deposit to
-	//return user with updated ArrayList of accounts
 	public User deposit(User user, int accId, double amount){
 		double curr = dao.getAccByAccId(accId).getBalance();
 		curr = dao.updateBalance(accId, (amount+curr));
@@ -107,8 +104,6 @@ public class Service {
 		return user;
 		
 	}
-	//withdraw from account by account id and amount user want to withdraw
-	//return user with updated ArrayList of accounts
 	public User withdraw(User user, int accId, double amount){
 		double curr = dao.getAccByAccId(accId).getBalance();
 		curr = dao.updateBalance(accId, (curr - amount));
@@ -124,8 +119,6 @@ public class Service {
 		
 	}
 	
-	//Joint account by taking second user and account id then add to user_account table
-	//return user with updated ArrayList of accounts
 	public User joinAcc(User user2, int accId){
 		Service s = new Service();
 		dao.addUserAccount(user2.getId(), accId);

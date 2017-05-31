@@ -9,13 +9,13 @@
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
 			<item value="call"/>
+			<item value="statemet"/>
+			<item value="statemen"/>
 			<item value="statement"/>
 			<item value="statment"/>
 			<item value="signin"/>
 			<item value="joinbank"/>
 			<item value="getU"/>
-			<item value="get"/>
-			<item value="findAccByUserId"/>
 		</list>
 		<list key="replacehistory">
 		</list>

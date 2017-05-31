@@ -124,8 +124,6 @@ public class Service {
 		
 	}
 	
-	//Joint account by taking second user and account id then add to user_account table
-	//return user with updated ArrayList of accounts
 	public User joinAcc(User user2, int accId){
 		Service s = new Service();
 		dao.addUserAccount(user2.getId(), accId);
