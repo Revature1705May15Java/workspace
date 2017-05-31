@@ -165,6 +165,7 @@ public class BankDao implements Dao
 			}
 			else
 				return newUser;
+//			System.out.println(rowCheck);	
 		}
 		catch(SQLException e)
 		{

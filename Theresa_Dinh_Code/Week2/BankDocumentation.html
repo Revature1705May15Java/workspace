@@ -40,17 +40,41 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Hello, world!</h1>
-        <p>Documentation of the Banking assignment is here. </p>
+        <p>Documentation of the Banking assignment is here. <br><small>Theresa Dinh</small></p>
         <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
       </div>
     </div>
       
 <!--    <h1 style="color:#377bac;">Hi</h1>-->
       
-      <p1>Some of the functions included in this assignment allow a usesr to: create a new account; open and close bank accounts; withdraw, deposit, and transfer money, and check the balance of a bank account. <br> <br> </p1>
+      <p1>Some of the functions included in this assignment allow a user to: create a new account; open and close bank accounts; withdraw, deposit, and transfer money, and check the balance of a bank account. <br> <br> </p1>
+      
+      <h2>JDBC: addUser method</h2>
       <p2>The addUser method is implemented in the service layer, where it takes the information needed to create a new user account and passes it on to the DAO so it can write the data to the database.<br>
-      In this method, its paramters are Strings containing the information for the new User. We create a temporary User object to store a User's information as we check the database to ensure that the User doesn't already exists. After calling the DAO to read the database records and make sure there doesn't exist one already with the same username/email. If the addition of a new User is written to the database, then the method returns the new User, otherwise it returns a null object.  </p2>
+      In this method, its paramters are Strings containing the information for the new User. We create a temporary User object to store a User's information as we check the database to ensure that the User doesn't already exists. After calling the DAO to read the database records and make sure there doesn't exist one already with the same username/email. If the addition of a new User is written to the database, then the method returns the new User, otherwise it returns a null object. <br><br></p2>
       <img src="adduser.png" alt="addUser method" style="width:100;height:100;">
+      
+      <br><br><br>
+      <p3>This is the addUser method for the DAO side. It directly connects to the database and then writes the new data (i.e., the new User) to the database. Here, a PreparedStatement is used to pass the user's information as parameters to the SQL <strong>INSERT</strong> statement. This prevents SQL injection from happening, so no malicious input can be used to damage or allow unauthorized access to the database. The method checks that only one new User account was added to the database and commits the changes.  
+        <br><br></p3>
+      <img src="daoadduser.PNG" alt="addUser method for the dao to write to database" style="width:100;height:100;">
+      
+      
+      
+      <br><br><br>
+      <h2>SQL Developer: UserSeqTrigger</h2>
+      <p3>This is a trigger written in PL SQL that assigns unique ID numbers for every new User added to the database. It relies on a sequence to generate the next ID number. This sequence will never assign the same ID number more than once and will never return to a previous ID number, regardless of whether it was used or not. <br><br>  </p3>
+      <img src="userseqtrigger.PNG" alt="trigger sequence in SQL Developer" style="width:100; height:100;">
+      
+      <br><br><br>
+      
+      <h2 style="color:#18207b">Console: User Navigation</h2>
+      <img src="usermenu.PNG" alt="Menu displayed on the console", style="width:100; height:100;"> 
+      <br><br>
+      <p4>The console uses a number-based menu to allow users to navigate. Static methods are used to navigate between menus. The welcome method prints a menu that gives users the option to login or create an account (through the login and join methods respectively). Afterwards, calling the mainmenu method brings the user to the full list of things they can do. Entering an invalid number for a menu choice will only cause the console to tell a user to pick a valid number and the prompt to print again. The main menu will continue to display after completing a task until the user chooses to logout and exit the program. <br><br> </p4>
+      <img src="taskandlogout.PNG" alt="A user making a deposit and then logging out", style="width:100; height:100;">
+      
+      
       
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
