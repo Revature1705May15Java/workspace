@@ -22,7 +22,7 @@ public class GenericTest {
         // Allowable types
         GenBox<Number> nb = new GenBox<>();
         nb.setObj(new Integer(42));  // ok
-        //nb.setObj(new Object());  // NOT ok
+        nb.setObj(new Object());  // NOT ok
     }
 
     // Unbounded wildcards
@@ -32,6 +32,7 @@ public class GenericTest {
         }
     }
 }
+
 
 class NonGenBox {
     private Object obj;
@@ -46,6 +47,11 @@ class GenBox<T> {
     public void setObj(T obj) { this.obj = obj; }
     public T getObj() { return obj; }
 }
+
+
+class GenExtClass<T extends Thread> { }
+class GenImplInt<T extends Runnable> { }
+
 
 interface Comparable<T> {
     int compareTo(T obj);
