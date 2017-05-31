@@ -90,13 +90,4 @@ public class Service {
 		else
 			return false;
 	}
-
-	public boolean withdraw(Account account, double amount) {
-		if (dao.updateBalance(account.getId(), (account.getBalance() + amount))) {
-			account.setBalance(account.getBalance() + amount);
-			return true;
-		}
-		else
-			return false;
-	}
 }

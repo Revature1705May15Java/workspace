@@ -106,8 +106,7 @@ public class RunBank {
 			System.out.println("1: Open Account");
 			System.out.println("2: Check Balance");
 			System.out.println("3: Deposit Funds");
-			System.out.println("4: Withdraw Funds");
-			System.out.println("5: Logout");
+			System.out.println("4: Logout");
 			decision = Integer.parseInt(scan.nextLine());
 			switch (decision) {
 
@@ -124,7 +123,7 @@ public class RunBank {
 					case 1:
 						newAccount = service.openAccount(u, openAccount);
 						userAccounts.add(newAccount);
-
+						
 						break;
 					case 2:
 						newAccount = service.openAccount(u, openAccount);
@@ -147,80 +146,17 @@ public class RunBank {
 				deposit(u);
 				break;
 			case 4:
-				withdraw(u);
-				break;
-			case 5:
 				System.out.println("Logging out...");
 				logged = false;
 				break;
-			case 6:
+			case 5:
 				System.out.println(userAccounts.toString());
 
 			}
 		}
 
 	}
-
-	private static void withdraw(User u) {
-		scan = new Scanner(System.in);
-		int choice;
-		double amount;
-		Account account = new Account();
-		System.out.println("Which account do you want to withdraw from? Choose from the following: ");
-		viewAccounts(u);
-		choice = Integer.parseInt(scan.nextLine());
-		int index = choice - 1;
-		switch (choice) {
-
-		case 1:
-
-			account = u.getUserAccounts().get(index);
-			System.out.print("Please enter withdraw amount: ");
-			amount = -Double.parseDouble(scan.nextLine());
-			if (-amount < account.getBalance()) {
-				if (service.withdraw(account, amount)) {
-					System.out.println("Your new balance is: " + account.getBalance());
-
-				} else {
-					System.out.println("Error: Unable to withdraw amount");
-
-				}
-			} else {
-				System.out.println("Insufficient funds.");
-			}
-			break;
-		case 2:
-			account = u.getUserAccounts().get(index);
-			System.out.print("Please enter withdraw amount: ");
-			amount = -Double.parseDouble(scan.nextLine());
-			if (-amount < account.getBalance()) {
-				if (service.withdraw(account, amount)) {
-					System.out.println("Your new balance is: " + account.getBalance());
-
-				} else {
-					System.out.println("Error: Unable to withdraw amount");
-
-				}
-			}
-			break;
-		case 3:
-			account = u.getUserAccounts().get(index);
-			System.out.print("Please enter withdraw amount: ");
-			amount = -Double.parseDouble(scan.nextLine());
-			if (-amount < account.getBalance()) {
-				if (service.withdraw(account, amount)) {
-					System.out.println("Your new balance is: " + account.getBalance());
-
-				} else {
-					System.out.println("Error: Unable to withdraw amount");
-
-				}
-			}
-			break;
-
-		}
-	}
-
+	
 	private static void viewAccounts(User u) {
 		int count = 1;
 		for (Account a : service.getAllAccounts(u.getId())) {
@@ -230,7 +166,6 @@ public class RunBank {
 			}
 		}
 	}
-
 	private static void deposit(User u) {
 		scan = new Scanner(System.in);
 		int choice;
@@ -240,19 +175,20 @@ public class RunBank {
 		viewAccounts(u);
 		choice = Integer.parseInt(scan.nextLine());
 		int index = choice - 1;
-		switch (choice) {
-
+		switch(choice){
+		
 		case 1:
-
+			
 			account = u.getUserAccounts().get(index);
 			System.out.print("Please enter deposit amount: ");
 			amount = Double.parseDouble(scan.nextLine());
 			if (service.deposit(account, amount)) {
 				System.out.println("Your new balance is: " + account.getBalance());
-
-			} else {
+				
+			}
+			else {
 				System.out.println("Error: Unable to deposit amount");
-
+				
 			}
 			break;
 		case 2:
@@ -261,10 +197,11 @@ public class RunBank {
 			amount = Double.parseDouble(scan.nextLine());
 			if (service.deposit(account, amount)) {
 				System.out.println("Your new balance is: " + account.getBalance());
-
-			} else {
+				
+			}
+			else {
 				System.out.println("Error: Unable to deposit amount");
-
+				
 			}
 			break;
 		case 3:
@@ -273,15 +210,17 @@ public class RunBank {
 			amount = Double.parseDouble(scan.nextLine());
 			if (service.deposit(account, amount)) {
 				System.out.println("Your new balance is: " + account.getBalance());
-
-			} else {
+				
+			}
+			else {
 				System.out.println("Error: Unable to deposit amount");
-
+				
 			}
 			break;
-
+			
 		}
-
+		
+		
 	}
 
 }
