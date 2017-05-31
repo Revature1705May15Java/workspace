@@ -11,8 +11,7 @@ public class ConnectionFactory {
 
   private static Boolean build = true;
   private static ConnectionFactory INSTANCE = null;
-  private static String propertiesFile = "C:Users/Eric/Employment/Revature/workspace/Eric_Christie_Code/"
-      + "BankingApp/src/com/ex/util/database.properties";
+  private static String propertiesFile = /*"C:Users/Eric/Employment/Revature/workspace/Eric_Christie_Code/BankingApp/" +*/ "src/com/ex/util/database.properties";
   
   public static synchronized ConnectionFactory getInstance() {
     if (build == true) {

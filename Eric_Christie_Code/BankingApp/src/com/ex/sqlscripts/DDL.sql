@@ -14,10 +14,10 @@ create table bankUser (
 	id number primary key,
 --	SSN number unique not null, -- is there a way to verify a user's ssn?
 	email varchar2(50) unique not null, -- try to implement validation and verification
-	passwordHash varchar2(50) not null,
+	passwordHash varchar2(100) not null,
 	firstname varchar2(100) not null,
-	lastname varchar2(100) not null,
-  joinDate date not null--,
+	lastname varchar2(100) not null--,
+--  joinDate date not null--,
 --	birthdate date,
 --	streetAddress varchar2(80),
 --	city varchar2(40),
@@ -71,9 +71,6 @@ begin
 	if :new.id is null then
 	 select bankUser_seq.nextval into :new.id from dual;
 	end if;
-  if :new.joinDate is null then
-    select current_date into :new.joinDate from dual;
-  end if;
 end;
 /
 create or replace trigger account_trigger

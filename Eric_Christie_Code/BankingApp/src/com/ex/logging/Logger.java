@@ -14,8 +14,7 @@ public class Logger {
    * output files for different methods (logger.error(), logger.log(), ...)
    */
   
-  // TODO switch to using log.txt when finished developing
-  private static String filename = "src/com/ex/logging/debug.txt"; // "src/com/ex/logging/log.txt";
+  private static String filename = "src/com/ex/logging/log.txt";
   
   private static final Logger INSTANCE = new Logger();
 

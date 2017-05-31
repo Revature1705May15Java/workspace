@@ -174,22 +174,22 @@ public interface DAO {
   
   /**
    * Perform a transfer between two accounts.
-   * @param from
-   * @param to
+   * @param fromId
+   * @param toId
    * @param amount
    * @return true if successful, false otherwise.
    */
-  public boolean performTransfer(Account from, Account to, BigDecimal amount);
+  public boolean performTransfer(int fromId, int toID, BigDecimal amount);
   
   /**
    * Cancel a user's connection to an account. Sets the unlink date for an account holder 
    * to the current date.
    * This action should only be possible if the user is not the only account holder for the account.
-   * @param u
+   * @param email
    * @param a
    * @return true if successful, false otherwise.
    */
-  public boolean unlinkAccount(User u, Account a);
+  public boolean unlinkAccount(String email, Account a);
   
   /**
    * Set the close date of an account to the current date.

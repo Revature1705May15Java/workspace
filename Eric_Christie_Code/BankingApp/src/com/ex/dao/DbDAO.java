@@ -46,8 +46,10 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
+//    System.out.println("DbDAO: " + success);
     return success;
   }
   
@@ -82,7 +84,8 @@ public class DbDAO implements DAO {
         conn.rollback(save);
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountId;
   }
@@ -100,7 +103,8 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -119,7 +123,8 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -136,7 +141,8 @@ public class DbDAO implements DAO {
         users.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4)));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return users;
   }
@@ -156,7 +162,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
@@ -173,7 +180,8 @@ public class DbDAO implements DAO {
         types.add(new AccountType(info.getInt(1), info.getString(2)));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return types;
   }
@@ -192,7 +200,8 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -211,7 +220,8 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -231,7 +241,8 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -249,7 +260,8 @@ public class DbDAO implements DAO {
         result = info.getString(1);
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -269,7 +281,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate());
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -291,7 +304,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
@@ -313,7 +327,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
@@ -326,7 +341,7 @@ public class DbDAO implements DAO {
           + "from accountholder h, account a, accoutType t "
           + "where h.accountholderid=? and h.accountid=a.id and a.typeid=t.id "
           + "and (a.closeDate is null or a.closeDate > current_date) "
-          + "and (ah.unlinkDate is null or ah.unlinkDate > current_date)";
+          + "and (h.unlinkDate is null or h.unlinkDate > current_date)";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setInt(1, id);
 
@@ -337,7 +352,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return currentAccounts;
   }
@@ -347,10 +363,10 @@ public class DbDAO implements DAO {
     HashSet<Account> currentAccounts = new HashSet<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
-          + "from bankuser u, accountholder h, account a, accoutType t "
+          + "from bankUser u, accountHolder h, account a, accountType t "
           + "where u.email=? and u.id=h.accountholderid and h.accountid=a.id and a.typeid=t.id "
           + "and (a.closeDate is null or a.closeDate > current_date) "
-          + "and (ah.unlinkDate is null or ah.unlinkDate > current_date)";
+          + "and (h.unlinkDate is null or h.unlinkDate > current_date)";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
 
@@ -361,7 +377,8 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return currentAccounts;
   }
@@ -380,7 +397,8 @@ public class DbDAO implements DAO {
         accountHolders.add(info.getString(1));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountHolders;
   }
@@ -400,7 +418,8 @@ public class DbDAO implements DAO {
         accountHolders.add(info.getString(1));
       }
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountHolders;
   }
@@ -427,7 +446,8 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -445,45 +465,48 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
 
   @Override
-  public boolean performTransfer(Account from, Account to, BigDecimal amount) {
+  public boolean performTransfer(int fromId, int toId, BigDecimal amount) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       String sql = "{? = call transfer_money(?, ?, ?)}";
       CallableStatement cs = conn.prepareCall(sql);
       cs.registerOutParameter(1, Types.BOOLEAN);
-      cs.setInt(2, from.getId());
-      cs.setInt(3, to.getId());
+      cs.setInt(2, fromId);
+      cs.setInt(3, toId);
       cs.setBigDecimal(4, amount);
       
       cs.execute();
       success = cs.getBoolean(1);
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
 
   @Override
-  public boolean unlinkAccount(User u, Account a) {
+  public boolean unlinkAccount(String email, Account a) {
     boolean success = false;
     int rowsAffected = 0;
     try (Connection conn = factory.getConnection();) {
       String sql = "update accountHolder set unlinkDate=current_date "
-          + "where accountholderid=? and accountid=?";
+          + "where accountholderid=(select id from bankUser where email=?) and accountid=?";
       PreparedStatement ps = conn.prepareStatement(sql);
-      ps.setInt(1, u.getId());
+      ps.setString(1, email);
       ps.setInt(2, a.getId());
       
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -500,7 +523,8 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -518,7 +542,8 @@ public class DbDAO implements DAO {
       cs.execute();
       isCorrect = cs.getBoolean(1);
     } catch (SQLException e) {
-      logger.alert(e.getSQLState());
+      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return isCorrect;
   }

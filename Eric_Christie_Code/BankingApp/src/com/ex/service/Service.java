@@ -13,9 +13,11 @@ import com.ex.pojos.User;
 import com.ex.util.Mailer;
 import com.ex.util.PasswordStorage;
 import com.ex.util.PasswordStorage.CannotPerformOperationException;
-import com.ex.util.PasswordStorage.InvalidHashException;
 
 public class Service {
+  
+  private static final int OPEN_ACCOUNTS_LIMIT = 6;
+  private static final int ACCOUNT_HOLDERS_LIMIT = 4;
   
   private DAO dao = new DbDAO();
   private Logger logger = Logger.getInstance();
@@ -34,14 +36,16 @@ public class Service {
         User result = null;
         try {
           String passwordHash = PasswordStorage.createHash(password);
-          if (dao.addUser(email, passwordHash, firstname, lastname)) {
+          if (dao.getUser(email) == null && dao.addUser(email, passwordHash, firstname, lastname)) {
             result = dao.getUser(email);
             result.setPasswordHash(passwordHash);
             result.setAccounts(getCurrentAccounts(result));
+            logger.log("registered " + result);
           }
         } catch (Exception e) {
           logger.alert(e.getMessage());
         }
+//        System.out.println("Service: " + result);
         return result;
   }
   
@@ -53,17 +57,13 @@ public class Service {
    */
   public String sendVerificationCode(String email) {
     String sentCode = null;
-    try {
-      String code = PasswordStorage.createHash(email);
-      boolean success = mailer.sendMail(email,
-          "Email Verification - Eric Christie's BankingApp",
-          "Your verifiation code is: " + code);
-      if (success) {
-        logger.log("Sent email verification code " + code + " to " + email);
-        sentCode = code;
-      }
-    } catch (CannotPerformOperationException e) {
-      logger.alert(e.getMessage());
+    String code = "123456";//PasswordStorage.createHash(email);
+    boolean success = mailer.sendMail(email,
+        "Email Verification - Eric Christie's BankingApp",
+        "Your verifiation code is: " + code);
+    if (success) {
+      logger.log("Sent email verification code " + code + " to " + email);
+      sentCode = code;
     }
     return sentCode;
   }
@@ -75,13 +75,9 @@ public class Service {
    * @return true if the verification code is correct for the specified 
    * email address, false otherwise.
    */
-  public boolean verifyEmail(String email, String inputCode) {
+  public boolean verifyEmail(String email, String correctCode, String inputCode) {
     boolean result = false;
-    try {
-      result = PasswordStorage.verifyPassword(inputCode, PasswordStorage.createHash(email));
-    } catch (CannotPerformOperationException | InvalidHashException e) {
-      logger.alert(e.getMessage());
-    }
+    result = correctCode.equals(inputCode);
     return result;
   }
   
@@ -116,10 +112,16 @@ public class Service {
    */
   public Account createAccount(User u, AccountType type) {
     Account result = null;
-    Integer newAccountId = dao.addAccount(u, type);
-    if (newAccountId != null) {
-      result = dao.getAccount(newAccountId);
-      result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
+    int numberOfAccounts = getCurrentAccounts(u).size();
+    if (numberOfAccounts < OPEN_ACCOUNTS_LIMIT) {
+      Integer newAccountId = dao.addAccount(u, type);
+      if (newAccountId != null) {
+        result = dao.getAccount(newAccountId);
+        result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
+        logger.log(u.getEmail() + " created new account " + result);
+      }
+    } else {
+      logger.log("account creation failed - " + u.getEmail() + " already has the maximum number of accounts" );
     }
     return result;
   }
@@ -147,9 +149,13 @@ public class Service {
    */
   public Account addAccountHolder(Account a, String email) {
     Account result = null;
-    if (dao.addAccountHolder(a, email)) {
-      result = a;
-      result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
+    int numberOfAccountHolders = dao.getAccountHolderEmails(a).size();
+    int numberOfAccounts = getCurrentAccounts(dao.getUser(email)).size();
+    if (numberOfAccountHolders < ACCOUNT_HOLDERS_LIMIT && numberOfAccounts < OPEN_ACCOUNTS_LIMIT) {
+      if (dao.addAccountHolder(a, email)) {
+        result = a;
+        result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
+      }
     }
     return result;
   }
@@ -157,13 +163,13 @@ public class Service {
   /**
    * Unlink a user from a account.
    * @param a
-   * @param u
+   * @param email
    * @return A new Account object with the user's email address removed from accountHolders,
    * or null if no user was unlinked from the account.
    */
-  public Account removeAccountHolder(Account a, User u) {
+  public Account removeAccountHolder(Account a, String email) {
     Account result = null;
-    if (dao.unlinkAccount(u, a)) {
+    if (dao.unlinkAccount(email, a)) {
       result = a;
       result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
     }
@@ -179,7 +185,21 @@ public class Service {
     HashSet<Account> accounts = new HashSet<>();
     accounts = dao.getCurrentAccountsForUser(u.getEmail());
     for (Account a: accounts) {
-      a.setAccountHolders(dao.getAccountHolderEmails(a));
+      a.setAccountHolders(dao.getCurrentAccountHolderEmails(a));
+    }
+    return accounts;
+  }
+  
+  /**
+   * Get all open accounts currently linked to a user.
+   * @param email
+   * @return A set of fully populated Account objects for all open accounts linked to a user.
+   */
+  public HashSet<Account> getCurrentAccounts(String email) {
+    HashSet<Account> accounts = new HashSet<>();
+    accounts = dao.getCurrentAccountsForUser(email);
+    for (Account a: accounts) {
+      a.setAccountHolders(dao.getCurrentAccountHolderEmails(a));
     }
     return accounts;
   }
@@ -203,8 +223,18 @@ public class Service {
    * @param lname
    * @return The updated information for a user, or null if no changes were made.
    */
-  public User updateUser(User old, String email, String phash, String fname, String lname) {
+  public User updateUser(User old, String email, String password, String fname, String lname) {
     User result = null;
+    String phash = null;
+    if (password == null) {
+      phash = old.getPasswordHash();
+    } else {
+      try {
+        phash = PasswordStorage.createHash(password);
+      } catch (CannotPerformOperationException e) {
+        logger.alert(e.getMessage());
+      }
+    }
     if (dao.updateUser(old, email, phash, fname, lname)) {
       result = dao.getUser(old.getId());
       result.setAccounts(getCurrentAccounts(result));
@@ -251,9 +281,9 @@ public class Service {
    * @param amount
    * @return true if the transfer was successful, false otherwise.
    */
-  public boolean transfer(Account from, Account to, BigDecimal amount) {
+  public boolean transfer(int fromId, int toId, BigDecimal amount) {
     boolean result = false;
-    result = dao.performTransfer(from, to, amount);
+    result = dao.performTransfer(fromId, toId, amount);
     return result;
   }
 
