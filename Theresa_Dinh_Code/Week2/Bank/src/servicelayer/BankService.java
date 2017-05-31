@@ -19,13 +19,13 @@ public class BankService
 	{
 		User temp = new User(); 
 		temp = dao.getUser(email); 
-		if(temp != null)
+		if(temp == null)
 		{
-			System.out.println("Username already exists. Try again with a new username."); 
+			dao.addUser(fn, ln, pw, email);
+			return dao.getUser(email);
 		}
 		else
-			dao.addUser(fn, ln, pw, email); /////edit later 
-		return dao.getUser(email); 
+			return null; 
 	}
 	
 	// done ?
@@ -78,9 +78,15 @@ public class BankService
 		}
 	}
 	
+	// retrieves user from their unique email login 
 	public User getUser(User user)
 	{
-		return dao.getUser(user.getEmail()); 
+		User temp = dao.getUser(user.getEmail());
+		if(temp != null)
+		{
+			return temp; 
+		}
+		return null; 
 	}
 	
 	// done

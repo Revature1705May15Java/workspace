@@ -6,12 +6,23 @@ public class User
 {
 	int id; 
 	String fName, lName, password, email; 
-	ArrayList<Account> userAccounts;
+	ArrayList<Account> userAccounts = new ArrayList<Account>();
 //	int accountsOwned; 
 	
 	public User() {
 		super();
 	}
+	public User(String fName, String lName, String password, String email) 
+	{
+		super();
+		this.id = -1;
+		this.fName = fName;
+		this.lName = lName;
+		this.password = password;
+		this.email = email;
+		this.userAccounts = new ArrayList<Account>();
+	}
+	
 	public User(int id, String fName, String lName, String password, String email, ArrayList<Account> userAccounts) {
 		super();
 		this.id = id;

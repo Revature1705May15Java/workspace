@@ -21,8 +21,8 @@ public class RunBank
 	{
 		in = new Scanner(System.in); 
 		
-		System.out.println("Welcome to Nacho Bank. "
-				+ "Enter a number to choose to login or to create a new "
+		System.out.println("Welcome to Nacho Bank. \n"
+				+ "Enter a number to choose to login or to create a new \n"
 				+ "user account if you don't already have one. \n"
 				+ "1: Login to user account \n"
 				+ "2: Create a new user account \n"
@@ -80,10 +80,16 @@ public class RunBank
 			System.out.println("Login successful");
 			mainmenu(); 
 		}
-		else// chance to exit login needed 
+		else 
 		{
-			System.out.println("Login failed. Please try again.");
-			login(); 
+			System.out.println("Login failed. Try again?"
+								+ "\n 1: Yes"
+								+ "\n 2: No \n");
+						int yn = in.nextInt(); 
+						if(yn == 1) 
+							login(); 
+						else
+							welcome(); 
 		}
 	}
 	
@@ -91,7 +97,7 @@ public class RunBank
 	{
 		in = new Scanner(System.in); 
 		//print out prompts and accept user response
-		System.out.println("Enter your first name:");
+		System.out.println("Enter your first name");
 		String fn = in.nextLine(); 
 		System.out.println("Enter your last name");
 		String ln = in.nextLine();
@@ -100,9 +106,15 @@ public class RunBank
 		System.out.println("Enter an email");
 		String email = in.nextLine(); 
 		
-		service.addUser(fn, ln, pw, email); 
-		System.out.println("User account creation successful. "
-				+ "Please log in with your new user account now");
+		currentUser = service.addUser(fn, ln, pw, email); 
+		if(currentUser == null)
+		{
+			System.out.println("Username already exists. Try again with a new username.");
+			joinBank(); 
+		}
+		else 
+			System.out.println("User account creation successful. \n"
+				+ "Please log in with your new user account now \n");
 		login(); 
 	}
 	

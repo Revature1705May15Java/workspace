@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
+//import java.sql.Timestamp;
 
 import bankUtil.ConnectionUtil;
 import pojos.Account;
@@ -48,7 +48,9 @@ public class BankDao implements Dao
 			ps.setDouble(1, newBalance); 
 			ps.setInt(2, account.getId());
 			
-			int rowCheck = ps.executeUpdate(statement); 
+//			int rowCheck = 
+			ps.executeUpdate(statement); 
+			c.commit(); 
 		}
 		catch(SQLException e)
 		{
@@ -64,16 +66,32 @@ public class BankDao implements Dao
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
-			String statement = "INSERT INTO Users (FNAME, LNAME, PASSWORD, EMAIL)"
+			c.setAutoCommit(false);
+			
+			User temp = new User(fn, ln, pw, email); 
+			System.out.println(temp.toString());
+			
+			String statement = "INSERT INTO Users"
 					+ "VALUES(?, ?, ?, ?)";
+//			"INSERT INTO USERS(FNAME, LNAME, PASSWORD, EMAIL) VALUES(?, ?, ?, ?)"
 			PreparedStatement ps = c.prepareStatement(statement);
 			ps.setString(1, fn);
 			ps.setString(2, ln);
 			ps.setString(3, pw);
 			ps.setString(4, email);
 			
-			int rowCheck = ps.executeUpdate(statement); 
-			System.out.println(rowCheck);
+			int rowCheck = ps.executeUpdate(); 
+			c.commit();
+			ps.close(); 
+			c.setAutoCommit(true);
+			
+//			System.out.println(rowCheck);
+			if(rowCheck != 1)
+			{
+				return null; 
+			}
+			else
+				return temp;
 		}
 		catch(SQLException e)
 		{
@@ -88,7 +106,7 @@ public class BankDao implements Dao
 	{
 		try(Connection c = ConnectionUtil.getConnection();)
 		{
-			String statement = "INSERT INTO USERS VALUES(?, ?, ?, ?, ?)";
+			String statement = "INSERT INTO USERS VALUES(?, ?, ?, ?)";
 			PreparedStatement ps = c.prepareStatement(statement);
 			ps.setString(1, newUser.getfName());
 			ps.setString(2, newUser.getlName());
@@ -96,8 +114,14 @@ public class BankDao implements Dao
 			ps.setString(4, newUser.getEmail());
 			
 			int rowCheck = ps.executeUpdate(); 
-			System.out.println(rowCheck);
-			return newUser; 
+			c.commit();
+			if(rowCheck != 1)
+			{
+				return null; 
+			}
+			else
+				return newUser;
+//			System.out.println(rowCheck);	
 		}
 		catch(SQLException e)
 		{
@@ -122,6 +146,7 @@ public class BankDao implements Dao
 			ps.setTimestamp(4, null);
 			
 			int rowCheck = ps.executeUpdate();
+			c.commit();
 			if(rowCheck != 1)
 				return false; 
 			else 
@@ -146,6 +171,7 @@ public class BankDao implements Dao
 			/////
 			
 			int rowCheck = ps.executeUpdate();
+			c.commit();
 			if(rowCheck != 1)
 				return false; 
 			else 
@@ -176,7 +202,7 @@ public class BankDao implements Dao
 				u.setfName(rs.getString(2)); 
 				u.setlName(rs.getString(3));
 				u.setPassword(rs.getString(4));
-				u.setEmail(rs.getString(5));
+				u.setEmail(rs.getString(5));				
 				return u; 
 			}
 		}
@@ -196,7 +222,7 @@ public class BankDao implements Dao
 			PreparedStatement ps = c.prepareStatement(s);
 			ps.setString(1, email);
 			
-			ResultSet rs = ps.executeQuery(); 
+			ResultSet rs = ps.executeQuery(s); 
 			while(rs.next())
 			{
 				// userid, fname, lname, password, email
