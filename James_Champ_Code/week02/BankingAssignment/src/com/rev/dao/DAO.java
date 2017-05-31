@@ -17,5 +17,6 @@ public interface DAO {
 	public Account getAccount(int accountId);
 	public int closeAccount(Account account);
 	public int addAccountHolder(Account account, User accountHolder);
+	public ArrayList<Integer> getAccountTypes();
 }
 

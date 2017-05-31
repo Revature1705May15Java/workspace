@@ -328,4 +328,26 @@ public class DAOImpl implements DAO{
 		
 		return 0;
 	}
+	
+	@Override
+	public ArrayList<Integer> getAccountTypes() {
+		ArrayList<Integer> types = new ArrayList<Integer>();
+		
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "SELECT type_id FROM account_types";
+			
+			Statement s = conn.createStatement();
+			
+			ResultSet rs = s.executeQuery(sql);
+			
+			while(rs.next()) {
+				types.add(rs.getInt(1));
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return types;
+	}
 }
