@@ -1,4 +1,4 @@
-package com.rev.q3;
+package com.rev.q4;
 
 public class Factorial {
 

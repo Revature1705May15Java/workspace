@@ -22,7 +22,7 @@ public class GenericTest {
         // Allowable types
         GenBox<Number> nb = new GenBox<>();
         nb.setObj(new Integer(42));  // ok
-        nb.setObj(new Object());  // NOT ok
+        //nb.setObj(new Object());  // NOT ok
     }
 
     // Unbounded wildcards
