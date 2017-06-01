@@ -14,14 +14,26 @@ import com.ex.util.Mailer;
 import com.ex.util.PasswordStorage;
 import com.ex.util.PasswordStorage.CannotPerformOperationException;
 
-public class Service {
+public class BankingService {
   
   private static final int OPEN_ACCOUNTS_LIMIT = 6;
   private static final int ACCOUNT_HOLDERS_LIMIT = 4;
   
-  private DAO dao = new DbDAO();
-  private Logger logger = Logger.getInstance();
-  private Mailer mailer = Mailer.getInstance();
+//  private static final BankingService  INSTANCE = new BankingService();
+  
+  private DAO dao;
+  private Logger logger;
+  private Mailer mailer;
+  
+  public BankingService(boolean logging, boolean emailVerification) {
+    if (logging) {
+      this.logger  = Logger.getInstance();
+    }
+    if (emailVerification) {
+      this.mailer = Mailer.getInstance();
+    }
+    this.dao = new DbDAO(this.logger);
+  }
 
   /**
    * Create a new bank user and sign in as that user.
@@ -40,10 +52,10 @@ public class Service {
             result = dao.getUser(email);
             result.setPasswordHash(passwordHash);
             result.setAccounts(getCurrentAccounts(result));
-            logger.log("registered " + result);
+            System.out.println("registered " + result);
           }
         } catch (Exception e) {
-          logger.alert(e.getMessage());
+          System.out.println(e.getMessage());
         }
 //        System.out.println("Service: " + result);
         return result;
@@ -62,7 +74,7 @@ public class Service {
         "Email Verification - Eric Christie's BankingApp",
         "Your verifiation code is: " + code);
     if (success) {
-      logger.log("Sent email verification code " + code + " to " + email);
+      System.out.println("Sent email verification code " + code + " to " + email);
       sentCode = code;
     }
     return sentCode;
@@ -98,7 +110,7 @@ public class Service {
         result.setAccounts(getCurrentAccounts(result));
       }
     } catch (Exception e) {
-      logger.alert(e.getMessage());
+      System.out.println(e.getMessage());
     }
     return result;
   }
@@ -118,10 +130,10 @@ public class Service {
       if (newAccountId != null) {
         result = dao.getAccount(newAccountId);
         result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
-        logger.log(u.getEmail() + " created new account " + result);
+        System.out.println(u.getEmail() + " created new account " + result);
       }
     } else {
-      logger.log("account creation failed - " + u.getEmail() + " already has the maximum number of accounts" );
+      System.out.println("account creation failed - " + u.getEmail() + " already has the maximum number of accounts" );
     }
     return result;
   }
@@ -232,7 +244,7 @@ public class Service {
       try {
         phash = PasswordStorage.createHash(password);
       } catch (CannotPerformOperationException e) {
-        logger.alert(e.getMessage());
+        System.out.println(e.getMessage());
       }
     }
     if (dao.updateUser(old, email, phash, fname, lname)) {

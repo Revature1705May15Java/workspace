@@ -10,7 +10,7 @@ import com.ex.logging.Logger;
 import com.ex.pojos.Account;
 import com.ex.pojos.AccountType;
 import com.ex.pojos.User;
-import com.ex.service.Service;
+import com.ex.service.BankingService;
 
 public class Main {
   
@@ -67,7 +67,7 @@ public class Main {
   public static void main(String[] args) {
     @SuppressWarnings("resource")
     Scanner in = new Scanner(System.in);
-    Service service = new Service();
+    BankingService service = new BankingService(true, true);
     Logger logger = Logger.getInstance();
     
     User current = null; // the user that is currently logged in

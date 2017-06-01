@@ -26,6 +26,10 @@ public class Logger {
   
   private Logger() { super(); }
   
+  public void println(String message) {
+    alert(message);
+  }
+  
   /**
    * Log a message.
    * @param message

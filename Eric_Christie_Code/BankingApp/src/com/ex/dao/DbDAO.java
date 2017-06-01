@@ -27,8 +27,13 @@ import oracle.jdbc.OracleTypes;
 
 public class DbDAO implements DAO {
   
-  private Logger logger = Logger.getInstance();
-  private ConnectionFactory factory = ConnectionFactory.getInstance();
+//  private Logger logger;
+  private ConnectionFactory factory;
+  
+  public DbDAO(Logger logger) {
+//    this.logger = logger;
+    this.factory = ConnectionFactory.getInstance();
+  }
   
   @Override
   public boolean addUser(String email, String passwordHash, String firstname, String lastname) {
@@ -47,7 +52,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
 //    System.out.println("DbDAO: " + success);
     return success;
@@ -85,7 +90,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accountId;
   }
@@ -104,7 +109,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -124,7 +129,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -142,7 +147,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return users;
   }
@@ -163,7 +168,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accounts;
   }
@@ -181,7 +186,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return types;
   }
@@ -201,7 +206,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return result;
   }
@@ -221,7 +226,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return result;
   }
@@ -242,7 +247,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return result;
   }
@@ -261,7 +266,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return result;
   }
@@ -282,7 +287,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return result;
   }
@@ -305,7 +310,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accounts;
   }
@@ -328,7 +333,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accounts;
   }
@@ -353,7 +358,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return currentAccounts;
   }
@@ -378,7 +383,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return currentAccounts;
   }
@@ -398,7 +403,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accountHolders;
   }
@@ -419,7 +424,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return accountHolders;
   }
@@ -447,7 +452,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -466,7 +471,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -486,7 +491,7 @@ public class DbDAO implements DAO {
       success = cs.getBoolean(1);
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -506,7 +511,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -524,7 +529,7 @@ public class DbDAO implements DAO {
       success = rowsAffected == 1;
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return success;
   }
@@ -543,7 +548,7 @@ public class DbDAO implements DAO {
       isCorrect = cs.getBoolean(1);
     } catch (SQLException e) {
       e.printStackTrace();
-      logger.alert(e.getMessage());
+      e.printStackTrace();
     }
     return isCorrect;
   }

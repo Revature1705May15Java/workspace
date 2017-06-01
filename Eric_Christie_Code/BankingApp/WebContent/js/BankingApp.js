@@ -1,3 +1,4 @@
+const sqlScript = `
 /*
  * Create tables for BankingApp
  * DDL Script
@@ -139,3 +140,13 @@ begin
   select u.passwordHash into storedPasswordHash from bankUser u where u.email=eml;
   return pHash=storedPasswordHash;
 end;
+`
+
+$(document).ready(function() {
+	$('.sql').html(sqlScript);
+	
+	// $('#sqlscript').html(sqlScript);
+	// $('pre code').each((i, block) => {
+	// 	hljs.highlightBlock(block);
+	// });
+});

@@ -2,18 +2,10 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>ServletsIntro</display-name>
   <welcome-file-list>
-    <welcome-file>register.html</welcome-file>
     <welcome-file>index.html</welcome-file>
     <welcome-file>default.html</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>Registration</servlet-name>
-    <servlet-class>com.ex.servlets.Register</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Registration</servlet-name>
-    <url-pattern>/Register</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <servlet-name>freemarker</servlet-name>
     <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
@@ -48,14 +40,15 @@
     <url-pattern>*.ftl</url-pattern>
   </servlet-mapping>
   
+  
   <!-- you can have more than one servlet-mapping for a single servlet  -->
   
   <servlet>
-    <servlet-name>Hello</servlet-name>
-    <servlet-class>com.ex.freemarker.HelloServlet</servlet-class>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.ex.servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Hello</servlet-name>
-    <url-pattern>/hello</url-pattern>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
   </servlet-mapping>
 </web-app>
