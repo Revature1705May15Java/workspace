@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<hr>
+	<form name="f1" method="POST" action="/ServletIntro/Register">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="userName"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<input type="radio" name="gender" value="male"> Male<br>
+  					<input type="radio" name="gender" value="female"> Female<br>
+  					<input type="radio" name="gender" value="other"> Other
+				</td>
+			</tr>
+			<tr>
+				<td>Sport:</td>
+				<td>
+					<input type="checkbox" name="sport" value="football">Football<br>
+					<input type="checkbox" name="sport" value="basketball">Basketball<br>
+					<input type="checkbox" name="sport" value="hockey">Hockey<br>
+					<input type="checkbox" name="sport" value="baseball">Baseball
+				</td>
+			</tr>
+			<tr>
+				<td>Team:</td>
+				<td>
+					<select name = "team">
+  						<option value="cardinals">Cardinals</option>
+						<option value="suns">Suns</option>
+						<option value="diamondbacks">Diamondbacks</option>
+						<option value="predators">Predators</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Position:</td>
+				<td>
+					<select name= "position" multiple>
+						<option value="quarterback">Quarterback</option>
+						<option value="fullback">Fullback</option>
+						<option value="center">Center</option>
+						<option value="point guard">Point Guard</option>
+						<option value="shortstop">Shortstop</option>
+						<option value="pitcher">Pitcher</option>
+						<option value="striker">Striker</option>
+						<option value="wingback">Wingback</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<input type="submit" value="Register" name="btnRegister"/>&nbsp;
+					<input type="reset" value="clear" name="btnClear"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
