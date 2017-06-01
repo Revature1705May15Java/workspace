@@ -1,0 +1,203 @@
+html * {
+  margin: 0; }
+
+body {
+  font-size: medium;
+  color: #474c55; }
+
+input.button {
+  margin: auto;
+  -webkit-appearance: none; }
+
+.clear {
+  clear: both; }
+
+h1, h2, h3, h4, p {
+  font-family: "Poppins", calibri, helvetica-neue, helvetica, arial, sans-serif !important;
+  line-height: 1.8em; }
+
+p {
+  letter-spacing: 1px;
+  margin-bottom: 1em; }
+  p:last-child {
+    margin-bottom: 0; }
+
+h3, h4 {
+  font-weight: bold;
+  letter-spacing: 0; }
+
+h3 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.5em; }
+  h3:before {
+    content: "< "; }
+  h3:after {
+    content: " >"; }
+
+h4 {
+  font-size: 1.5em; }
+
+nav {
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #484c55;
+  border-bottom: 1px solid #707070; }
+  nav ul {
+    margin-left: 14%;
+    list-style-type: none;
+    padding: 0; }
+    nav ul a {
+      font-family: "Montserrat", calibri, helvetica-neue, helvetica, arial, sans-serif !important;
+      border-right: 1px solid #707070;
+      width: 12%;
+      float: left;
+      text-align: center;
+      font-size: 0.8em;
+      min-height: 3em;
+      padding: 1em 0 1em 0;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #bbb; }
+      nav ul a:hover {
+        text-decoration: none;
+        color: #ffaedf; }
+      nav ul a:last-child {
+        border: none; }
+      nav ul a li {
+        padding: 0; }
+
+header {
+  margin-bottom: 0 !important;
+  background-color: rgba(150, 150, 150, 0.12) !important; }
+  header h2 {
+    margin-left: 1em; }
+
+section {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+#main-desc {
+  position: relative;
+  overflow: hidden;
+  background-color: #222 !important; }
+  #main-desc h4 {
+    margin-bottom: 0.5em; }
+  #main-desc video {
+    opacity: 0.15;
+    z-index: 15;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    background: #222 url("../img/puppersnap.png");
+    background-size: 100%; }
+  #main-desc #desc {
+    z-index: 20;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10em;
+    margin-bottom: 10em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 0px black; }
+
+#storyContainer {
+  width: 90%;
+  margin-left: 5%; }
+
+#userStories {
+  padding-top: 8em;
+  background: #326a87 url("../img/tile.png");
+  color: #fff;
+  font-size: small;
+  text-shadow: 1px 1px 0px black; }
+  #userStories .row {
+    border-bottom: 1px solid #becaff; }
+    #userStories .row.matchedCols {
+      overflow: hidden; }
+    #userStories .row.matchedCols [class*="col-"] {
+      margin-bottom: -9999px;
+      padding-bottom: 9999px; }
+    #userStories .row:first-child .col-xs-4:first-child {
+      border-right: none; }
+    #userStories .row:nth-child(2) .col-xs-4:nth-child(2) {
+      border-right: none; }
+    #userStories .row:last-child {
+      border-bottom: none; }
+      #userStories .row:last-child .col-xs-4:first-child {
+        border-right: none; }
+    #userStories .row .col-xs-4 {
+      border-right: 1px solid #becaff; }
+      #userStories .row .col-xs-4:last-child {
+        border-right: none; }
+  #userStories h4 {
+    padding-top: 2.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase; }
+    #userStories h4 .glyphicon {
+      font-size: 1.5em;
+      margin-right: 1em; }
+  #userStories p {
+    padding: 0 2em 0 2em;
+    margin-bottom: 3.5em; }
+
+#specialFeatures {
+  background-color: rgba(150, 150, 150, 0.12); }
+  #specialFeatures .panel-heading {
+    font-weight: bold;
+    text-transform: uppercase; }
+
+#ERD {
+  text-align: center; }
+
+#SQLSnippets {
+  background-color: rgba(150, 150, 150, 0.12); }
+  #SQLSnippets .row {
+    margin-bottom: 3em; }
+    #SQLSnippets .row:last-child {
+      margin-bottom: 0; }
+    #SQLSnippets .row .well pre {
+      margin-bottom: 1em; }
+      #SQLSnippets .row .well pre:last-child {
+        margin-bottom: 0; }
+
+#patterns {
+  background: #326a87 url("../img/tile.png");
+  color: #fff;
+  text-shadow: 1px 1px 0px black; }
+  #patterns #patternDesc {
+    text-align: center;
+    width: 50%;
+    margin-left: 25%; }
+    #patterns #patternDesc p {
+      margin-bottom: 1em; }
+
+#tools {
+  text-align: center; }
+  #tools div {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 3em; }
+    #tools div a {
+      max-width: 20%;
+      margin-right: 5em;
+      margin-bottom: 3em; }
+      #tools div a:last-child {
+        margin-right: 0; }
+    #tools div img {
+      max-height: 4em;
+      max-width: 20%;
+      margin-bottom: 3em; }
+
+/*# sourceMappingURL=bank.css.map */
