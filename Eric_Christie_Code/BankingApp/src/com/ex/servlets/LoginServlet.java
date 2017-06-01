@@ -1,7 +1,6 @@
 package com.ex.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 //import javax.servlet.Servlet;
 //import javax.servlet.ServletConfig;
@@ -52,14 +51,12 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  if (currentUser != null) {
-    request.setAttribute("user", currentUser);
-    request.getRequestDispatcher("home.ftl").forward(request, response);
-//	    PrintWriter out = response.getWriter();
-//	    out.println(currentUser);
+	        
+	    
+      request.setAttribute("user", currentUser);
+      request.getRequestDispatcher("home.ftl").forward(request, response);
 	  } else {
-    request.getRequestDispatcher("login.ftl").forward(request, response);
-//	    PrintWriter out = response.getWriter();
-//	    out.println("no current user");
+	    request.getRequestDispatcher("login.ftl").forward(request, response);
 	  }
 	}
 
