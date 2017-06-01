@@ -1,0 +1,20 @@
+package p3;
+
+public class ReverseString 
+{
+	public static void main(String[] args)
+	{
+		System.out.println(reverse("boa"));
+	}
+	
+	public static String reverse(String s)
+	{
+		int length = s.length(); 
+		for(int i = 0; i < length;i++)
+		{
+			s = (s.concat(s.substring(i, i+1))).substring(i+1, length); 
+			System.out.println(s);
+		}
+		return s; 
+	}
+}

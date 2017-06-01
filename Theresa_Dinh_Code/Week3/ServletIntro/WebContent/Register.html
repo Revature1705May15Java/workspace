@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Registration</title>
+    </head>
+    
+    <body>
+        <h1>Registration Form</h1>
+        <hr>
+        <form name="f1" method="GET" action="/ServletIntro/Register">
+            <table>
+                <tr>
+                    <td>Username:  </td>
+                    <td><input type="text" name="username"></td>
+                </tr>
+                <tr>
+                    <td>Password:  </td>
+                    <td><input type="password" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td>Favorite ice cream flavor</td>
+                    <td>    
+                        <select name="Favorite flavor">
+                            <option value="chocolate">Chocolate</option>
+                            <option value="strawberry">Strawberry</option>
+                            <option value="vanilla">Vanilla</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cat or dog?</td>
+                    <td>
+                        <input type="radio" name="pet" value="cate" checked> Cat
+                        <input type="radio" name="pet" value="doge" checked> Dog<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Desires</td>
+                    <td>
+                        <input type="checkbox" name="money" value="Money">Money 
+                        <input type="checkbox" name="love" value="Love">Love 
+                        <input type="checkbox" name="happy" value="Happiness">Happiness
+                        <input type="checkbox" name="lmao" value="Mayonnaise">Mayonnaise
+                    </td>
+                </tr>
+                <tr>
+                    <td>Pizza toppings</td>
+                    <td>
+                    <select name="pizza toppings" multiple>
+                        <option value="pineapple">Pineapple</option>
+                        <option value="pineapple">Pineapple</option>
+                        <option value="pineapple">Pineapple</option>
+                        <option value="pineapple">Pineapple</option>
+                        <option value="pineapple">Pineapple</option>
+                    </select>
+                    </td>
+                </tr>
+<!--                The buttons for submitting user choices are below this line -->
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Register" name="registerbutton"> &nbsp;
+                        <input type="reset" value="Clear" name="buttonclear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
