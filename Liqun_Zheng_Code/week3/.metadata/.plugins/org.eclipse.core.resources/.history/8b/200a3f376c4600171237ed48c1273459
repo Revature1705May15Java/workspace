@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registration Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>Registration Form</h1>
+
+	<!--  ins
+ -->
+
+	<form name="f1" method="POST" action="/ServletIntro/Register">
+
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type = "text" name = "userName"></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type = "password" name = "pwd"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Register" name="btnRegister" /> 
+				&nbsp; <input type="reset" value="clear" name="btnClear" />
+				</td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td><input type="radio" name="gender" value="male"> Male
+  				<input type="radio" name="gender" value="female"> Female
+  				<input type="radio" name="gender" value="other"> Other</td>
+			</tr>
+			<tr>
+				<td>hobbies:</td>
+				<td><input type="checkbox" name="habbit" value="swim"> swim
+					<input type="checkbox" name="habbit" value="running"> running
+					<input type="checkbox" name="habbit" value="football">football</td>
+				<td>
+				</td>
+			</tr>
+			  
+		</table>
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button"
+				data-toggle="dropdown">
+				Country <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#">China</a></li>
+				<li><a href="#">Mexico</a></li>
+				<li><a href="#">USA</a></li>
+			</ul>
+		</div>
+	</form>
+
+</body>
+</html>
