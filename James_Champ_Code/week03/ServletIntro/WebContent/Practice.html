@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Practice Assignment</title>
+</head>
+<body>
+	<h1>Practice Form</h1>
+	<hr>
+	
+	<form name="formyMcFormFace" method="POST" action="/ServletIntro/Practice">
+		<table>
+		<tr>
+			<td>First Name:</td>
+			<td><input type="text" name="fname"></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><input type="text" name="lname"></td>
+		</tr>
+		<tr>
+			<td>Gender:</td>
+			<td>
+				<input type="radio" name="gender" value="male">Male
+				<input type="radio" name="gender" value="female">Female
+				<input type="radio" name="gender" value="other">Other
+			</td>
+		</tr>
+		<tr>
+			<td>Hobbies:</td>
+			<td>
+				<input type="checkbox" name="hobbies" value="reading">Reading
+				<input type="checkbox" name="hobbies" value="exercising">Exercising
+				<input type="checkbox" name="hobbies" value="drinkingCoffee">Drinking Coffee
+			</td>
+		</tr>
+		<tr>
+			<td>Country:</td>
+			<td>
+				<select name="country">
+					<option value="Canada">Canada</option>
+					<option value="France">France</option>
+					<option value="Mexico">Mexico</option>
+					<option value="Peru">Peru</option>					
+					<option value="USA">United States of America</option>					
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Languages Known:</td>
+			<td>
+				<select name="langs" multiple>
+					<option value="French">French</option>
+					<option value="Spanish">Spanish</option>
+					<option value="Portuguese">Portuguese</option>
+					<option value="English">English</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>
+				<input type="submit" value="register" name="btnRegister">&nbsp;
+				<input type="reset" value="clear" name="btnClear">
+			</td>
+		</tr>
+		</table>
+	</form>
+</body>
+</html>
