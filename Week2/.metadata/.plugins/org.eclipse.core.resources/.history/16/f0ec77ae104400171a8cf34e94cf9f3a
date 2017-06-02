@@ -1,0 +1,44 @@
+package com.rev.service;
+
+import com.rev.dao.DAOImpl;
+import com.rev.exceptions.UserNotFoundException;
+import com.rev.pojos.User;
+
+public class Service {
+
+
+	static DAOImpl dao = new DAOImpl();
+
+
+	public User addUser(String fn, String ln, String uname, String pw){
+		User temp = new User();
+		temp = dao.getUser(uname);
+		if(temp!=null){
+			//username exists, prompt user to change username, or login 
+		}
+		else{
+			dao.addUser(fn, ln, uname, pw);
+		}
+
+
+		return dao.getUser(uname);
+
+	}
+	
+	public User login (String uname, String pw){
+		User u = dao.getUser(uname);
+		String pass = u.getPw();
+try		if (pw.equals(pass)){
+			return u;
+		}
+		
+		else{
+			System.out.println("ERR user not found");
+			throw new UserNotFoundException(uname);
+		}
+		
+			
+		}
+	}
+
+}

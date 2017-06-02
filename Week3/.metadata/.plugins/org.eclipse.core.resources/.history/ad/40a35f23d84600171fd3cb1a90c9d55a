@@ -1,0 +1,7 @@
+<config>
+	<context-values>
+	</context-values>
+	<macro-library>
+		<entry namespace="index" path="WebContent/index.ftl" project="FreemarkerIntro" type="file"/>
+	</macro-library>
+</config>

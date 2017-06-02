@@ -103,7 +103,9 @@ public class DaoImpl implements DAO {
 		CallableStatement cs = null;
 		int accounts = 0;
 		try{
-			connect = ConnectionFactory.getInstance().getConnection();
+			connect = ConnectionFactory.getInstance
+					
+					().getConnection();
 
 			cs = connect.prepareCall("{? = call get_num_accounts(?)}");
 			cs.registerOutParameter(1, Types.NUMERIC);

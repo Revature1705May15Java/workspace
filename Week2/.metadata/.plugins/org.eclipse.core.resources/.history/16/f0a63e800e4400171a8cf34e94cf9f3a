@@ -1,0 +1,39 @@
+package com.rev.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.rev.util.ConnectionUtil;
+
+
+public class DAOImpl {
+	
+	public int addUser(String fn, String ln, String uname, String pw) {
+		try(Connection connection = ConnectionUtil.getConnection();){
+
+			String sql = "  insert into users(first_name, last_name, password, username)"
+					+ " values(?, ?, ?, ?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, fn );
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uname);
+
+			int num = ps.executeUpdate();
+
+			logger.log(num + " users added");
+			return num;
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			logger.log(e.getSQLState());
+		}
+
+
+
+		return 0;
+	}
+
+}

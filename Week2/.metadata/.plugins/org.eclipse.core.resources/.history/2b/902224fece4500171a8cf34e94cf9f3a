@@ -1,0 +1,11 @@
+package com.service;
+
+import java.util.HashMap;
+
+public class Service {
+	
+	static HashMap<String, String> users = new HashMap<String, String>();
+	users.put("Genesis" , "password");
+	users.put("test" , "test");
+
+}

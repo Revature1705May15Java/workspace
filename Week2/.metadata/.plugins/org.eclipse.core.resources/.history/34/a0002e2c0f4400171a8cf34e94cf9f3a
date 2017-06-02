@@ -1,0 +1,19 @@
+package com.rev.service;
+
+
+public class Service {
+
+	public User addUser(String fn, String ln, String uname, String pw){
+		User temp = new User();
+		temp = dao.getUser(uname);
+		if(temp!=null){
+			//username exists, prompt user to change username, or login 
+		}
+		else{
+			dao.addUser(fn, ln, uname, pw);
+		}
+		
+		
+		return dao.getUser(uname);
+		
+}

@@ -1,0 +1,17 @@
+<html>
+
+<head>
+<title>Intro To Freemarker</title>
+</head>
+
+<body>
+<form name="user" action="hello" method="post">
+
+
+</form>
+
+</body>
+
+
+
+</html>

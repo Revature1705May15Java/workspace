@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration form</title>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<hr>
+	<!--  hr is a horizontal row.
+ this is the comment syntax -->
+
+	<!--  inside the form, we specify the 
+ name, the method(GET, POST, PUT, DELETE) 
+ we use GET whenever we want to read the data
+ and POST to submit the data for adding a new
+ resource. we use PUT to update or change the
+ existing resource at the server. and DELETE 
+ method to remove the resource
+ here we will use GET
+ we also provide the action, which is the name of the 
+ servlet page to which the data will be submitted -->
+	<form name="f1" method="GET" action="/GenericServletExample/Register">
+		<table>
+			<tr>
+				<td>User name :</td>
+				<td><input type="text" name="userName" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="pwd" /></td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>

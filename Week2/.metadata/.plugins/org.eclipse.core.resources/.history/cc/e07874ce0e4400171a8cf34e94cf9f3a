@@ -1,0 +1,73 @@
+package com.rev.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.rev.pojos.User;
+import com.rev.util.ConnectionUtil;
+
+
+public class DAOImpl {
+	
+	public int addUser(String fn, String ln, String uname, String pw) {
+		try(Connection connection = ConnectionUtil.getConnection();){
+
+			String sql = "  insert into users(first_name, last_name, password, username)"
+					+ " values(?, ?, ?, ?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, fn );
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uname);
+
+			int num = ps.executeUpdate();
+
+			return num;
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+
+
+		return 0;
+	}
+	
+	public User getUser(String uname) {
+		User u = new User();
+		try(Connection connect = ConnectionUtil.getConnection();){
+			String sql = "select * from users where lower(username) = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, uname.toLowerCase());
+
+			ResultSet userinfo = ps.executeQuery();
+			// id, fn, ln, pw, uname
+			while(userinfo.next()){
+
+				u.setId(userinfo.getInt(1));
+				u.setFn(userinfo.getString(2));
+				u.setLn(userinfo.getString(3));
+				u.setPw(userinfo.getString(4));
+				u.setUname(userinfo.getString(5));
+			}
+
+			if(u.getUname()!=null){
+			else {System.out.println("Attempted to retrieve non-existent user");
+			return null;}
+
+			return u;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return null;
+
+
+	}
+
+
+}

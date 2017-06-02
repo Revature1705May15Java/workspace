@@ -1,0 +1,49 @@
+package com.bank.servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.AccountType;
+import com.bank.pojos.User;
+import com.bank.service.Service;
+
+public class HomeServlet extends HttpServlet{
+	
+	static User u = new User();
+	static Service service = new Service();
+	
+	
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		System.out.println("IN HOME SERVLET GET");
+		
+		HttpSession session = req.getSession(true);
+		u = (User)session.getAttribute("user");
+		
+		req.setAttribute("fn", u.getFirstname());
+		req.setAttribute("ln",u.getLastname());
+		System.out.println("before account dao");
+		ArrayList<Account> accounts = service.findAccounts(u.getId());
+		System.out.println(accounts.isEmpty());
+		ArrayList<String[]> accountInfo = new ArrayList();
+		for(Account acc:accounts){
+			String[] temp = new String[3];
+			temp[0] = "" + acc.getId();
+			temp[1] = acc.getType().getName() + " " + acc.getId();
+			temp[2] = "" + acc.getBalance();
+			accountInfo.add(temp);
+		}
+		req.setAttribute("accounts", accounts);
+		req.setAttribute("accountInfo", accountInfo);
+		req.getRequestDispatcher("/home.ftl").forward(req,resp);
+	}
+
+}

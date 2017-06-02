@@ -1,0 +1,10 @@
+package com.bank.pojos;
+
+public class AccountType {
+	
+	int id;
+	String name;
+	
+	
+
+}

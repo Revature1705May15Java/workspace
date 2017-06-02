@@ -1,9 +1,0 @@
-package com.revature.DAO;
-
-import com.revature.POJO.User;
-
-public interface DAOInterface {
-	
-	public void createUser(User User);
-
-}

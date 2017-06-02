@@ -1,0 +1,17 @@
+package com.bank.util;
+
+public class Connection {
+	
+	private static Boolean build=true;
+	private static Connection cf = null;
+	
+	
+	private Connection(){
+		build = false;
+	}
+	
+	public static synchronized Connection getInstance(){
+		
+	}
+
+}

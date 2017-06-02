@@ -1,0 +1,5 @@
+package com.rev.exceptions;
+
+public class UserNotFoundException {
+
+}

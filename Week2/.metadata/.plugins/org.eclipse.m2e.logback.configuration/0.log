@@ -1,0 +1,390 @@
+2017-05-28 20:46:20,943 [Worker-89] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 20:46:22,883 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 20:46:22,885 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 20:46:22,886 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 20:46:22,886 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 20:46:25,774 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:46:25,793 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:46:25,795 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:46:25,807 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:11,508 [Worker-92] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 20:47:11,869 [Worker-92] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.26-incubating/freemarker-2.3.26-incubating.pom
+2017-05-28 20:47:11,907 [Worker-92] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.26-incubating/freemarker-2.3.26-incubating.pom
+2017-05-28 20:47:11,970 [Worker-92] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.26-incubating/freemarker-2.3.26-incubating.jar
+2017-05-28 20:47:12,428 [Worker-92] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.26-incubating/freemarker-2.3.26-incubating.jar
+2017-05-28 20:47:13,300 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:13,329 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:13,337 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:13,374 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:13,375 [Worker-92] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 20:47:13,376 [Worker-92] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 20:47:13,396 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:16,498 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:16,514 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:16,515 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:16,527 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:21,052 [Worker-89] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 20:47:21,509 [Worker-89] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 20:47:22,074 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 20:47:22,082 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 20:47:22,089 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 20:47:22,094 [Worker-89] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 20:47:22,328 [Worker-89] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 20:47:22,366 [Worker-89] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 20:47:22,532 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:22,548 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:22,550 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:22,563 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:22,564 [Worker-89] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 20:47:22,564 [Worker-89] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 20:47:22,569 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:47,596 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:47,618 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 20:47:47,620 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 20:47:47,636 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:11:35,744 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:11:35,795 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:11:35,798 [Worker-137] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:11:35,816 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:18:39,905 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:18:39,949 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:18:39,965 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:18:40,022 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:18:57,147 [Worker-173] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:18:57,164 [Worker-173] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:18:57,165 [Worker-173] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:18:57,181 [Worker-173] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:19:49,236 [Worker-177] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:19:49,250 [Worker-177] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:19:49,255 [Worker-177] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:19:49,269 [Worker-177] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:21:27,222 [Worker-176] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:21:27,237 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:21:27,240 [Worker-176] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:21:27,250 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:21:35,623 [Worker-172] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 21:21:36,019 [Worker-172] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:21:36,477 [Worker-172] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 21:21:36,484 [Worker-172] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 21:21:36,489 [Worker-172] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 21:21:36,490 [Worker-172] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 21:21:36,746 [Worker-172] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 21:21:36,752 [Worker-172] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 21:21:36,994 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:21:37,010 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:21:37,011 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:21:37,026 [Worker-178] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:21:37,033 [Worker-178] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:21:37,033 [Worker-178] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:21:37,037 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:23:18,422 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:23:18,433 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:23:18,438 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:23:18,447 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:24:51,994 [Worker-179] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:24:52,224 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.pom
+2017-05-28 21:24:52,235 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:24:52,444 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/efsavage/jquery/jquery-maven/1.7.2/jquery-maven-1.7.2.pom
+2017-05-28 21:24:52,508 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/efsavage/jquery/jquery-maven/1.7.2/jquery-maven-1.7.2.pom
+2017-05-28 21:24:52,550 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/webjars/jquery/3.1.1-1/jquery-3.1.1-1.pom
+2017-05-28 21:24:52,585 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/jquery/3.1.1-1/jquery-3.1.1-1.pom
+2017-05-28 21:24:52,734 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom
+2017-05-28 21:24:52,803 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom
+2017-05-28 21:24:52,838 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom
+2017-05-28 21:24:52,883 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom
+2017-05-28 21:24:52,932 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.jar
+2017-05-28 21:24:53,218 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/efsavage/jquery/jquery-maven/1.7.2/jquery-maven-1.7.2.jar
+2017-05-28 21:24:53,338 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/efsavage/jquery/jquery-maven/1.7.2/jquery-maven-1.7.2.jar
+2017-05-28 21:24:53,361 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/webjars/jquery/3.1.1-1/jquery-3.1.1-1.jar
+2017-05-28 21:24:53,433 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/webjars/jquery/3.1.1-1/jquery-3.1.1-1.jar
+2017-05-28 21:24:53,454 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+2017-05-28 21:24:53,532 [Worker-179] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+2017-05-28 21:24:53,889 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:24:55,153 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:24:55,242 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:24:55,322 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:24:55,337 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:24:55,345 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:24:55,354 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:24:55,360 [Worker-179] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:24:55,361 [Worker-179] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:24:55,366 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:01,573 [Worker-178] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 21:25:02,024 [Worker-178] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:25:02,031 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:25:02,083 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:25:02,668 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:25:02,748 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:25:02,790 [Worker-178] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 21:25:02,800 [Worker-178] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 21:25:02,800 [Worker-178] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 21:25:02,806 [Worker-178] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 21:25:02,991 [Worker-178] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:25:03,106 [Worker-178] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 21:25:03,120 [Worker-178] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 21:25:03,667 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:03,678 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:03,686 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:03,703 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:03,719 [Worker-179] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:25:03,719 [Worker-179] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:25:03,724 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:06,069 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:06,084 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:06,090 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:06,100 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:22,552 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:22,560 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:22,565 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:22,574 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:45,534 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:45,548 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:45,553 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:45,564 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:52,183 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:52,198 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:25:52,206 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:25:52,218 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:06,110 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:06,131 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:06,146 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:06,164 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:18,225 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:18,289 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:18,303 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:18,321 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:44,003 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:44,019 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:44,027 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:44,038 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:52,395 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:52,406 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:26:52,412 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:26:52,422 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:13,589 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:13,597 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:13,601 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:13,611 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:26,908 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:26,922 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:26,929 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:26,945 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:36,696 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:36,705 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:36,710 [Worker-175] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:36,718 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:42,840 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:42,851 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:27:42,856 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:27:42,866 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:29:41,889 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:29:41,903 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:29:41,910 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:29:41,925 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:29:58,051 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:29:58,060 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:29:58,065 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:29:58,075 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:30:09,288 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:30:09,298 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:30:09,305 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:30:09,317 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:31:13,127 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:31:13,138 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:31:13,143 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:31:13,151 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:32:05,525 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:32:05,536 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:32:05,540 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:32:05,550 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:32:24,371 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:32:24,383 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:32:24,387 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:32:24,397 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:33:24,413 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:33:24,431 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:33:24,441 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:33:24,459 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:01,585 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:01,593 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:01,597 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:01,606 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:33,951 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:33,966 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:33,972 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:33,984 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:50,454 [ModalContext] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:50,498 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:36:50,511 [ModalContext] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:36:50,530 [ModalContext] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:37:02,709 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:37:02,719 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:37:02,726 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:37:02,734 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:37:32,585 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:37:32,594 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:37:32,599 [Worker-181] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:37:32,607 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:39:25,182 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:39:25,192 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:39:25,196 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:39:25,205 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:40:38,313 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:40:38,322 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:40:38,326 [Worker-179] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:40:38,334 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:42:48,246 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:42:48,262 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:42:48,268 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:42:48,280 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:43:53,825 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:43:53,834 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:43:53,839 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:43:53,850 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:44:10,643 [Worker-170] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 21:44:11,036 [Worker-170] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:44:11,051 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:44:11,102 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:44:11,645 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:44:11,695 [Worker-174] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:44:11,740 [Worker-170] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 21:44:11,752 [Worker-170] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 21:44:11,753 [Worker-170] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 21:44:11,759 [Worker-170] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 21:44:11,850 [Worker-170] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0.2 is missing, no dependency information available
+2017-05-28 21:44:11,960 [Worker-170] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 21:44:11,965 [Worker-170] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 21:44:12,213 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:44:12,229 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:44:12,230 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:44:12,243 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:44:12,245 [Worker-169] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:44:12,245 [Worker-169] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:44:12,256 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:42,717 [Worker-169] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:46:43,498 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:43,509 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:46:43,515 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:43,523 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:46:43,528 [Worker-169] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:46:43,529 [Worker-169] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:46:43,532 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:44,172 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:44,191 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:46:44,192 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:44,202 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:46:49,731 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:49,740 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:46:49,744 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:46:49,753 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:47:21,632 [Worker-174] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 21:47:21,986 [Worker-174] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 21:47:22,719 [Worker-174] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 21:47:22,725 [Worker-174] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 21:47:22,731 [Worker-174] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 21:47:22,738 [Worker-174] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 21:47:22,912 [Worker-174] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 21:47:22,918 [Worker-174] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 21:47:23,158 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:47:23,203 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:47:23,206 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 21:47:23,222 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 21:47:23,222 [Worker-172] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 21:47:23,232 [Worker-172] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 21:47:23,238 [Worker-172] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:01:58,974 [Worker-186] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 22:01:59,838 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:01:59,855 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:01:59,858 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:01:59,871 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:01:59,872 [Worker-186] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 22:01:59,877 [Worker-186] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 22:01:59,882 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:02:22,064 [Worker-185] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 22:02:22,355 [Worker-185] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 22:02:22,992 [Worker-185] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 22:02:22,993 [Worker-185] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 22:02:23,000 [Worker-185] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 22:02:23,001 [Worker-185] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 22:02:23,198 [Worker-185] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 22:02:23,203 [Worker-185] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 22:02:23,399 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:02:23,406 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:02:23,412 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:02:23,420 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:02:23,421 [Worker-186] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 22:02:23,421 [Worker-186] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 22:02:23,429 [Worker-186] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:04:11,403 [Worker-183] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-28 22:04:11,742 [Worker-183] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-28 22:04:12,338 [Worker-183] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-28 22:04:12,343 [Worker-183] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-28 22:04:12,343 [Worker-183] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-28 22:04:12,348 [Worker-183] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-28 22:04:12,488 [Worker-183] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-28 22:04:12,498 [Worker-183] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-28 22:04:12,736 [Worker-189] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:04:12,757 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:04:12,758 [Worker-189] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:04:12,772 [Worker-189] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:04:12,773 [Worker-189] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-28 22:04:12,773 [Worker-189] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-28 22:04:12,778 [Worker-189] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:50:40,219 [Worker-195] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:50:40,226 [Worker-195] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-28 22:50:40,228 [Worker-195] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-28 22:50:40,233 [Worker-195] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:17,058 [Worker-236] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-30 10:40:19,367 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:19,388 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:19,395 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:19,410 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:19,410 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-30 10:40:19,411 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-30 10:40:19,415 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:20,166 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:20,184 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:20,188 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:20,200 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:27,397 [Worker-238] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-30 10:40:27,767 [Worker-238] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-30 10:40:28,320 [Worker-238] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-30 10:40:28,320 [Worker-238] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-30 10:40:28,327 [Worker-238] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-30 10:40:28,327 [Worker-238] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-30 10:40:28,535 [Worker-238] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-30 10:40:28,540 [Worker-238] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-05-30 10:40:28,965 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:28,978 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:28,979 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:40:28,989 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:40:28,994 [Worker-231] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-30 10:40:28,994 [Worker-231] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-30 10:40:28,997 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:29,708 [Worker-236] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-30 10:41:30,610 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:30,627 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:30,633 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:30,643 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:30,648 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-30 10:41:30,648 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-30 10:41:30,651 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:31,929 [Worker-238] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:31,945 [Worker-238] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:31,950 [Worker-238] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:31,963 [Worker-238] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:38,286 [Worker-235] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-05-30 10:41:38,569 [Worker-235] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.rev:BankingFreemarker:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week2\BankingFreemarker\pom.xml.
+2017-05-30 10:41:39,019 [Worker-235] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/main/java
+2017-05-30 10:41:39,025 [Worker-235] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/main/resources
+2017-05-30 10:41:39,029 [Worker-235] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingFreemarker/src/test/java
+2017-05-30 10:41:39,033 [Worker-235] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingFreemarker/src/test/resources
+2017-05-30 10:41:39,166 [Worker-235] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingFreemarker
+2017-05-30 10:41:39,170 [Worker-235] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-05-30 10:41:39,644 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:39,694 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:39,696 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-30 10:41:39,720 [Worker-236] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-05-30 10:41:39,720 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingFreemarker
+2017-05-30 10:41:39,728 [Worker-236] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingFreemarker
+2017-05-30 10:41:39,732 [Worker-236] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

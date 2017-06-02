@@ -1,0 +1,283 @@
+package com.bank.dao;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+import com.bank.pojos.Account;
+import com.bank.pojos.AccountType;
+import com.bank.pojos.User;
+import com.bank.util.ConnectionFactory;
+
+public class DaoImpl {
+	
+	static DateTimeFormatter form = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+	static LocalDateTime now;
+	static Date today;
+	
+	
+	public void newAccount(int accountType,int userid){
+		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+			String sql="{call new_account(?,?)}";
+			CallableStatement cs = connection.prepareCall(sql);
+			cs.setInt(1, accountType);
+			cs.setInt(2, userid);	
+			cs.execute();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+	public ArrayList<AccountType> fetchAccountTypes(){
+		ArrayList<AccountType> accounttypes=new ArrayList<AccountType>();
+		Statement statement = null;
+		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+			String sql="select * from accounttype order by t_id";
+			statement = connection.createStatement();
+			
+			ResultSet info = statement.executeQuery(sql);
+			
+			while(info.next()){
+				AccountType temp = new AccountType();
+				temp.setId(info.getInt(1));
+				temp.setName(info.getString(2));
+				accounttypes.add(temp);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return accounttypes;
+	}
+	public ArrayList<Account> findAccounts(int userid){
+		  ArrayList<Account> accounts = new ArrayList<Account>();
+
+		  System.out.println("in find accounts in dao");
+	        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+	            String sql = "SELECT * FROM account INNER JOIN"
+	            		+ " ACCOUNTTYPE ON ACCOUNT.Type_ID=ACCOUNTTYPE.t_ID "
+	            		+ "WHERE account.acct_id=?";
+	            PreparedStatement ps = conn.prepareStatement(sql);
+	            ps.setInt(1, userid);
+	            ResultSet rs = ps.executeQuery();
+	            if (rs.next()) {
+	            	System.out.println("in result set");
+	            	Account temp = new Account();
+	                temp.setId(rs.getInt(1));
+	                temp.setBalance(rs.getDouble(2));
+	                 temp.setDateOpened(rs.getDate(4));
+	                  temp.setDateClosed( rs.getDate(5) == null ? null : rs.getDate(5));
+	                 temp.setType(new AccountType(rs.getInt(3), rs.getString(7)));
+	                accounts.add(temp);
+	                System.out.println("printing acct in dao " + temp);
+	            }
+
+	        } catch (Exception e) {
+	        }
+
+	        return accounts;
+	}
+	public ArrayList<Integer> findAccountHolders(int accountid){
+		ArrayList<Integer> holders=new ArrayList<Integer>();
+		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+			String sql=" select * from user_account where account_id=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, accountid);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				return null;
+			}
+			while(info.next()){
+				holders.add(info.getInt(1));
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return holders;
+	}
+	public int updateBalance(Account account,double newbal){
+		return 0;
+	}
+	 
+	public int addUser(String Firstname,String ln, String uname, String pw){
+		
+		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+			String sql=" insert into users(FIRST_NAME,LAST_NAME,PASSWORD,USERNAME)"
+					+"values(?,?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, Firstname);
+			ps.setString(2, ln);
+			ps.setString(3, pw);
+			ps.setString(4, uname);
+			
+			int num = ps.executeUpdate();
+			System.out.println();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public User getUser(int id) {
+		User u = new User();
+		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+			
+			String sql="select * from users where "
+					+"u_id=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				return null;
+			}
+			while(info.next()){
+				
+				u.setId(info.getInt(1));
+				u.setFirstname(info.getString(2));
+				u.setLastname(info.getString(3));
+				u.setPassword(info.getString(4));
+				u.setUsername(info.getString(4));;
+				return u;
+			}
+				
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return u;
+	}
+	public User getUser(String uname){
+		User u = new User();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			
+			String sql="select * from users where "
+					+"username=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, uname);
+			
+			ResultSet info = ps.executeQuery();
+			
+			if(!info.isBeforeFirst()){
+				return null;
+			}
+			while(info.next()){
+				u.setId(info.getInt(1));
+				u.setFirstname(info.getString(2));
+				u.setLastname(info.getString(3));
+				u.setPassword(info.getString(3));
+				u.setUsername(info.getString(4));
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return u;
+	}
+//	public Account getAccount(int id) {
+//		Account a = new Account();
+//		try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+//			
+//			String sql="select * from account where "
+//					+"acct_id=?";
+//			PreparedStatement ps = connection.prepareStatement(sql);
+//			ps.setInt(1, id);
+//			ResultSet info = ps.executeQuery();
+//			
+//			if(!info.isBeforeFirst()){
+//				return null;
+//			}
+//			while(info.next()){
+//				a.setId(info.getInt(1));
+//				a.setBalance(info.getDouble(2));
+//				int t = info.getInt(3);
+//				
+//				a.setType();
+//				a.setDateOpened(info.getDate(4));
+//				a.setDateClosed(info.getDate(5));
+//				
+//			}
+//			
+//		}catch(SQLException e){
+//			e.printStackTrace();
+//		}
+//		return a;
+//	}
+	private boolean changeUserInfo(String vartochange,String newinfo,String uname){
+		User u=new User();
+		u=getUser(uname);
+		if(u!=null){
+			try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+				String sql="update users set "+vartochange+" = ? where username = ?";
+				PreparedStatement ps = connection.prepareStatement(sql);
+				ps.setString(1, newinfo);
+				ps.setString(2, uname);
+				ps.executeUpdate(sql);
+				}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
+		return(u!=null);
+	}
+//	private boolean changeAccountInfo(String vartochange, double newinfo, int id){
+//		Account a=getAccount(id);
+//		if(a!=null){
+//			try(Connection connection =ConnectionFactory.getInstance().getConnection();){
+//					if(vartochange.equals("closed")){
+//						String sql="update account set closed = current_date where acct_id = ?";
+//						PreparedStatement ps = connection.prepareStatement(sql);
+//						ps.setInt(1, id);
+//						ps.executeUpdate();
+//					}
+//					if(vartochange.equals("balance")){
+//						double newbalance=a.getBalance()+newinfo;
+//						if(newbalance>0){
+//							String sql="update account set balance = balance + ? where acct_id = ?";
+//							PreparedStatement ps = connection.prepareStatement(sql);
+//							ps.setDouble(1, newinfo);
+//							ps.setInt(2, id);
+//							ps.executeUpdate();
+//							if(newinfo>0){
+//							}else{
+//							}
+//							return true;
+//						}else{
+//							return false;
+//						}
+//					}
+//					
+//				}catch(SQLException e){
+//				e.printStackTrace();
+//				}
+//		}
+//		return(a!=null);
+//	}
+//	public boolean receiveGenericChange(String tabletochange,String vartochange,String newinfo,String idname){
+//		if(tabletochange.equals("users")){
+//			return changeUserInfo(vartochange,newinfo,idname);
+//			
+//		}
+//		if(tabletochange.equals("account")){
+//			if(vartochange.equals("closed")){
+//				return changeAccountInfo("closed",0,Integer.parseInt(idname));
+//			}else{
+//				System.out.println("changing balance");
+//			return changeAccountInfo(vartochange,Double.parseDouble(newinfo),Integer.parseInt(idname));
+//
+//			}
+//		}
+//		return false;
+//	}
+//	
+
+}
