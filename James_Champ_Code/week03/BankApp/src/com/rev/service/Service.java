@@ -6,6 +6,7 @@ import com.rev.exceptions.InsufficientFundsException;
 import com.rev.exceptions.NonexistentAccountException;
 import com.rev.pojos.Account;
 import com.rev.pojos.User;
+import com.rev.util.InputValidator;
 
 // TODO: Add comments
 public class Service {
@@ -14,13 +15,14 @@ public class Service {
 	private static DAO dao = new DAOImpl();
 	
 	public User addUser(String firstName, String lastName, String password, String email) {
-		if(dao.addUser(firstName, lastName, password, email) == 1) {
-			User user = dao.getUser(email);
-			
-			return user;
+		User user = null;
+		
+		if(InputValidator.validateEmail(email) && 
+			dao.addUser(firstName, lastName, password, email) == 1) {
+			user = dao.getUser(email);			
 		}
 		
-		return null;
+		return user;
 	}
 	
 	public User getUser(String email) {
