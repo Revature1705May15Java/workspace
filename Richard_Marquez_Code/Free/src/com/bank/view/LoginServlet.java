@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -17,13 +18,11 @@ import java.util.Scanner;
 import static java.lang.Boolean.FALSE;
 
 //@WebServlet(name = "FreeServlet")
-public class BankServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private Boolean uLock = new Boolean(FALSE);
 
+    private Boolean uLock = new Boolean(FALSE);
     private static Service svc = new Service();
-    private static User currUser;
-    private static Account currAcct;
 
     public void init(ServletConfig config) throws ServletException {
         System.out.println("init");
@@ -44,25 +43,20 @@ public class BankServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if (request.getParameter("logoutButton") != null) {
-            currUser = null;
-        } else if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
+        if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
             synchronized (uLock) {
-                currUser = svc.login(username, password);
-                System.out.println(currUser);
+                User u = svc.login(username, password);
+                if (u != null) {
+                    HttpSession s = request.getSession(true);
+                    s.setAttribute("user", u);
+                    request.getRequestDispatcher("/Home").forward(request, response);
+                } else {
+                    response.sendRedirect("/");
+                }
             }
         }
-
-        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("currUser", (currUser == null) ? "" : currUser);
-
-        if (currUser == null) {
-            request.getRequestDispatcher("/login.ftl").forward(request, response);
-        } else {
-            request.getRequestDispatcher("/bank.ftl").forward(request, response);
-        }
     }
 }

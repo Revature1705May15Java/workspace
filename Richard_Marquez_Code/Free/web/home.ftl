@@ -10,7 +10,7 @@
         ${currUser.getLastName()}, ${currUser.getFirstName()}
     </p>
 
-    <form name="logoutForm" action="/Bank" method="POST">
+    <form name="logoutForm" action="/" method="POST">
         <input class="form-control btn-primary" type="submit" name="logoutButton" value="Logout">
     </form>
 </div>

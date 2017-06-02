@@ -10,14 +10,12 @@
 </div>
 
 <div class="container-fluid" style="width:30%;">
-    <form name="loginForm" action="/Bank" method="POST">
+    <form name="loginForm" action="/Login" method="POST">
         <input class="form-control" type="text" name="username" placeholder="youremail@domain.com"><br>
         <input class="form-control" type="password" name="password" placeholder="password"><br>
         <input class="form-control btn-primary" type="submit" value="Login">
     </form>
 </div>
-
-${currUser}
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" />
