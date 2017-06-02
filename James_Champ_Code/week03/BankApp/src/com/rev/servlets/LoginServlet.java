@@ -25,13 +25,14 @@ public class LoginServlet extends HttpServlet {
 		Service service = new Service();
 		
 		User u = service.getUser(email);
-		if(password.equals(u.getPassword())){
-			RequestDispatcher rd = request.getRequestDispatcher("success.html");
-			rd.forward(request, response);
+		
+		if(u != null && password.equals(u.getPassword())){
+			request.setAttribute("user", u);
+			request.getRequestDispatcher("member.ftl").forward(request, response);
 		}
 		else {
-			RequestDispatcher rd = request.getRequestDispatcher("error.html");
-			rd.forward(request, response);
+			request.setAttribute("login", "fail");
+			request.getRequestDispatcher("login.ftl").forward(request, response);
 		}
 	}
 }
