@@ -48,7 +48,7 @@ public class Register extends HttpServlet {
 		}
 		out.print("<p>country "+ country + "</p>");
 		for(int i = 0; i < languages.length;i++){
-			out.print("<p>hobbit "+ languages[i] + "</p>");
+			out.print("<p>language "+ languages[i] + "</p>");
 		}
 		
 		out.print("</div>");

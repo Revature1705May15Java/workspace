@@ -1,0 +1,6 @@
+<html>
+<body>
+<p>welcome, ${firstname} ${lastname}</p>
+</body>
+
+</html>

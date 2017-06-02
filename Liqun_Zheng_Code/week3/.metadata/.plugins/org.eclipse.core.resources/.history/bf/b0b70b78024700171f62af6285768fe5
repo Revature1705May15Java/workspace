@@ -1,0 +1,10 @@
+package com.bank.test;
+
+import com.bank.service.Service;
+
+public class test {
+	Service service = new Service();
+	public static void main(String[] args) {
+		System.out.println(service);
+	}
+}

@@ -1,0 +1,1615 @@
+2017-05-25T16:22:12.263 1 users add
+2017-05-25T16:44:53.808 23000
+2017-05-25T16:47:24.980 23000
+2017-05-25T16:47:25.053 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+2017-05-25T16:47:58.152 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+2017-05-25T16:49:36.184 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+2017-05-25T16:49:45.600 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+2017-05-28T18:27:10.472 Retrieved user by user id User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+2017-05-29T22:01:03.255 Retrieved user by user id User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+2017-05-29T22:02:54.942 Retrieved user by user id User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+2017-05-29T22:02:55.050 Retrieved user by user id User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+2017-05-29T22:48:59.905 Retrieved user by user id User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-29T22:49:00.027 Added Account: Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-29T23:13:58.653 Retrieved recent created user ID 105
+2017-05-29T23:32:27.533 99999
+2017-05-29T23:33:54.273 99999
+2017-05-29T23:41:04.417 99999
+2017-05-29T23:41:37.774 Account number by user ID 100: is 2
+2017-05-30T22:04:46.970 Account number by user ID 0: is 0
+2017-05-30T22:09:37.822 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T22:09:37.869 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T22:09:37.871 Retrieved all acounts by userId [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=null, account_holder=null]
+]
+2017-05-30T22:44:45.535 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T22:47:07.569 1 users add
+2017-05-30T22:47:07.587 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:47:38.926 Account number by user ID 300: is 0
+2017-05-30T22:47:50.278 Account number by user ID 300: is 0
+2017-05-30T22:47:50.320 Retrieved recent created account ID 300
+2017-05-30T22:47:50.341 User_Account inserted UserId: 300 AccountId: 300
+2017-05-30T22:47:50.373 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T22:47:50.374 Retrieved Account by accountId Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T22:47:50.391 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-30T22:47:50.392 Added Account: Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]]
+
+2017-05-30T22:55:34.440 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:55:42.200 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:56:03.831 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:57:43.037 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:57:58.889 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-30T22:58:14.951 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T22:58:14.984 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T22:58:14.985 Retrieved all acounts by userId [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=null, account_holder=null]
+]
+2017-05-30T22:59:45.284 Account number by user ID 105: is 1
+2017-05-30T22:59:48.736 Account number by user ID 105: is 1
+2017-05-30T22:59:48.773 Retrieved recent created account ID 310
+2017-05-30T22:59:48.794 User_Account inserted UserId: 105 AccountId: 310
+2017-05-30T22:59:48.821 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T22:59:48.822 Retrieved Account by accountId Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T22:59:48.838 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-30T22:59:48.839 Added Account: Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-30T23:04:48.090 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T23:04:48.123 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:04:48.138 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:04:48.139 Retrieved all acounts by userId [Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:05:02.285 Account number by user ID 105: is 2
+2017-05-30T23:05:06.511 Account number by user ID 105: is 2
+2017-05-30T23:05:06.545 Retrieved recent created account ID 320
+2017-05-30T23:05:06.566 User_Account inserted UserId: 105 AccountId: 320
+2017-05-30T23:05:06.594 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:05:06.595 Retrieved Account by accountId Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T23:05:06.611 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-30T23:05:06.612 Added Account: Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-30T23:06:40.731 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T23:06:40.765 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:06:40.781 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:06:40.798 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:06:40.800 Retrieved all acounts by userId [Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:08:07.932 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T23:08:07.966 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:08:07.983 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:08:08 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:08:08.002 Retrieved all acounts by userId [Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+]
+2017-05-30T23:08:10.493 Account number by user ID 105: is 2
+2017-05-30T23:08:14.082 Account number by user ID 105: is 2
+2017-05-30T23:08:14.115 Retrieved recent created account ID 330
+2017-05-30T23:08:14.138 User_Account inserted UserId: 105 AccountId: 330
+2017-05-30T23:08:14.167 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:08:14.168 Retrieved Account by accountId Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T23:08:14.182 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-30T23:08:14.183 Added Account: Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-30T23:08:20.748 Account number by user ID 105: is 3
+2017-05-30T23:09:18.887 Account number by user ID 105: is 2
+2017-05-30T23:09:21.384 Account number by user ID 105: is 2
+2017-05-30T23:09:21.417 Retrieved recent created account ID 340
+2017-05-30T23:09:21.438 User_Account inserted UserId: 105 AccountId: 340
+2017-05-30T23:09:21.466 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:09:21.467 Retrieved Account by accountId Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T23:09:21.482 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-30T23:09:21.483 Added Account: Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-30T23:09:22.722 Account number by user ID 105: is 3
+2017-05-30T23:09:32.473 Account number by user ID 105: is 2
+2017-05-30T23:09:33.735 Account number by user ID 105: is 2
+2017-05-30T23:09:33.767 Retrieved recent created account ID 350
+2017-05-30T23:09:33.788 User_Account inserted UserId: 105 AccountId: 350
+2017-05-30T23:09:33.815 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:09:33.816 Retrieved Account by accountId Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-30T23:09:33.829 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-30T23:09:33.830 Added Account: Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-30T23:09:37.867 Account number by user ID 105: is 3
+2017-05-30T23:09:43.589 Account number by user ID 105: is 3
+2017-05-30T23:26:35.173 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T23:26:35.205 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:26:35.222 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:26:35.238 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:26:35.255 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:26:35.270 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:26:35.286 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:26:35.287 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:26:56.222 Account number by user ID 105: is 3
+2017-05-30T23:29:00.394 Account number by user ID 105: is 3
+2017-05-30T23:31:45.206 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-30T23:31:45.240 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:31:45.255 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:31:45.272 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:45.288 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:45.302 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:45.317 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:31:45.318 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:31:47.639 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:31:47.655 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:31:47.671 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:47.685 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:47.699 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:31:47.714 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:31:47.715 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:38:06.882 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:38:06.901 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:38:06.920 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:38:06.938 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:38:06.954 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:38:06.968 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:38:06.969 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:42:12.699 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:42:12.717 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:42:12.734 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:42:12.757 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:42:12.774 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:42:12.788 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:42:12.790 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-30T23:56:52.686 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:56:52.706 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-30T23:56:52.725 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:56:52.742 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:56:52.758 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-30T23:56:52.772 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-30T23:56:52.773 Retrieved all acounts by userId [Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+]
+2017-05-31T00:42:27.650 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:42:27.669 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:42:27.688 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:42:27.707 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:42:27.725 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:42:27.739 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T00:43:18.084 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:43:18.102 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:43:18.119 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:43:18.139 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:43:18.156 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:43:18.170 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T00:46:43.439 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:46:43.459 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:46:43.477 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:46:43.495 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:46:43.510 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:46:43.525 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T00:58:54.837 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:58:54.856 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T00:58:54.872 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:58:54.888 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:58:54.906 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T00:58:54.923 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:04:04.299 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:04:04.317 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:04:04.331 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:04:04.352 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:04:04.369 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:04:04.383 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:07:42.543 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:07:42.562 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:07:42.581 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:07:42.599 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:07:42.616 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:07:42.630 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:11:08.446 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:11:08.465 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:11:08.482 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:11:08.498 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:11:08.514 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:11:08.528 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:13:25.397 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:13:25.415 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:13:25.434 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:13:25.453 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:13:25.469 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:13:25.486 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:16:34.663 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:16:34.680 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:16:34.698 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:16:34.717 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:16:34.735 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:16:34.749 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:19:43.067 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:19:43.085 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:19:43.100 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:19:43.115 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:19:43.131 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:19:43.145 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:20:55.655 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T01:20:55.689 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:20:55.708 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:20:55.722 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:20:55.738 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:20:55.753 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:20:55.769 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:21:00.885 Account number by user ID 105: is 3
+2017-05-31T01:21:03.255 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:21:03.270 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:21:03.286 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:03.300 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:03.314 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:03.332 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:21:09.040 Account number by user ID 105: is 2
+2017-05-31T01:21:11.227 Account number by user ID 105: is 2
+2017-05-31T01:21:11.260 Retrieved recent created account ID 360
+2017-05-31T01:21:11.279 User_Account inserted UserId: 105 AccountId: 360
+2017-05-31T01:21:11.307 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:21:11.309 Retrieved Account by accountId Account [id=360, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+
+2017-05-31T01:21:11.324 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T01:21:11.325 Added Account: Account [id=360, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-31T01:21:13.378 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:21:13.391 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:21:13.405 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:13.419 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:13.434 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:21:13.448 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:21:13.464 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:26:53.092 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T01:26:53.129 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:26:53.144 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:26:53.163 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:53.177 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:53.192 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:53.207 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:26:53.221 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:26:56.417 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:26:56.434 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:26:56.449 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:56.463 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:56.478 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:26:56.494 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:26:56.510 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:27:03.988 Account number by user ID 105: is 2
+2017-05-31T01:27:06.245 Account number by user ID 105: is 2
+2017-05-31T01:27:06.279 Retrieved recent created account ID 370
+2017-05-31T01:27:06.295 User_Account inserted UserId: 105 AccountId: 370
+2017-05-31T01:27:06.327 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:27:06.329 Retrieved Account by accountId Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+
+2017-05-31T01:27:06.344 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T01:27:06.345 Added Account: Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=[User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]]
+
+2017-05-31T01:27:09.834 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:27:09.848 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:27:09.863 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:27:09.876 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:27:09.890 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:27:09.904 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:27:09.920 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:27:09.933 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:27:48.593 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-31T01:52:07.103 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T01:52:07.136 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:07.151 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:07.170 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:07.185 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:07.199 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:07.215 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:07.228 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:07.241 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:12.105 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:12.120 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:12.134 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:12.148 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:12.165 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:12.181 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:12.195 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:12.209 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:19.411 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:19.412 Retrieved Account by accountId Account [id=350, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T01:52:19.431 Balance updated to: 200.0
+2017-05-31T01:52:24.269 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:24.283 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T01:52:24.298 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:24.314 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:24.327 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T01:52:24.341 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:24.354 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T01:52:24.369 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:02:47.466 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:02:47.500 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:02:47.514 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:02:47.532 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:02:47.547 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:02:47.561 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:02:47.575 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:02:47.588 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:02:47.601 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:20.222 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:03:20.256 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:03:20.272 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:03:20.291 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:20.306 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:20.320 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:20.335 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:03:20.348 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:03:20.361 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:23.282 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:03:23.297 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:03:23.312 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:23.326 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:23.343 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:03:23.358 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:03:23.372 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:03:23.386 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:31.665 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:04:31.700 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:04:31.714 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:04:31.731 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:31.746 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:31.762 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:31.778 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:04:31.792 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:04:31.805 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:34.136 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:04:34.151 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:04:34.164 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:34.178 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:34.196 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:04:34.211 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:04:34.227 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:04:34.241 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:11.341 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:06:11.375 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:11.390 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:11.408 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:11.424 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:11.438 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:11.453 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:11.466 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:11.480 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:14.558 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:14.573 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:14.588 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:14.601 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:14.618 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:14.635 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:14.649 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:14.663 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:18.277 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:18.278 Retrieved Account by accountId Account [id=350, balance=200.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:06:18.293 Balance updated to: 300.0
+2017-05-31T02:06:20.750 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:20.765 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:20.780 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:20.794 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:20.808 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:20.822 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:20.836 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:20.851 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:26.705 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:26.718 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:26.731 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:26.746 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:26.760 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:26.773 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:26.788 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:26.801 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:33.798 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:33.799 Retrieved Account by accountId Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:06:33.822 Balance updated to: -200.0
+2017-05-31T02:06:37.674 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:37.691 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:06:37.721 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:37.738 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:37.755 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:06:37.773 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:37.790 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:06:37.805 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:30.130 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:29:30.165 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:29:30.181 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:29:30.197 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:30.212 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:30.227 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:30.244 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:29:30.258 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:29:30.271 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:37.247 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:29:37.262 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:29:37.279 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:37.293 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:37.310 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:29:37.326 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:29:37.341 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:29:37.355 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:53.313 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:37:53.347 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:37:53.362 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:37:53.381 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:53.395 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:53.410 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:53.424 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:37:53.438 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:37:53.452 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:58.454 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:37:58.469 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:37:58.484 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:58.498 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:58.516 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:37:58.532 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:37:58.547 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:37:58.560 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:05.370 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:05.371 Retrieved Account by accountId Account [id=350, balance=-200.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:38:05.390 Balance updated to: 800.0
+2017-05-31T02:38:13.466 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:38:13.479 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:38:13.493 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:13.509 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:13.523 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:13.537 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:13.552 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:13.566 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:27.281 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:38:27.295 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:38:27.311 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:27.325 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:27.339 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:27.352 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:27.366 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:27.379 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:38:52.170 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:52.171 Retrieved Account by accountId Account [id=350, balance=800.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:38:52.193 Balance updated to: -600.0
+2017-05-31T02:38:52.219 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:38:52.220 Retrieved Account by accountId Account [id=360, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+
+2017-05-31T02:38:52.237 Balance updated to: 200.0
+2017-05-31T02:39:00.046 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:39:00.061 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:39:00.075 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:39:00.087 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:39:00.100 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:39:00.114 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:39:00.127 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:39:00.141 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:31.440 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T02:40:31.476 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:31.491 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:31.509 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:31.525 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:31.539 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:31.553 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:31.566 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:31.579 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:35.760 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:35.776 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:35.790 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:35.804 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:35.822 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:35.837 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:35.852 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:35.866 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:42.376 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:42.377 Retrieved Account by accountId Account [id=350, balance=-600.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:40:42.396 Balance updated to: 400.0
+2017-05-31T02:40:47.052 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:47.067 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:47.081 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:47.096 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:47.111 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:47.127 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:47.141 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:47.156 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:52.530 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:52.544 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:40:52.559 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:52.573 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:52.587 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:52.600 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:52.615 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:52.628 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:40:57.620 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:57.621 Retrieved Account by accountId Account [id=350, balance=400.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+
+2017-05-31T02:40:57.637 Balance updated to: 300.0
+2017-05-31T02:40:57.664 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:40:57.666 Retrieved Account by accountId Account [id=360, balance=200.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+
+2017-05-31T02:40:57.683 Balance updated to: 300.0
+2017-05-31T02:41:00.789 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:41:00.803 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T02:41:00.817 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:41:00.830 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:41:00.844 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:41:00.859 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:41:00.872 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T02:41:00.887 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T02:51:19.929 42000
+2017-05-31T02:53:09.478 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T02:54:13.958 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T02:55:05.697 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+, User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T02:56:18.799 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+, User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:31:53.052 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T03:31:53.091 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:31:53.110 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:31:53.128 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:53.144 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:53.159 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:53.174 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:31:53.187 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:31:53.201 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:58 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:31:58.016 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:31:58.033 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:58.047 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:58.064 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:31:58.079 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:31:58.093 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:31:58.107 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:32:30.487 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T03:32:30.502 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T03:32:30.527 23000
+2017-05-31T03:34:42.231 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T03:34:42.267 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:34:42.286 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:34:42.303 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:42.319 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:42.334 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:42.354 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:34:42.370 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:34:42.386 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:45.756 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:34:45.771 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:34:45.787 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:45.801 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:45.818 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:45.833 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:34:45.847 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:34:45.861 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:34:48.510 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T03:34:48.524 Retrieved users by accountId [User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+]
+2017-05-31T03:35:08.482 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-31T03:35:35.309 Retrieved user by username User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+
+2017-05-31T03:35:49.031 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T03:35:49.062 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:35:49.077 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:35:49.090 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.104 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.117 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.131 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:35:49.145 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:35:49.160 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.185 23000
+2017-05-31T03:35:49.211 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:35:49.225 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:35:49.239 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.253 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.267 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:35:49.284 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:35:49.299 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:35:49.315 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:37:12.940 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-31T03:44:27.740 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=lzheng, uname=1234, userAccounts=null]
+
+2017-05-31T03:48:29.466 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+
+2017-05-31T03:49:09.880 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+
+2017-05-31T03:49:09.915 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:09.930 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:26.939 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:26.954 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:38.117 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:38.131 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:43.616 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:49:43.634 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:49:51.516 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T03:49:51.545 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:51.564 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:51.578 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.592 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.606 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.619 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:49:51.634 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:49:51.648 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.669 User_Account inserted UserId: 105 AccountId: 300
+2017-05-31T03:49:51.697 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:51.711 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:51.726 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:49:51.740 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.754 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.768 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:49:51.782 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:49:51.798 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:49:51.812 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:07.864 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+
+2017-05-31T03:51:07.897 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:07.912 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:11.709 Account number by user ID 300: is 2
+2017-05-31T03:51:13.690 Account number by user ID 300: is 2
+2017-05-31T03:51:13.726 Retrieved recent created account ID 380
+2017-05-31T03:51:13.747 User_Account inserted UserId: 300 AccountId: 380
+2017-05-31T03:51:13.775 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:13.777 Retrieved Account by accountId Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+
+2017-05-31T03:51:13.792 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:51:13.793 Added Account: Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=[User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]]
+
+2017-05-31T03:51:20.126 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:20.141 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:20.162 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:25.487 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:51:25.502 Retrieved users by accountId [User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+]
+2017-05-31T03:51:33.372 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-05-31T03:51:33.401 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.415 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.430 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.444 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.457 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.471 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.486 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:33.501 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:33.515 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.534 User_Account inserted UserId: 105 AccountId: 380
+2017-05-31T03:51:33.562 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.576 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.589 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-05-31T03:51:33.603 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.616 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.631 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.645 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:33.659 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:51:33.673 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-05-31T03:51:33.687 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-05-31T03:55:39.817 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+
+2017-05-31T03:58:19.781 Retrieved user by username User [id=300, fn=liqun, ln=zheng, pw=1234, uname=lzheng, userAccounts=null]
+
+2017-05-31T03:58:38.091 1 users add
+2017-05-31T03:58:38.108 Retrieved user by username User [id=305, fn=liqun, ln=zheng, pw=1234, uname=zheng, userAccounts=null]
+
+2017-06-01T15:52:31.536 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-06-01T15:52:31.573 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:52:31.589 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:52:31.612 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:52:31.629 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:52:31.643 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:52:31.658 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:52:31.676 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:52:31.695 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:52:31.716 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:52:31.733 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:52:31.736 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+]
+2017-06-01T15:54:55.703 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-06-01T15:54:55.742 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:54:55.758 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:54:55.776 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:54:55.792 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:54:55.808 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:54:55.822 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:54:55.837 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:54:55.850 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:54:55.864 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:54:55.878 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:54:55.880 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+]
+2017-06-01T15:56:21.366 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-06-01T15:56:21.408 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:21.423 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:21.440 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:21.457 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:21.471 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:21.486 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:21.499 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:21.514 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:21.528 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:21.542 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:21.544 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+]
+2017-06-01T15:56:24.966 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:24.981 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:25.002 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:25.019 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:25.034 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:25.059 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:25.074 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:25.089 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:25.103 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:25.118 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:25.120 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+]
+2017-06-01T15:56:29.343 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:29.360 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:29.376 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:29.391 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:29.408 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:29.422 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:29.437 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:29.450 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:29.464 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:29.478 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:29.479 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+]
+2017-06-01T15:56:35.593 Account number by user ID 105: is 3
+2017-06-01T15:56:44.272 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:44.288 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:44.304 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T15:56:44.318 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:44.333 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:44.348 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:44.362 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:44.375 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:44.388 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T15:56:44.402 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T15:56:44.403 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+]
+2017-06-01T16:03:33.953 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-06-01T16:03:33.992 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T16:03:34.009 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T16:03:34.026 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-01T16:03:34.043 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T16:03:34.059 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T16:03:34.074 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T16:03:34.089 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T16:03:34.106 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T16:03:34.120 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-01T16:03:34.135 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-01T16:03:34.137 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+]
