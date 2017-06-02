@@ -17,8 +17,8 @@
     </#if>
 
     <form name="loginForm" action="/Login" method="POST">
-        <input class="form-control" type="text" name="username" placeholder="youremail@domain.com"><br>
-        <input class="form-control" type="password" name="password" placeholder="password"><br>
+        <input class="form-control" type="email" name="username" placeholder="youremail@domain.com" required="required"><br>
+        <input class="form-control" type="password" name="password" placeholder="password" required="required"><br>
         <input class="form-control btn-primary" type="submit" value="Login">
     </form>
 </div>

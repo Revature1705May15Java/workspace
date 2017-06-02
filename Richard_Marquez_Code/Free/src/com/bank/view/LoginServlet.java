@@ -25,17 +25,14 @@ public class LoginServlet extends HttpServlet {
     private static Service svc = new Service();
 
     public void init(ServletConfig config) throws ServletException {
-        System.out.println("init");
         super.init(config);
     }
 
     public void destroy() {
-        System.out.println("destroy");
         super.destroy();
     }
 
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("service");
         super.service(request, response);
     }
 
@@ -43,25 +40,22 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        boolean loginFailed = true;
-
         if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
             synchronized (uLock) {
                 User u = svc.login(username, password);
                 if (u != null) {
-                    loginFailed = false;
-
                     HttpSession s = request.getSession(true);
                     s.setAttribute("user", u);
                     response.sendRedirect("/Home");
+                } else {
+                    request.setAttribute("login", "fail");
+                    request.getRequestDispatcher("/login.ftl").forward(request, response);
                 }
             }
+        } else {
+            request.getRequestDispatcher("/login.ftl").forward(request, response);
         }
 
-        if (loginFailed) {
-            request.setAttribute("login", "fail");
-            request.getRequestDispatcher("/").forward(request, response);
-        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

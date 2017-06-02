@@ -29,7 +29,7 @@ public class HomeServlet extends HttpServlet {
 
             request.getRequestDispatcher("/home.ftl").forward(request, response);
         } else {
-            response.sendRedirect("/");
+            response.sendRedirect("/Login");
         }
     }
 

@@ -19,7 +19,7 @@
                 <tr>
                     <td>${account.getId()}</td>
                     <td>${account.getType().getName()}</td>
-                    <td>$${account.getBalance()}</td>
+                    <td>${account.getBalance()?string.currency}</td>
                 </tr>
             </#if>
         </#list>
