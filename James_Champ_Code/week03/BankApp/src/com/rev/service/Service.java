@@ -17,7 +17,9 @@ public class Service {
 	public User addUser(String firstName, String lastName, String password, String email) {
 		User user = null;
 		
+		// TODO: Throw exceptions when email is incorrectly formatted or in the system.
 		if(InputValidator.validateEmail(email) && 
+			isEmailUnique(email) &&
 			dao.addUser(firstName, lastName, password, email) == 1) {
 			user = dao.getUser(email);			
 		}
@@ -138,7 +140,7 @@ public class Service {
 		return total;
 	}
 	
-	public boolean isEmailUnique(String email) {
+	private boolean isEmailUnique(String email) {
 		if(dao.getUser(email) == null) {
 			return true;
 		}
