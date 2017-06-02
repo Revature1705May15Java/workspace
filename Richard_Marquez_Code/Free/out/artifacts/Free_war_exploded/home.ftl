@@ -6,12 +6,27 @@
 <body>
 
 <div class="container-fluid" style="width:30%; margin-top: 10em;">
-    <p>
-        ${currUser.getLastName()}, ${currUser.getFirstName()}
-    </p>
+    <h3>${user.getLastName()}, ${user.getFirstName()}</h3>
 
-    <form name="logoutForm" action="/" method="POST">
-        <input class="form-control btn-primary" type="submit" name="logoutButton" value="Logout">
+    <table class="table table-hover">
+        <tr>
+            <th>Account #</th>
+            <th>Type</th>
+            <th>Balance</th>
+        </tr>
+        <#list accounts as account>
+            <#if !(account.getClosed()??) >
+                <tr>
+                    <td>${account.getId()}</td>
+                    <td>${account.getType().getName()}</td>
+                    <td>$${account.getBalance()}</td>
+                </tr>
+            </#if>
+        </#list>
+    </table>
+
+    <form name="logoutForm" action="/Logout" method="POST">
+        <input class="form-control btn-primary" type="submit" name="logoutButton" value="Log out">
     </form>
 </div>
 

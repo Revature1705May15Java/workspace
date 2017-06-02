@@ -10,6 +10,12 @@
 </div>
 
 <div class="container-fluid" style="width:30%;">
+    <#if login?? >
+        <div class="alert alert-warning">
+            <span>Login <strong>FAILED</strong>!</span>
+        </div>
+    </#if>
+
     <form name="loginForm" action="/Login" method="POST">
         <input class="form-control" type="text" name="username" placeholder="youremail@domain.com"><br>
         <input class="form-control" type="password" name="password" placeholder="password"><br>
