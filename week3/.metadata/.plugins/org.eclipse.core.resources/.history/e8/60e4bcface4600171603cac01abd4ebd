@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body>
+	<h1>Registration Form</h1>
+	<hr>
+	<form name="f1" method="POST" action="Register">
+		<table>
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" name="uname" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="pass" /></td>
+			</tr>
+			<tr>
+
+				<td>&nbsp;</td>
+
+				<td><input type="submit" value="Register" name="btnRegister" />
+					&nbsp;<input type="reset" value="Clear" name="btnClear"></td>
+
+			</tr>
+		</table>
+	</form>
+	<form action="">
+		<input type="radio" name="gender" value="male"> Male <input
+			type="radio" name="gender" value="female"> Female <input
+			type="radio" name="gender" value="other"> Other <br>
+			<input type="checkbox" name="vehicle" value="Bike">I have a bike
+		<input type="checkbox" name="vehicle" value="Car">I have a car<br>
+		<select>
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="opel">Opel</option>
+			<option value="audi">Audi</option>
+		</select><br>
+			 <select name="cars" multiple>
+			<option value="volvo">Thing1</option>
+			<option value="saab">Thing2</option>
+			<option value="opel">Thing3</option>
+			<option value="audi">Thing4</option>
+		</select>
+	</form>
+
+</body>
+</html>
