@@ -1,0 +1,12 @@
+2017-06-03T15:30:06.457 : oracle.jdbc.OracleDriver
+2017-06-03T15:33:06.285 : oracle.jdbc.OracleDriver
+2017-06-03T15:34:53.171 : oracle.jdbc.OracleDriver
+2017-06-03T15:35:24.603 : [Ljava.lang.StackTraceElement;@387c703b
+2017-06-03T15:37:16.679 : oracle.jdbc.OracleDriver
+2017-06-03T15:38:29.119 : oracle.jdbc.OracleDriver
+2017-06-03T15:39:58.342 : 1 user added
+2017-06-03T15:39:58.442 : retrieved user w/ email richard92m@me.com
+2017-06-03T15:41:33.318 : ORA-00001: unique constraint (ERS.SYS_C007131) violated
+
+2017-06-03T15:42:24.434 : 1 user added
+2017-06-03T15:42:24.554 : retrieved user w/ email eric.clapton@me.com
