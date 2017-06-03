@@ -39,12 +39,11 @@ public class NewMemberServlet extends HttpServlet {
 		User user = service.addUser(firstName, lastName, password, email);
 		
 		if(user == null) {
-			RequestDispatcher rd = request.getRequestDispatcher("error.html");
-			rd.forward(request, response);
+			request.getRequestDispatcher("error.html").forward(request, response);
 		}
 		else {
-			RequestDispatcher rd = request.getRequestDispatcher("success.html");
-			rd.forward(request, response);
+			request.setAttribute("user", user);
+			request.getRequestDispatcher("/member.ftl").forward(request, response);
 		}
 	}
 

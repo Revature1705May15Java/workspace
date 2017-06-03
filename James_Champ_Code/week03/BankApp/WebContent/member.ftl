@@ -23,17 +23,21 @@
 			<th>Account Type</th>
 			<th>Balance</th>
 			<th>Date Opened</th>
+			<th>Action</th>
 		</tr>
 		
+		<form id="accountDetails" name="viewDetailsForm" action="details" method="POST"></form>
 		<#list user.accounts as a>
 		<tr>
 			<td>${a.accountId}</td>
 			<td>${a.type.name}</td>
 			<td>${a.balance?string.currency}</td>
 			<td>${a.openDate}</td>
+			<td>
+				<button form="accountDetails" type="submit" class="btn btn-default" name="account" value="${a.accountId}">View</button>
+			</td>
 		</tr>
 		</#list>
-		
 	</table>
 </body>
 </html>
