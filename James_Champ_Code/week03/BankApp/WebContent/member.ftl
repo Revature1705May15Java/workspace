@@ -34,7 +34,7 @@
 			<td>${a.balance?string.currency}</td>
 			<td>${a.openDate}</td>
 			<td>
-				<button form="accountDetails" type="submit" class="btn btn-default" name="account" value="${a.accountId}">View</button>
+				<button form="accountDetails" type="submit" class="btn btn-default" name="account" value="${a.accountId}">View Account</button>
 			</td>
 		</tr>
 		</#list>

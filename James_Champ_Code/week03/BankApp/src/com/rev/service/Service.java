@@ -44,6 +44,10 @@ public class Service {
 		return user;
 	}
 	
+	public Account getAccount(int accountId) {
+		return dao.getAccount(accountId);
+	}
+	
 	public void closeAccount(User user, Account account) {
 		int numClosed = dao.closeAccount(account);
 		
