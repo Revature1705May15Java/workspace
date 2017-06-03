@@ -1,0 +1,8 @@
+package com.ex.pojo;
+
+public class User {
+
+	private String firstName;
+	private String lastName;
+	
+}

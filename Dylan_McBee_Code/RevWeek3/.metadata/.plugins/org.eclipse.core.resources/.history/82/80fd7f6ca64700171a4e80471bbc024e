@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bank App Home</title>
+</head>
+<body>
+<h1>Welcome Back!</h1>
+
+
+
+<#if login! =="fail">
+	<h3 style="color:red">Your login information is incorrect </h3>
+	
+</#if>
+
+</body>
+</html>

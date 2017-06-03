@@ -1,0 +1,12 @@
+package com.ex.evens;
+
+import java.util.Scanner;
+
+public class Evens {
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+	}
+
+}

@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>Intro to Freemarker</title>
+</head>
+<body>
+<form name="user" action="hello" method="POST">
+Firstname: <input type="text" name ="firstName" /><br>
+Lastname: <input type="text" name ="lastName" /><br>
+<input type="submit" value="Save" />
+
+<table class="datatable">
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>
