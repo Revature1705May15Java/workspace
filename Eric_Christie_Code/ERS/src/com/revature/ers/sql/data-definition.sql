@@ -10,11 +10,12 @@ create table requestState (
 create table employee (
   id number primary key,
   email varchar2(100) unique not null,
-  password varchar2(100) not null,
+  passwordHash varchar2(100) not null,
   firstname varchar2(100) not null,
   lastname varchar2(100) not null,
   isManager int not null check (isManager in (0,1)),
-  emailAlertsOn int not null check (emailAlertsOn in (0,1))
+  emailAlertsOn int not null check (emailAlertsOn in (0,1)),
+  latestLogout timestamp
 );
 /
 create table request (
@@ -53,6 +54,11 @@ before insert on employee for each row
 begin
   if :new.id is null then
     select employee_seq.nextval into :new.id from dual;
+  end if;
+  if :new.emailAlertsOn is null and isManager=0 then
+    select 1 into :new.emailAlertsOn from dual;
+  else
+    select 0 into :new.emailAlertsOn from dual;
   end if;
 end;
 /
