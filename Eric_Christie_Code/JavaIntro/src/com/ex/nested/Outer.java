@@ -8,7 +8,9 @@ public class Outer {
 
   String instanceData = "Outer: instance data";
   static String staticData = "Outer: static data";
+  @SuppressWarnings("unused")
   private String privateInstanceData = "Outer: private instance data";
+  @SuppressWarnings("unused")
   private static String privateStaticData = "Outer: private static data";
 
   static class StaticInner {
@@ -61,6 +63,7 @@ public class Outer {
     si.message();
 
     Outer o = new Outer();
+    @SuppressWarnings("unused")
     MemberInner mi = o.new MemberInner();
 
     makeLocalInnerClass();

@@ -54,7 +54,7 @@ interface Collector<T> {
   /*
    * returns a collection containing all the input parameters
    */
-  Collection<T> collect(/* Class<? extends Collection<T>> collectionType, */T... ts);
+  Collection<T> collect(/* Class<? extends Collection<T>> collectionType, */@SuppressWarnings("unchecked") T... ts);
 }
 
 interface Selector<T> {
@@ -62,5 +62,5 @@ interface Selector<T> {
    * returns a collection containing only the input parameters that pass some
    * test case
    */
-  Collection<T> select(/* Class<? extends Collection<T>> collectionType, */Predicate<T> pred, T... ts);
+  Collection<T> select(/* Class<? extends Collection<T>> collectionType, */Predicate<T> pred, @SuppressWarnings("unchecked") T... ts);
 }
