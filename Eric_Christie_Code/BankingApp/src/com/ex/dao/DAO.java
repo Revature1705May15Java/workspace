@@ -1,7 +1,7 @@
 package com.ex.dao;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import com.ex.pojos.Account;
 import com.ex.pojos.AccountType;
@@ -55,20 +55,20 @@ public interface DAO {
    * Retrieve every user's information. This does not retrieve passwords or accounts.
    * @return A set containing all users.
    */
-  public HashSet<User> getAllUsers();
+  public ArrayList<User> getAllUsers();
   
   /**
    * Avoid using this method.
    * Retrieve all accounts. This does not retrieve the account holders for an account.
    * @return A set containing all accounts.
    */
-  public HashSet<Account> getAllAccounts();
+  public ArrayList<Account> getAllAccounts();
   
   /**
    * Retrieve all account types.
    * @return A set containing all the available AccountTypes.
    */
-  public HashSet<AccountType> getAllAccountTypes();
+  public ArrayList<AccountType> getAllAccountTypes();
   
   /**
    * Retrieve a user's information. This does not retrieve a user's passwordHash.
@@ -114,14 +114,14 @@ public interface DAO {
    * @param username
    * @return The set of accounts that have the specified user as an account holder.
    */
-  public HashSet<Account> getAccountsForUser(int id);
+  public ArrayList<Account> getAccountsForUser(int id);
   
   /**
    * Retrieve the any accounts that were ever linked to a user.
    * @param email
    * @return The set of accounts that have the specified user as an account holder.
    */
-  public HashSet<Account> getAccountsForUser(String email);
+  public ArrayList<Account> getAccountsForUser(String email);
   
   /**
    * Avoid using this method.
@@ -129,28 +129,28 @@ public interface DAO {
    * @param username
    * @return The set of accounts that have the specified user as an account holder.
    */
-  public HashSet<Account> getCurrentAccountsForUser(int id);
+  public ArrayList<Account> getCurrentAccountsForUser(int id);
   
   /**
    * Retrieve the open accounts liked to a user.
    * @param email
    * @return The set of accounts that have the specified user as an account holder.
    */
-  public HashSet<Account> getCurrentAccountsForUser(String email);
+  public ArrayList<Account> getCurrentAccountsForUser(String email);
   
   /**
    * Retrieve the account holders for an account.
    * @param a
    * @return The set of email addresses for all the users that are holders of an account.
    */
-  public HashSet<String> getAccountHolderEmails(Account a);
+  public ArrayList<String> getAccountHolderEmails(Account a);
   
   /**
    * Retrieve the current account holders for an account.
    * @param a
    * @return The set of email addresses for all the users that are current holders of an account.
    */
-  public HashSet<String> getCurrentAccountHolderEmails(Account a);
+  public ArrayList<String> getCurrentAccountHolderEmails(Account a);
   
   /**
    * Update the information for a user.

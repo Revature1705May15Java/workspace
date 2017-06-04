@@ -18,14 +18,27 @@
 <body>
   <h1>Welcome to FakeBank Banking</h1>
   <hr>
+  
+  
 
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <#if loginAttempted??>
+          <#if loginAttempted>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong></strong> Incorrect email address or password. Please try again.
+            </div>
+          </#if>
+        </#if>
+      
         <form name="loginForm" method="POST" action="login">
           <table>
-            <tr class="form-group"><td>Email:</td><td><input type="email" name="em" class="form-control"/></td></tr>
-            <tr class="form-group"><td>Password:</td><td><input type="password" name="pw" class="form-control"/></td></tr>
+            <tr class="form-group"><td>Email:</td><td><input type="email" name="em" class="form-control" required/></td></tr>
+            <tr class="form-group"><td>Password:</td><td><input type="password" name="pw" class="form-control" required/></td></tr>
             <tr>
               <td>&nbsp;</td>
               <td><input type="submit" value="Login" name="LoginButton" class="btn btn-default"/></td>
@@ -34,6 +47,17 @@
         </form>
       </div>
       <div class="col-md-6">
+        <#if registerAttempted??>
+          <#if registerAttempted>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <strong></strong> Incorrect email address or password. Please try again.
+            </div>
+          </#if>
+        </#if>
+      
         <form name="registerForm" method="POST" action="register">
           <table>
             <tr class="form-group"><td>Email:</td><td><input type="text" name="em" class="form-control"/></td></tr>

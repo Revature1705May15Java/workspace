@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ex.pojos.User;
 import com.ex.service.BankingService;
@@ -20,7 +21,7 @@ import com.ex.service.BankingService;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	
+	private boolean loginAttempted = false;
 	private User currentUser = null;
 	
 
@@ -50,30 +51,36 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  if (currentUser != null) {
-	        
-	    
-      request.setAttribute("user", currentUser);
-      request.getRequestDispatcher("home.ftl").forward(request, response);
-	  } else {
-	    request.getRequestDispatcher("login.ftl").forward(request, response);
-	  }
+	  doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	  
 	  String email = request.getParameter("em");
 	  String password = request.getParameter("pw");
 	  
-	  BankingService service = new BankingService(false, false);
+	  BankingService service = new BankingService();
 	  
 	  if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
+	    loginAttempted = true;
       currentUser = service.loginUser(email, password);
+    } else if (email != null || password != null) {
+      loginAttempted = true;
+    } else {
+      loginAttempted = false;
     }
 	  
-		doGet(request, response);
+    if (currentUser == null) {
+      request.setAttribute("loginAttempted", loginAttempted);
+      request.getRequestDispatcher("login.ftl").forward(request, response);
+    } else {
+      HttpSession session = request.getSession(true);
+      session.setAttribute("user", currentUser);
+      request.getRequestDispatcher("home.ftl").forward(request, response);
+//      response.sendRedirect("home.ftl");
+    }
 	}
 
 }

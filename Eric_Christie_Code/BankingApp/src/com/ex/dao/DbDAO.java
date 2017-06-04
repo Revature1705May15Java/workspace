@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Savepoint;
 import java.sql.Statement;
 import java.sql.Types;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import com.ex.logging.Logger;
 import com.ex.pojos.Account;
@@ -27,13 +27,8 @@ import oracle.jdbc.OracleTypes;
 
 public class DbDAO implements DAO {
   
-//  private Logger logger;
-  private ConnectionFactory factory;
-  
-  public DbDAO(Logger logger) {
-//    this.logger = logger;
-    this.factory = ConnectionFactory.getInstance();
-  }
+  private Logger logger = Logger.getInstance();
+  private ConnectionFactory factory = ConnectionFactory.getInstance();
   
   @Override
   public boolean addUser(String email, String passwordHash, String firstname, String lastname) {
@@ -51,10 +46,8 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
-//    System.out.println("DbDAO: " + success);
     return success;
   }
   
@@ -89,8 +82,7 @@ public class DbDAO implements DAO {
         conn.rollback(save);
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountId;
   }
@@ -108,8 +100,7 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -128,15 +119,14 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
 
   @Override
-  public HashSet<User> getAllUsers() {
-    HashSet<User> users = new HashSet<>();
+  public ArrayList<User> getAllUsers() {
+    ArrayList<User> users = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, email, firstname, lastname from bankUser";
       Statement statement = conn.createStatement();
@@ -146,15 +136,14 @@ public class DbDAO implements DAO {
         users.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4)));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return users;
   }
 
   @Override
-  public HashSet<Account> getAllAccounts() {
-    HashSet<Account> accounts = new HashSet<>();
+  public ArrayList<Account> getAllAccounts() {
+    ArrayList<Account> accounts = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
           + "from account a left outer join accoutType t where a.typeid=t.id";
@@ -167,15 +156,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
 
   @Override
-  public HashSet<AccountType> getAllAccountTypes() {
-    HashSet<AccountType> types = new HashSet<>();
+  public ArrayList<AccountType> getAllAccountTypes() {
+    ArrayList<AccountType> types = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, name from accountType";
       Statement statement = conn.createStatement();
@@ -185,8 +173,7 @@ public class DbDAO implements DAO {
         types.add(new AccountType(info.getInt(1), info.getString(2)));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return types;
   }
@@ -205,8 +192,7 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -225,8 +211,7 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -246,8 +231,7 @@ public class DbDAO implements DAO {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4), info.getString(5));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -265,8 +249,7 @@ public class DbDAO implements DAO {
         result = info.getString(1);
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -286,15 +269,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate());
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return result;
   }
   
   @Override
-  public HashSet<Account> getAccountsForUser(int id) {
-    HashSet<Account> accounts = new HashSet<>();
+  public ArrayList<Account> getAccountsForUser(int id) {
+    ArrayList<Account> accounts = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
           + "from accountholder h, account a, accoutType t "
@@ -309,15 +291,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
 
   @Override
-  public HashSet<Account> getAccountsForUser(String email) {
-    HashSet<Account> accounts = new HashSet<>();
+  public ArrayList<Account> getAccountsForUser(String email) {
+    ArrayList<Account> accounts = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
           + "from bankuser u, accountholder h, account a, accoutType t "
@@ -332,15 +313,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accounts;
   }
 
   @Override
-  public HashSet<Account> getCurrentAccountsForUser(int id) {
-    HashSet<Account> currentAccounts = new HashSet<>();
+  public ArrayList<Account> getCurrentAccountsForUser(int id) {
+    ArrayList<Account> currentAccounts = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
           + "from accountholder h, account a, accoutType t "
@@ -357,15 +337,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return currentAccounts;
   }
 
   @Override
-  public HashSet<Account> getCurrentAccountsForUser(String email) {
-    HashSet<Account> currentAccounts = new HashSet<>();
+  public ArrayList<Account> getCurrentAccountsForUser(String email) {
+    ArrayList<Account> currentAccounts = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select a.id, a.balance, a.typeid, t.name, a.openDate, a.closeDate "
           + "from bankUser u, accountHolder h, account a, accountType t "
@@ -382,15 +361,14 @@ public class DbDAO implements DAO {
             info.getDate(5).toLocalDate(), (info.getDate(6) == null) ? null : info.getDate(6).toLocalDate()));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return currentAccounts;
   }
 
   @Override
-  public HashSet<String> getAccountHolderEmails(Account a) {
-    HashSet<String> accountHolders = new HashSet<>();
+  public ArrayList<String> getAccountHolderEmails(Account a) {
+    ArrayList<String> accountHolders = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select u.email from accountHolder h, bankUser u "
           + "where h.accountid=? and h.accountholderid=u.id";
@@ -402,15 +380,14 @@ public class DbDAO implements DAO {
         accountHolders.add(info.getString(1));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountHolders;
   }
 
   @Override
-  public HashSet<String> getCurrentAccountHolderEmails(Account a) {
-    HashSet<String> accountHolders = new HashSet<>();
+  public ArrayList<String> getCurrentAccountHolderEmails(Account a) {
+    ArrayList<String> accountHolders = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select u.email from accountHolder h, bankUser u "
           + "where h.accountid=? and h.accountholderid=u.id "
@@ -423,8 +400,7 @@ public class DbDAO implements DAO {
         accountHolders.add(info.getString(1));
       }
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return accountHolders;
   }
@@ -451,8 +427,7 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -470,8 +445,7 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -490,8 +464,7 @@ public class DbDAO implements DAO {
       cs.execute();
       success = cs.getBoolean(1);
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -510,8 +483,7 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -528,8 +500,7 @@ public class DbDAO implements DAO {
       rowsAffected = ps.executeUpdate();
       success = rowsAffected == 1;
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return success;
   }
@@ -547,8 +518,7 @@ public class DbDAO implements DAO {
       cs.execute();
       isCorrect = cs.getBoolean(1);
     } catch (SQLException e) {
-      e.printStackTrace();
-      e.printStackTrace();
+      logger.alert(e.getMessage());
     }
     return isCorrect;
   }

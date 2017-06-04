@@ -17,7 +17,54 @@
 </head>
 <body>
 
-  ${user.firstname} ${user.lastname}  
+  <h3>Hello ${user.getFirstname()} ${user.getLastname()}</h3>
+  
+  <div class="panel-group">
+  
+    <div class="panel panel-primary" id="accounts-panel">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse1" href="#accounts">My Accounts</a>
+        </h4>
+      </div>
+      <div id="accounts" class="panel-collapse collapse">
+        <#if !user.accounts.isEmpty()>
+          <table class="table table-hover">
+            <#list user.accounts as account>
+              <tr>
+                <td>account.getId()</td>
+                <td>account.getType().getName()</td>
+                <td>account.getBalance().doubleValue()?string.currency</td>
+              </tr>
+            </#list>
+          </table>
+        </#if>
+      </div>
+    </div>
+    
+    <div class="panel panel-default" id="open-panel">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse2" href="#open-collapse">Open New Account</a>
+        </h4>
+      </div>
+      <div id="open-collapse" class="panel-collapse collapse">
+        
+      </div>
+    </div>
+    
+    <div class="panel panel-default" id="transfer-panel">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse3" href="#transfer-collapse">Make Transfer</a>
+        </h4>
+      </div>
+      <div id="transfer-collapse" class="panel-collapse collapse">
+        
+      </div>
+    </div>
+    
+  </div>
   
 </body>
 </html>

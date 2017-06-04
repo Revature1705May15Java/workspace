@@ -55,12 +55,11 @@ create sequence account_seq
 start with 1
 increment by 1;
 /
--- this trigger should set joinDate to current date
 create or replace trigger bankUser_trigger
 before insert on bankUser for each row
 begin
 	if :new.id is null then
-	 select bankUser_seq.nextval into :new.id from dual;
+    select bankUser_seq.nextval into :new.id from dual;
 	end if;
 end;
 /
@@ -68,7 +67,7 @@ create or replace trigger account_trigger
 before insert on account for each row
 begin
   if :new.id is null then
-   select account_seq.nextval into :new.id from dual;
+    select account_seq.nextval into :new.id from dual;
   end if;
   if :new.openDate is null then
     select current_date into :new.openDate from dual;

@@ -14,7 +14,8 @@ public class Logger {
    * output files for different methods (logger.error(), logger.log(), ...)
    */
   
-  private static String filename = "src/com/ex/logging/log.txt";
+  private static String filename = "C:/Users/Eric/Employment/Revature/workspace/Eric_Christie_Code/BankingApp/"
+      + "src/com/ex/logging/log.txt";
   
   private static final Logger INSTANCE = new Logger();
 

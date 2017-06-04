@@ -2,8 +2,8 @@ package com.ex.pojos;
 
 public class AccountType {
   
-  int id;
-  String name;
+  private int id;
+  private String name;
   
   public AccountType() { super(); }
   

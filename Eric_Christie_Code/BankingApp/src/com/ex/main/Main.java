@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 
 import com.ex.logging.Logger;
 import com.ex.pojos.Account;
@@ -67,7 +66,7 @@ public class Main {
   public static void main(String[] args) {
     @SuppressWarnings("resource")
     Scanner in = new Scanner(System.in);
-    BankingService service = new BankingService(true, true);
+    BankingService service = new BankingService();
     Logger logger = Logger.getInstance();
     
     User current = null; // the user that is currently logged in
@@ -175,8 +174,7 @@ public class Main {
           if (current != null) {
             current.setAccounts(service.getCurrentAccounts(current));
             System.out.println(current);
-            List<Account> currentAccounts = new ArrayList<>();
-            currentAccounts.addAll(current.getAccounts());
+            List<Account> currentAccounts = current.getAccounts();
             int i;
             for (i = 0; i < currentAccounts.size(); i++) {
               Account a = currentAccounts.get(i);
@@ -294,7 +292,7 @@ public class Main {
               AccountType type = accountTypes.get(ndx);
               Account result = service.createAccount(current, type);
               if (result != null) {
-                Set<Account> newAccounts = current.getAccounts();
+                ArrayList<Account> newAccounts = current.getAccounts();
                 newAccounts.add(result);
                 current.setAccounts(newAccounts);
                 System.out.println("New account created.");

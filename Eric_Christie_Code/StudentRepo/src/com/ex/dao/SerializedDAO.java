@@ -58,6 +58,7 @@ public class SerializedDAO implements DAO {
 
   @Override
   public Student getStudent(int id) {
+    @SuppressWarnings("unused")
     ArrayList<Student> students = getAllStudents();
 
     try (BufferedReader br = new BufferedReader(new FileReader(filename));) {
@@ -77,6 +78,7 @@ public class SerializedDAO implements DAO {
 
   @Override
   public Student getStudent(String email) {
+    @SuppressWarnings("unused")
     ArrayList<Student> students = getAllStudents();
 
     try (BufferedReader br = new BufferedReader(new FileReader(filename));) {

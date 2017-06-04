@@ -2,7 +2,7 @@ package com.ex.service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import com.ex.dao.DAO;
 import com.ex.dao.DbDAO;
@@ -21,19 +21,8 @@ public class BankingService {
   
 //  private static final BankingService  INSTANCE = new BankingService();
   
-  private DAO dao;
-  private Logger logger;
-  private Mailer mailer;
-  
-  public BankingService(boolean logging, boolean emailVerification) {
-    if (logging) {
-      this.logger  = Logger.getInstance();
-    }
-    if (emailVerification) {
-      this.mailer = Mailer.getInstance();
-    }
-    this.dao = new DbDAO(this.logger);
-  }
+  private DAO dao = new DbDAO();
+  private Logger logger = Logger.getInstance();
 
   /**
    * Create a new bank user and sign in as that user.
@@ -52,12 +41,11 @@ public class BankingService {
             result = dao.getUser(email);
             result.setPasswordHash(passwordHash);
             result.setAccounts(getCurrentAccounts(result));
-            System.out.println("registered " + result);
+            logger.log("registered " + result);
           }
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+          logger.alert(e.getMessage());
         }
-//        System.out.println("Service: " + result);
         return result;
   }
   
@@ -68,13 +56,14 @@ public class BankingService {
    * @return The verification code that was sent in the email, or null if no email was sent.
    */
   public String sendVerificationCode(String email) {
+    Mailer mailer = Mailer.getInstance();
     String sentCode = null;
     String code = "123456";//PasswordStorage.createHash(email);
     boolean success = mailer.sendMail(email,
         "Email Verification - Eric Christie's BankingApp",
         "Your verifiation code is: " + code);
     if (success) {
-      System.out.println("Sent email verification code " + code + " to " + email);
+      logger.log("Sent email verification code " + code + " to " + email);
       sentCode = code;
     }
     return sentCode;
@@ -110,7 +99,7 @@ public class BankingService {
         result.setAccounts(getCurrentAccounts(result));
       }
     } catch (Exception e) {
-      System.out.println(e.getMessage());
+      logger.alert(e.getMessage());
     }
     return result;
   }
@@ -130,10 +119,10 @@ public class BankingService {
       if (newAccountId != null) {
         result = dao.getAccount(newAccountId);
         result.setAccountHolders(dao.getCurrentAccountHolderEmails(result));
-        System.out.println(u.getEmail() + " created new account " + result);
+        logger.log(u.getEmail() + " created new account " + result);
       }
     } else {
-      System.out.println("account creation failed - " + u.getEmail() + " already has the maximum number of accounts" );
+      logger.log("account creation failed - " + u.getEmail() + " already has the maximum number of accounts" );
     }
     return result;
   }
@@ -193,8 +182,8 @@ public class BankingService {
    * @param u
    * @return A set of fully populated Account objects for all open accounts linked to a user.
    */
-  public HashSet<Account> getCurrentAccounts(User u) {
-    HashSet<Account> accounts = new HashSet<>();
+  public ArrayList<Account> getCurrentAccounts(User u) {
+    ArrayList<Account> accounts = new ArrayList<>();
     accounts = dao.getCurrentAccountsForUser(u.getEmail());
     for (Account a: accounts) {
       a.setAccountHolders(dao.getCurrentAccountHolderEmails(a));
@@ -207,8 +196,8 @@ public class BankingService {
    * @param email
    * @return A set of fully populated Account objects for all open accounts linked to a user.
    */
-  public HashSet<Account> getCurrentAccounts(String email) {
-    HashSet<Account> accounts = new HashSet<>();
+  public ArrayList<Account> getCurrentAccounts(String email) {
+    ArrayList<Account> accounts = new ArrayList<>();
     accounts = dao.getCurrentAccountsForUser(email);
     for (Account a: accounts) {
       a.setAccountHolders(dao.getCurrentAccountHolderEmails(a));
@@ -221,7 +210,7 @@ public class BankingService {
    * Get all the possible account types.
    * @return The set of all possible AccountTypes.
    */
-  public HashSet<AccountType> getAccountTypes() {
+  public ArrayList<AccountType> getAccountTypes() {
     return dao.getAllAccountTypes();
   }
   
@@ -244,7 +233,7 @@ public class BankingService {
       try {
         phash = PasswordStorage.createHash(password);
       } catch (CannotPerformOperationException e) {
-        System.out.println(e.getMessage());
+        logger.alert(e.getMessage());
       }
     }
     if (dao.updateUser(old, email, phash, fname, lname)) {

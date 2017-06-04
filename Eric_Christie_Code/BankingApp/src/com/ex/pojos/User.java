@@ -1,15 +1,16 @@
 package com.ex.pojos;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class User {
   
   int id; // consider making id final if you can always provide it to the constructor
   String email, passwordHash, firstname, lastname;
+  boolean verified;
 //  Date birthdate, joinDate; // consider trying to use the date-time api
 //  String streetAddres, city, state, zipcode;
 //  String phone;
-  Set<Account> accounts;
+  ArrayList<Account> accounts;
   
   public User() { super(); }
 
@@ -45,7 +46,7 @@ public class User {
     this.lastname = lastname;
   }
 
-  public User(int id, String email, String passwordHash, String firstname, String lastname, Set<Account> accounts) {
+  public User(int id, String email, String passwordHash, String firstname, String lastname, ArrayList<Account> accounts) {
     super();
     this.id = id;
     this.email = email;
@@ -95,11 +96,11 @@ public class User {
     this.lastname = lastname;
   }
 
-  public Set<Account> getAccounts() {
+  public ArrayList<Account> getAccounts() {
     return accounts;
   }
 
-  public void setAccounts(Set<Account> accounts) {
+  public void setAccounts(ArrayList<Account> accounts) {
     this.accounts = accounts;
   }
 

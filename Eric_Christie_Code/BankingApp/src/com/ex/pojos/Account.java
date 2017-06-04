@@ -2,7 +2,7 @@ package com.ex.pojos;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Account {
   
@@ -10,7 +10,7 @@ public class Account {
   BigDecimal balance; // switch to using BigDecimal for account balance
   AccountType type;
   LocalDate dateOpened, dateClosed;
-  Set<String> accountHolders;
+  ArrayList<String> accountHolders;
   
   public Account() { super(); }
 
@@ -32,7 +32,7 @@ public class Account {
   }
 
   public Account(int id, BigDecimal balance, AccountType type, LocalDate dateOpened, LocalDate dateClosed,
-      Set<String> accountHolders) {
+      ArrayList<String> accountHolders) {
     super();
     this.id = id;
     this.balance = balance;
@@ -93,12 +93,12 @@ public class Account {
   }
   
 
-  public Set<String> getAccountHolders() {
+  public ArrayList<String> getAccountHolders() {
     return accountHolders;
   }
   
 
-  public void setAccountHolders(Set<String> accountHolders) {
+  public void setAccountHolders(ArrayList<String> accountHolders) {
     this.accountHolders = accountHolders;
   }
 
