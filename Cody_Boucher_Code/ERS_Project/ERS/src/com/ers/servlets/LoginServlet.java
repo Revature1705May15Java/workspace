@@ -37,11 +37,16 @@ public class LoginServlet extends HttpServlet {
 		
 		try{
 			emp = service.login(username, pass);
-			if(emp != null) {
+			if(emp != null && emp.isManager() == false) {
 				System.out.println("yes");
 					s.setAttribute("username", emp);
 					response.sendRedirect("employeeHome.ftl");
 				}
+			else if(emp != null && emp.isManager() == true) {
+				System.out.println("yes, manager");
+				s.setAttribute(username, emp);
+				response.sendRedirect("managerHome.ftl");
+			}
 			
 			else{
 				request.setAttribute("login", "fail");
@@ -54,9 +59,7 @@ public class LoginServlet extends HttpServlet {
 			
 			}catch(NullPointerException npe){
 				System.out.println("eeror");
-				//response.sendRedirect("Error.html");
-				
+				//response.sendRedirect("Error.html");	
 		}
 	}
-
 }
