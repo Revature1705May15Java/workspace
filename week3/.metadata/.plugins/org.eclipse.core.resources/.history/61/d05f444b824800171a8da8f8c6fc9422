@@ -1,0 +1,62 @@
+package com.ers.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.ers.pojos.*;
+import com.ers.util.ConnectionFactory;
+import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+
+public class DaoImpl implements DAO {
+
+	public DaoImpl() {
+		
+	}
+
+	@Override
+	public Employee getEmployee(String email) {
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql="select * from employee where email is ?";
+			PreparedStatement ps = connection.createStatement();
+			
+			ResultSet info = statement.executeQuery(sql);
+			
+			while(info.next()){
+				AccountType temp = new AccountType();
+				temp.setId(info.getInt(1));
+				temp.setName(info.getString(2));
+				accounttypes.add(temp);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return accounttypes;
+	}
+
+	@Override
+	public Employee getEmployee(int employeeid) {
+		return null;
+	}
+
+	@Override
+	public Request getRequest(int requestid) {
+		return null;
+	}
+
+	@Override
+	public Request getEmployeeRequests(int employeeid) {
+		return null;
+	}
+
+	@Override
+	public String getStateName(int stateid) {
+		
+		return null;
+	}
+
+}

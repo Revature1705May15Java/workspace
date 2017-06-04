@@ -1,0 +1,15 @@
+package com.ers.dao;
+
+import java.util.ArrayList;
+
+import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+
+public interface DAO {
+	public Employee getEmployee(String email);
+	public Employee getEmployee(int employeeid);
+	public Employee loginEmployee(String email,String password);
+	public Request getRequest(int requestid);
+	public ArrayList<Request> getEmployeeRequests(int employeeid);
+	public Array getStateNames(Request req);
+}

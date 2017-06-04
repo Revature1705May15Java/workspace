@@ -5,3 +5,7 @@
 1496346227552	Move 'index.html' to 'WebContent'
 1496346229574	Move 'Error.html' to 'WebContent'
 1496346231897	Move 'Success.html' to 'WebContent'
+1496412783543	Delete element
+1496412804191	Move 'login.ftl' to 'WebContent'
+1496422116064	Rename resource 'home'
+1496509977815	Copy file

@@ -1,0 +1,6 @@
+package com.ers.service;
+
+public class Service {
+	private static boolean isLoggedin=false;
+	
+}

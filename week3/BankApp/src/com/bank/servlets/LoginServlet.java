@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.bank.pojos.User;
 import com.bank.service.Service;
 
 public class LoginServlet extends HttpServlet {
@@ -22,15 +24,20 @@ public class LoginServlet extends HttpServlet {
 		String pass = request.getParameter("password");
 		
 		Service service = new Service();
-		
+		HttpSession session = request.getSession();
+		request.setAttribute("login", "stuff");
 		try{
-			boolean isUser=service.checkPassword(username, pass);
+
+			boolean isUser=service.checkPassword(pass, username);
+			User u=service.findUser(username);
 			if(isUser){
-				RequestDispatcher rd=request.getRequestDispatcher("Success.html");
-				rd.forward(request, response);
+				
+				session.setAttribute("user", u);
+				response.sendRedirect("home");
+				session.setAttribute("login", "success");
 			}else{
-				RequestDispatcher rd=request.getRequestDispatcher("Error.html");
-				rd.forward(request, response);
+				session.setAttribute("login", "fail");
+				request.getRequestDispatcher("login.ftl").forward(request, response);
 			}
 			
 		}catch(NullPointerException npe){

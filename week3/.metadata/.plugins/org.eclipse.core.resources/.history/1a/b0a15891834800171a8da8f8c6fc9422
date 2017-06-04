@@ -1,0 +1,11 @@
+package com.ers.pojos;
+
+import java.sql.Date;
+
+public class Request {
+	int stateid,amt,requestid,requesterid,resolverid;
+	Date reqdate,resdate;
+	String purpose,note,name;
+	
+	
+}

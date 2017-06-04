@@ -40,11 +40,13 @@ public class Service {
 	}
 	public boolean checkPassword(String pw,String uname){
 		User u=findUser(uname);
+		System.out.println("found user "+uname);
 		String actualpw=u.getPw();
 		if(actualpw.equals(pw)){
 			System.out.println(true);
 			return true;
 		}else{
+			System.out.println(false);
 			return false;
 		}
 	}

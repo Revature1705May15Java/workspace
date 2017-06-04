@@ -1,0 +1,43 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
+
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public Service service= new Service();
+	public LoginServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+	}
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		PrintWriter out =resp.getWriter();
+		String myContextParam=req.getSession().getServletContext().getInitParameter("myParam");
+		String name = req.getParameter("username");
+		String pw=req.getParameter("password");
+		Employee emp = service.loginUser(name, pw);
+		if(name.equals("1")){
+			
+			req.getRequestDispatcher("home.ftl").forward(req, resp);
+			resp.sendRedirect("Home");
+		}else{
+			req.getRequestDispatcher("home2.ftl").forward(req, resp);
+			resp.sendRedirect("Home");
+		}
+		
+		out.println(myContextParam+" "+name+" "+pw);
+		doGet(req, resp);
+	}
+
+}

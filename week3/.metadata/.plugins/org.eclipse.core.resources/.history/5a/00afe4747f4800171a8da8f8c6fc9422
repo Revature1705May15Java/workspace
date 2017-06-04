@@ -1,0 +1,42 @@
+package com.ers.dao;
+
+import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+
+public class DaoImpl implements DAO {
+
+	public DaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Employee getEmployee(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee getEmployee(int employeeid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Request getRequest(int requestid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Request getEmployeeRequests(int employeeid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getStateType(int stateid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
