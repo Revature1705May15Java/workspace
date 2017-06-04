@@ -1,5 +1,6 @@
 package com.revature.ers.dao;
 
+import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
 import com.revature.ers.util.ConnectionFactory;
 import com.revature.ers.util.Logger;
@@ -7,6 +8,8 @@ import com.revature.ers.util.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DaoImpl implements Dao {
 
@@ -25,11 +28,11 @@ public class DaoImpl implements Dao {
             ps.setInt(5, (isManager==true?1:0));
 
             if (ps.executeUpdate() == 1) {
-                Logger.log("1 user added");
                 result = true;
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             Logger.log(e.getMessage());
         }
 
@@ -54,10 +57,10 @@ public class DaoImpl implements Dao {
 
             if (count == 1) {
                 result = u;
-                Logger.log("updated user w/ id " + u.getId());
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             Logger.log(e.getMessage());
         }
 
@@ -85,10 +88,13 @@ public class DaoImpl implements Dao {
                         rs.getString(5),
                         (rs.getInt(6) == 1 ? true : false)
                 );
-                Logger.log("retrieved user w/ email " + email);
+                if (!result.isManager()) {
+                    result.setRequests(getRequestsForUser(result));
+                }
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             Logger.log(e.getMessage());
         }
 
@@ -116,15 +122,50 @@ public class DaoImpl implements Dao {
                         rs.getString(5),
                         (rs.getInt(6) == 1 ? true : false)
                 );
-                Logger.log("retrieved user w/ id " + id);
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             Logger.log(e.getMessage());
         }
 
         return result;
     }
 
+    private List<ReimbursementRequest> getRequestsForUser(User u) {
+        List<ReimbursementRequest> result = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = " SELECT REQUESTID, REQUESTERID, HANDLERID, STATETYPEID, AMOUNT, PURPOSE, NOTE, DATEREQUESTED, DATEHANDLED " +
+                "FROM REQUEST " +
+                "INNER JOIN users ON REQUEST.REQUESTERID = USERS.USERID " +
+                "WHERE REQUESTERID = ?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, u.getId());
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                result.add(new ReimbursementRequest(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        (rs.getInt(3) != 0 ? getUser(rs.getInt(3)).getEmail() : null),
+                        rs.getInt(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getDate(8).toLocalDate(),
+                        (rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null)
+                ));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
 }
 

@@ -9,6 +9,7 @@
         <welcome-file>Home</welcome-file>
     </welcome-file-list>
 
+
     <servlet>
         <servlet-name>freemarker</servlet-name>
         <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
@@ -25,7 +26,6 @@
         <init-param>
             <param-name>ContentType</param-name>
             <param-value>text/html; charset=UTF-8</param-value>
-            <!-- Forces UTF-8 output encoding! -->
         </init-param>
 
         <!-- FreeMarker settings: -->
@@ -76,7 +76,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -96,4 +96,5 @@
         <servlet-name>ManagerHomeServlet</servlet-name>
         <url-pattern>/ManagerHome</url-pattern>
     </servlet-mapping>
+
 </web-app>

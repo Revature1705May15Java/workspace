@@ -1,5 +1,7 @@
 package com.revature.ers.pojos;
 
+import java.util.List;
+
 public class User {
     int id;
     String email;
@@ -7,6 +9,7 @@ public class User {
     String firstName;
     String lastName;
     boolean isManager;
+    List<ReimbursementRequest> requests;
 
     public User() {
     }
@@ -26,6 +29,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<ReimbursementRequest> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<ReimbursementRequest> requests) {
+        this.requests = requests;
     }
 
     public String getEmail() {
