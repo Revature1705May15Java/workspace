@@ -76,7 +76,24 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/Home</url-pattern>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>EmployeeHomeServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.EmployeeHomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeHomeServlet</servlet-name>
+        <url-pattern>/EmployeeHome</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManagerHomeServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.ManagerHomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerHomeServlet</servlet-name>
+        <url-pattern>/ManagerHome</url-pattern>
+    </servlet-mapping>
 </web-app>

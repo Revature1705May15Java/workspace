@@ -40,7 +40,11 @@ public class LoginServlet extends HttpServlet {
                 if (u != null) {
                     HttpSession s = request.getSession(true);
                     s.setAttribute("user", u);
-                    response.sendRedirect("/Home");
+                    if (u.isManager()) {
+                        response.sendRedirect("/ManagerHome");
+                    } else {
+                        response.sendRedirect("/EmployeeHome");
+                    }
                 } else {
                     request.setAttribute("login", "fail");
                     request.getRequestDispatcher("/login.ftl").forward(request, response);

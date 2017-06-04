@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class HomeServlet extends HttpServlet {
-    private static final long serialVersionUID = 3L;
+public class EmployeeHomeServlet extends HttpServlet {
+    private static final long serialVersionUID = 4L;
 
     private boolean authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean result = false;
         HttpSession session = request.getSession(true);
 
         User user = (User) session.getAttribute("user");
-        if (user != null) {
+        if (user != null && !user.isManager()) {
             result = true;
         }
 
@@ -26,15 +26,17 @@ public class HomeServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (authenticate(request, response)) {
-            if ( ((User)request.getSession().getAttribute("user")).isManager()) {
-                response.sendRedirect("/ManagerHome");
-            } else {
-                response.sendRedirect("/EmployeeHome");
-            }
-        } else {
+        if (!authenticate(request, response)) {
             response.sendRedirect("/Login");
+            return;
         }
+
+        Service svc = new Service();
+        HttpSession session = request.getSession(true);
+
+        User user = (User) session.getAttribute("user");
+        request.setAttribute("user", user);
+        request.getRequestDispatcher("/employeeHome.ftl").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
