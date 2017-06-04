@@ -26,10 +26,14 @@
 			<div class="row" style="margin-top: 20px">
 				<div
 					class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+					
 					<form name="user" action="login" method="post">
 						<fieldset>
 							<h2>Please Sign In</h2>
 							<hr class="colorgraph">
+							<#if login =="fail">
+								<h3 style="color:red">Failed Username/Password is incorrect</h3>
+							</#if>
 							<div class="form-group">
 								<input placeholder="Username" type="text" name="userName"
 									class="form-control input-lg">
@@ -56,6 +60,8 @@
 							</div>
 						</fieldset>
 					</form>
+					
+					
 				</div>
 			</div>
 

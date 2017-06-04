@@ -109,7 +109,7 @@ public class RunBank {
 			
 			}
 			while(check==1){
-				check = useAccount(check, sw, a);
+				check = useAccount(check, sw, a, u);
 			}
 		}
 		
@@ -138,7 +138,7 @@ public class RunBank {
 		return service.getUser(em, pw);
 	}
 	
-	static int useAccount(int check, int sw, Account a){
+	static int useAccount(int check, int sw, Account a, User u){
 		System.out.println("What would you like to do? \n"
 				+ "1: Deposit \n"
 				+ "2: Withdraw \n"
@@ -173,7 +173,7 @@ public class RunBank {
 			int tmp = Integer.parseInt(scan.next());
 			if(tmp==1){
 				System.out.println("Ok we keep your money..... lol");
-				service.closeAccount(a);
+				service.closeAccount(a,u.getId());
 			}else{
 				System.out.println("Just making sure...");
 			}

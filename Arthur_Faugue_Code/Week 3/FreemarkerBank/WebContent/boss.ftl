@@ -23,7 +23,7 @@
        <div class="col-md-7 ">
 
 <div class="panel panel-default">
-  <div class="panel-heading">  <h4 >User Profile</h4></div>
+  <div class="panel-heading">  <h4 >Boss Profile</h4></div>
    <div class="panel-body">
        
     <div class="box box-info">
@@ -61,9 +61,16 @@
 <div class="col-sm-5 col-xs-6 tital " >Account Number:</div><div class="col-sm-7"> ${account.id}</div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
-<div class="col-sm-5 col-xs-6 tital " >Balance: $</div><div class="col-sm-7"> ${account.balance}</div>
+<div class="col-sm-5 col-xs-6 tital " >Balance: </div><div class="col-sm-7">$ ${account.balance}</div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
+	<form name="user" action="home" method="post" class="form-inline">
+		
+		<input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0"
+			id="inlineFormInput" placeholder="Enter Amount $" name="bal"/>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
 </#list>
             <!-- /.box-body -->
           </div>

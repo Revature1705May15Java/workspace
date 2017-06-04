@@ -7,13 +7,13 @@ import com.bank.pojo.*;
 
 public interface DAO {
 	
-	double updateBalance(Account account, double newbal);
+	Account updateBalance(Account account, double newbal);
 	int addUser( String fn, String ln, String uname, String pw);
 	User getUser(String uname, String pw);
 	User getUser(int id);
 	void addAccount(User u, double bal, int type);
 	ArrayList<Account> showAccounts(int uid);
-	boolean closeAccount(Account a);
+	Account closeAccount(Account a, int uid);
 	int getRecentAccount();//get most recent id to insert into 
 	Account getAccount(int aid);
 	void updateJoin(User u,  int accountId);

@@ -22,22 +22,24 @@ public class DaoImpl implements DAO{
 	
 	//use return value to return current balance
 	@Override
-	public double updateBalance(Account account, double newbal) {
+	public Account updateBalance(Account account, double newbal) {
 		//DAO dao = new DaoImpl();
 		double x = 0;
-		try(Connection connect = ConnectionUtil.getConnection();){
-			String sql = "insert into account(balance)"
-					+ "values(?) where acct_id = ?";
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "UPDATE account SET balance=? WHERE acct_id=?";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			x = newbal + account.getBalance(); 
-			ps.setDouble(1, x);
+			System.out.println("new balance: " + x);
+			int x1 = (int) x;
+			ps.setInt(1, x1);
 			ps.setInt(2, account.getId());
 			
-			return x;
+			account.setBalance(x);
+			return account;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return x;
+		return null;
 	}
 
 	@Override
@@ -101,7 +103,7 @@ public class DaoImpl implements DAO{
 	@Override
 	public User getUser(int id) {
 		User u = new User();
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "select * from users where u_id = ?";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			
@@ -127,7 +129,7 @@ public class DaoImpl implements DAO{
 	public void addAccount(User u, double bal, int type) {
 		DAO dao = new DaoImpl();
 		Account a = null;
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "insert into ACCOUNT(balance, type_id) "
 					+ "values(?, ?)";
 			
@@ -151,11 +153,12 @@ public class DaoImpl implements DAO{
 
 	@Override
 	public ArrayList<Account> showAccounts(int uid) {
-		ArrayList<Account> arr = new ArrayList<Account>();
+		
 		Account a = new Account();
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 //			String sql = "select user_account.account_id, account.balance"
 //					+ "from account full outer join user_account on user_id = ?";
+			ArrayList<Account> arr = new ArrayList<Account>();
 			String sql = "SELECT account.acct_id, account.balance, account.opened, account.closed, accounttype.t_id "
 					+ "FROM user_account "
 					+ "INNER JOIN users ON user_account.user_id = users.u_id "
@@ -171,14 +174,15 @@ public class DaoImpl implements DAO{
 			while(info.next()){
 				a.setId(info.getInt(1));
 				a.setBalance(info.getDouble(2));
-				
 				a.setDateOpened(info.getDate(3));
 				a.setDateClosed(info.getDate(4));
 				a.setType(info.getInt(5));
-				System.out.println(a.toString());
+//				System.out.println(a.toString());
 				arr.add(a);
+				a = new Account();
 			}
-			info.close();
+			return arr;
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("No Accounts");
@@ -192,7 +196,7 @@ public class DaoImpl implements DAO{
 	@Override
 	public Account getAccount(int aid) {
 		Account a = new Account();
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "select * from account where acct_id = ?";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setInt(1, aid);
@@ -200,10 +204,15 @@ public class DaoImpl implements DAO{
 			ResultSet info = ps.executeQuery();
 			while(info.next()){
 				a.setId(info.getInt(1));
+				System.out.println(a.getId());
 				a.setBalance(info.getDouble(2));
+				System.out.println(a.getBalance());
 				a.setType(info.getInt(3));
+				System.out.println(a.getType());
 				a.setDateOpened(info.getDate(4));
-				a.setDateOpened(info.getDate(5));
+				System.out.println(a.getDateOpened());
+				a.setDateClosed(info.getDate(5));
+				System.out.println(a.getDateClosed());
 			}
 			System.out.println(a.toString());
 			return a;
@@ -215,9 +224,10 @@ public class DaoImpl implements DAO{
 	}
 	
 	@Override
-	public boolean closeAccount(Account a) {
-		try (Connection connect = ConnectionUtil.getConnection();) {
-			 String sql = "{call close_acct(?)";
+	public Account closeAccount(Account a, int uid) {
+		DAO dao = new DaoImpl();
+		try (Connection connect = ConnectionFactory.getInstance().getConnection();) {
+			 String sql = "{call close_acct(?)}";
 			
 			CallableStatement cs = connect.prepareCall(sql);
 			cs.setInt(1, a.getId());
@@ -225,20 +235,21 @@ public class DaoImpl implements DAO{
 			int rows = cs.executeUpdate();
 			if (rows == 1){
 				System.out.println("Account Closed");
-				return true;
+				a = dao.getAccount(uid);
+				return a;
 			}
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return false;
+		return null;
 	}
 
 	@Override
 	public int getRecentAccount() {
 		int out = 0;
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String recent = "{? = call GET_RECENT_ACCID}";
 			CallableStatement cs = connect.prepareCall(recent);
 			cs.registerOutParameter(1, Types.INTEGER);
@@ -256,7 +267,7 @@ public class DaoImpl implements DAO{
 	@Override
 	public void updateJoin(User u, int accountId) {
 //		DAO dao = new DaoImpl();
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "insert into user_account values( "+ u.getId() + ", " + accountId + ")";
 			Statement statement = connect.createStatement();
 			int numRowsAffected = statement.executeUpdate(sql);
@@ -277,7 +288,7 @@ public class DaoImpl implements DAO{
 	@Override
 	public double getBalance(Account account) {
 		double x = 0;
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "select balance"
 					+ "from account where acct_id = ?";
 			PreparedStatement ps = connect.prepareStatement(sql);
@@ -300,7 +311,7 @@ public class DaoImpl implements DAO{
 	@Override
 	public ArrayList<User> getAllUserOnAccount(Account a) {
 		ArrayList<User> usr = new ArrayList<User>();
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM users INNER JOIN user_account "
 					+ "ON user.user_id = user_account.user_id AND user_account.account_id = ?";
 			PreparedStatement ps = connect.prepareStatement(sql);
@@ -326,7 +337,7 @@ public class DaoImpl implements DAO{
 	//ask user to insert userid for the user the want to add
 	@Override
 	public boolean addUserToAccount(Account a, int userId) throws SQLIntegrityConstraintViolationException {
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "INSERT INTO User_Account VALUES (?, ?)";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setInt(1, userId);
@@ -345,7 +356,7 @@ public class DaoImpl implements DAO{
 
 	@Override
 	public boolean checkClosedAccount(Account a) {
-		try(Connection connect = ConnectionUtil.getConnection();){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
 			String sql = "select closed from account where acct_id = ?;";
 			PreparedStatement ps = connect.prepareStatement(sql);
 			ps.setInt(1, a.getId());

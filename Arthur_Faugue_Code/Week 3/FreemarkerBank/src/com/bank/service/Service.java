@@ -11,7 +11,7 @@ import com.bank.pojo.User;
 public class Service {
 	public static DAO dao = new DaoImpl();
 	
-	public double updateBalance(Account account, double newbal){
+	public Account updateBalance(Account account, double newbal){
 		return dao.updateBalance(account, newbal);
 	}
 	public int addUser( String fn, String ln, String uname, String pw){
@@ -29,8 +29,8 @@ public class Service {
 	public ArrayList<Account> showAccounts(int uid){
 		return dao.showAccounts(uid);
 	}
-	public boolean closeAccount(Account a){
-		return dao.closeAccount(a);
+	public Account closeAccount(Account a, int uid){
+		return dao.closeAccount(a, uid);
 	}
 	public int getRecentAccount(){
 		//get most recent id to insert into 
