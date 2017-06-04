@@ -1,0 +1,65 @@
+CREATE TABLE EMPLOYEE
+(
+USERNAME VARCHAR2(50) NOT NULL UNIQUE,
+PASSWORD VARCHAR2(50) NOT NULL,
+ID NUMBER PRIMARY KEY,
+FIRSTNAME VARCHAR2(50) NOT NULL,
+LASTNAME VARCHAR2(50) NOT NULL,
+ISMANAGER NUMBER CHECK (ISMANAGER IN (0,1))
+);
+/
+CREATE TABLE REQUESTS
+(
+STATEID NUMBER DEFAULT 1,
+DATEREQUESTED DATE DEFAULT SYSDATE,
+DATERESOLVED DATE,
+AMOUNT NUMBER CHECK (AMOUNT > 0),
+PURPOSE VARCHAR(150),
+REQUESTID NUMBER PRIMARY KEY,
+REQUESTERID NUMBER NOT NULL,
+RESOLVERID NUMBER,
+FOREIGN KEY(REQUESTERID) REFERENCES EMPLOYEE(ID),
+FOREIGN KEY(RESOLVERID) REFERENCES EMPLOYEE(ID),
+FOREIGN KEY(STATEID) REFERENCES STATETYPE(STATEID)
+);
+/
+CREATE TABLE STATETYPE
+(
+STATEID NUMBER PRIMARY KEY,
+NAME VARCHAR2(50) UNIQUE NOT NULL
+);
+/
+insert into statetype(stateid, name) values (1, 'pending');
+/
+insert into statetype(stateid, name) values (2, 'approved');
+/
+insert into statetype(stateid, name) values (3, 'denied');
+/
+alter table requests add NOTES varchar2(150);
+/
+CREATE SEQUENCE EMP_SEQ
+START WITH 1
+INCREMENT BY 1;
+/
+create or replace TRIGGER EMP_SEQ
+before insert on EMPLOYEE
+for each row
+begin
+if :new.ID is null then
+    select EMP_seq.nextval into :new.ID from dual;
+    end if;
+end;
+/
+CREATE SEQUENCE REQ_SEQ
+START WITH 1
+INCREMENT BY 1;
+/
+create or replace TRIGGER REQ_SEQ
+before insert on REQUESTS
+for each row
+begin
+if :new.REQUESTID is null then
+    select REQ_SEQ.nextval into :new.REQUESTID from dual;
+    end if;
+end;
+
