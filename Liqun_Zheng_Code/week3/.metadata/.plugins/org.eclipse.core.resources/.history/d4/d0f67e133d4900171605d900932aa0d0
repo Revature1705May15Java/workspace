@@ -1,0 +1,78 @@
+package com.reim.pojos;
+
+public class Request {
+	int request_id, requester_id, resolver_id, state_id;
+	String note, purpose, opened, closed;
+	double amount;
+	public Request() {
+	}
+	public Request(int request_id, int requester_id, int resolver_id, int state_id, String note, String purpose,
+			String opened, String closed, double amount) {
+		super();
+		this.request_id = request_id;
+		this.requester_id = requester_id;
+		this.resolver_id = resolver_id;
+		this.state_id = state_id;
+		this.note = note;
+		this.purpose = purpose;
+		this.opened = opened;
+		this.closed = closed;
+		this.amount = amount;
+	}
+	public int getRequest_id() {
+		return request_id;
+	}
+	public void setRequest_id(int request_id) {
+		this.request_id = request_id;
+	}
+	public int getRequester_id() {
+		return requester_id;
+	}
+	public void setRequester_id(int requester_id) {
+		this.requester_id = requester_id;
+	}
+	public int getResolver_id() {
+		return resolver_id;
+	}
+	public void setResolver_id(int resolver_id) {
+		this.resolver_id = resolver_id;
+	}
+	public int getState_id() {
+		return state_id;
+	}
+	public void setState_id(int state_id) {
+		this.state_id = state_id;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
+	}
+	public String getPurpose() {
+		return purpose;
+	}
+	public void setPurpose(String purpose) {
+		this.purpose = purpose;
+	}
+	public String getOpened() {
+		return opened;
+	}
+	public void setOpened(String opened) {
+		this.opened = opened;
+	}
+	public String getClosed() {
+		return closed;
+	}
+	public void setClosed(String closed) {
+		this.closed = closed;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	
+	
+}

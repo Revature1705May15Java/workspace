@@ -1,0 +1,8 @@
+package com.reim.pojos;
+
+public class Request {
+	int request_id, requester_id, resolver_id, state_id;
+	String note, purpose, opened, closed;
+	double amount;
+	
+}

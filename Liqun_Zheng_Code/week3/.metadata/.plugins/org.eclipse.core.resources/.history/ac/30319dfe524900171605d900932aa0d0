@@ -1,0 +1,10 @@
+package com.reim.dao;
+
+import java.util.ArrayList;
+
+import com.reim.pojos.Request;
+
+
+public interface Dao {
+	public ArrayList<Request> findReqByEmpId(int Emp);
+}

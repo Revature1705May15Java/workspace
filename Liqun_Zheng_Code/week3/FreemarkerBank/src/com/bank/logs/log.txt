@@ -1613,3 +1613,48 @@
 , Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
 , dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
 ]
+2017-06-04T14:38:32.893 Retrieved user by username User [id=105, fn=test, ln=test, pw=test, uname=test, userAccounts=null]
+
+2017-06-04T14:38:32.934 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-04T14:38:32.953 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-04T14:38:32.972 Retrieved AccountType by typeId AccountType [id=2, name=Saving]
+
+2017-06-04T14:38:32.989 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-04T14:38:33.003 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-04T14:38:33.018 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-04T14:38:33.032 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-04T14:38:33.050 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-04T14:38:33.066 Retrieved AccountType by typeId AccountType [id=1, name=Checking]
+
+2017-06-04T14:38:33.080 Retrieved AccountType by typeId AccountType [id=3, name=Credit]
+
+2017-06-04T14:38:33.082 Retrieved all accounts by userid [Account [id=120, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-29, dateClosed=2017-05-31, account_holder=null]
+, Account [id=300, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=310, balance=0.0, type=AccountType [id=2, name=Saving]
+, dateOpened=2017-05-30, dateClosed=2017-05-31, account_holder=null]
+, Account [id=320, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=330, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=340, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-30, dateClosed=2017-05-30, account_holder=null]
+, Account [id=350, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-30, dateClosed=null, account_holder=null]
+, Account [id=360, balance=300.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=null, account_holder=null]
+, Account [id=370, balance=0.0, type=AccountType [id=1, name=Checking]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+, Account [id=380, balance=0.0, type=AccountType [id=3, name=Credit]
+, dateOpened=2017-05-31, dateClosed=2017-06-01, account_holder=null]
+]
+2017-06-04T14:40:27.451 Retrieved user by user id User [id=100, fn=G, ln=B, pw=gb@uname.com, uname=password, userAccounts=null]
+

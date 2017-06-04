@@ -3,15 +3,12 @@
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.ex.pojo.User"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="com.bank.util.ConnectionFactory"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.bank.service.Service"/>
@@ -19,4 +16,18 @@
 <fullyQualifiedTypeName name="sun.print.resources.serviceui"/>
 <fullyQualifiedTypeName name="com.bank.pojos.User"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.bank.pojos.Account"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.bank.dao.DAO"/>
+<fullyQualifiedTypeName name="com.bank.dao.DaoImpl"/>
+<fullyQualifiedTypeName name="com.reim.util.ConnectionUtil"/>
+<fullyQualifiedTypeName name="com.reim.pojos.State_type"/>
+<fullyQualifiedTypeName name="com.reim.dao.Dao"/>
+<fullyQualifiedTypeName name="com.reim.dao.DaoImpl"/>
+<fullyQualifiedTypeName name="com.reim.service.Service"/>
+<fullyQualifiedTypeName name="com.reim.pojos.Request"/>
+<fullyQualifiedTypeName name="com.reim.pojos.Employee"/>
 </qualifiedTypeNameHistroy>

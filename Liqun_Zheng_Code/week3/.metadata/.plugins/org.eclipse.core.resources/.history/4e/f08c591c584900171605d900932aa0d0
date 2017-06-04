@@ -1,0 +1,57 @@
+package com.reim.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+
+import com.reim.util.ConnectionFactory;
+import com.reim.pojos.Employee;
+import com.reim.pojos.Request;
+
+public class DaoImpl implements Dao {
+
+	@Override
+	public ArrayList<Request> findReqByEmpId(int emp_id) {
+		// TODO Auto-generated method stub
+		
+		
+		return null;
+	}
+
+	@Override
+	public Employee findEmpByUname(String uname) {
+		// TODO Auto-generated method stub
+		
+		Employee temp = null;
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "select * from Employee where username = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, uname.toLowerCase());
+			
+			ResultSet emp = ps.executeQuery();
+			//id, fn, ln, pw, uname
+			temp = new Employee();
+			while(emp.next()){
+				temp.setEmployee_id(emp.getInt(1));
+				temp.setFn(emp.getString(2));
+				temp.setLn(emp.getString(3));
+				temp.setUname(emp.getString(4));
+				temp.setPw(emp.getString(5));
+				temp.setIs_manager(emp.getInt(6));
+				
+			}
+			if(temp.getUname()!=null){
+			}
+			return temp;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return temp;
+		
+	}
+	
+}

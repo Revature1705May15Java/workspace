@@ -8,18 +8,18 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="www.jquery2dotnet.com "/>
-			<item value="social"/>
-			<item value="Bhaumik Patel"/>
-			<item value="login"/>
-			<item value="email"/>
-			<item value="signin"/>
-			<item value="ConnectionUtil"/>
+			<item value="padding"/>
+			<item value="] ]"/>
+			<item value="type"/>
+			<item value="findtype"/>
+			<item value="findacc"/>
+			<item value="getConnection"/>
 			<item value="\"/>
+			<item value="drive"/>
 		</list>
 		<list key="replacehistory">
-			<item value="ConnectionFactory.getInstance()"/>
 			<item value="/"/>
+			<item value="ConnectionFactory.getInstance()"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

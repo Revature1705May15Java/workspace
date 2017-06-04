@@ -1,0 +1,3 @@
+1496606420998	Move 2 resources to 'WebContent'
+1496606456096	Move 'web.xml' to 'WEB-INF'
+1496606821060	Move 'managerHome.ftl' to 'WebContent'
