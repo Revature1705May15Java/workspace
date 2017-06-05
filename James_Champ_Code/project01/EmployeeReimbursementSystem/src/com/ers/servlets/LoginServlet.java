@@ -7,19 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ers.exceptions.InvalidPasswordException;
+import com.ers.exceptions.NoSuchEmployeeException;
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
+
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public LoginServlet() {
-
-    }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		String email = request.getParameter("email").trim();
+		String password = request.getParameter("password").trim();
+
+		Service service = new Service();
+		
+		// TODO: Display message on page if exception is caught
+		try {
+			Employee employee = service.login(email, password);
+			
+			if(employee.isManager()) {
+				request.getRequestDispatcher("managerPlaceholder.html").forward(request, response);		
+			}
+			else {
+				request.getRequestDispatcher("employeePlaceholder.html").forward(request, response);
+			}
+		} 
+		catch(NoSuchEmployeeException e) {
+			e.printStackTrace();
+		}
+		catch(InvalidPasswordException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

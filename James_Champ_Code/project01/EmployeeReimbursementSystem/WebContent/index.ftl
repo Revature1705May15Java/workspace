@@ -19,7 +19,7 @@
 			<table>
 				<tr>
 					<td>User Name:</td> 
-					<td><input class="form-control" type="text" name="username"></td>
+					<td><input class="form-control" type="text" name="email" inputmode="email"></td>
 				</tr>
 				<tr>
 					<td>Password:</td>
