@@ -97,4 +97,13 @@
         <url-pattern>/ManagerHome</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>NewRequestServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.NewRequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewRequestServlet</servlet-name>
+        <url-pattern>/NewRequest</url-pattern>
+    </servlet-mapping>
+
 </web-app>

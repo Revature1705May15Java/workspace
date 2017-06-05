@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +57,7 @@ public class EmployeeHomeServlet extends HttpServlet {
         request.setAttribute("user", user);
         request.setAttribute("pendingRequests", pendingRequests);
         request.setAttribute("resolvedRequests", resolvedRequests);
+        request.setAttribute("currentDate", LocalDate.now());
 
         request.getRequestDispatcher("/employeeHome.ftl").forward(request, response);
     }

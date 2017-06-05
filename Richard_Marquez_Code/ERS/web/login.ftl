@@ -11,7 +11,7 @@
 <body>
 
 <header>
-    <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &middot; Revature<strong>ERS</strong></a></h1>
+    <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &nbsp;Revature<strong>ERS</strong></a></h1>
 </header>
 
 <div id="login-container" class="white-container container-fluid">
@@ -29,7 +29,7 @@
 </div>
 
 <footer>
-    <p>&copy; Blah, Blah Legalese, 2017</p>
+    <p>&copy; Legalese and Stuffz, 2017</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

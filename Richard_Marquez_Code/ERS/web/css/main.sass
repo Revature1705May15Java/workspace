@@ -1,31 +1,46 @@
 $font-stack: 'Poppins',calibri,helvetica-neue,helvetica,arial,sans-serif
 $font-stack2: 'Montserrat',calibri,helvetica-neue,helvetica,arial,sans-serif
 
-$primary-color: #5cb85c
+$primary-color: #29BF12
+$secondary-color: #F21B3F
+$tertiary-color: #08BDBD
+//$tertiary-color: #08BDBD
+$quaternary-color: #FF9914
 //$secondary-color: #af5eb7
 //$primary-color: #4ca9cb
 //$secondary-color: #ff391e
-$secondary-color: rgba(255, 57, 30, 0.78)
 $primary-border-color: $secondary-color
 $secondary-border-color: #aaa
+$bg-color: #eeeeee
+
+//.btn-primary:hover,
+.btn-primary
+  color: #ffffff
+  background-color: $tertiary-color
+  border-color: #07a3a3
+  //font-weight: bold
+  text-transform: uppercase
+  font-family: $font-stack
+  &:hover
+    background-color: #069b9b
 
 body
-  background-color: #ececec
+  background-color: $bg-color
   //font-family: $font-stack
   color: rgb(71, 76, 85)
-  padding-top: 15em
 
 h1, h2, h3, h4
   font-family: $font-stack2
 
 header
-  position: fixed
+  border-top: 2px solid $secondary-color
+  position: absolute
   top: 0
   left: 0
   width: 100%
-  background-color: #ffffff
-  border-bottom: 1px solid $secondary-border-color
-  box-shadow: 0px 0px 37px -1px rgba(0,0,0,0.2)
+  //background-color: #ffffff
+  //border-bottom: 1px solid $secondary-border-color
+  //box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.2)
   min-height: 7em
   max-height: 7em
   padding: 0
@@ -38,7 +53,10 @@ header
     font-size: 3.5em
     .glyphicon
       font-size: .7em
-      color: $primary-color
+      color: #fff
+      background-color: $tertiary-color
+      display: inline-block
+      padding: .5em
   nav
     position: absolute
     top: 0
@@ -72,13 +90,17 @@ footer
   border-top: 3px solid $primary-border-color
   margin-bottom: 5em
   padding: 2em
-  box-shadow: 3px 10px 37px -1px rgba(0,0,0,0.25)
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25)
   border-radius: .3em
   border-top-left-radius: 0
   border-top-right-radius: 0
 
 #login-container
+  margin-top: 15em
   width: 25em
+
+#pendingRequests
+  margin-top: 10em
 
 .request-table-container
   width: 80%
@@ -111,7 +133,17 @@ footer
           content: ''
           display: inline-block
 
-
+#viewRequestModal .modal-content
+  padding: 2em
+  h4
+    font-weight: bold
+  table
+    tr
+      &:first-child
+        td
+          border-top: none
+      td:first-child
+        font-weight: bold
 
 
 
@@ -121,8 +153,6 @@ table.tablesorter thead tr .header
   background-image: url(bg.gif)
   background-repeat: no-repeat
   background-position: center right
-  //background-position: center left
-  //padding-left: 2em
 
 table.tablesorter thead tr .headerSortUp
   background-image: url(asc.gif)

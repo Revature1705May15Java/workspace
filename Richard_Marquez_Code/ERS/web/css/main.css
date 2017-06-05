@@ -1,19 +1,25 @@
+.btn-primary {
+  color: #ffffff;
+  background-color: #08BDBD;
+  border-color: #07a3a3;
+  text-transform: uppercase;
+  font-family: "Poppins", calibri, helvetica-neue, helvetica, arial, sans-serif; }
+  .btn-primary:hover {
+    background-color: #069b9b; }
+
 body {
-  background-color: #ececec;
-  color: #474c55;
-  padding-top: 15em; }
+  background-color: #eeeeee;
+  color: #474c55; }
 
 h1, h2, h3, h4 {
   font-family: "Montserrat", calibri, helvetica-neue, helvetica, arial, sans-serif; }
 
 header {
-  position: fixed;
+  border-top: 2px solid #F21B3F;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #aaa;
-  box-shadow: 0px 0px 37px -1px rgba(0, 0, 0, 0.2);
   min-height: 7em;
   max-height: 7em;
   padding: 0; }
@@ -26,7 +32,10 @@ header {
       color: #444; }
     header h1 .glyphicon {
       font-size: 0.7em;
-      color: #5cb85c; }
+      color: #fff;
+      background-color: #08BDBD;
+      display: inline-block;
+      padding: 0.5em; }
   header nav {
     position: absolute;
     top: 0;
@@ -50,16 +59,20 @@ footer {
 .white-container {
   background-color: #fff;
   border: 1px solid #aaa;
-  border-top: 3px solid rgba(255, 57, 30, 0.78);
+  border-top: 3px solid #F21B3F;
   margin-bottom: 5em;
   padding: 2em;
-  box-shadow: 3px 10px 37px -1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.25);
   border-radius: 0.3em;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
 #login-container {
+  margin-top: 15em;
   width: 25em; }
+
+#pendingRequests {
+  margin-top: 10em; }
 
 .request-table-container {
   width: 80%; }
@@ -87,6 +100,15 @@ footer {
       .request-table-container table tbody .text:before {
         content: "";
         display: inline-block; }
+
+#viewRequestModal .modal-content {
+  padding: 2em; }
+  #viewRequestModal .modal-content h4 {
+    font-weight: bold; }
+  #viewRequestModal .modal-content table tr:first-child td {
+    border-top: none; }
+  #viewRequestModal .modal-content table tr td:first-child {
+    font-weight: bold; }
 
 table.tablesorter thead tr .header {
   cursor: pointer;
