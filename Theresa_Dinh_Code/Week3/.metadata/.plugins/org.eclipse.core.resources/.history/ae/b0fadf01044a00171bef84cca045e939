@@ -1,0 +1,14 @@
+package p6;
+
+import java.text.DecimalFormat;
+
+public class EvenStephen 
+{
+	public static void main(String[] args)
+	{
+		double d = 25.0 / 2.0; 
+		DecimalFormat df = new DecimalFormat(".##"); 
+		System.out.println(df.format(d));
+		
+	}
+}

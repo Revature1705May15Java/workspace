@@ -1,0 +1,27 @@
+package p6;
+
+import java.text.DecimalFormat;
+
+public class EvenStephen 
+{	
+	public static void main(String[] args)
+	{
+//		System.out.println(isEven(25));
+		
+		System.out.println(new String("666.00").matches("\\d*\\.{1}00"));
+		
+	}
+	
+	public static boolean isEven(int i)
+	{
+		double remainder = i / 2.0; 
+		DecimalFormat df = new DecimalFormat("#.00"); 
+		
+		String check = df.format(remainder); 
+		
+		if(check.matches("\\d*\\.{1}00"));
+			return true; 
+			
+//		return false; 
+	}
+}

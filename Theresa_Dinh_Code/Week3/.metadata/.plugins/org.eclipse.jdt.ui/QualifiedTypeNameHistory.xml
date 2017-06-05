@@ -14,4 +14,6 @@
 <fullyQualifiedTypeName name="org.apache.catalina.realm.JNDIRealm.User"/>
 <fullyQualifiedTypeName name="pojos.Employee"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+<fullyQualifiedTypeName name="p11_2.Dummy"/>
 </qualifiedTypeNameHistroy>

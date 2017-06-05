@@ -4,10 +4,8 @@ public class ReverseString
 {
 	public static void main(String[] args)
 	{
-		String str = "boa"; 
-		//System.out.println(reverse("boa"));
-		str = str.concat(str.substring(0,1));
-		System.out.println(str.substring(1));
+		System.out.println(reverse("apple"));
+
 	}
 	
 	//recursive call
@@ -32,6 +30,6 @@ public class ReverseString
 		// split the string in half, and then combine the reversed halves 
 		int half = length/2; 
 		
-		return str = reverse(str.substring(half) + reverse(str.substring(0, half))); 
+		return str = reverse(str.substring(half)) + reverse(str.substring(0, half)); 
 	}
 }

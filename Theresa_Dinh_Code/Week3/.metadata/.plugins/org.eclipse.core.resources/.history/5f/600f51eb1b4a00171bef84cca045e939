@@ -1,0 +1,7 @@
+package p11_2;
+
+public class Dummy 
+{
+	float num = 666f; 
+	float num2 = 444f; 
+}

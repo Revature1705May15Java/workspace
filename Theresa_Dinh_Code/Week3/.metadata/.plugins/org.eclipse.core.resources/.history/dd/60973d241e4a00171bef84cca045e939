@@ -1,0 +1,18 @@
+package p6;
+
+import java.text.DecimalFormat;
+
+public class EvenStephen 
+{	
+	public boolean isEven(int i)
+	{
+		double remainder = i / 2.0; 
+		DecimalFormat df = new DecimalFormat("#.00"); 
+		
+		String check = df.format(remainder); 
+		
+		if(check.matches("\\d*\\.{1}00"))
+			return true; 
+		return false; 
+	}
+}
