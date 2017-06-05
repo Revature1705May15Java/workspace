@@ -6,7 +6,7 @@ $(document).ready(function () {
 function initTables() {
     $.tablesorter.defaults.sortList = [[1,0]];
 
-    $("#pendingRequestsTable").tablesorter();
-    $("#resolvedRequestsTable").tablesorter();
+    if ($('#pendingRequestsTable').length > 0) $('#pendingRequestsTable').tablesorter();
+    if ($('#resolvedRequestsTable').length > 0) $('#resolvedRequestsTable').tablesorter();
 }
 

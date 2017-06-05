@@ -33,22 +33,22 @@
     <table id="pendingRequestsTable" class="table table-hover tablesorter">
         <thead>
         <tr>
-            <th class="col-xs-2">Opened</th>
+            <th class="col-xs-1">Status</th>
             <th class="col-xs-1">#</th>
-            <th class="col-xs-5">Purpose</th>
+            <th class="col-xs-6">Purpose</th>
             <th class="col-xs-2">Amount</th>
-            <th class="col-xs-2">Status</th>
+            <th class="col-xs-2">Opened</th>
         </tr>
         </thead>
 
         <tbody>
         <#list pendingRequests as r>
             <tr id="request${r.getId()}">
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                <td class="col-xs-1 state">${r.getState().name()}</td>
                 <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="text col-xs-5 pupose"><span>${r.getPurpose()}</span></td>
+                <td class="text col-xs-6 pupose"><span>${r.getPurpose()}</span></td>
                 <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
-                <td class="col-xs-2 state">${r.getState().name()}</td>
+                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
             </tr>
         </#list>
         </tbody>
@@ -61,26 +61,26 @@
     <table id="resolvedRequestsTable" class="table table-hover tablesorter">
         <thead>
             <tr>
-                <th class="col-xs-2">Opened</th>
+                <th class="col-xs-1">Status</th>
                 <th class="col-xs-1">#</th>
-                <th class="col-xs-2">Resolved</th>
                 <th class="col-xs-5">Purpose</th>
                 <th class="col-xs-1">Amount</th>
-                <th class="col-xs-1">Status</th>
+                <th class="col-xs-2">Opened</th>
+                <th class="col-xs-2">Closed</th>
             </tr>
         </thead>
 
         <tbody>
         <#list resolvedRequests as r>
             <tr id="request${r.getId()}">
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                <td class="col-xs-1 state">${r.getState().name()}</td>
                 <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
                 <td class="text col-xs-5 purpose"><span>${r.getPurpose()} sklj fldj fsjd flsd jfs dkjsdl</span></td>
+                <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
+                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
                 <td class="note" style="display:none;">${r.getNote()}</td>
                 <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
-                <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
-                <td class="col-xs-1 state">${r.getState().name()}</td>
             </tr>
         </#list>
         </tbody>

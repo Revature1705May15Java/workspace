@@ -8,25 +8,64 @@ public class GenericTest {
         // Initialization
         List nonGen = new ArrayList();
         nonGen.add("asdf");
+        nonGen.add(42);
 
         List<String> gen = new ArrayList<>();
         gen.add("qwerty");
+//        gen.add(73); // NOT ok
 
 
         // Elimination of casts
         String s1 = (String) nonGen.get(0);
+        String s2 = (String) nonGen.get(1);  // ClassCastException at runtime
 
-        String s2 = gen.get(0);
+        String s3 = gen.get(0);
 
 
         // Allowable types
         GenBox<Number> nb = new GenBox<>();
-        nb.setObj(new Integer(42));  // ok
+        nb.setObj(new Integer(42));
         //nb.setObj(new Object());  // NOT ok
+
+
+        // Wildcards
+        List<Object> objList = new ArrayList<>();
+        List<Integer> intList = new ArrayList<>();
+        List<String> strList = new ArrayList<>();
+
+        printListNoWildcards(objList);  // NOT ok
+//        printListNoWildcards(intList);  // NOT ok
+
+        printListUnboundedWildcard(intList);
+        printListUnboundedWildcard(strList);
+
+        printListUpperBoundedWildcard(intList);
+
+        printListLowerBoundedWildcard(objList);
+        printListLowerBoundedWildcard(intList);
     }
 
-    // Unbounded wildcards
-    public static void printList(List<?> list) {
+    public static void printListNoWildcards(List<Object> list) {
+        for (Object elem : list) {
+            System.out.print(elem + " ");
+        }
+    }
+
+    public static void printListUnboundedWildcard(List<?> list) {
+        for (Object elem : list) {
+            System.out.print(elem + " ");
+        }
+    }
+
+    // List is of some type that extends number
+    public static void printListUpperBoundedWildcard(List<? extends Number> list) {
+        for (Object elem : list) {
+            System.out.print(elem + " ");
+        }
+    }
+
+    // Accept any type that can hold an Integer
+    public static void printListLowerBoundedWildcard(List<? super Integer> list) {
         for (Object elem : list) {
             System.out.print(elem + " ");
         }
