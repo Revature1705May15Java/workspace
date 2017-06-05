@@ -21,7 +21,6 @@ public class LoginServlet extends HttpServlet {
 
 		Service service = new Service();
 		
-		// TODO: Display message on page if exception is caught
 		try {
 			Employee employee = service.login(email, password);
 			
@@ -33,11 +32,12 @@ public class LoginServlet extends HttpServlet {
 			}
 		} 
 		catch(NoSuchEmployeeException e) {
-			e.printStackTrace();
+			request.setAttribute("noEmployee", "true");
+			request.getRequestDispatcher("index.ftl").forward(request, response);
 		}
 		catch(InvalidPasswordException e) {
-			e.printStackTrace();
+			request.setAttribute("wrongPassword", "true");
+			request.getRequestDispatcher("index.ftl").forward(request, response);
 		}
 	}
-
 }

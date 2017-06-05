@@ -14,6 +14,11 @@
 
 </body>
 	<div class="jumbotron">
+		<#if noEmployee! == "true">
+			<div class="alert alert-danger" role="alert">No such user exists.</div>
+		<#elseif wrongPassword! == "true">
+			<div class="alert alert-danger" role="alert">Invalid password.</div>
+		</#if>
 		<form method="POST" action="login" required="required">
 			<div class="input_group">
 			<table>
