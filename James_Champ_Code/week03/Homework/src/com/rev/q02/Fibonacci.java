@@ -1,4 +1,4 @@
-package com.rev.q2;
+package com.rev.q02;
 
 public class Fibonacci {
 	public static void main(String[] args) {

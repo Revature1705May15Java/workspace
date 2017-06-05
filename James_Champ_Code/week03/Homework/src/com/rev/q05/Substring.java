@@ -1,4 +1,4 @@
-package com.rev.q5;
+package com.rev.q05;
 
 public class Substring {
 	public static void main(String[] args) {

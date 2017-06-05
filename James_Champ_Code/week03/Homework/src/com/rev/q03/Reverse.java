@@ -1,4 +1,4 @@
-package com.rev.q3;
+package com.rev.q03;
 
 public class Reverse {
 	public static void main(String[] args) {

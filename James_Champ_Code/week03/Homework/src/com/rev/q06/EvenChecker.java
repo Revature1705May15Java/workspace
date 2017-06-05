@@ -1,4 +1,4 @@
-package com.rev.q6;
+package com.rev.q06;
 
 public class EvenChecker {
 	private static final int TEST = 111;

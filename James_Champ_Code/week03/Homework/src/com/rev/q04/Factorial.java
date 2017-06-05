@@ -1,4 +1,4 @@
-package com.rev.q4;
+package com.rev.q04;
 
 public class Factorial {
 	private static final int N = 6;
