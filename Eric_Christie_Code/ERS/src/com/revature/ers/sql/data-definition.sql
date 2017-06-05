@@ -83,3 +83,10 @@ begin
     select localtimestamp into :new.resolvedTimestamp from dual;
   end if;
 end;
+/
+/*
+ * Add the first manager to the database.
+ * DML Script
+ */
+insert into employee (email, passwordHash, firstname, lastname, isManager)
+values ('admin@email.com', 'sha1:64000:18:1fel5lyvOdM65X1+WiZKbgsAyxS4Lhlu:MiR8H/VvDX3jAI6YnH9fEeXN', 'ADMIN', 'USER', 1);
