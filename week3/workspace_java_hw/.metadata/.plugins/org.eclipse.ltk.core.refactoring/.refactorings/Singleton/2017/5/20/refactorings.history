@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.ex.Singleton.FloorProblem.realityAgent(...)&apos; to &apos;realtyAgent&apos;&#x0D;&#x0A;- Original project: &apos;Singleton&apos;&#x0D;&#x0A;- Original element: &apos;com.ex.Singleton.FloorProblem.realityAgent(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ex.Singleton.FloorProblem.realtyAgent(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;realityAgent&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;com.ex.Singleton{FloorProblem.java[FloorProblem~realityAgent~QString;" name="realtyAgent" references="true" stamp="1495213711592" version="1.0"/>
+</session>

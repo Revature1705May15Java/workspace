@@ -1,0 +1,28 @@
+
+public class Calculator implements Calc{
+
+	@Override
+	public double addition(double num, double num2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double subtraction(double num, double num2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double multiplication(double num, double num2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double division(double num, double num2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

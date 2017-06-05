@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+</head>
+<body>
+
+	<h1 style="text-align: center; background-color: tan">Registration
+		Form</h1>
+	<hr>
+	<!-- comments -->
+
+	<form name="f1" method="POST" Action="/ServletIntro/Register">
+
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="userName"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Register" name="btnRegister" />
+					&nbsp;<input type="reset" value="clear" name="btnClear" /></td>
+			</tr>
+		</table>
+		<div>
+			<h2 style="margin-left: 60px; margin-bottom: 2px;">Gender</h2>
+			Male<input style="margin: 10px;" label="Male" type="radio" name="gender" value="male"/>
+			Female<input style="margin: 10px;" type="radio" name="gender" value="female"/>
+			Other<input style="margin: 10px;" type="radio" name="gender" value="other"/>
+		</div>
+		<div style="margin-top: 10px;">
+			<label>Country:</label> <input list="Country" name="Countries">
+			<datalist id="Country">
+				<option value="USA">
+				<option value="England">
+				<option value="France">
+			</datalist>
+		</div>
+
+	</form>
+
+	</hr>
+</body>
+</html>

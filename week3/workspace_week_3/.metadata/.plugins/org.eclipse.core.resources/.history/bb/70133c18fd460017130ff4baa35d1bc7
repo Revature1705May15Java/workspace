@@ -1,0 +1,20 @@
+package com.bank.util;
+
+public class ConnectionFactory {
+	
+	private static Boolean build = true;
+	private static ConnectionFactory cf = null;
+	
+	private ConnectionFactory(){
+		build = false;
+	}
+	
+	public static synchronized ConnectionFactory getInstance(){
+		if(build == true){
+			cf = new ConnectionFactory();
+		}
+		
+		return cf;
+	}
+	
+}

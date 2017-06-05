@@ -1,0 +1,12 @@
+<html>
+
+<head>
+	<title>Intro to Freemarker!</title>
+</head>
+<body>
+
+	<p>${User.firstname} ${User.lastname}!!</p>	
+
+</body>
+
+</html>

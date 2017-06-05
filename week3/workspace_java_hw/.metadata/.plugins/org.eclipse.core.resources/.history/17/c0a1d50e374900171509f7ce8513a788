@@ -1,0 +1,34 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/*
+ * Q14. Write a program that demonstrates the switch case. 
+ *      Implement the following functionalities in the cases:
+ *      Case 1: Find the square root of a number using the Math class method. 
+		Case 2: Display today’s date.
+		Case 3: Split the following string and store it in a sting array. 
+				“I am learning Core Java”
+
+ */
+public class Switch {
+	public static void main(String[] args) {
+		int selector = 2;
+		int num = 144;
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date dateToday = new Date();
+		
+		switch(selector){
+			case 1:
+				Math.sqrt(num);
+				break;
+			case 2:
+				System.out.println(dateFormat.format(dateToday));
+				break;
+			case 3:
+				
+		}
+	}
+
+}

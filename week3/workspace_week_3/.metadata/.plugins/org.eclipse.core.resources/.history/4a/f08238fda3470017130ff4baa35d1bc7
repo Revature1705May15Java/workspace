@@ -1,0 +1,21 @@
+<html>
+
+<head>
+	<title>Welcome Page</title>
+</head>
+<body>
+
+	<p>SWEET JESUS ${fn} ${ln} LOGGED IN!!!!!</p>
+	
+	<table class="datatable">
+		<tr>
+		<th>fn</th>
+		<th>ln</th>
+		</tr>
+		</tr>
+		
+	</table>
+	
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+package com.ex.javahw;
+
+public class TwoPackageAccess {
+
+}

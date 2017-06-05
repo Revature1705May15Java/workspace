@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title>Welcome Page</title>
+</head>
+<body>
+
+	<p>SWEET JESUS ${fn} ${ln} LOGGED IN!!!!!</p>
+	
+	<table class="datatable">
+		<tr>
+		<th>fn</th>
+		<th>ln</th>
+		</tr>
+		</tr>
+		<#list user as u>
+			<tr>
+				<td>Something is suppose to go here... x.x</td>
+				<td>Something is suppose to go here... x.x</td>
+				<td>Something is suppose to go here... x.x</td>
+			</tr>
+		</#list>
+	</table>
+	
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<html>
+
+<head>
+	<title>Welcome Page</title>
+</head>
+<body>
+
+	<p>SWEET JESUS ${fn} ${ln} LOGGED IN!!!!!</p>
+	
+</body>
+
+</html>

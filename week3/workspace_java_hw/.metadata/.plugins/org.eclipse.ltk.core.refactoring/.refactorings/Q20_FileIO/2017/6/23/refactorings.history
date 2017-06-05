@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q20_FileIO/src/file&apos; to &apos;file.txt&apos;" description="Rename resource &apos;file&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/file" name="file.txt" stamp="1496668761889" updateReferences="true"/>
+</session>
