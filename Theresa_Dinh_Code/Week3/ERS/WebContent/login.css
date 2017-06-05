@@ -1,0 +1,30 @@
+body 
+{
+    background-color: #8d8d8d;
+    padding-bottom: 20px;    
+}
+h1 
+{
+    color: rgb(74, 227, 114);
+    text-align: center;
+}
+h2
+{
+    text-align: left;
+}
+p 
+{
+    color: #1c1c1c;
+    text-align: center;
+    font-family: "Arial", Arial, sans-serif;  
+    font-size: 20px; 
+}
+p1
+{
+    font-size: 20px; 
+}
+img
+{
+    text-align: center;
+    clear:left;
+}

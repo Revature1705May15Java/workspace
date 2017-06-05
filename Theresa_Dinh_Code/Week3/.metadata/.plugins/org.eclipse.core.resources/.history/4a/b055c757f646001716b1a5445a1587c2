@@ -1,0 +1,14 @@
+package p7;
+
+import java.util.Comparator;
+
+public class EmployeeSort implements Comparator
+{
+
+	@Override
+	public int compare(Employee a, Employee b) 
+	{
+		return 0;
+	}
+
+}

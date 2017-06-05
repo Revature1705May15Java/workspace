@@ -1,0 +1,41 @@
+body 
+{
+    background-color: #ffffff;
+    padding-bottom: 20px;    
+}
+div.jumbotron
+{
+    text-align: center; 
+    padding-top: 0px; 
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
+}
+div.dummytext
+{
+    margin-left: 10px; 
+}
+h6
+{
+    font-size: 20px; 
+    padding-left: 10px; 
+}
+button
+{
+    background-color: #3baa50; 
+    border-radius: 8px;
+    margin-left: 15px; 
+    padding: 5px 5px; 
+    font-size-adjust: auto; 
+}
+footer
+{
+    background-color: #94ffdb; 
+    text-align: center; 
+    font-size: 10px; 
+    font-style: italic; 
+    /*
+    -webkit-column-count: 2; 
+    -moz-column-count: 2; 
+    column-count: 2; 
+    */
+}

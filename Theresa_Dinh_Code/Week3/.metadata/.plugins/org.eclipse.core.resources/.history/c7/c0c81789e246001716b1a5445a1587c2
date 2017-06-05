@@ -1,0 +1,72 @@
+package servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pojos.User;
+
+@WebServlet("/HelloServlet")
+public class HelloServlet extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+    private static ArrayList<User> userList = new ArrayList<User>();    
+	
+    static
+    {
+    	userList.add(new User("Mary", "Sue")); 
+    	userList.add(new User("Gary", "Stu"));
+    	userList.add(new User("Jane", "Doe")); 
+    	userList.add(new User("John", "Smith"));	
+    }
+    
+
+//    public void init(ServletConfig config) throws ServletException 
+//    {
+//    	System.out.println("init"); 
+//    	super.init(config); 
+//    }
+//    
+//    public void destroy()
+//    {
+//    	System.out.println("destroy"); 
+//    	super.destroy(); 
+//    }
+//    
+//    protected void service(HttpServletRequest request, HttpServletResponse response)
+//    {
+//    	System.out.println("service"); 
+//    	super.service(); 
+//    }
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		//puts userlist in request and lets freemarker display it in view
+		request.setAttribute("users", userList);
+		request.getRequestDispatcher("/index.ftl").forward(request, response);
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		String fname = request.getParameter("firstname");
+		String lname = request.getParameter("lastname"); 
+		
+		if(fname != null && lname != null && !fname.isEmpty() && !lname.isEmpty())
+		{
+			synchronized(userList)
+			{
+				userList.add(new User(fname, lname)); 
+			}
+		}
+		doGet(request, response); 
+	}
+
+}
+

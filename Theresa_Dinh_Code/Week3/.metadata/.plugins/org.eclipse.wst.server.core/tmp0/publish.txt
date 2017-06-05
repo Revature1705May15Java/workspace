@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Wed May 31 23:01:18 EDT 2017
-org.eclipse.jst.jee.server\:ServletIntro=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\ServletIntro
+#Sun Jun 04 20:13:04 EDT 2017
+org.eclipse.jst.jee.server\:WebApp=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\WebApp
+org.eclipse.jst.jee.server\:ERS=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\ERS

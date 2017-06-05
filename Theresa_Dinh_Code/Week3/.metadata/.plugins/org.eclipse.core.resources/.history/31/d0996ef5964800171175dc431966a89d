@@ -1,0 +1,17 @@
+package pojos;
+
+import java.sql.Timestamp;
+
+public class Request 
+{
+	int statusId; 
+	Timestamp requestDate; 
+	Timestamp resolveDate; 
+	double amount; 
+	String purpose; 
+	int requestId; 
+	int requesterId; 
+	int approverId; 
+	
+	
+}

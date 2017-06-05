@@ -1,0 +1,21 @@
+package servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+
+public class LoginServlet extends HttpServlet
+{
+	private static final long serialVersionUID = 1L; 
+	
+	protected void doGet(HttpServlet request, HttpServlet response) throws ServletException, IOException
+	{
+		
+	}
+	
+	protected void doPost(HttpServlet request, HttpServlet response) throws ServletException, IOException
+	{
+		
+	}
+}

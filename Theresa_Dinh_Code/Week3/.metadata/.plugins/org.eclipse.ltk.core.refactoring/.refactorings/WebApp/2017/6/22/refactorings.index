@@ -1,0 +1,5 @@
+1496343403419	Move 'Database.properties' to 'src'
+1496347254132	Move 'freemarker-2.3.15.jar' to 'lib'
+1496347257331	Move 'ojdbc7.jar' to 'lib'
+1496348678926	Move 'error.html' to 'WebContent'
+1496348706201	Move 'success.html' to 'WebContent'
