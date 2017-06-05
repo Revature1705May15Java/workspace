@@ -27,6 +27,7 @@ CREATE TABLE request
   purpose     VARCHAR2(300) NOT NULL,
   employee_id NUMBER        NOT NULL,
   manager_id  NUMBER        DEFAULT NULL,
+  note        VARCHAR2(300) DEFAULT NULL,
   CONSTRAINT fk_state FOREIGN KEY(state_id) REFERENCES state_type(state_id),
   CONSTRAINT fk_employee FOREIGN KEY(employee_id) REFERENCES employee(employee_id),
   CONSTRAINT fk_manager FOREIGN KEY(manager_id) REFERENCES employee(employee_id),
