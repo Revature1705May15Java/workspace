@@ -4,8 +4,11 @@ import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
 import com.revature.ers.util.ConnectionFactory;
 import com.revature.ers.util.Logger;
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleTypes;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -158,6 +161,72 @@ public class DaoImpl implements Dao {
                         rs.getDate(8).toLocalDate(),
                         (rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null)
                 ));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
+
+    @Override
+    public int addRequest(ReimbursementRequest req) {
+        int result = 0;
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "INSERT INTO request(requesterId, stateTypeId, amount, " +
+                "purpose, dateRequested) VALUES(?, ?, ?, ?, ?) RETURNING requestId INTO ?";
+
+            OraclePreparedStatement ps = (OraclePreparedStatement) conn.prepareStatement(sql);
+
+            ps.setInt(1, req.getRequesterId());
+            ps.setInt(2, req.getState().ordinal());
+            ps.setDouble(3, req.getAmount());
+            ps.setString(4, req.getPurpose());
+            ps.setDate(5, Date.valueOf(req.getDateRequested()));
+
+            ps.registerReturnParameter(6, OracleTypes.NUMBER);
+
+            if (ps.executeUpdate() == 1) {
+                ResultSet rs = ps.getReturnResultSet();
+                rs.next();
+                result = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
+
+    @Override
+    public ReimbursementRequest getRequest(int id) {
+        ReimbursementRequest result = null;
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "SELECT * FROM request WHERE requestId=?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                result = new ReimbursementRequest(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3) != 0 ? getUser(rs.getInt(3)).getEmail() : null,
+                        rs.getInt(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
+                        rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
+                );
             }
 
         } catch (Exception e) {

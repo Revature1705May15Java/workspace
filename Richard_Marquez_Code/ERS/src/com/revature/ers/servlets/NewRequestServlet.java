@@ -25,35 +25,22 @@ public class NewRequestServlet extends HttpServlet {
         Service svc = Service.getInstance();
         HttpSession session = request.getSession(true);
 
+        User user = (User) session.getAttribute("user");
         double amount = Double.parseDouble(request.getParameter("requestAmount"));
         String purpose = request.getParameter("requestPurpose");
 
-        User user = (User) session.getAttribute("user");
+        ReimbursementRequest req = svc.addRequest(user, amount, purpose);
 
-        PrintWriter out = response.getWriter();
-        out.println(amount);
-        out.println(purpose);
-        out.println(user.getLastName());
+        if (req != null) {
+            response.sendRedirect("/EmployeeHome");
+        } else {
+            PrintWriter out = response.getWriter();
+            out.println("Failed to insert new request");
+            out.println(user.getLastName());
+            out.println(amount);
+            out.println(purpose);
+        }
 
-//        User user = (User) session.getAttribute("user");
-//        List<ReimbursementRequest> allRequests = user.getRequests();
-//        List<ReimbursementRequest> pendingRequests = new ArrayList<>();
-//        List<ReimbursementRequest> resolvedRequests = new ArrayList<>();
-//
-//        for (ReimbursementRequest r : allRequests) {
-//            if (r.getState() == ReimbursementRequest.StateType.PENDING) {
-//                pendingRequests.add(r);
-//            } else {
-//                resolvedRequests.add(r);
-//            }
-//        }
-//
-//        request.setAttribute("user", user);
-//        request.setAttribute("pendingRequests", pendingRequests);
-//        request.setAttribute("resolvedRequests", resolvedRequests);
-//        request.setAttribute("currentDate", LocalDate.now());
-
-//        request.getRequestDispatcher("/employeeHome.ftl").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

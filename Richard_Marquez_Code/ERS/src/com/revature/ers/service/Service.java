@@ -8,6 +8,7 @@ import com.revature.ers.util.Logger;
 import com.revature.ers.util.Mailer;
 import com.revature.ers.util.PasswordStorage;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +23,23 @@ public class Service {
 
     public static Service getInstance() {
         return INSTANCE;
+    }
+
+    public User login(String email, String password) {
+        User possibleUser = dao.getUser(email);
+        User result = null;
+
+        try {
+            boolean correctPassword = PasswordStorage.verifyPassword(password, possibleUser.getPassword());
+
+            if (possibleUser != null && correctPassword && possibleUser.getEmail().equals(email)) {
+                result = possibleUser;
+            }
+        } catch (Exception e) {
+            Logger.log(e.getMessage());
+        }
+
+        return result;
     }
 
     public User addUser(String email, String password, String fName, String lName, boolean isManager) {
@@ -41,18 +59,24 @@ public class Service {
         return newUser;
     }
 
-    public User login(String email, String password) {
-        User possibleUser = dao.getUser(email);
-        User result = null;
+    public ReimbursementRequest addRequest(User user, double amount, String purpose) {
+        ReimbursementRequest result = null;
+
+        ReimbursementRequest newReq = new ReimbursementRequest();
+        newReq.setRequesterId(user.getId());
+        newReq.setState(ReimbursementRequest.StateType.PENDING);
+        newReq.setAmount(amount);
+        newReq.setPurpose(purpose);
+        newReq.setDateRequested(LocalDate.now());
 
         try {
-            boolean correctPassword = PasswordStorage.verifyPassword(password, possibleUser.getPassword());
-
-            if (possibleUser != null && correctPassword && possibleUser.getEmail().equals(email)) {
-                result = possibleUser;
+            int newReqId = dao.addRequest(newReq);
+            if (newReqId != 0) {
+                result = dao.getRequest(newReqId);
+                user.getRequests().add(result);
             }
         } catch (Exception e) {
-            Logger.log(e.getMessage());
+            Logger.log(e.getStackTrace().toString());
         }
 
         return result;
