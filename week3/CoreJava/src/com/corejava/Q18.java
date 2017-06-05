@@ -1,6 +1,4 @@
 package com.corejava;
-
-public class Q18 {
 /*
 Write a program having a concrete subclass that 
 inherits three abstract methods from a superclass.  
@@ -18,8 +16,48 @@ Create an appropriate class having a main method to test
  the above setup.
 
  */
-	public Q18() {
-		// TODO Auto-generated constructor stub
+public class Q18{
+	public static void main(String[] args) {
+		Q18c q = new Q18c();
+		String str="WonDerFul";
+		String numstr="10";
+		System.out.println(q.Q18mHasUpper(str));
+		System.out.println(q.Q18mToUpper(str));
+		System.out.println(q.Q18mToIntPlusTen(numstr));
 	}
 
+}
+class Q18c extends Q18a{
+	@Override
+	boolean Q18mHasUpper(String str) {
+		boolean hasupper=false;
+		for(int i=0;i<str.length();i++){
+			if(Character.isUpperCase(str.charAt(i))){
+				hasupper=true;
+			}
+		}
+		return hasupper;
+	}
+
+	@Override
+	String Q18mToUpper(String str) {
+		String newstr = str.toUpperCase();
+		return newstr;
+	}
+
+	@Override
+	int Q18mToIntPlusTen(String str) {
+		try{
+			int numout=Integer.parseInt(str);
+			return numout+10;
+		}catch(NumberFormatException e){
+			e.printStackTrace();
+		}
+		return 0;
+	}
+}
+abstract class Q18a{
+	abstract boolean Q18mHasUpper(String str);
+	abstract String Q18mToUpper(String str);
+	abstract int Q18mToIntPlusTen(String str);
 }

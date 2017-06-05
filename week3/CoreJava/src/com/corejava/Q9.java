@@ -21,9 +21,7 @@ prime numbers to the console.
 				isPrime=true;
 			}
 			for(int j=2;j<i;j++){
-//				System.out.println(""+i+"%"+j+"="+(i%j));
 				if(i%j==0){
-//					System.out.println(i+" is not prime");
 					isPrime=false;
 					break;
 				}

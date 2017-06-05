@@ -1,0 +1,40 @@
+package com.corejava;
+
+import java.util.ArrayList;
+
+public class Q8 {
+/*
+Write a program that stores the following strings
+ in an ArrayList and saves all the palindromes 
+ in another ArrayList.
+“karan”, “madam”, ”tom”, “civic”, “radar”, 
+“sexes”, “jimmy”, “kayak”, “john”,  “refer”, 
+“billy”, “did”
+ */
+	public boolean isPalindrome(String str){
+		boolean isPal=true;
+		int halfway=Math.floorDiv(str.length(), 2);
+		for(int i=0;i<halfway;i++){
+			if(str.charAt(i)!=str.charAt(str.length()-i)){
+				isPal=false;
+			}
+		}
+		return isPal;
+	}
+	public static void main(String[] args) {
+		ArrayList<String> strings=new ArrayList<String>();
+		strings.add(“karan”); 
+		strings.add(“madam”); 
+		strings.add(”tom”); 
+		strings.add(“civic”); 
+		strings.add(“radar”); 
+		strings.add(“sexes”); 
+		strings.add(“jimmy”); 
+		strings.add(“kayak”); 
+		strings.add(“john”);  
+		strings.add(“refer”); 
+		strings.add(“billy”); 
+		strings.add(“did”);
+	}
+
+}
