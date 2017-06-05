@@ -1,0 +1,11 @@
+package com.corejava;
+
+public class Q7Employee {
+
+	static String name, department;
+	static int age;
+	public Q7Employee() {
+
+	}
+
+}

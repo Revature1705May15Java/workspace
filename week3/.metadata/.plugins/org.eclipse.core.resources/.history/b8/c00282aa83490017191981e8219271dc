@@ -1,0 +1,9 @@
+package com.floats;
+
+public class FloatHolder {
+
+	public FloatHolder() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

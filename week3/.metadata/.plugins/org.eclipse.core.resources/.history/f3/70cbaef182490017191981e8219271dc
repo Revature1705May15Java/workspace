@@ -1,0 +1,10 @@
+package com.corejava;
+
+public class Q10 {
+/*
+Find the minimum of two numbers using ternary operators.
+ */
+	public Q10() {
+	}
+
+}

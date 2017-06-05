@@ -1,0 +1,11 @@
+package com.corejava;
+
+public class Q7Employee {
+
+	String name, department;
+	int age;
+	public Q7Employee() {
+
+	}
+
+}

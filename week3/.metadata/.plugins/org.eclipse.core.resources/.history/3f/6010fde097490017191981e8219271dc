@@ -1,0 +1,17 @@
+package com.corejava;
+
+public class Q7Employee {
+
+	String name, department;
+	Integer age;
+	public Q7Employee() {
+
+	}
+	public Q7Employee(String name, String department, int age) {
+		super();
+		this.name = name;
+		this.department = department;
+		this.age = age;
+	}
+	
+}

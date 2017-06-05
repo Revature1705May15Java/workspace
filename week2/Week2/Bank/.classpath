@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/freemarker-2.3.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aguac/Desktop/Server Downloads/Tomcat/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

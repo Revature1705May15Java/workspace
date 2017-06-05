@@ -1,0 +1,9 @@
+package com.corejava;
+
+public class Q2 {
+
+	public Q2() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
