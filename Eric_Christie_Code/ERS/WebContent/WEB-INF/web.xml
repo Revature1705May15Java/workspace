@@ -24,6 +24,15 @@
     <servlet-name>LogoutLogin</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <!-- SettingsServlet (used for viewing and changing employee account settings) -->
+  <servlet>
+    <servlet-name>Settings</servlet-name>
+    <servlet-class>com.revature.ers.servlets.SettingsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Settings</servlet-name>
+    <url-pattern>/settings</url-pattern>
+  </servlet-mapping>
   <!-- FreeMarker Configuration -->
   <servlet>
     <servlet-name>freemarker</servlet-name>
