@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.1">
 	<display-name>BankApp</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>login.ftl</welcome-file>
 	</welcome-file-list>
 
 

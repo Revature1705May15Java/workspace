@@ -15,40 +15,13 @@ import com.bank.service.Service;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
-	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-		String user = request.getParameter("username");
-		String pass = request.getParameter("password");
-		User u = new User();
-		Service service = new Service();
-		System.out.println("in servlet");
+		request.setAttribute("login","fail");
+		request.getRequestDispatcher("login.ftl").forward(request, response);
 		
-		try{
-			
-			boolean isUser = service.checkPassword(user, pass);
-			System.out.println(isUser);
-			if(isUser){
-				u = service.findUser(user);
-				HttpSession s = request.getSession(true);
-				s.setAttribute("user", u);
-				response.sendRedirect("home");
-			}
-			else{
-				
-				response.sendRedirect("Error.html");
-			}
-			
-			
-		}
-		catch(NullPointerException npe){
-			PrintWriter out = response.getWriter();
-			out.println("Exception");
-		}
-	
+
 	}
 	
 	

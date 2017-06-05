@@ -1,0 +1,5 @@
+package com.serv.filters;
+
+public class LogFilter {
+
+}

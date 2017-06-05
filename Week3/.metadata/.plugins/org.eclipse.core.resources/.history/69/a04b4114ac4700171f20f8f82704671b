@@ -1,0 +1,5 @@
+package com.serv.errorhandling;
+
+public class ErrorHandler {
+
+}

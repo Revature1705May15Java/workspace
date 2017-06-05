@@ -6,6 +6,9 @@
 	<tr>
 		<th> Account </th> <th> Balance </th>
 	</tr>
+	
+	
+	
 	<#list accountInfo as account>
 	<tr>
 		<td>${account.get(1)}</td> <td>${account.get(2)}</td>

@@ -42,9 +42,13 @@ public class HomeServlet extends HttpServlet{
 			temp.add("" + acc.getBalance());
 			accountInfo.add(temp);
 		}
+		
 		req.setAttribute("accounts", accounts);
 		req.setAttribute("accountInfo", accountInfo);
 		req.getRequestDispatcher("/home.ftl").forward(req,resp);
 	}
+	
+	
+	
 
 }
