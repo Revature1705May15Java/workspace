@@ -33,7 +33,7 @@ public class GenericTest {
         List<Integer> intList = new ArrayList<>();
         List<String> strList = new ArrayList<>();
 
-        printListNoWildcards(objList);  // NOT ok
+        printListNoWildcards(objList);
 //        printListNoWildcards(intList);  // NOT ok
 
         printListUnboundedWildcard(intList);
@@ -73,6 +73,7 @@ public class GenericTest {
 }
 
 
+// Basic usage
 class NonGenBox {
     private Object obj;
 
@@ -88,8 +89,10 @@ class GenBox<T> {
 }
 
 
+// Bounded parameters
 class GenExtClass<T extends Thread> { }
 class GenImplInt<T extends Runnable> { }
+class GenBoth<T extends Thread & Runnable> { }  // Classes before interfaces
 
 
 interface Comparable<T> {
