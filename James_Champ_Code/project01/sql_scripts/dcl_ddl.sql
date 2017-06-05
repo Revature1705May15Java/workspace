@@ -5,8 +5,8 @@ CREATE TABLE employee
   password    VARCHAR2(40)  NOT NULL,
   firstname   VARCHAR2(60)  NOT NULL,
   lastname    VARCHAR2(60)  NOT NULL,
-  ismanager   CHAR(1),
-  CONSTRAINT cons_employee_ismanager  CHECK (ismanager IN('1', '0'))
+  ismanager   NUMBER(1),
+  CONSTRAINT cons_employee_ismanager  CHECK (ismanager IN(1, 0))
 );
 /
 
