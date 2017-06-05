@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
+<#include "./header.ftl">
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
 
 <div class="container-fluid" style="width:30%; margin-top: 10em;">
     <h2>Manager</h2>
@@ -17,9 +10,5 @@
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
 
-</body>
-</html>
+<#include "./footer.ftl">

@@ -1,35 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home &middot RevatureERS</title>
+<#include "./header.ftl">
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-</head>
-<body>
-
-<header>
-    <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &nbsp;Revature<strong>ERS</strong></a></h1>
-
-    <nav>
-        <ul>
-            <a id="newRequest" href="#">
-                <li data-toggle="modal" data-target="#newRequestModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;New Request</li>
-            </a>
-            <a id="accountInfo" href="/Account">
-                <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;Account</li>
-            </a>
-            <a id="logout" class="btn btn-primary" href="/Logout"><li>Log Out</li></a>
-        </ul>
-    </nav>
-</header>
-
-<#--<div>-->
-    <#--<h2>Employee</h2>-->
-    <#--<h3>${user.getLastName()}, ${user.getFirstName()}</h3>-->
-<#--</div>-->
 
 <div id="pendingRequests" class="white-container request-table-container container-fluid">
     <h3><strong>Open</strong> Requests</h3>
@@ -79,7 +49,7 @@
             <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
                 <td class="col-xs-1 state">${r.getState().name()}</td>
                 <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="text col-xs-5 purpose"><span>${r.getPurpose()} sklj fldj fsjd flsd jfs dkjsdl</span></td>
+                <td class="text col-xs-5 purpose"><span>${r.getPurpose()}</span></td>
                 <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
                 <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
                 <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
@@ -162,22 +132,9 @@
                     </tr>
                 </table>
             </div>
-        <#--<div class="modal-footer">-->
-        <#--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
-        <#--</div>-->
         </div>
     </div>
 </div>
 
 
-<footer>
-    <p>&copy; Legalese and Stuffz, 2017</p>
-</footer>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/tablesorter/jquery.tablesorter.min.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-</html>
+<#include "./footer.ftl">

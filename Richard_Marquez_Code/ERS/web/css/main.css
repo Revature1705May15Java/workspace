@@ -101,26 +101,26 @@ footer {
         content: "";
         display: inline-block; }
 
-#viewRequestModal .modal-content {
+#viewRequestModal .modal-content, #newRequestModal .modal-content {
   padding: 2em; }
-  #viewRequestModal .modal-content h4 {
+  #viewRequestModal .modal-content h4, #newRequestModal .modal-content h4 {
     font-weight: bold; }
-  #viewRequestModal .modal-content table tr:first-child td {
+  #viewRequestModal .modal-content table tr:first-child td, #newRequestModal .modal-content table tr:first-child td {
     border-top: none; }
-  #viewRequestModal .modal-content table tr td:first-child {
+  #viewRequestModal .modal-content table tr td:first-child, #newRequestModal .modal-content table tr td:first-child {
     font-weight: bold; }
 
 table.tablesorter thead tr .header {
   cursor: pointer;
-  background-image: url(bg.gif);
+  background-image: url(../img/bg.gif);
   background-repeat: no-repeat;
   background-position: center right; }
 
 table.tablesorter thead tr .headerSortUp {
-  background-image: url(asc.gif); }
+  background-image: url(../img/asc.gif); }
 
 table.tablesorter thead tr .headerSortDown {
-  background-image: url(desc.gif); }
+  background-image: url(../img/desc.gif); }
 
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
   background-color: rgba(123, 178, 216, 0.44); }

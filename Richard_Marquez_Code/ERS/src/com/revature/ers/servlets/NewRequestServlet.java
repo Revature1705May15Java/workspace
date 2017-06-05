@@ -22,15 +22,18 @@ public class NewRequestServlet extends HttpServlet {
     private static final long serialVersionUID = 6L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Service svc = new Service();
+        Service svc = Service.getInstance();
         HttpSession session = request.getSession(true);
 
         double amount = Double.parseDouble(request.getParameter("requestAmount"));
         String purpose = request.getParameter("requestPurpose");
 
+        User user = (User) session.getAttribute("user");
+
         PrintWriter out = response.getWriter();
         out.println(amount);
         out.println(purpose);
+        out.println(user.getLastName());
 
 //        User user = (User) session.getAttribute("user");
 //        List<ReimbursementRequest> allRequests = user.getRequests();

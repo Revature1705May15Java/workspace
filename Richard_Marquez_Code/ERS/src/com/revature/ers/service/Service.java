@@ -13,9 +13,18 @@ import java.util.List;
 
 public class Service {
 
-    private static Dao dao = new DaoImpl();
+    private static Service INSTANCE = new Service();
+    private Dao dao = new DaoImpl();
 
-    private static User addUser(String email, String password, String fName, String lName, boolean isManager) {
+    private Service() {
+        dao = new DaoImpl();
+    }
+
+    public static Service getInstance() {
+        return INSTANCE;
+    }
+
+    public User addUser(String email, String password, String fName, String lName, boolean isManager) {
         User newUser = null;
 
         try {

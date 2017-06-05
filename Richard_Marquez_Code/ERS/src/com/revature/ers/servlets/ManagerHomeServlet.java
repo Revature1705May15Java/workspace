@@ -31,11 +31,12 @@ public class ManagerHomeServlet extends HttpServlet {
             return;
         }
 
-        Service svc = new Service();
         HttpSession session = request.getSession(true);
 
         User user = (User) session.getAttribute("user");
         request.setAttribute("user", user);
+
+        request.setAttribute("pageTitle", "Manager Home");
         request.getRequestDispatcher("/managerHome.ftl").forward(request, response);
     }
 

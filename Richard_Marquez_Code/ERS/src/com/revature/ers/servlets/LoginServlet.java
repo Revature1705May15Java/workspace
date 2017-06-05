@@ -15,7 +15,6 @@ import static java.lang.Boolean.FALSE;
 
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static Service svc = new Service();
     private Boolean uLock = new Boolean(FALSE);
 
     public void init(ServletConfig config) throws ServletException {
@@ -31,12 +30,14 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("pageTitle", "Login");
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         if (username != null && password != null && !username.isEmpty() && !password.isEmpty()) {
             synchronized (uLock) {
-                User u = svc.login(username, password);
+                User u = Service.getInstance().login(username, password);
                 if (u != null) {
                     HttpSession s = request.getSession(true);
                     s.setAttribute("user", u);

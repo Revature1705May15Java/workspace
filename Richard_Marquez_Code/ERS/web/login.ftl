@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login &middot; RevatureERS</title>
+<#include "./header.ftl">
 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-</head>
-<body>
-
-<header>
-    <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &nbsp;Revature<strong>ERS</strong></a></h1>
-</header>
 
 <div id="login-container" class="white-container container-fluid">
 <#if login?? >
@@ -28,14 +15,5 @@
     </form>
 </div>
 
-<footer>
-    <p>&copy; Legalese and Stuffz, 2017</p>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/tablesorter/jquery.tablesorter.min.js"></script>
-<script src="js/main.js"></script>
-
-</body>
-</html>
+<#include "./footer.ftl">

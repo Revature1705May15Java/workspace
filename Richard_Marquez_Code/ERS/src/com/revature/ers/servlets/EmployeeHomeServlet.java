@@ -38,7 +38,6 @@ public class EmployeeHomeServlet extends HttpServlet {
             return;
         }
 
-        Service svc = new Service();
         HttpSession session = request.getSession(true);
 
         User user = (User) session.getAttribute("user");
@@ -59,6 +58,7 @@ public class EmployeeHomeServlet extends HttpServlet {
         request.setAttribute("resolvedRequests", resolvedRequests);
         request.setAttribute("currentDate", LocalDate.now());
 
+        request.setAttribute("pageTitle", "Employee Home");
         request.getRequestDispatcher("/employeeHome.ftl").forward(request, response);
     }
 
