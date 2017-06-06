@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login - Expense Reimbursement System</title>
 
@@ -27,57 +28,60 @@
 	<meta name="msapplication-TileImage" content="./img/favicons/ers-144.png">
 	<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
 
+	<!--jQuery-->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+
+  <!--Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  
+  <!--Bootstrap 3-->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	  crossorigin="anonymous">
+    crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
     integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	  crossorigin="anonymous">
+    crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-	  crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>-->
+  
+  <!--Material Design Icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./css/icon-styles.css">
+
+  <script src="./js/ers.js"></script>
+  <link rel="stylesheet" href="./css/ers.css">
 </head>
 <body>
-  
-  <form>
-    <div class="form-group">
-      <label for="loginEmail">Email</label>
-      <input type="email" class="form-control" id="loginEmail" placeholder="Email">
-    </div>
-  </form>
+  <div class="container">
+    <#if loginAttempted??>
+      <#if loginAttempted>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <!--<span aria-hidden="true">&times;</span>-->
+            <i class="material-icons">close</i>
+          </button>
+          <i class="material-icons">error</i> Incorrect email address or password. Please try again.
+        </div>
+      </#if>
+    </#if>
 
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <div class="jumbotron">
-        <#if loginAttempted??>
-          <#if loginAttempted>
-            <div class="alert alert-danger alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-              <i class="material-icons">error</i> Incorrect email address or password. Please try again.
-            </div>
-          </#if>
-        </#if>
-      
-        <form name="loginForm" method="POST" action="login">
-          <table>
-            <tr class="form-group"><td>Email:</td><td><input type="email" name="em" class="form-control" required/></td></tr>
-            <tr class="form-group"><td>Password:</td><td><input type="password" name="pw" class="form-control" required/></td></tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><input type="submit" value="Login" name="LoginButton" class="btn btn-default"/></td>
-            </tr>
-          </table>
-        </form>
-      </div>
-    </div>
+    <form name="loginForm" class="form-signin" method="POST" action="login">
+      <h2 class="form-signin-heading">Login</h2>
+      <label for="loginEmail" class="sr-only">Email address</label>
+      <input type="email" name="em" id="loginEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="loginPassword" class="sr-only">Password</label>
+      <input type="password" name="pw" id="loginPassword" class="form-control" placeholder="Password" required>
+      <br>
+      <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+    </form>
   </div>
-  
 </body>
 </html>

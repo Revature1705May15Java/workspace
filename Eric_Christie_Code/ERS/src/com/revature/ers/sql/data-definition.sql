@@ -55,7 +55,7 @@ begin
   if :new.id is null then
     select employee_seq.nextval into :new.id from dual;
   end if;
-  if :new.emailAlertsOn is null and isManager=0 then
+  if :new.emailAlertsOn is null and :new.isManager=0 then
     select 1 into :new.emailAlertsOn from dual;
   else
     select 0 into :new.emailAlertsOn from dual;
@@ -68,7 +68,7 @@ begin
   if :new.id is null then
     select request_seq.nextval into :new.id from dual;
   end if;
-  if :new.stateTypeId is null then
+  if :new.stateId is null then
     select rs.id into :new.stateId from requestState rs where lower(rs.name)='pending';
   end if;
   if :new.requestedTimestamp is null then
