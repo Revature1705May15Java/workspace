@@ -35,10 +35,12 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  String uri = request.getRequestURI();
+	  System.out.println(uri);
 	  String servletPath = request.getServletPath();
+	  System.out.println(servletPath);
 	  ExpenseReimbursementService service = new ExpenseReimbursementService();
 	  
-	  if (servletPath.equals("/login")) {
+	  if (servletPath.equals("/ERS/login")) {
 	    String email = request.getParameter("em");
 	    String password = request.getParameter("pw");
 	    
@@ -55,7 +57,7 @@ public class SessionServlet extends HttpServlet {
 //	        response.sendRedirect("home.ftl");
 	      }
 	    }
-	  } else if (servletPath.equals("/logout")) {
+	  } else if (servletPath.equals("/ERS/logout")) {
 	    HttpSession session = request.getSession();
 	    if (session.getAttribute("employee") != null) {
 	      service.logout((Employee) session.getAttribute("employee"));
