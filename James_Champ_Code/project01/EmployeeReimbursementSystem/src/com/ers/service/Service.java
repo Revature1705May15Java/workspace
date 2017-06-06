@@ -1,5 +1,7 @@
 package com.ers.service;
 
+import java.util.ArrayList;
+
 import com.ers.dao.DAO;
 import com.ers.dao.DAOImpl;
 import com.ers.exceptions.InvalidPasswordException;
@@ -58,5 +60,9 @@ public class Service {
 		}
 		
 		return result;
+	}
+	
+	public ArrayList<Employee> getAllEmployees() {
+		return dao.getAllEmployees();
 	}
 }

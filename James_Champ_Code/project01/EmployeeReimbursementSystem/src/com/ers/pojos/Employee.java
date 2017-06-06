@@ -150,7 +150,7 @@ public class Employee {
 	 * @return	{@code true} if this employee is a manager, and
 	 * 			{@code false} otherwise.
 	 */
-	public boolean isManager() {
+	public boolean getIsManager() {
 		return isManager;
 	}
 	

@@ -3,6 +3,9 @@ package com.ers.pojos;
 import java.sql.Date;
 
 public class Request {
+	/**
+	 * The ID number of this request.
+	 */
 	private int requestId;
 	private RequestState state;
 	private Date openDate;

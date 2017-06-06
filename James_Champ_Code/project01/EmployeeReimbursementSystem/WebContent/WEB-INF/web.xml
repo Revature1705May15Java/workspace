@@ -47,12 +47,12 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-    <servlet-name>ManagerView</servlet-name>
-    <servlet-class>com.ers.servlets.ManagerViewServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ManagerView</servlet-name>
-    <url-pattern>/managerView</url-pattern>
-  </servlet-mapping>
+	<servlet>
+		<servlet-name>ViewEmployees</servlet-name>
+		<servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewEmployees</servlet-name>
+		<url-pattern>/viewEmployees</url-pattern>
+	</servlet-mapping>
 </web-app>

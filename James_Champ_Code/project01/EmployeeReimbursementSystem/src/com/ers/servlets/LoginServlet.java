@@ -24,11 +24,11 @@ public class LoginServlet extends HttpServlet {
 		try {
 			Employee employee = service.login(email, password);
 			
-			if(employee.isManager()) {
-				request.getRequestDispatcher("managerPlaceholder.html").forward(request, response);		
+			if(employee.getIsManager()) {
+				request.getRequestDispatcher("manager.ftl").forward(request, response);		
 			}
 			else {
-				request.getRequestDispatcher("employeePlaceholder.html").forward(request, response);
+				request.getRequestDispatcher("employee.ftl").forward(request, response);
 			}
 		} 
 		catch(NoSuchEmployeeException e) {
