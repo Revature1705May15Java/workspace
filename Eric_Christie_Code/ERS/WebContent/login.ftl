@@ -59,7 +59,7 @@
   <script src="./js/ers.js"></script>
   <link rel="stylesheet" href="./css/ers.css">
 </head>
-<body>
+<body class="login">
   <div class="container">
     <#if loginAttempted??>
       <#if loginAttempted>
@@ -73,8 +73,8 @@
       </#if>
     </#if>
 
-    <form name="loginForm" class="form-signin" method="POST" action="login">
-      <h2 class="form-signin-heading">Login</h2>
+    <form name="loginForm" class="form-login" method="POST" action="login">
+      <h2 class="form-login-heading">Login</h2>
       <label for="loginEmail" class="sr-only">Email address</label>
       <input type="email" name="em" id="loginEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="loginPassword" class="sr-only">Password</label>
