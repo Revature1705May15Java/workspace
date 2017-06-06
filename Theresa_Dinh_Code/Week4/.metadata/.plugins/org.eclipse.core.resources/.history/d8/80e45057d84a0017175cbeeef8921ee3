@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="examples">
+<div id="fib"></div>
+<p>hello</p>
+<p>world</p>
+<div id="display"></div>
+</div>
+
+<script src="JavaScript/homework.js"></script>
+<script src="JavaScript/examples.js"></script>
+
+</body>
+</html>
