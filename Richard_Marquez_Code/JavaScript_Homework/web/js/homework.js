@@ -298,7 +298,7 @@ function getPerson(name, age) {
     return obj;
 }
 var john = getPerson("John", 45);
-console.log(john);
+// console.log(john);
 
 
 

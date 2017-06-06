@@ -95,12 +95,3 @@ class GenImplInt<T extends Runnable> { }
 class GenBoth<T extends Thread & Runnable> { }  // Classes before interfaces
 
 
-interface Comparable<T> {
-    int compareTo(T obj);
-}
-
-class ComparisonTester<T extends Comparable<T>> {
-    public boolean isGreaterThan(T a, T b) {
-        return (a.compareTo(b) > 0);
-    }
-}
