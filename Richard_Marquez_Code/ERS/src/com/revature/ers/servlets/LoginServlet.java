@@ -60,4 +60,39 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
     }
+
+
+    private static boolean authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean result = false;
+        HttpSession session = request.getSession(true);
+
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            result = true;
+        }
+
+        return result;
+    }
+
+    public static boolean authenticateEmployee(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean result = false;
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (authenticate(request, response) && !user.isManager()) {
+            result = true;
+        }
+
+        return result;
+    }
+    public static boolean authenticateManager(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        boolean result = false;
+
+        User user = (User) request.getSession().getAttribute("user");
+        if (authenticateEmployee(request, response) && user.isManager()) {
+            result = true;
+        }
+
+        return result;
+    }
+
 }

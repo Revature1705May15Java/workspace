@@ -71,8 +71,15 @@ footer {
   margin-top: 15em;
   width: 25em; }
 
-#pendingRequests {
+#pendingRequests, #employeeAccountContainer {
   margin-top: 10em; }
+
+#employeeAccountContainer {
+  width: 50%; }
+  #employeeAccountContainer table tr:first-child td {
+    border-top: none; }
+  #employeeAccountContainer table tr td:first-child {
+    font-weight: bold; }
 
 .request-table-container {
   width: 80%; }

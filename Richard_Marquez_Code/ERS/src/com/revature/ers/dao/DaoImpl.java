@@ -63,7 +63,7 @@ public class DaoImpl implements Dao {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
             Logger.log(e.getMessage());
         }
 

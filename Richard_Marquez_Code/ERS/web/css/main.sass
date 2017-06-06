@@ -99,8 +99,18 @@ footer
   margin-top: 15em
   width: 25em
 
-#pendingRequests
+#pendingRequests, #employeeAccountContainer
   margin-top: 10em
+
+#employeeAccountContainer
+  width: 50%
+  table
+    tr
+      &:first-child
+        td
+          border-top: none
+      td:first-child
+        font-weight: bold
 
 .request-table-container
   width: 80%

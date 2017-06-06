@@ -16,10 +16,12 @@
     <#if pageTitle != "Login">
     <nav>
         <ul>
+            <#if pageTitle != "Employee Account">
             <a id="newRequest" href="#">
                 <li data-toggle="modal" data-target="#newRequestModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;New Request</li>
             </a>
-            <a id="accountInfo" href="/Account">
+            </#if>
+            <a id="accountInfo" href="/EmployeeAccount">
                 <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;Account</li>
             </a>
 

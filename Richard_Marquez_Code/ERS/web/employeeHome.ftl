@@ -78,11 +78,16 @@
                         </tr>
                         <tr>
                             <td>Amount</td>
-                            <td><strong>$</strong> <input required="required" type="number" min="0.00" step="0.01" max="100000" placeholder="0.00" name="requestAmount"/></td>
+                            <td>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input class="form-control" required="required" type="number" min="0.00" step="0.01" max="100000" placeholder="0.00" name="requestAmount"/>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Purpose</td>
-                            <td><textarea required="required" rows="5" cols="50" name="requestPurpose" placeholder="Why are you requesting reimbursement?"></textarea></td>
+                            <td><textarea class="form-control" required="required" rows="5" cols="50" name="requestPurpose" placeholder="Why are you requesting reimbursement?"></textarea></td>
                         </tr>
                     </table>
                 </div>

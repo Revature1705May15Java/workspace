@@ -2,12 +2,8 @@ package com.revature.ers.servlets;
 
 import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
-import com.revature.ers.service.Service;
 
-import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,23 +13,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.revature.ers.servlets.LoginServlet.authenticateEmployee;
+
 public class EmployeeHomeServlet extends HttpServlet {
     private static final long serialVersionUID = 4L;
 
-    private boolean authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean result = false;
-        HttpSession session = request.getSession(true);
-
-        User user = (User) session.getAttribute("user");
-        if (user != null && !user.isManager()) {
-            result = true;
-        }
-
-        return result;
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!authenticate(request, response)) {
+        if (!authenticateEmployee(request, response)) {
             response.sendRedirect("/Login");
             return;
         }

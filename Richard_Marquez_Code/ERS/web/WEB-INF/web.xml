@@ -106,4 +106,13 @@
         <url-pattern>/NewRequest</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>EmployeeAccountServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.EmployeeAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmployeeAccountServlet</servlet-name>
+        <url-pattern>/EmployeeAccount</url-pattern>
+    </servlet-mapping>
+
 </web-app>

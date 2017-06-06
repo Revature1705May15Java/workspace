@@ -59,6 +59,29 @@ public class Service {
         return newUser;
     }
 
+    public User updateUser(User user, String email, String password, String fName, String lName) {
+        User updatedUser = null;
+
+        try {
+            String hashedPassword = PasswordStorage.createHash(password);
+
+            user.setEmail(email);
+            user.setPassword(hashedPassword);
+            user.setFirstName(fName);
+            user.setLastName(lName);
+
+            if (dao.updateUser(user) != null) {
+                updatedUser = dao.getUser(email);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getClass());
+            System.out.println(e.getMessage());
+            Logger.log(e.getStackTrace().toString());
+        }
+
+        return updatedUser;
+    }
+
     public ReimbursementRequest addRequest(User user, double amount, String purpose) {
         ReimbursementRequest result = null;
 
