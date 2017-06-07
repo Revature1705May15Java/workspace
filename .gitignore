@@ -1,10 +1,14 @@
+# Build Outputs
 Eric_Christie_Code/*/build/
 */*/build/
 Eric_Christie_Code/*/bin/
 */*/bin/
-
 **/*.class
+
 
 Eric_Christie_Code/.metadata/
 Eric_Christie_Code/.recommenders/
 Eric_Christie_Code/RemoteSystemsTempFiles/
+
+# NodeJS Stuff
+node_modules
