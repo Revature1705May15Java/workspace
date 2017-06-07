@@ -43,7 +43,7 @@
 
 								<#list requests as request>
 								<tr>
-									<td>&#9731 ${request.request_id}</td> ]
+									<td>&#9731 ${request.request_id}</td>
 									<td>&dollar; ${request.amount}</td>
 									<td> ${request.state.name} </td>
 									<td> ${request.opened} </td>

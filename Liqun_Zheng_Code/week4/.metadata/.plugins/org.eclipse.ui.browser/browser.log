@@ -1,0 +1,10 @@
+
+Jun 06, 2017 19:34:41.05 NEW SESSION
+Jun 06, 2017 19:34:41.05 [7560:12780:0606/193441.049:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 19:34:41.05 [7560:12780:0606/193441.053:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 19:55:54.37 [7560:1652:0606/195554.379:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+Jun 06, 2017 20:49:30.60 [7560:12780:0606/204930.606:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 20:49:30.61 [7560:12780:0606/204930.609:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 20:49:54.33 [7560:12780:0606/204954.335:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 20:49:54.33 [7560:12780:0606/204954.338:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 06, 2017 20:57:35.67 [7560:1652:0606/205735.672:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener

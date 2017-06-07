@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DOM</title>
+</head>
+<body>
+ <div class = "examples">
+ 
+ 	<div id = "fib"></div>
+ 
+ </div>
+ <script type="js/examples.js"></script>
+ <script type="js/jsHomework.js"></script>
+
+  
+</body>
+</html>

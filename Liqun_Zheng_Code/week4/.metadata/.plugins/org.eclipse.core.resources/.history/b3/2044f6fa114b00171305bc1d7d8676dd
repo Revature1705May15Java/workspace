@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<br><br>
+<h3>Problem 1: Fibonacchi</h3>
+<br>
+<input type = "number" id = "fibNum" placeholder="Enter an number"/>
+<br>
+<button id ="doFib" type = "submit"> Run Fibonacci!</button>
+<p id = "fibdisplay"></p>
+
+<script type = "text/javascrip" src="js/jsHomework.js"></script>
+
+</body>
+</html>

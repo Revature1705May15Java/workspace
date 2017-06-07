@@ -8,14 +8,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="config"/>
+			<item value="exception"/>
+			<item value="]"/>
+			<item value="]]"/>
+			<item value="h"/>
+			<item value="httpget"/>
+			<item value="submit"/>
 			<item value="padding"/>
-			<item value="] ]"/>
-			<item value="type"/>
-			<item value="findtype"/>
-			<item value="findacc"/>
-			<item value="getConnection"/>
-			<item value="\"/>
-			<item value="drive"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/"/>

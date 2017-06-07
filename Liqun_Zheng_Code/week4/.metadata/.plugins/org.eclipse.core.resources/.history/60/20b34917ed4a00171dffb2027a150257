@@ -1,0 +1,20 @@
+var parags = document.getElementsByTagName("p");
+//var pString = parags.join(" - ");
+
+var inner;
+
+for(i = 0; i < parags.length; i++){
+	inner.push(parags[i].innerHTML);
+}
+
+document.getElementById("display").innerHTML = inner[1].innerHTML;
+
+
+function add(){
+	
+	//Element Values
+	var id = document.getElementById("t_id").value;
+	var name = document.getElementById("t_name").value;
+	var major = document.getElementById("t_major").value;
+	
+}
