@@ -52,8 +52,8 @@
   <script src="./js/ers.js"></script>
   <link rel="stylesheet" href="./css/ers.css">
 </head>
-<body>
-  <div class="container">
+<body class="login">
+  <div class="container w-50">
     <#if loginAttempted??>
       <#if loginAttempted>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -61,13 +61,13 @@
             <!--<span aria-hidden="true">&times;</span>-->
             <i class="material-icons">close</i>
           </button>
-          <i class="material-icons">error</i> Incorrect email address or password. Please try again.
+          <i class="material-icons vert-align-middle">error</i> Incorrect email address or password. Please try again.
         </div>
       </#if>
     </#if>
 
-    <form name="loginForm" class="form-signin" method="POST" action="login">
-      <h2 class="form-signin-heading">Login</h2>
+    <form name="loginForm" class="form-login" method="POST" action="login">
+      <h2 class="form-login-heading">Login</h2>
       <label for="loginEmail" class="sr-only">Email address</label>
       <input type="email" name="em" id="loginEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="loginPassword" class="sr-only">Password</label>

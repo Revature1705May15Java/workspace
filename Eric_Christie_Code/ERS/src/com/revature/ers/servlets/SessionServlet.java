@@ -35,29 +35,28 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  String uri = request.getRequestURI();
-	  System.out.println(uri);
-	  String servletPath = request.getServletPath();
-	  System.out.println(servletPath);
 	  ExpenseReimbursementService service = new ExpenseReimbursementService();
 	  
-	  if (servletPath.equals("/ERS/login")) {
+	  if (uri.equals("/ERS/login")) {
 	    String email = request.getParameter("em");
 	    String password = request.getParameter("pw");
 	    
-	    loginAttempted = (email != null && password != null && !email.isEmpty() && !password.isEmpty())
-	        || (email != null || password != null);
+	    if (email != null || password != null) {
+	      loginAttempted = true;
+	    }
 	    
 	    if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
+	      loginAttempted = true;
 	      Employee result = service.login(email, password);
 	      
 	      if (result != null) {
 	        HttpSession session = request.getSession(true);
 	        session.setAttribute("employee", result);
-	        request.getRequestDispatcher("home.ftl").forward(request, response);
-//	        response.sendRedirect("home.ftl");
+	        request.getRequestDispatcher("main.ftl").forward(request, response);
+//	        response.sendRedirect("main.ftl");
 	      }
 	    }
-	  } else if (servletPath.equals("/ERS/logout")) {
+	  } else if (uri.equals("/ERS/logout")) {
 	    HttpSession session = request.getSession();
 	    if (session.getAttribute("employee") != null) {
 	      service.logout((Employee) session.getAttribute("employee"));

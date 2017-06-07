@@ -1,7 +1,5 @@
 body {
   padding-top: 70px;
-  color: blue;
-  background-color: black;
 }
 
 .center-block {
@@ -10,17 +8,24 @@ body {
   margin-right: auto;
 }
 
-.form-signin {
+/* Login page styles based on https://v4-alpha.getbootstrap.com/examples/signin/signin.css */
+body.login {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-login {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
 
-.form-signin .form-signin-heading {
+.form-login .form-login-heading {
   margin-bottom: 10px;
 }
 
-.form-signin .form-control {
+.form-login .form-control {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
@@ -29,17 +34,17 @@ body {
   font-size: 16px;
 }
 
-.form-signin .form-control:focus {
+.form-login .form-control:focus {
   z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-login input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.form-signin input[type="password"] {
+.form-login input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
