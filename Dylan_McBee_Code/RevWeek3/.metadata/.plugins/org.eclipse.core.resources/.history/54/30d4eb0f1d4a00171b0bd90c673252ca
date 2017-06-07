@@ -1,0 +1,10 @@
+package com.ers.service;
+
+import com.ers.dao.DAO;
+import com.ers.dao.DAOImpl;
+
+public class Service {
+
+	
+	static DAO dao = new DAOImpl();
+}

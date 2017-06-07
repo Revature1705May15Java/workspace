@@ -2,13 +2,71 @@
 <?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
 <title>JBoss Central</title>
 <generator uri="http://tt-rss.org/">Tiny Tiny RSS/1.9</generator>
-<updated>2017-04-25T14:09:02+00:00</updated>
+<updated>2017-04-27T21:24:18+00:00</updated>
 <id>http://tiny-man.rhcloud.com/public.php?op=rss&amp;id=1&amp;key=b0143615132bd9efc4e83ba42a5574f6ab939b28</id>
 
 
 <link href="http://tiny-man.rhcloud.com" rel="alternate" />
 
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/jbossbuzz" /><feedburner:info uri="jbossbuzz" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+	<id>https://tools.jboss.org/blog/2017-05-31-devstudio-survey.html</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/PYhSZ3W08ts/2017-05-31-devstudio-survey.html" rel="alternate" type="text/html" />
+	<title>Are you a Developer User Experience lead ?</title>
+	<summary type="html"><![CDATA[
+      <div><div class="paragraph">
+      <p>Are you a user of JBoss Tools or Red Hat JBoss Developer Studio? If so, the documentation team would love to hear from you!</p>
+      </div>
+      <div class="paragraph">
+      <p>We’ve created a very brief survey that should only take a few minutes of your time. This survey is about the documentation for JBoss Developer Studio and asks users about what sort of things are useful and effective in the documentation as well as what we could be doing better.</p>
+      </div>
+      <div class="paragraph">
+      <p>If you have a few minutes to spare, we would appreciate your thoughts. All results are completely anonymous (unless you choose to leave your details to be contacted for further feedback in the future). Click the following link for the survey:</p>
+      </div>
+      <div class="paragraph">
+      <p><a href="https://goo.gl/forms/ng0kH0CxKVwJo0xw2">Click here for survey link</a></p>
+      </div>
+      <div class="paragraph">
+      <p>For any other thoughts, feel free to contact us at <a href="mailto:devtools-docs@redhat.com">devtools-docs@redhat.com</a> and we’ll be happy to hear any feedback you may have.</p>
+      </div>
+      <div class="paragraph">
+      <p>Thank you all for your time!<br />
+      The Developer Tools Documentation Team</p>
+      </div></div>
+    ]]></summary>
+	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
+      &lt;p&gt;Are you a user of JBoss Tools or Red Hat JBoss Developer Studio? If so, the documentation team would love to hear from you!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;We&amp;rsquo;ve created a very brief survey that should only take a few minutes of your time. This survey is about the documentation for JBoss Developer Studio and asks users about what sort of things are useful and effective in the documentation as well as what we could be doing better.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;If you have a few minutes to spare, we would appreciate your thoughts. All results are completely anonymous (unless you choose to leave your details to be contacted for further feedback in the future). Click the following link for the survey:&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;&lt;a href="https://goo.gl/forms/ng0kH0CxKVwJo0xw2" target="_blank"&gt;Click here for survey link&lt;/a&gt;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;For any other thoughts, feel free to contact us at &lt;a href="mailto:devtools-docs@redhat.com" target="_blank"&gt;devtools-docs@redhat.com&lt;/a&gt; and we&amp;rsquo;ll be happy to hear any feedback you may have.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Thank you all for your time!&lt;br&gt;
+      The Developer Tools Documentation Team&lt;/p&gt;
+      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/PYhSZ3W08ts" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-06-07T11:08:05+00:00</updated>
+	<author><name>mhusnain</name></author>
+	<source>
+		<link rel="self" href="http://tools.jboss.org/blog/" />
+		<title>JBoss Tools</title></source>
+
+	<category term="devstudio" />
+
+	<category term="survey" />
+
+
+<feedburner:origLink>https://tools.jboss.org/blog/2017-05-31-devstudio-survey.html</feedburner:origLink></entry>
+
+<entry>
 	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/06/01/the-week-in-jboss-june-1st-2017</id>
 	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/VoRIMsQFsrs/the-week-in-jboss-june-1st-2017" rel="alternate" type="text/html" />
 	<title>The Week in JBoss (June 1st, 2017)</title>
@@ -1644,128 +1702,6 @@
 
 
 <feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2017/04/27/twas-the-week-before-summit-april-27-2017</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/4.4.4.am3-for-neon.3.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/-XC7ZTrX5EQ/4.4.4.am3-for-neon.3.html" rel="alternate" type="text/html" />
-	<title>JBoss Tools 4.4.4.AM3 for Eclipse Neon.3</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Happy to announce 4.4.4.AM3 (Developer Milestone 3) build for Eclipse Neon.3.</p>
-      </div>
-      <div class="paragraph">
-      <p>Downloads available at <a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.4.AM3.html">JBoss Tools 4.4.4 AM3</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="what-is-new"><a class="anchor" href="#what-is-new"></a>What is New?</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Full info is at <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.4.AM3.html">this page</a>. Some highlights are below.</p>
-      </div>
-      <div class="sect2">
-      <h3 id="openshift-3"><a class="anchor" href="#openshift-3"></a>OpenShift 3</h3>
-      <div class="sect3">
-      <h4 id="pipeline-builds-support"><a class="anchor" href="#pipeline-builds-support"></a>Pipeline builds support</h4>
-      <div class="paragraph">
-      <p>Pipeline based builds are now supported by the OpenShift tooling.
-      When creating an application, if using a template, if one of the builds is based on pipeline, you can view the detail
-      of the pipeline:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/pipeline-wizard.png" alt="pipeline wizard" width="600" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>When your application is deployed, you can see the details of the build configuration for the pipeline based builds:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/pipeline-details.png" alt="pipeline details" width="600" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>More to come as we are improving the pipeline support in the OpenShift tooling.</p>
-      </div>
-      <div class="paragraph">
-      <p>Enjoy!</p>
-      </div>
-      <div class="paragraph">
-      <p>Jeff Maury</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Happy to announce 4.4.4.AM3 (Developer Milestone 3) build for Eclipse Neon.3.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Downloads available at &lt;a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.4.AM3.html" target="_blank"&gt;JBoss Tools 4.4.4 AM3&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#what-is-new" target="_blank"&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Full info is at &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.4.AM3.html" target="_blank"&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#openshift-3" target="_blank"&gt;&lt;/a&gt;OpenShift 3&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;h4&gt;&lt;a href="#pipeline-builds-support" target="_blank"&gt;&lt;/a&gt;Pipeline builds support&lt;/h4&gt;
-      &lt;div&gt;
-      &lt;p&gt;Pipeline based builds are now supported by the OpenShift tooling.
-      When creating an application, if using a template, if one of the builds is based on pipeline, you can view the detail
-      of the pipeline:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/pipeline-wizard.png" alt="pipeline wizard" width="600"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;When your application is deployed, you can see the details of the build configuration for the pipeline based builds:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/pipeline-details.png" alt="pipeline details" width="600"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;More to come as we are improving the pipeline support in the OpenShift tooling.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Enjoy!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Jeff Maury&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/-XC7ZTrX5EQ" height="1" width="1" alt=""/&gt;</content>
-	<updated>2017-04-25T14:09:02+00:00</updated>
-	<author><name>jeffmaury</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="release" />
-
-	<category term="jbosstools" />
-
-	<category term="jbosscentral" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/4.4.4.am3-for-neon.3.html</feedburner:origLink></entry>
 
 
 </feed><!-- vim:ft=xml

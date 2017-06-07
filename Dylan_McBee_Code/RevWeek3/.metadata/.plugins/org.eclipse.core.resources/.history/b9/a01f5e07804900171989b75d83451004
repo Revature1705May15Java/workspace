@@ -1,0 +1,8 @@
+package com.ers.pojos;
+
+public class Employee {
+
+	int employeeId;
+	
+	
+}

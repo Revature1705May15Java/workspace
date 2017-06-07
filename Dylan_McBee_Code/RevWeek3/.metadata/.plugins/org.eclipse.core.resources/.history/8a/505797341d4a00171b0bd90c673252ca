@@ -1,0 +1,15 @@
+package com.ers.service;
+
+import com.ers.dao.DAO;
+import com.ers.dao.DAOImpl;
+import com.ers.pojos.Employee;
+
+public class Service {
+
+	static DAO dao = new DAOImpl();
+	
+	public Employee getEmployee(String email){
+		return dao.getEmployee(email);
+	}
+	
+}

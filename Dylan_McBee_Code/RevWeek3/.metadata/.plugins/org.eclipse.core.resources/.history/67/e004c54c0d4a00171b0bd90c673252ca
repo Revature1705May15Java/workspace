@@ -1,0 +1,9 @@
+package com.ers.pojos;
+
+public class Employee {
+
+	int id;
+	String email, password, firstName, lastName;
+	int isManager;
+	
+}
