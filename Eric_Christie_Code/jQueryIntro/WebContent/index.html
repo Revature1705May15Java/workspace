@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="page">
+    <h1 id="header">List</h1>
+    <h2>Buy Groceries</h2>
+    <input type="text" id="input" placeholder="what do you need to get" required>
+    <button type="button" id="add">Add</button>
+    <br>
+    <ul>
+      <li id="1" class="hot"><em>fresh</em> figs</li>
+      <li id="2" class="hot">pine nuts</li>
+      <li id="3" class="hot">honey</li>
+      <li id="4" class="hot">balsamic vinegar</li>
+    </ul>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script>
+    $('header').addClass('headline');
+    $('li:lt(3)').hide().fadeIn(1500);
+    $('li').on('click', function() {
+      $(this).remove()
+    });
+    $('#add').on('click', function() {
+      let input = $('#input');
+      let item = input.val();
+      $('ul').append(`<li class="hot">${item}</li>`);
+      $('li').on('click', function() {
+        $(this).remove()
+      });
+      input.val('');
+    });
+    $('#input').on('invalid', function() {
+      $('#add').attr('disabled', true);
+    });
+  </script>
+</body>
+</html>
