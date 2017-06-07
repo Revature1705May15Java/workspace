@@ -1,22 +1,30 @@
 $(document).ready(function () {
     $('header').addClass('headline');
 
+    // $('li.hot:lt(3)').hide().fadeIn(1500);
+
     initList();
     initButton();
 });
 
 function initList() {
-    $('li.hot:lt(3)').hide().fadeIn(1500);
+    //reset onclick
+    $('.hot').prop('onclick',null).off('click');
 
     $('.hot').click(function() {
+        let el = $(this);
+
+        var li = $('<li class="hot">' + el.html() + '</li>');
+
+        $('#todoneList').append(li);
         $(this).remove();
     });
 }
 
 function initButton() {
-    $('#groceryInputButton').click(function() {
-        var gList = $('#groceryList');
-        var g = $('#groceryInput');
+    $('#todoInputButton').click(function() {
+        var gList = $('#todoList');
+        var g = $('#todoInput');
 
         var li = $('<li class="hot">' + g.val() + '</li>');
 
