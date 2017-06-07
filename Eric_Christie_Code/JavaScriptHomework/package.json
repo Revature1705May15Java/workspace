@@ -1,0 +1,13 @@
+{
+  "name": "javascript-homework",
+  "version": "1.0.0",
+  "description": "My solutions for the JavaScript Homework assignment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./WebContent/js/homework.js",
+    "start": "lite-server"
+  },
+  "author": "Eric Christie",
+  "license": "MIT",
+  "devDependencies": {}
+}

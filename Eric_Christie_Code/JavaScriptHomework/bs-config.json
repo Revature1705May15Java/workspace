@@ -1,0 +1,7 @@
+{
+  "port": 65535,
+  "files": [ "./WebContent/index.html", "./WebContent/js/*", "./WebContent/css/*" ],
+  "server": {
+    "baseDir": "./WebContent"
+  }
+}

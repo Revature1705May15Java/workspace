@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .bubblingEx {
+      border-width: 5px;
+      border-color: blue;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="exampleSpace">
+    Count = <p id="counter">0</p>
+  </div>
+  <h1>Enter Student Info</h1>
+  <br>
+  Id: <input type="number" id="t_id">
+  <br>
+  Name: <input type="text" id="t_name">
+  <br>
+  Major: <input type="text" id="t_major">
+  <button type="button" id="addBtn" onclick="count()">Add Student</button>
+
+  <table id="students">
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>major</td>
+    </tr>
+  </table>
+  <br>
+  <!--adding event listeners to elements in html -->
+  <form class="bubblingEx" id="form" onclick="alert('form')"> FORM
+    <div class="bubblingEx" id="div" onclick="alert('div')"> DIV
+      <p class="bubblingEx" id="p" onclick="alert('p')">P</p>
+    </div>
+  </form>
+  <script>
+    document.getElementById('form').forEach(function(element) {
+      element.addEventListener('click', alert(element.innerHTML), true);
+    });
+    document.getElementById('div').forEach(function(element) {
+      element.addEventListener('click', alert(element.innerHTML), true);
+    });
+    document.getElementById('p').forEach(function(element) {
+      element.addEventListener('click', alert(element.innerHTML), true);
+    });
+  </script>
+
+  <script src="./js/example.js"></script>
+</body>
+</html>
