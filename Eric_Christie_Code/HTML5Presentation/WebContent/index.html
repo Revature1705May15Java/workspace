@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML5</title>
+</head>
+<body>
+  <script src="./js/random-script.js" async></script>
+  <script>
+    doStuff();
+  </script>
+  <nav>
+    <ol>
+      <li>
+        <a href="#header">Header</a>
+      </li>
+      <li>
+        <a href="#main">Main</a>
+      </li>
+      <li>
+        <a href="#forms">Forms</a>
+      </li>
+      <li>
+        <a href="#graphics">Graphics</a>
+      </li>
+      <li>
+        <a href="#audio">Audio</A>
+      </li>
+      <li>
+        <a href="#video">Video</a>
+      </li>
+      <li>
+        <a href="#header">Header</a>
+      </li>
+      <li>
+        <a href="#header">Header</a>
+      </li>
+      <li>
+        <a href="#header">Header</a>
+      </li>
+      <li>
+        <a href="#footer">Footer</a>
+      </li>
+    </ol>
+  </nav>
+  <header id="header"><h2>This is a header</h2></header>
+  <main id="main">
+    <section id="forms">
+      <form>
+        <input type="email" autofocus>
+        <input type="date" required>
+        <label for="howto">Search for how to do something</label>
+        <input type="search" required pattern="^how to" id="howto">
+        <input type="text" required placeholder="this is a placeholder">
+        <input type="url" required>
+        <input type="submit" value="Submit"> 
+      </form>
+    </section>
+    <section id="graphics">
+      <canvar id="canvas" width="400" height="400"></canvar>
+      <script>
+        let cnv = document.getElementById('canvas');
+        let ctx = c.getContext('2d');
+        ctx.moveTo(0,0);
+        ctx.lineTo(400, 400);
+        ctx.stroke();
+      </script>
+    </section>
+    <section id="audio">
+
+    </section>
+    <section id="video">
+
+    </section>
+    <section id="forms">
+
+    </section>
+    <section id="forms">
+
+    </section>
+  </main>
+
+  <footer id="footer"><h6>This is a footer</h6></footer>
+</body>
+</html>
