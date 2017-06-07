@@ -1,0 +1,19 @@
+package com.ers.dao;
+
+import com.ers.pojo.User;
+
+public class ImplDao implements Dao{
+
+	@Override
+	public User getUser(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User getUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -26,16 +26,36 @@
 	
 	</div>
 	
+	<div>
+		<#macro myMacro>foo</#macro>
+		<#assign x>
+	  	<#list 1..3 as n>
+	    	${n} <@myMacro />
+	  	</#list>
+		</#assign>
+		Number of words: ${x?word_list?size}
+		${x}
+	</div>
+	
+	
 	<div class="jumbotron" style="background-color: skyblue;">
-
+	<input type="submit" action="testing" value="Success"/>
 		<table class="table table-hover" style="text-align: center;">
 			<tr>
 			<th style="text-align: center;">ID</th>
 			<th style="text-align: center;">Balance</th>
+			<th style="text-align: center;">Account Type</th>
+			<th style="text-align: center;">Account Holder</th>
+			<th style="text-align: center;">Account Information</th>
 			</tr>
+
 			<#list Account as acc>
 				<tr>
-					<td>${acc.getId()}  </td> <td>${acc.getBalance()}</td>
+					<td>${acc.getId()}</td>
+					<td>${acc.getBalance()}</td>
+					<td>${acc.getType()}</td>
+					<td>${fn} ${ln}</td>
+					<td><form action ="testing"><input type="submit" name="${acc}" value="Edit"/></form></td>
 				</tr>
 			</#list>
 			

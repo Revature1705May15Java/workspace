@@ -1,0 +1,5 @@
+package com.ers.dao.copy;
+
+public interface Dao {
+
+}

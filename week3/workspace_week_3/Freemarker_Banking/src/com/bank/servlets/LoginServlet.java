@@ -44,7 +44,6 @@ public class LoginServlet extends HttpServlet{
 			}		
 			
 		} catch(NullPointerException npe){
-			//response.sendRedirect("Error.html");
 			PrintWriter out = response.getWriter();
 			out.println("Catch error :/");
 			

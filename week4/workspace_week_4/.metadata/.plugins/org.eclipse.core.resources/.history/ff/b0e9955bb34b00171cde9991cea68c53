@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div>
+	Add a new item: <input type="text" value="Add" name="newItem" />
+	
+	</div>
+	
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy Groceries</h2>
+		
+		<ul>
+			<li id="one" class="hot"><em>fresh</em>figs</li>
+			<li id="two" class="hot">Pine Nuts</li>
+			<li id="three" class="hot">Honey</li>
+			<li id="four" class="hot">Balsamic Vinegar</li>
+			<li id="five" class="hot">Eggs</li>
+		</ul>
+	
+	</div>
+  
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script>
+	var n = document.createElement("li");
+	
+	$('add').on('click',function(){
+		n.innerHTML=$('#newItem').val();
+		$('#newItem').val('');
+		$('ul').append(n);
+	$('li').on('click', function(){
+		$(this).remove();
+	});
+	});
+
+</script>
+  
+</body>
+</html>

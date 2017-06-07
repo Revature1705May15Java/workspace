@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div>
+	Add a new item: <input id="newItem" type="text"></input>
+	<button id="add">Enter</button>
+	</div>
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>To done List</h2>
+		
+		<ul id="list1">
+			<li id="one" class="hot"><em>fresh</em>figs</li>
+			<li id="two" class="hot">Pine Nuts</li>
+			<li id="three" class="hot">Honey</li>
+			<li id="four" class="hot">Balsamic Vinegar</li>
+			<li id="five" class="hot">Eggs</li>
+		</ul>
+	
+	</div>
+	<div>
+		<h2>Completed List</h2>
+		<ul id="list2">
+			
+		</ul>
+	</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous">
+</script>
+
+<script>
+	$('#add').on('click',function(){
+		var n = document.createElement("li");
+		n.innerHTML=$('#newItem').val();
+		n.onclick = function(){
+			$(this).remove();
+			$('#list2').append(n);
+		};
+		$('#list1').append(n);
+	});
+	$('li').on('click', function(){
+		$(this).remove();
+		$('#list2').append(this);
+	});
+</script>
+  
+</body>
+</html>

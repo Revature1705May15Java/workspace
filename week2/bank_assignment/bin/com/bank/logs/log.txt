@@ -102,3 +102,164 @@
 2017-05-29T13:31:14.151 - Updated acc #1001 balance by 57
 2017-05-29T21:14:39.518 - Retrieved user by username: LeiRaion
 2017-05-29T21:14:54.501 - Reduced acc #1001 balance by -6
+2017-05-30T10:01:59.154 - Retrieved user by username: LeiRaion
+2017-05-30T10:02:37.426 - New Accounts added: 1
+2017-05-30T10:02:37.470 - Retrieved user by username: LeiRaion
+2017-05-30T10:02:50.488 - Updated acc #1040 balance by 250
+2017-05-30T10:08:53.750 - Retrieved user by username: LeiRaion
+2017-05-30T10:10:03.466 - Retrieved user by username: LeiRaion
+2017-05-30T10:10:45.559 - Failed to retrieve user by username: Gladiator
+2017-05-30T10:10:45.582 - Num rows affected: 1
+2017-05-30T10:12:52.642 - Retrieved user by username: Gladiator
+2017-05-30T10:21:15.876 - Retrieved user by username: Gladiator
+2017-05-30T10:24:04.825 - Retrieved user by username: Gladiator
+2017-05-30T10:25:45.980 - Retrieved user by username: Gladiator
+2017-05-30T10:25:53.810 - New Accounts added: 1
+2017-05-30T10:25:53.852 - Retrieved user by username: Gladiator
+2017-05-30T10:26:21.858 - Retrieved user by username: LeiRaion
+2017-05-30T10:29:17.522 - Retrieved user by username: Gladiator
+2017-05-30T10:29:23.146 - Account 1041 closed: 1
+2017-05-30T10:29:23.192 - Retrieved user by username: Gladiator
+2017-05-30T10:29:32.704 - New Accounts added: 1
+2017-05-30T10:29:32.745 - Retrieved user by username: Gladiator
+2017-05-30T10:29:32.785 - Retrieved user by username: Gladiator
+2017-05-30T10:32:38.136 - Retrieved user by username: Gladiator
+2017-05-30T10:32:44.784 - Account 1042 closed: 1
+2017-05-30T10:32:44.827 - Retrieved user by username: Gladiator
+2017-05-30T10:34:12.610 - Retrieved user by username: Gladiator
+2017-05-30T10:34:53.453 - Retrieved user by username: Gladiator
+2017-05-30T10:35:21.584 - Retrieved user by username: Gladiator
+2017-05-30T10:37:05.917 - Retrieved user by username: Gladiator
+2017-05-30T10:37:51.606 - Retrieved user by username: Gladiator
+2017-05-30T10:38:25.725 - Retrieved user by username: Gladiator
+2017-05-30T10:38:35.272 - Retrieved user by username: Gladiator
+2017-05-30T10:40:15.045 - Failed to retrieve user by username: gladiator
+2017-05-30T10:40:28.090 - Retrieved user by username: Gladiator
+2017-05-30T10:41:06.710 - Retrieved user by username: Gladiator
+2017-05-30T10:41:17.642 - New Accounts added: 1
+2017-05-30T10:41:17.685 - Retrieved user by username: Gladiator
+2017-05-30T10:41:17.725 - Retrieved user by username: Gladiator
+2017-05-30T10:58:52.020 - Retrieved user by username: Gladiator
+2017-05-30T11:14:10.442 - Retrieved user by username: Gladiator
+2017-05-30T11:15:38.448 - Retrieved user by username: Gladiator
+2017-05-30T11:16:56.713 - Retrieved user by username: Gladiator
+2017-05-30T11:18:00.858 - Retrieved user by username: Gladiator
+2017-05-30T11:19:00.474 - Retrieved user by username: Gladiator
+2017-05-30T11:19:41.119 - Retrieved user by username: Gladiator
+2017-05-30T11:19:47.527 - Edited User Gladiator. user_name = GLADIATOR
+2017-05-30T11:19:47.543 - Failed to retrieve user by username: Gladiator
+2017-05-30T11:34:49.411 - Retrieved user by username: GLADIATOR
+2017-05-30T11:34:59.887 - Edited User GLADIATOR. user_name = Gladiator
+2017-05-30T11:34:59.931 - Retrieved user by userid: 200
+2017-05-30T11:35:16.026 - Edited User Gladiator. first_name = Maximuss
+2017-05-30T11:35:16.069 - Retrieved user by userid: 200
+2017-05-30T12:05:00.505 - Failed to retrieve user by username: Mero
+2017-05-30T12:05:00.520 - Num rows affected: 1
+2017-05-30T12:07:03.684 - Failed to retrieve user by username: hellow
+2017-05-30T12:07:03.700 - Num rows affected: 1
+2017-05-30T12:09:23.637 - Failed to retrieve user by username: Dude
+2017-05-30T12:09:23.653 - Num rows affected: 1
+2017-05-30T12:11:11.669 - Failed to retrieve user by username: everyone
+2017-05-30T12:11:11.700 - Num rows affected: 1
+2017-05-30T12:12:28.316 - Failed to retrieve user by username: e
+2017-05-30T12:12:28.332 - Num rows affected: 1
+2017-05-30T12:14:01.460 - Failed to retrieve user by username: d
+2017-05-30T12:14:01.476 - Num rows affected: 1
+2017-05-30T12:14:25.623 - Failed to retrieve user by username: c
+2017-05-30T12:14:25.639 - Num rows affected: 1
+2017-05-30T12:14:41.990 - Retrieved user by username: c
+2017-05-30T12:16:23.632 - Failed to retrieve user by username: hi
+2017-05-30T12:16:23.648 - Num rows affected: 1
+2017-05-30T12:16:30.832 - Failed to retrieve user by username: h
+2017-05-30T12:16:35.394 - Retrieved user by username: hi
+2017-05-30T12:16:56.159 - Retrieved user by username: hi
+2017-05-30T12:18:15.138 - Retrieved user by username: LeiRaion
+2017-05-30T12:19:32.453 - Retrieved user by username: LeiRaion
+2017-05-30T12:20:59.012 - Failed to retrieve user by username: larry
+2017-05-30T12:20:59.030 - Num rows affected: 1
+2017-05-30T12:21:16.672 - Retrieved user by username: larry
+2017-05-30T12:23:15.734 - Failed to retrieve user by username: new
+2017-05-30T12:23:15.751 - Num rows affected: 1
+2017-05-30T12:23:17.649 - Retrieved user by username: new
+2017-05-30T13:03:39.944 - Retrieved user by username: Gladiator
+2017-05-30T13:03:53.639 - Retrieved user by username: LeiRaion
+2017-05-30T13:03:55.692 - New User_account added: 1
+2017-05-30T13:07:19.463 - Retrieved user by username: LeiRaion
+2017-05-30T13:07:34.989 - Updated acc #1043 balance by 49
+2017-05-30T16:02:07.679 - Failed to retrieve user by username: hi
+2017-05-30T16:02:26.226 - Failed to retrieve user by username: Leiraion
+2017-05-30T16:02:26.241 - Num rows affected: 1
+2017-05-30T16:02:46.557 - Retrieved user by username: Leiraion
+2017-05-30T16:03:08.033 - New Accounts added: 1
+2017-05-30T16:03:08.084 - Retrieved user by username: Leiraion
+2017-05-30T16:03:08.115 - Retrieved user by userid: 255
+2017-05-30T16:03:40.148 - Failed to retrieve user by username: e
+2017-05-30T16:03:40.164 - Num rows affected: 1
+2017-05-30T16:03:41.593 - Retrieved user by username: e
+2017-05-30T16:03:50.742 - New Accounts added: 1
+2017-05-30T16:03:50.787 - Retrieved user by username: e
+2017-05-30T16:03:50.818 - Retrieved user by userid: 260
+2017-05-30T16:04:01.489 - Retrieved user by username: Leiraion
+2017-05-30T16:04:03.036 - New User_account added: 1
+2017-05-30T16:04:23.252 - Retrieved user by username: e
+2017-05-30T16:04:30.897 - Retrieved user by username: Leiraion
+2017-05-30T16:34:18.058 - Retrieved user by username: Leiraion
+2017-05-30T16:35:04.608 - Updated acc #1045 balance by 221
+2017-05-30T16:35:04.624 - Reduced acc #1044 balance by -221
+2017-05-30T16:36:18.270 - Retrieved user by username: Leiraion
+2017-05-30T16:36:33.880 - Updated acc #1044 balance by 1000
+2017-05-30T16:36:33.895 - Reduced acc #1045 balance by -1000
+2017-05-30T16:36:33.934 - Retrieved user by username: Leiraion
+2017-05-30T19:39:53.042 - Failed to retrieve user by username: jdoe@hotmail.com
+2017-05-30T19:39:53.060 - Num rows affected: 1
+2017-05-30T19:40:21.574 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:40:58.665 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:42:52.445 - New Accounts added: 1
+2017-05-30T19:42:52.487 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:42:52.527 - Retrieved user by userid: 265
+2017-05-30T19:46:55.202 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:47:03.859 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:52:00.533 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:52:07.757 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T19:55:16.658 - Edited User jdoe@hotmail.com. user_name = jdoe
+2017-05-30T19:55:16.700 - Retrieved user by userid: 265
+2017-05-30T19:56:40.958 - Reduced acc #1046 balance by -321
+2017-05-30T19:56:49.330 - Updated acc #1046 balance by 321
+2017-05-30T21:00:57.663 - Retrieved user by username: jdoe
+2017-05-30T21:08:27.824 - Retrieved user by username: jdoe
+2017-05-30T21:15:00.616 - Retrieved user by username: jdoe
+2017-05-30T21:15:22.991 - New Accounts added: 1
+2017-05-30T21:15:23.033 - Retrieved user by username: jdoe
+2017-05-30T21:16:14.563 - Retrieved user by username: jdoe
+2017-05-30T21:17:50.641 - Retrieved user by username: jdoe
+2017-05-30T21:19:10.514 - Retrieved user by username: jdoe
+2017-05-30T21:44:15.039 - Reduced acc #1046 balance by -1500
+2017-05-30T21:45:10.772 - Updated acc #1046 balance by 125
+2017-05-30T21:49:38.237 - Updated acc #1046 balance by 100
+2017-05-30T21:49:38.253 - Reduced acc #1046 balance by -100
+2017-05-30T21:49:38.300 - Retrieved user by username: jdoe
+2017-05-30T21:50:48.301 - Updated acc #1047 balance by 5000
+2017-05-30T21:50:48.316 - Reduced acc #1046 balance by -5000
+2017-05-30T21:50:48.363 - Retrieved user by username: jdoe
+2017-05-30T21:54:20.053 - Account 1047 closed: 1
+2017-05-30T21:54:20.100 - Retrieved user by username: jdoe
+2017-05-30T21:56:13.813 - Retrieved user by username: Leiraion
+2017-05-30T21:56:40.889 - Failed to retrieve user by username: LeiRaion
+2017-05-30T21:56:40.905 - Num rows affected: 1
+2017-05-30T21:56:47.160 - Retrieved user by username: jdoe
+2017-05-30T21:56:56.830 - Retrieved user by username: LeiRaion
+2017-05-30T21:56:58.787 - New User_account added: 1
+2017-05-30T21:57:12.714 - Retrieved user by username: LeiRaion
+2017-05-30T22:12:06.021 - Retrieved user by username: LeiRaion
+2017-05-30T22:12:19.607 - Transfer Successful: 1046 and 1047 for 25
+2017-05-30T22:12:19.653 - Retrieved user by username: LeiRaion
+2017-05-30T22:24:07.156 - Retrieved user by username: jdoe
+2017-05-30T22:24:55.262 - Edited User jdoe. user_name = jdoe@hotmail.com
+2017-05-30T22:24:55.308 - Retrieved user by userid: 265
+2017-05-30T22:25:13.024 - Retrieved user by username: jdoe@hotmail.com
+2017-05-30T22:27:27.738 - Failed to retrieve user by username: jsmith@gmail.com
+2017-05-30T22:27:27.753 - Num rows affected: 1
+2017-05-30T22:27:54.758 - Retrieved user by username: jsmith@gmail.com
+2017-05-30T22:27:59.932 - New Accounts added: 1
+2017-05-30T22:27:59.979 - Retrieved user by username: jsmith@gmail.com
+2017-05-30T22:28:00.010 - Retrieved user by userid: 275

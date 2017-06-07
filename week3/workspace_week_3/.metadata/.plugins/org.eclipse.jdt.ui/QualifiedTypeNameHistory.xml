@@ -13,4 +13,7 @@
 <fullyQualifiedTypeName name="com.bank.pojos.User"/>
 <fullyQualifiedTypeName name="com.bank.service.Service"/>
 <fullyQualifiedTypeName name="org.apache.catalina.User"/>
+<fullyQualifiedTypeName name="com.ers.pojo.Request"/>
+<fullyQualifiedTypeName name="com.ers.pojo.User"/>
+<fullyQualifiedTypeName name="com.ers.service.Service"/>
 </qualifiedTypeNameHistroy>

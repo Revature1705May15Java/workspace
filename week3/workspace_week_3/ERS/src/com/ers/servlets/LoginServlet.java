@@ -9,13 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ers.pojo.User;
+import com.ers.service.Service;
+
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	static Service service = new Service();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -32,13 +35,21 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("password");
 		
 		
-		if(name.equals("Lei") && pw.equals("Raion")){
-			response.sendRedirect("Home.html");
-		} else if(name.equals("test") && pw.equals("test")){
-			response.sendRedirect("Home2.html");
-		} else{
+//		if(name.equals("Lei") && pw.equals("Raion")){
+//			response.sendRedirect("Home.html");
+//		} else if(name.equals("test") && pw.equals("test")){
+//			response.sendRedirect("Home2.html");
+//		} else{
+//			request.setAttribute("login", "fail");
+//			request.getRequestDispatcher("index.ftl").forward(request, response);
+//		}
+		
+		User temp = service.getUserInfo(name);
+		
+		if(pw.equals(temp.getPassword())) response.sendRedirect("Homt.html");
+		else{
 			request.setAttribute("login", "fail");
-			request.getRequestDispatcher("index.ftl").forward(request, response);
+//			request.getRequestDispatcher("index.ftl").forward(request, response);
 		}
 		
 		

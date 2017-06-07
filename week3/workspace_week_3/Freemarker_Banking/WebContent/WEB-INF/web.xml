@@ -4,6 +4,7 @@
   <welcome-file-list>
     <welcome-file>login.ftl</welcome-file>
   </welcome-file-list>
+  
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>com.bank.servlets.LoginServlet</servlet-class>
@@ -21,7 +22,14 @@
     <servlet-name>Home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>Tester</servlet-name>
+    <servlet-class>com.bank.servlets.Tests</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Tester</servlet-name>
+    <url-pattern>/testing</url-pattern>
+  </servlet-mapping>
   
   <servlet>
     <servlet-name>freemarker</servlet-name>

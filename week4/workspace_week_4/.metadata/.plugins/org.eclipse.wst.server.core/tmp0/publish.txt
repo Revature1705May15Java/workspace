@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Jun 07 18:37:51 EDT 2017
+org.eclipse.jst.jee.server\:StreetFighter=C\:\\Users\\Darrin McIntyre\\Desktop\\Revature\\apache-tomcat-8.0.44\\wtpwebapps\\StreetFighter
+org.eclipse.jst.jee.server\:jQuery_Intro=C\:\\Users\\Darrin McIntyre\\Desktop\\Revature\\apache-tomcat-8.0.44\\wtpwebapps\\jQuery_Intro
