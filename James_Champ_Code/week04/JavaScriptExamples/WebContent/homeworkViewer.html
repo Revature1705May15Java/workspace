@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Homework Viewer</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="fib">
+		<p>Fibonacci</p>
+		<p>Enter a number:</p>
+		<input type="number" id="fibInput">
+		<button type="button" id="fibButton">Submit</button>
+		<p id="fibResult"></p>
+	</div>
+	<div id="bubble">
+		<p>Populate your array:</p>
+		<input type="number" id="bubInput">
+		<button type="button" id="bubAdd">Add</button>
+		<button type="button" id="bubSort">Sort</button>
+		<p>Array: </p>
+		<p>&#91;<span id="bubResult"></span>&#93;</p>
+	</div>
+	
+	<div id="reverse">
+		<p>Input a string</p>
+		<input type="text" id="revInput">
+		<button type="button" id="revButton">Reverse</button>
+		<p>Result:</p>
+		<p id="revResult"></p>
+	</div>
+	
+	<div id="factorial">
+		<p>Enter a number</p>
+		<input type="number" id="factInput">
+		<button type="button" id="factButton">Find Factorial</button>
+		<p>Result</p>
+		<p id="factResult"></p>
+	</div>
+	
+	<div id="substring">
+		<p>Substring</p>
+		<table>
+			<tr>
+				<td>Enter a string:</td>
+				<td><input type="text" id="subInput"></td>
+			</tr>
+			<tr>
+				<td>Enter starting index:</td>
+				<td><input type="number" id="subIndex"></td>
+			</tr>	
+			<tr>
+				<td>Enter substring length:</td>
+				<td><input type="number" id="subLength"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="button" id="subButton">Find Substring</button>
+			</tr>
+		</table>
+		<p>Result:</p>
+		<p id="subResult"></p>
+	</div>
+	
+	<div id="even">
+		<p>Is your number even?</p>
+		<table>
+			<tr>
+				<td>Enter a number:</td>
+				<td><input type="number" id="evenInput"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="button" id="evenButton">Is It Even?</button></td>
+			</tr>
+		</table>
+		<p>Result: <span id="evenResult"></span></p>
+	</div>
+	
+	
+	<div id="palindrome">
+		<p>Is your string a palindrome?</p>
+		<table>
+			<tr>
+				<td>Enter a string:</td>
+				<td><input type="text" id="palinInput"></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="button" id="palinButton">Palindrome?</button></td>
+			</tr>
+		</table>
+		<p>Result: <span id="palinResult"></span></p>
+	</div>
+	<!--
+	<div id="constructor"></div>
+	<div id="person"></div>
+	-->
+	
+	<script src="js/homework.js"></script>
+</body>
+</html>
