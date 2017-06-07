@@ -12,7 +12,7 @@ import com.ers.util.ConnectionFactory;
 
 public class DAOImpl implements DAO{
 	private static final int IS_MANAGER = 1;
-	private static final int IS_NOT_MANAGER = 2;
+	private static final int IS_NOT_MANAGER = 0;
 	
 	@Override
 	public Employee getEmployee(String email) {

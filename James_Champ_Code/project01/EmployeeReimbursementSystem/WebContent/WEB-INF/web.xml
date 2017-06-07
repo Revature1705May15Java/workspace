@@ -55,4 +55,13 @@
 		<servlet-name>ViewEmployees</servlet-name>
 		<url-pattern>/viewEmployees</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RegisterEmployee</servlet-name>
+		<servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterEmployee</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
 </web-app>

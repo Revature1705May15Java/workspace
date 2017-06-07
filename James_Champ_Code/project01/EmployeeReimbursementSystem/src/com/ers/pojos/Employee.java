@@ -36,6 +36,25 @@ public class Employee {
 	/**
 	 * Creates a new {@code Employee} object with the given information.
 	 * 
+	 * @param firstName		The employee's first name.
+	 * @param lastName		The employee's last name.
+	 * @param email			The employee's email address.
+	 * @param password		The employee's password.
+	 * @param isManager		Indicates whether the employee is a manager.
+	 */
+	public Employee(String firstName, String lastName, String email, String password,
+			boolean isManager) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.isManager = isManager;
+	}
+	
+	/**
+	 * Creates a new {@code Employee} object with the given information.
+	 * 
 	 * @param employeeId	The employee's ID number.
 	 * @param firstName		The employee's first name.
 	 * @param lastName		The employee's last name.

@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
-	
+	<title>New Employee Registration</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,31 +13,37 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-
-</body>
-	<div class="jumbotron">
-		<#if noEmployee! == "true">
-			<div class="alert alert-danger" role="alert">No such user exists.</div>
-		<#elseif wrongPassword! == "true">
-			<div class="alert alert-danger" role="alert">Invalid password.</div>
-		</#if>
-		<form method="POST" action="login">
-			<div class="input_group">
-			<table>
-				<tr>
-					<td>User Name:</td> 
-					<td><input class="form-control" type="email" name="email" required></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td> <input class="form-control" type="password" name="password" required></td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td><input class="btn btn-default" type="submit" value="Login"></td>
-				</tr>
-			</table>
-			</div>
+	<h3>New Employee Registration</h3>
+	<table>
+		<form method="POST" action="register">
+		<tr>
+			<td>First Name:</td>
+			<td><input type="text" name="fname" required></td>
+		</tr>
+		<tr>
+			<td>Last Name:</td>
+			<td><input type="text" name="lname"required></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="email" required></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="password" required></td>
+		</tr>
+		<tr>
+			<td>Manager:</td>
+			<td>
+				<input type="radio" name="manager" value="no" checked>No&nbsp;
+				<input type="radio" name="manager" value="yes">Yes
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td><button>Register</button>
+		</tr>
 		</form>
-	</div>
+	</table>
+</body>
 </html>

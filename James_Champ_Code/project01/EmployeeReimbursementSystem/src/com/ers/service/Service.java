@@ -9,7 +9,7 @@ import com.ers.exceptions.NoSuchEmployeeException;
 import com.ers.pojos.Employee;
 
 public class Service {
-	DAO dao;
+	private DAO dao;
 	
 	/**
 	 * Initializes the DAO.
@@ -64,5 +64,13 @@ public class Service {
 	
 	public ArrayList<Employee> getAllEmployees() {
 		return dao.getAllEmployees();
+	}
+	
+	public boolean isEmailUnique(String email) {
+		if(dao.getEmployee(email) == null) {
+			return true;
+		}
+		
+		return false;
 	}
 }
