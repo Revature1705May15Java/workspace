@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.bubvscap
+{
+margin: 10px; 
+border: 1px solid;
+}</style>
+
+</head>
+<body>
+
+<!--
+<div class="examples">
+<div id="fib"></div>
+<p>hello</p>
+<p>world</p>
+<div id="display"></div>
+</div> -->
+
+<div id="exampleSpace">
+Count = <p id="counter"></p>
+</div>
+
+<h1> Enter Student Information </h1>
+<br>Id:
+<input type="text" id="t_id">
+<br>
+<br>Name:
+<input type="text" id="t_name">
+<br>
+<br>Major:
+<input type="text" id="t_major">
+<br>
+<br>
+
+<button id="add">Add Student</button>
+
+<table id="students">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>major</th>
+    </tr>
+</table>
+<br>
+
+<form class="bubvscap" onclick="alert('form')">
+form<div onclick="alert('div')">div
+<p onclick="alert('p')">p</p>
+</div></form>
+
+
+<script src="JavaScript/homework.js"></script>
+<script src="JavaScript/examples.js"></script>
+
+</body>
+</html>
