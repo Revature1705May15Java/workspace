@@ -16,11 +16,18 @@
     <#if pageTitle != "Login">
     <nav>
         <ul>
-            <#if pageTitle != "Employee Account">
+            <#if pageTitle == "Employee Home">
             <a id="newRequest" href="#">
                 <li data-toggle="modal" data-target="#newRequestModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;New Request</li>
             </a>
             </#if>
+
+            <#if pageTitle == "Manager Home">
+                <a id="newRequest" href="#">
+                    <li data-toggle="modal" data-target="#newRequestModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Sweet Manager Stuff</li>
+                </a>
+            </#if>
+
             <a id="accountInfo" href="/EmployeeAccount">
                 <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp;Account</li>
             </a>

@@ -10,13 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+import static com.revature.ers.servlets.LoginServlet.authenticate;
 import static com.revature.ers.servlets.LoginServlet.authenticateEmployee;
 
 public class EmployeeAccountServlet extends HttpServlet {
     private static final long serialVersionUID = 7L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (!authenticateEmployee(request, response)) {
+        if (!authenticate(request, response)) {
             response.sendRedirect("/Login");
             return;
         }
@@ -42,6 +43,7 @@ public class EmployeeAccountServlet extends HttpServlet {
             return;
         }
 
+//        response.sendRedirect("/Home");
         request.setAttribute("pageTitle", "Employee Account");
         request.getRequestDispatcher("/employeeAccount.ftl").forward(request, response);
     }

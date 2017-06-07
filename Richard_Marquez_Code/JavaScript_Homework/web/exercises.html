@@ -3,15 +3,52 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>DOM</title>
+    <style>
+        body * {
+        /*form, div, p {*/
+            border: 1px solid #0f0;
+            padding: 1em;
+        }
+    </style>
 </head>
 <body>
 
-<p>hello</p>
-<p>world</p>
-<p>is</p>
-<p>paragraph</p>
+<div id="exampleSpace">
+    Count = <span id="counter"></span>
+</div>
 
-<div id="display"></div>
+<h1>Enter student info:</h1>
+
+<label>id</label>
+<input type="text" id="t_id"/>
+<br>
+
+<label>Name</label>
+<input type="text" id="t_name"/>
+<br>
+
+<label>Major</label>
+<input type="text" id="t_major"/>
+<br>
+
+<button id="add">Add student</button>
+
+<table id="students">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>major</th>
+    </tr>
+</table>
+
+<br>
+<br>
+
+<form id="myForm"> F
+    <div id="myDiv"> D
+        <p id="myP">P</p>
+    </div>
+</form>
 
 <script src="js/exercises.js"></script>
 

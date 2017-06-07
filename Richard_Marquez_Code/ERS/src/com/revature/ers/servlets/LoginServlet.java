@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
     }
 
 
-    private static boolean authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public static boolean authenticate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean result = false;
         HttpSession session = request.getSession(true);
 
@@ -88,7 +88,7 @@ public class LoginServlet extends HttpServlet {
         boolean result = false;
 
         User user = (User) request.getSession().getAttribute("user");
-        if (authenticateEmployee(request, response) && user.isManager()) {
+        if (authenticate(request, response) && user.isManager()) {
             result = true;
         }
 

@@ -12,12 +12,19 @@
 // Return the nth number in the fibonacci sequence.
 
 function fib(n) {
-    if (n < 2) {
+    if (n <= 2) {
         return 1;
     } else {
         return fib(n - 2) + fib(n - 1);
     }
 }
+
+$('#fibSubmit').click(function() {
+    let fibInput = $('#fibInput');
+    let answer = fib(fibInput.val());
+
+    fibInput.val(answer);
+});
 
 // console.log(fib(10));
 // var elem = document.getElementById('fib');
