@@ -1,0 +1,153 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import ersUtil.ConnectionFactory;
+import pojos.Employee;
+import pojos.Request; 
+
+public class ERSDao 
+{
+	public ERSDao()
+	{
+		super(); 
+	}
+	
+	public Employee getEmployee(Employee employee) 
+	{
+		try(Connection c = ConnectionFactory.getInstance().getConnection();)
+		{
+			String s = "SELECT * FROM EMPLOYEE WHERE EMAIL = ?"; 
+			PreparedStatement ps = c.prepareStatement(s);
+			ps.setString(1, employee.getEmail());
+			
+			ResultSet rs = ps.executeQuery(); 
+			while(rs.next())
+			{
+				// email, password, firstname, lastname, ismanager 
+				Employee temp = new Employee(); 
+				temp.setEmail(rs.getString(1));
+				temp.setPassword(rs.getString(2));
+				temp.setFirstName(rs.getString(3));
+				temp.setLastName(rs.getString(4));
+				temp.setManagerId(rs.getInt(5));
+			
+				return temp; 
+			}
+		}
+		catch(SQLException e)
+		{
+//			e.printStackTrace();
+		} 
+		return null;
+	}
+	
+	public Employee getEmployee(String email) 
+	{
+		try(Connection c = ConnectionFactory.getInstance().getConnection();)
+		{
+			String s = "SELECT * FROM EMPLOYEE WHERE EMAIL = ?"; 
+			PreparedStatement ps = c.prepareStatement(s);
+			ps.setString(1, email);
+			
+			ResultSet rs = ps.executeQuery(); 
+			while(rs.next())
+			{
+				// email, password, id, firstname, lastname, ismanager 
+				Employee temp = new Employee(); 
+				temp.setEmail(rs.getString(1));
+				temp.setPassword(rs.getString(2));
+				temp.setId(rs.getInt(3));
+				temp.setFirstName(rs.getString(4));
+				temp.setLastName(rs.getString(5));
+				temp.setManagerId(rs.getInt(6));
+			
+				return temp; 
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		} 
+		return null;
+	}
+    
+    // returns an ArrayList of all Requests ever submitted by the Employee
+    // takes the Employee's username/email to find all their requests in db 
+    public ArrayList<Request> getRequests(String email)
+    {
+        ArrayList<Request> requests = new ArrayList<Request>(); 
+        Employee employee = getEmployee(email); 
+        
+        try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM REQUEST WHERE REQUESTERID = ?"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            ps.setInt(1, employee.getId()); 
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+                Request temp = new Request(); 
+//                temp.set(rs.get()); 
+                requests.add(temp); 
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return requests; 
+    }
+	
+    // returns an ArrayList of all requests that are still pending 
+    public ArrayList<Request> getPendingRequests()
+    {
+        ArrayList<Request> requests = new ArrayList<Request>(); 
+        
+        try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM REQUEST WHERE STATUSID = 0"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+                Request temp = new Request(); 
+                
+                requests.add(temp); 
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return requests; 
+    }
+    
+    // approves a Request by setting its status ID to 1 in the database 
+    public void approveRequest(Request request)
+    {
+    	try(Connection c = ConnectionFactory.getInstance().getConnection();)
+    	{
+	    	String s = "UPDATE REQUEST SET STATUSID = 1 WHERE REQUESTID = ?"; 
+	    	PreparedStatement ps = c.prepareStatement(s); 
+	    	ps.setInt(1, request.getRequestId());
+	    	
+	    	int rowCheck = ps.executeUpdate(); //debugging 
+	    	System.out.println(rowCheck);
+//	    	ps.executeUpdate();
+	    	
+    	}
+    	catch(SQLException e)
+    	{
+    		e.printStackTrace();
+    	}
+    }
+}

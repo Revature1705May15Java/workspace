@@ -1,0 +1,13 @@
+package dao;
+
+import java.util.ArrayList;
+
+import pojos.Employee;
+import pojos.Request;
+
+public interface Dao 
+{
+	public Employee registerEmployee(Employee employee);
+	public Employee getEmployee(Employee employee);
+	public ArrayList<Request> getRequests(String email);
+}

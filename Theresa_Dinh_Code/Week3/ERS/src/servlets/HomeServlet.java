@@ -37,16 +37,5 @@ public class HomeServlet extends HttpServlet
 		session.setAttribute("employee", employee);
 		RequestDispatcher rd; 
 		
-//		if(employee.getManagerId() == 0)	//not a Manager
-//		{
-//			rd = request.getRequestDispatcher("home.ftl");
-//			rd.forward(request, response);	
-//
-//		}
-//		else if(employee.getManagerId() == 1)	// a Manager
-//		{
-//			rd = request.getRequestDispatcher("manager.ftl"); 
-//			rd.forward(request, response);
-//		}
 	}
 }

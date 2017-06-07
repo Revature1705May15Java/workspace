@@ -16,7 +16,7 @@
     <body>
         <div class="jumbotron">
             <div class="container">
-            <h1>Welcome to your cooler Employee Reimbursement System, ${employee.firstName} ${user.lastName}.</h1>
+            <h1>Welcome to your cooler Employee Reimbursement System, ${employee.firstName} ${employee.lastName}.</h1>
             </div>
         </div>
         <div class="dummytext">
@@ -24,12 +24,24 @@
         </div>
         <br>
         <div class="mainmenu">
-            <h6>What would you like to do next?</h6>
-            <button name="submit" type="button" value="submit">Submit Reimbursement<br> Request</button>
-            <!-- takes user to reimbursement page -->
+            <h4>What would you like to do next?</h4>
+            <div class="request-group">
+                <button name="submit" type="button" value="submit">Submit Reimbursement<br> Request</button>
+                <!-- takes user to reimbursement page -->
+                <button name="submit" type="button" value="submit">Check Status of Your<br>Requests</button>
+                <button name="submit" type="button" value="submit">Approve Pending Requests</button>
+            </div>
+            <div class="userinfo-group">
+                <button name="submit" type="button" value="submit">Check Your Personal<br>Information</button>
+                <button name="submit" type="button" value="submit">Update Your Personal<br>Information</button>
+                <button name="submit" type="button" value="submit">Logout</button>
+            </div>
         </div>
         <br>
-        <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
-        <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> </footer>
+        <div id="footer">
+            <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
+                <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
+            </footer>
+        </div>
     </body>
 </html>

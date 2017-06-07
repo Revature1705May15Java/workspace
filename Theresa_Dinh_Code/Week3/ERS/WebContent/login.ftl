@@ -16,16 +16,16 @@
     <body>
         <h1>Welcome to your Employee Reimbursement System Portal.</h1>
         <h3>Please log in.</h3>
-
-        <form name="loginform" action="login" method="post">
-            Email: <input type="text" name="email"> 
-            Password: <input type="password" name="password">
-            <input type="submit" value="Login">
-        </form>
+        <div class="loginform">
+            <form name="loginform" action="login" method="post">
+                Email: <input type="text" name="email"> 
+                Password: <input type="password" name="password">
+                <input type="submit" value="Login">
+            </form>
+        </div>
         
         <#if login! == "fail">
-            <h3 style="color:red">Your login information is incorrect.</h3>
+            <h3 style="color:#c91d1d">Your login information is incorrect.</h3>
         </#if>
-        
     </body>
 </html>

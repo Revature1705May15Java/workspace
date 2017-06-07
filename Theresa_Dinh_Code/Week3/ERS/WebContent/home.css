@@ -6,6 +6,7 @@ body
 div.jumbotron
 {
     text-align: center; 
+    font-size: 10px; 
     padding-top: 0px; 
     margin-bottom: 10px; 
     padding-bottom: 10px;

@@ -1,18 +1,35 @@
 body 
 {
-    background-color: #8d8d8d;
+    background-color: #f2f2f2;
     padding-bottom: 20px;    
 }
 h1 
 {
-    color: rgb(74, 227, 114);
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 h2
 {
     text-align: left;
 }
+h3
+{
+    text-align: center; 
+}
 p 
+div.loginform
+{
+    display: block; 
+    text-align: center; 
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+text
 {
     color: #1c1c1c;
     text-align: center;
