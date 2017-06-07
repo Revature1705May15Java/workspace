@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6" id="todo">
+        <h1 id="todo-header">Todo List</h1>
+        <h2>Get this stuff done!</h2>
+        <input type="text" id="input" placeholder="what do you need to get" required>
+        <button type="button" id="add">Add</button>
+        <br>
+        <ul id="todo-list">
+          <li id="1" class="hot"><em>fresh</em> figs</li>
+          <li id="2" class="hot">pine nuts</li>
+          <li id="3" class="hot">honey</li>
+          <li id="4" class="hot">balsamic vinegar</li>
+        </ul>
+      </div>
+      <div class="col-md-6" id="todone">
+        <h1 id="todone-header">Todone List</h1>
+        <h2>This stuff is done!</h2>
+        <br>
+        <ul id="todone-list">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#input').keydown(function(e) {
+      if (e.keyCode == 13) {
+        addItem();
+      }
+    });
+    $('header').addClass('headline');
+    $('li:lt(3)').hide().fadeIn(1500);
+    $('#todo-list li').on('click', crossOutItem);
+    $('#add').on('click', addItem);
+    function addItem() {
+      let input = $('#input');
+      let item = input.val();
+      $('#todo-list').append(`<li class="hot">${item}</li>`);
+      $('li').on('click', function() {
+        let old = $(this).html();
+        $(this).remove();
+        $('#todone-list').append(`<li class="hot">${old}</li>`);
+      });
+      input.val('');
+    }
+    function crossOutItem() {
+      let old = $(this).html();
+      $(this).remove();
+      $('#todone-list').append(`<li class="hot"><s>${old}</s></li>`);
+    }
+    function moveItem() {
+      let old = $(this).html();
+      $(this).remove();
+      $('#todone-list').append(`<li class="hot">${old}</li>`);
+    }
+  </script>
+</body>
+</html>
