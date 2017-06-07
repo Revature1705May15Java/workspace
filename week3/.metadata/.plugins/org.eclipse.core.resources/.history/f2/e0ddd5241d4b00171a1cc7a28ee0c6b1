@@ -1,0 +1,31 @@
+package com.ers.util;
+
+import java.sql.Connection;
+import java.util.Properties;
+
+public class ConnectionFactory {
+	
+	public static Boolean build = true;
+	public static ConnectionFactory cf=null;
+	
+	private ConnectionFactory(){
+		build = false;
+	}
+	
+	public static synchronized ConnectionFactory getInstance(){
+		if(build==true){
+			cf = new ConnectionFactory();
+		}
+		
+		return cf;
+	}
+	
+	public Connection getConnection(){
+		Connection conn = null;
+		try{
+			System.out.println("1");
+			Properties prop = new Properties();
+			prop.load(new FileReader("C:/Users/Associate/Desktop/Server/week3/ERS/src/com/ers/util/database.properties"));
+		}
+	}
+}

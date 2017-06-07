@@ -1,0 +1,13 @@
+package iseven;
+
+public class evenCheck {
+	
+	public boolean(int i){
+		while (i > 0) {
+            i -= 2;
+        }
+
+        return i == 0;
+    }
+
+}

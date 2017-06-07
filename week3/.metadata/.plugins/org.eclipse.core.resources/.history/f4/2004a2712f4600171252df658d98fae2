@@ -1,0 +1,58 @@
+package com.ex.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class userInfoServlet
+ */
+@WebServlet("/userInfoServlet")
+public class userInfoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public userInfoServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    
+    //THIS IS OUR NEW PUBLIC STATIC VOID MAIN(STRING [] ARGS!!!!!!!!!!!!) 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	// Default value	response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		
+		PrintWriter out = response.getWriter();
+		
+		String firstname = request.getParameter("fn");
+		String lastname = request.getParameter("ln");
+		
+		out.println("<h3> Reading QueryString Data using String getParameter(String name)' method </h3>");
+		out.println("<div>");
+		out.println("<p> First name: "+ firstname +"</p>");
+		out.println("<p> Last name: "+ lastname +"</p>");
+		out.println("</div>");
+	//	out.println(x);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

@@ -1,0 +1,24 @@
+package reverse;
+
+public class rev {
+	
+	public String StringRev(String s){
+	
+		String temp=s;
+		int i = s.length();
+		s="";
+
+		for(i;i>0;i--){
+			System.out.println(i);
+			System.out.println(temp);
+
+		}
+
+		
+		
+		
+		return s;
+		
+	}
+
+}

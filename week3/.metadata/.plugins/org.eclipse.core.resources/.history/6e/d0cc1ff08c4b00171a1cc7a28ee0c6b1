@@ -1,0 +1,19 @@
+package com.ers.dao;
+
+import com.ers.pojos.Employee;
+
+public class DaoImpl implements DAO {
+	
+	public int addEmployee(String fn, String ln,String uname, String pw) {
+		
+		
+		return 0;
+	}
+
+	@Override
+	public Employee getEmployee(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,19 @@
+package reverse;
+
+public class rev {
+	
+	public String StringRev(String s){
+		int i = s.length();
+		String temp=s;
+		s="";
+
+			System.out.println(temp.substring(i-1,i));
+			s=temp.substring(i-1,i);
+		
+		temp=s;
+		
+		return s;
+		
+	}
+
+}

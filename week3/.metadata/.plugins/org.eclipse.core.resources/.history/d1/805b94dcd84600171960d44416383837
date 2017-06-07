@@ -1,0 +1,31 @@
+package com.ex.pojo;
+
+public class User {
+	
+	private String fName;
+	private String lName;
+	
+	
+	public User(String string, String string2) {
+		fName=string;
+		lName=string2;
+	}
+	@Override
+	public String toString() {
+		return "User [fName=" + fName + ", lName=" + lName + "]";
+	}
+	public String getfName() {
+		return fName;
+	}
+	public String getlName() {
+		return lName;
+	}
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+	
+
+}

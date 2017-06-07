@@ -1,0 +1,87 @@
+package com.bank.service;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+import com.bank.pojos.Account;
+import com.bank.pojos.User;
+
+public class Service {
+	
+	static DAO dao = new DaoImpl();
+	
+	Scanner scan = new Scanner(System.in);
+	
+	public User addUser(String fn, String ln, String uname, String pw){
+		User temp = new User();
+		temp = dao.getUser(uname);
+		if(temp!=null){
+			//username found
+			System.out.println("USER FOUND! Try again!");
+			return null;
+			
+		}
+		else{
+			dao.addUser(fn, ln, uname, pw);
+		}
+		return dao.getUser(uname);
+		
+	}
+	
+	
+	public static User login(){
+		
+		System.out.println("Please enter your userID:");
+		int userID = Integer.parseInt(scan.nextLine());
+		
+		System.out.println("Please enter your password");
+		String userPW = scan.nextLine();
+		
+		
+		
+		User currUser = service.getbyUserId(userID);
+		if(userPW.equals(currUser.getPw())){
+			System.out.println("Welcome "+currUser.getFn());
+			return currUser;
+		
+	}
+	
+		
+		}
+	
+	public User getUser(String uname){
+		User temp = new User();
+		temp = dao.getUser(uname);
+		return temp;
+	}
+	
+	public User getbyUserId(int i){
+		User t = new User();
+		t = dao.getUser(i);
+		return t;
+		
+	}
+	
+	public Account addAccount(int userId, int type_id){
+		Account a = new Account();
+		
+		a = dao.addAccount(userId, type_id);
+		
+		return a;
+		
+	}
+	
+	public ArrayList <Account> getallAccounts(int curid){
+		ArrayList <Account>a;
+		a = dao.getAllAccounts(curid);
+		return a;
+	}
+	
+	
+	
+	
+	
+
+}

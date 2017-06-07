@@ -1,0 +1,54 @@
+package com.bank.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.bank.run.*;
+import com.bank.pojos.User;
+import com.bank.service.Service;
+
+public class LoginServlet extends HttpServlet {
+	static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		
+		
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response){
+		
+		String usr = request.getParameter("username");
+		String pass = request.getParameter("password");
+		
+		Service service = new Service();
+		
+		try{
+			User user = service.login();
+			if(user!=null){
+				RequestDispatcher rd = request.getRequestDispatcher("Success.html");
+				rd.forward(request, response);
+			}
+			else{
+				RequestDispatcher rd = request.getRequestDispatcher("Error.html");
+				rd.forward(request, response);
+			}
+			
+			
+		}catch(NullPointerException npe){
+			npe.printStackTrace();
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
