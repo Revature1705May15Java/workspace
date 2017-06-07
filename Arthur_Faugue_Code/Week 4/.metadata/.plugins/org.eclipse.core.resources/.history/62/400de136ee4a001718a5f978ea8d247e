@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="exampleSpace">
+		Count =
+		<p id="counter"></p>
+	</div>
+	<h1>Enter Student Info</h1>
+	<br /> Id:
+	<input type="text" id="t_id" />
+	<br />
+	<br /> Name:
+	<input type="text" id="t_name" />
+	<br />
+	<br /> Major:
+	<input type="text" id="t_major" />
+	<br />
+	<br />
+	
+	<button id="add">Add Student</button>
+	
+	<table id="students">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>major</th>
+		</tr>
+	</table>
+
+	<script type="text/javascript" src="js/examples.js"></script>
+	<script type="text/javascript" src="js/jsHomework.js"></script>
+</body>
+</html>

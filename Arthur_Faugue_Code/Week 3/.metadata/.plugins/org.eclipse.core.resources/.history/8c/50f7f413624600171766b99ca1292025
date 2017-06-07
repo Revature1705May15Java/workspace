@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body>
+	<h1>Registration form</h1>
+	<hr>
+	<!-- ins -->
+	<form name="f1" method="POST" action="/ServletIntro/Register">
+
+		<table>
+			<tr>
+			<td>Username:</td>
+			<td><input type="text" name="userName"/></td>
+			</tr>
+			<tr>
+			<td>Password:</td>
+			<td><input type="password" name="pwd"/></td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input type="submit" value="Register" name="btnRegister"/> &nbsp;
+				 <input type="reset" value="Clear" name="btnClear"/> &nbsp;
+			</td>
+			</tr>
+		</table>
+	</form>
+	<form name="f2" method="POST" action="/ServletIntro/Register">
+		<p>Gender:</p>
+		  <input type="radio" name="gender" value="male" checked> Male
+		  <input type="radio" name="gender" value="female"> Female
+		  <input type="radio" name="gender" value="other"> Other
+	</form>
+</body>
+</html>

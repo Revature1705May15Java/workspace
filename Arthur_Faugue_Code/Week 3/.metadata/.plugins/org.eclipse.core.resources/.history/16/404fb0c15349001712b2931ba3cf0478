@@ -1,0 +1,51 @@
+package com.rev.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.rev.util.ConnectionFactory;
+import com.rev.pojo.Request;
+import com.rev.pojo.User;
+
+public class DaoImpl implements DAO{
+
+	@Override
+	public User userLogin(String em, String pw) {
+		User u = new User();
+		ArrayList<Request> reqs = new ArrayList<Request>();
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT * FROM USER_E WHERE EMAIL=? AND PASSWRD=?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, em);
+			ps.setString(2, pw);
+			
+			ResultSet userinfo = ps.executeQuery();
+			while(userinfo.next()){
+				
+			}
+			reqs = getUserRequest(u);
+			u.setUserRequest(reqs);
+			return u;
+			
+		}catch(SQLException e){
+			System.out.println("userLogin Error");
+			e.printStackTrace();
+		}
+		return u;
+	}
+
+	@Override
+	public ArrayList<Request> getUserRequest(User u) {
+		ArrayList<Request> req = null;
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return req;
+	}
+
+}

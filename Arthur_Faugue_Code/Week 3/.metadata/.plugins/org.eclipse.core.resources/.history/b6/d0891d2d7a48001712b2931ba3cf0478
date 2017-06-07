@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<form name="user" action="home" method="post" class="form-inline">
+			<input placeholder="Enter Amount" type="text" name="bal"
+				class="form-control input-lg"> <input type="submit"
+				class="btn btn-lg btn-success btn-block" value="Sign In">
+		</form>
+		<form name="user" action="home" method="post" class="form-inline">
+			<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0"
+				id="inlineFormInput" placeholder="Enter Amount $">
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -20,7 +20,7 @@ public class BankServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		response.getWriter().append("Served at: ").append(request.getContextPath());
-		request.getRequestDispatcher("index.html").forward(request, response);
+		request.getRequestDispatcher("index.html");
 		
 	}
 
@@ -39,7 +39,7 @@ public class BankServlet extends HttpServlet {
 			}
 		}catch(NullPointerException e){
 			request.setAttribute("login", "fail");
-			request.getRequestDispatcher("boss.ftl").forward(request, response);
+			request.getRequestDispatcher("index.ftl").forward(request, response);
 //			response.sendRedirect("Error.html");
 		}
 //		doGet(request, response);

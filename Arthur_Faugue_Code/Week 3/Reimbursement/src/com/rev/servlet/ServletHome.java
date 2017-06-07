@@ -48,10 +48,10 @@ public class ServletHome extends HttpServlet {
 		request.setAttribute("firstname", fn);
 		request.setAttribute("lastname", ln);
 		
-		if(fn.equals("Arthur")){
+		if(u.getIsBoss()==1){
 			request.getRequestDispatcher("boss.ftl").forward(request, response);
 		}else{
-			request.getRequestDispatcher("login.ftl").forward(request, response);
+			request.getRequestDispatcher("user.ftl").forward(request, response);
 		}
 	}
 

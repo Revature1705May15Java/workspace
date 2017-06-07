@@ -1,0 +1,4 @@
+driver=oracle.jdbc.driver.OracleDriver
+url=Refund\trefundDB@//localhost\:1521/xe
+usr=refundDB
+pwd=p4ssw0rd

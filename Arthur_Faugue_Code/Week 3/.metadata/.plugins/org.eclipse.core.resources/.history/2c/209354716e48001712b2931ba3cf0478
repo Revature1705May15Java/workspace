@@ -1,0 +1,14 @@
+package com.bank.run;
+
+import com.bank.*;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		DAO dao = new DaoImpl();
+		Account a = new Account();
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Intro to Freemanrker</title>
+<head>
+<body>
+<form name = "user" action="hello" method="post">
+
+</from>
+
+
+
+</body>
+</html>

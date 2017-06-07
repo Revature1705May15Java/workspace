@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body>
+	<h1>Registration form</h1>
+	<hr>
+	<!-- ins -->
+	<form name="f1" method="get" action="/Register">
+
+		<table>
+			<tr>
+			<td>Username:</td>
+			<td><input type="text" name="userName"></td>
+			</tr>
+			<tr>
+			<td>Password:</td>
+			<td><input type="password" name="pwd"></td>
+			</tr>
+			<tr>
+			<td>&nbsp;</td>
+			<td>
+			<input type="submit" value="Register" name="btnRegister">
+				&nbsp; <input type="submit" value="Register" name="btnRegister">
+			</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

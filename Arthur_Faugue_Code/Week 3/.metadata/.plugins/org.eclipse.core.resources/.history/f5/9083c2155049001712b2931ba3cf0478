@@ -1,0 +1,10 @@
+package com.rev.pojo;
+
+import java.util.ArrayList;
+
+public class User {
+	int id, isBoss;
+	String fn, ln, pw, em;
+	ArrayList<Request> userRequest;
+	
+}

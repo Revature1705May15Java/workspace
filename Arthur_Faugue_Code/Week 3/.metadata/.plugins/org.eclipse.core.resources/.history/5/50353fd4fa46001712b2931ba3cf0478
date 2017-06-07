@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Bank Login</title>
+<head>
+<body>
+	<form name="user" action="hello" method="post">
+		Username: <input placeholder="Username" type="text" name="userName" //><br>
+		Password: <input placeholder="Password" type="password" name="pwd" /><br>
+		<input type="submit" value="Save" />
+	</from>
+		<table class="datatable">
+			<tr>
+				<th>Firstname</th>
+				<th>Lastname</th>
+			</tr>
+		</table>
+</body>
+</html>

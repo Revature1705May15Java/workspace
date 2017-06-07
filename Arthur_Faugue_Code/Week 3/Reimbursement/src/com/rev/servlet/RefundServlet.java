@@ -47,15 +47,12 @@ public class RefundServlet extends HttpServlet {
 		try{
 			
 			if(!u.getFn().isEmpty()){//if empty then fail
-//				request.setAttribute("firstname", u.getFn());
-//				request.setAttribute("lastname", u.getLn());
-//				request.getRequestDispatcher("login.ftl").forward(request, response);
 				s.setAttribute("user", u);//stores name and object when you retrieve you cast back
 				response.sendRedirect("home");//take response and send to an action to servlet(home is defined in web.x)
 			}
 		}catch(NullPointerException e){
 			request.setAttribute("login", "fail");
-			request.getRequestDispatcher("boss.ftl").forward(request, response);
+			request.getRequestDispatcher("loginf.ftl").forward(request, response);
 //			response.sendRedirect("Error.html");
 		}
 	}
