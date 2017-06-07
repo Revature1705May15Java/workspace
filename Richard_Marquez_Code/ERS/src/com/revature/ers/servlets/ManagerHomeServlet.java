@@ -1,5 +1,6 @@
 package com.revature.ers.servlets;
 
+import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
 import com.revature.ers.service.Service;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 import static com.revature.ers.servlets.LoginServlet.authenticateManager;
 
@@ -25,6 +27,9 @@ public class ManagerHomeServlet extends HttpServlet {
 
         User user = (User) session.getAttribute("user");
         request.setAttribute("user", user);
+
+        List<ReimbursementRequest> allRequests = Service.getInstance().getAllRequests();
+        request.setAttribute("pendingRequests", allRequests);
 
         request.setAttribute("pageTitle", "Manager Home");
         request.getRequestDispatcher("/managerHome.ftl").forward(request, response);

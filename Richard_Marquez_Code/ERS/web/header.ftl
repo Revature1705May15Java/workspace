@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/tablesorter/jquery.tablesorter.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
 
@@ -22,9 +27,16 @@
             </a>
             </#if>
 
-            <#if pageTitle == "Manager Home">
-                <a id="newRequest" href="#">
-                    <li data-toggle="modal" data-target="#newRequestModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Sweet Manager Stuff</li>
+            <#if user.isManager()>
+
+                <#if pageTitle == "Manager Home">
+                    <a id="newEmployee" href="#">
+                        <li data-toggle="modal" data-target="#newEmployeeModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Add Employee</li>
+                    </a>
+                </#if>
+
+                <a id="allRequests" href="/AllRequests">
+                    <li><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp;All Requests</li>
                 </a>
             </#if>
 

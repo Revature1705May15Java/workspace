@@ -1,64 +1,67 @@
 <#include "./header.ftl">
 
 
-<div id="pendingRequests" class="white-container request-table-container container-fluid">
-    <h3><strong>Open</strong> Requests</h3>
-    <table id="pendingRequestsTable" class="table table-hover tablesorter">
-        <thead>
-        <tr>
-            <th class="col-xs-1">Status</th>
-            <th class="col-xs-1">#</th>
-            <th class="col-xs-6">Purpose</th>
-            <th class="col-xs-2">Amount</th>
-            <th class="col-xs-2">Opened</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        <#list pendingRequests as r>
-            <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                <td class="col-xs-1 state">${r.getState().name()}</td>
-                <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>
-                <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
-            </tr>
-        </#list>
-        </tbody>
-    </table>
-</div>
-
-
-<div id="resolvedRequests" class="white-container request-table-container container-fluid">
-    <h3><strong>Resolved</strong> Requests</h3>
-
-    <table id="resolvedRequestsTable" class="table table-hover tablesorter">
-        <thead>
+<div class="row container-fluid">
+    <div id="pendingRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+        <h3><strong>Open</strong> Requests</h3>
+        <table id="pendingRequestsTable" class="table table-hover tablesorter">
+            <thead>
             <tr>
                 <th class="col-xs-1">Status</th>
                 <th class="col-xs-1">#</th>
-                <th class="col-xs-5">Purpose</th>
-                <th class="col-xs-1">Amount</th>
+                <th class="col-xs-6">Purpose</th>
+                <th class="col-xs-2">Amount</th>
                 <th class="col-xs-2">Opened</th>
-                <th class="col-xs-2">Closed</th>
             </tr>
-        </thead>
+            </thead>
 
-        <tbody>
-        <#list resolvedRequests as r>
-            <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                <td class="col-xs-1 state">${r.getState().name()}</td>
-                <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="text col-xs-5 purpose"><span>${r.getPurpose()}</span></td>
-                <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
-                <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
-                <td class="note" style="display:none;">${r.getNote()}</td>
-                <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
-            </tr>
-        </#list>
-        </tbody>
-    </table>
+            <tbody>
+            <#list pendingRequests as r>
+                <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
+                    <td class="col-xs-1 state">${r.getState().name()}</td>
+                    <td class="col-xs-1 id">${r.getId()}</td>
+                    <td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>
+                    <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
+                    <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="resolvedRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+        <h3><strong>Resolved</strong> Requests</h3>
+
+        <table id="resolvedRequestsTable" class="table table-hover tablesorter">
+            <thead>
+                <tr>
+                    <th class="col-xs-1">Status</th>
+                    <th class="col-xs-1">#</th>
+                    <th class="col-xs-5">Purpose</th>
+                    <th class="col-xs-1">Amount</th>
+                    <th class="col-xs-2">Opened</th>
+                    <th class="col-xs-2">Closed</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <#list resolvedRequests as r>
+                <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
+                    <td class="col-xs-1 state">${r.getState().name()}</td>
+                    <td class="col-xs-1 id">${r.getId()}</td>
+                    <td class="text col-xs-5 purpose"><span>${r.getPurpose()}</span></td>
+                    <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
+                    <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                    <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
+                    <td class="note" style="display:none;">${r.getNote()}</td>
+                    <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
 
@@ -142,4 +145,5 @@
 </div>
 
 
+<script src="js/employeeHome.js"></script>
 <#include "./footer.ftl">

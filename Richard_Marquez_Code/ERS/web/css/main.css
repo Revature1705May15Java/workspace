@@ -71,7 +71,7 @@ footer {
   margin-top: 15em;
   width: 25em; }
 
-#pendingRequests, #employeeAccountContainer {
+#pendingRequests, #employeeAccountContainer, #managerMain {
   margin-top: 10em; }
 
 #employeeAccountContainer {
@@ -81,32 +81,30 @@ footer {
   #employeeAccountContainer table tr td:first-child {
     font-weight: bold; }
 
-.request-table-container {
-  width: 80%; }
-  .request-table-container h3 {
-    text-align: center;
-    margin-top: -0.2em;
-    margin-bottom: 1em; }
-  .request-table-container table {
-    cursor: pointer; }
-    .request-table-container table thead {
-      font-family: "Poppins", calibri, helvetica-neue, helvetica, arial, sans-serif;
-      background-color: #eee;
-      text-transform: uppercase;
-      font-size: small; }
-    .request-table-container table tbody .text {
-      position: relative; }
-      .request-table-container table tbody .text span {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        position: absolute;
-        left: 0;
-        right: 0;
-        color: #999; }
-      .request-table-container table tbody .text:before {
-        content: "";
-        display: inline-block; }
+.request-table-container h3 {
+  text-align: center;
+  margin-top: -0.2em;
+  margin-bottom: 1em; }
+.request-table-container table {
+  cursor: pointer; }
+  .request-table-container table thead {
+    font-family: "Poppins", calibri, helvetica-neue, helvetica, arial, sans-serif;
+    background-color: #eee;
+    text-transform: uppercase;
+    font-size: small; }
+  .request-table-container table tbody .text {
+    position: relative; }
+    .request-table-container table tbody .text span {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      position: absolute;
+      left: 0;
+      right: 0;
+      color: #999; }
+    .request-table-container table tbody .text:before {
+      content: "";
+      display: inline-block; }
 
 #viewRequestModal .modal-content, #newRequestModal .modal-content {
   padding: 2em; }

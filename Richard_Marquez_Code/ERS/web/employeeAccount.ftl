@@ -34,4 +34,6 @@
     </form>
 </div>
 
+
+<script src="js/employeeAccount.js"></script>
 <#include "./footer.ftl">

@@ -105,4 +105,7 @@ public class Service {
         return result;
     }
 
+    public List<ReimbursementRequest> getAllRequests() {
+        return dao.getAllRequests();
+    }
 }

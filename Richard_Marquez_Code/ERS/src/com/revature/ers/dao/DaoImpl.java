@@ -7,10 +7,7 @@ import com.revature.ers.util.Logger;
 import oracle.jdbc.OraclePreparedStatement;
 import oracle.jdbc.OracleTypes;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -227,6 +224,37 @@ public class DaoImpl implements Dao {
                         rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
                         rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
                 );
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
+
+    public List<ReimbursementRequest> getAllRequests() {
+        List<ReimbursementRequest> result = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "SELECT * FROM request";
+            Statement stmt = conn.createStatement();
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                result.add(new ReimbursementRequest(
+                        rs.getInt(1),
+                        rs.getInt(2),
+                        rs.getInt(3) != 0 ? getUser(rs.getInt(3)).getEmail() : null,
+                        rs.getInt(4),
+                        rs.getDouble(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
+                        rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
+                ));
             }
 
         } catch (Exception e) {
