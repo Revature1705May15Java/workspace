@@ -224,6 +224,7 @@ public class DaoImpl implements Dao {
                         rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
                         rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
                 );
+                result.setRequesterEmail(getUser(result.getRequesterId()).getEmail());
             }
 
         } catch (Exception e) {
@@ -244,7 +245,7 @@ public class DaoImpl implements Dao {
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                result.add(new ReimbursementRequest(
+                ReimbursementRequest newReq = new ReimbursementRequest(
                         rs.getInt(1),
                         rs.getInt(2),
                         rs.getInt(3) != 0 ? getUser(rs.getInt(3)).getEmail() : null,
@@ -254,7 +255,9 @@ public class DaoImpl implements Dao {
                         rs.getString(7),
                         rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
                         rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
-                ));
+                );
+                newReq.setRequesterEmail(getUser(newReq.getRequesterId()).getEmail());
+                result.add(newReq);
             }
 
         } catch (Exception e) {
@@ -264,5 +267,36 @@ public class DaoImpl implements Dao {
 
         return result;
     }
+
+
+    public List<User> getAllUsers() {
+        List<User> result = new ArrayList<>();
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "SELECT * FROM users";
+            Statement stmt = conn.createStatement();
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                User newUser = new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        (rs.getInt(6) == 1 ? true : false)
+                );
+                result.add(newUser);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
+
 }
 

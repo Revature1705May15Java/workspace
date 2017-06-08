@@ -22,15 +22,23 @@ function initList() {
 }
 
 function initButton() {
-    $('#todoInputButton').click(function() {
-        var gList = $('#todoList');
-        var g = $('#todoInput');
-
-        var li = $('<li class="hot">' + g.val() + '</li>');
-
-        gList.append(li);
-        g.val('');
-
-        initList();
+    $('#todoInput').keydown(function(e) {
+        if (e.keyCode === 13) {
+            addItem();
+        }
     });
+
+    $('#todoInputButton').click(addItem);
+}
+
+function addItem() {
+    var gList = $('#todoList');
+    var g = $('#todoInput');
+
+    var li = $('<li class="hot">' + g.val() + '</li>');
+
+    gList.append(li);
+    g.val('');
+
+    initList();
 }

@@ -105,7 +105,29 @@ public class Service {
         return result;
     }
 
-    public List<ReimbursementRequest> getAllRequests() {
-        return dao.getAllRequests();
+    public List<ReimbursementRequest> getAllPendingRequests() {
+        List<ReimbursementRequest> result = new ArrayList<>();
+        List<ReimbursementRequest> allReqs = dao.getAllRequests();
+
+        for (ReimbursementRequest r : allReqs) {
+            if (r.getState() == ReimbursementRequest.StateType.PENDING) {
+                result.add(r);
+            }
+        }
+
+        return result;
+    }
+
+    public List<User> getAllEmployees() {
+        List<User> result = new ArrayList<>();
+        List<User> allUsers = dao.getAllUsers();
+
+        for (User u : allUsers) {
+            if (!u.isManager()) {
+                result.add(u);
+            }
+        }
+
+        return result;
     }
 }

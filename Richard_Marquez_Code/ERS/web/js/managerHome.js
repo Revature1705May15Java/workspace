@@ -1,8 +1,8 @@
 initTables();
 
 function initTables() {
-    $.tablesorter.defaults.sortList = [[1,1]];
+    // $.tablesorter.defaults.sortList = [[0,0]];
 
-    // $('#employeesTable').tablesorter();
-    // $('#pendingRequestsTable').tablesorter();
+    $('#employeesTable').tablesorter( {sortList: [[1,0]]} );
+    $('#pendingRequestsTable').tablesorter( {sortList: [[0,0]]} );
 }

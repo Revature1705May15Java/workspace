@@ -7,10 +7,10 @@
             <thead>
             <tr>
                 <th class="col-xs-1">#</th>
-                <th class="col-xs-1">Requester</th>
+                <th class="col-xs-2">Opened</th>
                 <th class="col-xs-6">Purpose</th>
                 <th class="col-xs-2">Amount</th>
-                <th class="col-xs-2">Opened</th>
+                <th class="col-xs-1">Requester</th>
             </tr>
             </thead>
 
@@ -18,10 +18,10 @@
             <#list pendingRequests as r>
             <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
                 <td class="col-xs-1 id">${r.getId()}</td>
-                <td class="col-xs-1 requester">${r.getRequesterId()}</td>
+                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
                 <td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>
                 <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                <td class="col-xs-1 requester">${r.getRequesterEmail()}</td>
             </tr>
             </#list>
             </tbody>
@@ -43,6 +43,13 @@
             </thead>
 
             <tbody>
+            <#list allEmployees as e>
+                <tr id="employee${e.getId()}" data-toggle="modal" data-target="#viewEmployeeModal">
+                    <td class="col-xs-4 firstName">${e.getFirstName()}</td>
+                    <td class="col-xs-4 lastName">${e.getLastName()}</td>
+                    <td class="col-xs-4 email">${e.getEmail()}</td>
+                </tr>
+            </#list>
             <#--<#list pendingRequests as r>-->
             <#--<tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">-->
                 <#--<td class="col-xs-1 state">${r.getState().name()}</td>-->

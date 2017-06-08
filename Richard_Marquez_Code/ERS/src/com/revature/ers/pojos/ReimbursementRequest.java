@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class ReimbursementRequest implements Comparable {
     int id;
     Integer requesterId;
+    String requesterEmail;
     String handlerEmail;
     StateType state;
     double amount;
@@ -12,10 +13,8 @@ public class ReimbursementRequest implements Comparable {
     String note;
     LocalDate dateRequested;
     LocalDate dateResolved;
-
     public ReimbursementRequest() {
     }
-
     public ReimbursementRequest(int id, Integer requester, String handler, int stateTypeId, double amount, String purpose, String note, LocalDate dateRequested, LocalDate dateResolved) {
         this.id = id;
         this.requesterId = requester;
@@ -28,6 +27,14 @@ public class ReimbursementRequest implements Comparable {
         this.note = note;
         this.dateRequested = dateRequested;
         this.dateResolved = dateResolved;
+    }
+
+    public String getRequesterEmail() {
+        return requesterEmail;
+    }
+
+    public void setRequesterEmail(String requesterEmail) {
+        this.requesterEmail = requesterEmail;
     }
 
     public int getId() {

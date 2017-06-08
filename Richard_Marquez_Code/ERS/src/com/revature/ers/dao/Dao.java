@@ -10,6 +10,7 @@ public interface Dao {
     User getUser(String email);
     User getUser(int id);
     User updateUser(User u);
+    List<User> getAllUsers();
 
     int addRequest(ReimbursementRequest req);
     List<ReimbursementRequest> getAllRequests();

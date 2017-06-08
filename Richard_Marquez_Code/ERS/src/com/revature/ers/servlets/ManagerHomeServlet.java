@@ -28,8 +28,11 @@ public class ManagerHomeServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
         request.setAttribute("user", user);
 
-        List<ReimbursementRequest> allRequests = Service.getInstance().getAllRequests();
+        List<ReimbursementRequest> allRequests = Service.getInstance().getAllPendingRequests();
         request.setAttribute("pendingRequests", allRequests);
+
+        List<User> allEmployees = Service.getInstance().getAllEmployees();
+        request.setAttribute("allEmployees", allEmployees);
 
         request.setAttribute("pageTitle", "Manager Home");
         request.getRequestDispatcher("/managerHome.ftl").forward(request, response);
