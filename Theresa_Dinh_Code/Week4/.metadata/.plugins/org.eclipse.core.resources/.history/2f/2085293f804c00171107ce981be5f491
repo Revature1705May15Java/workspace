@@ -1,0 +1,14 @@
+package servlet;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import pojo.Person;
+
+@WebServlet("/Jackson")
+public class Jackson extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+
+	Person john = new Person("John", 32); 
+}

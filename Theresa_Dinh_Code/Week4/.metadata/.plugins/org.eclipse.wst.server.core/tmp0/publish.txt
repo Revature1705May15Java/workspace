@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Wed Jun 07 19:17:13 EDT 2017
+#Thu Jun 08 16:55:41 EDT 2017
+org.eclipse.jst.jee.server\:AjaxPractice=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\AjaxPractice
 org.eclipse.jst.jee.server\:JQueryIntro=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\JQueryIntro
 org.eclipse.jst.jee.server\:SF=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.0.44\\wtpwebapps\\SF

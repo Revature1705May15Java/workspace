@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <button id="m">click here</button>
+        <div id="stuff"></div>
+
+        <script type="text/javascript">
+        //get text from servlet 
+
+            function getText()
+            {
+                var xhr= new XMLHttpRequest();
+                xhr.onreadystatechange = function()
+                {
+                    if(xhr.readyState == 4 && xhr.status == 200)
+                    {
+                        document.getElementById("stuff").innerHTML = xhr.responseText;     
+                    }
+                }
+                xhr.open("GET", "getText", true); 
+                xhr.send(); 
+            }
+            document.getElementById("m").addEventListener("click", getText, false); 
+        </script>
+    </body>
+</html>
