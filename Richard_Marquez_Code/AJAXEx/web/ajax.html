@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>ajax</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -16,11 +18,12 @@
 <h1 id="sound">QUACK</h1>
 
 <div>
-    <input id="pokeNum" type="number" autofocus placeholder="pokeId">
+    <input id="pokeNum" type="number" autofocus placeholder="pokeId" required min="1" max="151" step="1">
     <button id="pokeBtn" class="btn btn-primary">poke.</button>
 </div>
 
 <div id="chicken">
+    <img id="bigChickPic" src="">
     <img id="chickPic" src="http://kindersay.com/files/images/chicken.png">
 </div>
 

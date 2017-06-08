@@ -72,7 +72,7 @@ function handleJackson() {
 
 function handlePoke() {
     var num = $('#pokeNum').val();
-    $('#pokeNum').val('');
+    // $('#pokeNum').val('');
 
     $.ajax({
         url:"http://pokeapi.co/api/v2/pokemon/"+num+"/",
@@ -81,8 +81,22 @@ function handlePoke() {
             console.log(res);
             $('#stuff').html(res.name);
 
-            var spriteUrl = res.sprites.back_default;
-            $('#chickPic').attr('src', spriteUrl);
+            $('#sound').html(res.types[0].type.name);
+            $('#sound').css('color', getRandomColor());
+
+            $('#chickPic').attr('src', res.sprites.front_default);
+            $('#bigChickPic').attr('src', res.sprites.front_shiny);
         }
     });
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
 }

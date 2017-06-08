@@ -1,4 +1,5 @@
 body {
+  overflow: hidden;
   padding: 100px; }
 
 h1 {
@@ -12,6 +13,23 @@ h1 {
   left: 0;
   z-index: -1;
   overflow: hidden; }
+
+h1, h2, h3, h4 {
+  font-family: "Luckiest Guy", cursive; }
+
+#chicken {
+  position: relative;
+  width: 500px;
+  text-align: center;
+  margin: auto; }
+
+#bigChickPic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.3;
+  z-index: -2; }
 
 #chickPic {
   width: 50%;
