@@ -29,6 +29,10 @@ function setValues(pokemon){
 	var pokeImg = document.getElementById("pokemonImg");
 	pokeImg.setAttribute("alt", pokemon.name);
 	pokeImg.setAttribute("src", pokemon.sprites.front_default);
+	pokeImg.setAttribute("width", 200);
+	pokeImg.setAttribute("height", 200);
+	document.getElementById("extra1").innerHTML = "Weight: " + pokemon.weight;
+	document.getElementById("extra2").innerHTML = "Height: " + pokemon.height;
 }
 
 
