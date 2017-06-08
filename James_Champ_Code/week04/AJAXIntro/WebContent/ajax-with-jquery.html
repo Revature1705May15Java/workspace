@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AJAX with jQuery demo</title>
+</head>
+<body>
+	<button id="myBtn">Click Here</button>	
+	<div id="stuff"></div>
+	
+	<script type="text/javascript">
+	var myPerson;
+	
+	function handleEvent() {
+		$.ajax({
+			url: "getBetterJson",
+			method: "get",
+			success: function(result, status, xhr) {
+				console.log("success");
+				$('#stuff').html(result.name + "<br>" + result.age);
+			},
+			error: function(xhr, status){
+				console.log("error");
+			},
+			complete: function(xhr, status) {
+				console.log("complete");
+			}
+		})
+	}
+	
+	document.getElementById("myBtn").addEventListener("click", handleEvent, false);
+	</script>
+	<script 
+	src="https://code.jquery.com/jquery-3.2.1.js" 
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" 
+	crossorigin="anonymous"></script>	
+</body>
+</html>
