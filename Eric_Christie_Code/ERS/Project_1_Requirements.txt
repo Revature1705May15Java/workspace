@@ -21,7 +21,7 @@ Presentation 6/23
 - A Manager can view reimbursement requests from a single Employee
 
 ------------------------------------------------------------------
-- A Manager can register an Employee, which sends the Employee an email with their username and temp password (optional)
+-x A Manager can register an Employee, which sends the Employee an email with their username and temp password (optional)
 - An Employee can reset their password (Optional - tied with above functional requirement)
 
 Technologies:

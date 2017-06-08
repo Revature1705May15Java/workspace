@@ -9,7 +9,7 @@ import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.revature.ers.pojos.Employee;
+import com.revature.ers.pojos.User;
 import com.revature.ers.pojos.Request;
 import com.revature.ers.pojos.RequestState;
 import com.revature.ers.util.ConnectionFactory;
@@ -27,7 +27,7 @@ public class DbDAO implements DAO {
   private TemporaryLogger logger = new TemporaryLogger();
 
   @Override
-  public boolean addEmployee(String email, String firstname, String lastname, boolean isManager) {
+  public boolean addUser(String email, String firstname, String lastname, boolean isManager) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -55,7 +55,7 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public Integer addRequest(Employee requester, BigDecimal amount, String purpose) {
+  public Integer addRequest(User requester, BigDecimal amount, String purpose) {
     Integer result = null;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -104,8 +104,8 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public ArrayList<Employee> getAllEmployees() {
-    ArrayList<Employee> employees = new ArrayList<>();
+  public ArrayList<User> getAllUsers() {
+    ArrayList<User> employees = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
           + "from employee";
@@ -113,7 +113,7 @@ public class DbDAO implements DAO {
       
       ResultSet info = statement.executeQuery(sql);
       while (info.next()) {
-        employees.add(new Employee(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+        employees.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
             info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime()));
       }
     } catch (SQLException ex) {
@@ -126,18 +126,16 @@ public class DbDAO implements DAO {
   public ArrayList<Request> getAllRequests() {
     ArrayList<Request> requests = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, e.firstname, e.lastname, m.email, m.firstname, m.lastname, "
-          + "rq.requestedTimestamp, rq.resolvedTimestamp, rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
+      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, m.email, rq.requestedTimestamp, rq.resolvedTimestamp, "
+          + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
           + "where rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
       while (info.next()) {
         requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getString(7), 
-            info.getString(8), info.getString(9), info.getString(10),
-            info.getTimestamp(11).toLocalDateTime(), info.getTimestamp(12).toLocalDateTime(), 
-            info.getString(13), info.getString(14)));
+            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
+            info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -163,8 +161,8 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public Employee getEmployee(int id) {
-    Employee result = null;
+  public User getUser(int id) {
+    User result = null;
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
           + "from employee where id=?";
@@ -173,7 +171,7 @@ public class DbDAO implements DAO {
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new Employee(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
             info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime());
       }
     } catch (SQLException ex) {
@@ -183,8 +181,8 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public Employee getEmployee(String email) {
-    Employee result = null;
+  public User getUser(String email) {
+    User result = null;
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
           + "from employee where email=?";
@@ -193,7 +191,7 @@ public class DbDAO implements DAO {
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new Employee(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+        result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
             info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime());
       }
     } catch (SQLException ex) {
@@ -216,10 +214,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         result = new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getString(7), 
-            info.getString(8), info.getString(9), info.getString(10),
-            info.getTimestamp(11).toLocalDateTime(), info.getTimestamp(12).toLocalDateTime(), 
-            info.getString(13), info.getString(14));
+            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
+            info.getString(9), info.getString(10));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -241,10 +237,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getString(7), 
-            info.getString(8), info.getString(9), info.getString(10),
-            info.getTimestamp(11).toLocalDateTime(), info.getTimestamp(12).toLocalDateTime(), 
-            info.getString(13), info.getString(14)));
+            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
+            info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -266,10 +260,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getString(7), 
-            info.getString(8), info.getString(9), info.getString(10),
-            info.getTimestamp(11).toLocalDateTime(), info.getTimestamp(12).toLocalDateTime(), 
-            info.getString(13), info.getString(14)));
+            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
+            info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -291,10 +283,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getString(7), 
-            info.getString(8), info.getString(9), info.getString(10),
-            info.getTimestamp(11).toLocalDateTime(), info.getTimestamp(12).toLocalDateTime(), 
-            info.getString(13), info.getString(14)));
+            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
+            info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -303,7 +293,7 @@ public class DbDAO implements DAO {
   }
   
   @Override
-  public boolean promoteEmployee(Employee e) {
+  public boolean promoteEmployee(User e) {
     boolean success = false;
     if (!e.isManager()) {
       try (Connection conn = factory.getConnection();) {
@@ -329,7 +319,7 @@ public class DbDAO implements DAO {
 
   
   @Override
-  public boolean updateEmployee(Employee old, String email, String firstname, String lastname, boolean emailAlertsOn) {
+  public boolean updateUser(User old, String email, String firstname, String lastname, boolean emailAlertsOn) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -356,7 +346,7 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public boolean updateEmployeeLatestLogout(Employee e) {
+  public boolean updateUserLatestLogout(User e) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -379,7 +369,7 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public boolean updateEmployeePassword(Employee e, String password) {
+  public boolean updateUserPassword(User e, String password) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -403,7 +393,7 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public boolean updateRequest(Request r, Employee resolver, RequestState state, String note) {
+  public boolean updateRequest(Request r, User resolver, RequestState state, String note) {
     boolean success = false;
     if (state.getName().equalsIgnoreCase("approved") || state.getName().equalsIgnoreCase("denied")) {
       try (Connection conn = factory.getConnection();) {

@@ -3,7 +3,7 @@ package com.revature.ers.pojos;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class Employee {
+public class User {
 
   private int id;
   private String email, firstname, lastname;
@@ -11,9 +11,9 @@ public class Employee {
   private LocalDateTime latestLogout;
   private ArrayList<Request> requests;
   
-  public Employee() { super(); }
+  public User() { super(); }
 
-  public Employee(String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
       LocalDateTime latestLogout) {
     super();
     this.email = email;
@@ -24,7 +24,7 @@ public class Employee {
     this.latestLogout = latestLogout;
   }
 
-  public Employee(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
       LocalDateTime latestLogout) {
     super();
     this.id = id;
@@ -36,7 +36,7 @@ public class Employee {
     this.latestLogout = latestLogout;
   }
 
-  public Employee(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
       LocalDateTime latestLogout, ArrayList<Request> requests) {
     super();
     this.id = id;

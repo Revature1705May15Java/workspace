@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.revature.ers.pojos.Employee;
+import com.revature.ers.pojos.User;
 import com.revature.ers.service.ExpenseReimbursementService;
 
 /**
@@ -18,10 +18,8 @@ import com.revature.ers.service.ExpenseReimbursementService;
  * for creating and destroying login sessions.
  */
 //@WebServlet("/LoginServlet")
-public class SessionServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-  private boolean loginAttempted = false;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,6 +34,7 @@ public class SessionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  String uri = request.getRequestURI();
 	  ExpenseReimbursementService service = new ExpenseReimbursementService();
+	  boolean loginAttempted = false;
 	  
 	  if (uri.equals("/ERS/login")) {
 	    String email = request.getParameter("em");
@@ -47,19 +46,19 @@ public class SessionServlet extends HttpServlet {
 	    
 	    if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
 	      loginAttempted = true;
-	      Employee result = service.login(email, password);
+	      User result = service.login(email, password);
 	      
 	      if (result != null) {
 	        HttpSession session = request.getSession(true);
-	        session.setAttribute("employee", result);
-	        request.getRequestDispatcher("main.ftl").forward(request, response);
-//	        response.sendRedirect("main.ftl");
+	        session.setAttribute("user", result);
+//	        request.getRequestDispatcher("main.ftl").forward(request, response);
+	        response.sendRedirect("main");
 	      }
 	    }
 	  } else if (uri.equals("/ERS/logout")) {
 	    HttpSession session = request.getSession();
-	    if (session.getAttribute("employee") != null) {
-	      service.logout((Employee) session.getAttribute("employee"));
+	    if (session.getAttribute("user") != null) {
+	      service.logout((User) session.getAttribute("user"));
 	    }
 	    request.getSession().invalidate();
 	  }

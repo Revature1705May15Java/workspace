@@ -3,7 +3,7 @@ package com.revature.ers.dao;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import com.revature.ers.pojos.Employee;
+import com.revature.ers.pojos.User;
 import com.revature.ers.pojos.Request;
 import com.revature.ers.pojos.RequestState;
 
@@ -15,15 +15,15 @@ public interface DAO {
   
   /**
    * TODO find a better way to securely generate random passwords for new users. (currently it is just a hash of the email address)
-   * Insert a record into the employee table.
+   * Insert a record into the user table.
    * @param email
-   * @param password The new Employee's plaintext password, which is stored as a salted hash
+   * @param password The new User's plaintext password, which is stored as a salted hash
    * @param firstname
    * @param lastname
    * @param isManager
    * @return true if successful, false otherwise
    */
-  boolean addEmployee(String email, String firstname, String lastname, boolean isManager);
+  boolean addUser(String email, String firstname, String lastname, boolean isManager);
   
   /**
    * Insert a record into the request table.
@@ -32,10 +32,10 @@ public interface DAO {
    * @param purpose
    * @return the id for the new request, or null if no request was added
    */
-  Integer addRequest(Employee requester, BigDecimal amount, String purpose);
+  Integer addRequest(User requester, BigDecimal amount, String purpose);
   
   /**
-   * Check if the given password is the correct password for the employee with the given email.
+   * Check if the given password is the correct password for the user with the given email.
    * @param email
    * @param password
    * @return true if password is correct, false otherwise
@@ -43,10 +43,22 @@ public interface DAO {
   boolean checkPassword(String email, String password);
   
   /**
-   * Retrieve information for all employees.
-   * @return an ArrayList of Employee objects for all employees
+   * Retrieve information for all employees and managers.
+   * @return an ArrayList of User objects for all users
    */
-  ArrayList<Employee> getAllEmployees();
+  ArrayList<User> getAllUsers();
+  
+//  /**
+//   * Retrieve information for all employees.
+//   * @return an ArrayList of User objects for all employees
+//   */
+//  ArrayList<User> getAllEmployees();
+//  
+//  /**
+//   * Retrieve information for all managers.
+//   * @return an ArrayList of User objects for all managers
+//   */
+//  ArrayList<User> getAllManagers();
   
   /**
    * Retrieve information for all requests.
@@ -61,18 +73,18 @@ public interface DAO {
   ArrayList<RequestState> getAllRequestStates();
   
   /**
-   * Retrieve the employee with the given id.
+   * Retrieve the user with the given id.
    * @param id
-   * @return an Employee object with a null requests variable, or null if no such employee exists
+   * @return an User object with a null requests variable, or null if no such user exists
    */
-  Employee getEmployee(int id);
+  User getUser(int id);
   
   /**
-   * Retrieve the employee with the given email.
+   * Retrieve the user with the given email.
    * @param id
-   * @return an Employee object with a null requests variable, or null if no such employee exists
+   * @return an User object with a null requests variable, or null if no such user exists
    */
-  Employee getEmployee(String email);
+  User getUser(String email);
   
   /**
    * Retrieve the request with the given id.
@@ -82,14 +94,14 @@ public interface DAO {
   Request getRequest(int id);
   
   /**
-   * Retrieve all requests created by the employee with the given email.
+   * Retrieve all requests created by the user with the given email.
    * @param email
    * @return an ArrayList of complete Request objects
    */
   ArrayList<Request> getRequestsByRequester(String email); // might not need this
   
   /**
-   * Retrieve all requests resolved by the employee with the given email.
+   * Retrieve all requests resolved by the user with the given email.
    * @param email
    * @return an ArrayList of complete Request objects
    */
@@ -103,14 +115,14 @@ public interface DAO {
   ArrayList<Request> getRequestsByState(RequestState state); // might not need this
   
   /**
-   * Make the given employee a manager. (This should only be accessible to managers.)
+   * Make the given user a manager. (This should only be accessible to managers.)
    * @param e
    * @return true if successful, false otherwise
    */
-  boolean promoteEmployee(Employee e);
+  boolean promoteEmployee(User e);
   
   /**
-   * Update the information for the given employee.
+   * Update the information for the given user.
    * @param old
    * @param email
    * @param firstname
@@ -118,23 +130,23 @@ public interface DAO {
    * @param emailAlertsOn
    * @return true if successful, false otherwise
    */
-  boolean updateEmployee(Employee old, String email, String firstname, String lastname, boolean emailAlertsOn);
+  boolean updateUser(User old, String email, String firstname, String lastname, boolean emailAlertsOn);
   
   /**
-   * Update the latest logout date and time for the given employee to the current date and time.
+   * Update the latest logout date and time for the given user to the current date and time.
    * @param e
    * @param latestLogout
    * @return true if successful, false otherwise
    */
-  boolean updateEmployeeLatestLogout(Employee e);
+  boolean updateUserLatestLogout(User e);
   
   /**
-   * Change the password for the given employee.
+   * Change the password for the given user.
    * @param e
    * @param password
    * @return true if successful, false otherwise
    */
-  boolean updateEmployeePassword(Employee e, String password);
+  boolean updateUserPassword(User e, String password);
   
   /**
    * Update the given request to a resolved state.
@@ -144,6 +156,6 @@ public interface DAO {
    * @param note
    * @return true if successful, false otherwise
    */
-  boolean updateRequest(Request r, Employee resolver, RequestState state, String note);
+  boolean updateRequest(Request r, User resolver, RequestState state, String note);
   
 }
