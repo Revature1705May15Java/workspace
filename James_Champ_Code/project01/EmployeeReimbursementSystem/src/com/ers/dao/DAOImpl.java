@@ -54,6 +54,43 @@ public class DAOImpl implements DAO{
 		return employee;
 	}
 
+	public Employee getEmployee(int id) {
+		Employee result = null;
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "SELECT * FROM employee " 
+					+ "WHERE employee_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				result = new Employee();
+				
+				result.setEmployeeId(rs.getInt(1));
+				result.setEmail(rs.getString(2));
+				// TODO: Consider *not* setting the password...
+				result.setPassword(rs.getString(3));
+				result.setFirstName(rs.getString(4));
+				result.setLastName(rs.getString(5));
+				
+				if(rs.getInt(6) == 1) {
+					result.setIsManager(true);
+				}
+				else {
+					result.setIsManager(false);
+				}
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	public Employee addEmployee(Employee employee) {
 		Employee result = null;
 		
@@ -164,5 +201,39 @@ public class DAOImpl implements DAO{
 		}
 		
 		return result;
+	}
+	
+	public ArrayList<Request> getAllRequests(RequestState state) {
+		ArrayList<Request> results = new ArrayList<Request>();
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()){
+			String sql = "SELECT * FROM request " +
+					"WHERE state_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, state.getRequestId());
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Request r = new Request();
+				r.setRequestId(rs.getInt(1));
+				r.setState(new RequestState(rs.getInt(2)));
+				r.setOpenDate(rs.getDate(3));
+				r.setCloseDate(rs.getDate(4));
+				r.setAmount(rs.getDouble(5));
+				r.setPurpose(rs.getString(6));
+				r.setRequester(getEmployee(rs.getInt(7)));
+				r.setManager(getEmployee(rs.getInt(8)));
+				r.setNote(rs.getString(9));
+				
+				results.add(r);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return results;
 	}
 }

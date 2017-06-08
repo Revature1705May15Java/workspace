@@ -8,6 +8,7 @@ import com.ers.exceptions.InvalidPasswordException;
 import com.ers.exceptions.NoSuchEmployeeException;
 import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
+import com.ers.pojos.RequestState;
 
 public class Service {
 	private DAO dao;
@@ -65,6 +66,10 @@ public class Service {
 	
 	public ArrayList<Employee> getAllEmployees() {
 		return dao.getAllEmployees();
+	}
+	
+	public ArrayList<Request> getAllRequests(RequestState state) {
+		return dao.getAllRequests(state);
 	}
 	
 	public boolean isEmailUnique(String email) {

@@ -47,21 +47,39 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
-	<servlet>
-		<servlet-name>ViewEmployees</servlet-name>
-		<servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ViewEmployees</servlet-name>
-		<url-pattern>/viewEmployees</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>RegisterEmployee</servlet-name>
-		<servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>RegisterEmployee</servlet-name>
-		<url-pattern>/register</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>ViewEmployees</servlet-name>
+    <servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewEmployees</servlet-name>
+    <url-pattern>/viewEmployees</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>RegisterEmployee</servlet-name>
+    <servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterEmployee</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SubmitRequest</servlet-name>
+    <servlet-class>com.ers.servlets.SubmitRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitRequest</servlet-name>
+    <url-pattern>/submitRequest</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ViewPending</servlet-name>
+    <servlet-class>com.ers.servlets.ViewPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewPending</servlet-name>
+    <url-pattern>/viewPending</url-pattern>
+  </servlet-mapping>
 </web-app>
