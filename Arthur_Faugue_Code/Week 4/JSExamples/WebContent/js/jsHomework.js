@@ -48,8 +48,17 @@ function bubbleSort(numArray){
             }
         }
     } while (check);
+    return numArray;
 }
-
+function doBub(){
+	var display = document.getElementById("bubDisplay");
+	var str = document.getElementById("bubNum").value;
+	console.log(str);
+	var input = str.split(" ");
+	console.log(input);
+	display.innerHTML = bubbleSort(input);
+}
+document.getElementById("doBub").addEventListener("click", doBub, false);
 
 //3. Reverse String
 //Define function: reverseStr(someStr)
@@ -60,8 +69,12 @@ function reverseStr(someStr){
 	var newStr = revArr.join("");
 	return someStr = newStr;
 }
-
-
+function doStr(){
+	var display = document.getElementById("strDisplay");
+	var input = document.getElementById("strString").value;
+	display.innerHTML = reverseStr(input);
+}
+document.getElementById("doStr").addEventListener("click", doStr, false);
 
 
 //4. Factorial
@@ -81,7 +94,12 @@ function factorial(someNum){
 	}
 	return Temp;
 }
-
+function doFact(){
+	var display = document.getElementById("facDisplay");
+	var input = document.getElementById("facNum").value;
+	display.innerHTML = factorial(input);
+}
+document.getElementById("doFact").addEventListener("click", doFact, false);
 
 
 
@@ -99,7 +117,14 @@ function substring(someString, length, offset){
     return someString.substr(offset, length);
     
 }
-
+function doSubs(){
+	var display = document.getElementById("offDisplay");
+	var input1 = document.getElementById("subStr").value;
+	var input2 = document.getElementById("subLen").value;
+	var input3 = document.getElementById("subOff").value;
+	display.innerHTML = substring(input1, input2, input3);
+}
+document.getElementById("doSubs").addEventListener("click", doSubs, false);
 
 
 //6. Even Number
@@ -114,9 +139,12 @@ function isEven(someNum){
 	}
 }
 
-
-
-
+function doEvn(){
+	var display = document.getElementById("evnDisplay");
+	var input = document.getElementById("evnNum").value;
+	display.innerHTML =  isEven(input);
+}
+document.getElementById("doEvn").addEventListener("click", doEvn, false);
 
 
 //7. Palindrome
@@ -132,7 +160,12 @@ function isPalindrome(someStr){
 		return false;
 	}
 }
-
+function doPali(){
+	var display = document.getElementById("palDisplay");
+	var input = document.getElementById("palSrt").value;
+	display.innerHTML = isPalindrome(input);
+}
+document.getElementById("doPali").addEventListener("click", doPali, false);
 
 
 //8. Shapes
@@ -156,27 +189,68 @@ function isPalindrome(someStr){
 //*****
 // ***
 //  *
+function printShape(shape, height, character){
+	if(shape == "Triangle"){
+		var prnt = [];
+		for(i=0;i<height;i++){
+			prnt.push(character);
+			var srt = prnt.join("");
+			console.log(srt);
+		}
+		return "Look at Console";
+	}else if(shape == "Square"){
+		var prnt = [];
+		for(i=0;i<height;i++){
+			var temp = 0;
+			while(temp<height){
+				prnt.push(character);
+				temp++;
+			}
+			var srt = prnt.join("");
+			console.log(srt + '\n');
+			prnt = [];
+		}
+		return "Look at Console";
+	}else if(shape == "Diamond"){
+		var prnt = [];
+		for(i=0;i<height;i++){
+			prnt.push(character);
+			console.log(prnt);
+		}
+		return "Look at Console";
+	}else{
+		console.log("Not a valid choice!")
+	}
+}
 
-
-
-
-
-
-
-
+function doShape(){
+	var display = document.getElementById("shaDisplay");
+	var input1 = document.getElementById("strSha").value;
+	var input2 = document.getElementById("shaHei").value;
+	var input3 = document.getElementById("shaChar").value;
+	display.innerHTML = printShape(input1, input2, input3);
+}
+document.getElementById("doShape").addEventListener("click", doShape, false);
 
 
 //9. Object literal
 //Define function traverseObject(someObj)
 //Print every property and it's value.
-
-
-
-
-
-
-
-
+function traverseObject(someObj){
+	var x = 0;
+	var i;
+	var keys = Object.keys(someObj);
+	for(i in someObj){
+		console.log(keys[x] + " " + someObj[i]);
+		x++;
+	}
+}
+function doObj(){
+	var display = document.getElementById("objDisplay");
+	var input = document.getElementById("objTxt").value;
+	display.innerHTML = isPalindrome(input);
+}
+document.getElementById("doObj").addEventListener("click", doObj, false);
 
 
 //10. Delete Element
@@ -185,15 +259,19 @@ function isPalindrome(someStr){
 //Delete the third element in the array.
 //Print length
 //The lengths should be the same.
-
-
-
-
-
-
-
-
-
+function deleteElement(someArr){
+	console.log("Array Length = " + someArr.length);
+	delete someArr[2];
+	console.log("Array Length = " + someArr.length);
+	return someArr;
+}
+function doDel1(){
+	var display = document.getElementById("delDisplay1");
+	var str = document.getElementById("arrDel1").value;
+	var input = str.split(" ");
+	display.innerHTML = deleteElement(input);
+}
+document.getElementById("doDel1").addEventListener("click", doDel1, false);
 
 //11. Splice Element
 //Define function spliceElement(someArr)
@@ -201,26 +279,38 @@ function isPalindrome(someStr){
 //Splice the third element in the array.
 //Print length
 //The lengths should be one less than the original length.
-
-
-
-
-
-
-
-
+function spliceElement(someArr){
+	console.log("Array Length = " + someArr.length);
+	someArr.splice(2,1);
+	console.log("Array Length = " + someArr.length);
+	return someArr;
+}
+function doDel2(){
+	var display = document.getElementById("delDisplay2");
+	var str = document.getElementById("arrDel2").value;
+	var input = str.split(" ");
+	display.innerHTML = spliceElement(input);
+}
+document.getElementById("doDel2").addEventListener("click", doDel2, false);
 
 
 //12. Defining an object using a constructor
 //Define a function Person(name, age)
 //The following line should set a Person object to the variable john:
 //	var john = new Person("John", 30);
-
-
-
-
-
-
+function Person(name, age){
+	this.Name = name;
+	this.Age = age;
+}
+function doPer(){
+	var display = document.getElementById("perDisplay");
+	var name = document.getElementById("perName").value;
+	var age = document.getElementById("perAge").value;
+	var pers = new Person(name, age);
+	var disp = "Name: "+ pers.Name + ", Age: " + pers.Age;
+	display.innerHTML = disp;
+}
+document.getElementById("doPer").addEventListener("click", doPer, false);
 
 
 
@@ -229,13 +319,23 @@ function isPalindrome(someStr){
 //Define function getPerson(name, age)
 //The following line should set a Person object to the variable john:
 //	var john = getPerson("John", 30);
-
-
-
-
-
-
-
+function getPerson(name, age){
+	var temp = {
+		Name: name,
+		Age: age,
+	};
+	return temp;
+}
+function doPer1(){
+	var display = document.getElementById("perDisplay1");
+	var name = document.getElementById("perName1").value;
+	var age = document.getElementById("perAge1").value;
+	var pers = getPerson(name, age);
+	console.log(pers);
+	var disp = "Name: "+ pers.Name + ", Age: " + pers.Age;
+	display.innerHTML = disp;
+}
+document.getElementById("doPer1").addEventListener("click", doPer1, false);
 
 
 
