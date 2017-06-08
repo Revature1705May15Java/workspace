@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <div id="page">
+            <div id="todo">
+                <h1 id="header">List</h1>
+                <h2>Buy Groceries</h2>
+                <ul id="notdone">
+                    <li id="one" class="hot"><em>fresh </em>figs</li>
+                    <li id="two" class="hot">pine nuts</li>
+                    <li id="three" class="hot">honey</li>
+                    <li id="four" class="hot">balsamic vinegar</li>
+                </ul>
+                <input type="text" id="grocery"> 
+                <button id="add">Add Grocery</button>
+            </div>
+            <div id="done">
+                <h2>Bought Groceries</h2>
+                <ul id="done">
+                    <li id="onea" class="cold">cheese</li>
+                    <li id="twoa" class="cold">garlic</li>
+                </ul>
+            </div>
+        </div>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous"></script>
+        <script>
+            $('header').addClass('headline');
+            $('li').hide().fadeIn(1500);
+            $('#add').on('click', function()
+            {
+                var n = document.createElement('li'); 
+                n.class = "hot"; 
+                n.innerHTML=$('#grocery').val(); 
+                $('#grocery').val(''); 
+                $('#notdone').append(n); 
+                $('li').on('click', function()
+                {
+                    $(this).remove(); //change function to move it to done list too
+                });
+            }); 
+        
+            $('.hot').on('click', function()
+            {
+                var n = document.createElement('li');
+                n.class = "cold"; 
+                n.innerHTML=$('li').val(); 
+                $('#done').append(n);
+                $('li').on('click', function()
+                {
+                    $(this).remove();
+                });
+            });
+        </script>
+    </body>
+</html>

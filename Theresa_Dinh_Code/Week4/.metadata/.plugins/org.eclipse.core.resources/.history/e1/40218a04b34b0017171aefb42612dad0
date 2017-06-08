@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="page">
+<h1 id="header">List</h1>
+<h2>Buy Groceries</h2>
+<ul>
+<li id="one" class="hot"><em>fresh </em>figs</li>
+<li id="two" class="hot">pine nuts</li>
+<li id="three" class="hot">honey</li>
+<li id="four" class="hot">balsamic vinegar</li>
+</ul>
+<!--  <p>Add Groceries:</p>  -->
+<input type="text" id="grocery"> 
+<button id="add">Add Grocery</button>
+
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<script>
+$('header').addClass('headline');
+$('li').hide().fadeIn(1500);
+
+var n = document.createElement('li'); 
+$('#add').on('click', function(){
+	n.innerHTML=$('#grocery').val(); 
+	//$('#grocery').val(''); 
+	$('ul').append(n); 
+	
+	$('li').on('click', function(){
+		$(this).remove(); 
+	});
+}); 
+
+//$('button').on('click', function(){
+//	$('ul').append('grocery');
+//});
+$('li').on('click', function(){
+	$(this).remove();
+});
+</script>
+
+</body>
+</html>

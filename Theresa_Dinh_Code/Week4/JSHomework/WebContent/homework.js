@@ -110,12 +110,66 @@ function isPalindrome(someStr)
 //*****
 // ***
 //  *
+function printShape(shape, height, character)
+{
+    switch(shape)
+    {
+        case "Square":
+        {
+            var output = ""; 
+            for(i = 0; i < height; i++)
+            {
+                for(j = 0; j < height; j++)
+                {
+                    output += character; 
+                }
+                console.log(output);
+                output = ""; 
+            }
+            break;
+        }
+        case "Triangle":
+        {
+            var output = ""; 
+            for(i = 0; i < height; i++)
+            {
+                for(j = 0; j <= i; j++)
+                {
+                    output += character;
+                }
+                console.log(output); 
+                output = ""; 
+            }
+            break;
+        }
+        case "Diamond":
+        {
+            var output = ""; 
+            for(i = 0; i < height; i++)
+            {
+                for(j = i; j < (height/2); j++)
+                {
+                    output += " "; 
+                }
+                for(k = 0; k <= i; k++)
+                {
+                    ///////////////////////////////////
+                }
+                console.log(output); 
+                output = ""; 
+            }
+            break;
+        }
+    }
+}
+
 //9. Object literal
 //Define function traverseObject(someObj)
 //Print every property and it's value.
 function traverseObject(someObj)
 {
-    
+    for(var property in someObj)
+        console.log(property + " " + someObj[property]); 
 }
 //10. Delete Element
 //Define function deleteElement(someArr)
@@ -123,17 +177,40 @@ function traverseObject(someObj)
 //Delete the third element in the array.
 //Print length
 //The lengths should be the same.
+function deleteElement(someArr)
+{
+    log.console(someArr.length);
+    delete someArr[2];
+    log.constant(someArr.length);
+}
+
 //11. Splice Element
 //Define function spliceElement(someArr)
 //Print length
 //Splice the third element in the array.
 //Print length
 //The lengths should be one less than the original length.
+function spliceElement(someArr)
+{
+    log.console(someArr.length);
+    someArr.splice(3, 0);
+    log.console(someArr.length);
+}
+
 //12. Defining an object using a constructor
 //Define a function Person(name, age)
 //The following line should set a Person object to the variable john:
 //    var john = new Person("John", 30);
+function Person(name, age)
+{
+    var john = new Person("John", 30);
+}
+
 //13. Defining an object using an object literal
 //Define function getPerson(name, age)
 //The following line should set a Person object to the variable john:
 //    var john = getPerson("John", 30);
+function getPerson(name, age)
+{
+    var john = getPerson("John", 30); 
+}

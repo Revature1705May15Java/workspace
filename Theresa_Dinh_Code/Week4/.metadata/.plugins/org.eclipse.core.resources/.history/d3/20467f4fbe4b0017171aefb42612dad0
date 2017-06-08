@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Insert title here</title>
+    </head>
+    <body>
+        <div id="page">
+            <div id="todo">
+                <h1 id="header">List</h1>
+                <h2>Buy Groceries</h2>
+                <ul id="notdone">
+                    <li id="one" class="hot"><em>fresh </em>figs</li>
+                    <li id="two" class="hot">pine nuts</li>
+                    <li id="three" class="hot">honey</li>
+                    <li id="four" class="hot">balsamic vinegar</li>
+                </ul>
+                <input type="text" id="grocery"> 
+                <button id="add">Add Grocery</button>
+            </div>
+            <div id="done">
+                <h2>Bought Groceries</h2>
+                <ul id="done">
+                </ul>
+            </div>
+        </div>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous"></script>
+        <script>
+            $('header').addClass('headline');
+            $('li').hide().fadeIn(1500);
+            $('#add').on('click', function()
+            {
+                var n = document.createElement('li'); 
+                n.innerHTML=$('#grocery').val(); 
+                $('#grocery').val(''); 
+                $('#notdone').append(n); 
+                $('li').on('click', function()
+                {
+                    $(this).remove(); 
+                });
+            }); 
+            $('#notdone.li').on('click', function()
+            {
+                $(this).remove();
+                var n = document.createElement('li');
+                n.innerHTML=$('li').val(); 
+                $('#done.ul').append(n);
+                $('li').on('click', function()
+                {
+                    $(this).remove();
+                });
+            });
+        </script>
+    </body>
+</html>
