@@ -1,0 +1,20 @@
+// ismouse over Ryu?
+var isHovered = false;
+
+$(document).ready(function(){
+	
+	$('.ryu').mouseenter(function(){
+		$('.ryu-still').hide();
+		$('.ryu-show').show();
+		isHovered = true;
+	});
+	
+	.mouseleave(function(){
+		$('.ryu').mouseenter(function(){
+			$('.ryu-still').hide();
+			$('.ryu-show').show();
+			isHovered = false;
+		});
+	});
+	
+});

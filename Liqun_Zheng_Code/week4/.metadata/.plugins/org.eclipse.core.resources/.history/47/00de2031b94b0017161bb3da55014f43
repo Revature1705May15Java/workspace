@@ -1,0 +1,60 @@
+// ismouse over Ryu?
+var isHovered = false;
+
+$(document).ready(function(){
+	
+	$('.ryu').mouseenter(function(){
+		$('.ryu-still').hide();
+		$('.ryu-show').show();
+		isHovered = true;
+	})
+	
+	.mouseleave(function(){
+			$('.ryu-still').hide();
+			$('.ryu-show').show();
+			isHovered = false;
+	})
+	
+	.mousedown(function(){
+		playHadouken();
+		$('ryu-throwing').show();
+		$('ryu-ready').hide();
+		$('.haduken').finish().show().animate(
+				{'left':'8.75rem'}, //Starting location
+			280, 	//time ms of animation
+			function (){
+				$(this).hide();
+				$(this.css{'left', '-10rem'};
+			)};
+	)}
+)};
+
+//document ready keydown 'x'
+$(document).keydown(function(e){
+	if(e.keycode==88){
+		playPose();
+		$('.ryu-cool').show();
+		$('.ryu-still').hide();
+		$('ryu-ready').hide();
+	}
+}).keyup(function(e){
+	$('#pose-sound')[0].pause();
+	$('#pose-sound')[0].load();
+	$('.ryu-cool').hide();
+	if(isHovered == true){
+		$('.ryu-ready').show();
+	}
+	else{
+		$('.ryu-still').show();
+	}
+});
+
+
+// sound of fireball
+function playHadouken(){
+	$('#hadouken-sound')[0].volume=0.2;
+	$('#hadouken-sound')[0].load();
+	$('#hadouken-sound')[0].play();
+]}
+
+var play

@@ -101,3 +101,14 @@ select r.request_id, r.requester_id, r.resolver_id, r.note,r.purpose,
   inner join employee e
   on e.employee_id = r.requester_id
   where e.employee_id = 60;
+  
+  
+  
+insert into request(requester_id, purpose, amount)
+values(60, 'relocation', 1000);
+/
+
+select * from request r 
+inner join state_type s 
+on r.state_id = s.STATE_ID
+where r.request_id = 125;

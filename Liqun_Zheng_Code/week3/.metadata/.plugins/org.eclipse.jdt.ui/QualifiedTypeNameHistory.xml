@@ -28,6 +28,8 @@
 <fullyQualifiedTypeName name="com.reim.dao.Dao"/>
 <fullyQualifiedTypeName name="com.reim.dao.DaoImpl"/>
 <fullyQualifiedTypeName name="com.reim.service.Service"/>
-<fullyQualifiedTypeName name="com.reim.pojos.Request"/>
 <fullyQualifiedTypeName name="com.reim.pojos.Employee"/>
+<fullyQualifiedTypeName name="oracle.jdbc.OraclePreparedStatement"/>
+<fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
+<fullyQualifiedTypeName name="com.reim.pojos.Request"/>
 </qualifiedTypeNameHistroy>

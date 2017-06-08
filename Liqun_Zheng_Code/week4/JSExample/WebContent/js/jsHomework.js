@@ -22,8 +22,6 @@ function fib(n){
 
 }
 
-
-
 //elem = document.getElementById("fib");
 //elem.innerHTML=fib(4);
 
@@ -60,8 +58,16 @@ function bubbleSort(numArray){
 	return numArray;
 }
 
+function doBSort(){
+	var display = document.getElementById("bSortDisplay");
+	var input = document.getElementById("bSort").value;
+	var i = input.split(",");
+	var o = bubbleSort(i).toString();
+	
+	display.innerHTML = o;
+}
 
-
+document.getElementById("doBSort").addEventListener("click", doBSort, false);
 
 
 
@@ -78,7 +84,15 @@ function reverseStr(someStr){
 
 }
 
+function doReverse(){
+	var display = document.getElementById("reverseDisplay");
+	var input = document.getElementById("reverse").value;
 
+	
+	display.innerHTML = reverseStr(input);
+}
+
+document.getElementById("doReverse").addEventListener("click", doReverse, false);
 
 
 
@@ -98,7 +112,15 @@ function factorial(someNum){
 	return result;
 }
 
+function doFactorial(){
+	var display = document.getElementById("factorialDisplay");
+	var input = document.getElementById("factorial").value;
 
+	
+	display.innerHTML = factorial(input);
+}
+
+document.getElementById("doFactorial").addEventListener("click", doFactorial, false);
 //5. Substring
 //Define function substring(someStr, length, offset)
 //Return the substring contained between offset and (offset + length) inclusively.
@@ -109,14 +131,23 @@ function substring(someString, length, offset){
 	if(offset>=someString.length || offset<0){
 		alert("offset out of boundry!!");
 	}
-	if(length+offset>=someString.length || offset<0){
+	if((length+offset)>=someString.length || offset<0){
 		alert("length out of boundry!!");
 	}
 	return someString.substr(offset, length);
 	
 }
 
+function doSubstring(){
+	var display = document.getElementById("substringDisplay");
+	var str = document.getElementById("string").value;
+	var length = document.getElementById("length").value;
+	var offset = document.getElementById("offset").value;;
+	
+	display.innerHTML = substring(str,length,offset);
+}
 
+document.getElementById("doSubstring").addEventListener("click", doSubstring, false);
 
 
 //6. Even Number
@@ -133,7 +164,15 @@ function isEven(someNum){
     }
 }
 
+function doEven(){
+	var display = document.getElementById("evenDisplay");
+	var input = document.getElementById("even").value;
 
+	
+	display.innerHTML = isEven(input);
+}
+
+document.getElementById("doEven").addEventListener("click", doEven, false);
 
 
 
@@ -151,7 +190,15 @@ function isPalindrome(someStr){
 		return false;
 }
 
+function doPalindrome(){
+	var display = document.getElementById("palindromeDisplay");
+	var input = document.getElementById("palindrome").value;
 
+	
+	display.innerHTML = isPalindrome(input);
+}
+
+document.getElementById("doPalindrome").addEventListener("click", doPalindrome, false);
 
 //8. Shapes
 //Define function: printShape(shape, height, character)
@@ -193,84 +240,70 @@ function isPalindrome(someStr){
 //9. Object literal
 //Define function traverseObject(someObj)
 //Print every property and it's value.
+function traverseObject(someObj){
+  var x = 0;
+  var i;
+  var keys = Object.keys(someObj);
+  for(i in someObj){
+      console.log(keys[x] + " " + someObj[i]);
+      x++;
+  }
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
+//function doTraverse(){
+//	var display = document.getElementById("traverseDisplay");
+//	var input = document.getElementById("traverse").value;
+//	var inp = input.split(',');
+//	var p[inp[0]]=inp[1];
+//	
+//	
+//	display.innerHTML = traverseObject(p);
+//}
+//document.getElementById("doTraverse").addEventListener("click", doTraverse, false);
 //10. Delete Element
 //Define function deleteElement(someArr)
 //Print length
 //Delete the third element in the array.
 //Print length
 //The lengths should be the same.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function deleteElement(someArr){
+  console.log("Array Length = " + someArr.length);
+  delete someArr[2];
+  console.log("Array Length = " + someArr.length)
+}
 //11. Splice Element
 //Define function spliceElement(someArr)
 //Print length
 //Splice the third element in the array.
 //Print length
 //The lengths should be one less than the original length.
-
-
-
-
-
-
-
-
-
+function spliceElement(someArr){
+  console.log("Array Length = " + someArr.length);
+  someArr.splice(2,1);
+  console.log("Array Length = " + someArr.length)
+}
 //12. Defining an object using a constructor
 //Define a function Person(name, age)
 //The following line should set a Person object to the variable john:
-//	var john = new Person("John", 30);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//var john = new Person("John", 30);
+function Person(name, age){
+  this.Name = name;
+  this.Age = age;
+}
 //13. Defining an object using an object literal
 //Define function getPerson(name, age)
 //The following line should set a Person object to the variable john:
-//	var john = getPerson("John", 30);
-// 
-// 
-// 
-// 
-// 
+//var john = getPerson("John", 30);
+function getPerson(name, age){
+  var temp = {
+      Name: name,
+      Age: age,
+  };
+  return temp;
+}
+
 //-----------------------------------------------------------------------------------
 //PART II
 //Part II will focus on Javascript's ability to manipulate the DOM.

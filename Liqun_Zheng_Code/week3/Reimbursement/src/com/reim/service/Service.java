@@ -27,4 +27,12 @@ public class Service {
 		else
 			return null;
 	}
+	
+	public Request SubmitReq(Employee e, String purpose, double amount ){
+		Request r = dao.addRequest(e, purpose, amount);
+		if (r.getRequest_id() != 0){
+			return r;
+		}
+		return null;
+	}
 }

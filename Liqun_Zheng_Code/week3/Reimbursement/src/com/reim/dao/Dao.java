@@ -11,5 +11,8 @@ public interface Dao {
 	public ArrayList<Request> findReqByEmpId(int emp_id);
 	public Employee findEmpByUname(String uname);
 	public State_type findTypeById(int type_id);
+	Request addRequest(Employee u, String purpose, double amount);
+	Request getRequest(int requestId);
+	
 	
 }
