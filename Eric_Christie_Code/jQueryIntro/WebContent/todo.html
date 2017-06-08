@@ -30,10 +30,9 @@
         <button type="button" id="add">Add</button>
         <br>
         <ul id="todo-list">
-          <li id="1" class="hot"><em>fresh</em> figs</li>
-          <li id="2" class="hot">pine nuts</li>
-          <li id="3" class="hot">honey</li>
-          <li id="4" class="hot">balsamic vinegar</li>
+          <li id="1" class="hot">javascript homework</li>
+          <li id="2" class="hot">enthuware</li>
+          <li id="3" class="hot">project 1</li>
         </ul>
       </div>
       <div class="col-md-6" id="todone">
@@ -51,7 +50,6 @@
         addItem();
       }
     });
-    $('header').addClass('headline');
     $('li:lt(3)').hide().fadeIn(1500);
     $('#todo-list li').on('click', crossOutItem);
     $('#add').on('click', addItem);
@@ -59,22 +57,25 @@
       let input = $('#input');
       let item = input.val();
       $('#todo-list').append(`<li class="hot">${item}</li>`);
-      $('li').on('click', function() {
-        let old = $(this).html();
-        $(this).remove();
-        $('#todone-list').append(`<li class="hot">${old}</li>`);
-      });
+      $('#todo-list li:last-child').on('click', crossOutItem);
       input.val('');
     }
     function crossOutItem() {
       let old = $(this).html();
       $(this).remove();
       $('#todone-list').append(`<li class="hot"><s>${old}</s></li>`);
+      $('#todone-list li:last-child').on('click', resetItem);
     }
-    function moveItem() {
-      let old = $(this).html();
+    // function moveItem() {
+    //   let old = $(this).html();
+    //   $(this).remove();
+    //   $('#todone-list').append(`<li class="hot">${old}</li>`);
+    // }
+    function resetItem() {
+      let old = $(this).children('s').html();
       $(this).remove();
-      $('#todone-list').append(`<li class="hot">${old}</li>`);
+      $('#todo-list').append(`<li class="hot">${old}</li>`);
+      $('#todo-list li:last-child').on('click', crossOutItem);
     }
   </script>
 </body>
