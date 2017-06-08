@@ -2,6 +2,7 @@ package com.revature.ers.servlets;
 
 import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
+import com.revature.ers.service.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +27,10 @@ public class EmployeeHomeServlet extends HttpServlet {
 
         HttpSession session = request.getSession(true);
 
+        // Make sure you have the most recent version of the user
         User user = (User) session.getAttribute("user");
+        user = Service.getInstance().getUser(user.getId());
+
         List<ReimbursementRequest> allRequests = user.getRequests();
         List<ReimbursementRequest> pendingRequests = new ArrayList<>();
         List<ReimbursementRequest> resolvedRequests = new ArrayList<>();

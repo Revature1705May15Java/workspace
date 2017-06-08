@@ -28,6 +28,8 @@ function initTables() {
         $('#viewRequestModal .requester').html('<a href="mailto:' + requester + '">' + requester + "</a>");
         $('#viewRequestModal .amount').html(amount);
         $('#viewRequestModal .purpose').html(purpose);
+
+        $('#viewRequestModal .requestId').val(id);
     });
 }
 

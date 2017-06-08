@@ -86,6 +86,13 @@
                     </tr>
                 </table>
             </div>
+            <div class="modal-footer">
+                <form method="POST">
+                    <input type="hidden" class="requestId" name="requestId" value="">
+                    <input formaction="/ApproveRequest" type="submit" class="btn btn-success" value="Approve">
+                    <input formaction="/DenyRequest" type="submit" class="btn btn-danger" value="Deny">
+                </form>
+            </div>
         </div>
     </div>
 </div>

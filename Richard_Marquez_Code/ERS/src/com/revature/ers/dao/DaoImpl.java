@@ -8,6 +8,7 @@ import oracle.jdbc.OraclePreparedStatement;
 import oracle.jdbc.OracleTypes;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -122,6 +123,9 @@ public class DaoImpl implements Dao {
                         rs.getString(5),
                         (rs.getInt(6) == 1 ? true : false)
                 );
+                if (!result.isManager()) {
+                    result.setRequests(getRequestsForUser(result));
+                }
             }
 
         } catch (Exception e) {
@@ -235,6 +239,7 @@ public class DaoImpl implements Dao {
         return result;
     }
 
+    @Override
     public List<ReimbursementRequest> getAllRequests() {
         List<ReimbursementRequest> result = new ArrayList<>();
 
@@ -268,7 +273,7 @@ public class DaoImpl implements Dao {
         return result;
     }
 
-
+    @Override
     public List<User> getAllUsers() {
         List<User> result = new ArrayList<>();
 
@@ -298,5 +303,41 @@ public class DaoImpl implements Dao {
         return result;
     }
 
+    @Override
+    public boolean updateRequest(ReimbursementRequest req) {
+        boolean result = false;
+
+        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+            String sql = "UPDATE REQUEST " +
+                "SET REQUESTERID=?, HANDLERID=?, STATETYPEID=?, AMOUNT=?, " +
+                "PURPOSE=?, NOTE=?, DATEREQUESTED=?, DATEHANDLED=? " +
+                "WHERE REQUESTID=?";
+
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setInt(1, req.getRequesterId());
+            ps.setInt(2, getUser(req.getHandlerEmail()).getId());
+            ps.setInt(3, req.getState().ordinal());
+            ps.setDouble(4, req.getAmount());
+            ps.setString(5, req.getPurpose());
+            ps.setString(6, req.getNote());
+            ps.setDate(7, Date.valueOf(req.getDateRequested()));
+
+            LocalDate dateHandled = req.getDateRequested();
+            ps.setDate(8, dateHandled != null ? Date.valueOf(dateHandled) : null);
+
+            ps.setInt(9, req.getId());
+
+            if (ps.executeUpdate() == 1) {
+                result = true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.log(e.getMessage());
+        }
+
+        return result;
+    }
 }
 

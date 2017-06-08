@@ -115,4 +115,21 @@
         <url-pattern>/EmployeeAccount</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ApproveRequestServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.ApproveRequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApproveRequestServlet</servlet-name>
+        <url-pattern>/ApproveRequest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DenyRequestServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.DenyRequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DenyRequestServlet</servlet-name>
+        <url-pattern>/DenyRequest</url-pattern>
+    </servlet-mapping>
 </web-app>

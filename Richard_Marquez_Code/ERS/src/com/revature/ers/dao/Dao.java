@@ -13,6 +13,7 @@ public interface Dao {
     List<User> getAllUsers();
 
     int addRequest(ReimbursementRequest req);
+    boolean updateRequest(ReimbursementRequest req);
     List<ReimbursementRequest> getAllRequests();
     ReimbursementRequest getRequest(int id);
 }

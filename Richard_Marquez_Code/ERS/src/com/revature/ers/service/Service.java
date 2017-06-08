@@ -42,6 +42,10 @@ public class Service {
         return result;
     }
 
+    public User getUser(int id) {
+        return dao.getUser(id);
+    }
+
     public User addUser(String email, String password, String fName, String lName, boolean isManager) {
         User newUser = null;
 
@@ -129,5 +133,25 @@ public class Service {
         }
 
         return result;
+    }
+
+    public void approveRequest(int reqId, User handler, String note) {
+        ReimbursementRequest req = dao.getRequest(reqId);
+
+        req.setState(ReimbursementRequest.StateType.APPROVED);
+        req.setHandlerEmail(handler.getEmail());
+        req.setNote(note);
+
+        dao.updateRequest(req);
+    }
+
+    public void denyRequest(int reqId, User handler, String note) {
+        ReimbursementRequest req = dao.getRequest(reqId);
+
+        req.setState(ReimbursementRequest.StateType.DENIED);
+        req.setHandlerEmail(handler.getEmail());
+        req.setNote(note);
+
+        dao.updateRequest(req);
     }
 }

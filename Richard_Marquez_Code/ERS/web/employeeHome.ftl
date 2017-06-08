@@ -54,7 +54,7 @@
                     <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
                     <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
                     <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
-                    <td class="note" style="display:none;">${r.getNote()}</td>
+                    <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
                     <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
                 </tr>
             </#list>
