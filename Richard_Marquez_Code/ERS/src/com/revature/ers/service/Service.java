@@ -141,6 +141,7 @@ public class Service {
         req.setState(ReimbursementRequest.StateType.APPROVED);
         req.setHandlerEmail(handler.getEmail());
         req.setNote(note);
+        req.setDateResolved(LocalDate.now());
 
         dao.updateRequest(req);
     }
@@ -151,6 +152,7 @@ public class Service {
         req.setState(ReimbursementRequest.StateType.DENIED);
         req.setHandlerEmail(handler.getEmail());
         req.setNote(note);
+        req.setDateResolved(LocalDate.now());
 
         dao.updateRequest(req);
     }

@@ -24,8 +24,10 @@ public class DenyRequestServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
+        String note = request.getParameter("note");
+
         int reqId = Integer.parseInt(request.getParameter("requestId"));
-        Service.getInstance().denyRequest(reqId, user);
+        Service.getInstance().denyRequest(reqId, user, note);
 
         response.sendRedirect("/Home");
     }

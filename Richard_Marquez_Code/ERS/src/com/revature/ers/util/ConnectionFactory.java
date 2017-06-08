@@ -5,32 +5,42 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    private static ConnectionFactory INSTANCE = new ConnectionFactory();
+
+    private static Boolean build=true;
+    private static ConnectionFactory cf = null;
+
 
     private ConnectionFactory() {
-        //
+        build = false;
     }
 
-    public static ConnectionFactory getInstance() {
-        return INSTANCE;
-    }
+    public static synchronized ConnectionFactory getInstance() {
+        if(build==true){
+            cf = new ConnectionFactory();
+        }
 
-    public Connection getConnection() throws SQLException, ClassNotFoundException {
+        return cf;
+    }
+    public Connection getConnection() throws InterruptedException {
+        Connection conn = null;
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
         String username = "ers";
         String password = "p4ssw0rd";
 
-//		try {
-//			Properties prop = new Properties();
-//			prop.load(new FileReader("C:/propfilepash"));
-//			Class.forName(prop.getProperty("driver"));
+        try {
+            Class.forName("oracle.jdbc.OracleDriver");
+            conn = DriverManager.getConnection(url, username, password);
+        } catch (Exception e){
+            Thread.sleep(100);
+            return getConnection();
+        }
+        return conn;
 
-//			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"), prop.getProperty("password"));
-//		} catch (Exception e) {
-//			System.out.println(e.getMessage());
-//		}
-
-        Class.forName("oracle.jdbc.OracleDriver");
-        return DriverManager.getConnection(url, username, password);
     }
+
+
+
+
+
 }
+

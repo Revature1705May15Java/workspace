@@ -64,35 +64,40 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title id" id="viewRequestModalLabel">New Request</h4>
+                <h4 class="modal-title id" id="viewRequestModalLabel">View Request</h4>
+                <h3 class="state">Status</h3>
             </div>
-            <div class="modal-body">
-                <table class="table">
-                    <tr>
-                        <td>Requested</td>
-                        <td class="dateRequested"></td>
-                    </tr>
-                    <tr>
-                        <td>Employee Requesting</td>
-                        <td class="requester"></td>
-                    </tr>
-                    <tr>
-                        <td>Amount</td>
-                        <td class="amount"></td>
-                    </tr>
-                    <tr>
-                        <td>Purpose</td>
-                        <td class="purpose"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <form method="POST">
+            <form method="POST">
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>Requested</td>
+                            <td class="dateRequested"></td>
+                        </tr>
+                        <tr>
+                            <td>Employee Requesting</td>
+                            <td class="requester"></td>
+                        </tr>
+                        <tr>
+                            <td>Amount</td>
+                            <td class="amount"></td>
+                        </tr>
+                        <tr>
+                            <td>Purpose</td>
+                            <td class="purpose"></td>
+                        </tr>
+                        <tr>
+                            <td>Note</td>
+                            <td><textarea class="form-control" name="note" placeholder="Add an administrative note here"></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
                     <input type="hidden" class="requestId" name="requestId" value="">
                     <input formaction="/ApproveRequest" type="submit" class="btn btn-success" value="Approve">
                     <input formaction="/DenyRequest" type="submit" class="btn btn-danger" value="Deny">
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

@@ -24,8 +24,10 @@ public class ApproveRequestServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
+        String note = request.getParameter("note");
+
         int reqId = Integer.parseInt(request.getParameter("requestId"));
-        Service.getInstance().approveRequest(reqId, user);
+        Service.getInstance().approveRequest(reqId, user, note);
 
         response.sendRedirect("/Home");
     }

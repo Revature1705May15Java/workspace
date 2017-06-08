@@ -244,7 +244,7 @@ public class DaoImpl implements Dao {
         List<ReimbursementRequest> result = new ArrayList<>();
 
         try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
-            String sql = "SELECT * FROM request";
+            String sql = "SELECT * FROM request INNER JOIN users ON REQUEST.REQUESTERID = USERS.USERID";
             Statement stmt = conn.createStatement();
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -261,7 +261,8 @@ public class DaoImpl implements Dao {
                         rs.getDate(8) != null ? rs.getDate(8).toLocalDate() : null,
                         rs.getDate(9) != null ? rs.getDate(9).toLocalDate() : null
                 );
-                newReq.setRequesterEmail(getUser(newReq.getRequesterId()).getEmail());
+//                newReq.setRequesterEmail(getUser(newReq.getRequesterId()).getEmail());
+                newReq.setRequesterEmail(rs.getString(11));
                 result.add(newReq);
             }
 
@@ -323,7 +324,7 @@ public class DaoImpl implements Dao {
             ps.setString(6, req.getNote());
             ps.setDate(7, Date.valueOf(req.getDateRequested()));
 
-            LocalDate dateHandled = req.getDateRequested();
+            LocalDate dateHandled = req.getDateResolved();
             ps.setDate(8, dateHandled != null ? Date.valueOf(dateHandled) : null);
 
             ps.setInt(9, req.getId());

@@ -4,8 +4,8 @@ initTables();
 function initTables() {
     $.tablesorter.defaults.sortList = [[1,1]];
 
-    $('#pendingRequestsTable').tablesorter();
-    $('#resolvedRequestsTable').tablesorter();
+    $('#pendingRequestsTable').tablesorter( {sortList: [[1,1]]} );
+    $('#resolvedRequestsTable').tablesorter( {sortList: [[5,1]]} );
 
     $('.request-table-container table tbody tr').click(function() {
         var state = $('.state', this).html();
