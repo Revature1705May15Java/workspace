@@ -7,6 +7,7 @@ import com.ers.dao.DAOImpl;
 import com.ers.exceptions.InvalidPasswordException;
 import com.ers.exceptions.NoSuchEmployeeException;
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
 
 public class Service {
 	private DAO dao;
@@ -72,5 +73,13 @@ public class Service {
 		}
 		
 		return false;
+	}
+	
+	public Request submitRequest(Request request) {
+		Request result = dao.addRequest(request);
+		
+		System.out.println(result.getRequestId());
+		
+		return result;
 	}
 }

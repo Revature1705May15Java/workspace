@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ers.exceptions.InvalidPasswordException;
 import com.ers.exceptions.NoSuchEmployeeException;
@@ -23,6 +24,9 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			Employee employee = service.login(email, password);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("user", employee);
 			
 			if(employee.getIsManager()) {
 				request.getRequestDispatcher("manager.ftl").forward(request, response);		

@@ -4,15 +4,15 @@ public class RequestState {
 	/**
 	 * Designates a pending request.
 	 */
-	private static final int PENDING = 1;
+	public static final int PENDING = 1;
 	/**
 	 * Designates an approved request.
 	 */
-	private static final int APPROVED = 2;
+	public static final int APPROVED = 2;
 	/**
 	 * Designates a denied request.
 	 */
-	private static final int DENIED = 3;
+	public static final int DENIED = 3;
 	
 	/**
 	 * An integer that identifies the state of this request.

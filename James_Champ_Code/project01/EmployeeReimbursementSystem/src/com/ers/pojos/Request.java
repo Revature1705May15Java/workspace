@@ -16,6 +16,16 @@ public class Request {
 	private Employee requester;
 	private Employee manager;
 	
+	public Request() {
+		super();
+	}
+	
+	public Request(double amount, String purpose, Employee requester) {
+		this.amount = amount;
+		this.purpose = purpose;
+		this.requester = requester;
+	}
+	
 	public Request(int requestId, RequestState state, Date openDate, Date closeDate, double amount, String purpose,
 			String note, Employee requester, Employee manager) {
 		super();

@@ -1,13 +1,17 @@
 package com.ers.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+import com.ers.pojos.RequestState;
 import com.ers.util.ConnectionFactory;
 
 public class DAOImpl implements DAO{
@@ -118,5 +122,47 @@ public class DAOImpl implements DAO{
 		}
 		
 		return results;
+	}
+	
+	public Request addRequest(Request request) {
+		Request result = null;
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "{? = call addRequest(?, ?, ?)}";
+			int id;
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.registerOutParameter(1, Types.INTEGER);
+			cs.setInt(2, request.getRequester().getEmployeeId());
+			cs.setDouble(3, request.getAmount());
+			cs.setString(4, request.getPurpose());
+			
+			cs.execute();
+			id = cs.getInt(1);
+			
+			sql = "SELECT * FROM request WHERE request_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				result = new Request();
+				
+				result.setRequestId(rs.getInt(1));
+				result.setState(new RequestState(RequestState.PENDING));
+				result.setOpenDate(rs.getDate(3));
+				result.setCloseDate(rs.getDate(4));
+				result.setAmount(rs.getDouble(5));
+				result.setPurpose(rs.getString(6));
+				result.setRequester(request.getRequester());
+				result.setManager(null);
+				result.setNote(rs.getString(9));
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 }
