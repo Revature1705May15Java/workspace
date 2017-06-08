@@ -4,11 +4,8 @@ $font-stack2: 'Montserrat',calibri,helvetica-neue,helvetica,arial,sans-serif
 $primary-color: #29BF12
 $secondary-color: #F21B3F
 $tertiary-color: #08BDBD
-//$tertiary-color: #08BDBD
 $quaternary-color: #FF9914
-//$secondary-color: #af5eb7
-//$primary-color: #4ca9cb
-//$secondary-color: #ff391e
+
 $primary-border-color: $secondary-color
 $secondary-border-color: #aaa
 $bg-color: #eeeeee
@@ -28,6 +25,7 @@ body
   background-color: $bg-color
   //font-family: $font-stack
   color: rgb(71, 76, 85)
+  overflow-x: hidden
 
 h1, h2, h3, h4
   font-family: $font-stack2
@@ -38,9 +36,6 @@ header
   top: 0
   left: 0
   width: 100%
-  //background-color: #ffffff
-  //border-bottom: 1px solid $secondary-border-color
-  //box-shadow: 0px 0px 10px -1px rgba(0,0,0,0.2)
   min-height: 7em
   max-height: 7em
   padding: 0
@@ -67,15 +62,8 @@ header
       list-style-type: none
       a
         margin-left: 2em
-        //font-size: small
         &:hover
           text-decoration: underline
-        &:last-child
-          //padding: .5em 1em
-          //background-color: $secondary-color
-          //border-radius: .2em
-          //text-transform: uppercase
-          //color: #fff
         li
           display: inline
 
@@ -125,7 +113,6 @@ footer
       background-color: #eee
       text-transform: uppercase
       font-size: small
-      //cursor: default
     tbody
       .text
         position: relative

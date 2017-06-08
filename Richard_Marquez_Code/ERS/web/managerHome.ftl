@@ -48,24 +48,47 @@
                     <td class="col-xs-4 firstName">${e.getFirstName()}</td>
                     <td class="col-xs-4 lastName">${e.getLastName()}</td>
                     <td class="col-xs-4 email">${e.getEmail()}</td>
+                    <td class="id" style="display:none;">${e.getId()}</td>
                 </tr>
             </#list>
-            <#--<#list pendingRequests as r>-->
-            <#--<tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">-->
-                <#--<td class="col-xs-1 state">${r.getState().name()}</td>-->
-                <#--<td class="col-xs-1 id">${r.getId()}</td>-->
-                <#--<td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>-->
-                <#--<td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>-->
-                <#--<td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>-->
-            <#--</tr>-->
-            <#--</#list>-->
             </tbody>
         </table>
     </div>
 
-
 </div>
 
+
+
+<div class="modal fade" id="viewRequestModal" tabindex="-1" role="dialog" aria-labelledby="viewRequestModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title id" id="viewRequestModalLabel">New Request</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <tr>
+                        <td>Requested</td>
+                        <td class="dateRequested"></td>
+                    </tr>
+                    <tr>
+                        <td>Employee Requesting</td>
+                        <td class="requester"></td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td class="amount"></td>
+                    </tr>
+                    <tr>
+                        <td>Purpose</td>
+                        <td class="purpose"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/managerHome.js"></script>
 <#include "./footer.ftl">
