@@ -31,8 +31,9 @@ function jqHandleEvent() {
     method: 'get',
     success: function(res, status, xhr) {
       console.log('success');
+      console.log(res);
       p2 = res;
-      $('#stuff').html(res.name + "'s interests include " + res.interests.join(', '));
+      $('#stuff').html(res.name + "makes $" + res.income + "his interests include " + res.interests.join(', '));
     },
     error: function(xhr, status) {
       console.log('YOUR INTERNET SUCKS! FIND A BETTER CONNECTION!');
