@@ -102,6 +102,58 @@
     </div>
 </div>
 
+
+
+
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="newUserModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title id" id="newUserModalLabel">New User</h4>
+            </div>
+            <form name="newUserForm" action="/NewUser" method="POST">
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <td>First Name</td>
+                            <td>
+                                <input class="form-control" required="required" type="text" name="firstName"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>
+                                <input class="form-control" required="required" type="text" name="lastName"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>
+                                <input class="form-control" required="required" type="email" name="email"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Is Manager</td>
+                            <td>
+                                <input type="checkbox" name="isManager" value="true"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <script src="js/managerHome.js"></script>
 <#include "./footer.ftl">
 

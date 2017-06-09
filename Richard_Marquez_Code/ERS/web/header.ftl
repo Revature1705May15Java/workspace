@@ -30,8 +30,8 @@
             <#if user.isManager()>
 
                 <#if pageTitle == "Manager Home">
-                    <a id="newEmployee" href="#">
-                        <li data-toggle="modal" data-target="#newEmployeeModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Add Employee</li>
+                    <a id="newUser" href="#">
+                        <li data-toggle="modal" data-target="#newUserModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Add Employee</li>
                     </a>
                 </#if>
 

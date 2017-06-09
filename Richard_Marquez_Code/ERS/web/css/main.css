@@ -107,13 +107,13 @@ footer {
       content: "";
       display: inline-block; }
 
-#viewRequestModal .modal-content, #newRequestModal .modal-content {
+#viewRequestModal .modal-content, #newRequestModal .modal-content, #newUserModal .modal-content {
   padding: 2em; }
-  #viewRequestModal .modal-content h4, #newRequestModal .modal-content h4 {
+  #viewRequestModal .modal-content h4, #newRequestModal .modal-content h4, #newUserModal .modal-content h4 {
     font-weight: bold; }
-  #viewRequestModal .modal-content table tr:first-child td, #newRequestModal .modal-content table tr:first-child td {
+  #viewRequestModal .modal-content table tr:first-child td, #newRequestModal .modal-content table tr:first-child td, #newUserModal .modal-content table tr:first-child td {
     border-top: none; }
-  #viewRequestModal .modal-content table tr td:first-child, #newRequestModal .modal-content table tr td:first-child {
+  #viewRequestModal .modal-content table tr td:first-child, #newRequestModal .modal-content table tr td:first-child, #newUserModal .modal-content table tr td:first-child {
     font-weight: bold; }
 
 table.tablesorter thead tr .header {

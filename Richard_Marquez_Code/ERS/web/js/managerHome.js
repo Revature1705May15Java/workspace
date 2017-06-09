@@ -28,5 +28,12 @@ function initTables() {
 
         $('#viewRequestModal .requestId').val(id);
     });
+
+    // employees table
+    $('#employeesTable tbody tr').click(function() {
+        var firstName = $('.firstName', this).html();
+        console.log(firstName);
+    });
+
 }
 

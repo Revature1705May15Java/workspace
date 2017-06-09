@@ -132,4 +132,13 @@
         <servlet-name>DenyRequestServlet</servlet-name>
         <url-pattern>/DenyRequest</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewUserServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.NewUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NewUserServlet</servlet-name>
+        <url-pattern>/NewUser</url-pattern>
+    </servlet-mapping>
 </web-app>

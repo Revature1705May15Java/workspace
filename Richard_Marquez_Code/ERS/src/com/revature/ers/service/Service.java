@@ -11,6 +11,7 @@ import com.revature.ers.util.PasswordStorage;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.security.*;
 
 public class Service {
 
@@ -54,13 +55,24 @@ public class Service {
             if (dao.addUser(email, hashedPassword, fName, lName, isManager)) {
                 newUser = dao.getUser(email);
 
-                Mailer.sendMail(email, "New Revature ERS account", "You successfully created an account.");
+                String emailSubject = "New Revature ERS account";
+                String emailBody = "Greetings, " + fName + " " + lName + "!\n\n" +
+                        "You have been successfully registered for a Revature reimbursement account.\n" +
+                        "Your temporary password is: " + password + "\n" +
+                        "Please log in NOW to update your password.\n\n" +
+                        "Many thanks,\nSuch regards,\nGood times,\nRevature ERS (May15Java)";
+                Mailer.sendMail(email, emailSubject, emailBody);
             }
         } catch (Exception e) {
             Logger.log(e.getStackTrace().toString());
         }
 
         return newUser;
+    }
+
+    public User addUser(String email, String fName, String lName, boolean isManager) {
+        String randomPass = randomString(8);
+        return addUser(email, randomPass, fName, lName, isManager);
     }
 
     public User updateUser(User user, String email, String password, String fName, String lName) {
@@ -155,5 +167,18 @@ public class Service {
         req.setDateResolved(LocalDate.now());
 
         dao.updateRequest(req);
+    }
+
+
+
+    static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    static SecureRandom rnd = new SecureRandom();
+
+    String randomString(int len){
+        StringBuilder sb = new StringBuilder(len);
+        for( int i = 0; i < len; i++ ) {
+            sb.append(AB.charAt(rnd.nextInt(AB.length())));
+        }
+        return sb.toString();
     }
 }
