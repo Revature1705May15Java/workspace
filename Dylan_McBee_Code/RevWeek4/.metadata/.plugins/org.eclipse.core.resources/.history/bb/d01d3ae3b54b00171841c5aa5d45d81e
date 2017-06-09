@@ -1,0 +1,2 @@
+// is mouse over ryu
+var isHover = false;

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Homework</title>
+<body>
+	<h1>Problem 1: Fibonacci</h1>
+	<br>
+	<input type="text" id="fib" />
+	<br>
+	<button id="calculate">Calculate</button>
+	<br>
+	<br>
+	<div id="fibAnswer">
+		
+	</div>
+	<br>
+	<br>
+	<h1>Problem 2: BubbleSort</h1>
+	<input type="text" id="num"/>
+	<br>
+	<br>
+	<button id="sort">Sort</button>
+	<div id = "bubsort"></div>
+	<br>
+	<br>
+	<h1>Problem 3: Reverse String</h1>
+	<input type= "text" id="iStr"/>
+	<br>
+	<br>
+	<button id="reverse">Reverse</button>
+	<br>
+	<div id = "r"></div>
+	<script src="js/jsHomework.js"></script>
+</body>
+
+</head>
+
+</html>

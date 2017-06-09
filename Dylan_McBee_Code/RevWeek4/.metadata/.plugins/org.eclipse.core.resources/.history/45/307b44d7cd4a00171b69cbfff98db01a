@@ -1,0 +1,3 @@
+var parags = document.getElementsByTagName("p");
+var pString = parags.join(" - ");
+document.getElementBy("display").innerHTML = parags[0].innerHTML;

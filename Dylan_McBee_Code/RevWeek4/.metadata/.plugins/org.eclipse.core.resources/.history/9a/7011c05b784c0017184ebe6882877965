@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AJAX JSON Demo</title>
+</head>
+<body>
+	<button id="myBtn">Click here!</button>
+	<div id="stuff"></div>
+
+	<script type="text/javascript">
+
+	var myPerson;
+
+	function handleEvent(){
+		var xhr = XMLHtpRequest();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				meme;
+
+				}
+			}
+		}
+  	</script>
+</body>
+</html>

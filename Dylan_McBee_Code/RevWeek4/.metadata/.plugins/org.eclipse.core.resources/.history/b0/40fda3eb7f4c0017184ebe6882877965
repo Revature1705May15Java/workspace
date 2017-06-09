@@ -1,0 +1,18 @@
+package com.ex.servlets;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+import com.ex.pojos.Person;
+
+/**
+ * Servlet implementation class AjaxJacksonObjectMapping
+ */
+@WebServlet("/getBetterJSON")
+public class AjaxJacksonObjectMapping extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+	
+	Person john = new Person("John", 32);
+
+}

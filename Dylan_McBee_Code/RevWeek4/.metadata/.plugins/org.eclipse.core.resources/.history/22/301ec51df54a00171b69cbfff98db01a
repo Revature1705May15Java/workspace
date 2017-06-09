@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Homework</title>
+
+<body>
+<h1>Enter Student Information</h1>
+	<br> Id:
+	<input type="text" id="tid" />
+	<br>
+
+
+
+<script src="js/jsHomework.js"></script>
+</body>
+
+</head>
+
+</html>

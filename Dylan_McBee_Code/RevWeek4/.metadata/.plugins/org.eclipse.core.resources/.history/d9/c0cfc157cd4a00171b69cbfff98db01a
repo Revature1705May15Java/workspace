@@ -1,0 +1,2 @@
+var parags = getElementsByTagName("p");
+var pString = parags.join(" - ")
