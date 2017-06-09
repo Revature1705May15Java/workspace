@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clock</title>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/clock.css">
+</head>
+<body>
+  <svg id="clock" width="400" height="400">
+    <circle cx="200", cy="200" r="190" stroke="black" stroke-width="10" fill="transparent"/>
+    <line id="hours" x1="200" y1="200" x2="" y2="" stroke="red" stroke-width="5"/>
+    <line id="minutes" x1="200" y1="200" x2="" y2="" stroke="green" stroke-width="3"/>
+    <line id="seconds" x1="200" y1="200" x2="" y2="" stroke="blue" stroke-width="1"/>
+  </svg>
+  <script src="./js/analog-clock.js"></script>
+</body>
+</html>

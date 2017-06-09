@@ -210,56 +210,69 @@ function Person(name, age) {
  
 let functions = [
   {
-    name: "fib",
+    name: 'fib',
+    prompts: ['enter a number'],
     inputs: ['number']
   },
   {
-    name: "bubbleSort",
+    name: 'bubbleSort',
+    prompts: ['enter an array of numbers (separated by spaces)'],
     inputs: ['array']
   },
   {
-    name: "reverseStr",
+    name: 'reverseStr',
+    prompts: ['enter a string'],
     inputs: ['string']
   },
   {
-    name: "factorial",
+    name: 'factorial',
+    prompts: ['enter a number'],
     inputs: ['number']
   },
   {
-    name: "substring",
+    name: 'substring',
+    prompts: ['enter a string', 'enter a number', 'enter a number'],
     inputs: ['string', 'number', 'number']
   },
   {
-    name: "isEven",
+    name: 'isEven',
+    prompts: ['enter a number'],
     inputs: ['number']
   },
   {
-    name: "isPalindrome",
+    name: 'isPalindrome',
+    prompts: ['enter a string'],
     inputs: ['string']
   },
   {
-    name: "printShape",
-    inputs: ['shape', 'number', 'character']
+    name: 'printShape',
+    prompts: ['enter Square, Triangle, or Diamond', 'enter a number', 'enter a single character'],
+    inputs: ['string', 'number', 'string']
   },
   {
-    name: "traverseObject",
-    inputs: ['', '', '']
+    name: 'traverseObject',
+    prompts: ['enter name-value pairs for an object ("name1": "value1", "name2": "value2")'],
+    inputs: ['object']
   },
   {
-    name: "deleteElement",
-    inputs: ['', '', '']
+    name: 'deleteElement',
+    prompts: ['enter an array of numbers (separated by spaces)'],
+    inputs: ['array']
   },
   {
-    name: "spliceElement",
-    inputs: ['', '', '']
+    name: 'spliceElement',
+    prompts: ['enter an array of numbers (separated by spaces)'],
+    inputs: ['array']
   },
   {
-    name: "Person",
-    inputs: ['', '', '']
+    name: 'Person',
+    prompts: ['enter a name', 'enter a number'],
+    inputs: ['string', 'number']
   },
   {
-    name: "getPerson",
-    inputs: ['', '', '']
+    name: 'getPerson',
+    prompts: ['enter a name', 'enter a number'],
+    inputs: ['string', 'number']
   }
 ];
 
@@ -276,35 +289,64 @@ NOTE: Part II will be done twice: once with Javascript and once with jQuery.
 	  Copy the index.html file and rename them to: indexJavascript.html and indexJQuery.html
 -----------------------------------------------------------------------------------
 */
+
 // 1. USA
 // Define function getUSA()
 // Find the html element that contains "USA".
 // Print that element's contents.
-function getUSA() {
-  
+function getUSA(useJQuery) { 
+  if (useJQuery) {
+
+  } else {
+    document.querySelectorAll('*').forEach((elem) => {
+      if (elem.innerHTML == 'USA') {
+        console.log(elem.innerHTML);
+      }
+    });
+  }
 }
 
 // 2. Sales
 // Define function getPeopleInSales()
 // Print the names of all the people in the sales department.
-function getPeopleInSales() {
+function getPeopleInSales(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    document.querySelectorAll('tr td').forEach((elem) => {
+      if (elem.innerHTML == 'Sales') {
+        console.log(elem.previousSibling.innerHTML);
+      }
+    });
+  }
 }
 
-/*3. Click Here
-Define function getAnchorChildren()
-Find all anchor elements with a <span> child.
-Print the contents of <span>*/
-function getAnchorChildren() {
+// 3. Click Here
+// Define function getAnchorChildren()
+// Find all anchor elements with a <span> child.
+// Print the contents of <span>
+function getAnchorChildren(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    document.querySelectorAll('a span').forEach((elem) => {
+      console.log(`contents: ${elem.innerHTML}`);
+    });
+  }
 }
 
 // 4. Hobbies
 // Define function getHobbies()
 // Find all checked options in the 'skills' select element.
 // Print the value and the contents.
-function getHobbies() {
+function getHobbies(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    document.querySelectorAll('select[name="skills"] :checked').forEach((elem) => {
+      console.log(`value: ${elem.value}, contents: ${elem.innerHTML}`);
+    });
+  }
 }
 
 // 5. Custom Attribute
@@ -312,8 +354,14 @@ function getHobbies() {
 // Find all elements with "data-customAttr" attribute
 // Print the value of the attribute.
 // Print the element that has the attribute.
-function getCustomAttribute() {
+function getCustomAttribute(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    document.querySelectorAll('[data-customAttr]').forEach((elem) => {
+      console.log(`data-customAttr: ${elem.getAttribute('data-customAttr')}, element: ${elem}`);
+    });
+  }
 }
 
 /*6. Sum Event
@@ -326,15 +374,42 @@ Define onchange event handler.
 Add <input> element values.
 Put the sum in the <span> element.
 If values cannot be added, put "Cannot add" in the <span> element*/
+function setupSumEvent(useJQuery) {
+  if (useJQuery) {
 
-// i think this is a situation where the <output> element is a better option
+  } else {
+    let in1 = document.getElementById('num1');
+    let in2 = document.getElementById('num2');
+    let out = document.getElementById('sum');
+    document.querySelectorAll('.nums').forEach((elem) => {
+      elem.addEventListener('change', function(){
+        if (typeof(+in1.value) == 'number' && typeof(+in2.value) == 'number') {
+          out.innerHTML = (+in1.value) + (+in2.value);
+        } else {
+          out.innerHTML = 'Cannot add';
+        }
+      });
+    });
+  }
+}
+// I think this is a situation where the <output> element is a better option
 
 // 7. Skills Event
 // NOTE: Write unobtrusive Javascript
 // When user selects a skill, create an alert with a message similar to:
 // 	"Are you sure CSS is one of your skills?"
 // NOTE: no alert should appear when user deselects a skill.
+function setupSkillsEvent(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    document.querySelectorAll('.skills option').forEach((elem) => {
+      elem.addEventListener('change', function() {
+
+      }, false);
+    })
+  }
+}
 
 // 8. Favorite Color Event
 // NOTE: Write unobtrusive Javascript
@@ -343,15 +418,25 @@ If values cannot be added, put "Cannot add" in the <span> element*/
 // 	"So you like green more than blue now?"
 // In this example, green is the new value and blue is the old value.
 // Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+function setupFavoriteColorEvent(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+
+  }
+}
 
 // 9. Show/Hide Event
 // NOTE: Write unobtrusive Javascript
 // When user hovers over an employees name:
 // 	Hide the name if shown.
 // 	Show the name if hidden.
-function toggleVisibility() {
-  
+function setupShowHide(useJQuery) {
+  if (useJQuery) {
+
+  } else {
+    
+  }
 }
 
 // 10. Current Time
@@ -359,19 +444,37 @@ function toggleVisibility() {
 // 	<h5 id="currentTime"></h5>
 // Show the current time in this element in this format: 9:05:23 AM
 // The time should be accurate to the second without having to reload the page.
+function setupCurrentTime(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    
+  }
+}
 
 // 11. Delay
 // Regarding this element:
 // 	<p id="helloWorld">Hello, World!</p>
 // Three seconds after a user clicks on this element, change the text to a random color.
+function setupDelay(useJQuery) {
+  if (useJQuery) {
 
+  } else {
+    
+  }
+}
 
 // 12. Walk the DOM
 // Define function walkTheDOM(node, func)
 // This function should traverse every node in the DOM. Use recursion.
 // On each node, call func(node).
+function DOMWalk(useJQuery) {
+  if (useJQuery) {
+
+  } else {
+    
+  }
+}
 function walkTheDOM(node, func) {
 
 }
-

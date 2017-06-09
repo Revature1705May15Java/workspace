@@ -41,16 +41,13 @@
       <p class="bubblingEx" id="p" onclick="alert('p')">P</p>
     </div>
   </form>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
   <script>
-    document.getElementById('form').forEach(function(element) {
-      element.addEventListener('click', alert(element.innerHTML), true);
-    });
-    document.getElementById('div').forEach(function(element) {
-      element.addEventListener('click', alert(element.innerHTML), true);
-    });
-    document.getElementById('p').forEach(function(element) {
-      element.addEventListener('click', alert(element.innerHTML), true);
-    });
+    document.getElementById('form').addEventListener('click', alert(element.innerHTML), true);
+    document.getElementById('div').addEventListener('click', alert(element.innerHTML), true);
+    document.getElementById('p').addEventListener('click', alert(element.innerHTML), true);
   </script>
 
   <script src="./js/example.js"></script>

@@ -5,18 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
   <script src="./js/homework.js"></script>
 </head>
 <body>
-  <form id="testForm">
-    <select id="selector" required></select>
+  <form id="testForm" class="keep">
+    <label for="selector" class="keep">Pick a function to test</label>
+    <select id="selector" required class="keep"></select>
+
     <button type="button" id="run"></button>
   </form>
+
   <script>
-    functions.forEach((func) => {
-      
+    functions.forEach((func, i) => {
+      $('#selector').append(`<option class="keep" value="${i}">${i} - ${func.name}()</option>`);
     });
-    document.getElementById
+    $('#selector').on('change', function() {
+
+    })
   </script>
 </body>
 </html>
