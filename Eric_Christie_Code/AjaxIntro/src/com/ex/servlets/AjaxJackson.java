@@ -35,7 +35,7 @@ public class AjaxJackson extends HttpServlet {
 	  
 	  ObjectMapper mapper = new ObjectMapper();
 	  String json = mapper.writeValueAsString(guy);
-	  System.out.println(json);
+//	  System.out.println(json);
 	  
 	  response.setContentType("application/json");
 	  PrintWriter out = response.getWriter();
