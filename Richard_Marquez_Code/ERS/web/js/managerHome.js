@@ -35,8 +35,16 @@ function initTables() {
 
     // employees table
     $('#employeesTable tbody tr').click(function() {
-        var firstName = $('.firstName', this).html();
-        console.log(firstName);
+        var email = $('.email', this).html();
+
+        $('#pendingRequestsTable tbody tr').hide();
+
+        $('#pendingRequestsTable tbody tr').each(function() {
+            var reqEmail = $('.requester', this).html();
+            if (reqEmail === email) {
+                $(this).show();
+            }
+        });
     });
 
 }
