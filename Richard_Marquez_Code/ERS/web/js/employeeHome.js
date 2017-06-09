@@ -4,8 +4,12 @@ initTables();
 function initTables() {
     $.tablesorter.defaults.sortList = [[1,1]];
 
-    $('#pendingRequestsTable').tablesorter( {sortList: [[1,1]]} );
-    $('#resolvedRequestsTable').tablesorter( {sortList: [[5,1]]} );
+    if ($('#resolvedRequestsTable tbody tr').length > 0) {
+        $('#resolvedRequestsTable').tablesorter( {sortList: [[5,1]]} );
+    }
+    if ($('#pendingRequestsTable tbody tr').length > 0) {
+        $('#pendingRequestsTable').tablesorter( {sortList: [[1,1]]} );
+    }
 
     $('.request-table-container table tbody tr').click(function() {
         var state = $('.state', this).html();

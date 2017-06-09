@@ -3,8 +3,12 @@ initTables();
 function initTables() {
     // $.tablesorter.defaults.sortList = [[0,0]];
 
-    $('#employeesTable').tablesorter( {sortList: [[1,0]]} );
-    $('#pendingRequestsTable').tablesorter( {sortList: [[0,0]]} );
+    if ($('#employeesTable tbody tr').length > 0) {
+        $('#employeesTable').tablesorter({sortList: [[1, 0]]});
+    }
+    if ($('#pendingRequestsTable tbody tr').length > 0) {
+        $('#pendingRequestsTable').tablesorter({sortList: [[0, 0]]});
+    }
 
     $('.request-table-container table tbody tr').click(function() {
         var state = $('.state', this).html();
