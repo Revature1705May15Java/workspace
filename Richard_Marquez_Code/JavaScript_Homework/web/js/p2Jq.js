@@ -1,3 +1,4 @@
+
 //     -----------------------------------------------------------------------------------
 //         PART II
 //     Part II will focus on Javascript's ability to manipulate the DOM.
@@ -13,15 +14,13 @@
 //     Find the html element that contains "USA".
 //         Print that element's contents.
 function getUSA() {
-    var elems = document.body.getElementsByTagName("*");
-    for (let i in elems) {
-        if (elems[i].textContent === 'USA') {
-            console.log(elems[i]);
-            break;
+    $('*:contains("USA")').each(function() {
+        if (this.innerHTML === 'USA') {
+            console.log($(this).html());
         }
-    }
+    });
 }
-// getUSA();
+getUSA();
 
 
 
@@ -29,18 +28,16 @@ function getUSA() {
 //     Define function getPeopleInSales()
 //     Print the names of all the people in the sales department.
 function getPeopleInSales() {
-    var table = document.getElementById('salesTable');
-    var rows = table.getElementsByTagName('tr');
-    for (let row of rows) {
-        var cols = row.childNodes;
+    $('#salesTable tr').each(function() {
+        var cols = this.childNodes;
         var name = cols[1].textContent;
         var dept = cols[3].textContent;
         if (dept === 'Sales') {
             console.log(name + ' works in Sales');
         }
-    }
+    });
 }
-// getPeopleInSales();
+getPeopleInSales();
 
 
 
@@ -49,17 +46,11 @@ function getPeopleInSales() {
 //     Find all anchor elements with a <span> child.
 //         Print the contents of <span>
 function getAnchorChildren() {
-    var anchors = document.getElementsByTagName('a');
-    for (let a of anchors) {
-        let spans = a.getElementsByTagName('span');
-        if (spans.length > 0) {
-            for (let s of spans) {
-                console.log(s.textContent);
-            }
-        }
-    }
+    $('a').children('span').each(function() {
+        console.log($(this).html());
+    });
 }
-// getAnchorChildren();
+getAnchorChildren();
 
 
 
@@ -68,11 +59,9 @@ function getAnchorChildren() {
 //     Find all checked options in the 'skills' select element.
 //         Print the value and the contents.
 function getHobbies() {
-    var skills = document.getElementsByName('skills')[0];
-    console.log(skills.value);
+    console.log($('[name="skills"]')[0].value);
 }
-// getHobbies();
-
+getHobbies();
 
 
 
@@ -82,15 +71,12 @@ function getHobbies() {
 //     Print the value of the attribute.
 //         Print the element that has the attribute.
 function getCustomAttribute() {
-    var all = document.getElementsByTagName('*');
-
-    for (let e of all) {
-        if (e.hasAttribute('data-customAttr')) {
-            console.log(e.getAttribute('data-customAttr'));
+    $('*[data-customAttr]').each(function() {
+        console.log(this.getAttribute('data-customAttr'));
         }
-    }
+    );
 }
-// getCustomAttribute();
+getCustomAttribute();
 
 
 
@@ -105,35 +91,30 @@ function getCustomAttribute() {
 //         Add <input> element values.
 //         Put the sum in the <span> element.
 //         If values cannot be added, put "Cannot add" in the <span> element
-var num1 = document.getElementById('num1');
-var num2 = document.getElementById('num2');
-var sum = document.getElementById('sum');
-num1.value = 'NUM1';
-num2.value = 'NUM2';
-num1.onchange = updateSum;
-num2.onchange = updateSum;
+
+$('#num1').on('change', updateSum);
+$('#num2').on('change', updateSum);
+$('#num1').val('NUM1');
+$('#num2').val('NUM2');
+
 function updateSum() {
-    var result = parseInt(num1.value) + parseInt(num2.value);
+    var result = parseInt($('#num1').val()) + parseInt($('#num2').val());
     if (Number.isNaN(result)) {
-        sum.innerHTML = 'Cannot add';
+        $('#sum').html('Cannot add');
     } else {
-        sum.innerHTML = result;
+        $('#sum').html(result);
     }
 }
-
-
-
 
 //     7. Skills Event
 //     NOTE: Write unobtrusive Javascript
 //     When user selects a skill, create an alert with a message similar to:
 //         "Are you sure CSS is one of your skills?"
 //     NOTE: no alert should appear when user deselects a skill.
-var skillNode = document.getElementsByName('skills')[0];
-skillNode.onchange = function() {
-    confirm('Are you sure ' + skillNode.value + ' is one of your skills?');
-};
 
+$('[name="skills"]').on('change', function() {
+    confirm('Are you sure ' + this.value + ' is one of your skills?');
+});
 
 
 
@@ -144,35 +125,21 @@ skillNode.onchange = function() {
 //         "So you like green more than blue now?"
 //     In this example, green is the new value and blue is the old value.
 //         Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
-var colorInputs = document.getElementsByName('favoriteColor');
 var newColor = 'green';
 var oldColor = 'blue';
 function resetColors() {
-    for (let ci of colorInputs) {
-        console.log('asdf');
-        ci.style.backgroundColor = newColor;
-        document.getElementsByTagName('body')[0] .style.backgroundColor = newColor;
-    }
+    $('[name="favoriteColor"]').css('background-color', newColor);
+    $('body').css('background-color', newColor);
 }
+$('[name="favoriteColor"]').click(function() {
+    oldColor = newColor;
+    newColor = $('input[name="favoriteColor"]:checked').val();
 
-for (let ci of colorInputs) {
-    ci.onclick = function() {
-        oldColor = newColor;
-        newColor = getFavoriteColor();
-        alert('So you like ' + newColor + ' more than ' +
-            oldColor + ' now?');
+    alert('So you like ' + newColor + ' more than ' +
+        oldColor + ' now?');
 
-        resetColors();
-    };
-}
-function getFavoriteColor() {
-    for (let ci of colorInputs) {
-        if (ci.checked) {
-            return ci.value;
-        }
-    }
-}
-
+    resetColors();
+});
 
 
 
@@ -181,15 +148,11 @@ function getFavoriteColor() {
 //     When user hovers over an employees name:
 //         Hide the name if shown.
 //         Show the name if hidden.
-var empNames = document.getElementsByClassName('empName');
-for (let e of empNames) {
-    e.onmouseover = function() {
-        e.style.display = 'none';
-    };
-    e.onmouseout = function() {
-        e.style.display = 'block';
-    };
-}
+$('.empName').mouseover(function() {
+    $(this).css('display', 'none');
+}).mouseout(function() {
+    $(this).css('display', 'block');
+});
 
 
 
@@ -198,6 +161,7 @@ for (let e of empNames) {
 //         <h5 id="currentTime"></h5>
 //         Show the current time in this element in this format: 9:05:23 AM
 //     The time should be accurate to the second without having to reload the page.
+
 setInterval(function() {
     var today = new Date();
     var hours = today.getHours();
@@ -208,9 +172,7 @@ setInterval(function() {
     }
 
     var dateStr = hours + ":" + today.getMinutes() + ":" + today.getSeconds() + period;
-    document.getElementById('currentTime').innerHTML = dateStr;
-
-
+    $('#currentTime').html(dateStr);
 }, 500);
 
 
@@ -219,13 +181,11 @@ setInterval(function() {
 //     Regarding this element:
 //         <p id="helloWorld">Hello, World!</p>
 //     Three seconds after a user clicks on this element, change the text to a random color.
-var helloElem = document.getElementById('helloWorld');
-helloElem.onclick = function() {
+$('#helloWorld').click(function() {
     setTimeout(function() {
-        helloElem.style.color = getRandomColor();
+        $('#helloWorld').css('color', getRandomColor());
     }, 3000);
-};
-
+});
 
 
 
@@ -236,12 +196,11 @@ helloElem.onclick = function() {
 function walkTheDOM(node, func) {
     func(node);
 
-    var children = node.childNodes;
-    for (let c of children) {
-        walkTheDOM(c, func);
-    }
+    var children = node.children().each(function() {
+        walkTheDOM($(this), func);
+    });
 }
-// walkTheDOM(document, function(node) { console.log(node); } );
+walkTheDOM($(document), function(node) { console.log(node); } );
 
 
 

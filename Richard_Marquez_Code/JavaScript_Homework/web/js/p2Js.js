@@ -149,7 +149,6 @@ var newColor = 'green';
 var oldColor = 'blue';
 function resetColors() {
     for (let ci of colorInputs) {
-        console.log('asdf');
         ci.style.backgroundColor = newColor;
         document.getElementsByTagName('body')[0] .style.backgroundColor = newColor;
     }
