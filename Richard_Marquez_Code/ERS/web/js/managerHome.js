@@ -6,9 +6,6 @@ function initTables() {
     $('#employeesTable').tablesorter( {sortList: [[1,0]]} );
     $('#pendingRequestsTable').tablesorter( {sortList: [[0,0]]} );
 
-
-
-
     $('.request-table-container table tbody tr').click(function() {
         var state = $('.state', this).html();
         var id = $('.id', this).html();

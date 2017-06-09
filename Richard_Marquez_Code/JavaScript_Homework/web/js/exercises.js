@@ -48,7 +48,6 @@ document.getElementById('add').onclick = add;
 // false is bubbling vs capture
 // document.getElementById('add').addEventListener('click', add, false);
 
-Event.stop
 document.getElementById('myForm').addEventListener('click', function() {
     alert('formm');
 }, false);
