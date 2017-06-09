@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PokeMans</title>
+<!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1>Using RESTful PokEmAns API</h1>
+		</div>
+
+		<div class="well">
+			<input type="text" id="pokemonId" placeholder="EnterID"> <input
+				type="submit" value="Get Pokemon Info" id="pokemonSubmit"
+				class="btn btn-info">
+		</div>
+		
+		<div class="well">
+			<div class="text-center">
+				<!-- 				api will return poke info -->
+				<img id="pokemonImg" alt="" src="" >
+				<h3 id="pokemonName"></h3>
+			</div>
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="js/pokemon.js"></script>
+</body>
+</html>

@@ -4,8 +4,9 @@ INDEX VERSION 1.3+C:\Users\User\my_git_repos\1705May15Java\Arthur_Faugue_Code\We
 3859138765.index
 1421349164.index
 269629623.index
-1791233226.index
 1192423466.index
+1791233226.index
 2887851957.index
-1692822544.index
 3397250565.index
+1692822544.index
+2581341256.index

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h3>Problem 1: Fibonacci</h3>
+		<div class="form-group">
+			<input type="number" placeholder="Enter Number"
+				class="form-control input-lg" id="fibNum">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doFib">
+		</div>
+		<p>Equals:</p>
+		<p id="fibDisplay"></p>
+	</div>
+
+	<div class="container">
+		<h3>Problem 2: Bubble Sort</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Use space to separate numbers"
+				class="form-control input-lg" id="bubNum">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doBub">
+		</div>
+		<p>Equals:</p>
+		<p id="bubDisplay"></p>
+	</div>
+
+	<div class="container">
+		<h3>Problem 3: Reverse String</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Enter String"
+				class="form-control input-lg" id="strString">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doStr">
+		</div>
+		<p>Equals:</p>
+		<p id="strDisplay"></p>
+	</div>
+
+	<div class="container">
+		<h3>Problem 4: N Factorial</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Enter Number"
+				class="form-control input-lg" id="facNum">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doFact">
+		</div>
+		<p>Equals:</p>
+		<p id="facDisplay"></p>
+	</div>
+
+	<div class="container">
+		<h3>Problem 5: Substring</h3>
+		<div class="row-fluid">
+			<input type="text" placeholder="Enter String"
+				class="form-control input-lg" id="subStr" /> 
+			<input type="text" placeholder="Enter Length" 
+				class="form-control input-lg" id="subLen" />
+			<input type="text" placeholder="Enter Offset"
+				class="form-control input-lg" id="subOff" />
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doSubs">
+		</div>
+		<p>Equals:</p>
+		<p id="offDisplay"></p>
+	</div>
+	
+	<div class="container">
+		<h3>Problem 6: Is Even Number?</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Enter Number"
+				class="form-control input-lg" id="evnNum">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doEvn">
+		</div>
+		<p>Equals:</p>
+		<p id="evnDisplay"></p>
+	</div>
+	
+	<div class="container">
+		<h3>Problem 7: Is Palindrome?</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Enter Number"
+				class="form-control input-lg" id="palSrt">
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doPali">
+		</div>
+		<p>Equals:</p>
+		<p id="palDisplay"></p>
+	</div>
+	
+	<div class="container">
+		<h3>Problem 7: Print Shape</h3>
+		<div class="form-group">
+			<input type="text" placeholder="Enter Shape 'Triangle' 'Square' Diamond"
+				class="form-control input-lg" id="strSha" /> 
+			<input type="text" placeholder="Enter Height" 
+				class="form-control input-lg" id="shaHei" />
+			<input type="text" placeholder="Enter Character"
+				class="form-control input-lg" id="shaChar" />
+		</div>
+		<div class="col-xs-6 col-sm-6 col-md-6">
+			<input type="submit" class="btn btn-lg btn-success btn-block"
+				value="Enter" id="doShape">
+		</div>
+		<p>Equals:</p>
+		<p id="shaDisplay"></p>
+	</div>
+
+	<script type="text/javascript" src="js/jsHomework.js"></script>
+</body>
+</html>

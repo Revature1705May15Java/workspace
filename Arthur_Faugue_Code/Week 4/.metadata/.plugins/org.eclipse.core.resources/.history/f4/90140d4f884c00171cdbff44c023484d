@@ -1,0 +1,34 @@
+var pokemonVar;
+
+function getPokemon(){
+	var pokemonId = document.getElementById("pokemonId").value;
+	console.log("Getting Pokemon Id: " + pokemonId);
+	
+	//step 1 open XHR
+	var xhttp = new XMLHttpRequest();
+	
+	//step 2 write function to handle the readystatechange of the response
+	xhttp.onreadystatechange = function(){
+		if(xhttp.readyState==4 && xhttp.status==300){
+			var pokemon = JSON.parse(xhttp.responseText);
+			setValues(pokemon);
+			pokemonVar = pokemon;
+		}
+	};
+	
+	//step 3 open xhttp
+	xhttp.open("GET", "http://pokeapi.co/api/v2/pokemon/25/"+pokemonId, true);
+	
+	//step 4 send xhttp
+	xhttp.send; //post our data w. get method
+}
+
+function setValues(pokemon){
+	document.getElementById("pokemonName").innerHTML = pokemon.name;
+	var pokeImg = document.getElementById("pokeImg");
+}
+
+window.onload = function (){
+	document.getElementById("pokemonSubmit").addEventListener("click", getPokemon);
+	//bubble v capture boolean = undefined = falsy = bubble
+}

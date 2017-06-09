@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajax with JQuery and Jackson</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+	<button id="myBtn">Cluck Here</button>
+	<div id="stuff"></div>
+
+	<script type="text/javascript">
+	function handleEvent(){
+		$.ajax({
+			url: "getBetterJSON",
+			method: "get",
+			success: function(result, status, xhr){
+				console.log("Success");
+// 				document.getElementById("stuff").innerHTML = result.name + " " + result.age;
+				$('#stuff').html(result.name + " " + result.age);
+			},
+
+			error: function(xhr, status){
+				console.log("Error");
+			},
+			complete: function(xhr, status){
+				console.log("Complete");
+			},
+		})
+
+		
+	}
+	$('myBtn').on('click', handleEvent);
+// 	document.getElementById("myBtn").addEventListener("click", handleEvent, false);
+	</script>
+
+</body>
+</html>

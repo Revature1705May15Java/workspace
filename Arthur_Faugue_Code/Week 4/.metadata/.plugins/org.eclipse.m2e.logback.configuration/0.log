@@ -2,3 +2,10 @@
 '
 2017-06-06 11:13:07,088 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2017-06-06 19:19:40,319 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-07 18:53:09,912 [Worker-13] WARN  org.eclipse.jgit.util.FS_Win32 - Exception caught during execution of command '[bash, --login, -c, which git]' in 'C:\Users\User', return code '1', error message 'which: git: unknown command
+'
+2017-06-07 19:12:19,971 [Worker-0] WARN  org.eclipse.jgit.util.FS_Win32 - Exception caught during execution of command '[bash, --login, -c, which git]' in 'C:\Users\User', return code '1', error message 'which: git: unknown command
+'
+2017-06-07 22:11:38,572 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-08 10:53:29,662 [Worker-2] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-08 21:06:32,266 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null

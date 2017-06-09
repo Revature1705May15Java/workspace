@@ -212,12 +212,26 @@ function printShape(shape, height, character){
 		}
 		return "Look at Console";
 	}else if(shape == "Diamond"){
-		var prnt = [];
-		for(i=0;i<height;i++){
-			prnt.push(character);
-			console.log(prnt);
-		}
-		return "Look at Console";
+		for (var i = 1; i < 10; i += 2) {
+	      for (var j = 0; j < height - i / 2; j++)
+	        document.writeln("&nbsp;");
+
+	      for (var j = 0; j < i; j++)
+	        document.write(character);
+
+	      document.write("<br>");
+	    }
+
+	    for (var i = 7; i > 0; i -= 2) {
+	      for (var j = 0; j < height - i / 2; j++)
+	        document.writeln("&nbsp;");
+
+	      for (var j = 0; j < i; j++)
+	        document.write(character);
+
+	      document.write("<br>");
+	    }
+
 	}else{
 		console.log("Not a valid choice!")
 	}
@@ -246,9 +260,25 @@ function traverseObject(someObj){
 	}
 }
 function doObj(){
+	function makePerson(name, age, address){
+		this.Name = name;
+		this.Age = age;
+		this.Address = address;
+	}
 	var display = document.getElementById("objDisplay");
-	var input = document.getElementById("objTxt").value;
-	display.innerHTML = isPalindrome(input);
+	var input1 = document.getElementById("objTxt1").value;
+	var input2 = document.getElementById("objTxt2").value;
+	var input3 = document.getElementById("objTxt3").value;
+	var person = new makePerson(input1, input2, input3);
+	var x = 0;
+	var i;
+	var str;
+	var keys = Object.keys(person);
+	for(i in person){
+		str += keys[x] + " " + person[i] + " ";
+		x++;
+	}
+	display.innerHTML = str;
 }
 document.getElementById("doObj").addEventListener("click", doObj, false);
 
@@ -353,12 +383,11 @@ document.getElementById("doPer1").addEventListener("click", doPer1, false);
 //Define function getUSA()
 //Find the html element that contains "USA".
 //Print that element's contents.
-//  
-
-
-
-
-
+function getUSA(){
+	var usa = document.querySelector('[data-customAttr="USA"]').innerHTML;
+	console.log(usa);
+	return usa;
+}
 
 
 
@@ -367,14 +396,24 @@ document.getElementById("doPer1").addEventListener("click", doPer1, false);
 //2. Sales
 //Define function getPeopleInSales()
 //Print the names of all the people in the sales department.
-//  
-
-
-
-
-
-
-
+function getPeopleInSales(){
+	var x = document.getElementsByTagName("td");
+	var i;
+	var arr = new Array;
+	for(i in x){
+		arr.push(x[i].innerHTML);
+	}
+	var arr2 = new Array;
+	var y = 0;
+	for(y; y<= arr.length;y++){
+		var temp = y+1;
+		if(arr[temp]=="Sales"){
+			console.log(arr[y]);
+			arr2.push(arr[y]);
+		}
+	}
+	return arr2;
+} 
 
 
 
@@ -382,7 +421,7 @@ document.getElementById("doPer1").addEventListener("click", doPer1, false);
 //Define function getAnchorChildren()
 //Find all anchor elements with a <span> child.
 //Print the contents of <span>
-//  
+
 
 
 
@@ -397,10 +436,11 @@ document.getElementById("doPer1").addEventListener("click", doPer1, false);
 //Define function getHobbies()
 //Find all checked options in the 'skills' select element.
 //Print the value and the contents.
-//  
-
-
-
+function getHobbies(){
+	var sel = document.getElementsByName("skills");
+	var i = sel.options[sel.selectedIndex].text;
+	console.log(select);
+}
 
 
 
@@ -495,11 +535,11 @@ document.getElementById("doPer1").addEventListener("click", doPer1, false);
 //	<h5 id="currentTime"></h5>
 //Show the current time in this element in this format: 9:05:23 AM
 //The time should be accurate to the second without having to reload the page.
-
-
-
-
-
+function showCurrentTime(){
+	var date = new Date();
+	document.getElementById("currentTime").innerHTML = date.getHours() + ":" +date.getMinutes() + ":" + date.getSeconds();
+}
+document.addEventListener("mouseenter", showCurrentTime, false);
 
 
 

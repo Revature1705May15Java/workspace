@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy groceries</h2>
+		
+		<ul>
+			<li id="one" class="hot">Shrimp</li>
+			<li id="two" class="hot">Almond Nuts</li>
+			<li id="three" class="hot">Honey</li>
+			<li id="four" class="hot">Pancake Mix</li>
+		</ul>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous"></script>
+</body>
+</html>
