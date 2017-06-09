@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Simple AJAX Demo</title>
+</head>
+<body>
+
+	<button id = "myBtn"> Click here!</button>
+
+	<div id = "stuff"></div>
+
+	<script type = "text/javascript">
+	//get text from servlet!
+	function getText(){
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4 && xhr.status==200){
+				document.getElementById("stuff").innerHTML = xhr.responseText;
+			}
+		}
+		
+		xhr.open("GET", "getText", true);
+		xhr.send();
+}
+	
+	document.getElementById("myBtn").addEventListener("click", getText, false);
+
+</script>
+
+</body>
+</html>

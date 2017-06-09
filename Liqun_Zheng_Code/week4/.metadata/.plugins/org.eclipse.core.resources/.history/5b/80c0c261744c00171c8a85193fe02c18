@@ -1,0 +1,15 @@
+package com.ex.servlets;
+
+import java.io.PrintWriter;
+
+public class AJAXGetTextServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
+		IOException, ServletException{
+		PrintWriter out = resp.getWriter();
+		out.write("Hello, World");
+	}
+	
+	
+}

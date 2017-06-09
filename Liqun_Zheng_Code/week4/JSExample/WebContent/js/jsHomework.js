@@ -222,20 +222,78 @@ document.getElementById("doPalindrome").addEventListener("click", doPalindrome, 
 // ***
 //  *
 
+function printShape(shape, height, character){
+	
+	
+	if(shape == 'Squre'){
+		for (var i = 0; i < height; i++) {
+		     var output = "";
+		     for (var j = 0; j < height; j++) {
+		         output += character;
+		     }
+		     console.log(output);
+		 }
+	}
+	if(shape == 'Triangle'){
+		for (var i = 1; i < height+1; i++) {
+		     var output = "";
+		     for (var j = 0; j < i; j++) {
+		         output += character;
+		     }
+		     console.log(output);
+		 }
+	}
+	var x = 1;
+	var p = height-2;
+	if(shape == 'Diamond'){
+		for (var i = height/2; i >= 1; i--) {
+		     var output = "";
+		     for (var j = i; j >= 1; j--) {
+		         output += ' ';
+		     }
+		     
+		     for(var k = 0; k<x; k++){
+		    	 output+= character;
+		     }
+		     x+=2;
+		     console.log(output);
+		 }
+		var h = '';
+		for(var y = 0; y< height; y++){
+			h+=character;
+			
+		}
+		console.log(h);
+		
+		
+		for (var o = 1; o < (height/2); o++) {
+		     var bot = "";
+		     for (var n = 0; n < o; n++) {
+		         bot += ' ';
+		     }
 
+		     
+		     for(var u = p; u>0; u--){
+		    	 bot+= character;
+		     }
+		     p-=2;
+		     console.log(bot);
+		 }
+	}
+}
 
+function doPrintShape(){
+	var display = document.getElementById("printShapeDisplay");
+	var shape = document.getElementById("shape").value;
+	var height = document.getElementById("height").value;
+	var char = document.getElementById("char").value;;
+	
+	
+	
+	display.innerHTML = printShape(shape,height,char);
+}
 
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById("doPrintShape").addEventListener("click", doPrintShape, false);
 
 //9. Object literal
 //Define function traverseObject(someObj)
@@ -244,24 +302,27 @@ function traverseObject(someObj){
   var x = 0;
   var i;
   var keys = Object.keys(someObj);
+  var str;
   for(i in someObj){
-      console.log(keys[x] + " " + someObj[i]);
+      str+=(" " + keys[x] + " " + someObj[i]);
       x++;
   }
+  return str;
 }
 
 
 
-//function doTraverse(){
-//	var display = document.getElementById("traverseDisplay");
-//	var input = document.getElementById("traverse").value;
-//	var inp = input.split(',');
-//	var p[inp[0]]=inp[1];
-//	
-//	
-//	display.innerHTML = traverseObject(p);
-//}
-//document.getElementById("doTraverse").addEventListener("click", doTraverse, false);
+function doTraverse(){
+	var display = document.getElementById("traverseDisplay");
+	var name = document.getElementById("name").value;
+	var age = document.getElementById("age").value;
+	var obj = getPerson(name,age);
+	
+	
+	
+	display.innerHTML = traverseObject(obj);
+}
+document.getElementById("doTraverse").addEventListener("click", doTraverse, false);
 //10. Delete Element
 //Define function deleteElement(someArr)
 //Print length
@@ -269,10 +330,22 @@ function traverseObject(someObj){
 //Print length
 //The lengths should be the same.
 function deleteElement(someArr){
-  console.log("Array Length = " + someArr.length);
+	var str='';
+  str+='Array Length = ' + someArr.length;
   delete someArr[2];
-  console.log("Array Length = " + someArr.length)
+  str+=('. <br> Third element deleted. Array Length = ' + someArr.length)
+  
+  return str;
 }
+function doDeleteElement(){
+	var display = document.getElementById("deleteElementDisplay");
+	var deleteEl = document.getElementById("deleteElement").value;
+	
+	display.innerHTML = deleteElement(deleteEl);
+}
+document.getElementById("doDeleteElement").addEventListener("click", doDeleteElement, false);
+
+
 //11. Splice Element
 //Define function spliceElement(someArr)
 //Print length
@@ -280,10 +353,21 @@ function deleteElement(someArr){
 //Print length
 //The lengths should be one less than the original length.
 function spliceElement(someArr){
-  console.log("Array Length = " + someArr.length);
+	var str='';
+  str+=("Array Length = " + someArr.length);
   someArr.splice(2,1);
-  console.log("Array Length = " + someArr.length)
+  str+=(". <br> Third element deleted. Array Length = " + someArr.length);
+  return str;
 }
+
+
+function doSpliceElement(){
+	var display = document.getElementById("spliceElementDisplay");
+	var spliceEle = document.getElementById("spliceElement").value;
+	var input = spliceEle.split(',');
+	display.innerHTML = spliceElement(input);
+}
+document.getElementById("doSpliceElement").addEventListener("click", doSpliceElement, false);
 //12. Defining an object using a constructor
 //Define a function Person(name, age)
 //The following line should set a Person object to the variable john:
@@ -292,6 +376,19 @@ function Person(name, age){
   this.Name = name;
   this.Age = age;
 }
+
+function doPerson(){
+	var display = document.getElementById("personDisplay");
+	var name = document.getElementById("name1").value;
+	var age = document.getElementById("age1").value;
+	
+	var per = new Person(name,age);
+	
+	
+	display.innerHTML = traverseObject(per);
+}
+document.getElementById("doPerson").addEventListener("click", doPerson, false);
+
 //13. Defining an object using an object literal
 //Define function getPerson(name, age)
 //The following line should set a Person object to the variable john:
@@ -303,7 +400,17 @@ function getPerson(name, age){
   };
   return temp;
 }
-
+function doGetPerson(){
+	var display = document.getElementById("getPersonDisplay");
+	var name = document.getElementById("name2").value;
+	var age = document.getElementById("age2").value;
+	
+	
+	
+	
+	display.innerHTML = traverseObject(getPerson(name,age));
+}
+document.getElementById("doGetPerson").addEventListener("click", doGetPerson, false);
 //-----------------------------------------------------------------------------------
 //PART II
 //Part II will focus on Javascript's ability to manipulate the DOM.

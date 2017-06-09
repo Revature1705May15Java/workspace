@@ -1,0 +1,12 @@
+var pokemonVar;
+
+function getPokemon(){
+}
+
+function setValues(pokemon){}
+
+window.onload = function(){
+	document.getElementById("pokemonSubmit").addEventListener("click",getPokemon);
+	
+//bubble v capture boolean = underfined = false = bubble
+}
