@@ -26,21 +26,4 @@ public class FileParser {
 			e.printStackTrace();
 		}
 	}
-	
-	public static String returnFormattedFileContents() {
-		try(BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
-			String result = "";
-			
-		} 
-		catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
 }

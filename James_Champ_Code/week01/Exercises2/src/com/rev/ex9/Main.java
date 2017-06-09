@@ -7,12 +7,12 @@ public class Main {
 		
 		System.out.println("Primes:");
 		for(int i : pm.getPrimes()) {
-			System.out.println(i);
+			System.out.print(i + " ");
 		}
 		
-		System.out.println("\nAll Numbers:");
+		System.out.println("\n\nAll Numbers:");
 		for(int i : pm.getNumbers()) {
-			System.out.println(i);
+			System.out.print(i + " ");
 		}
 	}
 }
