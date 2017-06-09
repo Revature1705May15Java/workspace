@@ -41,7 +41,7 @@ public class GetNumbersTest {
 		int expected = 100;
 		int actual = list.get(list.size() - 1);
 		
-		// Ensure that 13 is in the list of primes:
+		// Ensure last item in list is 100
 		assertEquals(expected, actual);
 	}
 
