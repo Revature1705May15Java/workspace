@@ -3,23 +3,66 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>AJAX Stuff</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
 </head>
 <body>
   <button id="myBtn">Cluck here!</button>
   <div id="stuff"></div>
-  <script type="text/javascript">
+	
+	
+  <!--<script type="text/javascript">
     function getText() {
     	let xhr = new XMLHttpRequest();
     	xhr.onreadystatechange = function() {
     		if (xhr.readyState == 4 && xhr.status == 200) {
     			document.getElementById("stuff").innerHTML = xhr.responseText;
     		}
-    	}
+    	};
     	xhr.open("GET", 'ajaxGetText', true);
     	xhr.send();
     };
     
-    document.getElementById('myBtn').addEventListener('click', getText, false);
-  </script>
+    // document.getElementById('myBtn').addEventListener('click', getText, false);
+  </script>-->
+	<!--<script type="text/javascript">
+		let p1;
+		function handleEvent() {
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && xhr.status == 200) {
+    			p1 = JSON.parse(xhr.responseText);
+					document.getElementById('stuff').innerHTML = p1.name + " is " + p1.age + " years old. His intersts are: ";
+    		}
+			};
+			xhr.open('GET', 'ajaxGetJson', true);
+			xhr.send();
+		}
+		// document.getElementById('myBtn').addEventListener('click', handleEvent, false);
+	</script>-->
+	<script type="text/javascript">
+	  let p2;
+	  function jqHandleEvent() {
+		  $.ajax({
+			  url: 'AjaxJackson',
+			  method: 'get',
+			  success: function(res, status, xhr) {
+				  console.log('success');
+				  
+				  // let str = `${res.name} is ${res.age} years old. His interests are ${res.hobbies.join(', ')}`;
+				  let str = res.name + ' is ' + res.age + ' years old.';
+				  $('#stuff').html(res.name + ' is ' + res.age + ' years old.');
+			  },
+			  error: function(xhr, status) {
+				  console.log('YOUR INTERNET SUCKS! FIND A BETTER CONNECTION!');
+			  },
+			  complete: function(xhr, status) {
+				  console.log("I'm done now");
+			  }
+		  });
+	  }
+	  $('#myBtn').on('click', jqHandleEvent);
+	</script>
 </body>
 </html>

@@ -12,4 +12,12 @@
     <servlet-name>AjaxGetText</servlet-name>
     <url-pattern>/ajaxGetText</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AjaxGetJson</servlet-name>
+    <servlet-class>com.ex.servlets.AjaxGetJsonServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjaxGetJson</servlet-name>
+    <url-pattern>/ajaxGetJson</url-pattern>
+  </servlet-mapping>
 </web-app>

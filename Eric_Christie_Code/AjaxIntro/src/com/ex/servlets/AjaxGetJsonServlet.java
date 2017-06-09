@@ -9,22 +9,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class AjaxGetTextServlet
+ * Servlet implementation class AjaxGetJsonServlet
  */
-//@WebServlet("/AjaxGetTextServlet")
-public class AjaxGetTextServlet extends HttpServlet {
+//@WebServlet("/AjaxGetJsonServlet")
+public class AjaxGetJsonServlet extends HttpServlet {
 
 	/**
    * 
    */
-  private static final long serialVersionUID = 1486487065948109770L;
+  private static final long serialVersionUID = 267414056204917990L;
 
   /**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	  response.setContentType("application/json");
 	  PrintWriter out = response.getWriter();
-	  out.println("hello world");
+	  String json = "{\"name\":\"Guy\",\"age\":20}";
+	  out.write(json);
 	}
 
 	/**
