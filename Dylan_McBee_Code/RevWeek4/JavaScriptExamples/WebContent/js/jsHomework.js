@@ -102,15 +102,46 @@ Define function: isEven(someNum)
 Return true if even, false if odd.
 Do not use % operator.*/
 function isEven(someNum){
-	
+	if(someNum & 1){
+		return false;
+	}
+	else{
+		return true;
+	}
 }
 function isIt(){
-	
+	var evenInput = document.getElementById("iEven").value;
+	var numEven = isEven(evenInput);
+	document.getElementById("eResult").innerHTML = numEven;
 }
+document.getElementById("isItEven").addEventListener("click", isIt, false);
 /*
 7. Palindrome
 Define function isPalindrome(someStr)
-Return true if someStr is a palindrome, otherwise return false
+Return true if someStr is a palindrome, otherwise return false*/
+function isPalindrome(someStr){
+	/* remove special characters, spaces and make lowercase*/
+	var removeChar = someStr.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+	/* reverse removeChar for comparison*/
+	var checkPalindrome = removeChar.split('').reverse().join('');
+
+	/* Check to see if myString is a Palindrome*/
+	if(removeChar === checkPalindrome){
+	  
+	  return true;
+	}else{
+	  
+	  return false;
+	}
+}
+function runPalindrome(){
+	var pInput = document.getElementById("pWord").value;
+	var pResult = isPalindrome(pInput);
+	document.getElementById("pResult").innerHTML = pResult;
+}
+document.getElementById("pCheck").addEventListener("click", runPalindrome, false);
+/*
 8. Shapes
 Define function: printShape(shape, height, character)
 shape is a String and is either "Square", "Triangle", "Diamond".
@@ -131,10 +162,72 @@ Example for printShape("Diamond", 5, "*");
  ***
 *****
  ***
-  *
+  * */
+function printShape(shape, height, character){
+	switch(shape){
+	case("triangle"):
+	for(var n =character; n.length <= height; n += character) {
+		console.log(n);
+		}
+	break;
+	case("square"):
+		var p = "";
+		for(var i = 0; i<height;i++){
+			for(var j = 0; j<height; j++){
+				p += character;
+				
+			}
+			console.log(p);
+			p = "";
+		}
+	break;
+	case("diamond"):
+		var space = height;
+    for (i = 1; i <= height; i++) {
+        for (j = 1; j <= space; j++) {
+            
+        }
+        space--;
+        for (j = 1; j <= 2 * i - 1; j++) {
+            console.log(character);
+        }
+        console.log('<br>');
+    }
+
+    space = 2;
+    for (i = 1; i <= height; i++) {
+        for (j = 1; j <= space; j++) {
+            
+        }
+        space++;
+        for (j = 1; j <= 2 * (height - i) - 1; j++) {
+            console.log(character);
+        }
+       console.log('<br>');
+    }
+    break;
+	}
+}
+function printS(){
+	var shape = document.getElementById("shape").value;
+	var height = document.getElementById("height").value;
+	var char = document.getElementById("make").value;
+	printShape(shape, height, char);
+	document.getElementById("consoleCheck").innerHTML = "Check Console";
+}
+document.getElementById("printShape").addEventListener("click", printS, false);
+/*
 9. Object literal
 Define function traverseObject(someObj)
-Print every property and it's value.
+Print every property and it's value.*/
+function traverseObject(someObj){
+	
+}
+function traverse(){
+	
+	
+}
+/*
 10. Delete Element
 Define function deleteElement(someArr)
 Print length
