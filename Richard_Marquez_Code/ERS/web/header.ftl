@@ -31,12 +31,12 @@
 
                 <#if pageTitle == "Manager Home">
                     <a id="newUser" href="#">
-                        <li data-toggle="modal" data-target="#newUserModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Add Employee</li>
+                        <li data-toggle="modal" data-target="#newUserModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;Add User</li>
                     </a>
                 </#if>
 
-                <a id="allRequests" href="/AllRequests">
-                    <li><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp;All Requests</li>
+                <a id="allRequests" href="/RequestArchive">
+                    <li><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> &nbsp;Request Archive</li>
                 </a>
             </#if>
 

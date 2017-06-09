@@ -141,4 +141,13 @@
         <servlet-name>NewUserServlet</servlet-name>
         <url-pattern>/NewUser</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RequestArchiveServlet</servlet-name>
+        <servlet-class>com.revature.ers.servlets.RequestArchiveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestArchiveServlet</servlet-name>
+        <url-pattern>/RequestArchive</url-pattern>
+    </servlet-mapping>
 </web-app>

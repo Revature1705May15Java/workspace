@@ -134,6 +134,19 @@ public class Service {
         return result;
     }
 
+    public List<ReimbursementRequest> getRequestArchive() {
+        List<ReimbursementRequest> result = new ArrayList<>();
+        List<ReimbursementRequest> allReqs = dao.getAllRequests();
+
+        for (ReimbursementRequest r : allReqs) {
+            if (r.getState() != ReimbursementRequest.StateType.PENDING) {
+                result.add(r);
+            }
+        }
+
+        return result;
+    }
+
     public List<User> getAllEmployees() {
         List<User> result = new ArrayList<>();
         List<User> allUsers = dao.getAllUsers();
