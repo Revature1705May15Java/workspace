@@ -21,7 +21,7 @@ public class ConnectionFactory {
 		
 		return cf;
 	}
-	
+	// banking
 	public Connection getConnection(){
 		Connection conn = null;
 		

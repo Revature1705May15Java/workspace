@@ -15,5 +15,6 @@
 <fullyQualifiedTypeName name="org.apache.catalina.User"/>
 <fullyQualifiedTypeName name="com.ers.pojo.Request"/>
 <fullyQualifiedTypeName name="com.ers.pojo.User"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="com.ers.service.Service"/>
 </qualifiedTypeNameHistroy>

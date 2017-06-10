@@ -10,7 +10,7 @@ public class Service {
 	public User getUserInfo(String username) {
 		User temp = new User();
 		
-		dao.getUser(username);
+		temp = dao.getUser(username);
 		
 		return temp;
 	}

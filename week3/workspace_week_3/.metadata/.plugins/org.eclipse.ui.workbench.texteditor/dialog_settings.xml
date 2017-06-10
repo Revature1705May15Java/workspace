@@ -9,6 +9,7 @@
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
 			<item value="\"/>
+			<item value="ers"/>
 			<item value="getUserAccounts"/>
 			<item value="trans"/>
 			<item value="money"/>

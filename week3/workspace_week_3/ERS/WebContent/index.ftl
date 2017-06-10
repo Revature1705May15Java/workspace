@@ -31,10 +31,6 @@
 		<h3 style="color:red">Login username or password incorrect. Please try again.</h3>
 		</#if>
 	</div>
-	<div class="input-group">
-		<span class="input-group-addon" id="basic-addon1">@</span>
-		<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-	</div>
 </body>
 
 </html>

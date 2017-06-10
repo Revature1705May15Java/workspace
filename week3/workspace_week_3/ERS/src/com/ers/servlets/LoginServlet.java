@@ -29,27 +29,14 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		String myContextParam = request.getSession().getServletContext().getInitParameter("myParam");
 		String name = request.getParameter("username");
 		String pw = request.getParameter("password");
 		
-		
-//		if(name.equals("Lei") && pw.equals("Raion")){
-//			response.sendRedirect("Home.html");
-//		} else if(name.equals("test") && pw.equals("test")){
-//			response.sendRedirect("Home2.html");
-//		} else{
-//			request.setAttribute("login", "fail");
-//			request.getRequestDispatcher("index.ftl").forward(request, response);
-//		}
-		
 		User temp = service.getUserInfo(name);
-		
-		if(pw.equals(temp.getPassword())) response.sendRedirect("Homt.html");
+		if(temp != null && pw.equals(temp.getPassword())) response.sendRedirect("Home2.html");
 		else{
 			request.setAttribute("login", "fail");
-//			request.getRequestDispatcher("index.ftl").forward(request, response);
+			request.getRequestDispatcher("index.ftl").forward(request, response);
 		}
 		
 		

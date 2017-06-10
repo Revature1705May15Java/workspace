@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.bank.util.ConnectionFactory;
 import com.ers.pojo.Request;
 import com.ers.pojo.User;
+import com.ers.util.ConnectionFactory;
 
 public class ImplDao implements Dao{
 
@@ -17,16 +17,17 @@ public class ImplDao implements Dao{
 	@Override
 	public User getUser(String username) {
 		User u = new User();
-		
+
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
-			
-			String sql = "SELECT * FROM bank_users WHERE user_name = ?";
+			String sql = "SELECT * FROM employee WHERE username = ?";
 					
+			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, username);
 			
 			ResultSet info = ps.executeQuery();
-			while(info.next()){ 
+			
+			while(info.next()){
 				u.setUsername(info.getString(1));
 				u.setPassword(info.getString(2));
 				u.setId(info.getInt(3));
@@ -53,7 +54,7 @@ public class ImplDao implements Dao{
 	@Override
 	public User getUser(int id) {
 		User u = new User();
-		
+
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			
 			String sql = "SELECT * FROM employee WHERE empid = ?";
@@ -84,6 +85,32 @@ public class ImplDao implements Dao{
 		}
 		
 		return u;
+	}
+	
+	@Override
+	public int addUser(String uname, String pw, int empid, String fn, String ln, int emp_rank) {
+		int numRowsAffected = 0;
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			
+			String sql = "INSERT INTO employee(username,password,firstname,lastname,emp_rank)"
+						+ "VALUES (?,?,?,?,?)";
+					
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, uname);
+			ps.setString(2, pw);
+			ps.setString(3, fn);
+			ps.setString(4, ln);
+			ps.setInt(5, emp_rank);
+			
+			numRowsAffected = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return numRowsAffected;
 	}
 	
 	public ArrayList<Request> getUserRequests(int id){ 
