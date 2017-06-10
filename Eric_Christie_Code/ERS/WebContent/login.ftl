@@ -28,9 +28,6 @@
 	<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
 
 	<!--jQuery-->
-  <#-- <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-    crossorigin="anonymous"></script> -->
   <script src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
@@ -52,7 +49,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./css/icon-styles.css">
 
-  <script src="./js/ers.js"></script>
+  <#-- <script src="./js/ers.js"></script> -->
   <link rel="stylesheet" href="./css/ers.css">
 </head>
 <body class="login">

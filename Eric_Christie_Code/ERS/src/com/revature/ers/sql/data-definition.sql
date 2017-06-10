@@ -15,6 +15,7 @@ create table employee (
   lastname varchar2(100) not null,
   isManager int not null check (isManager in (0,1)),
   emailAlertsOn int not null check (emailAlertsOn in (0,1)),
+  passwordSet int not null check (passwordSet in (0,1)),
   latestLogout timestamp
 );
 /

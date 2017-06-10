@@ -9,7 +9,7 @@ import com.revature.ers.pojos.RequestState;
 import com.revature.ers.util.Mailer;
 import com.revature.ers.util.TemporaryLogger;
 
-public class ExpenseReimbursementService {
+public class ERService {
   
   private DAO dao = new DbDAO();
   private TemporaryLogger logger = new TemporaryLogger();
