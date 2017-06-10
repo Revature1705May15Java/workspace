@@ -190,6 +190,8 @@ document.getElementById("doPali").addEventListener("click", doPali, false);
 // ***
 //  *
 function printShape(shape, height, character){
+	var x = 1;
+	var p = height-2;
 	if(shape == "Triangle"){
 		var prnt = [];
 		for(i=0;i<height;i++){
@@ -212,26 +214,40 @@ function printShape(shape, height, character){
 		}
 		return "Look at Console";
 	}else if(shape == "Diamond"){
-		for (var i = 1; i < 10; i += 2) {
-	      for (var j = 0; j < height - i / 2; j++)
-	        document.writeln("&nbsp;");
+		for (var i = height/2; i >= 1; i--) {
+		     var output = "";
+		     for (var j = i; j >= 1; j--) {
+		         output += ' ';
+		     }
+		     
+		     for(var k = 0; k<x; k++){
+		    	 output+= character;
+		     }
+		     x+=2;
+		     console.log(output);
+		 }
+		var h = '';
+		for(var y = 0; y< height; y++){
+			h+=character;
+			
+		}
+		console.log(h);
+		
+		
+		for (var o = 1; o < (height/2); o++) {
+		     var bot = "";
+		     for (var n = 0; n < o; n++) {
+		         bot += ' ';
+		     }
 
-	      for (var j = 0; j < i; j++)
-	        document.write(character);
-
-	      document.write("<br>");
-	    }
-
-	    for (var i = 7; i > 0; i -= 2) {
-	      for (var j = 0; j < height - i / 2; j++)
-	        document.writeln("&nbsp;");
-
-	      for (var j = 0; j < i; j++)
-	        document.write(character);
-
-	      document.write("<br>");
-	    }
-
+		     
+		     for(var u = p; u>0; u--){
+		    	 bot+= character;
+		     }
+		     p-=2;
+		     console.log(bot);
+		 }
+		return "Look at Console";
 	}else{
 		console.log("Not a valid choice!")
 	}
@@ -421,15 +437,18 @@ function getPeopleInSales(){
 //Define function getAnchorChildren()
 //Find all anchor elements with a <span> child.
 //Print the contents of <span>
-
-
-
-
-
-
-
-
-
+function getAnchorChildren(){
+	var aList = document.getElementsByTagName("a");
+	for(i of aList){
+		var span = i.getElementsByTagName('span');
+		if(span.length > 0){
+			for(x of span){
+				console.log(x.textContent);
+			}
+		}
+	}
+}
+getAnchorChildren();
 
 
 //4. Hobbies
@@ -437,11 +456,11 @@ function getPeopleInSales(){
 //Find all checked options in the 'skills' select element.
 //Print the value and the contents.
 function getHobbies(){
-	var sel = document.getElementsByName("skills");
-	var i = sel.options[sel.selectedIndex].text;
-	console.log(select);
+	var s = document.getElementsByName('skills')[0];
+	var text = s.options[s.selectedIndex].text;
+	console.log(text);
 }
-
+getHobbies();
 
 
 
@@ -453,14 +472,15 @@ function getHobbies(){
 //Find all elements with "data-customAttr" attribute
 //Print the value of the attribute.
 //Print the element that has the attribute.
-
-
-
-
-
-
-
-
+function getCustomAttribute(){
+	var cust = document.getElementsByTagName('*');
+	for(i of cust){
+		if(i.hasAttribute('data-customAttr')){
+			console.log(i.getAttribute('data-customAttr'));
+		}
+	}
+}
+getCustomAttribute();
 
 
 //6. Sum Event
@@ -473,14 +493,21 @@ function getHobbies(){
 //Add <input> element values.
 //Put the sum in the <span> element.
 //If values cannot be added, put "Cannot add" in the <span> element
-
-
-
-
-
-
-
-
+var num1 = document.getElementById('num1');
+var num2 = document.getElementById('num2');
+var sum = document.getElementById('sum');
+num1.value = 'NUM1';
+num2.value = 'NUM2';
+num1.onchange = updateSum;
+num2.onchange = updateSum;
+function updateSum() {
+    var result = parseInt(num1.value) + parseInt(num2.value);
+    if (Number.isNaN(result)) {
+        sum.innerHTML = 'Cannot add';
+    } else {
+        sum.innerHTML = result;
+    }
+}
 
 
 //7. Skills Event
@@ -488,14 +515,10 @@ function getHobbies(){
 //When user selects a skill, create an alert with a message similar to:
 //	"Are you sure CSS is one of your skills?"
 //NOTE: no alert should appear when user deselects a skill.
-
-
-
-
-
-
-
-
+var skillEvent = document.getElementsByName('skills')[0];
+skillEvent.onchange = function() {
+    confirm('Do you want ' + skillNode.value + ' as one of your skills?');
+};
 
 
 //8. Favorite Color Event
@@ -505,13 +528,17 @@ function getHobbies(){
 //	"So you like green more than blue now?"
 //In this example, green is the new value and blue is the old value.
 //Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
-
-
-
-
-
-
-
+function chkColor(){
+	var colo = document.querySelector('input[name="favoriteColor"]:checked').value;
+	if(colo == "green"){
+		alert("This color is not that great!");
+		document.getElementById("radioColo").style.backgroundColor ='green';
+	}else if(colo == "orange"){
+		alert("RIDDLE! What ryhmes with orange?");
+		document.getElementById("radioColo").style.backgroundColor ='orange';
+	}
+}
+document.getElementById("radioColo").addEventListener("click", chkColor, false);
 
 
 
@@ -520,13 +547,16 @@ function getHobbies(){
 //When user hovers over an employees name:
 //	Hide the name if shown.
 //	Show the name if hidden.
-
-
-
-
-
-
-
+var empList = document.getElementsByClassName('empName');
+for(let i of empList){
+	empList[i].addEventListener("mouseover", function show(){
+		this.style.display = 'none';
+	}, false);
+	
+	empList[i].addEventListener("mouseout", function hide(){
+		this.style.display = 'block';
+	}, false);
+}
 
 
 
@@ -539,8 +569,7 @@ function showCurrentTime(){
 	var date = new Date();
 	document.getElementById("currentTime").innerHTML = date.getHours() + ":" +date.getMinutes() + ":" + date.getSeconds();
 }
-document.addEventListener("mouseenter", showCurrentTime, false);
-
+setInterval(function(){ showCurrentTime() }, 1000);
 
 
 
@@ -549,12 +578,11 @@ document.addEventListener("mouseenter", showCurrentTime, false);
 //Regarding this element:
 //	<p id="helloWorld">Hello, World!</p>
 //Three seconds after a user clicks on this element, change the text to a random color.
-
-
-
-
-
-
+function changeColor(){
+	var clr = "#"+((1<<24)*Math.random()|0).toString(16);
+	document.getElementById("helloWorld").style.color = clr;
+}
+document.getElementById("helloWorld").addEventListener("click", changeColor, false);
 
 
 
@@ -563,13 +591,13 @@ document.addEventListener("mouseenter", showCurrentTime, false);
 //Define function walkTheDOM(node, func)
 //This function should traverse every node in the DOM. Use recursion.
 //On each node, call func(node).
+function walkTheDOM(node, func) {
+    func(node);
 
-
-
-
-
-
-
-
-
+    var child = node.childNodes;
+    for (let c of child) {
+        walkTheDOM(c, func);
+    }
+}
+walkTheDOM(document, function(node) { console.log(node); } );
 
