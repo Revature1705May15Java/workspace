@@ -4,7 +4,7 @@ function initTables() {
     // $.tablesorter.defaults.sortList = [[0,0]];
 
     if ($('#pendingRequestsTable tbody tr').length > 0) {
-        $('#pendingRequestsTable').tablesorter({sortList: [[0, 0]]});
+        $('#pendingRequestsTable').tablesorter({sortList: [[1, 1]]});
     }
 
     $('.request-table-container table tbody tr').click(function() {
@@ -19,6 +19,7 @@ function initTables() {
         var handler = $('.handler', this).html();
 
         $('#viewRequestModal .id').html('');
+        $('#viewRequestModal .state').html('');
         $('#viewRequestModal .dateRequested').html('');
         $('#viewRequestModal .dateResolved').html('');
         $('#viewRequestModal .requester').html('');
@@ -28,6 +29,7 @@ function initTables() {
         $('#viewRequestModal .note').html('');
 
         $('#viewRequestModal .id').html('Request #' + id);
+        $('#viewRequestModal .state').html(state);
         $('#viewRequestModal .dateRequested').html(dateRequested);
         $('#viewRequestModal .dateResolved').html(dateResolved);
         $('#viewRequestModal .requester').html('<a href="mailto:' + requester + '">' + requester + "</a>");

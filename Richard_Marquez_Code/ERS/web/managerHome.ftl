@@ -22,6 +22,7 @@
                 <td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>
                 <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
                 <td class="col-xs-1 requester">${r.getRequesterEmail()}</td>
+                <td class="col-xs-1 state" style="display:none;">${r.getState().name()}</td>
             </tr>
             </#list>
             </tbody>

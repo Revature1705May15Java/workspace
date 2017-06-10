@@ -6,7 +6,7 @@
         <table id="pendingRequestsTable" class="table table-hover tablesorter">
             <thead>
             <tr>
-                <th class="col-xs-2">#</th>
+                <th class="col-xs-2">Status</th>
                 <th class="col-xs-2">Opened</th>
                 <th class="col-xs-2">Closed</th>
                 <th class="col-xs-2">Requester</th>
@@ -18,7 +18,7 @@
             <tbody>
             <#list requestArchive as r>
             <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                <td class="col-xs-2 id">${r.getId()}</td>
+                <td class="col-xs-2 state">${r.getState().name()}</td>
                 <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
                 <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
                 <td class="col-xs-2 requester">${r.getRequesterEmail()}</td>
@@ -26,6 +26,7 @@
                 <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
                 <td class="purpose" style="display:none;">${r.getPurpose()}</td>
                 <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
+                <td class="id" style="display:none;">${r.getId()}</td>
             </tr>
             </#list>
             </tbody>

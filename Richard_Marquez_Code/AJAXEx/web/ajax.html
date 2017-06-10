@@ -33,5 +33,92 @@
 
 <h2 id="stuff"></h2>
 
+<svg id="clock" height="250" width="250">
+    <circle id="face" cx="50" cy="50" r="45" stroke="black" stroke-width="3" fill="white" />
+    <line id="hour" x1="50" y1="50" x2="50" y2="00" style="stroke:#000;stroke-width:1" />
+    <line id="minute" x1="50" y1="50" x2="100" y2="50" style="stroke:#000;stroke-width:1" />
+    <line id="second" x1="50" y1="50" x2="100" y2="50" style="stroke:#f33;stroke-width:1" />
+</svg>
+
+<script type="text/javascript">
+
+    var radius = $('#clock').attr('height') / 2;
+    var origin = radius;
+    var tickLength = .8;
+    var minuteTickLength = .1;
+    var hourTickLength = .2;
+
+    var secondLength = radius * .9;
+    var minuteLength = radius * .75;
+    var hourLength = radius * .4;
+
+    for (var i = 0; i < 60; i++) {
+        var minuteTickTheta = ((360 / 60) * i) * (Math.PI / 180);
+
+        var minuteTickX1 = (Math.sin(minuteTickTheta) * secondLength) + origin;
+        var minuteTickY1 = (Math.cos(minuteTickTheta) * secondLength * -1) + origin;
+
+        var minuteTickX2 = (Math.sin(minuteTickTheta) * tickLength) + origin;
+        var minuteTickY2 = (Math.cos(minuteTickTheta) * tickLength * -1) + origin;
+
+
+
+        var svgNS = "http://www.w3.org/2000/svg";
+
+        var tickElem = document.createElementNS(svgNS, 'line');
+        tickElem.setAttributeNS(null, 'x1', minuteTickX1);
+        tickElem.setAttributeNS(null, 'y1', minuteTickY1);
+        tickElem.setAttributeNS(null, 'x2', minuteTickX2);
+        tickElem.setAttributeNS(null, 'y2', minuteTickY2);
+        tickElem.setAttributeNS(null, 'style', 'stroke:#0f0;stroke-width:1');
+        document.getElementById('clock').appendChild(tickElem);
+    }
+
+    function updateClock() {
+
+        $('#face').attr('cx', radius);
+        $('#face').attr('cy', radius);
+        $('#face').attr('r', radius*.95);
+
+        $('#second').attr('x1', radius);
+        $('#second').attr('y1', radius);
+        $('#minute').attr('x1', radius);
+        $('#minute').attr('y1', radius);
+        $('#hour').attr('x1', radius);
+        $('#hour').attr('y1', radius);
+
+
+        var today = new Date();
+        var newSecond = today.getSeconds();
+        var newMinute = today.getMinutes();
+
+        var newHour = today.getHours();
+        if (newHour >= 12) {
+            newHour -= 12;
+        }
+
+        var secondTheta = ((360 / 60) * newSecond) * (Math.PI / 180);
+        var secondX2 = (Math.sin(secondTheta) * secondLength) + origin;
+        var secondY2 = (Math.cos(secondTheta) * secondLength * -1) + origin;
+
+        var minuteTheta = ((360 / 60) * (newMinute + (newSecond / 60))) * (Math.PI / 180);
+        var minuteX2 = (Math.sin(minuteTheta) * minuteLength) + origin;
+        var minuteY2 = (Math.cos(minuteTheta) * minuteLength * -1) + origin;
+
+        var hourTheta = ((360 / 12) * (newHour + (newMinute / 60))) * (Math.PI / 180);
+        var hourX2 = (Math.sin(hourTheta) * hourLength) + origin;
+        var hourY2 = (Math.cos(hourTheta) * hourLength * -1) + origin;
+
+        $('#second').attr('x2', secondX2);
+        $('#second').attr('y2', secondY2);
+        $('#minute').attr('x2', minuteX2);
+        $('#minute').attr('y2', minuteY2);
+        $('#hour').attr('x2', hourX2);
+        $('#hour').attr('y2', hourY2);
+    }
+
+    setInterval(updateClock, 500);
+</script>
+
 </body>
 </html>

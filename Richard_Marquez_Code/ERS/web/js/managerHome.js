@@ -19,12 +19,14 @@ function initTables() {
         var requester = $('.requester', this).html();
 
         $('#viewRequestModal .id').html('');
+        $('#viewRequestModal .state').html('');
         $('#viewRequestModal .dateRequested').html('');
         $('#viewRequestModal .requester').html('');
         $('#viewRequestModal .amount').html('');
         $('#viewRequestModal .purpose').html('');
 
         $('#viewRequestModal .id').html('Request #' + id);
+        $('#viewRequestModal .state').html(state);
         $('#viewRequestModal .dateRequested').html(dateRequested);
         $('#viewRequestModal .requester').html('<a href="mailto:' + requester + '">' + requester + "</a>");
         $('#viewRequestModal .amount').html(amount);
