@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Jun 09 21:47:51 EDT 2017
+org.eclipse.jst.jee.server\:AjaxExample=C\:\\Users\\Chantel\\Desktop\\Servers\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\wtpwebapps\\AjaxExample
+org.eclipse.jst.jee.server\:JavaScriptExamples=C\:\\Users\\Chantel\\Desktop\\Servers\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\wtpwebapps\\JavaScriptExamples

@@ -1,0 +1,27 @@
+package com.rev.p11Part2;
+
+public class floatNum 
+{
+	float f;
+	float e;
+	
+	public floatNum ()
+	{
+		
+	}
+
+	public floatNum(float f) {
+		super();
+		this.f = f;
+	}
+
+	public float getF() {
+		return f;
+	}
+
+	public void setF(float f) {
+		this.f = f;
+	}
+	
+	
+}

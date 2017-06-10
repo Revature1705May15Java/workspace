@@ -1,0 +1,13 @@
+package com.rev.p3;
+
+public class reverse 
+{
+	public static void main(String[] args) 
+	{
+		StringBuilder s = new StringBuilder ("to reverse");
+		int l = s.length();
+		
+		s.append(s.charAt(l));
+		System.out.println(s);
+	}
+}

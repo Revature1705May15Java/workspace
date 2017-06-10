@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>Intro To Freemarker</title>
+</head>
+
+<body>
+
+Welcome ${fn} ${ln}!
+
+</body>
+</html>

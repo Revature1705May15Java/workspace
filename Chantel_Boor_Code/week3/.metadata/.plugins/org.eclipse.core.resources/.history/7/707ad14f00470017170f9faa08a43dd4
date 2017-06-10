@@ -1,0 +1,8 @@
+package com.bank.servlet;
+
+
+
+public class LoginServlet  extends httpServlet
+{
+	
+}

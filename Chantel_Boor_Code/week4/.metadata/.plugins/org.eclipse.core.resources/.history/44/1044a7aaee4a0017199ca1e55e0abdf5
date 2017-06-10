@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id = "exampleSpace">
+Count = <p id = "counter"></p>
+</div>
+
+<h1>Enter Student info</h1>
+<br> id
+<input type = "text" id = "t_id">
+<br> Name
+<input type = "text" id = "t_name">
+<br> Major
+<input type = "text" id = "t_major">
+
+<button id = "add">add</button>
+
+<table>
+<tr>
+<td> ID </td> <td>Name</td> <td>Major</td>
+</tr>
+</table>
+
+
+</body>
+</html>

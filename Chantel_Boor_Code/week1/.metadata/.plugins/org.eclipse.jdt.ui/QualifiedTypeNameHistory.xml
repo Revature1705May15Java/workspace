@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="com.rev.dao.IoDAO"/>
+<fullyQualifiedTypeName name="com.rev.dao.DAO"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.rev.pojo.Student"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="com.rev.nested.A.B"/>
+<fullyQualifiedTypeName name="com.rev.nested.MemberInner"/>
+<fullyQualifiedTypeName name="com.rev.nested.MemberInner.Inner"/>
+<fullyQualifiedTypeName name="com.rev.nested.Animals"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="com.rev.nested.AllInOne"/>
+<fullyQualifiedTypeName name="com.rev.nested.AllInOne.StaticInnner"/>
+<fullyQualifiedTypeName name="com.rev.nested.AllInOne.StaticInner"/>
+<fullyQualifiedTypeName name="java.util.function.Predicate"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.rev.threads.MainThread"/>
+<fullyQualifiedTypeName name="com.rev.p2.fibonacci"/>
+<fullyQualifiedTypeName name="com.rev.p19.ArrayListStuff"/>
+<fullyQualifiedTypeName name="com.rev.Strings.stringBCompare"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

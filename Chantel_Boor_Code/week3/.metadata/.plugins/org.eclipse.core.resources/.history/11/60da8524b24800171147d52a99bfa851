@@ -1,0 +1,12 @@
+package com.ers.pojos;
+
+public class RequestType 
+{
+	int typeId;
+	String name;
+	
+	RequestType()
+	{
+		
+	}
+}

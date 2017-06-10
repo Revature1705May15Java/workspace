@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<input type="text" id = "test_f"/>
+	<br>
+	<button id = "test_b_f">Click Me</button>
+	<div id = "fib"></div> 	
+	<br>
+	
+	
+  	<div id ="sort"></div>
+  	<br>
+  	
+  	
+  	<input type="text" id = "test_r"/>
+	<br>
+	<button id = "test_b_r">Click Me</button>
+  	<div id ="reverse"></div>
+  	<br>
+  	
+  	 <input type="text" id = "test_fact"/>
+	<br>
+	<button id = "test_b_fact">Click Me</button>
+  	<div id ="factorial"></div>
+
+  	
+  	<input type="text" id = "test_e"/>
+	<br>
+	<button id = "test_b_e">Click Me</button>
+  	<div id ="e"></div>
+
+  <script src = "JS/jsHomework.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>User Home</title>
+</head>
+
+<body>
+
+Welcome ${fn} ${ln}!
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.rev.p6;
+
+public interface even {
+
+}

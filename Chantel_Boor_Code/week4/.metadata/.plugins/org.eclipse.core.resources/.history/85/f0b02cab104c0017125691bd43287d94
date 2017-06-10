@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<p> factorial</p>
+	<input type="text" id = "test_f"/>
+	<br>
+	<button id = "test_b_f">Click Me</button>
+	<div id = "fib"></div> 	
+	<br>
+	
+	<p> sort</p>
+  	<div id ="sort"></div>
+  	<br>
+  	
+  	<p> reverse</p>
+  	<input type="text" id = "test_r"/>
+	<br>
+	<button id = "test_b_r">Click Me</button>
+  	<div id ="reverse"></div>
+  	<br>
+  	
+  	<p> factorial</p>
+  	 <input type="text" id = "test_fact"/>
+	<br>
+	<button id = "test_b_fact">Click Me</button>
+  	<div id ="factorial"></div>
+
+  	<p> is even </p>
+  	<input type="text" id = "test_e"/>
+	<br>
+	<button id = "test_b_e">Click Me</button>
+  	<div id ="ev"></div>
+  	
+  	<p>palindrome</p>
+  	<input type="text" id = "test_p"/>
+	<br>
+	<button id = "test_b_p">Click Me</button>
+  	<div id ="p"></div>
+  	
+  	
+	<p>shape</p>
+  	<input type="text" id = "test_shape" placeholder = "shape"/>
+  	<input type="text" id = "test_height" placeholder = "height"/>
+  	<input type="text" id = "test_char" placeholder = "char"/>
+	<br>
+	<button id = "test_b_shape">Click Me</button>
+	
+	<br>
+	<div id = "tobject"></div>
+	
+	<br>
+	<p>Before Delete</p>
+	<div id = "bDelete"></div>
+	<p>After</p>
+	<div id = "aDelete"></div>
+	
+		<br>
+	<p>Before Splice</p>
+	<div id = "bSplice"></div>
+	<p>After</p>
+	<div id = "aSplice"></div>
+
+  <script src = "JS/jsHomework.js"></script>
+
+</body>
+</html>

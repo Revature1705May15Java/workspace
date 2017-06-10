@@ -1,0 +1,23 @@
+package com.p7;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) 
+	{
+		
+		ArrayList<Employee> employees = new ArrayList<Employee>();
+		
+		employees.add(new Employee ("Chantel","Bakery",23));
+		employees.add(new Employee ("Bob","Garden",30));
+		
+		//by name
+		Employee temp = employees.get(0);
+		
+		int comp = employees.get(0).getName().compareTo(employees.get(1).getName());
+		System.out.println(comp);
+ 
+	}
+
+}

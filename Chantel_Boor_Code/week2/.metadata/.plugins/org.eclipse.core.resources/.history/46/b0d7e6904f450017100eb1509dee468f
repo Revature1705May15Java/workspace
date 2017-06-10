@@ -1,0 +1,110 @@
+package com.bank.run;
+
+import java.util.Scanner;
+
+import com.bank.pojos.User;
+import com.bank.service.Service;
+
+public class RunBank 
+{
+	static Scanner scan;
+	static 	Service service = new Service ();
+	
+	public static void main(String[] args) 
+	{
+		String choice = "empty"; //used for user input options
+		User u = new User();
+		scan = new Scanner (System.in);
+		
+		while(true)
+		{
+			
+			System.out.println("Welcome to bank"
+					+ "\n"
+					+"Are you alredy a member? y or n?");
+			choice = scan.nextLine();
+			;
+			switch(choice)
+			{
+			case "y":
+			case "Y":
+			{
+				u = loginBank();
+			    if(u == null)
+			    	continue;
+				break;
+			}
+			case "n":
+			case "N":
+			{
+			    joinBank();
+			    u = loginBank();
+				break;
+			}
+			default:
+			{
+				System.out.println("You must enter y or n");
+				continue;
+			}
+			}
+			
+			System.out.println("Welcome!" + u.getFn() + " " + u.getLn());
+			doBankStuff(u);
+			break;
+		}
+		
+		
+	}
+	
+	static void joinBank ()
+	{
+		System.out.println("Please enter your first name");
+		String fn = scan.nextLine();
+		System.out.println("Please enter your last name");
+		String ln = scan.nextLine();
+		System.out.println("Please enter your email");
+		String email = scan.nextLine();
+		System.out.println("Please enter your password");
+		String pw = scan.nextLine();
+		
+		
+		boolean added = service.AddUser(fn, ln, email, pw);
+		
+		if(added)
+		{
+			System.out.println("Congratulations! Your account has been created \n"
+					+ "Please login");
+		}
+		else
+		{
+			System.out.println("Email is already in uese. Please login.");
+		}
+		
+	}
+	
+	static User loginBank ()
+	{
+		User temp = new User();
+		boolean loggedIn;
+		
+		
+		System.out.print("Welcome! please login\n"
+				+ "Eneter email: ");
+		String email = scan.nextLine();
+		System.out.print("\n Enter password: ");
+		String pass = scan.nextLine();
+		
+		temp = service.loginUser(email, pass);
+		
+		if(temp == null)
+			System.out.println("invalid user");
+		
+		return temp;
+	}
+	
+	static void doBankStuff (User u)
+	{
+		System.out.println("doing stuff in bank");
+		System.out.println("logging out of bank");
+	}
+}

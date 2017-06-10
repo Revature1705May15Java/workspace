@@ -1,0 +1,4 @@
+var parags = document.getElementsByTagName("p");
+var pString = parags.join("-");
+
+document.getElementById("display").innerHtml = pString;
