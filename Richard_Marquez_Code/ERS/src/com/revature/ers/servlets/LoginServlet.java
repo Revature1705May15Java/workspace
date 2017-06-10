@@ -41,11 +41,7 @@ public class LoginServlet extends HttpServlet {
                 if (u != null) {
                     HttpSession s = request.getSession(true);
                     s.setAttribute("user", u);
-                    if (u.isManager()) {
-                        response.sendRedirect("/ManagerHome");
-                    } else {
-                        response.sendRedirect("/EmployeeHome");
-                    }
+                    response.sendRedirect("/Home");
                 } else {
                     request.setAttribute("errorMsg", "Your login information was incorrect. Please try again.");
                     request.getRequestDispatcher("/login.ftl").forward(request, response);

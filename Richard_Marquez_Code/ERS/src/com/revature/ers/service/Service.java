@@ -203,6 +203,28 @@ public class Service {
         return updateResult;
     }
 
+    public boolean resetPassword(String email) {
+        User u = dao.getUser(email);
+        boolean result = u != null;
+
+        if (result) {
+            String randomPass = randomString(8);
+            User updatedUser = updateUser(u, u.getEmail(), randomPass, u.getFirstName(), u.getLastName());
+            if (updatedUser != null) {
+                result = true;
+
+                String emailSubject = "Revature ERS password reset";
+                String emailBody = "Greetings!\n\n" +
+                        "Your request to reset your password has been received..\n" +
+                        "Your new temporary password is: " + randomPass + "\n" +
+                        "Please log in NOW to change your password.\n\n" +
+                        "Many thanks,\nSuch regards,\nGood times,\nRevature ERS (May15Java)";
+                Mailer.sendMail(email, emailSubject, emailBody);
+            }
+        }
+
+        return result;
+    }
 
 
     static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";

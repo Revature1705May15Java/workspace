@@ -124,6 +124,12 @@ footer {
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.4);
   z-index: 100; }
 
+a#forgotPassword {
+  display: block;
+  margin-top: 2em;
+  text-align: center;
+  text-decoration: underline; }
+
 table.tablesorter thead tr .header {
   cursor: pointer;
   background-image: url(../img/bg.gif);

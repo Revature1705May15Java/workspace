@@ -39,7 +39,7 @@
 <header>
     <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &nbsp;Revature<strong>ERS</strong></a></h1>
 
-    <#if pageTitle != "Login">
+    <#if pageTitle != "Login" && pageTitle != "Forgot Password">
     <nav>
         <ul>
             <#if pageTitle == "Employee Home">

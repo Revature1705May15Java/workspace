@@ -7,6 +7,8 @@
         <input class="form-control" type="password" name="password" placeholder="Password" required="required"><br>
         <input class="form-control btn-primary" type="submit" value="Login">
     </form>
+
+    <a id="forgotPassword" href="/ForgotPassword">Forgot your password?</a>
 </div>
 
 
