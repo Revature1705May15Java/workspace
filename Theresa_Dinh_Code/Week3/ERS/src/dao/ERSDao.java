@@ -20,23 +20,30 @@ public class ERSDao
 	}
 	
 	// register a new Employee into the database 
+	// NEED A CHECK FOR UNIQUE EMAILS SOMEWHERE ????????????//
 	public Employee registerEmployee(Employee employee)
 	{
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
 		{
+			c.setAutoCommit(false);
+			
 			// email, password, id, firstname, lastname, manager
-			String s = "INSERT INTO EMPLOYEE (EMAIL, PASSWORD, FIRSTNAME, LASTNAME, ISMANAGER)"
-					+ "VALUES (?, ?, ?, ?, ?)"; 
+			String s = "INSERT INTO EMPLOYEE (EMAIL, PASSWORD, FIRSTNAME, LASTNAME)"
+					+ "VALUES (?, ?, ?, ?)"; 
 			PreparedStatement ps = c.prepareStatement(s); 
 			
 			ps.setString(1, employee.getEmail());
 			ps.setString(2, employee.getPassword());
 			ps.setString(3, employee.getFirstName());
 			ps.setString(4, employee.getLastName());
-			ps.setInt(5, employee.getManagerId());
+//			ps.setInt(5, employee.getManagerId());
 			
 			int rowCheck = ps.executeUpdate();
 			System.out.println("register employee " + rowCheck); // debugging
+			
+			c.commit();
+			ps.close();
+			c.setAutoCommit(true);
 			
 		}
 		catch(SQLException e)
@@ -44,6 +51,36 @@ public class ERSDao
 			e.printStackTrace();
 		}
 		return null; 
+	}
+	
+	// allow a manager to set another Employee as manager 
+	// or to demote an Employee from manager
+	public void setManager(Employee employee, boolean isManager)
+	{
+		try(Connection c = ConnectionFactory.getInstance().getConnection();)
+		{
+			c.setAutoCommit(false);
+			
+			String s = "UPDATE EMPLOYEE SET ISMANAGER = ? WHERE EMAIL = ?";
+			PreparedStatement ps = c.prepareStatement(s); 
+			ps.setString(2, employee.getEmail());
+			
+			if(isManager)			// promote to manager in db 
+				ps.setInt(1, 1);
+			else					// demote from manager in db 
+				ps.setInt(1, 0);
+			
+			int rowCheck = ps.executeUpdate();		// safety check for later 
+			System.out.println("set manager " + rowCheck);	//debugging 
+			
+			c.commit();
+			ps.close();
+			c.setAutoCommit(true);			
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace(); 
+		}
 	}
 	
 	// retrieves an Employee's information from the database and
@@ -126,7 +163,14 @@ public class ERSDao
             while(rs.next())
             {
                 Request temp = new Request(); 
-//                temp.set(rs.get()); 
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
                 requests.add(temp); 
             }
         }
@@ -152,7 +196,14 @@ public class ERSDao
             while(rs.next())
             {
                 Request temp = new Request(); 
-                
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
                 requests.add(temp); 
             }
         }
@@ -166,24 +217,26 @@ public class ERSDao
     //may return boolean later 
     // approves a Request by setting its status ID to 1 in the database 
     // and then updates the resolve date 
+    // may not need to update resolve date, have db trigger do it 
     public void approveRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
-	    	String s = "UPDATE REQUEST SET STATUSID = 1, RESOLVEDATE = ?, APPROVERID = ? "
+    		c.setAutoCommit(false);
+    		
+	    	String s = "UPDATE REQUEST SET STATUSID = 1, APPROVERID = ? "
 	    			+ "WHERE REQUESTID = ?"; 
 	    	PreparedStatement ps = c.prepareStatement(s); 
 	    	
-	    	Date date = new Date(); 
-			Timestamp ts = new Timestamp(date.getTime()); 
-	    	
-			ps.setTimestamp(1, ts);
-	    	ps.setInt(2, request.getApproverId());
-	    	ps.setInt(3, request.getRequestId());
+	    	ps.setInt(1, request.getApproverId());
+	    	ps.setInt(2, request.getRequestId());
 	    	
 	    	int rowCheck = ps.executeUpdate();  
 	    	System.out.println("aprrove request " + rowCheck); //debugging
-//	    	ps.executeUpdate();
+	    	
+	    	c.commit();
+	    	ps.close();
+	    	c.setAutoCommit(true);
     	}
     	catch(SQLException e)
     	{
@@ -197,20 +250,26 @@ public class ERSDao
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
-	    	String s = "UPDATE REQUEST SET STATUSID = 2, RESOLVEDATE = ?, APPROVERID = ? "
+    		c.setAutoCommit(false);
+    		
+	    	String s = "UPDATE REQUEST SET STATUSID = 2, APPROVERID = ? "
 	    			+ "WHERE REQUESTID = ?"; 
 	    	PreparedStatement ps = c.prepareStatement(s); 
 	    	
-	    	Date date = new Date(); 
-			Timestamp ts = new Timestamp(date.getTime()); 
+//	    	Date date = new Date(); 
+//			Timestamp ts = new Timestamp(date.getTime()); 
 	    	
-			ps.setTimestamp(1, ts);
-			ps.setInt(2, request.getApproverId());
-	    	ps.setInt(3, request.getRequestId());
+//			ps.setTimestamp(1, ts);
+			ps.setInt(1, request.getApproverId());
+	    	ps.setInt(2, request.getRequestId());
 	    	
 	    	int rowCheck = ps.executeUpdate(); 
 	    	System.out.println("deny request " + rowCheck); //debugging 
 //	    	ps.executeUpdate();
+	    	
+	    	c.commit();
+	    	ps.close();
+	    	c.setAutoCommit(true);
     	}
     	catch(SQLException e)
     	{
@@ -222,16 +281,22 @@ public class ERSDao
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
+    		c.setAutoCommit(false);
+    		
 	    	String s = "INSERT INTO REQUEST	(AMOUNTREQUESTED, PURPOSE, REQUESTERID) "
 	    			+ "VALUES (?, ?, ?)"; 
 	    	PreparedStatement ps = c.prepareStatement(s); 
 	    	
 	    	ps.setDouble(1, request.getAmount());
-	    	ps.setString(1, request.getPurpose());
+	    	ps.setString(2, request.getPurpose());
 	    	ps.setInt(3, request.getRequesterId());
 	    	
 	    	int rowCheck = ps.executeUpdate(); 
 	    	System.out.println("submit request " + rowCheck);
+	    	
+	    	c.commit();
+	    	ps.close();
+	    	c.setAutoCommit(true);
     	}
     	catch(SQLException e)
     	{

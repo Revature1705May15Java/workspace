@@ -127,7 +127,14 @@ public class Request
 
 	public void setApproverId(int approverId) {
 		this.approverId = approverId;
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "Request [statusId=" + statusId + ", requestDate=" + requestDate + ", resolveDate=" + resolveDate
+				+ ", amount=" + amount + ", purpose=" + purpose + ", requestId=" + requestId + ", requesterId="
+				+ requesterId + ", approverId=" + approverId + "]";
 	} 
-	
 	
 }

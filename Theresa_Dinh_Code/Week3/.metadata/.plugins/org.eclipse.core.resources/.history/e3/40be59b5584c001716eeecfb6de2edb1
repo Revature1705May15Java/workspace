@@ -1,0 +1,14 @@
+package test;
+
+import service.ErsService;
+
+public class Test {
+
+	public static void main(String[] args) 
+	{
+		ErsService service = new ErsService(); 
+		
+		
+	}
+
+}

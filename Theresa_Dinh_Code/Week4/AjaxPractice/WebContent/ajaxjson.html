@@ -2,30 +2,34 @@
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>hand typed json with ajax</title>
+        <title>Insert title here</title>
     </head>
     <body>
-        <button id="m">click here</button>
+        <button id="button">click here</button>
         <div id="stuff"></div>
-        
+
         <script type="text/javascript">
+        //get text from servlet 
+            
             var myPerson; 
-            function handleEvent()
+            
+            function eventHandle()
             {
-                var xhr = XMLHttpRequest(); 
+                var xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function()
                 {
                     if(xhr.readyState == 4 && xhr.status == 200)
                     {
-                        var person = JSON.parse(xhr.responseText); 
+                        var person = JSON.parse(xhr.responseText);
+                        console.log(person);
                         myPerson = person;
-                        document.getElementById("stuff").innerHTML = person.name; 
+                        document.getElementById("stuff").innerHTML = person.name;
                     }
                 }
                 xhr.open("GET", "getJSON", true); 
                 xhr.send(); 
             }
-            document.getElementById("m").addEventListener("click", handleEvent, false); 
+            document.getElementById("button").addEventListener("click", eventHandle, false); 
         </script>
     </body>
 </html>

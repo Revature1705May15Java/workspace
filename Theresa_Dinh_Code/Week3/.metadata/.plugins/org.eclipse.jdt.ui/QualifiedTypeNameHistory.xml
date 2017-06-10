@@ -9,11 +9,13 @@
 <fullyQualifiedTypeName name="bankUtil.ConnectionFactory"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="pojos.User"/>
-<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="ersUtil.ConnectionFactory"/>
 <fullyQualifiedTypeName name="org.apache.catalina.realm.JNDIRealm.User"/>
 <fullyQualifiedTypeName name="pojos.Employee"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
 <fullyQualifiedTypeName name="p11_2.Dummy"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="pojos.Request"/>
 </qualifiedTypeNameHistroy>

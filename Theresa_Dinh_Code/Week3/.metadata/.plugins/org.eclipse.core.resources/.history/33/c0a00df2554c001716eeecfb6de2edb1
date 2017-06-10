@@ -1,0 +1,75 @@
+package service;
+
+import java.util.ArrayList;
+
+import dao.ERSDao;
+import pojos.Employee;
+import pojos.Request;
+
+public class ErsService 
+{
+	ERSDao dao = new ERSDao(); 
+	
+	public ErsService()
+	{
+		super(); 
+	}
+	
+	// allow new Employees to register into the system  
+	// with their name, a unique email, and a password 
+	public void registerEmployee(String email, String password, String firstName, String lastName)
+	{
+		Employee employee = new Employee(); 
+		employee.setEmail(email);
+		employee.setPassword(password);
+		employee.setFirstName(firstName);
+		employee.setLastName(lastName);
+		
+		dao.registerEmployee(employee); 
+	}
+	
+	// allow manager to promote or demote Employee to manager in db 
+	public void setManager(String email, boolean isManager)
+	{
+		Employee employee = new Employee();
+		employee.setEmail(email);
+		
+		dao.setManager(employee, isManager);
+	}
+	
+	// retrieves user from their unique email login 
+	public Employee getEmployee(Employee employee)
+	{
+		Employee temp = dao.getEmployee(employee.getEmail());
+		if(temp != null)
+		{
+			return temp; 
+		}
+		return null; 
+	}
+	
+	public ArrayList<Request> getRequests(String email)
+	{
+		return dao.getRequests(email); 
+	}
+	
+	public ArrayList<Request> getPendingRequests()
+	{
+		return dao.getPendingRequests(); 
+	}
+	
+	public void approveRequest()
+	{
+		return; 
+	}
+	
+	public void denyRequest()
+	{
+		return; 
+	}
+	
+	public void submitRequest()
+	{
+		return;
+	}
+}

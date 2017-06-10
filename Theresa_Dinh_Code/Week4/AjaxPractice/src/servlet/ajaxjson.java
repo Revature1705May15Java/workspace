@@ -12,14 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ajaxjson
  */
-
+@WebServlet("/handleEvent")
 public class ajaxjson extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
 
     public ajaxjson() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -28,7 +27,7 @@ public class ajaxjson extends HttpServlet
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		// {"name":"John","age":32} 
-		String json = "{\"name\":\"John\",\"age\":32}";
+		String json = "aaa"; //"{\"name\":\"John\",\"age\":32}";
 		out.write(json);
 	}
 }

@@ -17,14 +17,7 @@
     <servlet-name>getText</servlet-name>
     <url-pattern>/getText</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>handleEvent</servlet-name>
-    <servlet-class>servlet.ajaxjson</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>handleEvent</servlet-name>
-    <url-pattern>/ajaxjson</url-pattern>
-  </servlet-mapping>
+  
   
   
 </web-app>

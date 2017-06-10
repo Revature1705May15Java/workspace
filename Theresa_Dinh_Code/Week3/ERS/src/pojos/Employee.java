@@ -106,6 +106,12 @@ public class Employee
 	{
 		this.isManager = managerId;
 	}
-	
+
+	@Override
+	public String toString() 
+	{
+		return "Employee [email=" + email + ", password=" + password + ", id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", isManager=" + isManager + "]";
+	}
 	
 }

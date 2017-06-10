@@ -1,0 +1,59 @@
+package service;
+
+import java.util.ArrayList;
+
+import dao.ERSDao;
+import pojos.Employee;
+import pojos.Request;
+
+public class ErsService 
+{
+	ERSDao dao = new ERSDao(); 
+	
+	public ErsService()
+	{
+		super(); 
+	}
+	
+	// allow managers to add Employees to the system 
+	public void registerEmployee()
+	{
+		
+	}
+	
+	// retrieves user from their unique email login 
+	public Employee getEmployee(Employee employee)
+	{
+		Employee temp = dao.getEmployee(employee.getEmail());
+		if(temp != null)
+		{
+			return temp; 
+		}
+		return null; 
+	}
+	
+	public ArrayList<Request> getRequests(String email)
+	{
+		return null; 
+	}
+	
+	public ArrayList<Request> getPendingRequests()
+	{
+		return null; 
+	}
+	
+	public void approveRequest()
+	{
+		return; 
+	}
+	
+	public void denyRequest()
+	{
+		return; 
+	}
+	
+	public void submitRequest()
+	{
+		return;
+	}
+}

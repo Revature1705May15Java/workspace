@@ -52,7 +52,7 @@ function factorial(someNum)
 //If incorrect input is entered, use the alert function and describe why the input was incorrect.
 function substring(someStr, length, offset)
 {
-    try
+    try //??????????
     {
         return someStr.substring(offset, offset+length);
     }
@@ -145,15 +145,28 @@ function printShape(shape, height, character)
         case "Diamond":
         {
             var output = ""; 
-            for(i = 0; i < height; i++)
+            for(i = 0; i < height; i+=2)
             {
-                for(j = i; j < (height/2); j++)
+                for(j = i; j < (height/2); j+=2)
                 {
                     output += " "; 
                 }
                 for(k = 0; k <= i; k++)
                 {
-                    ///////////////////////////////////
+                    output += character; 
+                }
+                console.log(output); 
+                output = ""; 
+            }
+            for(i = height; i > height/2; i-=2)
+            {
+                for(j = height; j >= i; j-=2)
+                {
+                    output += " "; 
+                }
+                for(k = i; k > (height/2); k--)
+                {
+                    output += character; 
                 }
                 console.log(output); 
                 output = ""; 
