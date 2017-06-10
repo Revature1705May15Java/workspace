@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	#container {
+    	margin: auto;
+	}
+	#first {
+	    float: left;
+	}
+	#second {
+	    float: left;
+	    margin-left: 150px;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div id="first">
+			<h2>To do list</h2>
+			Item: <input type="text" id="item" placeholder="item" />
+			<button id="btn">Add</button>
+			<ul id="dolist">
+				<li id="one" class="hot">clean room</li>
+				<li id="two" class="hot">make bed</li>
+				<li id="three" class="hot">workout</li>
+				<li id="four" class="hot">cook</li>
+			</ul>
+		</div>
+		
+		<div id="second">
+			<h2>Done</h2>
+			<ul id="done">
+				
+			</ul>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" 
+			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  			crossorigin="anonymous">
+	</script>
+
+	<script>
+		//$('header').addClass("headline");
+		//$('li:lt(3)').hide().fadeIn(1500);
+		$('#dolist li').on('click', doRemove);
+		$('#btn').on('click', function() {
+			$('.hot').prop('onclick',null).off('click');
+			$('#dolist').append('<li class="hot">' + $('#item').val() + '</li>');
+			$('#dolist li').on('click', doRemove);
+			$('#item').val('');
+		});
+		var count = 0;
+		function doRemove() {
+			var item = $(this).text();
+			$(this).remove();
+			$('#done').append('<li>' + item + '</li>');
+		}
+	</script>
+</body>
+</html>
