@@ -70,15 +70,15 @@ function factorial(someNum) {
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
 const substring = (someStr, length, offset) => {
   if (typeof(someStr) !== 'string') {
-    alert('first input must be a string');
+    window.alert('first input must be a string');
   } else if (typeof(length) !== 'number') {
-    alert('length must be a number');
+    window.alert('length must be a number');
   } else if (typeof(offset) !== 'number') {
-    alert('offset must be a number');
+    window.alert('offset must be a number');
   } else if (offset < 0 || offset >= someStr.length) {
-    alert('offset must be between 0 and the length of the input string');
+    window.alert('offset must be between 0 and the length of the input string');
   } else if (length <= 0 || length >= someStr.length - offset) {
-    alert('length must be between 1 and the length of the input string minus the offset');
+    window.alert('length must be between 1 and the length of the input string minus the offset');
   } else {
     let result;
     for (let i = offset; i <= length; i++) {
@@ -147,16 +147,20 @@ function printShape(shape, height, char) {
     result = "please input either 'Square', 'Triangle', or 'Diamond'";
   }
   console.log(result);
+  return result;
 }
 
 // 9. Object literal
 // Define function traverseObject(someObj)
 // Print every property and it's value.
 function traverseObject(obj) {
+  let result = '';
   for (let prop in obj) {
     let val = obj[prop];
     console.log(`${prop}: ${val}`);
+    result += `${prop}: ${val}\n`
   }
+  return result;
 }
 
 // 10. Delete Element
@@ -166,9 +170,12 @@ function traverseObject(obj) {
 // Print length
 // The lengths should be the same.
 const deleteElement = (arr) => {
+  let result = {before: arr.length};
   console.log(arr.length);
   delete arr[2];
   console.log(arr.length);
+  result.after = arr.length;
+  return result;
 };
 
 // 11. Splice Element
@@ -178,9 +185,12 @@ const deleteElement = (arr) => {
 // Print length
 // The lengths should be one less than the original length.
 const spliceElement = function(arr) {
+  let result = {before: arr.length};
   console.log(arr.length);
   let third = arr.splice(2, 1);
   console.log(arr.length);
+  result.after = arr.length;
+  return result;
 };
 
 // 12. Defining an object using a constructor
@@ -191,8 +201,7 @@ function Person(name, age) {
   // speak = () => { console.log('hello') };
   return {
     name: name,
-    age: age//,
-    // speak: speak
+    age: age
   };
 }
 
@@ -206,76 +215,6 @@ function Person(name, age) {
      age: age
    };
  }
- 
- 
-let functions = [
-  {
-    name: 'fib',
-    prompts: ['enter a number'],
-    inputs: ['number']
-  },
-  {
-    name: 'bubbleSort',
-    prompts: ['enter an array of numbers (separated by spaces)'],
-    inputs: ['array']
-  },
-  {
-    name: 'reverseStr',
-    prompts: ['enter a string'],
-    inputs: ['string']
-  },
-  {
-    name: 'factorial',
-    prompts: ['enter a number'],
-    inputs: ['number']
-  },
-  {
-    name: 'substring',
-    prompts: ['enter a string', 'enter a number', 'enter a number'],
-    inputs: ['string', 'number', 'number']
-  },
-  {
-    name: 'isEven',
-    prompts: ['enter a number'],
-    inputs: ['number']
-  },
-  {
-    name: 'isPalindrome',
-    prompts: ['enter a string'],
-    inputs: ['string']
-  },
-  {
-    name: 'printShape',
-    prompts: ['enter Square, Triangle, or Diamond', 'enter a number', 'enter a single character'],
-    inputs: ['string', 'number', 'string']
-  },
-  {
-    name: 'traverseObject',
-    prompts: ['enter name-value pairs for an object ("name1": "value1", "name2": "value2")'],
-    inputs: ['object']
-  },
-  {
-    name: 'deleteElement',
-    prompts: ['enter an array of numbers (separated by spaces)'],
-    inputs: ['array']
-  },
-  {
-    name: 'spliceElement',
-    prompts: ['enter an array of numbers (separated by spaces)'],
-    inputs: ['array']
-  },
-  {
-    name: 'Person',
-    prompts: ['enter a name', 'enter a number'],
-    inputs: ['string', 'number']
-  },
-  {
-    name: 'getPerson',
-    prompts: ['enter a name', 'enter a number'],
-    inputs: ['string', 'number']
-  }
-];
-
  
 /*
 -----------------------------------------------------------------------------------
@@ -300,7 +239,7 @@ function getUSA(useJQuery) {
   } else {
     document.querySelectorAll('*').forEach((elem) => {
       if (elem.innerHTML == 'USA') {
-        console.log(elem.innerHTML);
+        console.log('1. ' + elem.innerHTML);
       }
     });
   }
@@ -315,7 +254,7 @@ function getPeopleInSales(useJQuery) {
   } else {
     document.querySelectorAll('tr td').forEach((elem) => {
       if (elem.innerHTML == 'Sales') {
-        console.log(elem.previousSibling.innerHTML);
+        console.log('2. ' + elem.previousElementSibling.innerHTML);
       }
     });
   }
@@ -330,7 +269,7 @@ function getAnchorChildren(useJQuery) {
 
   } else {
     document.querySelectorAll('a span').forEach((elem) => {
-      console.log(`contents: ${elem.innerHTML}`);
+      console.log('3. ' + `contents: ${elem.innerHTML}`);
     });
   }
 }
@@ -344,7 +283,7 @@ function getHobbies(useJQuery) {
 
   } else {
     document.querySelectorAll('select[name="skills"] :checked').forEach((elem) => {
-      console.log(`value: ${elem.value}, contents: ${elem.innerHTML}`);
+      console.log('4. ' + `value: ${elem.value}, contents: ${elem.innerHTML}`);
     });
   }
 }
@@ -359,7 +298,7 @@ function getCustomAttribute(useJQuery) {
 
   } else {
     document.querySelectorAll('[data-customAttr]').forEach((elem) => {
-      console.log(`data-customAttr: ${elem.getAttribute('data-customAttr')}, element: ${elem}`);
+      console.log('5. ' + `data-customAttr: ${elem.getAttribute('data-customAttr')}, element: ${elem}`);
     });
   }
 }
@@ -383,10 +322,11 @@ function setupSumEvent(useJQuery) {
     let out = document.getElementById('sum');
     document.querySelectorAll('.nums').forEach((elem) => {
       elem.addEventListener('change', function(){
-        if (typeof(+in1.value) == 'number' && typeof(+in2.value) == 'number') {
-          out.innerHTML = (+in1.value) + (+in2.value);
-        } else {
+        result = Number.parseFloat(in1.value) + Number.parseFloat(in2.value);
+        if (Number.isNaN(result)) {
           out.innerHTML = 'Cannot add';
+        } else {
+          out.innerHTML = result;
         }
       });
     });
@@ -403,11 +343,11 @@ function setupSkillsEvent(useJQuery) {
   if (useJQuery) {
 
   } else {
-    document.querySelectorAll('.skills option').forEach((elem) => {
+    document.getElementsByName('skills').forEach((elem) => {
       elem.addEventListener('change', function() {
-
+        window.confirm(`Are you really skilled with ${this[this.selectedIndex].innerHTML}? Really?`);
       }, false);
-    })
+    });
   }
 }
 
@@ -418,11 +358,23 @@ function setupSkillsEvent(useJQuery) {
 // 	"So you like green more than blue now?"
 // In this example, green is the new value and blue is the old value.
 // Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+let changeCount = 0;
+var currentColor;
 function setupFavoriteColorEvent(useJQuery) {
   if (useJQuery) {
 
   } else {
+    let colorOpts = document.querySelectorAll('[name="favoriteColor"]');
+    colorOpts.forEach((elem) => {
+      elem.addEventListener('change', function() {
+        window.alert(`Changing color preference from ${currentColor} to ${elem.value}.`);
 
+        currentColor = elem.value;
+        colorOpts.forEach((elem) => {
+          elem.style = `background-color: ${currentColor};`
+        });
+      });
+    });
   }
 }
 
@@ -435,7 +387,18 @@ function setupShowHide(useJQuery) {
   if (useJQuery) {
 
   } else {
-    
+    let names = document.querySelectorAll('.empName');
+    names.forEach((elem) => {
+      elem.addEventListener('mouseover', function() {
+        // console.log('over')
+        elem.style.visibility = 'hidden';
+      });
+    });
+    names.forEach((elem) => {
+      elem.addEventListener('mouseout', function() {
+        elem.style.visibility = 'visible';
+      })
+    })
   }
 }
 
@@ -448,7 +411,10 @@ function setupCurrentTime(useJQuery) {
   if (useJQuery) {
 
   } else {
-    
+    setInterval(function() {
+      let now = new Date();
+      document.getElementById('currentTime').innerHTML = now.toLocaleTimeString('en-US');
+    }, 500);
   }
 }
 
@@ -460,7 +426,13 @@ function setupDelay(useJQuery) {
   if (useJQuery) {
 
   } else {
-    
+    document.getElementById('helloWorld').addEventListener('click', function() {
+      setTimeout(() => {
+        window.alert('hello');
+        let color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        document.getElementById('helloWorld').style.color = color;
+      }, 3000);
+    });
   }
 }
 
@@ -470,11 +442,23 @@ function setupDelay(useJQuery) {
 // On each node, call func(node).
 function DOMWalk(useJQuery) {
   if (useJQuery) {
+    function walkTheDOM(node, func) {
+      func(node);
+    }
 
   } else {
-    
+    function walkTheDOM(node, func) {
+      func(node);
+      node.querySelectorAll('*').forEach((elem) => walkTheDOM(elem, func));
+      // let child = children.item()
+      // for (let i = 0; i < children.length; i++) {
+      //   walkTheDOM(children[i], func);
+      // }
+    }
+    let elemCount = 0;
+    walkTheDOM(document, (elem) => {
+      elemCount++
+    });
+    console.log(elemCount);
   }
-}
-function walkTheDOM(node, func) {
-
 }

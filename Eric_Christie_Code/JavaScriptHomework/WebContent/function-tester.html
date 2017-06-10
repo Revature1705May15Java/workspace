@@ -4,27 +4,198 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>JavaScript Homework - Part I</title>
   <script src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
   <script src="./js/homework.js"></script>
 </head>
 <body>
-  <form id="testForm" class="keep">
-    <label for="selector" class="keep">Pick a function to test</label>
-    <select id="selector" required class="keep"></select>
-
-    <button type="button" id="run"></button>
+  <form onsubmit="result.value=fib(n.value)" id="prob-1">
+    <h3>Problem 1 - fib(n)</h3>
+    <h6>Get the n<sup>th</sup> number in the Fibonacci sequence.</h6>
+    <input type="number" id="n" name="n" placeholder="Input a number" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
   </form>
 
-  <script>
-    functions.forEach((func, i) => {
-      $('#selector').append(`<option class="keep" value="${i}">${i} - ${func.name}()</option>`);
-    });
-    $('#selector').on('change', function() {
+  
+  <form onsubmit="result.value=bubbleSort(array.value)" id="prob-2">
+    <h3>Problem 2 - bubbleSort(numArray)</h3>
+    <h6>Sort an array of numbers using bubble sort.</h6>
+    <input type="number" id="num" name="num"
+      placeholder="Input numbers separated by spaces" required>
+    <output name="result"></output>
+    <button type="button" onclick="array.value.push(num.value)">Add</button>
+    <button type="submit" id="run">Run</button>
+  </form>
 
-    })
-  </script>
+  
+  <form onsubmit="result.value=" id="prob-3">
+    <h3>Problem 3 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-4">
+    <h3>Problem 4 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-5">
+    <h3>Problem 5 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-6">
+    <h3>Problem 6 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-7">
+    <h3>Problem 7 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-8">
+    <h3>Problem 8 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-9">
+    <h3>Problem 9 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-10">
+    <h3>Problem 10 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-11">
+    <h3>Problem 11 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-12">
+    <h3>Problem 12 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  <form onsubmit="result.value=" id="prob-13">
+    <h3>Problem 13 - </h3>
+    <h6></h6>
+    <select id="" name="" required>
+      <option></option>
+    </select>
+    <label for=""></label>
+    <input type="text" id="" name="" placeholder="" required>
+    <label for=""></label>
+    <input type="number" id="" name="" placeholder="" required>
+    <output name="result"></output>
+    <button type="submit" id="run">Run</button>
+  </form>
+
+  
+  
 </body>
 </html>
