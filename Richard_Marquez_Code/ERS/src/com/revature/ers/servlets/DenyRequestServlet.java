@@ -23,13 +23,18 @@ public class DenyRequestServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
-
         String note = request.getParameter("note");
 
-        int reqId = Integer.parseInt(request.getParameter("requestId"));
-        Service.getInstance().denyRequest(reqId, user, note);
+        request.setAttribute("pageTitle", "Manager Home");
 
-        response.sendRedirect("/Home");
+        int reqId = Integer.parseInt(request.getParameter("requestId"));
+        if (Service.getInstance().denyRequest(reqId, user, note)) {
+            request.setAttribute("successMsg", "You have successfully <strong>denied</strong> the request. An email has been sent to the user.");
+        } else {
+            request.setAttribute("errorMsg", "You were unable to deny this request.");
+        }
+
+        request.getRequestDispatcher("/Home").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -15,6 +15,27 @@
 </head>
 <body>
 
+<#if successMsg??>
+<div class="error alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4><strong>Success!</strong></h4>
+    <p>
+    ${successMsg}
+    </p>
+</div>
+</#if>
+
+<#if errorMsg??>
+<div class="error alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4>An <strong>error</strong> has occurred:</h4>
+    <p>
+        ${errorMsg}
+    </p>
+</div>
+</#if>
+
+
 <header>
     <h1><a href="/"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> &nbsp;Revature<strong>ERS</strong></a></h1>
 

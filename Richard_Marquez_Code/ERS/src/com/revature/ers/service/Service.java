@@ -160,7 +160,7 @@ public class Service {
         return result;
     }
 
-    public void approveRequest(int reqId, User handler, String note) {
+    public boolean approveRequest(int reqId, User handler, String note) {
         ReimbursementRequest req = dao.getRequest(reqId);
 
         req.setState(ReimbursementRequest.StateType.APPROVED);
@@ -168,10 +168,21 @@ public class Service {
         req.setNote(note);
         req.setDateResolved(LocalDate.now());
 
-        dao.updateRequest(req);
+        boolean updateResult = dao.updateRequest(req);
+
+        if (updateResult) {
+            String emailSubject = "Revature ERS request - Approved";
+            String emailBody = "Greetings!\n\n" +
+                    "Your request for a reimbursement of $" + req.getAmount() + " has been APPROVED.\n" +
+                    "Please log in to view the details of this request.\n\n" +
+                    "Many thanks,\nSuch regards,\nGood times,\nRevature ERS (May15Java)";
+            Mailer.sendMail(req.getRequesterEmail(), emailSubject, emailBody);
+        }
+
+        return updateResult;
     }
 
-    public void denyRequest(int reqId, User handler, String note) {
+    public boolean denyRequest(int reqId, User handler, String note) {
         ReimbursementRequest req = dao.getRequest(reqId);
 
         req.setState(ReimbursementRequest.StateType.DENIED);
@@ -179,7 +190,17 @@ public class Service {
         req.setNote(note);
         req.setDateResolved(LocalDate.now());
 
-        dao.updateRequest(req);
+        boolean updateResult = dao.updateRequest(req);
+        if (updateResult) {
+            String emailSubject = "Revature ERS request - Denied";
+            String emailBody = "Greetings!\n\n" +
+                    "Your request for a reimbursement of $" + req.getAmount() + " has been DENIED.\n" +
+                    "Please log in to view the details of this request.\n\n" +
+                    "Many thanks,\nSuch regards,\nGood times,\nRevature ERS (May15Java)";
+            Mailer.sendMail(req.getRequesterEmail(), emailSubject, emailBody);
+        }
+
+        return updateResult;
     }
 
 

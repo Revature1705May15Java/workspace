@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
                         response.sendRedirect("/EmployeeHome");
                     }
                 } else {
-                    request.setAttribute("login", "fail");
+                    request.setAttribute("errorMsg", "Your login information was incorrect. Please try again.");
                     request.getRequestDispatcher("/login.ftl").forward(request, response);
                 }
             }

@@ -32,15 +32,12 @@ public class NewRequestServlet extends HttpServlet {
         ReimbursementRequest req = svc.addRequest(user, amount, purpose);
 
         if (req != null) {
-            response.sendRedirect("/EmployeeHome");
+            request.setAttribute("successMsg", "You have successfully created a new request.");
         } else {
-            PrintWriter out = response.getWriter();
-            out.println("Failed to insert new request");
-            out.println(user.getLastName());
-            out.println(amount);
-            out.println(purpose);
+            request.setAttribute("errorMsg", "You were unable to create a new request");
         }
 
+        request.getRequestDispatcher("/Home").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -2,12 +2,6 @@
 
 
 <div id="login-container" class="white-container container-fluid">
-<#if login?? >
-    <div class="alert alert-danger">
-        <span>Login <strong>failed</strong></span>
-    </div>
-</#if>
-
     <form name="loginForm" action="/Login" method="POST">
         <input class="form-control" autofocus type="email" name="username" placeholder="youremail@domain.com" required="required"><br>
         <input class="form-control" type="password" name="password" placeholder="Password" required="required"><br>

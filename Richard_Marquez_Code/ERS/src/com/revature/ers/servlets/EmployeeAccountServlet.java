@@ -22,6 +22,8 @@ public class EmployeeAccountServlet extends HttpServlet {
             return;
         }
 
+        request.setAttribute("pageTitle", "Employee Account");
+
 
         if (request.getParameter("submit") != null) {
             HttpSession session = request.getSession();
@@ -36,15 +38,17 @@ public class EmployeeAccountServlet extends HttpServlet {
 
             if (updateResult != null) {
                 session.setAttribute("user", updateResult);
-                response.sendRedirect("/Home");
+                request.setAttribute("successMsg", "You have successfully updated your information.");
+                request.getRequestDispatcher("/Home").forward(request, response);
+//                response.sendRedirect("/Home");
             } else {
-                response.sendRedirect("/Login");
+                request.setAttribute("errorMsg", "There was a problem updating your information.");
+                request.getRequestDispatcher("/employeeAccount.ftl").forward(request, response);
+//                response.sendRedirect("/EmployeeAccount");
             }
             return;
         }
 
-//        response.sendRedirect("/Home");
-        request.setAttribute("pageTitle", "Employee Account");
         request.getRequestDispatcher("/employeeAccount.ftl").forward(request, response);
     }
 

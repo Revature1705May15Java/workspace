@@ -35,12 +35,12 @@ public class NewUserServlet extends HttpServlet {
         User newUser = svc.addUser(email, firstName, lastName, isManager);
 
         if (newUser != null) {
-            response.sendRedirect("/ManagerHome");
+            request.setAttribute("successMsg", "You successfully created a new user. They have been emailed their temporary password.");
         } else {
-            PrintWriter out = response.getWriter();
-            out.println("Failed to create new user");
+            request.setAttribute("errorMsg", "You were unable to create a new user.");
         }
 
+        request.getRequestDispatcher("/Home").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

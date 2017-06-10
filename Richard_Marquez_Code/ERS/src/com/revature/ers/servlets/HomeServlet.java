@@ -17,9 +17,9 @@ public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (authenticate(request, response)) {
             if ( ((User)request.getSession().getAttribute("user")).isManager()) {
-                response.sendRedirect("/ManagerHome");
+                request.getRequestDispatcher("/ManagerHome").forward(request, response);
             } else {
-                response.sendRedirect("/EmployeeHome");
+                request.getRequestDispatcher("/EmployeeHome").forward(request, response);
             }
         } else {
             response.sendRedirect("/Login");

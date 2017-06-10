@@ -26,10 +26,16 @@ public class ApproveRequestServlet extends HttpServlet {
 
         String note = request.getParameter("note");
 
-        int reqId = Integer.parseInt(request.getParameter("requestId"));
-        Service.getInstance().approveRequest(reqId, user, note);
+        request.setAttribute("pageTitle", "Manager Home");
 
-        response.sendRedirect("/Home");
+        int reqId = Integer.parseInt(request.getParameter("requestId"));
+        if (Service.getInstance().approveRequest(reqId, user, note)) {
+            request.setAttribute("successMsg", "You have successfully <strong>approved</strong> the request. An email has been sent to the user.");
+        } else {
+            request.setAttribute("errorMsg", "You were unable to approve this request.");
+        }
+
+        request.getRequestDispatcher("/Home").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
