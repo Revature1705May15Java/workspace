@@ -16,6 +16,3 @@
 .material-icons.orange600 { color: #FB8C00; }
 .material-icons.orange { color: orange; }
 .material-icons.orangered { color: orangered; }
-
-/* Rules for vertically aligning icons */
-.material-icons.vert-align { vertical-align: middle }

@@ -53,12 +53,11 @@
   <link rel="stylesheet" href="./css/ers.css">
 </head>
 <body class="login">
-  <div class="container w-50">
+  <div class="container">
     <#if loginAttempted??>
       <#if loginAttempted>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <!--<span aria-hidden="true">&times;</span>-->
             <i class="material-icons">close</i>
           </button>
           <i class="material-icons vert-align-middle">error</i> Incorrect email address or password. Please try again.
@@ -72,8 +71,18 @@
       <input type="email" name="em" id="loginEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="loginPassword" class="sr-only">Password</label>
       <input type="password" name="pw" id="loginPassword" class="form-control" placeholder="Password" required>
-      <br>
-      <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+      <br><!--remove this if you include the checkbox in the form-->
+      <!--
+      <div class="form-check checkbox">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" name="useFallbackClient" value="true">
+          I don't want to use the fancy client
+        </label>
+      </div>
+      -->
+      <button type="submit" class="btn btn-lg btn-primary btn-block">
+        <span class="align-middle">Login&nbsp;&nbsp;</span><i class="material-icons align-middle">verified_user</i>
+      </button>
     </form>
   </div>
 </body>
