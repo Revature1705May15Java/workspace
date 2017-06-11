@@ -18,5 +18,4 @@
 .material-icons.orangered { color: orangered; }
 
 /* Rules for vertically aligning icons */
-.material-icons.vert-align { vertical-align: 60% }
-.material-icons.vert-align-middle { vertical-align: middle }
+.material-icons.vert-align { vertical-align: middle }

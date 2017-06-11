@@ -79,176 +79,122 @@
 </head>
 <body>
   <!-- NAVBAR -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <img alt="Brand" src="./img/favicons/ers-32.png"> Expense Reimbursement System
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <!--DISPLAY "ADD EMPLOYEES" BUTTON IF CURRENT USER IS A MANAGER OR "CREATE REQUEST" BUTTON IF CURRENT USER IS AN EMPLOYEE-->
-          <#if user??>
-            <#if user.isManager()>
-              <li>
-                <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#registrationModal">
-                  <i class="material-icons">group_add</i> Register Employees
-                </button>
-              </li>
-            <#else>
-              <li>
-                <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#createRequestModal">
-                  <i class="material-icons"></i> Create Request
-                </button>
-              </li>
-            </#if>
-          </#if>
-          <li>
-            <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#settingsModal">
-              <i class="material-icons">settings</i> Account Settings
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navContent"
+            aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#main">
+      <img src="./img/favicons/ers-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Expense Reimbursement System
+    </a>
+
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#settingsModal">
+            <i class="material-icons vert-align">settings</i> Account Settings
+          </button>
+        </li>
+        <li class="nav-item">
+          <a href="logout" class="btn btn-default" role="button">
+            <i class="material-icons">exit_to_app</i>
+          </a>
+          <!--<form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
+            <button type="submit" class="btn btn-default navbar-btn">
+              <i class="material-icons">exit_to_app</i> Logout
             </button>
-          </li>
-          <li>
-            <form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
-              <!-- <input type="submit" value="Logout" name="LogoutButton" class="btn btn-default navbar-btn"/> -->
-              <button type="button" class="btn btn-default navbar-btn">
-                <i class="material-icons">exit_to_app</i> Logout
-              </button>
-            </form>
-          </li>
-        </ul>
-      </div>
+          </form>-->
+        </li>
+      </ul>
     </div>
   </nav>
 
-  <!-- MODALS -->
+  <!--DECIDE WHERE ON THE PAGE YOU WANT TO PUT THESE BUTTONS-->
+  <!--DISPLAY "ADD EMPLOYEES" BUTTON IF CURRENT USER IS A MANAGER OR "CREATE REQUEST" BUTTON IF CURRENT USER IS AN EMPLOYEE-->
   <#if user.isManager()>
-    <div id="registrationModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-         aria-labelledby="registration-title" data-backdrop="static">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="registration-title">Register New Employees</h3>
-            <button type="button" class="close" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="modal-body">
-
-          </div>
-          <div class="modal-footer">
-            
-          </div>
-        </div>
-      </div>
-    </div>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#registerModal">
+      <i class="material-icons">group_add</i> Register Employees
+    </button>
   <#else>
-    <div id="createRequestModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-         aria-labelledby="request-title" data-backdrop="static">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="request-title">Create a Request</h3>
-            <button type="button" class="close" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-              <i class="material-icons">close</i>
-            </button>
-          </div>
-          <div class="modal-body">
-
-          </div>
-          <div class="modal-footer">
-            
-          </div>
-        </div>
-      </div>
-    </div>
+    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#requestModal">
+      <i class="material-icons vert-align"></i> Create Request
+    </button>
   </#if>
 
-  <div id="settingsModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
-       aria-labelledby="settings-title" data-backdrop="static">
-    <div class="modal-dialog modal-lg" role="document">
+  <!-- MODALS -->
+  <!-- Settings Modal -->
+  <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel"
+       aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="form">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="settings-title">Account Settings</h3>
-            <button type="button" class="close" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-              <i class="material-icons">close</i>
-            </button>
+          <h5 class="modal-title" id="settingsModalLabel">Account Settings</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="material-icons vert-align">close</i>
+          </button>
         </div>
         <div class="modal-body">
-
+          
         </div>
         <div class="modal-footer">
-          
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!--sortable, filterable tables go here-->
-    <table id="unresolved" class="table table-hover"></table>
-    <table id="resolved" class="table table-hover"></table>
-
-
-    <!--
+  <#if user??>
     <#if user.isManager()>
-      <h2>Welcome to the Manager Homepage, ${user.getFirstname()} ${user.getLastname()}</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Status</th>
-            <th >Amount</th>
-            <th id="requester">Requested by</th>
-            <th id="request-date">On</th>
-            <th id="request-purpose">For</th>
-            <th id="resolver">Resolved by</th>
-            <th id="resolved-date">On</th>
-            <th id="resolve-note">Because</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <!-- Registration Modal -->
+      <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+           aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="form">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="registerModalLabel">Register Users</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">close</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <#else>
-      <h2>Welcome to the Employee Homepage, ${user.getFirstname()} ${user.getLastname()}</h2>
-      <table>
-        <thead>
-          <tr>
-            <th id="request-id">ID</th>
-            <th id="request-state">Status</th>
-            <th id="request-amount">Amount</th>
-            <th id="requester">Requested by</th>
-            <th id="request-purpose">For</th>
-            <th id="resolver">Resolved by</th>
-            <th id="resolved-date">On</th>
-            <th id="resolve-note">Because</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <!-- Request Modal -->
+      <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModalLabel"
+           aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="form">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="requestModalLabel">Make Request</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons">close</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </#if>
-    -->
+  </#if>
 
-  </main>
-  
+  <#if user??>
+    Welcome ${user.firstname} ${user.lastname}
+  </#if>
 </body>
 </html>
