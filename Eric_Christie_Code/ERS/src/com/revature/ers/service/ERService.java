@@ -22,7 +22,7 @@ public class ERService {
    * @param isManager
    * @return a complete Employee object representing the newly created employee, or null if no employee was created
    */
-  public User registerEmployee(String email, String firstname, String lastname, boolean isManager) {
+  public User registerUser(String email, String firstname, String lastname, boolean isManager) {
     User result = null;
     if (dao.addUser(email, firstname, lastname, isManager)) {
       Mailer mailer = Mailer.getInstance();
@@ -53,14 +53,27 @@ public class ERService {
   }
   
   /**
-   * Record that the specified employee is logging out at this date and time.
+   * Record that the specified user is logging out at this date and time.
    * @param e
    * @return true if successful, false otherwise
    */
-  public boolean logout(User e) {
+  public boolean logout(User u) {
     boolean success = false;
-    success = dao.updateUserLatestLogout(e);
-    logger.info(e.getFirstname() + " " + e.getLastname() + " logged out");
+    success = dao.updateUserLatestLogout(u);
+    logger.info(u.getFirstname() + " " + u.getLastname() + " logged out");
+    return success;
+  }
+  
+  /**
+   * Change the specified user's password to the given password.
+   * @param u
+   * @param password
+   * @return true if successful, false otherwise
+   */
+  public boolean changePassword(User u, String password) {
+    boolean success = false;
+    success = dao.updateUserPassword(u, password);
+    logger.info(u.getFirstname() + " " + u.getLastname() + " changed their password");
     return success;
   }
   
@@ -68,10 +81,10 @@ public class ERService {
     return dao.getAllRequestStates();
   }
   
-  public ArrayList<User> getEmployees() {
-    ArrayList<User> result = dao.getAllUsers();
-    
-    return result;
-  }
+//  public ArrayList<User> getEmployees() {
+//    ArrayList<User> result = dao.getAllUsers();
+//    
+//    return result;
+//  }
   
 }

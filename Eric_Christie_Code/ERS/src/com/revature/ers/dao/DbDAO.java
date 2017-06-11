@@ -378,7 +378,7 @@ public class DbDAO implements DAO {
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
       Savepoint save = conn.setSavepoint();
-      String sql = "update employee set passwordHash=? where id=?";
+      String sql = "update employee set passwordHash=?, setupDone=1 where id=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, PasswordStorage.createHash(password));
       ps.setInt(2, e.getId());

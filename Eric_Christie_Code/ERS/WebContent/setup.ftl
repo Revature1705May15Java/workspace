@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login - Expense Reimbursement System</title>
+  <title>Account Setup - Expense Reimbursement System</title>
 
 	<link rel="shortcut icon" href="./img/favicons/ers.ico">
 	<link rel="icon" sizes="16x16 32x32 64x64" href="./img/favicons/ers.ico">
@@ -49,42 +49,43 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./css/icon-styles.css">
 
-  <#-- <script src="./js/ers.js"></script> -->
   <link rel="stylesheet" href="./css/ers.css">
 </head>
-<body class="login">
+<body class="setup">
   <div class="container">
-    <#if loginAttempted??>
-      <#if loginAttempted>
+    <#if setupAttempted??>
+      <#if setupAttempted>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <i class="material-icons">close</i>
           </button>
           <i class="material-icons vert-align-middle">error</i> 
-          Incorrect email address or password. Please try again.
+          Failed to set new password. Please try again.
         </div>
       </#if>
     </#if>
 
-    <form name="loginForm" class="form-page" method="POST" action="login">
-      <h2 class="form-page-heading">Login</h2>
-      <label for="loginEmail" class="sr-only">Email address</label>
-      <input type="email" name="em" id="loginEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="loginPassword" class="sr-only">Password</label>
-      <input type="password" name="pw" id="loginPassword" class="form-control" placeholder="Password" required>
-      <br><!--remove this if you include the checkbox in the form-->
-      <!--
-      <div class="form-check checkbox">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input" name="useFallbackClient" value="true">
-          I don't want to use the fancy client
-        </label>
-      </div>
-      -->
+    <form name="setupForm" class="form-page" method="POST" action="setup">
+      <h2 class="form-page-heading">Please set a password for your account.</h2>
+      <label for="setupPassword" class="sr-only">Password</label>
+      <input type="password" name="pw" id="setupPassword" class="form-control" placeholder="Password"
+        maxlength="100" minlength="8" required autofocus>
+      <label for="setupConfirm" class="sr-only">Confirm Password</label>
+      <input type="password" name="cp" id="setupConfirm" class="form-control" placeholder="Confirm Password"
+        maxlength="100" minlength="8" required title="The password fields must match.">
+      <br>
       <button type="submit" class="btn btn-lg btn-primary btn-block">
-        <span class="align-middle">Login&nbsp;&nbsp;</span><i class="material-icons align-middle">verified_user</i>
+        <span class="align-middle">Save&nbsp;Password&nbsp;&nbsp;</span><i class="material-icons align-middle">lock</i>
       </button>
     </form>
   </div>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#setupPassword').on('change', function() {
+        $('#setupConfirm').attr('pattern', '^' + $('#setupPassword').val() + '$');
+      });
+    });
+  </script>
 </body>
 </html>
