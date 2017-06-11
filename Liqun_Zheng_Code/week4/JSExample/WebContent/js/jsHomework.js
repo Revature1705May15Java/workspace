@@ -425,7 +425,7 @@ document.getElementById("doGetPerson").addEventListener("click", doGetPerson, fa
 //Define function getUSA()
 //Find the html element that contains "USA".
 //Print that element's contents.
-//  
+
 //2. Sales
 //Define function getPeopleInSales()
 //Print the names of all the people in the sales department.

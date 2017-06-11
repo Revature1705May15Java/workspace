@@ -64,4 +64,14 @@
 		<servlet-name>ManagerHome</servlet-name>
 		<url-pattern>/managerHome</url-pattern>
 	</servlet-mapping>
+	
+	  <servlet>
+    <servlet-name>updateInfo</servlet-name>
+    <servlet-class>com.bank.servlets.EmployeeServletHome</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateInfo</servlet-name>
+    <url-pattern>/updateInfo</url-pattern>
+  </servlet-mapping>
+	
 </web-app>

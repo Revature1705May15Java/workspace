@@ -1,6 +1,0 @@
-<html>
-<body>
-<p>welcome, ${fistname} ${lastname}</p>
-</body>
-
-</html>

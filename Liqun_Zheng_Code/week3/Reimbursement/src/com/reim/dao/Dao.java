@@ -13,6 +13,7 @@ public interface Dao {
 	public State_type findTypeById(int type_id);
 	Request addRequest(Employee u, String purpose, double amount);
 	Request getRequest(int requestId);
-	
+	public int updateEmployee(int empId, String fname, String lname, String uname, String pw);
+	public ArrayList<Request> getReqsByFnLn(String fname, String lname);
 	
 }

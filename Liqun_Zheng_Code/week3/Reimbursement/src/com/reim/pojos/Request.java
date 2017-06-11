@@ -9,12 +9,10 @@ public class Request {
 	Date opened, closed;
 	double amount;
 	
-	Employee requester;
-	Employee resolver;
 	
 	public Request(){}
 	public Request(int request_id, int requester_id, int resolver_id, String note, String purpose, State_type state,
-			Date opened, Date closed, double amount, Employee requester, Employee resolver) {
+			Date opened, Date closed, double amount) {
 		super();
 		this.request_id = request_id;
 		this.requester_id = requester_id;
@@ -25,8 +23,6 @@ public class Request {
 		this.opened = opened;
 		this.closed = closed;
 		this.amount = amount;
-		this.requester = requester;
-		this.resolver = resolver;
 	}
 	public int getRequest_id() {
 		return request_id;
@@ -82,24 +78,15 @@ public class Request {
 	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	public Employee getRequester() {
-		return requester;
-	}
-	public void setRequester(Employee requester) {
-		this.requester = requester;
-	}
-	public Employee getResolver() {
-		return resolver;
-	}
-	public void setResolver(Employee resolver) {
-		this.resolver = resolver;
-	}
 	@Override
 	public String toString() {
 		return "Request [request_id=" + request_id + ", requester_id=" + requester_id + ", resolver_id=" + resolver_id
 				+ ", note=" + note + ", purpose=" + purpose + ", state=" + state + ", opened=" + opened + ", closed="
-				+ closed + ", amount=" + amount + ", requester=" + requester + ", resolver=" + resolver + "]\n";
+				+ closed + ", amount=" + amount + "]\n";
 	}
+	
+	
+
 	
 	
 	

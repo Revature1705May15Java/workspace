@@ -203,5 +203,83 @@ public class DaoImpl implements Dao {
 			return r;
 		}
 	
+	
+	//update Employee information by employee id, first name, last name, username, and password
+	public int updateEmployee(int empId, String fname, String lname, String uname, String pw) {
+		
+		int result = 0;
+		
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "update employee " +
+					" set first_name = ?, last_name = ?, " +
+					"username = ?, password = ? " +
+					" where employee.employee_id = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, fname);
+			ps.setString(2, lname);
+			ps.setString(3, uname);
+			ps.setString(4, pw);
+			ps.setInt(5, empId);
+			result = ps.executeUpdate();
+			//request_id, requester_id, resolver_id, note, purpose, state_id
+			//opened, closed, amount, state_id, name;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	//Get requests by searching firstname, lastname
+	public ArrayList<Request> getReqsByFnLn(String fname, String lname){
+		ArrayList<Request> result = null;
+		Request r = null;
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "select r.REQUEST_ID, r.REQUESTER_ID, r.RESOLVER_ID, " +
+					" r.note, r.purpose, r.state_id, r.OPENED, r.closed, r.amount, s.NAME "+
+					" from employee e "+
+					" inner join request r "+
+					" on e.EMPLOYEE_ID = r.REQUESTER_ID " +
+					" inner join state_type s " +
+					" on r.STATE_ID = s.STATE_ID " +
+					" where e.FIRST_NAME = ? AND e.LAST_NAME = ? ";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, fname);
+			ps.setString(2, lname);
+			ResultSet info = ps.executeQuery();
+			//request_id, requester_id, resolver_id, note, purpose, state_id
+			//opened, closed, amount, state_id, name;
+			result = new ArrayList<Request>();
+			while(info.next()){
+				r = new Request();
+				r.setRequest_id(info.getInt(1));
+				r.setRequester_id(info.getInt(2));
+				r.setResolver_id(info.getInt(3));
+				r.setNote(info.getString(4));
+				r.setPurpose(info.getString(5));
+				r.setState(new State_type(info.getInt(6),info.getString(10)));
+				r.setOpened(info.getDate(7));
+				r.setClosed(info.getDate(8));
+				r.setAmount(info.getDouble(9));
+				result.add(r);
+				
+			}
+			
+			if(!result.isEmpty()){
+				return result;
+			}
 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return null;
+		
+	}
+	
 }

@@ -112,3 +112,19 @@ select * from request r
 inner join state_type s 
 on r.state_id = s.STATE_ID
 where r.request_id = 125;
+/
+
+update employee
+set first_name = 'liqun', last_name = 'zheng', 
+username = 'lizheng', password = '123'
+where employee.employee_id = 50;
+/
+
+select r.REQUEST_ID, r.REQUESTER_ID, r.RESOLVER_ID, 
+r.note, r.purpose, r.state_id, r.OPENED, r.closed, r.amount, s.NAME
+from employee e
+inner join request r
+on e.EMPLOYEE_ID = r.REQUESTER_ID
+inner join state_type s
+on r.STATE_ID = s.STATE_ID
+where e.FIRST_NAME = 'test' AND e.LAST_NAME = 'test';

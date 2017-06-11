@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="com.bank.pojos.Account"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.bank.dao.DAO"/>
 <fullyQualifiedTypeName name="com.bank.dao.DaoImpl"/>
@@ -27,9 +26,10 @@
 <fullyQualifiedTypeName name="com.reim.pojos.State_type"/>
 <fullyQualifiedTypeName name="com.reim.dao.Dao"/>
 <fullyQualifiedTypeName name="com.reim.dao.DaoImpl"/>
-<fullyQualifiedTypeName name="com.reim.service.Service"/>
 <fullyQualifiedTypeName name="com.reim.pojos.Employee"/>
 <fullyQualifiedTypeName name="oracle.jdbc.OraclePreparedStatement"/>
 <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
 <fullyQualifiedTypeName name="com.reim.pojos.Request"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.reim.service.Service"/>
 </qualifiedTypeNameHistroy>

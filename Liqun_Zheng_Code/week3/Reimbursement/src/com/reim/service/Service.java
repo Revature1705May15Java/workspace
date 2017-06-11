@@ -35,4 +35,14 @@ public class Service {
 		}
 		return null;
 	}
+	
+	public Employee updateInfo(Employee emp, String fname, String lname, String username, String password){
+		Employee temp = dao.findEmpByUname(username);
+		Service s = new Service();
+		if(temp.getUname() == null){
+			dao.updateEmployee(emp.getEmployee_id(), fname, lname, username, password);
+			return s.Signin(username, password);
+		}
+		return null;
+	}
 }
