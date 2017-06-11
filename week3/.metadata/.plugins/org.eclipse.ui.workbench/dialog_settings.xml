@@ -4,6 +4,11 @@
 		<item value="22" key="DIALOG_X_ORIGIN"/>
 		<item value="57" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="EditorSelectionDialog">
+		<item value="true" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
+		<item value=".ftl" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="C:\Users\aguac\AppData\Local\atom\app-1.17.2\atom.exe" key="EditorSelectionDialog.STORE_ID_DESCR"/>
+	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>
 		<item value="350" key="dialogWidth"/>

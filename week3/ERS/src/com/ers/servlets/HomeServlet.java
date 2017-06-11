@@ -1,25 +1,31 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
 
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public HomeServlet() {
-        super();
-    }
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+   
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req,resp);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.sendRedirect("login");
-		//doGet(request, response);
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		Employee emp=(Employee)session.getAttribute("employee");
+		if(emp!=null&&emp.getIsmanager()==1){
+			System.out.println(emp.getFirstname()+" "+emp.getLastname());
+			req.getRequestDispatcher("home.ftl").forward(req, resp);
+		}else{
+			resp.sendRedirect("logout");
+		}
 	}
 
 }

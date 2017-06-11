@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hand typed JSON with AJAX</title>
+</head>
+<body>
+<button id="myBtn">Cluck here!</button>
+	<div id="stuff"></div>
+	
+	<script type="text/javascript">
+	var myPerson;
+	
+	function handleEvent(){
+		
+	}
+	</script>
+
+</body>
+</html>

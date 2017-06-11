@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hand typed JSON with AJAX</title>
+</head>
+<body>
+<button id="myBtn">Cluck here!</button>
+	<div id="stuff"></div>
+	
+	<script type="text/javascript">
+	var myPerson;
+	
+	function handleEvent(){
+		var xhr=XMLHttpRequest();
+		xhr.onreadstatechange=function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				var person=JSON.parse(xhr.responseText);
+				myPerson=person;
+			}
+			
+		}
+	}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+var pokemonVar;
+
+function getPokemon(){
+	var pokemonId=document.getElementById("pokemonId").value;
+	console.log("sending pokemon id: "+pokemonId);
+}
+function setValues(pokemon){
+	
+}
+window.onload=function(){
+	document.getElementById("pokemonSubmit").addEventListener("click",getPokemon);
+//bubble v capture boolean = undefined = falsy = bubble;
+}

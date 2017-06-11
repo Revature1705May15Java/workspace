@@ -15,10 +15,14 @@ public class Service {
 	public static Employee loginUser(String email,String password){
 		Employee temp=new Employee();
 		temp=dao.getEmployee(email);
-		String actualpw=temp.getPassword();
-		if(temp!=null&&actualpw.equals(password)){
-			isLoggedIn=true;
-			return temp;
+		if(temp!=null){
+			String actualpw=temp.getPassword();
+			if(actualpw.equals(password)){
+				isLoggedIn=true;
+				return temp;
+			}else{
+				return null;
+			}
 		}else{
 			return null;
 		}

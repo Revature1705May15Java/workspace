@@ -14,33 +14,28 @@ import com.ers.pojos.Request;
 public class DaoImpl implements DAO {
 
 	public DaoImpl() {
-		
+
 	}
 
 	@Override
 	public Employee getEmployee(String email) {
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql="select * from employee where email=?";
-			System.out.println(email);
 			PreparedStatement ps =connection.prepareStatement(sql);
-			System.out.println(sql);
 			ps.setString(1, email);
-			System.out.println(ps.toString());
 			ResultSet info = ps.executeQuery();
-			System.out.println("here");
 			Employee temp = new Employee();
 			while(info.next()){
-				System.out.println("in infoset");
 				temp.setEmail(info.getString(1));
 				temp.setPassword(info.getString(2));
 				temp.setId(info.getInt(3));
 				temp.setFirstname(info.getString(4));
 				temp.setLastname(info.getString(5));
-				temp.setIsmanager(info.getInt(6));		
+				temp.setIsmanager(info.getInt(6));
 				return temp;
 			}
-			
-			
+
+
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -54,7 +49,7 @@ public class DaoImpl implements DAO {
 			PreparedStatement ps =connection.prepareStatement(sql);
 			ps.setInt(1, employeeid);
 			ResultSet info = ps.executeQuery();
-			
+
 			Employee temp = new Employee();
 			System.out.println("here");
 			while(info.next()){
@@ -64,11 +59,11 @@ public class DaoImpl implements DAO {
 				temp.setId(info.getInt(3));
 				temp.setFirstname(info.getString(4));
 				temp.setLastname(info.getString(5));
-				temp.setIsmanager(info.getInt(6));		
+				temp.setIsmanager(info.getInt(6));
 				return temp;
 			}
-			
-			
+
+
 		}catch(SQLException e){
 			System.out.println("uhoh");
 			e.printStackTrace();
@@ -83,7 +78,7 @@ public class DaoImpl implements DAO {
 			PreparedStatement ps =connection.prepareStatement(sql);
 			ps.setInt(1, requestid);
 			ResultSet info = ps.executeQuery();
-			
+
 			Request temp = new Request();
 			while(info.next()){
 				temp.setStateid(info.getInt(1));
@@ -91,13 +86,13 @@ public class DaoImpl implements DAO {
 				temp.setResdate(info.getDate(3));
 				temp.setAmt(info.getInt(4));
 				temp.setPurpose(info.getString(5));
-				temp.setRequesterid(info.getInt(6));		
+				temp.setRequesterid(info.getInt(6));
 				temp.setResolverid(info.getInt(7));
 				temp.setNote(info.getString(8));
 				return temp;
 			}
-			
-			
+
+
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
@@ -111,7 +106,7 @@ public class DaoImpl implements DAO {
 			PreparedStatement ps =connection.prepareStatement(sql);
 			ps.setInt(1, employeeid);
 			ResultSet info = ps.executeQuery();
-			
+
 			ArrayList<Request> requests = new ArrayList<Request>();
 			while(info.next()){
 				Request temp = new Request();
@@ -120,7 +115,7 @@ public class DaoImpl implements DAO {
 				temp.setResdate(info.getDate(3));
 				temp.setAmt(info.getInt(4));
 				temp.setPurpose(info.getString(5));
-				temp.setRequesterid(info.getInt(6));		
+				temp.setRequesterid(info.getInt(6));
 				temp.setResolverid(info.getInt(7));
 				temp.setNote(info.getString(8));
 				requests.add(temp);
@@ -142,11 +137,11 @@ public class DaoImpl implements DAO {
 			while(info1.next()){
 				numStrings=info1.getInt(1);
 			}
-			
+
 			String sql2="select name from statetype";
 			Statement statement2 =connection.createStatement();
 			ResultSet info2 = statement2.executeQuery(sql2);
-			
+
 			String[] statenames = new String[numStrings];
 			int i=0;
 			while(info2.next()){
@@ -211,6 +206,6 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 
 }

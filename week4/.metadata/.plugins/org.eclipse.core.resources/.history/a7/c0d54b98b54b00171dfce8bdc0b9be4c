@@ -1,0 +1,5 @@
+//is mouse over Ryu?
+var isHovered=false;
+(document).ready(function(){
+	
+}

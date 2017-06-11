@@ -1,0 +1,17 @@
+127.0.0.1 - - [09/Jun/2017:01:01:49 -0400] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:01:50 -0400] "GET /JavaScript_examples/indexjs.html HTTP/1.1" 200 3547
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:01:50 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 200 10424
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:02:54 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:04:36 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:11:16 -0400] "GET /JavaScript_examples/indexjquery.html HTTP/1.1" 200 3579
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:11:16 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 200 10402
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:12:25 -0400] "GET /JavaScript_examples/indexjquery.html HTTP/1.1" 200 3578
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:12:25 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:15:18 -0400] "GET /JavaScript_examples/example.html HTTP/1.1" 200 934
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:15:18 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:15:18 -0400] "GET /JavaScript_examples/js/examples.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:16:14 -0400] "GET /JavaScript_examples/example.html HTTP/1.1" 200 950
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:16:14 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:16:32 -0400] "GET /JavaScript_examples/example.html HTTP/1.1" 200 950
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:16:32 -0400] "GET /JavaScript_examples/js/examples.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [09/Jun/2017:01:16:32 -0400] "GET /JavaScript_examples/js/homework.js HTTP/1.1" 200 10402

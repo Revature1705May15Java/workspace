@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.wst.jsdt.js.node.NodeLaunchConfigurationType">
+<stringAttribute key="attr_app_path" value="${workspace_loc:/JavaScript examples/WebContent/js/homework.js}"/>
+<stringAttribute key="attr_app_project" value="JavaScript examples"/>
+<stringAttribute key="attr_app_project_relative_path" value="WebContent\js\homework.js"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/JavaScript examples"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+</launchConfiguration>

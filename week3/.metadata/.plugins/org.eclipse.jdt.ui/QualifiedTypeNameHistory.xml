@@ -17,7 +17,6 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="com.bank.util.ConnectionFactory"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.bank.pojos.User"/>
 <fullyQualifiedTypeName name="com.bank.service.Service"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
@@ -28,7 +27,6 @@
 <fullyQualifiedTypeName name="com.ers.dao.DAO"/>
 <fullyQualifiedTypeName name="com.ers.dao.DaoImpl"/>
 <fullyQualifiedTypeName name="com.ers.service.Service"/>
-<fullyQualifiedTypeName name="com.ers.pojos.Employee"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.net.SocketTimeoutException"/>
 <fullyQualifiedTypeName name="com.floats.FloatHolder"/>
@@ -43,4 +41,6 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.ers.pojos.Employee"/>
 </qualifiedTypeNameHistroy>
