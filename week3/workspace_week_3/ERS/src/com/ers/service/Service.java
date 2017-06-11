@@ -14,4 +14,12 @@ public class Service {
 		
 		return temp;
 	}
+	
+	public int addUser(String uname, String pw, String fn, String ln, int rank){
+		return dao.addUser(uname, pw, fn, ln, rank);
+	}
+	
+	public int addRequest(int amt, String purpose, int id){
+		return dao.addRequest(amt, purpose, id);
+	}
 }

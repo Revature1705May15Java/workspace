@@ -6,7 +6,15 @@ import java.util.ArrayList;
 public class Request {
 	int id, requesterId, adminId;
 	double balance;
-	String purpose, type;
+	String purpose, adminNote, type;
+	public String getAdminNote() {
+		return adminNote;
+	}
+
+	public void setAdminNote(String adminNote) {
+		this.adminNote = adminNote;
+	}
+
 	public String getPurpose() {
 		return purpose;
 	}

@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Manager Page</title>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -41,7 +39,7 @@ div#newuser{
 			<#if createuser! == "success">
 			<h3 style="color:green">Employee Created.</h3>
 			</#if>
-			<#if creatuser! == "fail">
+			<#if createuser! == "fail">
 			<h3 style="color:red">Username is unavailable. Please try again.</h3>
 			</#if>
 			<h4>Create a New Employee login</h3>
@@ -61,4 +59,5 @@ div#newuser{
 	</div>
 
 </body>
+
 </html>

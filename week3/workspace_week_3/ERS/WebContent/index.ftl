@@ -14,12 +14,20 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
+<style>
+div#loggingin{
+    height: 150px;
+    width: 500px;
+    color: black;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+</style>
 	<title>Welcome Page</title>
 </head>
-<body style="background-color: aquamarine;">
+<body style="background-color: aquamarine; height: 1000px;">
 
-	<div class="jumbotron" style="background-color: skyblue; color: purple; text-align: center;">
+	<div class="jumbotron" id="loggingin" style="background-color: skyblue; color: purple; text-align: center;">
 		<form method="POST" action="login">
 		
 			<input class="form-control" type="text" name="username" placeholder="Username" required="required" />

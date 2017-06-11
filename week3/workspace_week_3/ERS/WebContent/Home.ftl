@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Employee Page</title>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -38,22 +36,16 @@ div#newuser{
 
 		
 		<div id="newuser" class="jumbotron">
-			<#if createuser! == "success">
-			<h3 style="color:green">Employee Created.</h3>
+			<#if createrequest! == "success">
+			<h3 style="color:green">Request submitted.</h3>
 			</#if>
-			<#if creatuser! == "fail">
-			<h3 style="color:red">Username is unavailable. Please try again.</h3>
+			<#if createrequest! == "fail">
+			<h3 style="color:red">Invalid entry. Please try again.</h3>
 			</#if>
-			<h4>Create a New Employee login</h3>
-			<form method="POST" action="create">
-			<input class="form-control" type="text" name="username" placeholder="Username" required="required" />
-			<input class="form-control" type="password" name="password" placeholder="Password"  required="required" />
-			<input class="form-control" type="text" name="firstname" placeholder="first name" required="required" />
-			<input class="form-control" type="text" name="lastname" placeholder="last name" required="required" />
-			Rank:<select name="rank">
-			    <option value="employee" selected="selected">Employee</option>
-    			<option value="manager">Manager</option>
-  			</select>
+			<h4>Create a New Reimbursement Request</h3>
+			<form method="POST" action="createRequest">
+			<input class="form-control" type="number" name="amount" min="1" required="required">
+			<input class="form-control" type="text" name="purpose" placeholder="Purpose of spending" required="required" />
 			<input class="btn-primary" type="submit" value="Create Employee"/>
 			</form>
 		</div>

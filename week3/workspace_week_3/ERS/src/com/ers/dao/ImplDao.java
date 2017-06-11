@@ -88,9 +88,8 @@ public class ImplDao implements Dao{
 	}
 	
 	@Override
-	public int addUser(String uname, String pw, int empid, String fn, String ln, int emp_rank) {
+	public int addUser(String uname, String pw, String fn, String ln, int emp_rank) {
 		int numRowsAffected = 0;
-		
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			
 			String sql = "INSERT INTO employee(username,password,firstname,lastname,emp_rank)"
@@ -104,7 +103,6 @@ public class ImplDao implements Dao{
 			ps.setInt(5, emp_rank);
 			
 			numRowsAffected = ps.executeUpdate();
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,6 +153,72 @@ public class ImplDao implements Dao{
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	@Override
+	public int addRequest(int amt, String purpose, int id) {
+		int numRowsAffected = 0;
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			System.out.println("VALUES: " + amt + " : "+ purpose + " : "+ id);
+			String sql = "INSERT INTO requests(amount,purpose,empid)"
+						+ "VALUES (?,?,?)";
+					
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, amt);
+			ps.setString(2, purpose);
+			ps.setInt(3, id);
+			
+			numRowsAffected = ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return numRowsAffected;
+	}
+
+	@Override
+	public ArrayList<Request> getRequestsByEmployeeId(int id) {
+		ArrayList<Request> list = new ArrayList<Request>();
+		Request request = new Request();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT * FROM requests WHERE empid = ?";
+			String sql2 ="SELECT name FROM statetype WHERE stateid = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			
+			ps.setInt(1, id);
+			ResultSet info = ps.executeQuery();
+			
+			int i = 0;
+			while(info.next()){
+				
+				request = new Request();
+				request.setId(info.getInt(1));
+				request.setDateOpened(info.getDate(2));
+				request.setDateClosed(info.getDate(3));
+				request.setBalance(info.getInt(4));
+				request.setPurpose(info.getString(5));
+				request.setRequesterId(6);
+				request.setAdminId(info.getInt(7));
+				
+				int num = info.getInt(8);
+				ps2.setInt(1, num); // setting request type so it can be queried each iteration to
+									// collect the correct request type in the look-up table.
+				ResultSet info2 = ps2.executeQuery();
+				info2.next();
+				request.setType(info2.getString(1));
+				
+				request.setAdminNote(info.getString(9));
+				list.add(i, request);
+				i++;			
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 
 }

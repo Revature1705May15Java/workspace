@@ -26,6 +26,22 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>Manager</servlet-name>
+    <servlet-class>com.ers.servlets.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Manager</servlet-name>
+    <url-pattern>/create</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Employee</servlet-name>
+    <servlet-class>com.ers.servlets.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Employee</servlet-name>
+    <url-pattern>/createRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>freemarker</servlet-name>
     <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
     <init-param>
