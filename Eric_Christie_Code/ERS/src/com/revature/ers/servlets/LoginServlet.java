@@ -53,11 +53,7 @@ public class LoginServlet extends HttpServlet {
       if (result != null) {
         HttpSession session = request.getSession(true);
         session.setAttribute("user", result);
-        if (result.isSetupDone()) {
-          response.sendRedirect("main");
-        } else {
-          response.sendRedirect("setup");
-        }
+        response.sendRedirect("main");
       } else {
         request.setAttribute("loginAttempted", loginAttempted);
         request.getRequestDispatcher("login.ftl").forward(request, response);

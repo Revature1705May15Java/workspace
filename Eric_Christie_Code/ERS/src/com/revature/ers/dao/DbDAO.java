@@ -50,6 +50,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException | CannotPerformOperationException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return success;
   }
@@ -82,6 +83,7 @@ public class DbDAO implements DAO {
         }
       } catch (SQLException ex) {
         logger.catching(ex);
+        ex.printStackTrace();
       }
     }
     return result;
@@ -101,6 +103,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException | CannotPerformOperationException | InvalidHashException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return correct;
   }
@@ -120,6 +123,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return employees;
   }
@@ -141,6 +145,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return requests;
   }
@@ -158,6 +163,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return states;
   }
@@ -179,6 +185,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return result;
   }
@@ -200,6 +207,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return result;
   }
@@ -223,6 +231,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return result;
   }
@@ -246,6 +255,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return requests;
   }
@@ -269,6 +279,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return requests;
   }
@@ -292,6 +303,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return requests;
   }
@@ -316,6 +328,7 @@ public class DbDAO implements DAO {
         }
       } catch (SQLException ex) {
         logger.catching(ex);
+        ex.printStackTrace();
       }
     }
     return success;
@@ -345,6 +358,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return success;
   }
@@ -368,6 +382,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return success;
   }
@@ -392,6 +407,7 @@ public class DbDAO implements DAO {
       }
     } catch (SQLException | CannotPerformOperationException ex) {
       logger.catching(ex);
+      ex.printStackTrace();
     }
     return success;
   }
@@ -420,6 +436,7 @@ public class DbDAO implements DAO {
           }
         } catch (SQLException ex) {
           logger.catching(ex);
+          ex.printStackTrace();
         }
       }
     }

@@ -39,7 +39,7 @@ public class TemporaryLogger {
   }
   
   public void info(String message) {
-    logger.info(message);
+    log(message);
   }
   
   public void throwing(Throwable t) {

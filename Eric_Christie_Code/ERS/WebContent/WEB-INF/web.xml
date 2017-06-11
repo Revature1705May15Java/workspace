@@ -26,12 +26,12 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>Setup</servlet-name>
-    <servlet-class>com.revature.ers.servlets.SetupServlet</servlet-class>
+    <servlet-name>Reset</servlet-name>
+    <servlet-class>com.revature.ers.servlets.ResetServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Setup</servlet-name>
-    <url-pattern>/setup</url-pattern>
+    <servlet-name>Reset</servlet-name>
+    <url-pattern>/reset</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Main</servlet-name>
