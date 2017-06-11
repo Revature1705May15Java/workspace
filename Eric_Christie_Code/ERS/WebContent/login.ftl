@@ -84,6 +84,7 @@
       <button type="submit" class="btn btn-lg btn-primary btn-block">
         <span class="align-middle">Login&nbsp;&nbsp;</span><i class="material-icons align-middle">verified_user</i>
       </button>
+      <a href="reset" id="forgot-password"><p class="text-right mt-2">forgot password</p></a> 
     </form>
   </div>
 </body>

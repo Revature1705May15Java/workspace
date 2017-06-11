@@ -77,6 +77,31 @@ public class ERService {
     return success;
   }
   
+  /**
+   * TODO figure out how to implement email-based password recovery
+   * Send a password reset link to the given email address if a user with that address exists.
+   * @param email
+   * @return SOMETHING (not sure what yet)
+   */
+  public String sendPasswordResetLink(String email) {
+    String SOMETHING = null;
+    
+    return SOMETHING;
+  }
+  
+  /**
+   * TODO figure out how to implement email-based password recovery
+   * Set the password for the user with the given email address to the hash of the given password. (provided some checks are passed)
+   * @param email
+   * @param password
+   * @return true if successful, false otherwise
+   */
+  public boolean resetPassword(String email, String password) {
+    boolean success = false;
+    
+    return success;
+  }
+  
   public ArrayList<RequestState> getRequestStates() {
     return dao.getAllRequestStates();
   }

@@ -21,6 +21,7 @@ public class User {
     this.lastname = lastname;
     this.isManager = isManager;
     this.emailAlertsOn = emailAlertsOn;
+    this.setupDone = setupDone;
     this.latestLogout = latestLogout;
   }
 
@@ -33,6 +34,7 @@ public class User {
     this.lastname = lastname;
     this.isManager = isManager;
     this.emailAlertsOn = emailAlertsOn;
+    this.setupDone = setupDone;
     this.latestLogout = latestLogout;
   }
 
@@ -45,6 +47,7 @@ public class User {
     this.lastname = lastname;
     this.isManager = isManager;
     this.emailAlertsOn = emailAlertsOn;
+    this.setupDone = setupDone;
     this.latestLogout = latestLogout;
     this.requests = requests;
   }
