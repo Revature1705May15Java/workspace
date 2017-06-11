@@ -7,13 +7,13 @@ public class User {
 
   private int id;
   private String email, firstname, lastname;
-  private boolean isManager, emailAlertsOn;
+  private boolean isManager, emailAlertsOn, setupDone;
   private LocalDateTime latestLogout;
   private ArrayList<Request> requests;
   
   public User() { super(); }
 
-  public User(String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
       LocalDateTime latestLogout) {
     super();
     this.email = email;
@@ -24,7 +24,7 @@ public class User {
     this.latestLogout = latestLogout;
   }
 
-  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
       LocalDateTime latestLogout) {
     super();
     this.id = id;
@@ -36,7 +36,7 @@ public class User {
     this.latestLogout = latestLogout;
   }
 
-  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn,
+  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
       LocalDateTime latestLogout, ArrayList<Request> requests) {
     super();
     this.id = id;
@@ -97,6 +97,14 @@ public class User {
     this.emailAlertsOn = emailAlertsOn;
   }
 
+  public boolean isSetupDone() {
+    return setupDone;
+  }
+
+  public void setSetupDone(boolean setupDone) {
+    this.setupDone = setupDone;
+  }
+
   public LocalDateTime getLatestLogout() {
     return latestLogout;
   }
@@ -115,9 +123,9 @@ public class User {
 
   @Override
   public String toString() {
-    return "Employee [id=" + id + ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname
-        + ", isManager=" + isManager + ", emailAlertsOn=" + emailAlertsOn + ", latestLogout=" + latestLogout
-        + ", requests=" + requests + "]";
+    return "User [id=" + id + ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname
+        + ", isManager=" + isManager + ", emailAlertsOn=" + emailAlertsOn + ", setupDone=" + setupDone
+        + ", latestLogout=" + latestLogout + ", requests=" + requests + "]";
   }
 
 }

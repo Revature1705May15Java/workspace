@@ -57,30 +57,32 @@ public class DbDAO implements DAO {
   @Override
   public Integer addRequest(User requester, BigDecimal amount, String purpose) {
     Integer result = null;
-    try (Connection conn = factory.getConnection();) {
-      conn.setAutoCommit(false);
-      Savepoint save = conn.setSavepoint();
-      String sql = "insert into request (requesterId, amount, purpose) values (?, ?, ?) returning id into ?";
-      OraclePreparedStatement ops = (OraclePreparedStatement) conn.prepareStatement(sql);
-      ops.setInt(1, requester.getId());
-      ops.setBigDecimal(2, amount);
-      ops.setString(3, purpose);
-      ops.registerReturnParameter(4, OracleTypes.NUMBER);
-      
-      int rowCount = ops.executeUpdate();
-      if (rowCount == 1) {
-        ResultSet info = ops.getReturnResultSet();
-        if (info.next()) {
-          result = info.getInt(1);
-          conn.commit();
+    if (requester.isSetupDone()) {
+      try (Connection conn = factory.getConnection();) {
+        conn.setAutoCommit(false);
+        Savepoint save = conn.setSavepoint();
+        String sql = "insert into request (requesterId, amount, purpose) values (?, ?, ?) returning id into ?";
+        OraclePreparedStatement ops = (OraclePreparedStatement) conn.prepareStatement(sql);
+        ops.setInt(1, requester.getId());
+        ops.setBigDecimal(2, amount);
+        ops.setString(3, purpose);
+        ops.registerReturnParameter(4, OracleTypes.NUMBER);
+        
+        int rowCount = ops.executeUpdate();
+        if (rowCount == 1) {
+          ResultSet info = ops.getReturnResultSet();
+          if (info.next()) {
+            result = info.getInt(1);
+            conn.commit();
+          } else {
+            conn.rollback(save);
+          }
         } else {
           conn.rollback(save);
         }
-      } else {
-        conn.rollback(save);
+      } catch (SQLException ex) {
+        logger.catching(ex);
       }
-    } catch (SQLException ex) {
-      logger.catching(ex);
     }
     return result;
   }
@@ -107,14 +109,14 @@ public class DbDAO implements DAO {
   public ArrayList<User> getAllUsers() {
     ArrayList<User> employees = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
-          + "from employee";
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout from employee";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
       while (info.next()) {
         employees.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
-            info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime()));
+            info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime()));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -164,7 +166,7 @@ public class DbDAO implements DAO {
   public User getUser(int id) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
           + "from employee where id=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setInt(1, id);
@@ -172,7 +174,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
-            info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime());
+            info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime());
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -184,7 +187,7 @@ public class DbDAO implements DAO {
   public User getUser(String email) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, latestLogout "
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
           + "from employee where email=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
@@ -192,7 +195,8 @@ public class DbDAO implements DAO {
       ResultSet info = ps.executeQuery();
       while (info.next()) {
         result = new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
-            info.getInt(5)==1, info.getInt(6)==1, info.getTimestamp(7).toLocalDateTime());
+            info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime());
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -395,26 +399,28 @@ public class DbDAO implements DAO {
   @Override
   public boolean updateRequest(Request r, User resolver, RequestState state, String note) {
     boolean success = false;
-    if (state.getName().equalsIgnoreCase("approved") || state.getName().equalsIgnoreCase("denied")) {
-      try (Connection conn = factory.getConnection();) {
-        conn.setAutoCommit(false);
-        Savepoint save = conn.setSavepoint();
-        String sql = "update request set resolverId=?, stateId=?, note=? where id=?";
-        PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setInt(1, resolver.getId());
-        ps.setInt(2, state.getId());
-        ps.setString(3, note);
-        ps.setInt(4, r.getId());
-        
-        int rowCount = ps.executeUpdate();
-        if (rowCount == 1) {
-          success = true;
-          conn.commit();
-        } else {
-          conn.rollback(save);
+    if (resolver.isSetupDone()) {
+      if (state.getName().equalsIgnoreCase("approved") || state.getName().equalsIgnoreCase("denied")) {
+        try (Connection conn = factory.getConnection();) {
+          conn.setAutoCommit(false);
+          Savepoint save = conn.setSavepoint();
+          String sql = "update request set resolverId=?, stateId=?, note=? where id=?";
+          PreparedStatement ps = conn.prepareStatement(sql);
+          ps.setInt(1, resolver.getId());
+          ps.setInt(2, state.getId());
+          ps.setString(3, note);
+          ps.setInt(4, r.getId());
+          
+          int rowCount = ps.executeUpdate();
+          if (rowCount == 1) {
+            success = true;
+            conn.commit();
+          } else {
+            conn.rollback(save);
+          }
+        } catch (SQLException ex) {
+          logger.catching(ex);
         }
-      } catch (SQLException ex) {
-        logger.catching(ex);
       }
     }
     return success;

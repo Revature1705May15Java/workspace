@@ -15,7 +15,7 @@ create table employee (
   lastname varchar2(100) not null,
   isManager int not null check (isManager in (0,1)),
   emailAlertsOn int not null check (emailAlertsOn in (0,1)),
-  passwordSet int not null check (passwordSet in (0,1)),
+  setupDone int not null check (setupDone in (0,1)),
   latestLogout timestamp
 );
 /
@@ -60,6 +60,9 @@ begin
     select 1 into :new.emailAlertsOn from dual;
   else
     select 0 into :new.emailAlertsOn from dual;
+  end if;
+  if :new.setupDone is null then
+    select 0 into :new.setupDone from dual;
   end if;
 end;
 /
