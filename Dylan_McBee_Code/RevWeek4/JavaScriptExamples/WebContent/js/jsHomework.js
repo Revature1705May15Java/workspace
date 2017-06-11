@@ -220,34 +220,111 @@ document.getElementById("printShape").addEventListener("click", printS, false);
 9. Object literal
 Define function traverseObject(someObj)
 Print every property and it's value.*/
-function traverseObject(someObj){
-	
-}
+
 function traverse(){
-	
-	
+	function person(name, age, address){
+		this.Name = name;
+		this.Age = age;
+		this.Address = address;
+		
+	}
+	var inputName = document.getElementById("name").value;
+	var inputAge = document.getElementById("age").value;
+	var inputAddress = document.getElementById("address").value;
+	var newPerson = new person(inputName, inputAge, inputAddress);
+	var x = 0;
+	var i;
+	var str = "";
+	var keys = Object.keys(newPerson);
+	for(i in newPerson){
+		str += keys[x] + " " + newPerson[i] + " ";
+		x++;
+	}
+	document.getElementById("obj").innerHTML = str;
 }
+document.getElementById("printObject").addEventListener("click", traverse, false);
 /*
 10. Delete Element
 Define function deleteElement(someArr)
 Print length
 Delete the third element in the array.
 Print length
-The lengths should be the same.
+The lengths should be the same.*/
+function deleteElement(someArr){
+	console.log("Array Length = " + someArr.length);
+	delete someArr[2];
+	console.log("Array Length = " + someArr.length);
+	return someArr;
+}
+function doDel(){
+	var str = document.getElementById("elements").value;
+	var input = str.split(" ");
+	document.getElementById("dResult").innerHTML = deleteElement(input);
+}
+document.getElementById("deleteElement").addEventListener("click", doDel, false);
+/*
 11. Splice Element
 Define function spliceElement(someArr)
 Print length
 Splice the third element in the array.
 Print length
-The lengths should be one less than the original length.
+The lengths should be one less than the original length.*/
+function spliceElement(someArr){
+	console.log("Array Length = " + someArr.length);
+	someArr.splice(2,1);
+	console.log("Array Length = " + someArr.length);
+	return someArr;
+}
+function doSplice(){
+	
+	var str = document.getElementById("sElements").value;
+	var input = str.split(" ");
+	document.getElementById("spliceResult").innerHTML = spliceElement(input);
+}
+document.getElementById("spliceElement").addEventListener("click", doSplice, false);
+
+
+/*
 12. Defining an object using a constructor
 Define a function Person(name, age)
 The following line should set a Person object to the variable john:
-    var john = new Person("John", 30);
+    var john = new Person("John", 30);*/
+function Person(name, age){
+	this.Name = name;
+	this.Age = age;
+}
+function doPer(){
+	var display = document.getElementById("peeps");
+	var name = document.getElementById("pName").value;
+	var age = document.getElementById("pAge").value;
+	var pers = new Person(name, age);
+	var disp = "Name: "+ pers.Name + ", Age: " + pers.Age;
+	display.innerHTML = disp;
+}
+document.getElementById("printPeep").addEventListener("click", doPer, false);
+/*
 13. Defining an object using an object literal
 Define function getPerson(name, age)
 The following line should set a Person object to the variable john:
-    var john = getPerson("John", 30);
+    var john = getPerson("John", 30);*/
+function getPerson(name, age){
+	var temp = {
+		Name: name,
+		Age: age,
+	};
+	return temp;
+}
+function makePerson(){
+	var name = document.getElementById("oName").value;
+	var age = document.getElementById("oAge").value;
+	var pers = getPerson(name, age);
+	console.log(pers);
+	var disp = "Name: "+ pers.Name + ", Age: " + pers.Age;
+	document.getElementById("peepsO").innerHTML = disp;
+}
+document.getElementById("printO").addEventListener("click", makePerson, false);
+
+/*
  
  
  
