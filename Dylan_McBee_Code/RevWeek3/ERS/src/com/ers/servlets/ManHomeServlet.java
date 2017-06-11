@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,11 +24,21 @@ public class ManHomeServlet extends HttpServlet {
 	        super();
 	    }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
+		try{
+			HttpSession session = request.getSession();
+		
 		e = (Employee)session.getAttribute("employee");
 		request.setAttribute("fn", e.getFirstName());
 		request.setAttribute("ln", e.getLastName());
+		request.setAttribute("email", e.getEmail());
+		ArrayList<Employee> employees = service.getAllEmployees();
+		request.setAttribute("employees", employees);
 		request.getRequestDispatcher("/manhome.ftl").forward(request, response);
+		}
+		catch(NullPointerException npe){
+			//request.getRequestDispatcher("index.ftl").forward(request, response);
+			response.sendRedirect("index.ftl");
+		}
 	}
 
 

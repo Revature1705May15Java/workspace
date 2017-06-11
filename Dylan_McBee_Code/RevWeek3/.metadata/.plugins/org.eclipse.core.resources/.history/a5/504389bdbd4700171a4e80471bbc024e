@@ -1,6 +1,0 @@
-package com.ers.servlets;
-
-public class LoginServlet {
-
-	protected void doGet (HttpServletRequest req)
-}

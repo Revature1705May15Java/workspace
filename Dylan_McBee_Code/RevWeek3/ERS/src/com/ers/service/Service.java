@@ -1,6 +1,8 @@
 package com.ers.service;
 
 
+import java.util.ArrayList;
+
 import com.ers.dao.DAO;
 import com.ers.dao.DAOImpl;
 import com.ers.pojos.Employee;
@@ -35,6 +37,9 @@ public class Service {
 			correct = false;
 		}
 		return correct;
+	}
+	public ArrayList<Employee> getAllEmployees(){
+		return dao.getAllEmployees();
 	}
 	
 

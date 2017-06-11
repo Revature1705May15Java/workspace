@@ -1,7 +1,0 @@
-package com.bank.pojos;
-
-public class User {
-	int id;
-	String firstName, lastName,pw, uName;
-	ArrayList<Account> userAccounts;
-}
