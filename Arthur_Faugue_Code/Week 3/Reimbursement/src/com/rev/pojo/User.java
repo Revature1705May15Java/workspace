@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class User {
 	int id, isBoss;
 	String fn, ln, pw, em;
-	ArrayList<Request> userRequest;
+	ArrayList<Integer> userRequest;
 	
-	public User(int id, int isBoss, String fn, String ln, String pw, String em, ArrayList<Request> userRequest) {
+	public User(int id, int isBoss, String fn, String ln, String pw, String em, ArrayList<Integer> userRequest) {
 		super();
 		this.id = id;
 		this.isBoss = isBoss;
@@ -56,10 +56,10 @@ public class User {
 	public void setEm(String em) {
 		this.em = em;
 	}
-	public ArrayList<Request> getUserRequest() {
+	public ArrayList<Integer> getUserRequest() {
 		return userRequest;
 	}
-	public void setUserRequest(ArrayList<Request> userRequest) {
+	public void setUserRequest(ArrayList<Integer> userRequest) {
 		this.userRequest = userRequest;
 	}
 	@Override

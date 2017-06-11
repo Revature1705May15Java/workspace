@@ -14,7 +14,19 @@ public class Service {
 		return dao.userLogin(em, pw);
 	}
 	
-	public ArrayList<Request> getUserRequest(User u) {
+	public ArrayList<Integer> getUserRequest(User u) {
 		return dao.getUserRequest(u);
+	}
+	
+	public ArrayList<Request> getUserRequests(User u) {
+		return dao.getUserRequests(u);
+	}
+	
+	public ArrayList<Request> getUserRequestsByStateId(User u, int id){
+		return dao.getUserRequestsByStateId(u, id);
+	}
+	
+	public boolean makeRequest(User u, int amount, String note){
+		return dao.makeRequest(u, amount, note);
 	}
 }

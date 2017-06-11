@@ -13,6 +13,8 @@ public class Test {
 		
 		u = dao.userLogin("test", "test");
 		System.out.println(u.toString());
+		dao.getUserRequestsByStateId(u, 3);
+//		dao.makeRequest(u, 50, note);
 	}
 
 }
