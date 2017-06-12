@@ -279,6 +279,8 @@ Example for printShape("Diamond", 5, "*");
  ***
   *
 */
+
+// Used to print a shape on the console.
 function printShape(shape, height, character) {
 	var line = "";
 	var result = "";
@@ -322,6 +324,8 @@ function printShape(shape, height, character) {
 	console.log(result);	
 }
 
+// Used to print a shape on a web page. Uses <br> for line breaks instead
+// of the newline character.
 function printShapeOnPage(shape, height, character) {
 	var line = "";
 	var result = "";
@@ -500,11 +504,7 @@ NOTE: Part II will be done twice: once with Javascript and once with jQuery.
 Define function getUSA()
 Find the html element that contains "USA".
 Print that element's contents.
-*/
-function getUSA() {
-	
-}
-/*
+
 2. Sales
 
 Define function getPeopleInSales()
