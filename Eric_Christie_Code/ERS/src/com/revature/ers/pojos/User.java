@@ -1,7 +1,6 @@
 package com.revature.ers.pojos;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class User {
 
@@ -9,7 +8,6 @@ public class User {
   private String email, firstname, lastname;
   private boolean isManager, emailAlertsOn, setupDone;
   private LocalDateTime latestLogout;
-  private ArrayList<Request> requests;
   
   public User() { super(); }
 
@@ -36,20 +34,6 @@ public class User {
     this.emailAlertsOn = emailAlertsOn;
     this.setupDone = setupDone;
     this.latestLogout = latestLogout;
-  }
-
-  public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
-      LocalDateTime latestLogout, ArrayList<Request> requests) {
-    super();
-    this.id = id;
-    this.email = email;
-    this.firstname = firstname;
-    this.lastname = lastname;
-    this.isManager = isManager;
-    this.emailAlertsOn = emailAlertsOn;
-    this.setupDone = setupDone;
-    this.latestLogout = latestLogout;
-    this.requests = requests;
   }
 
   public int getId() {
@@ -116,19 +100,11 @@ public class User {
     this.latestLogout = latestLogout;
   }
 
-  public ArrayList<Request> getRequests() {
-    return requests;
-  }
-
-  public void setRequests(ArrayList<Request> requests) {
-    this.requests = requests;
-  }
-
   @Override
   public String toString() {
     return "User [id=" + id + ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname
         + ", isManager=" + isManager + ", emailAlertsOn=" + emailAlertsOn + ", setupDone=" + setupDone
-        + ", latestLogout=" + latestLogout + ", requests=" + requests + "]";
+        + ", latestLogout=" + latestLogout + "]";
   }
 
 }

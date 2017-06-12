@@ -39,14 +39,12 @@ public class ERService {
    * Sign in as and retrieve all information for an employee. 
    * @param email
    * @param password
-   * @return a complete Employee object (with the requests variable containing all requests created by the employee),
-   * or null if there is no employee with the given email and password
+   * @return an Employee object or null if there is no employee with the given email and password
    */
   public User login(String email , String password) {
     User result = null;
     if (dao.checkPassword(email, password)) {
       result = dao.getUser(email);
-      result.setRequests(dao.getRequestsByRequester(email));
       logger.info(result.getFirstname() + " " + result.getLastname() + " logged in");
     }
     return result;
@@ -102,14 +100,30 @@ public class ERService {
     return success;
   }
   
+  /**
+   * Retrieve all the possible states a request can be in.
+   * @return an ArrayList of the different RequestState objects
+   */
   public ArrayList<RequestState> getRequestStates() {
     return dao.getAllRequestStates();
   }
   
-//  public ArrayList<User> getEmployees() {
-//    ArrayList<User> result = dao.getAllUsers();
-//    
-//    return result;
-//  }
+  /**
+   * Retrieve information for all registered users.
+   * @return an ArrayList of User objects
+   */
+  public ArrayList<User> getUsers() {
+    return dao.getAllUsers();
+  }
+  
+  /**
+   * Retrieve information for all registered employees.
+   * @return an ArrayList of all 
+   */
+  public ArrayList<User> getEmployees() {
+    ArrayList<User> result = dao.getAllUsers();
+    
+    return result;
+  }
   
 }

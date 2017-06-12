@@ -50,13 +50,13 @@ public interface DAO {
   
 //  /**
 //   * Retrieve information for all employees.
-//   * @return an ArrayList of User objects for all employees
+//   * @return an ArrayList of employee User objects
 //   */
 //  ArrayList<User> getAllEmployees();
 //  
 //  /**
 //   * Retrieve information for all managers.
-//   * @return an ArrayList of User objects for all managers
+//   * @return an ArrayList of manager User objects
 //   */
 //  ArrayList<User> getAllManagers();
   

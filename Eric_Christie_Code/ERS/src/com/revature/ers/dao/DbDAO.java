@@ -110,14 +110,14 @@ public class DbDAO implements DAO {
 
   @Override
   public ArrayList<User> getAllUsers() {
-    ArrayList<User> employees = new ArrayList<>();
+    ArrayList<User> users = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
       String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout from employee";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
       while (info.next()) {
-        employees.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+        users.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
             info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
             info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime()));
       }
@@ -125,8 +125,52 @@ public class DbDAO implements DAO {
       logger.catching(ex);
       ex.printStackTrace();
     }
-    return employees;
+    return users;
   }
+  
+  
+
+//  @Override
+//  public ArrayList<User> getAllEmployees() {
+//    ArrayList<User> employees = new ArrayList<>();
+//    try (Connection conn = factory.getConnection();) {
+//      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
+//          + "from employee where isManager=0";
+//      Statement statement = conn.createStatement();
+//      
+//      ResultSet info = statement.executeQuery(sql);
+//      while (info.next()) {
+//        employees.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+//            info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
+//            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime()));
+//      }
+//    } catch (SQLException ex) {
+//      logger.catching(ex);
+//      ex.printStackTrace();
+//    }
+//    return employees;
+//  }
+
+//  @Override
+//  public ArrayList<User> getAllManagers() {
+//    ArrayList<User> managers = new ArrayList<>();
+//    try (Connection conn = factory.getConnection();) {
+//      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
+//          + "from employee where isManager=1";
+//      Statement statement = conn.createStatement();
+//      
+//      ResultSet info = statement.executeQuery(sql);
+//      while (info.next()) {
+//        managers.add(new User(info.getInt(1), info.getString(2), info.getString(3), info.getString(4),
+//            info.getInt(5)==1, info.getInt(6)==1, info.getInt(7)==1,
+//            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime()));
+//      }
+//    } catch (SQLException ex) {
+//      logger.catching(ex);
+//      ex.printStackTrace();
+//    }
+//    return managers;
+//  }
 
   @Override
   public ArrayList<Request> getAllRequests() {
