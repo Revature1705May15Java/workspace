@@ -137,7 +137,7 @@
                         <tr>
                             <td>Is Manager</td>
                             <td>
-                                <input type="checkbox" name="isManager" value="true"/>
+                                <input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" name="isManager" value="true"/>
                             </td>
                         </tr>
                     </table>
