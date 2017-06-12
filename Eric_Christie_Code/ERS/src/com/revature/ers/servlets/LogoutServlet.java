@@ -15,6 +15,11 @@ import com.revature.ers.service.ERService;
  */
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	/*
+   * TODO find a way to keep track of a user's last login and logout times without storing information in the database,
+   * perhaps by using cookies or local storage
+   */
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

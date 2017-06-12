@@ -20,8 +20,8 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	/*
-	 * - need to rethink this approach of having login and logout both map to this servlet
-   * - considering using cookies or local storage to keep track of a user's last login and logout
+   * TODO find a way to keep track of a user's last login and logout times without storing information in the database,
+   * perhaps by using cookies or local storage
 	 */
 	
 
@@ -37,36 +37,39 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  ERService service = new ERService();
+    HttpSession session = request.getSession(true);
 	  boolean loginAttempted = false;
 	  
-    String email = request.getParameter("em");
-    String password = request.getParameter("pw");
-    
-    if (email != null || password != null) {
-      loginAttempted = true;
-    }
-    
-    if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
-      loginAttempted = true;
-      User result = service.login(email, password);
+	  if (((User) session.getAttribute("user")) != null) {
+      response.sendRedirect("main");
+    } else {
+      String email = request.getParameter("em");
+      String password = request.getParameter("pw");
       
-      if (result != null) {
-        HttpSession session = request.getSession(true);
-        session.setAttribute("user", result);
-        if (result.isSetupDone()) {
-          response.sendRedirect("main");
+      if (email != null || password != null) {
+        loginAttempted = true;
+      }
+      
+      if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
+        loginAttempted = true;
+        User result = service.login(email, password);
+        
+        if (result != null) {
+          session.setAttribute("user", result);
+          if (result.isSetupDone()) {
+            response.sendRedirect("main");
+          } else {
+            response.sendRedirect("setup");
+          }
         } else {
-          response.sendRedirect("setup");
+          request.setAttribute("loginAttempted", loginAttempted);
+          request.getRequestDispatcher("login.ftl").forward(request, response);
         }
       } else {
         request.setAttribute("loginAttempted", loginAttempted);
         request.getRequestDispatcher("login.ftl").forward(request, response);
       }
-    } else {
-      request.setAttribute("loginAttempted", loginAttempted);
-      request.getRequestDispatcher("login.ftl").forward(request, response);
     }
-	  
 	}
 
 }

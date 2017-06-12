@@ -1,57 +1,71 @@
 package com.revature.ers.util;
 
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
 
 /**
- * A logger class to use while I work on figuring out log4j.
+ * This logger class is for me to use until I figure out how to use log4j.
  * @author Eric
  *
  */
 public class TemporaryLogger {
   
-  @SuppressWarnings("unused")
   private static final String filename = "C:/Users/Eric/Employment/Revature/workspace/Eric_Christie_Code/ERS/"
       + "src/com/revature/ers/util/log.txt";
   
-  private static final Logger logger = LogManager.getLogger("TemporaryLogger");
-  
   
   public void log(String message) {
-    System.out.println(message);
+//    System.out.println(message);
+    try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, true));) {
+      bw.write(LocalDateTime.now() + " - " + message + "\n");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
   
   public void catching(Throwable t) {
-    logger.catching(Level.ERROR, t);
+    try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)));) {
+      pw.write(LocalDateTime.now() + " CAUGHT " + t.toString() + " with stack trace:\n");
+      t.printStackTrace(pw);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
   
   public void debug(String message) {
-    logger.debug(message);
+    log("DEBUG: " + message);
   }
   
   public void error(String message) {
-    logger.error(message);
+    log("ERROR: " + message);
   }
   
   public void fatal(String message) {
-    logger.fatal(message);
+    log("FATAL: " + message);
   }
   
   public void info(String message) {
-    log(message);
+    log("INFO: " + message);
   }
   
   public void throwing(Throwable t) {
-    logger.throwing(Level.WARN, t);
+    try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)));) {
+      pw.write(LocalDateTime.now() + " THROWING " + t.toString() /*+ " with stack trace:\n"*/);
+//      t.printStackTrace(pw);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
   
   public void trace(String message) {
-    logger.trace(message);
+    log("TRACE: " + message);
   }
   
   public void warn(String message) {
-    logger.warn(message);
+    log("WARN: " + message);
   }
 
 }

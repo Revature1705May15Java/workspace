@@ -37,7 +37,6 @@ public class MainServlet extends HttpServlet {
       /*
        * employees and managers get forwarded to the main.ftl page, and FreeMarker determines what content they see
        */
-      System.out.println(((User) session.getAttribute("user")));
       request.getRequestDispatcher("main.ftl").forward(request, response);
     } else {
       /*

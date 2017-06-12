@@ -48,8 +48,7 @@
   <!--Material Design Icons-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./css/icon-styles.css">
-
-  <#-- <script src="./js/ers.js"></script> -->
+  
   <link rel="stylesheet" href="./css/ers.css">
 </head>
 <body class="login">

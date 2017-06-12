@@ -72,7 +72,7 @@
         maxlength="100" minlength="8" required autofocus>
       <label for="setupConfirm" class="sr-only">Confirm Password</label>
       <input type="password" name="cp" id="setupConfirm" class="form-control" placeholder="Confirm Password"
-        maxlength="100" minlength="8" required title="The password fields must match.">
+        maxlength="100" minlength="8" required title="Password fields must match.">
       <br>
       <button type="submit" class="btn btn-lg btn-primary btn-block">
         <span class="align-middle">Save&nbsp;Password&nbsp;&nbsp;</span><i class="material-icons align-middle">lock</i>
@@ -80,11 +80,13 @@
     </form>
   </div>
 
-  <script type="text/javascript">
+  <script src="./js/ers.js"></script>
+  <script>
     $(document).ready(function() {
-      $('#setupPassword').on('change', function() {
-        $('#setupConfirm').attr('pattern', '^' + $('#setupPassword').val() + '$');
-      });
+      activatePasswordConfirmation('#setupPassword', '#setupConfirm');
+      // $('#setupPassword').on('change', function() {
+      //   $('#setupConfirm').attr('pattern', '^' + $('#setupPassword').val() + '$');
+      // });
     });
   </script>
 </body>
