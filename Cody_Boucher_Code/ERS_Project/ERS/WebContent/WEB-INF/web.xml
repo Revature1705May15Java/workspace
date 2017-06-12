@@ -83,6 +83,26 @@
   </servlet-mapping>
   
   
+   <servlet>
+    <servlet-name>AddEmployee</servlet-name>
+    <servlet-class>com.ers.servlets.AddEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddEmployee</servlet-name>
+    <url-pattern>/addEmployee</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>SubmitReimbursement</servlet-name>
+    <servlet-class>com.ers.servlets.SubmitReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitReimbursement</servlet-name>
+    <url-pattern>/submitReimbursement</url-pattern>
+  </servlet-mapping>
+  
+  
   
   
 </web-app>

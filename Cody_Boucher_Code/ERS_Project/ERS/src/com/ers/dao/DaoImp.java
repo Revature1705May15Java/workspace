@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.ers.pojos.Employee;
+import com.ers.pojos.Reimbursement;
 import com.ers.util.ConnectionFactory;
 
 public class DaoImp implements DAO{
@@ -86,5 +87,22 @@ public class DaoImp implements DAO{
 			e.printStackTrace();
 		}
 		return emp;
+	}
+
+	@Override
+	public Reimbursement requestReimbursement(int requesterId, double amount, String purpose) {
+		Reimbursement rem = new Reimbursement();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "insert into requests(amount, purpose, requesterid) values (?, ?, ?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setDouble(1, amount);
+			ps.setString(2, purpose);
+			ps.setInt(3, requesterId);
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rem;
 	}
 }
