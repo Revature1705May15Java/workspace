@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Expense Reimbursement System</title>
+
+  <!--favicons-->
+	<link rel="shortcut icon" href="./img/favicons/ers.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="./img/favicons/ers.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="./img/favicons/ers-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="./img/favicons/ers-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicons/ers-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="./img/favicons/ers-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/ers-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/ers-16.png">
+	<link rel="apple-touch-icon" href="./img/favicons/ers-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/ers-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/ers-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/ers-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="./img/favicons/ers-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/ers-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="./img/favicons/ers-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="./img/favicons/ers-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/ers-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="./img/favicons/ers-144.png">
+	<meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+  <!-- Tether -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+  
+  <!--Bootstrap 3-->
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>-->
+
+  <!--Bootstrap Toggle Switch-->
+  <!--ONLY INCLUDE THIS ON THE PAGE WHERE ACCOUNT SETTINGS ARE DISPLAYED-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+    integrity="sha256-rDWX6XrmRttWyVBePhmrpHnnZ1EPmM6WQRQl6h0h7J8="
+    crossorigin="anonymous"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"
+    integrity="sha256-eZNgBgutLI47rKzpfUji/dD9t6LRs2gI3YqXKdoDOmo="
+    crossorigin="anonymous"></script>
+
+  <!--List.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  <!--<script src="./libs/list.min.js"></script>-->
+  
+  <!--Material Design Icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./css/icon-styles.css">
+
+  <link rel="stylesheet" href="./css/ers.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse fixed-top">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navContent"
+            aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img src="./img/favicons/ers-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <span class="hidden-sm-down">Expense Reimbursement System</span><span class="hidden-md-up">ERS</span>
+    </a>
+    <!--the remaining navbar content should be right-aligned-->
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav mr-auto" id="navbar-spacer"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-secondary mr-md-2 my-1 w-100" data-toggle="modal" data-target="#settingsModal">
+            <i class="material-icons align-middle">settings</i><span class="hidden-md-up align-middle">&nbsp;Account Settings</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
+            <button type="submit" class="btn btn-outline-secondary ml-md-2 my-1 w-100">
+              <i class="material-icons align-middle">exit_to_app</i><span class="hidden-md-up align-middle">&nbsp;Logout</span>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MODALS -->
+  <!-- Settings Modal -->
+  <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel"
+       aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" role="form">
+      <div class="modal-content">
+        <div class="modal-header bg-inverse text-white">
+          <h5 class="modal-title" id="settingsModalLabel">Account Settings</h5>
+          <button type="button" id="settingsClose" form="settingsForm" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="material-icons md-light">close</i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="settingsForm" id="settingsForm" class="" method="" action="">
+            <div class="input-group my-4">
+              <label for="userAccountType" class="input-group-addon">Account Type</label>
+                <#if user??>
+                  <#if user.isManager()>
+                    <input type="text" id="userAccountType" class="form-control" value="Manager" readonly disabled>
+                  <#else>
+                    <input type="text" id="userAccountType" class="form-control" value="Employee" readonly disabled>
+                  </#if>
+                </#if>
+            </div>
+            <div class="input-group my-4">
+              <label for="userEmail" class="input-group-addon">Email Address</label>
+              <input type="email" name="email" id="userEmail" class="form-control" value="${user.getEmail()}"
+                placeholder="Email Address" maxlength="100" autocomplete="email" required>
+            </div>
+            <div class="form-group my-4">
+              <div class="input-group mb-0">
+                <label for="userPassword" class="input-group-addon">Change Password</label>
+                <input type="password" name="password" id="userPassword" class="form-control" value=""
+                  placeholder="New Password" maxlength="100" minlength="8">
+              </div>
+              <!-- what happens when minlength is specified for a non-required field? -->
+              <!-- currently, password is not a required input -->
+              <!-- make it so that the confirm password input only appears when the password field is changed -->
+              <!-- set this input as required only when the password field has been changed -->
+              <br>
+              <div class="input-group mt-0">
+                <label for="userConfirm" class="input-group-addon">Confirm Password</label>
+                <input type="password" name="confirm" id="userConfirm" class="form-control" value=""
+                  placeholder="Confirm Password" maxlength="100" minlength="8" title="Password fields must match.">
+              </div>
+            </div>
+            <div class="input-group my-4">
+              <label for="userFirstname" class="input-group-addon">First name</label>
+              <input type="text" name="firstname" id="userFirstname" class="form-control" value="${user.getFirstname()}"
+                placeholder="First name" maxlength="100" autocomplete="given-name" required>
+            </div>
+            <div class="input-group my-4">
+              <label for="userLastname" class="input-group-addon">Last name</label>
+              <input type="text" name="lastname" id="userLastname" class="form-control" value="${user.getLastname()}"
+                placeholder="Last name" maxlength="100" autocomplete="family-name" required>
+            </div>
+            <#if user.isManager()>
+              <div class="checkbox input-group">
+                <label for="userEmailAlerts" class="input-group-addon align-middle mr-4">Email Alerts:&nbsp;</label>
+                  <!--<span class="align-middle mr-4 input-group-addon">Email Alerts:&nbsp;</span>-->
+                  <#if user.isEmailAlertsOn()>
+                    <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle" checked>
+                  <#else>
+                    <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle">
+                  </#if>
+                <!--</label>-->
+              </div>
+            </#if>
+          </form>
+        </div>
+        <div class="modal-footer bg-inverse text-white">
+          <button type="button" id="settingsCancel" form="settingsForm" class="btn btn-secondary" data-dismiss="modal">
+            Cancel
+          </button>
+          <button type="button" id="settingsSubmit" form="settingsForm" class="btn btn-primary">
+            Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <#if user??>
+    <#if user.isManager()>
+      <!-- Registration Modal -->
+      <div class="modal fade bd-example-modal-lg" id="registerModal" tabindex="-1" role="dialog"
+           aria-labelledby="registerModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="form">
+          <div class="modal-content">
+            <div class="modal-header bg-inverse text-white">
+              <h5 class="modal-title" id="registerModalLabel">Register a User</h5>
+              <button type="button" id="registerClose" form="registerForm" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons md-light">close</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form name="registerForm" id="registerForm" class="form-inline" method="" action="">
+                <label for="newFirstname" class="sr-only">First name</label>
+                <input type="text" name="firstname" id="newFirstname" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+                  placeholder="First name" maxlength="100" required>
+                <label for="newLastname" class="sr-only">Last name</label>
+                <input type="text" name="lastname" id="newLastname" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+                  placeholder="Last name" maxlength="100" required>
+                <label for="newEmail" class="sr-only">Email address</label>
+                <input type="email" name="email" id="newEmail" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+                  placeholder="Email address" maxlength="100" required>
+                <label for="accountType" class="sr-only">Account Type</label>
+                <select class="form-control mb-1 mr-sm-1 mb-md-1" name="accountType" id="accountType" required>
+                  <option value="" selected>Account Type</option>
+                  <option value="employee">Employee</option>
+                  <option value="manager">Manager</option>
+                </select>
+              </form>
+            </div>
+            <div class="modal-footer bg-inverse text-white">
+              <button type="button" id="registerCancel" form="registerForm" class="btn btn-secondary" data-dismiss="modal">
+                Cancel
+              </button>
+              <button type="button" id="registerSubmit" form="registerForm" class="btn btn-primary">
+                Register
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <#else>
+      <!-- Request Modal -->
+      <div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModalLabel"
+           aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="form">
+          <div class="modal-content">
+            <div class="modal-header bg-inverse text-white">
+              <h5 class="modal-title" id="requestModalLabel">Make Request</h5>
+              <button type="button" id="requestClose" form="requestForm" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="material-icons md-light">close</i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form name="requestForm" id="requestForm" class="" method="" action="">
+                <label for="purpose" class="sr-only">Purpose</label>
+                <textarea name="purpose" id="purpose" maxlength="140" cols="50" rows="3"
+                  placeholder="Please explain your reason for making this request."></textarea>
+                <div class="input-group">
+                  <label for="amount">Amount Requested</label>
+                  <span class="input-group-addon">$</span>
+                  <input type="number" name="amount" id="amount" min="0.01" step="0.01" placeholder="0.00" required>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer bg-inverse text-white">
+              <button type="button" id="requestCancel" form="requestForm" class="btn btn-secondary" data-dismiss="modal">
+                Cancel
+              </button>
+              <button type="button" id="requestSubmit" form="requestForm" class="btn btn-primary">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </#if>
+  </#if>
+
+  <div class="container">
+    <!--DECIDE WHERE ON THE PAGE YOU WANT TO PUT THESE BUTTONS-->
+    <!--DISPLAY "ADD EMPLOYEES" BUTTON IF CURRENT USER IS A MANAGER OR "CREATE REQUEST" BUTTON IF CURRENT USER IS AN EMPLOYEE-->
+    <#if user.isManager()>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#registerModal">
+        <i class="material-icons align-middle">group_add</i>
+        <span class="sr-only align-middle">&nbsp;Register Employees</span>
+      </button>
+    <#else>
+      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#requestModal">
+        <i class="material-icons vert-align"></i>
+        <span class="sr-only align-middle">&nbsp;Create Request</span>
+      </button>
+    </#if>
+
+    <#if user??>
+      Welcome ${user.firstname} ${user.lastname}
+    </#if>
+
+    <!-- MAIN CONTENT -->
+    <main>
+      <!--sortable, filterable tables go here-->
+      <!--<table id="unresolved" class="table table-hover"></table>-->
+      <!--<table id="resolved" class="table table-hover"></table>-->
+    </main>
+  </div>
+
+  <script src="./js/ers.js"></script>
+</body>
+</html>

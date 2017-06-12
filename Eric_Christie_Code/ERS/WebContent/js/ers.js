@@ -1,11 +1,14 @@
-function activatePasswordConfirmation() {
-  $('#confirmPassword').attr('pattern', $('#employeePassword').attr())
+function activatePasswordConfirmation(passwordInputSelector, confirmationInputSelector) {
+  $(passwordInputSelector).on('change', function() {
+    $(confirmationInputSelector).attr('pattern', '^' + $(passwordInputSelector).val() + '$');
+  });
 }
 
-function enableResetButton() {
-  $('#resetSettings').removeAttr('disabled');
+function submitForm() {
+
 }
 
-function submitSettingsForm() {
+function submitRegisterForm() {
   
 }
+
