@@ -236,4 +236,45 @@ public class DAOImpl implements DAO{
 		
 		return results;
 	}
+	
+	public ArrayList<Request> getRequests(Employee employee, boolean isResolved) {
+		ArrayList<Request> results = new ArrayList<Request>();
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "SELECT * FROM request "
+					+ "WHERE employee_id = ? AND state_id ";
+			
+			if(isResolved) {
+				sql += "!= 1";
+			}
+			else {
+				sql += "= 1";
+			}
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, employee.getEmployeeId());
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Request r = new Request();
+				r.setRequestId(rs.getInt(1));
+				r.setState(new RequestState(rs.getInt(2)));
+				r.setOpenDate(rs.getDate(3));
+				r.setCloseDate(rs.getDate(4));
+				r.setAmount(rs.getDouble(5));
+				r.setPurpose(rs.getString(6));
+				r.setRequester(getEmployee(rs.getInt(7)));
+				r.setManager(getEmployee(rs.getInt(8)));
+				r.setNote(rs.getString(9));
+				
+				results.add(r);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return results;
+	}
 }

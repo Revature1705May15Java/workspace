@@ -72,6 +72,10 @@ public class Service {
 		return dao.getAllRequests(state);
 	}
 	
+	public ArrayList<Request> getPendingRequests(Employee employee, boolean isResolved) {
+		return dao.getRequests(employee, isResolved);
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getEmployee(email) == null) {
 			return true;

@@ -14,12 +14,14 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
+	<form name="viewPending" action="viewPending" method="GET" id="form1"></form>
+	<form name="viewResolved" action="viewResolved" method="GET" id="form2"></form>
+	
 	<button type="submit" formmethod="POST" formaction="">Logout</button>
-	<button type="submit" formmethod="POST" formaction="">View Pending Requests</button>
-	<button type="submit" formmethod="POST" formaction="">View Resolved Requests</button>
+	<button type="submit" form="form1">View Pending Requests</button>
+	<button type="submit" form="form2">View Resolved Requests</button>
 	<button type="submit" formmethod="POST" formaction="">View Personal Information</button>
 	<button type="submit" formmethod="POST" formaction="">Update Personal Information</button>
 	<a href="request.html">Create new request</a>
-	<button type="submit" formmethod="POST" formaction="">Submit Request</button>
 </body>
 </html>

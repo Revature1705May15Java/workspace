@@ -13,4 +13,5 @@ public interface DAO {
 	public ArrayList<Employee> getAllEmployees();
 	public Request addRequest(Request request);
 	public ArrayList<Request> getAllRequests(RequestState state);
+	public ArrayList<Request> getRequests(Employee employee, boolean isResolved);
 }

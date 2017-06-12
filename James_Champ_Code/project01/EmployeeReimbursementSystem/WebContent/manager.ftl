@@ -16,7 +16,7 @@
 <body>
 	<form name="viewAll" action="viewEmployees" method="POST" id="form1"></form>
 	<form name="registerNew" action="register" method="GET" id="form2"></form>
-	<form name="viewPending" action="viewPending" method="GET" id="form3"></form>
+	<form name="viewAllPending" action="viewAllPending" method="GET" id="form3"></form>
 	
 	<button type="submit" formmethod="POST" formaction="">Logout</button>
 	<button type="submit" form="form3">View Pending Requests</button>

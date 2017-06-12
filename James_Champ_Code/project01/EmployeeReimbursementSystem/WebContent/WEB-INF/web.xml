@@ -37,7 +37,6 @@
     <servlet-name>freemarker</servlet-name>
     <url-pattern>*.ftl</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>com.ers.servlets.LoginServlet</servlet-class>
@@ -46,7 +45,6 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ViewEmployees</servlet-name>
     <servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
@@ -55,7 +53,6 @@
     <servlet-name>ViewEmployees</servlet-name>
     <url-pattern>/viewEmployees</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>RegisterEmployee</servlet-name>
     <servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
@@ -64,7 +61,6 @@
     <servlet-name>RegisterEmployee</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>SubmitRequest</servlet-name>
     <servlet-class>com.ers.servlets.SubmitRequestServlet</servlet-class>
@@ -73,7 +69,14 @@
     <servlet-name>SubmitRequest</servlet-name>
     <url-pattern>/submitRequest</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>ViewAllPending</servlet-name>
+    <servlet-class>com.ers.servlets.ViewAllPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllPending</servlet-name>
+    <url-pattern>/viewAllPending</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>ViewPending</servlet-name>
     <servlet-class>com.ers.servlets.ViewPendingServlet</servlet-class>
@@ -81,5 +84,13 @@
   <servlet-mapping>
     <servlet-name>ViewPending</servlet-name>
     <url-pattern>/viewPending</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>ViewResolved</servlet-name>
+	<servlet-class>com.ers.servlets.ViewResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ViewResolved</servlet-name>
+  	<url-pattern>/viewResolved</url-pattern>
   </servlet-mapping>
 </web-app>
