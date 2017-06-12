@@ -85,6 +85,19 @@
     -webkit-border-radius:0 !important;
 }
 
+.logout{
+margin: -100px 0 0 -150px;
+
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: 15;
+	top: 72%;
+	left: 138%
+
+}
+
 </style>
 
 <title>test</title>
@@ -140,9 +153,37 @@
 
         <div class="tab-pane fade in" id="tab2">
           <h3>Account Info</h3>
+          <div class="logout">
           <form action="logout" method="POST" name="Logout_Form">
-          <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Logout" type="Submit">Logout</button>
-          ${fn}<br>${ln}<br>${email}
+          <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Logout" type="Submit">Logout</button></form>
+          </div>
+          ${id}<br>${fn}<br>${ln}<br>${email}
+          <!-- Trigger the modal with a button -->
+          
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Update Information</button>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          First Name: <input type = "text" name = "firstname" value="${fn}" /><br>
+          Last Name: <input type = "text" name = "lastname" value="${ln}" /><br>
+          Email: <input type = "text" name = "email" value="${email}" /><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
         </div>
       </div>
     </div>

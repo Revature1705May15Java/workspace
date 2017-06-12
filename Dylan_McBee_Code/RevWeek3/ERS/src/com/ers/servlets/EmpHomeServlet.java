@@ -21,6 +21,7 @@ public class EmpHomeServlet extends HttpServlet {
 		try{
 		HttpSession session = request.getSession(true);
 		e = (Employee)session.getAttribute("employee");
+		request.setAttribute("id", e.getId());
 		request.setAttribute("fn", e.getFirstName());
 		request.setAttribute("ln", e.getLastName());
 		request.setAttribute("email", e.getEmail());
