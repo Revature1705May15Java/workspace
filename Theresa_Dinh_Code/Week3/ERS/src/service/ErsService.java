@@ -17,6 +17,7 @@ public class ErsService
 	
 	// allow new Employees to register into the system  
 	// with their name, a unique email, and a password 
+	// eventually implement check for unique email in service 
 	public void registerEmployee(String email, String password, String firstName, String lastName)
 	{
 		Employee employee = new Employee(); 
@@ -64,8 +65,10 @@ public class ErsService
 	public void approveRequest(int requestId, Employee employee)
 	{
 		Request request = new Request(); 
+		Employee e = dao.getEmployee(employee);
+		
 		request.setRequestId(requestId);
-		request.setApproverId(employee.getId());
+		request.setApproverId(e.getId());
 		
 		dao.approveRequest(request);
 		return; 
@@ -74,8 +77,10 @@ public class ErsService
 	public void denyRequest(int requestId, Employee employee)
 	{
 		Request request = new Request(); 
+		Employee e = dao.getEmployee(employee);
+		
 		request.setRequestId(requestId);
-		request.setApproverId(employee.getId());
+		request.setApproverId(e.getId());
 		
 		dao.denyRequest(request);
 		return; 

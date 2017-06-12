@@ -62,8 +62,6 @@ public class LoginServlet extends HttpServlet
 					rd = request.getRequestDispatcher("manager.ftl"); 
 					rd.forward(request, response);
 				}
-
-//				rd.forward(request, response);
 			}
 			else
 			{
@@ -77,5 +75,4 @@ public class LoginServlet extends HttpServlet
 			n.printStackTrace();
 		}
 	}
-
 }

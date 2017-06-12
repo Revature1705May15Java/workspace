@@ -87,6 +87,8 @@ public class ERSDao
 	// returns it as an Employee object 
 	public Employee getEmployee(Employee employee) 
 	{
+		Employee temp = new Employee(); 
+
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
 		{
 			String s = "SELECT * FROM EMPLOYEE WHERE EMAIL = ?"; 
@@ -98,21 +100,21 @@ public class ERSDao
 			while(rs.next())
 			{
 				// email, password, firstname, lastname, ismanager 
-				Employee temp = new Employee(); 
 				temp.setEmail(rs.getString(1));
 				temp.setPassword(rs.getString(2));
-				temp.setFirstName(rs.getString(3));
-				temp.setLastName(rs.getString(4));
-				temp.setManagerId(rs.getInt(5));
+				temp.setId(rs.getInt(3));
+				temp.setFirstName(rs.getString(4));
+				temp.setLastName(rs.getString(5));
+				temp.setManagerId(rs.getInt(6));
 			
 				return temp; 
 			}
 		}
 		catch(SQLException e)
 		{
-//			e.printStackTrace();
+			e.printStackTrace();
 		} 
-		return null;
+		return temp;
 	}
 	
 	public Employee getEmployee(String email) 
