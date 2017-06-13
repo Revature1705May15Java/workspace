@@ -1,9 +1,0 @@
-package p6;
-
-public class EvenStephen 
-{
-	public static void main(String[] args)
-	{
-		System.out.println(24.0 / 2.0);
-	}
-}

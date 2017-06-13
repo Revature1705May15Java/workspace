@@ -37,5 +37,8 @@ public class HomeServlet extends HttpServlet
 		session.setAttribute("employee", employee);
 		RequestDispatcher rd; 
 		
+//		session.setAttribute("choice", "-");
+//		rd = request.getRequestDispatcher("logout.ftl"); 
+//		rd.forward(response, request);
 	}
 }

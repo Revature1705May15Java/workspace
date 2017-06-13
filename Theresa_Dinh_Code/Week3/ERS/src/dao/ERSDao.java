@@ -20,7 +20,8 @@ public class ERSDao
 	}
 	
 	// register a new Employee into the database 
-	// NEED A CHECK FOR UNIQUE EMAILS SOMEWHERE ????????????//
+	// Paramters: Employee that has at least its first and last names, email, 
+	// and password set 
 	public Employee registerEmployee(Employee employee)
 	{
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -36,10 +37,13 @@ public class ERSDao
 			ps.setString(2, employee.getPassword());
 			ps.setString(3, employee.getFirstName());
 			ps.setString(4, employee.getLastName());
-//			ps.setInt(5, employee.getManagerId());
 			
 			int rowCheck = ps.executeUpdate();
-			System.out.println("register employee " + rowCheck); // debugging
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				throw new SQLException(); 
+			}
 			
 			c.commit();
 			ps.close();
@@ -55,6 +59,8 @@ public class ERSDao
 	
 	// allow a manager to set another Employee as manager 
 	// or to demote an Employee from manager
+	// Parameters: the email of the Employee to be promoted/demoted 
+	// and a boolean TRUE if manager, FALSE if not manager 
 	public void setManager(Employee employee, boolean isManager)
 	{
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -71,7 +77,11 @@ public class ERSDao
 				ps.setInt(1, 0);
 			
 			int rowCheck = ps.executeUpdate();		// safety check for later 
-			System.out.println("set manager " + rowCheck);	//debugging 
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				throw new SQLException(); 
+			}
 			
 			c.commit();
 			ps.close();
@@ -85,10 +95,9 @@ public class ERSDao
 	
 	// retrieves an Employee's information from the database and
 	// returns it as an Employee object 
+	// Parameter: Employee that has at least its email set 
 	public Employee getEmployee(Employee employee) 
 	{
-		Employee temp = new Employee(); 
-
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
 		{
 			String s = "SELECT * FROM EMPLOYEE WHERE EMAIL = ?"; 
@@ -100,6 +109,7 @@ public class ERSDao
 			while(rs.next())
 			{
 				// email, password, firstname, lastname, ismanager 
+				Employee temp = new Employee(); 
 				temp.setEmail(rs.getString(1));
 				temp.setPassword(rs.getString(2));
 				temp.setId(rs.getInt(3));
@@ -114,9 +124,12 @@ public class ERSDao
 		{
 			e.printStackTrace();
 		} 
-		return temp;
+		return null;
 	}
 	
+	// retrieves an Employee's information from the database and
+	// returns it as an Employee object 
+	// Parameter: Employee's email 
 	public Employee getEmployee(String email) 
 	{
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -184,6 +197,7 @@ public class ERSDao
     }
 	
     // returns an ArrayList of all requests that are still pending 
+    // Parameter: none 
     public ArrayList<Request> getPendingRequests()
     {
         ArrayList<Request> requests = new ArrayList<Request>(); 
@@ -216,10 +230,42 @@ public class ERSDao
         return requests; 
     }
     
+    // Retrieve info about one specific Request 
+    // Parameter : a Request that has at least its RequestID set 
+    public Request getRequest(Request request)
+    {    	
+    	try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {	
+            String s = "SELECT * FROM REQUEST WHERE REQUESTID = ?"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            ps.setInt(1, request.getRequestId());
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+            	Request	temp = new Request(); 
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return null; 
+    }
+    
     //may return boolean later 
     // approves a Request by setting its status ID to 1 in the database 
-    // and then updates the resolve date 
     // may not need to update resolve date, have db trigger do it 
+	// Parameters: Request that has its Request ID and the ID of the approving Manager set 
     public void approveRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -234,8 +280,12 @@ public class ERSDao
 	    	ps.setInt(2, request.getRequestId());
 	    	
 	    	int rowCheck = ps.executeUpdate();  
-	    	System.out.println("aprrove request " + rowCheck); //debugging
-	    	
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				throw new SQLException(); 
+			}
+			
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
@@ -246,8 +296,9 @@ public class ERSDao
     	}
     }
     
-    // denies a Request by settings its status ID to 2 in the database\
-    // and then updates the resolve date 
+    // denies a Request by settings its status ID to 2 in the database
+	// Parameters: Request that has its Request ID and the ID of the denying Manager set 
+
     public void denyRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -266,8 +317,11 @@ public class ERSDao
 	    	ps.setInt(2, request.getRequestId());
 	    	
 	    	int rowCheck = ps.executeUpdate(); 
-	    	System.out.println("deny request " + rowCheck); //debugging 
-//	    	ps.executeUpdate();
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				throw new SQLException(); 
+			}
 	    	
 	    	c.commit();
 	    	ps.close();
@@ -279,6 +333,9 @@ public class ERSDao
     	}
     }
     
+	// submit a Request 
+	// Parameters: Request that has its amount requested, 
+	// its purpose, and the Employee's email set 
     public void submitRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
@@ -294,8 +351,12 @@ public class ERSDao
 	    	ps.setInt(3, request.getRequesterId());
 	    	
 	    	int rowCheck = ps.executeUpdate(); 
-	    	System.out.println("submit request " + rowCheck);
-	    	
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				throw new SQLException(); 
+			}
+			
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);

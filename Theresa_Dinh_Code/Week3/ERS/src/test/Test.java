@@ -33,11 +33,11 @@ public class Test {
 //		service.registerEmployee("gs@email.com", "test", "Gary", "Stu");
 //		service.setManager("gs@email.com", true);
 //		System.out.println(service.getEmployee(e));
-//		service.submitRequest(777, "", "ms@email.com");
+//		service.submitRequest(777, "", "gs@email.com");
 //		System.out.println(service.getRequests("gs@email.com"));
 //		System.out.println(service.getPendingRequests());
-//		service.approveRequest(22, e);
-//		service.denyRequest(22, e);
+//		service.approveRequest(41, e);
+//		service.denyRequest(21, e);
 	}
 
 }
