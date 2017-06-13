@@ -18,6 +18,9 @@
 
 
 	<mapping class="com.ex.pojos.Person"/>
+	<mapping class="com.ex.pojos.Bear"/>
+	<mapping class="com.ex.pojos.Cave"/>
+	<mapping class="com.ex.pojos.HoneyPot"/>
 	
 	</session-factory>
 </hibernate-configuration>		

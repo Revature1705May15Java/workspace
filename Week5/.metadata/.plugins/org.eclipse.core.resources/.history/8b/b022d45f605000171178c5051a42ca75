@@ -1,0 +1,24 @@
+package com.ex.dao;
+
+import com.ex.pojos.Person;
+
+public class Dao {
+
+	public void createPerson(Person p){
+		
+		Session session = ConnectionUtil.getSession();
+
+		try {
+			Transaction tx = session.beginTransaction();
+
+			session.save(p); // Create/Insert
+
+			tx.commit();
+		} finally {
+			session.close();
+		}
+
+		
+	}
+	
+}

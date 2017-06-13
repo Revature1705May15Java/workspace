@@ -1,0 +1,18 @@
+package com.ex.pojos;
+
+public class HoneyPot {
+	
+	private int id;
+	private double honeyAmount;
+	
+	public HoneyPot(){}
+	
+	public HoneyPot(int id, double honeyAmount) {
+		super();
+		this.id = id;
+		this.honeyAmount = honeyAmount;
+	}
+	
+	
+
+}

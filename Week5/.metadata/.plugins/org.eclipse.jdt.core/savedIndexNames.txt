@@ -1,0 +1,21 @@
+INDEX VERSION 1.127+C:\Users\Genesis\my_git_repos\1705_May15_Java\Week5\.metadata\.plugins\org.eclipse.jdt.core
+346564385.index
+717356514.index
+1505762283.index
+4235775790.index
+700583547.index
+1897160609.index
+3753404870.index
+2317366809.index
+1355142664.index
+300339462.index
+2126774185.index
+394720990.index
+3607654609.index
+1077605705.index
+4177021579.index
+1986012573.index
+3582074367.index
+1425781585.index
+3093248975.index
+3783598741.index

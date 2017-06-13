@@ -1,0 +1,22 @@
+package com.ex.main;
+
+import java.util.List;
+
+import com.ex.dao.DaoImpl;
+import com.ex.pojos.Person;
+
+public class MainClass {
+	
+	public static void main(String[] args) {
+		Person p;
+		DaoImpl dao = new DaoImpl();
+		
+		//dao.createPerson(p);
+		
+		//p = dao.getPersonById(1);
+		//System.out.println("hello " + p);
+		
+		dao
+	}
+
+}

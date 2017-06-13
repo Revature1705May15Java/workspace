@@ -1,0 +1,9 @@
+package com.ex.pojos;
+
+public class Bear {
+	
+	private int id;
+	
+	
+
+}
