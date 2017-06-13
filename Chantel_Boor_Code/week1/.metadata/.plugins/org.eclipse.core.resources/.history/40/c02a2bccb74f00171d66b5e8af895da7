@@ -1,0 +1,29 @@
+package com.rev.p15;
+
+public class DoMath implements Calculator {
+
+	@Override
+	public int addition(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int subtraction(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int muliply(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int divide(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

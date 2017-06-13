@@ -6,7 +6,7 @@ public class Requests
 {
 	
 	int requestId, reqester, resolver;
-	RequestType tyep;
+	RequestType type;
 	Double amount;
 	String purpose,note;
 	Date requested,resolved;
@@ -22,7 +22,7 @@ public class Requests
 		this.requestId = requestId;
 		this.reqester = reqester;
 		this.resolver = resolver;
-		this.tyep = tyep;
+		this.type = tyep;
 		this.amount = amount;
 		this.purpose = purpose;
 		this.note = note;
@@ -60,14 +60,14 @@ public class Requests
 		this.resolver = resolver;
 	}
 
-	public RequestType getTyep()
+	public RequestType getType()
 	{
-		return tyep;
+		return type;
 	}
 
-	public void setTyep(RequestType tyep) 
+	public void setType(RequestType type) 
 	{
-		this.tyep = tyep;
+		this.type = type;
 	}
 
 	public Double getAmount() 
@@ -124,7 +124,7 @@ public class Requests
 	public String toString() 
 	{
 		return "Requests [requestId=" + requestId + ", reqester=" + reqester + ", resolver=" + resolver + ", tyep="
-				+ tyep + ", amount=" + amount + ", purpose=" + purpose + ", note=" + note + ", requested=" + requested
+				+ type + ", amount=" + amount + ", purpose=" + purpose + ", note=" + note + ", requested=" + requested
 				+ ", resolved=" + resolved + "]";
 	}
 	

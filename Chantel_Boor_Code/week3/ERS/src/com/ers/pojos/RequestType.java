@@ -5,7 +5,7 @@ public class RequestType
 	int typeId;
 	String name;
 	
-	RequestType()
+	public RequestType()
 	{
 		
 	}

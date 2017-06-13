@@ -11,7 +11,25 @@
 
 Employee
 
-${name}   ${pass}
+<br>
+
+ Welcome! ${name}
+ <br>
+
+
+<#if display! == "yes">
+<#list requests as requests>
+<tr>
+ <td>Amount: 	$</td> <td>${requests.amount}</td> <td>	Reason: </td> <td>${requests.purpose}</td> <td>	Status: </td> <td>${requests.type.name}</td> <br>
+</tr>
+</#list>
+<#else>
+No Requests have been made
+<b>
+</#if>
+
+
+
 
 <div class="container">
   <!-- Trigger the modal with a button -->
@@ -21,6 +39,9 @@ ${name}   ${pass}
   <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
     <div class="modal-dialog">
     
+    
+    
+    
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -28,7 +49,13 @@ ${name}   ${pass}
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <p>Some text in the modal.</p>
+          <form name = "requestForm" action="addRequest" method="post">
+			Amount <br>
+			<input type = "number" step=".01" name ="amount" required = required/> <br>
+			Purpose <br>
+			<input type = "text" name = "purp" required = required/> 
+			<input type="submit" value="submit"/>
+			</form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -37,6 +64,10 @@ ${name}   ${pass}
       
     </div>
   </div>
+  
+  
+  
+  
   
 </div>
 

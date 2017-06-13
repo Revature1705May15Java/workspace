@@ -25,13 +25,16 @@
 <fullyQualifiedTypeName name="java.util.function.Predicate"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="com.rev.threads.MainThread"/>
 <fullyQualifiedTypeName name="com.rev.p2.fibonacci"/>
 <fullyQualifiedTypeName name="com.rev.p19.ArrayListStuff"/>
 <fullyQualifiedTypeName name="com.rev.Strings.stringBCompare"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.rev.p15.main"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

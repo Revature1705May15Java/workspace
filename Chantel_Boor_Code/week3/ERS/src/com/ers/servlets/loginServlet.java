@@ -30,8 +30,6 @@ public class loginServlet extends HttpServlet {
 		String pw = request.getParameter("password");
 		
 		request.setAttribute("login", "-");
-		request.setAttribute("name", email);
-		request.setAttribute("pass", pw);
 		
 		Service s = new Service();
 		Employee e = new Employee();
@@ -39,18 +37,22 @@ public class loginServlet extends HttpServlet {
 		
 		try
 		{
+			
 			e = s.login(email,pw);
+			HttpSession sess = request.getSession(true);
 			
 			if(e.getEmployeeId() != 0)
 			{
 				
 				if(e.getIsManager() == 1)
 				{
+					sess.setAttribute("user", e);
 					request.getRequestDispatcher("mHome.ftl").forward(request, response);
 				}
 				else
 				{
-					request.getRequestDispatcher("eHome.ftl").forward(request, response);
+					sess.setAttribute("user", e);
+					request.getRequestDispatcher("displayRequests").forward(request, response);
 				}
 			}
 			else

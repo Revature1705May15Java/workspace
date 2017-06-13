@@ -1,0 +1,36 @@
+package com.rev.p15;
+
+public class SwitchStatement 
+{
+
+	public static void main(String[] args) 
+	{
+		int s = 1;
+		
+		switch(s)
+		{
+		case 1:
+		{
+			int square = 25;
+			double root = Math.sqrt(square);
+			
+			System.out.println("Square root of " + square + " is "+root);
+			
+			break;
+		}
+		case 2:
+		{
+			break;
+		}
+		case 3:
+		{
+			break;
+		}
+		default:
+		{
+			System.out.println("Not a case");
+		}
+		}
+	}
+	
+}

@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Wed Jun 07 10:39:38 EDT 2017
+#Mon Jun 12 10:26:43 EDT 2017
+org.eclipse.jst.jee.server\:ServletIntro=C\:\\Users\\Chantel\\Desktop\\Servers\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\wtpwebapps\\ServletIntro
 org.eclipse.jst.jee.server\:ERS=C\:\\Users\\Chantel\\Desktop\\Servers\\apache-tomcat-8.0.44-windows-x64\\apache-tomcat-8.0.44\\wtpwebapps\\ERS

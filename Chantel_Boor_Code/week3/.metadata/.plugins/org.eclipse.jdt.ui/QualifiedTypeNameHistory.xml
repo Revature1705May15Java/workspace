@@ -26,4 +26,6 @@
 <fullyQualifiedTypeName name="com.ers.util.ConnectionFactory"/>
 <fullyQualifiedTypeName name="com.ers.pojos.Employee"/>
 <fullyQualifiedTypeName name="com.ers.service.Service"/>
+<fullyQualifiedTypeName name="com.ers.pojos.Requests"/>
+<fullyQualifiedTypeName name="com.ers.pojos.RequestType"/>
 </qualifiedTypeNameHistroy>
