@@ -65,15 +65,15 @@ public class Service {
 	}
 	
 	public ArrayList<Employee> getAllEmployees() {
-		return dao.getAllEmployees();
+		return (ArrayList<Employee>) dao.getAllEmployees();
 	}
 	
 	public ArrayList<Request> getAllRequests(RequestState state) {
-		return dao.getAllRequests(state);
+		return (ArrayList<Request>) dao.getAllRequests(state);
 	}
 	
 	public ArrayList<Request> getPendingRequests(Employee employee, boolean isResolved) {
-		return dao.getRequests(employee, isResolved);
+		return (ArrayList<Request>) dao.getRequests(employee, isResolved);
 	}
 	
 	public boolean isEmailUnique(String email) {

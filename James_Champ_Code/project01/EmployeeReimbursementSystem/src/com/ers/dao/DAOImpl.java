@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
@@ -56,6 +57,7 @@ public class DAOImpl implements DAO{
 		return employee;
 	}
 
+	@Override
 	public Employee getEmployee(int id) {
 		Employee result = null;
 		
@@ -93,6 +95,7 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
+	@Override
 	public Employee addEmployee(Employee employee) {
 		Employee result = null;
 		
@@ -125,6 +128,7 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
+	@Override
 	// TODO: Test
 	public Employee updateEmployee(Employee employee) {
 		Employee result = null;
@@ -165,8 +169,9 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
-	public ArrayList<Employee> getAllEmployees() {
-		ArrayList<Employee> results = new ArrayList<Employee>();
+	@Override
+	public List<Employee> getAllEmployees() {
+		List<Employee> results = new ArrayList<Employee>();
 		
 		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String sql = "SELECT * FROM employee";
@@ -203,6 +208,7 @@ public class DAOImpl implements DAO{
 		return results;
 	}
 	
+	@Override
 	// TODO: Test for null manager
 	public Request addRequest(Request request) {
 		Request result = null;
@@ -236,8 +242,9 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
-	public ArrayList<Request> getAllRequests(RequestState state) {
-		ArrayList<Request> results = new ArrayList<Request>();
+	@Override
+	public List<Request> getAllRequests(RequestState state) {
+		List<Request> results = new ArrayList<Request>();
 		
 		try(Connection conn = ConnectionFactory.getInstance().getConnection()){
 			String sql = "SELECT * FROM request " +
@@ -261,10 +268,11 @@ public class DAOImpl implements DAO{
 		return results;
 	}
 	
+	@Override
 	// TODO: Test
-	public ArrayList<Request> getRequests(Employee employee) {
+	public List<Request> getRequests(Employee employee) {
 		// TODO: Consider making this null to check for sql exceptions
-		ArrayList<Request> results = new ArrayList<Request>();
+		List<Request> results = new ArrayList<Request>();
 		
 		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String sql = "SELECT * FROM request "
@@ -287,8 +295,9 @@ public class DAOImpl implements DAO{
 		return results;
 	}
 	
-	public ArrayList<Request> getRequests(Employee employee, boolean isResolved) {
-		ArrayList<Request> results = new ArrayList<Request>();
+	@Override
+	public List<Request> getRequests(Employee employee, boolean isResolved) {
+		List<Request> results = new ArrayList<Request>();
 		
 		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
 			String sql = "SELECT * FROM request "
@@ -318,6 +327,7 @@ public class DAOImpl implements DAO{
 		return results;
 	}
 	
+	@Override
 	// TODO: Test
 	public Request updateRequest(Request request) {
 		Request result = null;
