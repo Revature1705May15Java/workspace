@@ -38,17 +38,6 @@ public class RequestState {
 				break;
 		}
 	}
-	/**
-	 * Creates a new {@code RequestState} with the given information.
-	 * 
-	 * @param requestId	An integer representation of the request's state.
-	 * @param name		String representation of the request's state.
-	 */
-	public RequestState(int requestId, String name) {
-		super();
-		this.requestId = requestId;
-		this.name = name;
-	}
 
 	/**
 	 * Returns an integer representation of state of this request.
@@ -79,29 +68,11 @@ public class RequestState {
 	}
 
 	/**
-	 * Sets this request state's ID number to the given integer.
-	 * 
-	 * @param requestId	The request's new ID number.
-	 */
-	public void setRequestId(int requestId) {
-		this.requestId = requestId;
-	}
-
-	/**
 	 * Returns this request state's name.
 	 * 
 	 * @return	The name of this state.
 	 */
 	public String getName() {
 		return name;
-	}
-
-	/**
-	 * Changes the name of this request's state to the given name.
-	 * 
-	 * @param name	This state request's new name.
-	 */
-	public void setName(String name) {
-		this.name = name;
 	}
 }
