@@ -5,6 +5,7 @@ function initTables() {
 
     if ($('#requestArchiveTable tbody tr').length > 0) {
         $('#requestArchiveTable').tablesorter({sortList: [[0, 1]]});
+        // $('#requestArchiveTable').DataTable();
     }
 
     $('.request-table-container table tbody tr').click(function() {

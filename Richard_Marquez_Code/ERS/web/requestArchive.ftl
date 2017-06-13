@@ -13,6 +13,8 @@
                 <th class="">Requester</th>
                 <th class="hidden-xs hidden-sm">Handler</th>
                 <th class="">Amount</th>
+                <th style="display:none;">Purpose</th>
+                <th style="display:none;">Note</th>
             </tr>
             </thead>
 
