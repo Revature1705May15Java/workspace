@@ -6,27 +6,28 @@
         <table id="pendingRequestsTable" class="table table-hover tablesorter">
             <thead>
             <tr>
-                <th class="col-xs-2">Status</th>
-                <th class="col-xs-2">Opened</th>
-                <th class="col-xs-2">Closed</th>
-                <th class="col-xs-2">Requester</th>
-                <th class="col-xs-2">Handler</th>
-                <th class="col-xs-2">Amount</th>
+                <th class="">#</th>
+                <th class="">Status</th>
+                <th class="">Opened</th>
+                <th class="">Closed</th>
+                <th class="">Requester</th>
+                <th class="">Handler</th>
+                <th class="">Amount</th>
             </tr>
             </thead>
 
             <tbody>
             <#list requestArchive as r>
             <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                <td class="col-xs-2 state">${r.getState().name()}</td>
-                <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
-                <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
-                <td class="col-xs-2 requester">${r.getRequesterEmail()}</td>
-                <td class="col-xs-2 handler">${r.getHandlerEmail()}</td>
-                <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
+                <td class="id">${r.getId()}</td>
+                <td class="state">${r.getState().name()}</td>
+                <td class="dateRequested">${r.getDateRequested()}</td>
+                <td class="dateResolved">${r.getDateResolved()}</td>
+                <td class="requester">${r.getRequesterEmail()}</td>
+                <td class="handler">${r.getHandlerEmail()}</td>
+                <td class="amount">${r.getAmount()?string.currency}</td>
                 <td class="purpose" style="display:none;">${r.getPurpose()}</td>
                 <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
-                <td class="id" style="display:none;">${r.getId()}</td>
             </tr>
             </#list>
             </tbody>

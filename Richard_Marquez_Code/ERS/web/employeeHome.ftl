@@ -27,6 +27,9 @@
             </#list>
             </tbody>
         </table>
+        <#if pendingRequests?size < 1>
+        <h4 class="unavailable alert alert-warning">No requests available</h4>
+        </#if>
     </div>
 
 
@@ -60,6 +63,9 @@
             </#list>
             </tbody>
         </table>
+        <#if resolvedRequests?size < 1>
+        <h4 class="unavailable alert alert-warning">No requests available</h4>
+        </#if>
     </div>
 
 </div>

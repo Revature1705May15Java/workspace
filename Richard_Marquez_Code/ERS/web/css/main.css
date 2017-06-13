@@ -130,6 +130,11 @@ a#forgotPassword {
   text-align: center;
   text-decoration: underline; }
 
+.unavailable {
+  margin-top: 2em;
+  font-style: italic;
+  text-align: center; }
+
 table.tablesorter thead tr .header {
   cursor: pointer;
   background-image: url(../img/bg.gif);

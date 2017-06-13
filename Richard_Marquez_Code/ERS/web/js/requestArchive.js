@@ -4,7 +4,7 @@ function initTables() {
     // $.tablesorter.defaults.sortList = [[0,0]];
 
     if ($('#pendingRequestsTable tbody tr').length > 0) {
-        $('#pendingRequestsTable').tablesorter({sortList: [[1, 1]]});
+        $('#pendingRequestsTable').tablesorter({sortList: [[0, 1]]});
     }
 
     $('.request-table-container table tbody tr').click(function() {

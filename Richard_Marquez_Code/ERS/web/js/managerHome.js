@@ -41,12 +41,19 @@ function initTables() {
 
         $('#pendingRequestsTable tbody tr').hide();
 
+        var showCounter = 0;
         $('#pendingRequestsTable tbody tr').each(function() {
             var reqEmail = $('.requester', this).html();
             if (reqEmail === email) {
                 $(this).show();
+                showCounter++;
             }
         });
+        if (showCounter < 1) {
+            $('#noRequestsLabel').show();
+        } else {
+            $('#noRequestsLabel').hide();
+        }
     });
 
 }
