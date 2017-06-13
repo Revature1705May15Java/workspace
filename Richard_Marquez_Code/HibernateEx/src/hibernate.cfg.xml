@@ -20,6 +20,9 @@
         <!-- <property name="hbm2ddl.auto">update</property> -->
 
         <mapping class="com.rev.pojos.Person" />
+        <mapping class="com.rev.pojos.Bear" />
+        <mapping class="com.rev.pojos.HoneyPot" />
+        <mapping class="com.rev.pojos.Cave" />
 
     </session-factory>
 </hibernate-configuration>

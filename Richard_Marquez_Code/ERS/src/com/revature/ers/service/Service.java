@@ -47,6 +47,10 @@ public class Service {
         return dao.getUser(id);
     }
 
+//    public static void main(String[] args) {
+//        Service.getInstance().addUser("richard92m@me.com", "password", "Richard", "Marquez", true);
+//    }
+
     public User addUser(String email, String password, String fName, String lName, boolean isManager) {
         User newUser = null;
 

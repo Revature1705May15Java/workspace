@@ -1,30 +1,43 @@
 package com.rev.pojos;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="PERSON")
+@Table(name = "PERSON")
 public class Person {
     @Id
-    @Column(name="P_ID")
+    @Column(name = "P_ID")
+    @SequenceGenerator(name = "PERSONID_SEQ", sequenceName = "PERSONID_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PERSONID_SEQ")
     private int id;
 
-    @Column(name="FIRST_NAME")
+    @Column(name = "FIRST_NAME")
     private String firstName;
 
-    @Column(name="LAST_NAME")
+    @Column(name = "LAST_NAME")
     private String lastName;
 
     public Person() {
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Person(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
     }
 
     public int getId() {

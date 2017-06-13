@@ -2,12 +2,22 @@ import com.rev.dao.Dao;
 import com.rev.dao.DaoImpl;
 import com.rev.pojos.Person;
 
+import java.util.List;
+
 public class Main {
     public static void main(final String[] args) throws Exception {
-        Person p = new Person(1, "Richard", "Marquez");
-
         Dao dao = new DaoImpl();
-        dao.createPerson(p);
+
+//        Person p = new Person("asdf", "Qweerty");
+//        dao.createPerson(p);
+
+//        Person p = dao.getPersonById(1);
+//        System.out.println(p);
+
+        List<Person> people = dao.getAllPeople();
+        for (Person p : people) {
+            System.out.println(p);
+        }
 
 //        final Session session = ConnectionUtil.getSession();
 //
