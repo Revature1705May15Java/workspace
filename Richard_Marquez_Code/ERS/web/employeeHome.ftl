@@ -7,22 +7,22 @@
         <table id="pendingRequestsTable" class="table table-hover tablesorter">
             <thead>
             <tr>
-                <th class="col-xs-1">Status</th>
-                <th class="col-xs-1">#</th>
-                <th class="col-xs-6">Purpose</th>
-                <th class="col-xs-2">Amount</th>
-                <th class="col-xs-2">Opened</th>
+                <th class="col-md-1 hidden-xs hidden-sm">Status</th>
+                <th class="col-md-1 col-xs-1">#</th>
+                <th class="col-md-6 hidden-xs hidden-sm">Purpose</th>
+                <th class="col-md-2">Amount</th>
+                <th class="col-md-2">Opened</th>
             </tr>
             </thead>
 
             <tbody>
             <#list pendingRequests as r>
                 <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                    <td class="col-xs-1 state">${r.getState().name()}</td>
-                    <td class="col-xs-1 id">${r.getId()}</td>
-                    <td class="text col-xs-6 purpose"><span>${r.getPurpose()}</span></td>
-                    <td class="col-xs-2 amount">${r.getAmount()?string.currency}</td>
-                    <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
+                    <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                    <td class="id">${r.getId()}</td>
+                    <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
+                    <td class="amount">${r.getAmount()?string.currency}</td>
+                    <td class="dateRequested">${r.getDateRequested()}</td>
                 </tr>
             </#list>
             </tbody>
@@ -39,24 +39,24 @@
         <table id="resolvedRequestsTable" class="table table-hover tablesorter">
             <thead>
                 <tr>
-                    <th class="col-xs-1">Status</th>
-                    <th class="col-xs-1">#</th>
-                    <th class="col-xs-5">Purpose</th>
-                    <th class="col-xs-1">Amount</th>
-                    <th class="col-xs-2">Opened</th>
-                    <th class="col-xs-2">Closed</th>
+                    <th class="col-md-1 hidden-xs hidden-sm">Status</th>
+                    <th class="col-md-1 col-xs-1">#</th>
+                    <th class="col-md-5 hidden-xs hidden-sm">Purpose</th>
+                    <th class="col-md-1">Amount</th>
+                    <th class="col-md-2 hidden-xs hidden-sm">Opened</th>
+                    <th class="col-md-2">Closed</th>
                 </tr>
             </thead>
 
             <tbody>
             <#list resolvedRequests as r>
                 <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                    <td class="col-xs-1 state">${r.getState().name()}</td>
-                    <td class="col-xs-1 id">${r.getId()}</td>
-                    <td class="text col-xs-5 purpose"><span>${r.getPurpose()}</span></td>
-                    <td class="col-xs-1 amount">${r.getAmount()?string.currency}</td>
-                    <td class="col-xs-2 dateRequested">${r.getDateRequested()}</td>
-                    <td class="col-xs-2 dateResolved">${r.getDateResolved()}</td>
+                    <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                    <td class="id">${r.getId()}</td>
+                    <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
+                    <td class="amount">${r.getAmount()?string.currency}</td>
+                    <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
+                    <td class="dateResolved">${r.getDateResolved()}</td>
                     <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
                     <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
                 </tr>

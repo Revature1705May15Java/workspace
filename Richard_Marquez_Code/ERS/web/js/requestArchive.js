@@ -3,8 +3,8 @@ initTables();
 function initTables() {
     // $.tablesorter.defaults.sortList = [[0,0]];
 
-    if ($('#pendingRequestsTable tbody tr').length > 0) {
-        $('#pendingRequestsTable').tablesorter({sortList: [[0, 1]]});
+    if ($('#requestArchiveTable tbody tr').length > 0) {
+        $('#requestArchiveTable').tablesorter({sortList: [[0, 1]]});
     }
 
     $('.request-table-container table tbody tr').click(function() {
@@ -39,12 +39,6 @@ function initTables() {
         $('#viewRequestModal .note').html(note);
 
         $('#viewRequestModal .requestId').val(id);
-    });
-
-    // employees table
-    $('#employeesTable tbody tr').click(function() {
-        var firstName = $('.firstName', this).html();
-        console.log(firstName);
     });
 
 }

@@ -1,17 +1,17 @@
 <#include "./header.ftl">
 
 <div id="managerMain" class="row container-fluid">
-    <div id="managerPendingRequestsTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+    <div id="requestArchiveTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1">
         <h3><strong>Closed</strong> Requests</h3>
-        <table id="pendingRequestsTable" class="table table-hover tablesorter">
+        <table id="requestArchiveTable" class="table table-hover tablesorter">
             <thead>
             <tr>
                 <th class="">#</th>
-                <th class="">Status</th>
-                <th class="">Opened</th>
-                <th class="">Closed</th>
+                <th class="hidden-xs hidden-sm">Status</th>
+                <th class="hidden-xs hidden-sm">Opened</th>
+                <th class="hidden-xs hidden-sm">Closed</th>
                 <th class="">Requester</th>
-                <th class="">Handler</th>
+                <th class="hidden-xs hidden-sm">Handler</th>
                 <th class="">Amount</th>
             </tr>
             </thead>
@@ -20,11 +20,11 @@
             <#list requestArchive as r>
             <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
                 <td class="id">${r.getId()}</td>
-                <td class="state">${r.getState().name()}</td>
-                <td class="dateRequested">${r.getDateRequested()}</td>
-                <td class="dateResolved">${r.getDateResolved()}</td>
+                <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
+                <td class="dateResolved hidden-xs hidden-sm">${r.getDateResolved()}</td>
                 <td class="requester">${r.getRequesterEmail()}</td>
-                <td class="handler">${r.getHandlerEmail()}</td>
+                <td class="handler hidden-xs hidden-sm">${r.getHandlerEmail()}</td>
                 <td class="amount">${r.getAmount()?string.currency}</td>
                 <td class="purpose" style="display:none;">${r.getPurpose()}</td>
                 <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
@@ -33,8 +33,6 @@
             </tbody>
         </table>
     </div>
-
-
 
 </div>
 
@@ -83,17 +81,10 @@
                         </tr>
                     </table>
                 </div>
-                <#--<div class="modal-footer">-->
-                    <#--<input type="hidden" class="requestId" name="requestId" value="">-->
-                    <#--<input formaction="/ApproveRequest" type="submit" class="btn btn-success" value="Approve">-->
-                    <#--<input formaction="/DenyRequest" type="submit" class="btn btn-danger" value="Deny">-->
-                <#--</div>-->
             </form>
         </div>
     </div>
 </div>
-
-
 
 
 
