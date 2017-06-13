@@ -28,6 +28,22 @@ public class Service {
 		return emp;
 	}
 	
+	public Employee updateEmployee(Employee emp, String username, String password, String firstName, String lastName) {
+		System.out.println("In Service");
+		emp.setUsername(username);
+		System.out.println(username);
+		emp.setPassword(password);
+		System.out.println(password);
+		emp.setFirstName(firstName);
+		System.out.println(firstName);
+		emp.setLastName(lastName);
+		System.out.println(lastName);
+		emp = dao.updateEmployee(emp);
+		System.out.println(emp);
+		return emp;
+		
+	}
+	
 	
 	public Reimbursement requestReimbursement(Employee emp, Double amount, String purpose) {
 		Reimbursement rem = new Reimbursement();

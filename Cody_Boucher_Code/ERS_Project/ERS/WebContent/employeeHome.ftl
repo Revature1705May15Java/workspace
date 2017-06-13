@@ -27,6 +27,13 @@
 			  	background-color: #fff;
 			}
 			
+			.form-updateEmployee {
+			  	max-width: 380px;
+			  	padding: 15px 35px 45px;
+			  	margin: 0 auto;
+			  	background-color: #fff;
+			}
+			
 			.form-signout {
 				max-width: 380px;
 			  	padding: 15px 35px 45px;
@@ -64,10 +71,10 @@
 		<div class="container">
 		  <h2>Submit Request</h2>
 		  <!-- Trigger the modal with a button -->
-		  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit Request</button>
+		  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addEmployeeModal">Submit Request</button>
 		
 		  <!-- Modal -->
-		  <div class="modal fade" id="myModal" role="dialog">
+		  <div class="modal fade" id="addEmployeeModal" role="dialog">
 		    <div class="modal-dialog">
 		    
 		      <!-- Modal content-->
@@ -80,7 +87,7 @@
 			        <div class="modal-body">
 			          <p>Enter Reibursement Request</p>
 			          <input type="number" class="form-control" name="amount" placeholder="Enter amount" required="required"/>
-			          	<input type="text" class="form-control" name="purpose" placeholder="purpose" required="required"/>
+			          <input type="text" class="form-control" name="purpose" placeholder="purpose" required="required"/>
 			        </div>
 			        <div class="modal-footer">
 			          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Submit Request"/>
@@ -90,6 +97,41 @@
 		    </div>
 		  </div> 
 		</div>
+		
+		
+		
+		<div class="container">
+		  <h2>Update Employee</h2>
+		  <!-- Trigger the modal with a button -->
+		  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#updateEmployeeModal">Update Employee</button>
+		
+		  <!-- Modal -->
+		  <div class="modal fade" id="updateEmployeeModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Update Employee Information</h4>
+		        </div>
+		        <form class="form-updateEmployee" method="POST" action="updateEmployee">
+			        <div class="modal-body">
+			          <p>Enter Reibursement Request</p>
+			          <input type="text" class="form-control" name="username" placeholder="Username" required="required"/>
+			          <input type="text" class="form-control" name="password" placeholder="Password" required="required"/>
+			          <input type="text" class="form-control" name="firstName" placeholder="First Name" required="required"/>
+			          <input type="text" class="form-control" name="lastName" placeholder="Last Name" required="required"/>
+			        </div>
+			        <div class="modal-footer">
+			          <input type="submit" class="btn btn-lg btn-primary btn-block" value="Update Information"/>
+			        </div>
+		        </form>
+		      </div>    
+		    </div>
+		  </div> 
+		</div>
+		
 		
 		<form class="form-signout" method="POST" action="logout">
 			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Logout"/>

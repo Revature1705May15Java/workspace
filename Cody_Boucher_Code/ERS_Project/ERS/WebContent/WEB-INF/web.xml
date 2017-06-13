@@ -103,6 +103,14 @@
   </servlet-mapping>
   
   
+  <servlet>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <servlet-class>com.ers.servlets.UpdateEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <url-pattern>/updateEmployee</url-pattern>
+  </servlet-mapping>
   
   
 </web-app>

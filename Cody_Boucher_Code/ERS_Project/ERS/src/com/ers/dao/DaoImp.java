@@ -105,4 +105,33 @@ public class DaoImp implements DAO{
 		}
 		return rem;
 	}
+
+	@Override
+	public Employee updateEmployee(Employee emp) {
+		//Employee updateEmp = new Employee();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "update employee set username = ?, password = ?, firstname = ?, lastname = ? where id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			System.out.println("In DAOIMP");
+			ps.setString(1, emp.getUsername());
+			System.out.println(emp.getUsername());
+			ps.setString(2, emp.getPassword());
+			System.out.println(emp.getPassword());
+			
+			ps.setString(3, emp.getFirstName());
+			System.out.println(emp.getFirstName());
+			ps.setString(4, emp.getLastName());
+			System.out.println(emp.getLastName());
+			ps.setInt(5, emp.getId());
+			System.out.println(emp.getId());
+			ps.executeUpdate();
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return emp;
+	}
 }
