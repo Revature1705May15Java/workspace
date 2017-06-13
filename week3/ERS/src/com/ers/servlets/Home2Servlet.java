@@ -23,6 +23,8 @@ public class Home2Servlet extends HttpServlet {
 		Employee emp=(Employee)session.getAttribute("employee");
 		if(emp!=null&&emp.getIsmanager()==0){
 			req.getRequestDispatcher("home2.ftl").forward(req, resp);
+		}else if(emp!=null&&emp.getIsmanager()==1){
+			req.getRequestDispatcher("home").forward(req, resp);
 		}else{
 			resp.sendRedirect("logout");
 		}

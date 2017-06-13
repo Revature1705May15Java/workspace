@@ -1,8 +1,11 @@
 package com.ers.service;
 
+import java.util.ArrayList;
+
 import com.ers.dao.DAO;
 import com.ers.dao.DaoImpl;
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
 
 public class Service {
 	private static boolean isLoggedIn=false;
@@ -40,7 +43,41 @@ public class Service {
 	public static void getStateNames(){
 		statenames=dao.getStateNames();
 	}
-	
-	
+	public static ArrayList<Request> getRequests(Employee emp){
+		ArrayList<Request> reqs=new ArrayList<Request>();
+		reqs=dao.getEmployeeRequests(emp.getId());
+		reqs=addRequestNames(reqs);
+		return reqs;
+	}
+	public static void newRequest(double amount, String purpose,Employee emp){
+		int empid=emp.getId();
+		dao.addRequest(amount, purpose, empid);
+	}
+	public static ArrayList<Request> getAllRequests(){
+		ArrayList<Request> reqs=new ArrayList<Request>();
+		reqs=dao.getAllRequests();
+		reqs=addRequestNames(reqs);
+		return reqs;
+	}
+	public static ArrayList<Request> addRequestNames(ArrayList<Request> reqs){
+		getStateNames();
+		for(Request req:reqs){
+			switch(req.getStateid()){
+				case(1):
+					req.setName(statenames[0]);
+					break;
+				case(2):
+					req.setName(statenames[1]);
+					break;
+				case(3):
+					req.setName(statenames[2]);
+					break;
+				default:
+					req.setName("Status unknown.");
+					break;
+			}
+		}
+		return reqs;
+	}
 
 }

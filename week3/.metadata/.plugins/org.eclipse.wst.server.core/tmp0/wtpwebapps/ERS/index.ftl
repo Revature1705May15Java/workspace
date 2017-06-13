@@ -19,8 +19,13 @@
  <input type="password" name="password" class="form-control" placeholder="Password" required="required"/>
  <input type="submit" class="btn btn-primary" value="Login" />
  </form>
-
+<p>
+  <#if attempt?has_content>
+		Login failed, please try again.
+	</#if>
+</p>
 </div>
+
 
 </body>
 </html>

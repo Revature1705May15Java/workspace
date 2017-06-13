@@ -259,7 +259,6 @@ function getUSA(){
 	for(i=0;i<elems.length;i++){
 		if(elems[i].innerHTML=="USA"){
 			console.log(elems[i]);
-			document.getElementById("para").innerHTML ="wow";
 		}
 	}
 }
@@ -267,11 +266,11 @@ function getUSA(){
 //Define function getPeopleInSales()
 //Print the names of all the people in the sales department.
 function getPeopleInSales(){
-	var elems = document.body.getElementsByTagName("tr");
+	var elems = document.body.getElementsByTagName("td");
 	for(i=0;i<elems.length;i++){
-		if(elems[i].innerHTML=="Sales"){
-			console.log(elems[i-1].innerHTML);
-		}
+		//if(elems[i].innerHTML=="Sales"){
+			console.log(elems[i].innerHTML);
+		//}
 	}
 }
 
@@ -283,10 +282,12 @@ function getAnchorChildren(){
 	var elems = document.body.getElementsByTagName("a");
 	for(i=0;i<elems.length;i++){
 		if(elems[i].hasChildNodes()){
-			var elems2=elems[i].getElementsByTagName("span");
+			var elems2=elems[i].childNodes;
 			for(j=0;j<elems2.length;j++){
-				console.log(elems2[i]);
-			}
+				// console.log(elems2[j].tagName);
+				if(elems2[j].tagName=="SPAN")
+				console.log(elems2[j].innerHTML);
+				}
 		}
 	}
 }
@@ -295,13 +296,10 @@ function getAnchorChildren(){
 //Find all checked options in the 'skills' select element.
 //Print the value and the contents.
 function getHobbies(){
-	var elems = document.body.getElementsByTagName("");
+	var elems = document.getElementsByName('skills')[0].options;
 	for(i=0;i<elems.length;i++){
-		if(elems[i].hasChildNodes()){
-			var elems2=elems[i].getElementsByTagName("span");
-			for(j=0;j<elems2.length;j++){
-				console.log(elems2[i]);
-			}
+		if(elems[i].selected){
+			console.log(elems[i].innerHTML);
 		}
 	}
 }
@@ -312,13 +310,10 @@ function getHobbies(){
 //Print the value of the attribute.
 //Print the element that has the attribute.
 function getCustomAttribute(){
-	var elems = document.body.getElementsByTagName("a");
+	var elems = document.body.getElementsByTagName("*");
 	for(i=0;i<elems.length;i++){
-		if(elems[i].hasChildNodes()){
-			var elems2=elems[i].getElementsByTagName("span");
-			for(j=0;j<elems2.length;j++){
-				console.log(elems2[i]);
-			}
+		if(elems[i].getAttribute("data-customAttr")!==null){
+			console.log(elems[i].getAttribute("data-customAttr"));
 		}
 	}
 }
@@ -333,6 +328,17 @@ function getCustomAttribute(){
 //Add <input> element values.
 //Put the sum in the <span> element.
 //If values cannot be added, put "Cannot add" in the <span> element
+function hw6(){
+	var num1=+document.getElementById('num1').value;
+	var num2=+document.getElementById('num2').value;
+	if(!isNaN(num1)&&!isNaN(num2)){
+		var sum = 0;
+		sum=sum+num1+num2;
+		document.getElementById('sum').innerHTML=sum;
+	}else{
+		document.getElementById('sum').innerHTML="Cannot add";
+	}
+}
 
 
 //7. Skills Event
@@ -340,6 +346,14 @@ function getCustomAttribute(){
 //When user selects a skill, create an alert with a message similar to:
 //    "Are you sure CSS is one of your skills?"
 //NOTE: no alert should appear when user deselects a skill.
+function hw7(){
+	var elems = document.getElementsByName('skills')[0].options;
+	for(i=0;i<elems.length;i++){
+		if(elems[i].selected){
+			alert("Are you sure "+elems[i].innerHTML+" is one of your skills?");
+		}
+	}
+}
 
 
 //8. Favorite Color Event
@@ -349,6 +363,7 @@ function getCustomAttribute(){
 //    "So you like green more than blue now?"
 //In this example, green is the new value and blue is the old value.
 //Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
+
 
 
 //9. Show/Hide Event

@@ -76,4 +76,41 @@
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>makerequest</servlet-name>
+    <servlet-class>com.ers.servlets.MakeRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>makerequest</servlet-name>
+    <url-pattern>/makerequest</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>Filter</servlet-name>
+    <servlet-class>com.ers.servlets.FilterRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Filter</servlet-name>
+    <url-pattern>/filter</url-pattern>
+  </servlet-mapping>
+  
+<!--   <servlet> -->
+<!--     <servlet-name>Home_f</servlet-name> -->
+<!--     <servlet-class>com.ers.servlets.FilterRequestsServlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>Home_f</servlet-name> -->
+<!--     <url-pattern>/home_f</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet> -->
+<!--     <servlet-name>Home2_f</servlet-name> -->
+<!--     <servlet-class>com.ers.servlets.FilterRequestsServlet</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>Home2_f</servlet-name> -->
+<!--     <url-pattern>/home2_f</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+  
 </web-app>

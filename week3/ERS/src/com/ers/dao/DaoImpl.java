@@ -84,7 +84,7 @@ public class DaoImpl implements DAO {
 				temp.setStateid(info.getInt(1));
 				temp.setReqdate(info.getDate(2));
 				temp.setResdate(info.getDate(3));
-				temp.setAmt(info.getInt(4));
+				temp.setAmt(info.getDouble(4));
 				temp.setPurpose(info.getString(5));
 				temp.setRequesterid(info.getInt(6));
 				temp.setResolverid(info.getInt(7));
@@ -113,11 +113,12 @@ public class DaoImpl implements DAO {
 				temp.setStateid(info.getInt(1));
 				temp.setReqdate(info.getDate(2));
 				temp.setResdate(info.getDate(3));
-				temp.setAmt(info.getInt(4));
+				temp.setAmt(info.getDouble(4));
 				temp.setPurpose(info.getString(5));
-				temp.setRequesterid(info.getInt(6));
-				temp.setResolverid(info.getInt(7));
-				temp.setNote(info.getString(8));
+				temp.setRequestid(info.getInt(6));
+				temp.setRequesterid(info.getInt(7));
+				temp.setResolverid(info.getInt(8));
+				temp.setNote(info.getString(9));
 				requests.add(temp);
 			}
 			return requests;
@@ -138,15 +139,13 @@ public class DaoImpl implements DAO {
 				numStrings=info1.getInt(1);
 			}
 
-			String sql2="select name from statetype";
+			String sql2="select * from statetype";
 			Statement statement2 =connection.createStatement();
 			ResultSet info2 = statement2.executeQuery(sql2);
 
 			String[] statenames = new String[numStrings];
-			int i=0;
 			while(info2.next()){
-				statenames[i]=info2.getString(1);
-				i++;
+				statenames[info2.getInt(1)-1]=info2.getString(2);
 			}
 			return statenames;
 		}catch(SQLException e){
@@ -174,12 +173,12 @@ public class DaoImpl implements DAO {
 	}
 
 	@Override
-	public void addRequest(int amt, String purpose, int requesterid) {
+	public void addRequest(double amt, String purpose, int requesterid) {
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
-			String sql="insert into requests(amt,purpose,requesterid"
+			String sql="insert into requests(amt,purpose,requesterid) "
 				+ "values(?,?,?)";
 			PreparedStatement ps =connection.prepareStatement(sql);
-			ps.setInt(1, amt);
+			ps.setDouble(1, amt);
 			ps.setString(2, purpose);
 			ps.setInt(3, requesterid);
 			ps.executeUpdate();
@@ -187,7 +186,7 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 	}
-
+	
 	@Override
 	public void updateRequest(int requestid, int resolverid,String note, boolean approve) {
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
@@ -205,6 +204,31 @@ public class DaoImpl implements DAO {
 		}catch(SQLException e){
 			e.printStackTrace();
 		}
+	}
+	public ArrayList<Request> getAllRequests(){
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql="select * from requests";
+			Statement statement =connection.createStatement();
+			ResultSet info = statement.executeQuery(sql);
+			ArrayList<Request> requests = new ArrayList<Request>();
+			while(info.next()){
+				Request temp = new Request();
+				temp.setStateid(info.getInt(1));
+				temp.setReqdate(info.getDate(2));
+				temp.setResdate(info.getDate(3));
+				temp.setAmt(info.getDouble(4));
+				temp.setPurpose(info.getString(5));
+				temp.setRequestid(info.getInt(6));
+				temp.setRequesterid(info.getInt(7));
+				temp.setResolverid(info.getInt(8));
+				temp.setNote(info.getString(9));
+				requests.add(temp);
+			}
+			return requests;
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 

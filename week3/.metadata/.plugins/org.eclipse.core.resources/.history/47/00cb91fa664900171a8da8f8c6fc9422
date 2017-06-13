@@ -1,9 +1,0 @@
-package com.corejava;
-
-public class Q7Employee {
-
-	public Q7Employee() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

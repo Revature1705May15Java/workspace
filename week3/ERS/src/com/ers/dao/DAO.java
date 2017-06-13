@@ -10,8 +10,9 @@ public interface DAO {
 	public Employee getEmployee(int employeeid);
 	public void addEmployee(String email,String pw,String fn, String ln, int ismanager);
 	public Request getRequest(int requestid);
-	public void addRequest(int amt,String purpose, int requesterid);
+	public void addRequest(double amt,String purpose, int requesterid);
 	public void updateRequest(int requesterid, int requestid, String note, boolean approve);
 	public ArrayList<Request> getEmployeeRequests(int employeeid);
 	public String[] getStateNames();
+	public ArrayList<Request> getAllRequests();
 }

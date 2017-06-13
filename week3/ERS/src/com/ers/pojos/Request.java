@@ -3,7 +3,8 @@ package com.ers.pojos;
 import java.sql.Date;
 
 public class Request {
-	int stateid,amt,requestid,requesterid,resolverid;
+	int stateid,requestid,requesterid,resolverid;
+	double amt;
 	Date reqdate,resdate;
 	String purpose,note,name;
 	
@@ -13,10 +14,10 @@ public class Request {
 	public void setStateid(int stateid) {
 		this.stateid = stateid;
 	}
-	public int getAmt() {
+	public double getAmt() {
 		return amt;
 	}
-	public void setAmt(int amt) {
+	public void setAmt(double amt) {
 		this.amt = amt;
 	}
 	public int getRequestid() {

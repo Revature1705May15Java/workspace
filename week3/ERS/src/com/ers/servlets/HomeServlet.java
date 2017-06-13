@@ -23,6 +23,8 @@ public class HomeServlet extends HttpServlet {
 		if(emp!=null&&emp.getIsmanager()==1){
 			System.out.println(emp.getFirstname()+" "+emp.getLastname());
 			req.getRequestDispatcher("home.ftl").forward(req, resp);
+		}else if(emp!=null&&emp.getIsmanager()==0){
+			req.getRequestDispatcher("home2").forward(req, resp);
 		}else{
 			resp.sendRedirect("logout");
 		}
