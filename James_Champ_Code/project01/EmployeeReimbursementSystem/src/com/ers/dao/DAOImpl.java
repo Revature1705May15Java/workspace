@@ -2,6 +2,7 @@ package com.ers.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +14,7 @@ import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
 import com.ers.pojos.RequestState;
 import com.ers.util.ConnectionFactory;
+import com.ers.util.RequestStatePool;
 
 public class DAOImpl implements DAO{
 	private static final int IS_MANAGER = 1;
@@ -123,6 +125,46 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
+	// TODO: Test
+	public Employee updateEmployee(Employee employee) {
+		Employee result = null;
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "UPDATE employee "
+					+ "SET email = ?, "
+					+ "password = ?, "
+					+ "firstname = ?, "
+					+ "lastname = ?, "
+					+ "ismanager = ? "
+					+ "WHERE employee_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, employee.getEmail());
+			ps.setString(2, employee.getPassword());
+			ps.setString(3, employee.getFirstName());
+			ps.setString(4, employee.getLastName());
+			if(employee.getIsManager()) {
+				ps.setInt(5, IS_MANAGER);
+			}
+			else {
+				ps.setInt(5, IS_NOT_MANAGER);
+			}
+			ps.setInt(6, employee.getEmployeeId());
+			
+			int numUpdated = ps.executeUpdate();
+			
+			if(numUpdated == 1) {
+				result = employee;
+				result.setPassword(null);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
 	public ArrayList<Employee> getAllEmployees() {
 		ArrayList<Employee> results = new ArrayList<Employee>();
 		
@@ -161,6 +203,7 @@ public class DAOImpl implements DAO{
 		return results;
 	}
 	
+	// TODO: Test for null manager
 	public Request addRequest(Request request) {
 		Request result = null;
 		
@@ -183,17 +226,7 @@ public class DAOImpl implements DAO{
 			
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				result = new Request();
-				
-				result.setRequestId(rs.getInt(1));
-				result.setState(new RequestState(RequestState.PENDING));
-				result.setOpenDate(rs.getDate(3));
-				result.setCloseDate(rs.getDate(4));
-				result.setAmount(rs.getDouble(5));
-				result.setPurpose(rs.getString(6));
-				result.setRequester(request.getRequester());
-				result.setManager(null);
-				result.setNote(rs.getString(9));
+				result = extractRequest(rs);
 			}
 		}
 		catch(SQLException e) {
@@ -216,17 +249,34 @@ public class DAOImpl implements DAO{
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Request r = new Request();
-				r.setRequestId(rs.getInt(1));
-				r.setState(new RequestState(rs.getInt(2)));
-				r.setOpenDate(rs.getDate(3));
-				r.setCloseDate(rs.getDate(4));
-				r.setAmount(rs.getDouble(5));
-				r.setPurpose(rs.getString(6));
-				r.setRequester(getEmployee(rs.getInt(7)));
-				r.setManager(getEmployee(rs.getInt(8)));
-				r.setNote(rs.getString(9));
+				Request r = extractRequest(rs);
 				
+				results.add(r);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return results;
+	}
+	
+	// TODO: Test
+	public ArrayList<Request> getRequests(Employee employee) {
+		// TODO: Consider making this null to check for sql exceptions
+		ArrayList<Request> results = new ArrayList<Request>();
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "SELECT * FROM request "
+					+ "WHERE employee_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, employee.getEmployeeId());
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Request r = extractRequest(rs);
 				results.add(r);
 			}
 		}
@@ -257,17 +307,7 @@ public class DAOImpl implements DAO{
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Request r = new Request();
-				r.setRequestId(rs.getInt(1));
-				r.setState(new RequestState(rs.getInt(2)));
-				r.setOpenDate(rs.getDate(3));
-				r.setCloseDate(rs.getDate(4));
-				r.setAmount(rs.getDouble(5));
-				r.setPurpose(rs.getString(6));
-				r.setRequester(getEmployee(rs.getInt(7)));
-				r.setManager(getEmployee(rs.getInt(8)));
-				r.setNote(rs.getString(9));
-				
+				Request r = extractRequest(rs);
 				results.add(r);
 			}
 		}
@@ -276,5 +316,52 @@ public class DAOImpl implements DAO{
 		}
 		
 		return results;
+	}
+	
+	// TODO: Test
+	public Request updateRequest(Request request) {
+		Request result = null;
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "{? = call updateRequest(?, ?, ?, ?)}";
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(2, request.getRequestId());
+			cs.setInt(3, request.getManager().getEmployeeId());
+			cs.setInt(4, request.getState().getRequestId());
+			cs.setString(5, request.getNote());
+			
+			cs.registerOutParameter(1, Types.DATE);
+			
+			cs.execute();
+			
+			Date closeDate = cs.getDate(1);
+			
+			if(closeDate != null) {
+				result = request;
+				result.setCloseDate(closeDate);
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	private Request extractRequest(ResultSet rs) throws SQLException {
+		Request result = new Request();
+		
+		result.setRequestId(rs.getInt(1));
+		result.setState(RequestStatePool.getState(RequestState.PENDING));
+		result.setOpenDate(rs.getDate(3));
+		result.setCloseDate(rs.getDate(4));
+		result.setAmount(rs.getDouble(5));
+		result.setPurpose(rs.getString(6));
+		result.setRequester(getEmployee(rs.getInt(7)));
+		result.setManager(getEmployee(rs.getInt(8)));
+		result.setNote(rs.getString(9));
+		
+		return result;
 	}
 }
