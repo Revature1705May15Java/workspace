@@ -72,16 +72,12 @@ public class Service {
 		return (ArrayList<Request>) dao.getAllRequests(state);
 	}
 	
-	public ArrayList<Request> getPendingRequests(Employee employee, boolean isResolved) {
+	public ArrayList<Request> getRequestsByState(Employee employee, boolean isResolved) {
 		return (ArrayList<Request>) dao.getRequests(employee, isResolved);
 	}
 	
-	public boolean isEmailUnique(String email) {
-		if(dao.getEmployee(email) == null) {
-			return true;
-		}
-		
-		return false;
+	public ArrayList<Request> getRequestsByEmployee(Employee employee) {
+		return (ArrayList<Request>) dao.getRequests(employee);
 	}
 	
 	public Request submitRequest(Request request) {
@@ -90,5 +86,23 @@ public class Service {
 		System.out.println(result.getRequestId());
 		
 		return result;
+	}
+	
+	public Employee updateEmployee(Employee employee) {
+		Employee result = dao.updateEmployee(employee);
+		
+		if(result == null) {
+			// TODO: Throw exception if update was unsuccessful.
+		}
+		
+		return result;
+	}
+	
+	public boolean isEmailUnique(String email) {
+		if(dao.getEmployee(email) == null) {
+			return true;
+		}
+		
+		return false;
 	}
 }

@@ -21,7 +21,7 @@ public class ViewResolvedServlet extends HttpServlet {
 		Employee employee = (Employee) session.getAttribute("user");
 		
 		Service service = new Service();
-		ArrayList<Request> requests = service.getPendingRequests(employee, true);
+		ArrayList<Request> requests = service.getRequestsByState(employee, true);
 		
 		request.setAttribute("requests", requests);
 		request.getRequestDispatcher("viewRequests.ftl").forward(request, response);
