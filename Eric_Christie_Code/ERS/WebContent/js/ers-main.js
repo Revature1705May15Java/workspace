@@ -1,9 +1,12 @@
 /* javascript file for the main page of the application */
 
 $(document).ready(function() {
-  setupAjaxSubmit('#registrationForm');
-  setupAjaxSubmit('#requestForm');
-  setupAjaxSubmit('#settingsForm');
+  let modals = ['#registrationModal', '#requestModal', '#settingsModal'];
+  modals.forEach((m) => {
+    setupAjaxSubmit(`${m} form`);
+    setupResetOnHide(m);
+  });
+  activatePasswordConfirmation('#userPassword', '#userConfirm');
 });
 
 /*
@@ -22,15 +25,9 @@ function setupAjaxSubmit(formSelector) {
   //   formSelector = '#' + formSelector;
   // }
   $(formSelector).submit(function(event) {
-    console.log("form submission triggered: " + event);
-    event.preventDefault();
-  });
-  $(formSelector).submit(function(event) {
     // cancel the normal, non-ajax form submission request
     event.preventDefault();
-
     let url = $(this).attr('action');
-
     let inputsObject = {};
     let inputsArray = $(this).serializeArray().forEach((input) => {
       console.log(input);
