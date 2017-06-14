@@ -18,19 +18,16 @@ import com.revature.ers.pojos.User;
 import com.revature.ers.service.ERService;
 
 /**
- * Servlet implementation class RegistrationServlet
+ * Servlet implementation class RegistrationServlet.
+ * This servlet should only be accessible to managers. 
+ * If the current user is an employee, requests to this servlet should return an error status code.
+ * If the current user is a manager:
+ * - POST registers an account for a new user
+ * 
+ * -- having GET retrieve the account information of all users may be worth considering
  */
 public class UsersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	/*
-	 * This servlet should only be accessible to managers. 
-	 * If the current user is an employee, requests to this servlet should return an error status code.
-	 * If the current user is a manager:
-	 * - POST registers an account for a new user
-	 * 
-	 * -- having GET retrieve the account information of all users may be worth considering
-	 */
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,14 +42,19 @@ public class UsersServlet extends HttpServlet {
          * retrieve the account information for all employees, all managers, or all users
          */
         System.out.println("\nTESTING JACKSON");
-        ArrayList<User> users = service.getUsers();
+        ArrayList<User> employees = service.getEmployees();
+        ArrayList<User> managers = service.getManagers(); // TODO decide whether or not to send this information
         
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         
-        String json = mapper.writeValueAsString(users);
+        String employeesJson = mapper.writeValueAsString(employees);
+        String managersJson = mapper.writeValueAsString(managers);
+        String json = "{employees: " + employeesJson + ", managers: " + managersJson + "}";
         response.setContentType("application/json");
-        System.out.println(json);
+        System.out.println("employees: " + employeesJson);
+        System.out.println("managers: " + managersJson);
+        System.out.println("all users: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {
@@ -75,6 +77,8 @@ public class UsersServlet extends HttpServlet {
         /*
          * Register a new user
          */
+        
+        System.out.println("/ERS/user - printing request cookies, headers, and parameters:");
         Cookie[] cookies = request.getCookies();
         System.out.println("\nCOOKIES");
         for (Cookie c: cookies) {
@@ -90,11 +94,23 @@ public class UsersServlet extends HttpServlet {
           String p = params.nextElement();
           System.out.println(p + ": " + request.getParameter(p));
         }
-        doGet(request, response);
+        
+//        this is what this servlet method should actually do when it receives a request
+        String email = request.getParameter("email");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        Boolean isManager = request.getParameter("accountType").equals("manager");
+        User noob = service.registerUser(email, firstname, lastname, isManager);
+        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        
+        String json = mapper.writeValueAsString(noob);
+        response.setContentType("application/json");
+        System.out.println("sending: " + json);
+        PrintWriter out = response.getWriter();
+        out.println(json);
       } else {
-        /*
-         * respond with an error status code
-         */
         response.sendError(403, "You do not have the necessary permissions for this.");
       }
     } else {

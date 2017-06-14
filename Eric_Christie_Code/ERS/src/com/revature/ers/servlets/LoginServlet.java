@@ -12,8 +12,11 @@ import com.revature.ers.pojos.User;
 import com.revature.ers.service.ERService;
 
 /**
- * Servlet implementation class SessionServlet
- * for creating and destroying login sessions.
+ * Servlet implementation class SessionServlet for creating and destroying login sessions.
+ * this servlet should also do some stuff with cookies and sessions:
+ * - set a max inactive interval for each session
+ * - (maybe do something with the creation time of each session)
+ * - use cookies to keep track of each user's most recent login and logout times
  */
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,10 +42,6 @@ public class LoginServlet extends HttpServlet {
 	  boolean loginAttempted = false;
 	  
 	  /*
-	   * this servlet should also do some stuff with cookies and sessions:
-	   * - set a max inactive interval for each session
-	   * - (maybe do something with the creation time of each session)
-	   * - use cookies to keep track of each user's most recent login and logout times
 	   */
 	  
 	  if (((User) session.getAttribute("user")) != null) {

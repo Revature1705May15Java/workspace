@@ -1,15 +1,56 @@
 package com.revature.ers.service;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
+import org.abstractj.kalium.crypto.Random;
 
 import com.revature.ers.dao.DAO;
 import com.revature.ers.dao.DbDAO;
-import com.revature.ers.pojos.User;
 import com.revature.ers.pojos.RequestState;
+import com.revature.ers.pojos.User;
 import com.revature.ers.util.Mailer;
 import com.revature.ers.util.TemporaryLogger;
 
 public class ERService {
+  
+  /**
+   * A nested static class for randomly generated temporary password reset tokens.
+   * @author Eric
+   */
+  public static class TemporaryToken {
+    private static final Duration LIFESPAN = Duration.ofHours(1);
+    
+    private String recipient;
+    private String token;
+    private LocalDateTime creationTimestamp;
+    private LocalDateTime expirationTimestamp;
+    
+    public TemporaryToken(String email) {
+      this.recipient = email;
+      Random rando = new Random();
+      this.token = new String(rando.randomBytes());
+      this.creationTimestamp = LocalDateTime.now();
+      this.expirationTimestamp = this.creationTimestamp.plus(LIFESPAN);
+    }
+    
+    public String getRecipient() { return recipient; }
+
+    public String getToken() { return token; }
+    
+    public LocalDateTime getCreationTimestamp() { return creationTimestamp; }
+    
+    public LocalDateTime getExpirationTimestamp() { return expirationTimestamp; }
+    
+    public boolean verify(String inputToken, String email) {
+      return (this.isExpired() && this.token.equals(inputToken) && this.recipient.equals(email));
+    }
+    
+    private boolean isExpired() { return LocalDateTime.now().isAfter(expirationTimestamp); }
+  }
+  
   
   private DAO dao = new DbDAO();
   private TemporaryLogger logger = new TemporaryLogger();
@@ -20,7 +61,7 @@ public class ERService {
    * @param firstname
    * @param lastname
    * @param isManager
-   * @return a complete Employee object representing the newly created employee, or null if no employee was created
+   * @return a User object representing the newly created user, or null if no user was created
    */
   public User registerUser(String email, String firstname, String lastname, boolean isManager) {
     User result = null;
@@ -36,10 +77,10 @@ public class ERService {
   }
   
   /**
-   * Sign in as and retrieve all information for an employee. 
+   * Sign in as and retrieve all information for a user. 
    * @param email
    * @param password
-   * @return an Employee object or null if there is no employee with the given email and password
+   * @return a User object or null if there is no user with the given email and password
    */
   public User login(String email , String password) {
     User result = null;
@@ -76,27 +117,47 @@ public class ERService {
   }
   
   /**
-   * TODO figure out how to implement email-based password recovery
-   * Send a password reset link to the given email address if a user with that address exists.
-   * @param email
-   * @return SOMETHING (not sure what yet)
+   * Retrieve the information for the user with the given id.
+   * @param id
+   * @return a User object for the user with the given id, or null if no such user exists
    */
-  public String sendPasswordResetLink(String email) {
-    String SOMETHING = null;
-    
-    return SOMETHING;
+  public User getUserById(int id) {
+    User result = null;
+    result = dao.getUser(id);
+    return result;
   }
   
   /**
-   * TODO figure out how to implement email-based password recovery
+   * Send a password reset token to the given email address if a user with that address exists.
+   * @param email
+   * @return the password reset token that was generated and sent, or null if no token was sent
+   */
+  public TemporaryToken sendPasswordResetToken(String email) {
+    TemporaryToken token = null;
+    if (dao.getUser(email) != null) {
+      TemporaryToken generatedToken = new TemporaryToken(email);
+      Mailer mailer = Mailer.getInstance();
+      if (mailer.sendMail(email, "Expense Reimbursement System - Password Recovery Token",
+          "Your password recovery token is " + generatedToken.getToken() + ". This token will expire at "
+           + generatedToken.getExpirationTimestamp().format(DateTimeFormatter.RFC_1123_DATE_TIME) + ".")) {
+        logger.info("Sent password recovery token to " + email);
+        token = generatedToken;
+      }
+    }
+    return token;
+  }
+  
+  /**
    * Set the password for the user with the given email address to the hash of the given password. (provided some checks are passed)
    * @param email
    * @param password
    * @return true if successful, false otherwise
    */
-  public boolean resetPassword(String email, String password) {
+  public boolean resetPassword(TemporaryToken token, String inputToken, String email, String newPassword) {
     boolean success = false;
-    
+    if (token.verify(inputToken, email)) {
+      success = changePassword(dao.getUser(email), newPassword);
+    }
     return success;
   }
   
@@ -116,14 +177,45 @@ public class ERService {
     return dao.getAllUsers();
   }
   
-//  /**
-//   * Retrieve information for all registered employees.
-//   * @return an ArrayList of all 
-//   */
-//  public ArrayList<User> getEmployees() {
-//    ArrayList<User> result = dao.getAllUsers();
-//    
-//    return result;
-//  }
+  /**
+   * Retrieve information for all registered employees.
+   * @return an ArrayList of all employees
+   */
+  public ArrayList<User> getEmployees() {
+    return dao.getAllUsers();
+  }
+  
+  /**
+   * Retrieve information for all registered managers.
+   * @return an ArrayList of all managers
+   */
+  public ArrayList<User> getManagers() {
+    return dao.getAllManagers();
+  }
+  
+  /**
+   * Update the account information for the given user. Input null values for any fields that should be left unchanged.
+   * @param old the User object with the user's current information
+   * @param email new email to set for the user, or null if email should not be changed
+   * @param password new password to set for the user, or null if password should not be changed
+   * @param firstname new first name to set for the user, or null if first name should not be changed
+   * @param lastname new last name to set for the user, or null if last name should not be changed
+   * @param emailAlertsOn new email alerts setting to set for the user, or null if it should not be changed
+   * @return a User object representing the user's information after the operation, whether the update succeeds or fails
+   */
+  public User updateUserInformation(int id, String email, String password, String firstname, String lastname, Boolean emailAlertsOn) {
+    User old = dao.getUser(id);
+    email = (email != null) ? email : old.getEmail();
+    firstname = (firstname != null) ? firstname : old.getFirstname();
+    lastname = (lastname != null) ? lastname : old.getLastname();
+    emailAlertsOn = (emailAlertsOn != null) ? emailAlertsOn : old.isEmailAlertsOn();
+    if (dao.updateUser(old, email, firstname, lastname, emailAlertsOn)) {
+      if (password != null) {
+        dao.updateUserPassword(old, password);
+      }
+    }
+    logger.info(old + " changed their account information");
+    return dao.getUser(id);
+  }
   
 }

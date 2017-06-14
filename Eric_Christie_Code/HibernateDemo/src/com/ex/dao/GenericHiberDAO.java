@@ -32,7 +32,7 @@ public class GenericHiberDAO<E> implements GenericDAO<E> {
     Session session = ConnectionUtil.getSession();
     E result = null;
     try {
-      result = (E) session.get(E.class, id);
+//      result = (E) session.get(, id);
     } catch (HibernateException ex) {
       ex.printStackTrace();
     } finally {
@@ -48,7 +48,7 @@ public class GenericHiberDAO<E> implements GenericDAO<E> {
     ArrayList<E> entities = new ArrayList<>();
     try {
       
-      entities = (ArrayList<E>) session.createCriteria().list();
+//      entities = (ArrayList<E>) session.createCriteria().list();
     } catch (HibernateException ex) {
       ex.printStackTrace();
     } finally {
@@ -91,7 +91,7 @@ public class GenericHiberDAO<E> implements GenericDAO<E> {
     try {
       Transaction tx = session.beginTransaction();
       
-      session.delete();
+//      session.delete();
       tx.commit();
     } catch (HibernateException ex) {
       ex.printStackTrace();
@@ -100,8 +100,8 @@ public class GenericHiberDAO<E> implements GenericDAO<E> {
     }
   }
   
-  private Type getType() {
-    
-  }
+//  private Type getType() {
+//    
+//  }
   
 }

@@ -44,14 +44,17 @@ function setupAjaxSubmit(formSelector) {
       // ifModified: true, // use this to only allow a request to be successful when the response has changed
         // since the previous request
       success: function(res, status, xhr) {
-        console.log(`account settings update success: ${status}`);
+        console.log(`update successful: ${status}`);
         console.log(res);
+        // TODO be sure to close the modal after receiving a response from the server
+        
       },
       error: function(xhr, status, error) {
-        console.log(`account settings update error: ${status} - ${error}`);
+        console.log(`update error: ${status} - ${error}`);
+        // TODO you probably shouldn't close the modal if the response contains an error code
       },
       complete: function(xhr, status) {
-        console.log(`account settings update complete: ${status}`);
+        console.log(`update complete: ${status}`);
       }
     });
   });

@@ -48,17 +48,17 @@ public interface DAO {
    */
   ArrayList<User> getAllUsers();
   
-//  /**
-//   * Retrieve information for all employees.
-//   * @return an ArrayList of employee User objects
-//   */
-//  ArrayList<User> getAllEmployees();
-//  
-//  /**
-//   * Retrieve information for all managers.
-//   * @return an ArrayList of manager User objects
-//   */
-//  ArrayList<User> getAllManagers();
+  /**
+   * Retrieve information for all employees.
+   * @return an ArrayList of employee User objects
+   */
+  ArrayList<User> getAllEmployees();
+  
+  /**
+   * Retrieve information for all managers.
+   * @return an ArrayList of manager User objects
+   */
+  ArrayList<User> getAllManagers();
   
   /**
    * Retrieve information for all requests.

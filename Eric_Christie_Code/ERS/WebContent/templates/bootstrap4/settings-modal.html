@@ -52,7 +52,7 @@
             <input type="text" name="lastname" id="userLastname" class="form-control" value="${user.getLastname()}"
               placeholder="Last name" maxlength="100" autocomplete="family-name" required>
           </div>
-          <#if user.isManager()>
+          <#if !user.isManager()>
             <div class="checkbox input-group">
               <label for="userEmailAlerts" class="input-group-addon align-middle mr-4">Email Alerts:&nbsp;</label>
                 <!--<span class="align-middle mr-4 input-group-addon">Email Alerts:&nbsp;</span>-->
