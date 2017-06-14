@@ -1,7 +1,73 @@
 <main>
+  <!--testing some stuff-->
+  <!--datetime picker minimum setup-->
+  <div class="container">
+    <div class="row">
+      <div class='col-sm-6'>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+      </script>
+    </div>
+  </div>
+  <!--datetime picker view mode-->
+  <div class="container">
+    <div class="col-sm-6" style="height:130px;">
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker9'>
+          <input type='text' class="form-control" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar">
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker9').datetimepicker({
+              viewMode: 'years'
+          });
+      });
+    </script>
+  </div>
+  <!--datetime picker min view mode-->
+  <div class="container">
+    <div class="col-sm-6" style="height:130px;">
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker10'>
+          <input type='text' class="form-control" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar">
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker10').datetimepicker({
+              viewMode: 'years',
+              format: 'MM/YYYY'
+          });
+      });
+    </script>
+  </div>
+
+
   <!--sortable, filterable tables go here-->
-  <table id="unresolved" class="table table-hover"></table>
-  <table id="resolved" class="table table-hover"></table>
+  <!--<table id="unresolved" class="table table-hover"></table>
+  <table id="resolved" class="table table-hover"></table>-->
 
   <!--SINCE MANAGERS ALREADY GET A COMPLETE LIST OF EMPLOYEES, YOU SHOULD CREATE A DATALIST CONTAINING
   REPRESENTATIONS OF ALL THE EMPLOYEES (PROBABLY AS JSON STRINGS)-->
