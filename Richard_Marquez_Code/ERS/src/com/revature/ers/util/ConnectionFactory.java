@@ -30,7 +30,7 @@ public class ConnectionFactory {
 
         try {
             Properties prop = new Properties();
-            prop.load(new FileReader("C:\\database.properties"));
+            prop.load(new FileReader("/database.properties"));
 //            prop.load(new FileReader("database.properties"));
             Class.forName(prop.getProperty("driver"));
             conn = DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("usr"), prop.getProperty("pwd"));
