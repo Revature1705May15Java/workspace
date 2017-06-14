@@ -1,0 +1,79 @@
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel"
+     aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header bg-inverse text-white">
+        <h5 class="modal-title" id="settingsModalLabel">Account Settings</h5>
+        <button type="reset" id="settingsClose" form="settingsForm" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons md-light">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="settings" id="settingsForm" method="post" action="settings">
+          <div class="input-group my-4">
+            <label for="userAccountType" class="input-group-addon">Account Type</label>
+              <#if user??>
+                <#if user.isManager()>
+                  <input type="text" id="userAccountType" class="form-control" value="Manager" readonly disabled>
+                <#else>
+                  <input type="text" id="userAccountType" class="form-control" value="Employee" readonly disabled>
+                </#if>
+              </#if>
+          </div>
+          <div class="input-group my-4">
+            <label for="userEmail" class="input-group-addon">Email Address</label>
+            <input type="email" name="email" id="userEmail" class="form-control" value="${user.getEmail()}"
+              placeholder="Email Address" maxlength="100" autocomplete="email" required>
+          </div>
+          <div class="form-group my-4">
+            <div class="input-group mb-0">
+              <label for="userPassword" class="input-group-addon">Change Password</label>
+              <input type="password" name="password" id="userPassword" class="form-control" value=""
+                placeholder="New Password" maxlength="100" minlength="8">
+            </div>
+            <!-- what happens when minlength is specified for a non-required field? -->
+            <!-- currently, password is not a required input -->
+            <!-- make it so that the confirm password input only appears when the password field is changed -->
+            <!-- set this input as required only when the password field has been changed -->
+            <br>
+            <div class="input-group mt-0">
+              <label for="userConfirm" class="input-group-addon">Confirm Password</label>
+              <input type="password" name="confirm" id="userConfirm" class="form-control" value=""
+                placeholder="Confirm Password" maxlength="100" minlength="8" title="Password fields must match.">
+            </div>
+          </div>
+          <div class="input-group my-4">
+            <label for="userFirstname" class="input-group-addon">First name</label>
+            <input type="text" name="firstname" id="userFirstname" class="form-control" value="${user.getFirstname()}"
+              placeholder="First name" maxlength="100" autocomplete="given-name" required>
+          </div>
+          <div class="input-group my-4">
+            <label for="userLastname" class="input-group-addon">Last name</label>
+            <input type="text" name="lastname" id="userLastname" class="form-control" value="${user.getLastname()}"
+              placeholder="Last name" maxlength="100" autocomplete="family-name" required>
+          </div>
+          <#if user.isManager()>
+            <div class="checkbox input-group">
+              <label for="userEmailAlerts" class="input-group-addon align-middle mr-4">Email Alerts:&nbsp;</label>
+                <!--<span class="align-middle mr-4 input-group-addon">Email Alerts:&nbsp;</span>-->
+                <#if user.isEmailAlertsOn()>
+                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle" checked>
+                <#else>
+                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle">
+                </#if>
+              <!--</label>-->
+            </div>
+          </#if>
+        </form>
+      </div>
+      <div class="modal-footer bg-inverse text-white">
+        <button type="reset" id="settingsCancel" form="settingsForm" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" id="settingsSubmit" form="settingsForm" class="btn btn-primary">
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

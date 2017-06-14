@@ -1,24 +1,23 @@
 body {
   padding-top: 70px;
+  padding-bottom: 40px;
+  background-color: #eeeeee;
 }
+
+/*.align-middle {*/
+  /*float: none;
+  display: inline-block;*/
+  /*vertical-align: middle;*/
+/*}*/
+
+/*.align-top {
+  vertical-align: top;
+}*/
 
 .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-/* Login page styles based on https://v4-alpha.getbootstrap.com/examples/signin/signin.css */
-body.login {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
-}
-
-body.setup {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #eee;
 }
 
 .form-page {

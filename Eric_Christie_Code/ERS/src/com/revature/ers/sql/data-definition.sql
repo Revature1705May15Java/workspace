@@ -92,5 +92,6 @@ end;
  * Add the first manager to the database.
  * DML Script
  */
+delete from employee where id=2;
 insert into employee (email, passwordHash, firstname, lastname, isManager)
-values ('admin@email.com', 'sha1:64000:18:1fel5lyvOdM65X1+WiZKbgsAyxS4Lhlu:MiR8H/VvDX3jAI6YnH9fEeXN', 'ADMIN', 'USER', 1);
+values ('admin@email.com', 'sha1:64000:18:GL54ziHM0839IKt5xA556y+MtGIKWzpF:sCIFPjMZws/AKd0YrzGvCYXe', 'ADMIN', 'USER', 1);

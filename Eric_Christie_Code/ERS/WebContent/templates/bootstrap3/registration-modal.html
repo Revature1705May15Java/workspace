@@ -1,0 +1,40 @@
+<div class="modal fade bd-example-modal-lg" id="registrationModal" tabindex="-1" role="dialog"
+    aria-labelledby="registrationModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-lg" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="reset" id="registrationClose" form="registrationForm" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">close</i>
+        </button>
+        <h3 class="modal-title" id="registrationModalLabel">Register a User</h3>
+      </div>
+      <div class="modal-body">
+        <form name="registration" id="registrationForm" class="form-inline" method="post" action="user">
+          <label for="newFirstname" class="sr-only">First name</label>
+          <input type="text" name="firstname" id="newFirstname" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+            placeholder="First name" maxlength="100" required>
+          <label for="newLastname" class="sr-only">Last name</label>
+          <input type="text" name="lastname" id="newLastname" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+            placeholder="Last name" maxlength="100" required>
+          <label for="newEmail" class="sr-only">Email address</label>
+          <input type="email" name="email" id="newEmail" class="form-control col-3 mb-1 mr-sm-1 mb-md-1"
+            placeholder="Email address" maxlength="100" required>
+          <label for="accountType" class="sr-only">Account Type</label>
+          <select class="form-control mb-1 mr-sm-1 mb-md-1" name="accountType" id="accountType" required>
+            <option value="" selected>Account Type</option>
+            <option value="employee">Employee</option>
+            <option value="manager">Manager</option>
+          </select>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="reset" id="registrationCancel" form="registrationForm" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" id="registrationSubmit" form="registrationForm" class="btn btn-primary">
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

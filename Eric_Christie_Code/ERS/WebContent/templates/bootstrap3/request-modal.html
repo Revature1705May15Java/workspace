@@ -1,0 +1,33 @@
+<div class="modal fade" id="requestModal" tabindex="-1" role="dialog" aria-labelledby="requestModalLabel"
+    aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="reset" id="requestClose" form="requestForm" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons">close</i>
+        </button>
+        <h3 class="modal-title" id="requestModalLabel">Submit a Request</h3>
+      </div>
+      <div class="modal-body">
+        <form name="request" id="requestForm" method="post" action="request">
+          <label for="purpose" class="sr-only">Purpose</label>
+          <textarea name="purpose" id="purpose" maxlength="140" cols="50" rows="3"
+            placeholder="Please explain your reason for making this request."></textarea>
+          <div class="input-group">
+            <label for="amount">Amount Requested</label>
+            <span class="input-group-addon">$</span>
+            <input type="number" name="amount" id="amount" min="0.01" step="0.01" placeholder="0.00" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="reset" id="requestCancel" form="requestForm" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" id="requestSubmit" form="requestForm" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse fixed-top">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navContent"
+          aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <img src="./img/favicons/ers-32.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <span class="hidden-sm-down">Expense Reimbursement System</span><span class="hidden-md-up">ERS</span>
+  </a>
+  <!--the remaining navbar content should be right-aligned-->
+  <div class="collapse navbar-collapse" id="navContent">
+    <ul class="navbar-nav mr-auto" id="navbar-spacer"></ul>
+    <ul class="navbar-nav">
+      <#if user.isManager()>
+        <li class="nav-item mx-md-1 my-1">
+          <button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#registrationModal">
+            <i class="material-icons align-middle">group_add</i>
+            <span class="hidden-md-up align-middle">&nbsp;Register Employees</span>
+          </button>
+        </li>
+      <#else>
+        <li class="nav-item mx-md-1 my-1">
+          <button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#requestModal">
+            <i class="material-icons vert-align"></i>
+            <span class="hidden-md-up align-middle">&nbsp;Create Request</span>
+          </button>
+        </li>
+      </#if>
+      <li class="nav-item mx-md-1 my-1">
+        <button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#settingsModal">
+          <i class="material-icons align-middle">settings</i>
+          <span class="hidden-md-up align-middle">&nbsp;Account Settings</span>
+        </button>
+      </li>
+      <li class="nav-item mx-md-1 my-1">
+        <form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
+          <button type="submit" class="btn btn-outline-secondary w-100">
+            <i class="material-icons align-middle">exit_to_app</i>
+            <span class="hidden-md-up align-middle">&nbsp;Logout</span>
+          </button>
+        </form>
+      </li>
+    </ul>
+  </div>
+</nav>
