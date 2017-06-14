@@ -10,6 +10,6 @@ public interface DAO {
   Person getPersonById(int id);
   ArrayList<Person> getAllPeople();
   void updatePerson(Person p);
-  void deletePerson(Person p);
+  void deletePerson(int id);
 
 }

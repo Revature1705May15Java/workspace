@@ -14,5 +14,8 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     
     <mapping class="com.ex.pojos.Person"/>
+    <mapping class="com.ex.pojos.Bear"/>
+    <mapping class="com.ex.pojos.HoneyPot"/>
+    <mapping class="com.ex.pojos.Cave"/>
   </session-factory>
 </hibernate-configuration>

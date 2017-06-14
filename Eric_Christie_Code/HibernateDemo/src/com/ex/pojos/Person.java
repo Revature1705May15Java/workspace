@@ -32,6 +32,13 @@ public class Person {
     this.firstname = firstname;
     this.lastname = lastname;
   }
+  
+  public Person(int id, String firstname, String lastname) {
+    super();
+    this.id = id;
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
 
   public int getId() {
     return id;

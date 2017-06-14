@@ -65,11 +65,11 @@ public class HiberDAO implements DAO {
   }
 
   @Override
-  public void deletePerson(Person p) {
+  public void deletePerson(int id) {
     Session session = ConnectionUtil.getSession();
     try {
       Transaction tx = session.beginTransaction();
-      session.delete(p);
+      session.delete(new Person(id, null, null));
       tx.commit();
     } finally {
       session.close();
