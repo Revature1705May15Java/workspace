@@ -18,7 +18,9 @@ public class DaoImpl implements Dao {
     public boolean addUser(String email, String password, String fName, String lName, boolean isManager) {
         boolean result = false;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+//        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "INSERT INTO users(email, password, fName, lName, isManager) VALUES(?, ?, ?, ?, ?)";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -44,7 +46,8 @@ public class DaoImpl implements Dao {
     public User updateUser(User u) {
         User result = null;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "UPDATE users SET email=?, password=?, fName=?, lName=? WHERE userId=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -72,7 +75,8 @@ public class DaoImpl implements Dao {
     public User getUser(String email) {
         User result = null;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "SELECT * FROM users WHERE email=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -106,7 +110,8 @@ public class DaoImpl implements Dao {
     public User getUser(int id) {
         User result = null;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "SELECT * FROM users WHERE userId=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -139,7 +144,8 @@ public class DaoImpl implements Dao {
     private List<ReimbursementRequest> getRequestsForUser(User u) {
         List<ReimbursementRequest> result = new ArrayList<>();
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = " SELECT REQUESTID, REQUESTERID, HANDLERID, STATETYPEID, AMOUNT, PURPOSE, NOTE, DATEREQUESTED, DATEHANDLED " +
                 "FROM REQUEST " +
                 "INNER JOIN users ON REQUEST.REQUESTERID = USERS.USERID " +
@@ -176,7 +182,8 @@ public class DaoImpl implements Dao {
     public int addRequest(ReimbursementRequest req) {
         int result = 0;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "INSERT INTO request(requesterId, stateTypeId, amount, " +
                 "purpose, dateRequested) VALUES(?, ?, ?, ?, ?) RETURNING requestId INTO ?";
 
@@ -208,7 +215,8 @@ public class DaoImpl implements Dao {
     public ReimbursementRequest getRequest(int id) {
         ReimbursementRequest result = null;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "SELECT * FROM request WHERE requestId=?";
 
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -243,7 +251,8 @@ public class DaoImpl implements Dao {
     public List<ReimbursementRequest> getAllRequests() {
         List<ReimbursementRequest> result = new ArrayList<>();
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "SELECT * FROM request INNER JOIN users ON REQUEST.REQUESTERID = USERS.USERID";
             Statement stmt = conn.createStatement();
 
@@ -278,7 +287,8 @@ public class DaoImpl implements Dao {
     public List<User> getAllUsers() {
         List<User> result = new ArrayList<>();
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "SELECT * FROM users";
             Statement stmt = conn.createStatement();
 
@@ -308,7 +318,8 @@ public class DaoImpl implements Dao {
     public boolean updateRequest(ReimbursementRequest req) {
         boolean result = false;
 
-        try (Connection conn = ConnectionFactory.getInstance().getConnection()) {
+        try {
+            Connection conn = ConnectionFactory.getInstance().getConnection();
             String sql = "UPDATE REQUEST " +
                 "SET REQUESTERID=?, HANDLERID=?, STATETYPEID=?, AMOUNT=?, " +
                 "PURPOSE=?, NOTE=?, DATEREQUESTED=?, DATEHANDLED=? " +

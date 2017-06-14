@@ -3,3 +3,7 @@
 **/*.iml
 Richard_Marquez_Code/ERS/out
 Richard_Marquez_Code/ERS/log.txt
+
+Richard_Marquez_Code/**/out/*
+Richard_Marquez_Code/**/hibernate.cfg.xml
+Richard_Marquez_Code/**/out/**/hibernate.cfg.xml

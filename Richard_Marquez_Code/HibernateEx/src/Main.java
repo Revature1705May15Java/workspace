@@ -15,8 +15,8 @@ public class Main {
 //        System.out.println(p);
 
         List<Person> people = dao.getAllPeople();
-        for (Person p : people) {
-            System.out.println(p);
+        for (Person q : people) {
+            System.out.println(q);
         }
 
 //        final Session session = ConnectionUtil.getSession();

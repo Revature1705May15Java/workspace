@@ -71,7 +71,6 @@ public class DaoImpl implements Dao {
         List<Person> people = new ArrayList<>();
 
         try {
-//            p = s.get(Person.class, id);
             people = s.createCriteria(Person.class).list();
         } catch (HibernateException e) {
             e.printStackTrace();
