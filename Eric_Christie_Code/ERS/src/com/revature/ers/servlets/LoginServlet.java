@@ -2,7 +2,6 @@ package com.revature.ers.servlets;
 
 import java.io.IOException;
 
-//import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +23,6 @@ public class LoginServlet extends HttpServlet {
    * perhaps by using cookies or local storage
 	 */
 	
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -39,6 +37,13 @@ public class LoginServlet extends HttpServlet {
 	  ERService service = new ERService();
     HttpSession session = request.getSession(true);
 	  boolean loginAttempted = false;
+	  
+	  /*
+	   * this servlet should also do some stuff with cookies and sessions:
+	   * - set a max inactive interval for each session
+	   * - (maybe do something with the creation time of each session)
+	   * - use cookies to keep track of each user's most recent login and logout times
+	   */
 	  
 	  if (((User) session.getAttribute("user")) != null) {
       response.sendRedirect("main");

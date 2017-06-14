@@ -116,14 +116,14 @@ public class ERService {
     return dao.getAllUsers();
   }
   
-  /**
-   * Retrieve information for all registered employees.
-   * @return an ArrayList of all 
-   */
-  public ArrayList<User> getEmployees() {
-    ArrayList<User> result = dao.getAllUsers();
-    
-    return result;
-  }
+//  /**
+//   * Retrieve information for all registered employees.
+//   * @return an ArrayList of all 
+//   */
+//  public ArrayList<User> getEmployees() {
+//    ArrayList<User> result = dao.getAllUsers();
+//    
+//    return result;
+//  }
   
 }

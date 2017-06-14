@@ -1,11 +1,12 @@
-package com.revature.ers.util;
+ package com.revature.ers.util;
 
-import java.security.SecureRandom;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.SecretKeyFactory;
 //import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -15,6 +16,14 @@ import javax.xml.bind.DatatypeConverter;
  */
 public class PasswordStorage
 {
+  
+//  public static void main(String[] args) {
+//    try {
+//      System.out.println(PasswordStorage.createHash("admin@email.com"));
+//    } catch (CannotPerformOperationException e) {
+//      e.printStackTrace();
+//    }
+//  }
 
     @SuppressWarnings("serial")
     static public class InvalidHashException extends Exception {

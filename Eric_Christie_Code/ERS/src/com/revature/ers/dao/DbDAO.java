@@ -198,7 +198,7 @@ public class DbDAO implements DAO {
   public ArrayList<RequestState> getAllRequestStates() {
     ArrayList<RequestState> states = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, name from requestState";
+      String sql = "select id, name from requestState order by id";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
