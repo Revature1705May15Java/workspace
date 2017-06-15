@@ -7,8 +7,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+import org.apache.log4j.*;
+import org.apache.log4j.xml.*;
 
 public class ConnectionFactory {
+
+    static {
+        DOMConfigurator.configure("log4j.xml");
+    }
 
     private static Boolean build=true;
     private static ConnectionFactory cf = null;
@@ -44,7 +50,7 @@ public class ConnectionFactory {
                 conn = DriverManager.getConnection(url, usr, pwd);
             }
         } catch (Exception e) {
-            System.out.println("Failed to create connection factory");
+            Logger.getLogger(ConnectionFactory.class).error("Failed to get instance");
         }
 
         return cf;

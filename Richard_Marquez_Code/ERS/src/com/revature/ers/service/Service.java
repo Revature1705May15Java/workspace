@@ -4,7 +4,6 @@ import com.revature.ers.dao.Dao;
 import com.revature.ers.dao.DaoImpl;
 import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
-import com.revature.ers.util.Logger;
 import com.revature.ers.util.Mailer;
 import com.revature.ers.util.PasswordStorage;
 
@@ -12,6 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.security.*;
+import org.apache.log4j.*;
 
 public class Service {
 
@@ -37,7 +37,7 @@ public class Service {
                 result = possibleUser;
             }
         } catch (Exception e) {
-            Logger.log(e.getMessage());
+            Logger.getLogger(Service.class).error(e.getMessage());
         }
 
         return result;
@@ -47,9 +47,6 @@ public class Service {
         return dao.getUser(id);
     }
 
-//    public static void main(String[] args) {
-//        Service.getInstance().addUser("richard92m@me.com", "password", "Richard", "Marquez", true);
-//    }
 
     public User addUser(String email, String password, String fName, String lName, boolean isManager) {
         User newUser = null;
@@ -68,7 +65,7 @@ public class Service {
                 Mailer.sendMail(email, emailSubject, emailBody);
             }
         } catch (Exception e) {
-            Logger.log(e.getStackTrace().toString());
+            Logger.getLogger(Service.class).error(e.getMessage());
         }
 
         return newUser;
@@ -94,9 +91,7 @@ public class Service {
                 updatedUser = dao.getUser(email);
             }
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getMessage());
-            Logger.log(e.getStackTrace().toString());
+            Logger.getLogger(Service.class).error(e.getMessage());
         }
 
         return updatedUser;
@@ -119,7 +114,7 @@ public class Service {
                 user.getRequests().add(result);
             }
         } catch (Exception e) {
-            Logger.log(e.getStackTrace().toString());
+            Logger.getLogger(Service.class).error(e.getMessage());
         }
 
         return result;

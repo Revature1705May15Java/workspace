@@ -3,7 +3,6 @@ package com.revature.ers.dao;
 import com.revature.ers.pojos.ReimbursementRequest;
 import com.revature.ers.pojos.User;
 import com.revature.ers.util.ConnectionFactory;
-import com.revature.ers.util.Logger;
 import oracle.jdbc.OraclePreparedStatement;
 import oracle.jdbc.OracleTypes;
 
@@ -11,6 +10,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.*;
 
 public class DaoImpl implements Dao {
 
@@ -34,9 +34,10 @@ public class DaoImpl implements Dao {
                 result = true;
             }
 
+            Logger.getLogger(DaoImpl.class).info("Added user w/ email: " + email);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to add user");
         }
 
         return result;
@@ -63,9 +64,10 @@ public class DaoImpl implements Dao {
                 result = u;
             }
 
+            Logger.getLogger(DaoImpl.class).info("Updated user: " + u);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            Logger.log(e.getMessage());
+            e.printStackTrace();
+            Logger.getLogger(DaoImpl.class).error("Failed to update user: " + u);
         }
 
         return result;
@@ -98,9 +100,10 @@ public class DaoImpl implements Dao {
                 }
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved user: " + result);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to get user: " + email);
         }
 
         return result;
@@ -133,9 +136,10 @@ public class DaoImpl implements Dao {
                 }
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved user: " + result);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to get user: " + id);
         }
 
         return result;
@@ -170,9 +174,10 @@ public class DaoImpl implements Dao {
                 ));
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved requests for user: " + u.getEmail());
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to get requests for user: " + u.getEmail());
         }
 
         return result;
@@ -203,9 +208,10 @@ public class DaoImpl implements Dao {
                 result = rs.getInt(1);
             }
 
+            Logger.getLogger(DaoImpl.class).info("added req: " + result);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to add req: " + req);
         }
 
         return result;
@@ -239,9 +245,10 @@ public class DaoImpl implements Dao {
                 result.setRequesterEmail(getUser(result.getRequesterId()).getEmail());
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved request: " + result);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to retrieve request: " + id);
         }
 
         return result;
@@ -275,9 +282,10 @@ public class DaoImpl implements Dao {
                 result.add(newReq);
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved all requests");
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to retrieve all requests");
         }
 
         return result;
@@ -306,9 +314,10 @@ public class DaoImpl implements Dao {
                 result.add(newUser);
             }
 
+            Logger.getLogger(DaoImpl.class).info("Retrieved all users");
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to retrieve all requests");
         }
 
         return result;
@@ -344,9 +353,10 @@ public class DaoImpl implements Dao {
                 result = true;
             }
 
+            Logger.getLogger(DaoImpl.class).info("Updated req: " + req);
         } catch (Exception e) {
             e.printStackTrace();
-            Logger.log(e.getMessage());
+            Logger.getLogger(DaoImpl.class).error("Failed to update req: " + req);
         }
 
         return result;

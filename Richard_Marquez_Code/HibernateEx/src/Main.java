@@ -8,16 +8,18 @@ public class Main {
     public static void main(final String[] args) throws Exception {
         Dao dao = new DaoImpl();
 
-//        Person p = new Person("asdf", "Qweerty");
+//        Person p = new Person("asdf", "Marquez");
 //        dao.createPerson(p);
 
 //        Person p = dao.getPersonById(1);
 //        System.out.println(p);
+        Person t = dao.getPersonByRegex("FIRST_NAME", "as%");
+        System.out.println(t);
 
-        List<Person> people = dao.getAllPeople();
-        for (Person q : people) {
-            System.out.println(q);
-        }
+//        List<Person> people = dao.getAllPeople();
+//        for (Person q : people) {
+//            System.out.println(q);
+//        }
 
 //        final Session session = ConnectionUtil.getSession();
 //

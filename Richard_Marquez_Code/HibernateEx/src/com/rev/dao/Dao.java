@@ -8,6 +8,7 @@ public interface Dao {
 
     void createPerson(Person p);
     Person getPersonById(int id);
+    Person getPersonByRegex(String field, String regex);
     void updatePerson(Person p);
     void deletePersonById(int id);
 

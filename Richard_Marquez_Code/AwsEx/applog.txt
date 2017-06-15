@@ -1,0 +1,4 @@
+INFO    2017-06-15 10:05:19,454 [main] com.revature.util.Main  - test log
+WARN    2017-06-15 10:05:19,457 [main] com.revature.util.Main  - test warninglog
+INFO    2017-06-15 10:06:08,348 [main] com.revature.util.Main  - test log
+WARN    2017-06-15 10:06:08,352 [main] com.revature.util.Main  - test warninglog

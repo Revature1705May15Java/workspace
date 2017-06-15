@@ -5,6 +5,7 @@ import com.rev.util.ConnectionUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,23 @@ public class DaoImpl implements Dao {
         Person p = null;
 
         try {
-            p = s.get(Person.class, id);
+            p = (Person) s.get(Person.class, id);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            s.close();
+        }
+
+        return p;
+    }
+
+    @Override
+    public Person getPersonByRegex(String field, String regex) {
+        Session s = ConnectionUtil.getSession();
+        Person p = null;
+
+        try {
+            p = (Person) s.createCriteria(Person.class).add(Restrictions.sqlRestriction(field + " like '" + regex + "'")).list().get(0);
         } catch (HibernateException e) {
             e.printStackTrace();
         } finally {
