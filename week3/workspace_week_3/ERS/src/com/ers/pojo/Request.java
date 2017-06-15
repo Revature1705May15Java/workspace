@@ -13,10 +13,19 @@ public class Request {
 
 	public void setAdminNote(String adminNote) {
 		this.adminNote = adminNote;
+		if(adminNote != null) System.out.println("AdminNote: " + adminNote);
+		Request r = new Request();
 	}
 
 	public String getPurpose() {
 		return purpose;
+	}
+
+	@Override
+	public String toString() {
+		return "Request [id=" + id + ", requesterId=" + requesterId + ", adminId=" + adminId + ", balance=" + balance
+				+ ", purpose=" + purpose + ", adminNote=" + adminNote + ", type=" + type + ", dateOpened=" + dateOpened
+				+ ", dateClosed=" + dateClosed + "]";
 	}
 
 	public void setPurpose(String purpose) {

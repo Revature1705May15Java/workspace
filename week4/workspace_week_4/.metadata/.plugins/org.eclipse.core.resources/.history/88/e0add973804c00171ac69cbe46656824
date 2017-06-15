@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="mybtn">Click Here!</button>
+
+	<div id="stuff"></div>
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous">
+	</script>
+	<script type="text/javascript">
+	var myPerson;
+	
+	function handleEvent() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){   // this is a callable function!
+			if(xhr.readyState==4 && xhr.status==200){
+				var person = JSON.parse(xhr.responseText);
+				myPerson = person;
+				document.getElementById("stuff").innerHTML = "Name: " + person.name + "<br>Age: " + person.age;
+			}
+		}
+		xhr.open("GET", "getJSON", true);
+		xhr.send();
+	}
+	
+	document.getElementById("mybtn").addEventListener("click", handleEvent, false);
+	</script>
+	
+</body>
+</html>

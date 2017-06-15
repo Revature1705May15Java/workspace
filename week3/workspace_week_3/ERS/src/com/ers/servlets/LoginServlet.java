@@ -21,8 +21,7 @@ public class LoginServlet extends HttpServlet {
 	static Service service = new Service();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -33,17 +32,15 @@ public class LoginServlet extends HttpServlet {
 		String pw = request.getParameter("password");
 		
 		HttpSession session = request.getSession();
-		
 		User temp = service.getUserInfo(name);
 		if(temp == null){}
 		else {
 			session.setAttribute("uname", temp.getUsername());
-			session.setAttribute("fn", temp.getFn());
-			session.setAttribute("ln", temp.getLn());
+			session.setAttribute("user", temp);
 		}
 		// if the user is found (not null, their rank matches (0=employee, 1=manager), and password matches... send them to the corresponding homepage.
 		if(temp != null && temp.getRank() == 1 && pw.equals(temp.getPassword())) response.sendRedirect("Home2.ftl");
-		else if (temp != null && temp.getRank() == 0 && pw.equals(temp.getPassword())) request.getRequestDispatcher("Home.ftl").forward(request, response);
+		else if (temp != null && temp.getRank() == 0 && pw.equals(temp.getPassword())) response.sendRedirect("home");
 		else{
 			request.setAttribute("login", "fail");
 			request.getRequestDispatcher("index.ftl").forward(request, response);

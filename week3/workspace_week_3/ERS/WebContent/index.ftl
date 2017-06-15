@@ -16,7 +16,7 @@
 
 <style>
 div#loggingin{
-    height: 150px;
+    height: 190px;
     width: 500px;
     color: black;
     margin: 0 auto;
@@ -25,12 +25,13 @@ div#loggingin{
 </style>
 	<title>Welcome Page</title>
 </head>
-<body style="background-color: aquamarine; height: 1000px;">
+<body style="background-color: skyblue; height: 1000px;">
 
-	<div class="jumbotron" id="loggingin" style="background-color: skyblue; color: purple; text-align: center;">
+	<div class="jumbotron" id="loggingin" style="background-color: steel; color: purple; text-align: center;">
+		<h4 style="font-size: 250%; margin-top: -25px; margin-bottom: 25px">Log In</h4>
 		<form method="POST" action="login">
 		
-			<input class="form-control" type="text" name="username" placeholder="Username" required="required" />
+			<input class="form-control" type="text" name="username" placeholder="Username/E-mail" required="required" />
 			<input class="form-control" type="password" name="password" placeholder="Password"  required="required" />
 			<input class="btn-primary" type="submit" value="Login"/>
 		

@@ -140,9 +140,11 @@ function isEven(someNum) {
 Define function isPalindrome(someStr)
 Return true if someStr is a palindrome, otherwise return false
 */
-
-
-
+function isPalindrome(someStr){
+	var temp = someStr.split("").reverse().join("");
+	if(temp===someStr) return true;
+	return false;
+}
 
 /*
 8. Shapes
@@ -167,7 +169,64 @@ Example for printShape("Diamond", 5, "*");
  ***
   *
 */
-
+function printShape(shape, height, character){
+	if(shape=="Square" || shape=="square"){
+		var text = "";
+		for (i = 0; i < height; i++) { 
+			for (j = 0; j < height; j++) { 
+			    text += character;
+			}
+			text += "<br>";
+		}
+		document.write(text);
+	}
+	if(shape=="Triangle" || shape=="triangle"){
+		var text = "";
+		for (i = 1; i <= height; i++) { 
+			for (j = 0; j < i; j++) { 
+			    text += character;
+			}
+			text += "<br>";
+		}
+		document.write(text);
+	}
+	if(shape=="Diamond" || shape=="diamond"){
+	    var i, s;
+	    
+	    // top: 1 to n
+	    document.write("<pre>");
+	    for(i = 1; i <= height; ++i )
+	    {
+	        // write n-i spaces:
+	        for ( s = 1; s <= height-i; ++s )
+	        {
+	            document.write(" ");
+	        }
+	        // then write i asterisk+space sets:
+	        for ( s = 1; s <= i; ++s )
+	        {
+	            document.write(character + " ");
+	        }
+	        document.write("\n");
+	    }
+	    // bottom: n-1 down to 1
+	    for(i = height-1; i >= 1; --i )
+	    {
+	        // write n-i spaces:
+	        for ( s = 1; s <= height-i; ++s )
+	        {
+	            document.write(" ");
+	        }
+	        // then write i asterisk+space sets:
+	        for ( s = 1; s <= i; ++s )
+	        {
+	            document.write(character + " ");
+	        }
+	        document.write("\n");
+	    }
+	    document.write("</pre>");
+	}
+}
 
 
 
@@ -176,7 +235,14 @@ Example for printShape("Diamond", 5, "*");
 Define function traverseObject(someObj)
 Print every property and it's value.
 */
+function traverseObject(someObj){
+	var propValue;
+	for(var propName in someObj) {
+	    propValue = someObj[propName]
 
+	    document.write(propName + ": " + propValue + "<br>")
+	}
+}
 
 
 
@@ -188,7 +254,12 @@ Delete the third element in the array.
 Print length
 The lengths should be the same.
 */
-
+function deleteElement(someArr){
+	document.write("<br>" + "Length Before Delete: " + someArr.length);
+	delete someArr[3];
+	document.write("<br>" + "Length After Delete: " + someArr.length + "<br>");
+	
+}
 
 
 
@@ -200,7 +271,11 @@ Splice the third element in the array.
 Print length
 The lengths should be one less than the original length.
 */
-
+function spliceElement(someArr){
+	document.write("<br>" + "Length Before Delete: " + someArr.length);
+	someArr.splice(2,1);
+	document.write("<br>" + "Length After Delete: " + someArr.length + "<br>");
+}
 
 
 
@@ -210,9 +285,10 @@ Define a function Person(name, age)
 The following line should set a Person object to the variable john:
 	var john = new Person("John", 30);
 */
-
-
-
+function Person(name, age){
+	this.name = name;
+	this.age = age;
+}
 
 /*
 13. Defining an object using an object literal
@@ -220,17 +296,10 @@ Define function getPerson(name, age)
 The following line should set a Person object to the variable john:
 	var john = getPerson("John", 30);
 */
-
-
-
-
-
-
-
-
-
-
-
+function getPerson(name, age){
+	this.name = name;
+	this.age = age;
+}
 
 
 

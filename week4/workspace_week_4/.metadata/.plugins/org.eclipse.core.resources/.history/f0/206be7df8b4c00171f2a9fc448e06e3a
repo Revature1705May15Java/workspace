@@ -1,0 +1,40 @@
+var pokemonVar;
+
+function getPokemon(){
+	var pokemonId = document.getElementById("pokemonid").value;
+	console.log("Sending pokemone id: " + pokemonId);
+	
+	//Step 1: Open XHR
+	var xhttp = new XMLHttpRequest();
+	// typically we will use this to store JSON, regardless of it being an "XML" request object
+	
+	//Step 2: Write function to handle the ready state change of the response
+	xhttp.onreadystatechange = function(){
+		if(xhttp.readyState==4 && xhttp.status==200){
+			var pokemon = JSON.parse(xhttp.responseTest);
+			setValues(pokemon);
+			pokemonVar = pokemon;
+		}
+	};
+	
+	//Step 3: Open xhttp
+	xhttp.open("GET", "http://pokeapi.co/api/v2/pokemon/"+pokemonId, true);
+	
+	//Step 4: Send
+	xhttp.send(); // post our data with get method
+}
+
+function setValues(pokemon){
+	document.getElementById("pokemonname").innerHTML = pokemon.name;
+	
+	var pokeimg = document.getElementById("pokemonimg");
+	pokeimg.setAttribute("alt", pokemon.name);
+	pokeimg.setAttribute("src", pokemon.spirtes.front_shiny);
+	
+	
+}
+
+window.onload = function(){
+	document.getElementById("pokemonsubmit").addEventListener("click", getPokemon);
+	//bubble vs capture boolean was left out but no error? Undefined = falsy -> bubble
+}

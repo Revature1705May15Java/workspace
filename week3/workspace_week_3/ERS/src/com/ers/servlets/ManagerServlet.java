@@ -26,17 +26,20 @@ public class ManagerServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		String uname = request.getParameter("username");
-		String pw = request.getParameter("password");
-		String fn = request.getParameter("firstname");
-		String ln = request.getParameter("lastname");
+		String uname = request.getParameter("username").trim();
+		String pw = request.getParameter("password").trim();
+		String fn = request.getParameter("firstname").trim();
+		String ln = request.getParameter("lastname").trim();
 		String rankString = request.getParameter("rank");
 		int rank;
 		if(rankString.equals("manager")) rank = 1;
 		else rank = 0;
 		
 		if(rank != 1) rank = 0;
-		int test = service.addUser(uname, pw, fn, ln, rank);
+		
+		int test = 0;
+		if(!uname.equals("") && !pw.equals("") && !fn.equals("") && !ln.equals("")) test = service.addUser(uname, pw, fn, ln, rank);
+		
 		if(test == 1) {
 			request.setAttribute("createuser", "success");
 			request.getRequestDispatcher("Home2.ftl").forward(request, response);

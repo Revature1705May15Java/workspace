@@ -1,0 +1,9 @@
+var pokemonVar;
+
+function getPokemon(){}
+
+function setValues(pokemon){}
+
+window.onload = function(){
+	document.getElementById("pokemonsubmit").addEventListener("click", getPokemon);
+}

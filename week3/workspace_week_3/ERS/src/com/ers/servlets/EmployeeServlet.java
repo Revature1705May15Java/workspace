@@ -27,13 +27,15 @@ public class EmployeeServlet extends HttpServlet {
 		
 		int test = 0;
 		try{
-			int amount = Integer.parseInt(request.getParameter("amount"));
+			double amount = Double.parseDouble(request.getParameter("amount"));
 			String purpose = request.getParameter("purpose");
 		
 			test = service.addRequest(amount, purpose, temp.getId());
+			request.setAttribute("firstname", temp.getFn());
+			request.setAttribute("lastname", temp.getLn());
 			if(test == 1) {
 				request.setAttribute("createrequest", "success");
-				request.getRequestDispatcher("Home.ftl").forward(request, response);
+				request.getRequestDispatcher("home").forward(request, response);
 			} else if(test == 0) {
 				request.setAttribute("createrequest", "fail");
 				request.getRequestDispatcher("Home.ftl").forward(request, response);

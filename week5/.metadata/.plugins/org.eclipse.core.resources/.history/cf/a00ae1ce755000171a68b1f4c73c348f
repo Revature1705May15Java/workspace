@@ -1,0 +1,118 @@
+package com.ex.pojos;
+
+import java.util.Set;
+
+import javax.persistence.Entity;
+
+@Entity
+@
+public class Bear {
+	
+	private int id;
+	private String bearColor;
+	private String breed;
+	private double height;
+	private double weight;
+	private Cave dwelling;
+	private HoneyPot honeyPot;
+	private Set<Bear> bearCubs;
+
+	public Bear(int id, String bearColor, String breed, double height, double weight, Cave dwelling, HoneyPot honeyPot,
+			Set<Bear> bearCubs) {
+		super();
+		this.id = id;
+		this.bearColor = bearColor;
+		this.breed = breed;
+		this.height = height;
+		this.weight = weight;
+		this.dwelling = dwelling;
+		this.honeyPot = honeyPot;
+		this.bearCubs = bearCubs;
+	}
+	
+	public Bear(String bearColor, String breed, double height, double weight, Cave dwelling, HoneyPot honeyPot,
+			Set<Bear> bearCubs) {
+		super();
+		this.bearColor = bearColor;
+		this.breed = breed;
+		this.height = height;
+		this.weight = weight;
+		this.dwelling = dwelling;
+		this.honeyPot = honeyPot;
+		this.bearCubs = bearCubs;
+	}
+	
+	public Bear(){}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getBearColor() {
+		return bearColor;
+	}
+
+	public void setBearColor(String bearColor) {
+		this.bearColor = bearColor;
+	}
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
+
+	public double getHeight() {
+		return height;
+	}
+
+	public void setHeight(double height) {
+		this.height = height;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public Cave getDwelling() {
+		return dwelling;
+	}
+
+	public void setDwelling(Cave dwelling) {
+		this.dwelling = dwelling;
+	}
+
+	public HoneyPot getHoneyPot() {
+		return honeyPot;
+	}
+
+	public void setHoneyPot(HoneyPot honeyPot) {
+		this.honeyPot = honeyPot;
+	}
+
+	public Set<Bear> getBearCubs() {
+		return bearCubs;
+	}
+
+	public void setBearCubs(Set<Bear> bearCubs) {
+		this.bearCubs = bearCubs;
+	}
+
+	@Override
+	public String toString() {
+		return "Bear [id=" + id + ", bearColor=" + bearColor + ", breed=" + breed + ", height=" + height + ", weight="
+				+ weight + ", dwelling=" + dwelling + ", honeyPot=" + honeyPot + ", bearCubs=" + bearCubs + "]";
+	}
+	
+	
+}

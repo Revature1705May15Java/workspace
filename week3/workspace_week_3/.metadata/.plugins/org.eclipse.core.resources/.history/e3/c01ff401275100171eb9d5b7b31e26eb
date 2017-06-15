@@ -1,0 +1,62 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojo.User;
+import com.ers.service.Service;
+
+/**
+ * Servlet implementation class EditInfoServlet
+ */
+@WebServlet("/EditInfoServlet")
+public class EditInfoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	Service service = new Service();
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User u = (User) session.getAttribute("user");
+		
+		//String username = session.getAttribute("newusername").toString();
+		//User temp = service.getUserInfo(username);
+		
+		System.out.println("User to edit: " + u.toString());
+		
+		try{
+			
+		}
+		catch(){
+			request.setAttribute("editing", "fail");
+			request.getRequestDispatcher("Home.ftl").forward(request, response);
+		}
+		
+		
+//		int test = 0;
+//		try{
+//			double amount = Double.parseDouble(request.getParameter("amount"));
+//			String purpose = request.getParameter("purpose");
+//		
+//			test = service.addRequest(amount, purpose, u.getId());
+//			request.setAttribute("firstname", u.getFn());
+//			request.setAttribute("lastname", u.getLn());
+//			if(test == 1) {
+//				request.setAttribute("createrequest", "success");
+//				request.getRequestDispatcher("home").forward(request, response);
+//			} else if(test == 0) {
+//				request.setAttribute("createrequest", "fail");
+//				request.getRequestDispatcher("Home.ftl").forward(request, response);
+//			}
+//		}
+//		catch(NumberFormatException e){
+//			request.setAttribute("createrequest", "fail");
+//			request.getRequestDispatcher("Home.ftl").forward(request, response);
+//		}
+	}
+
+}

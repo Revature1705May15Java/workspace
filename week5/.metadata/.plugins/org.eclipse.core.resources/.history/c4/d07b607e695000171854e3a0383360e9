@@ -1,0 +1,28 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.ex.pojos.Person;
+import com.ex.util.ConnectionUtil;
+
+public class Impldao implements dao{
+
+	public void createPerson(Person p) {
+		Session session = ConnectionUtil.getSession();
+		
+		try{
+			Transaction ta = session.beginTransaction();
+			session.save(p);
+			ta.commit();
+		} 
+		finally {
+			session.close();
+		}
+	}
+
+	public Person getPersonById(int id) {
+		return null;
+	}
+
+}

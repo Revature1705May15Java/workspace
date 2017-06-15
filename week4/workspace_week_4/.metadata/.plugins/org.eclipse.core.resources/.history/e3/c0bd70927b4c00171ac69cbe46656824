@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JSON with AJAX</title>
+</head>
+<body>
+
+	<button id="mybtn">Click Here!</button>
+
+	<div id="stuff"></div>
+	
+	<script type="text/javascript">
+	var myPerson;
+	
+	function handleEvent() {
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){   // this is a callable function!
+			if(xhr.readyState==4 && xhr.status==200){
+				var person = JSON.parse(xhr.responseText);
+				myPerson = person;
+				document.getElementById("stuff").innerHTML = person.name;
+				document.getElementById("stuff").innerHTML += person.age;
+			}
+		}
+		xhr.open("GET", "getJSON", true);
+		xhr.send();
+	}
+	
+	document.getElementById("mybtn").addEventListener("click", handleEvent, false);
+	</script>
+	
+</body>
+</html>

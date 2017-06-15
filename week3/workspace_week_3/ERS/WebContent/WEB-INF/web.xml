@@ -42,6 +42,22 @@
     <url-pattern>/createRequest</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>EmployeeHome</servlet-name>
+    <servlet-class>com.ers.servlets.EmployeeHomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeHome</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EditServlet</servlet-name>
+    <servlet-class>com.ers.servlets.EditInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditServlet</servlet-name>
+    <url-pattern>/editInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>freemarker</servlet-name>
     <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
     <init-param>

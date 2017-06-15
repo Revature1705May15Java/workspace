@@ -4,14 +4,6 @@ import java.util.ArrayList;
 
 public class User {
 	int id, rank;
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-
 	String fn, ln, username, password;
 	ArrayList<Request> Requests;
 	
@@ -27,6 +19,14 @@ public class User {
 		this.Requests = requestIds;
 	}
 
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -53,6 +53,12 @@ public class User {
 
 	public String getUsername() {
 		return username;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", rank=" + rank + ", fn=" + fn + ", ln=" + ln + ", username=" + username
+				+ ", password=" + password + ", Requests=" + Requests + "]";
 	}
 
 	public void setUsername(String username) {

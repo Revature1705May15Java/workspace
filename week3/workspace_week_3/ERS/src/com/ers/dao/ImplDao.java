@@ -13,6 +13,25 @@ import com.ers.util.ConnectionFactory;
 public class ImplDao implements Dao{
 
 	static ArrayList<Request> requests = new ArrayList<Request>();
+
+	
+	public boolean editUser(String editCol, String change, User u) {
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "UPDATE employee SET " + editCol + " = ? WHERE empid = ?";
+					
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, change);
+			ps.setInt(2, u.getId());
+			
+			ps.executeUpdate();
+ 
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	@Override
 	public User getUser(String username) {
@@ -143,7 +162,7 @@ public class ImplDao implements Dao{
 				ResultSet info2 = ps2.executeQuery();
 				info2.next();
 				temp.setType(info2.getString(1));
-				
+				System.out.println(temp.toString());
 				requests.add(i, temp);
 				i++;			
 			}
@@ -156,7 +175,7 @@ public class ImplDao implements Dao{
 	}
 
 	@Override
-	public int addRequest(int amt, String purpose, int id) {
+	public int addRequest(double amt, String purpose, int id) {
 		int numRowsAffected = 0;
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			System.out.println("VALUES: " + amt + " : "+ purpose + " : "+ id);
@@ -164,7 +183,7 @@ public class ImplDao implements Dao{
 						+ "VALUES (?,?,?)";
 					
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setInt(1, amt);
+			ps.setDouble(1, amt);
 			ps.setString(2, purpose);
 			ps.setInt(3, id);
 			
@@ -184,6 +203,7 @@ public class ImplDao implements Dao{
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM requests WHERE empid = ?";
 			String sql2 ="SELECT name FROM statetype WHERE stateid = ?";
+			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			PreparedStatement ps2 = connection.prepareStatement(sql2);
 			

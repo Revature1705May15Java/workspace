@@ -1,0 +1,23 @@
+package com.ex.pojos;
+
+public class Cave {
+	private int id;
+	private double squareFootage;
+	private double rent;
+	
+	public Cave(){}
+	
+	public Cave(double squareFootage, double rent) {
+		super();
+		this.squareFootage = squareFootage;
+		this.rent = rent;
+	}
+	
+	public Cave(int id, double squareFootage, double rent) {
+		super();
+		this.id = id;
+		this.squareFootage = squareFootage;
+		this.rent = rent;
+	}
+	
+}

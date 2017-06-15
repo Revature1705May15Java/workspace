@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>Employee Page</title>
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+	    $('#reqTable').DataTable({
+	    	  "columnDefs": [{ "width": "30%", "targets": 2 }]
+	    });
+	});
+	</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+
+table{
+  margin: 0 auto;
+  width: 100%;
+  clear: both;
+  table-layout: fixed;
+}
+
+div#newuser{
+    float: left;
+    margin-right: 10px;
+    height: 250px;
+    width: 350px;
+    color: black;
+}
+
+div#requesttable{
+	text-align: center; 
+	position: fixed;
+	height: 300px;
+    width: 750px;
+    x: 200px;
+}
+
+div#requestdiv{
+    height: 500px;
+    width: 1000px;
+    overflow-y: scroll;
+    color: black;
+    background-color: white;
+}
+
+</style>
+
+<title>Welcome Page</title>
+</head>
+<body style="background-color: aquamarine;">
+	<div class="jumbotron" style="background-color: skyblue; color: purple; text-align: center;">
+		<form method="POST" action="logout">
+			<input class="btn-primary" type="submit" name="logout" value="Log Out" />
+		</form>
+
+		
+		<div id="newuser" class="jumbotron">
+			<#if createrequest! == "success">
+			<h3 style="color:green">Request submitted.</h3>
+			</#if>
+			<#if createrequest! == "fail">
+			<h3 style="color:red">Invalid entry. Please try again.</h3>
+			</#if>
+			<h4>Create a New Reimbursement Request</h3>
+			<form method="POST" action="createRequest">
+			<input class="form-control" type="number" name="amount" min="0.01" step=".01" required="required" placeholder="$0.00">
+			<input class="form-control" type="text" name="purpose" placeholder="Purpose of spending" required="required" maxlength="255" />
+			<input class="btn-primary" type="submit" value="Submit Request"/>
+			</form>
+		</div>
+		
+		<div id="requestdiv" class="jumbotron">
+				<table id="reqTable" class="display" cellspacing="0">
+   <thead>
+      <tr >
+         <th style="text-align:center;">Request ID</th>
+         <th style="text-align:center;">Amount</th>
+         <th style="text-align:center;">Purpose</th>
+         <th style="text-align:center;">Status</th>
+         <th style="text-align:center;">Date Opened</th>
+         <th style="text-align:center;">Date Closed</th>
+         <th style="text-align:center;">Admin Note</th>
+         <th style="text-align:center;">Admin ID</th>
+      </tr>
+   </thead>
+   <tfoot>
+      <tr>
+         <th>Request ID</th>
+         <th>Amount</th>
+         <th>Purpose</th>
+         <th>Status</th>
+         <th>Date Opened</th>
+         <th>Date Closed</th>
+         <th>Admin Note</th>
+         <th>Admin ID</th>
+      </tr>
+   </tfoot>
+   <tbody>
+      <#list Requests as req>
+				<tr>
+					<td>${req.getId()}</td>
+					<td>${req.getBalance()}</td>
+					<td>${req.getPurpose()}</td>
+					<td>${req.getType()}</td>
+					<td>${req.getDateOpened()}</td>
+					<td>${req.getDateClosed()!"N/A"}</td>
+					<td>${req.getAdminNote()!"N/A"}</td>
+					<td>${req.getAdminId()!"N/A"}</td>
+				</tr>
+		</#list>
+   </tbody>
+</table>
+		</div>
+		
+	</div>
+
+</body>
+</html>

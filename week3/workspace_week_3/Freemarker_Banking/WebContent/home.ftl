@@ -38,8 +38,7 @@
 	</div>
 	
 	
-	<div class="jumbotron" style="background-color: skyblue;">
-	<input type="submit" action="testing" value="Success"/>
+	<div class="jumbotron" style="background-color: white;">
 		<table class="table table-hover" style="text-align: center;">
 			<tr>
 			<th style="text-align: center;">ID</th>

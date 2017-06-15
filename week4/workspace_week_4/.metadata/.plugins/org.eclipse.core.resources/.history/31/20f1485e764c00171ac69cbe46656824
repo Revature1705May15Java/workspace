@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Simple AJAX demo</title>
+</head>
+<body>
+
+<button id="mybtn">Click Here!</button>
+
+	<div id="stuff">
+		
+		<script type="text/javascript">
+		// get text from servlet!
+		
+		function getText(){
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function(){   // this is a callable function!
+				if(xhr.readystate==4 && xhr.status==200){
+					document.getElementById("stuff").innerHTML = xhr.responseText;
+				}
+			}
+				// method, url, isAsynchronous
+			xhr.open("GET", "getText", true);
+				xhr.send();
+		}
+													     // type, function, bubbling
+		document.getElementById("mybtn").addEventListener("click", getText, false);
+		</script>
+		
+		
+		
+	</div>
+
+</body>
+</html>

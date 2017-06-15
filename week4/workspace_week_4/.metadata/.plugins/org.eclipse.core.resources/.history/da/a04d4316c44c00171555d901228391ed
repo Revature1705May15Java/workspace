@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.bubVScap{
+margin: 20px;
+border: 1px solid blue;
+}
+</style>
+
+</head>
+<body>
+	<div class="col-lg-4">
+	<h3>Problem 1: Fibonacci</h3>
+	<br>
+	<input type="number" id="fibNum" class="form-control" />
+	<br>
+	<button class="btn btn-primary" id="doFib"/>RunFibonacci!</button>
+	<b> = <p id="fib"></p></b>
+	
+	</div>
+	
+	<div class="col-lg-4">
+	<h3>Problem 2: Bubble Sort</h3>
+	<br>
+	<input type="number" id="sortNum" class="form-control" />
+	<br>
+	<button class="btn btn-primary" id="doSort"/>RunFibonacci!</button>
+	<b> = <p id="sort"></p></b>
+	
+	</div>
+	
+	<div class="col-lg-4">
+	<h3>Problem 3: Reverse String</h3>
+	<br>
+	<input type="number" id="reverseString" class="form-control" />
+	<br>
+	<button class="btn btn-primary" id="doReverse"/>RunFibonacci!</button>
+	<b> = <p id="reverse"></p></b>
+	
+	</div>
+
+
+	<div>
+	<h1>Enter Student Information</h1>
+	<br /> Id:
+	<input type="text" id="t_id" />
+	<br /> Name:
+	<input type="text" id="t_name" />
+	<br /> Major:
+	<input type="text" id="t_major" />
+	<br />
+	<br />
+	
+	<button id="add">Add Student</button>
+	
+	<table id="students">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>major</th>
+		</tr>
+	</table>
+	</div>
+	<div>
+
+        <input type="button" name="button" value="Saying Hello" id="hello"/>
+
+        <input type="button" name="click" value="Counting" id="upCount"/>
+	
+	</div>
+	
+	<br />
+	<br />
+	
+	<form class="bubVScap" onclick="alert('form!')">FORM
+		<div class="bubVScap" onclick="alert('div!')">DIV
+			<p class="bubVScap" onclick="alert('paragraph!')">P</p>
+		</div>
+	</form>
+	
+	
+	
+	
+	<script src="JS/examples.js"></script>
+	<script src="JS/JS_HW.js"></script>
+</body>
+</html>

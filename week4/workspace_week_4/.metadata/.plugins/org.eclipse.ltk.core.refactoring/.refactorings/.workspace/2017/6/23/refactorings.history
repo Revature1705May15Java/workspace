@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JS_examples&apos; to &apos;JS_HW&apos;" description="Rename resource &apos;JS_examples&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/JS_examples" name="JS_HW" stamp="1497132608772" updateReferences="true"/>
+</session>

@@ -1,5 +1,0 @@
-package com.ers.dao;
-
-public interface Dao {
-	User getUser(String username);
-}
