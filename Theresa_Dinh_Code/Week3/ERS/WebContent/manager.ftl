@@ -6,8 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <!-- JQuery CDN -->
-        <script
-          src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -18,8 +17,13 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
 
+        <!-- Data Tables -->
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
+        
         <title>ERS Portal</title>
         <link rel="stylesheet" href="manager.css">
+        <script src="manager.js"></script>
     </head>
     
     <body>    
@@ -34,27 +38,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#"><span class="glyphicon-class"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></span>  ERS</a>   
+                  <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>  ERS</a>   
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Requests<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Employees</a></li>
+                        <li><a href="employees.ftl">Employees</a></li>
                     </ul>
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
+                    
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-<!--                            change User to $Employee.firstName $Employee.lastName -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  User<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">User Profile</a></li>
-                                <li><a href="#">Update Profile</a></li>
+                                <li><a href="profile.ftl">View/Update Profile</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Logout</a></li>
                             </ul>
@@ -63,30 +61,30 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-       
+        
+<!--  includes nav sidebar, table body  -->
         <div class="container-fluid">
             <div class="row">
                 <!-- Nav Sidebar -->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="#">Pending Requests <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Approved Requests</a></li>
-                        <li><a href="#">Denied Requests</a></li>
-                        <li><a href="#">View All Requests</a></li>
+                        <li class="active"><a href="javascript:void(0)">Pending Requests <span class="sr-only">(current)</span></a></li>
+                        <li><a id="approve-req" href="javascript:void(0)">Approved Requests</a></li>
+                        <li><a id="deny-req" href="javascript:void(0)">Denied Requests</a></li>
+                        <li><a id="all-req" href="javascript:void(0)">View All Requests</a></li>
                     </ul>
-<!--                    <li role="separator" class="divider"></li>-->
                     <ul class="nav nav-sidebar">
-                        <li><a href="#">Submit New Request</a></li>
-                        <li><a href="#">View Your Requests</a></li>
+                        <li><a id="new-req" href="submission.ftl">Submit New Request</a></li>
+                        <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard</h1>     
                     <!-- Pending Requests Table -->
             <!--        Badge of Total Pending Requests -->
-                    <h2 class="sub-header">Requests Awaiting Approval <span class="badge">42</span></h2>
-            <!--        change the 42 to pending requests -->
-                    <div class="table-responsive">
+                    <h2 class="sub-header" id="table-header">Requests Awaiting Approval</h2>
+                    <!--    -->
+                    <div class="table-responsive" id="body-table">
                         <table class="table table-striped" id="pendingRequests">
                             <thead>
                                 <tr>
@@ -101,39 +99,43 @@
                             </thead>
                             <tbody>
                                 <!-- On rows -->
-                                <!-- success for approved, danger for denied, active for pending -->
-                                <tr class="active">
+                                <tr>
+<!--
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+                                    <td><center>...</center></td>
+-->
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
                                     <td>...</td>
                                 </tr>
-                                <tr class="success">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                <!--                <tr class="warning">...</tr>-->
-                                <tr class="danger">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                                <tr class="active">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                                <tr class="active">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                                <tr class="active">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                                <tr class="active">
+                                <tr>
                                     <td>...</td>
                                 </tr>
-                                <tr class="active">
-                                    <td>...</td>
-                                </tr>
-                                <tr class="active">
-                                    <td>...</td>
-                                </tr>
-                                <tr class="active">
-                                    <td>...</td>
-                                </tr>
-                                <tr class="active">
+                                <tr>
                                     <td>...</td>
                                 </tr>
                 <!--                <tr class="info">...</tr>-->
@@ -143,42 +145,16 @@
                 </div>
             </div>
         </div>
-        
-<!--
-        <div class="dummytext">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit! 
-        </div>
--->
 
         <div id="footer">
-            <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
+            <footer class="container-fluid text-center">Vivamus molestie pretium nunc tempus enim &copy; 2017 
                 <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
             </footer>
         </div>
         
 <!--        script -->
         <script type="text/javascript">
-            $('#myModal').on
-            (
-                'shown.bs.modal', function () 
-                {
-                    $('#myInput').focus()
-                }
-            ); 
-            $('.dropdown-toggle').dropdown();
-            $('#myAffix').affix
-            (
-                {
-                    offset: 
-                    {
-                        top: 100,
-                        bottom: function () 
-                        {
-                            return (this.bottom = $('.footer').outerHeight(true))
-                        }
-                    }
-                }
-            );
+        $(".dropdown-toggle").dropdown();
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>

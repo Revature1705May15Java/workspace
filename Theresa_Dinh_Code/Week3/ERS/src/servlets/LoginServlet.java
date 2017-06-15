@@ -54,12 +54,13 @@ public class LoginServlet extends HttpServlet
 				if(employee.getManagerId() == 0)	//not a Manager
 				{
 					rd = request.getRequestDispatcher("home.ftl");
-					rd.forward(request, response);	
+					rd.forward(request, response);
+//					response.sendRedirect("home");
 
 				}
 				else if(employee.getManagerId() == 1)	// a Manager
 				{
-					rd = request.getRequestDispatcher("manager.ftl"); 
+					rd = request.getRequestDispatcher("manager.html"); 
 					rd.forward(request, response);
 				}
 			}

@@ -38,30 +38,37 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>freemarker</servlet-name>
     <url-pattern>*.ftl</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>servlets.LoginServlet</servlet-class>
   </servlet>
-    
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <servlet-name>Home</servlet-name>
     <servlet-class>servlets.HomeServlet</servlet-class>
   </servlet>
-    
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
-
+    
+<!--
+      <servlet>
+    <servlet-name>getRequests</servlet-name>
+    <servlet-class>servlets.RequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getRequests</servlet-name>
+    <url-pattern>/getRequests</url-pattern>
+  </servlet-mapping>
+    
+    
+-->
 </web-app>

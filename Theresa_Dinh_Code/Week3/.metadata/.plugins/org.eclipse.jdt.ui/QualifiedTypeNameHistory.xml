@@ -17,5 +17,7 @@
 <fullyQualifiedTypeName name="p11_2.Dummy"/>
 <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="dao.ERSDao"/>
 <fullyQualifiedTypeName name="pojos.Request"/>
 </qualifiedTypeNameHistroy>
