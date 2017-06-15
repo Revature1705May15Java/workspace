@@ -31,10 +31,6 @@ public class ConnectionFactory {
 
     public static synchronized ConnectionFactory getInstance() {
         try {
-            if (conn != null && conn.isClosed()) {
-                build = false;
-            }
-
             if (build) {
                 cf = new ConnectionFactory();
 
@@ -46,8 +42,6 @@ public class ConnectionFactory {
                 pwd = prop.getProperty("pwd");
 
                 Class.forName(prop.getProperty("driver"));
-
-                conn = DriverManager.getConnection(url, usr, pwd);
             }
         } catch (Exception e) {
             Logger.getLogger(ConnectionFactory.class).error("Failed to get instance");
@@ -57,6 +51,16 @@ public class ConnectionFactory {
     }
 
     public Connection getConnection() throws InterruptedException, IOException {
+        try {
+            if (conn == null || conn.isClosed()) {
+                conn = DriverManager.getConnection(url, usr, pwd);
+            }
+        } catch (Exception e) {
+            Logger.getLogger(ConnectionFactory.class).error("Failed to get connection");
+            Thread.sleep(500);
+            return getConnection();
+        }
+
         return conn;
 
     }
