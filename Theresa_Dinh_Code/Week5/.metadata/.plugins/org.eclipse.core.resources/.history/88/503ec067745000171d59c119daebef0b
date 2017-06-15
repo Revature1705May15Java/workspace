@@ -1,0 +1,15 @@
+package pojos;
+
+import java.util.Set;
+
+public class Bear 
+{
+	private int id; 
+	private String furColor; 
+	private String breed; 
+	private double height; 
+	private double weight; 
+	private Cave dwelling; 
+	private HoneyPot pot; 
+	private Set<Bear> bearCubs; 
+}

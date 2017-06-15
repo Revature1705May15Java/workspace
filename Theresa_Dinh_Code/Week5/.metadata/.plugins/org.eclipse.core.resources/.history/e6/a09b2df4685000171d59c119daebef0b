@@ -1,0 +1,20 @@
+package dao;
+
+import pojos.Person;
+
+public class HibDao implements Dao
+{
+
+	@Override
+	public void createPerson(Person p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Person getPersonById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

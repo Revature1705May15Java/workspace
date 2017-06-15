@@ -1,0 +1,25 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import pojos.Bear;
+import util.ConnectionUtil;
+
+public class BearDao 
+{
+	public void createBear(Bear b)
+	{
+		Session session = ConnectionUtil.getSession(); 
+		
+		try
+		{
+			Transaction t = session.beginTransaction();
+			
+		}
+		finally
+		{
+			session.close();
+		}
+	}
+}

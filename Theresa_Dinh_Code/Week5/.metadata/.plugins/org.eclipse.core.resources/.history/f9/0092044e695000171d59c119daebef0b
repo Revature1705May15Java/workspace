@@ -1,0 +1,31 @@
+package dao;
+
+import org.hibernate.Session;
+
+import pojos.Person;
+import util.ConnectionUtil;
+
+public class HibDao implements Dao
+{
+
+	@Override
+	public void createPerson(Person p)
+	{
+		Session session = ConnectionUtil.getSession();
+		
+		try()
+		{
+			Transaction t = session.beginTransaction(); 
+		}
+		finally
+		{
+			
+		}
+	}
+
+	public Person getPersonById(int id) 
+	{
+		return null;
+	}
+
+}

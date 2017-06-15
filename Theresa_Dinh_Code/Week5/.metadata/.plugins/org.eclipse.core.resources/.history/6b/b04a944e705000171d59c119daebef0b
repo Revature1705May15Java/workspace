@@ -1,0 +1,19 @@
+package test;
+
+import dao.HibDao;
+import pojos.Person;
+
+public class Main 
+{
+	public static void main(String[] args)
+	{
+		Person p = new Person("B", "b");
+		HibDao dao = new HibDao(); 
+		
+//		dao.createPerson(p);
+//		p = dao.getPersonById(1);
+//		System.out.println(". " + p);
+		
+//		System.out.println(dao.getPeople());
+	}
+}
