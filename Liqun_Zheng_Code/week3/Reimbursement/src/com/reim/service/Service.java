@@ -7,21 +7,33 @@ import com.reim.dao.Dao;
 import com.reim.dao.DaoImpl;
 import com.reim.pojos.Employee;
 import com.reim.pojos.Request;
+import com.reim.pojos.State_type;
 
 
 
 public class Service {
 	
 	static Dao dao = new DaoImpl();
+	final String approved = "Approved";
+	final String denied = "Denied";
+	final int isManager = 1;
+	final int isEmployee = 0;
 	
 	//Sign in by username and password return employee 
 	//with all requests of this employee
 	public Employee Signin(String username, String password){
 		Employee temp = dao.findEmpByUname(username);
 		ArrayList<Request> reqs = new ArrayList<Request>();
-		if(temp.getPw().equals(password)){
+		if(temp.getPw().equals(password)&& temp.getIs_manager()==isEmployee){
 			reqs= dao.findReqByEmpId(temp.getEmployee_id());
 			temp.setEmployee_request(reqs);
+			return temp;
+		}
+		else if(temp.getPw().equals(password)&& temp.getIs_manager()==isManager){
+			reqs=dao.getAllRequests();		
+			temp.setEmployee_request(reqs);
+			ArrayList<Employee> emps = dao.getAllEmployee(isEmployee);
+			temp.setEmployees(emps);
 			return temp;
 		}
 		else
@@ -44,5 +56,38 @@ public class Service {
 			return s.Signin(username, password);
 		}
 		return null;
+	}
+	public ArrayList<Request> getAllRequests(Employee emp){
+			if(emp.getIs_manager()==isManager){
+				ArrayList<Request> reqs = dao.getAllRequests();
+				return reqs;
+			}
+		return null;
+	}
+	public Request approveReq(Employee emp, Request r, String note){
+		if(r.getClosed()==null && emp.getIs_manager()==isManager){
+			State_type type = dao.findState(approved);
+			r = dao.appDenReq(emp, r, type, note);
+			return r;
+		}
+		return null;
+	}
+	public Request denyReq(Employee emp, Request r, String note){
+		if(r.getClosed()==null){
+			State_type type = dao.findState(denied);
+			r = dao.appDenReq(emp, r, type, note);
+			return r;
+		}
+		return null;
+	}
+	
+	public ArrayList<Employee> getAllEmps(Employee emp){
+		if(emp.getIs_manager() == isManager){
+			ArrayList<Employee> emps = dao.getAllEmployee(isEmployee);
+			return emps;
+		}
+		
+		return null;
+		
 	}
 }

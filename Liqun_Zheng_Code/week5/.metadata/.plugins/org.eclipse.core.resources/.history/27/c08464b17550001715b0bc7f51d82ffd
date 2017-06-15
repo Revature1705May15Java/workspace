@@ -1,0 +1,45 @@
+package com.ex.pojos;
+
+public class Cave {
+	private int id;
+	private double squreFootage;
+	private double rent;
+	public Cave() {
+		
+	}
+	public Cave(double squreFootage, double rent) {
+		super();
+		this.squreFootage = squreFootage;
+		this.rent = rent;
+	}
+	public Cave(int id, double squreFootage, double rent) {
+		super();
+		this.id = id;
+		this.squreFootage = squreFootage;
+		this.rent = rent;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public double getSqureFootage() {
+		return squreFootage;
+	}
+	public void setSqureFootage(double squreFootage) {
+		this.squreFootage = squreFootage;
+	}
+	public double getRent() {
+		return rent;
+	}
+	public void setRent(double rent) {
+		this.rent = rent;
+	}
+	@Override
+	public String toString() {
+		return "Cave [id=" + id + ", squreFootage=" + squreFootage + ", rent=" + rent + "]";
+	}
+
+	
+}

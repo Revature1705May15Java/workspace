@@ -14,6 +14,11 @@ public interface Dao {
 	Request addRequest(Employee u, String purpose, double amount);
 	Request getRequest(int requestId);
 	public int updateEmployee(int empId, String fname, String lname, String uname, String pw);
-	public ArrayList<Request> getReqsByFnLn(String fname, String lname);
+//	public ArrayList<Request> getReqsByFnLn(String fname, String lname);
+	public ArrayList<Request> getAllRequests();
+	public Request appDenReq(Employee emp, Request r, State_type state, String note);
+	State_type findState(String state);
+	public ArrayList<Employee> getAllEmployee(int isEmployee);
+//	String getFullName(int id);
 	
 }

@@ -30,6 +30,11 @@ public class LoginServlet extends HttpServlet{
 //		request.getRequestDispatcher("index.html").forward(request, response);
 //		System.out.println("p1");
 		
+		
+		  HttpSession session=request.getSession(true);  
+		  session.invalidate();
+		  response.sendRedirect("index.html");
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		String uname = request.getParameter("username");

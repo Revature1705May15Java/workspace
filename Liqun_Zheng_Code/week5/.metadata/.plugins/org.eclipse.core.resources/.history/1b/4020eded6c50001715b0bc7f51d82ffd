@@ -1,0 +1,41 @@
+package com.ex.dao;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.ex.pojos.Person;
+import com.ex.util.ConnectionUtil;
+
+public class DaoImpl implements Dao {
+
+	@Override
+	public void createPerson(Person p) {
+		// TODO Auto-generated method stub
+		Session session = ConnectionUtil.getSession();
+		try{
+			Transaction tx = session.beginTransaction();
+			session.save(p);
+			tx.commit();
+		}finally{
+			session.close();
+		}
+	}
+
+	@Override
+	public Person getPersonById(int id) {
+		// TODO Auto-generated method stub
+		Session session = ConnectionUtil.getSession();
+		Person P = null;
+		try{
+			
+		}catch(HibernateException e){
+			e.printStackTrace();
+		}
+		finally{
+			session.close();
+		}
+		return null;
+	}
+
+}

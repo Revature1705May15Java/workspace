@@ -12,7 +12,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.bank.service.Service"/>
-<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="sun.print.resources.serviceui"/>
 <fullyQualifiedTypeName name="com.bank.pojos.User"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
@@ -23,7 +22,6 @@
 <fullyQualifiedTypeName name="com.bank.dao.DAO"/>
 <fullyQualifiedTypeName name="com.bank.dao.DaoImpl"/>
 <fullyQualifiedTypeName name="com.reim.util.ConnectionUtil"/>
-<fullyQualifiedTypeName name="com.reim.pojos.State_type"/>
 <fullyQualifiedTypeName name="com.reim.dao.Dao"/>
 <fullyQualifiedTypeName name="com.reim.dao.DaoImpl"/>
 <fullyQualifiedTypeName name="com.reim.pojos.Employee"/>
@@ -31,5 +29,7 @@
 <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
 <fullyQualifiedTypeName name="com.reim.pojos.Request"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.reim.pojos.State_type"/>
 <fullyQualifiedTypeName name="com.reim.service.Service"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>

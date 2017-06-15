@@ -18,8 +18,7 @@
 <!-- Theme CSS -->
 <link href="CSS/freelancer.min.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
-<link href="CSS/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
 	rel="stylesheet" type="text/css">
 <link
@@ -32,6 +31,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
 </head>
 
@@ -52,6 +52,7 @@
 						class="fa fa-bars"></i>
 				</button>
 				<a class="navbar-brand" href="#page-top">My Info</a>
+				
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -64,6 +65,10 @@
 					<li class="page-scroll"><a href="#about">View Requests</a></li>
 					<li class="page-scroll"><a href="#contact">Submit New
 							Request</a></li>
+					<li><form name="Logout" action="login" method="GET">
+					<button type="submit" class="btn btn-success btn-lg">Log out</button>
+					</form>
+					</li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -76,6 +81,9 @@
 		<div class="container" id="maincontent" tabindex="-1">
 			<div class="row">
 				<div class="col-lg-12">
+						<#if update ??>
+						<h3 style="color:red"> Your Update failed, because username already taken! <h3>
+						</#if>
 					<img class="img-responsive"
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png"
 						alt="">
@@ -110,7 +118,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="firstName">First Name</label> <input type="text"
-									class="form-control" placeholder="First Name" id="firstName"
+									class="form-control" placeholder="First Name" name = "firstName"
 									required
 									data-validation-required-message="Please enter your first name.">
 								<p class="help-block text-danger"></p>
@@ -120,7 +128,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="lastName">Last Name</label> <input type="text"
-									class="form-control" placeholder="Last Name" id="lastName"
+									class="form-control" placeholder="Last Name" name ="lastName"
 									required
 									data-validation-required-message="Please enter your last name.">
 								<p class="help-block text-danger"></p>
@@ -130,7 +138,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="username">Username</label> <input type="text"
-									class="form-control" placeholder="Username" id="username"
+									class="form-control" placeholder="Username" name ="username"
 									required
 									data-validation-required-message="Please enter your Username.">
 								<p class="help-block text-danger"></p>
@@ -139,8 +147,8 @@
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
-								<label for="password">Password</label> <input type="password"
-									class="form-control" placeholder="Password" id="password"
+								<label for="password">Password</label> <input type ="password"
+									class="form-control" placeholder="Password" name = "password"
 									required
 									data-validation-required-message="Please enter your password.">
 								<p class="help-block text-danger"></p>
@@ -170,21 +178,23 @@
 					<hr class="star-light">
 				</div>
 			</div>
-			<table class="datatable">
+			<table id = "req">
+			<thead>
 				<tr>
 					<th>Request Id &nbsp;</th>
 
 					<th>Resolver Id &nbsp;</th>
 					<th>Note &nbsp;</th>
 					<th>Purpose &nbsp;</th>
-					<th>Request Amount &nbsp;</th>
+					<th>Amount &nbsp;</th>
 					<th>Status &nbsp;</th>
-					<th>Request Open Date &nbsp;</th>
-					<th>Request Close Date</th>
+					<th>Open Date &nbsp;</th>
+					<th>Close Date</th>
 
 
 				</tr>
-
+			</thead>
+			 <tbody>
 				<#list requests as request>
 				<tr>
 					<td>&#9731 ${request.request_id} &nbsp;</td>
@@ -194,13 +204,13 @@
 					<#else>
 					<td>&#9731 N/A &nbsp;</td>
 					</#if> <#if request.note??>
-					<td>&#9731 ${request.note} &nbsp;</td>
+					<td> ${request.note} &nbsp;</td>
 					<#else>
-					<td>&#9731 N/A &nbsp;</td>
+					<td>N/A &nbsp;</td>
 					</#if> <#if request.purpose??>
-									<td>&#9731 ${request.purpose} &nbsp;</td>
+									<td>${request.purpose} &nbsp;</td>
 									<#else>
-									<td>&#9731 N/A &nbsp;</td>
+									<td>N/A &nbsp;</td>
 									</#if>
 									<td>&dollar; ${request.amount} &nbsp;</td>
 									<td> ${request.state.name} &nbsp;</td>
@@ -216,6 +226,7 @@
 				
 				</tr>
 				</#list>
+				 </tbody>
 			</table>
 		</div>
 	</section>
@@ -233,14 +244,12 @@
 				<div class="col-lg-8 col-lg-offset-2">
 					<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 					<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-					<form name="sentMessage" id="contactForm" novalidate>
+					<form name="newReq" action="newReq" method="POST">
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="purpose">Purpose</label> <input type="text"
-									class="form-control" placeholder="Purpose" id="Purpose"
-									required
-									data-validation-required-message="Please enter your first name.">
+									class="form-control" placeholder="Purpose" name="purpose">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -249,8 +258,8 @@
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="Amount">&dollar; Amount</label> <input type="number"
 									min="0.01" step="0.01" max="9999999.99" class="form-control"
-									placeholder="Amount" id="Amount" required
-									data-validation-required-message="Please enter your last name.">
+									placeholder="Amount" name="amount" required
+									data-validation-required-message="Please enter the amount.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -275,8 +284,10 @@
 				<div class="row">
 					<div class="footer-col col-md-4">
 						<h3>Location</h3>
+						<p>Revature<p>
 						<p>
-							3481 Melrose Place <br>Beverly Hills, CA 90210
+							
+							11730 Plaza America Dr #205, Reston, VA 20190
 						</p>
 					</div>
 					<div class="footer-col col-md-4">
@@ -300,10 +311,10 @@
 						</ul>
 					</div>
 					<div class="footer-col col-md-4">
-						<h3>About Freelancer</h3>
+						<h3>About Reimbursement System</h3>
 						<p>
-							Freelance is a free to use, open source Bootstrap theme created
-							by <a href="http://startbootstrap.com">Start Bootstrap</a>.
+							Employee can view/update their information, view/update their 
+							requests. <a href="https://github.com/Revature1705May15Java/1705May15Java">My Github Branch</a>.
 						</p>
 					</div>
 				</div>
@@ -312,7 +323,7 @@
 		<div class="footer-below">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">Copyright &copy; Your Website 2016</div>
+					<div class="col-lg-12">Copyright &copy; Liqun Zheng's Website 2017</div>
 				</div>
 			</div>
 		</div>
@@ -341,8 +352,7 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/cabin.png"
-								class="img-responsive img-centered" alt="">
+						
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -385,8 +395,8 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/cake.png"
-								class="img-responsive img-centered" alt="">
+							
+								
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -429,8 +439,7 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/circus.png"
-								class="img-responsive img-centered" alt="">
+						
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -473,8 +482,7 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/game.png"
-								class="img-responsive img-centered" alt="">
+						
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -517,8 +525,7 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/safe.png"
-								class="img-responsive img-centered" alt="">
+							
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -561,8 +568,7 @@
 						<div class="modal-body">
 							<h2>Project Title</h2>
 							<hr class="star-primary">
-							<img src="img/portfolio/submarine.png"
-								class="img-responsive img-centered" alt="">
+							
 							<p>
 								Use this area of the page to describe your project. The icon
 								above is part of a free icon set by <a
@@ -604,10 +610,18 @@
 
 	<!-- Contact Form JavaScript -->
 	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/contact_me.js"></script>
+	
 
 	<!-- Theme JavaScript -->
 	<script src="js/freelancer.min.js"></script>
+	
+	 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#req").dataTable();
+  })
+  </script>
 
 </body>
 

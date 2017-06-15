@@ -7,6 +7,8 @@ public class Employee {
 	String fn, ln, pw, uname;
 	int is_manager;
 	ArrayList<Request> employee_request;
+	ArrayList<Employee> employees;
+	
 	
 	public Employee(){}
 	
@@ -22,6 +24,29 @@ public class Employee {
 		this.employee_request = employee_request;
 	}
 
+	public Employee(int employee_id, String fn, String ln, String pw, String uname, int is_manager,
+			ArrayList<Request> employee_request, ArrayList<Employee> employees, String employeeFullName) {
+		super();
+		this.employee_id = employee_id;
+		this.fn = fn;
+		this.ln = ln;
+		this.pw = pw;
+		this.uname = uname;
+		this.is_manager = is_manager;
+		this.employee_request = employee_request;
+		this.employees = employees;
+	
+	}
+
+	public ArrayList<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(ArrayList<Employee> employees) {
+		this.employees = employees;
+	}
+
+	
 	public int getEmployee_id() {
 		return employee_id;
 	}
@@ -81,7 +106,8 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [employee_id=" + employee_id + ", fn=" + fn + ", ln=" + ln + ", pw=" + pw + ", uname=" + uname
-				+ ", is_manager=" + is_manager + ", employee_request=" + employee_request + "]\n";
+				+ ", is_manager=" + is_manager + ", employee_request=" + employee_request + ", employees=" + employees
+				+ ", employeeFullName=" + "]\n";
 	}
 	
 	

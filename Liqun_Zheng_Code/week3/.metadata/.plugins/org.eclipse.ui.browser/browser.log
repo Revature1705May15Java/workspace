@@ -15,3 +15,67 @@ Jun 01, 2017 22:47:51.89 [11128:11068:0601/224751.897:ERROR:navigation_entry_scr
 Jun 01, 2017 22:48:43.23 [11128:11100:0601/224843.230:ERROR:ssl_client_socket_impl.cc(1135)] handshake failed; returned -1, SSL error code 1, net_error -100
 Jun 01, 2017 22:48:43.28 [11128:11100:0601/224843.283:ERROR:ssl_client_socket_impl.cc(1135)] handshake failed; returned -1, SSL error code 1, net_error -100
 Jun 01, 2017 22:56:04.77 [11128:11068:0601/225604.777:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 513
+
+Jun 14, 2017 18:32:06.64 NEW SESSION
+Jun 14, 2017 18:32:06.64 [9444:10520:0614/183206.640:ERROR:entry_impl.cc(1039)] No file for 8000002d
+Jun 14, 2017 18:39:52.93 [9444:9688:0614/183952.931:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 42
+Jun 14, 2017 18:39:53.38 [9444:9324:0614/183953.381:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:39:53.38 [9444:9324:0614/183953.385:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:41:08.34 [9444:9688:0614/184108.349:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 76
+Jun 14, 2017 18:41:08.75 [9444:9324:0614/184108.751:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:41:08.75 [9444:9324:0614/184108.754:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:41:36.36 [9444:9688:0614/184136.367:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 87
+Jun 14, 2017 18:45:59.21 [9444:9688:0614/184559.213:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 96
+Jun 14, 2017 18:46:30.43 [9444:9324:0614/184630.439:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:46:30.44 [9444:9324:0614/184630.443:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:47:23.86 [9444:9688:0614/184723.861:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 100
+Jun 14, 2017 18:47:24.27 [9444:9324:0614/184724.277:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:47:24.28 [9444:9324:0614/184724.281:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:48:26.99 [9444:9688:0614/184826.993:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 107
+Jun 14, 2017 18:48:27.38 [9444:9324:0614/184827.381:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:48:27.38 [9444:9324:0614/184827.388:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:50:30.20 [9444:9324:0614/185030.200:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:50:30.20 [9444:9324:0614/185030.204:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:51:11.25 [9444:9688:0614/185111.251:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 118
+Jun 14, 2017 18:51:11.62 [9444:9324:0614/185111.620:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:51:11.62 [9444:9324:0614/185111.628:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:51:39.78 [9444:9688:0614/185139.783:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 119
+Jun 14, 2017 18:51:40.14 [9444:9324:0614/185140.142:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:51:40.14 [9444:9324:0614/185140.145:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:53:15.88 [9444:9688:0614/185315.885:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 128
+Jun 14, 2017 18:53:16.28 [9444:9324:0614/185316.288:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:53:16.29 [9444:9324:0614/185316.292:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:53:41.74 [9444:9688:0614/185341.744:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 129
+Jun 14, 2017 18:53:49.10 [9444:9688:0614/185349.101:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 132
+Jun 14, 2017 18:53:54.82 [9444:9688:0614/185354.826:ERROR:CONSOLE(0)] "Access to Font at 'http://localhost:6252/Reimbursement/fonts/fontawesome-webfont.ttf?v=4.6.3' from origin 'chrome-devtools://devtools' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'chrome-devtools://devtools' is therefore not allowed access. The response had HTTP status code 404.", source: chrome-devtools://devtools/bundled/inspector.html?remoteBase=https://chrome-devtools-frontend.appspot.com/serve_file/@691bdb490962d4e6ae7f25c6ab1fdd0faaf19cd0/&can_dock=true&panel=elements&dockSide=undocked (0)
+Jun 14, 2017 18:55:40.95 [9444:9688:0614/185540.952:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 133
+Jun 14, 2017 18:55:41.33 [9444:9324:0614/185541.339:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:55:41.34 [9444:9324:0614/185541.343:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:56:12.58 [9444:9688:0614/185612.586:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 136
+Jun 14, 2017 18:56:12.96 [9444:9324:0614/185612.962:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:56:12.96 [9444:9324:0614/185612.965:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:56:54.81 [9444:9688:0614/185654.813:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 137
+Jun 14, 2017 18:56:55.20 [9444:9324:0614/185655.205:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:56:55.20 [9444:9324:0614/185655.208:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:57:31.94 [9444:9324:0614/185731.940:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 18:57:31.94 [9444:9324:0614/185731.945:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 19:52:02.54 [9444:9688:0614/195202.539:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 185
+Jun 14, 2017 19:53:43.74 [9444:9688:0614/195343.742:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 190
+Jun 14, 2017 19:55:37.13 [9444:9688:0614/195537.135:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 193
+Jun 14, 2017 19:56:07.14 [9444:9688:0614/195607.146:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 194
+Jun 14, 2017 19:58:56.09 [9444:9688:0614/195856.091:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 195
+Jun 14, 2017 20:04:50.81 [9444:9688:0614/200450.814:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 88
+Jun 14, 2017 20:09:01.27 [9444:9688:0614/200901.276:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 218
+Jun 14, 2017 20:22:04.62 [9444:9688:0614/202204.629:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 228
+Jun 14, 2017 20:22:44.25 [9444:9688:0614/202244.252:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 243
+Jun 14, 2017 20:23:19.71 [9444:9688:0614/202319.715:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 246
+Jun 14, 2017 20:25:14.54 [9444:9688:0614/202514.544:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 249
+Jun 14, 2017 20:30:10.23 [9444:9688:0614/203010.230:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 259
+Jun 14, 2017 20:31:12.51 [9444:9324:0614/203112.511:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 20:31:12.51 [9444:9324:0614/203112.516:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
+Jun 14, 2017 20:31:26.28 [9444:9688:0614/203126.287:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 267
+Jun 14, 2017 20:32:02.90 [9444:9688:0614/203202.903:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 274
+Jun 14, 2017 21:54:33.21 [9444:9688:0614/215433.215:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+Jun 14, 2017 22:08:03.77 [9444:9688:0614/220803.775:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 494
+Jun 14, 2017 22:21:57.66 [9444:9688:0614/222157.662:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 536
+Jun 14, 2017 22:22:00.69 [9444:9688:0614/222200.695:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 541

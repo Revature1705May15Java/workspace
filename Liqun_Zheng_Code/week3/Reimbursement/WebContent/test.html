@@ -32,6 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
 </head>
 
@@ -85,7 +86,8 @@
 
 						<hr class="star-light">
 						<h2>Username: ${uname}</h2>
-						<h2>Password: *****</h2>
+						<h2>Password: ***** </h2>
+						
 					</div>
 				</div>
 			</div>
@@ -170,21 +172,23 @@
 					<hr class="star-light">
 				</div>
 			</div>
-			<table class="datatable">
+			<table id = "req">
+			<thead>
 				<tr>
 					<th>Request Id &nbsp;</th>
 
 					<th>Resolver Id &nbsp;</th>
 					<th>Note &nbsp;</th>
 					<th>Purpose &nbsp;</th>
-					<th>Request Amount &nbsp;</th>
+					<th>Amount &nbsp;</th>
 					<th>Status &nbsp;</th>
-					<th>Request Open Date &nbsp;</th>
-					<th>Request Close Date</th>
+					<th>Open Date &nbsp;</th>
+					<th>Close Date</th>
 
 
 				</tr>
-
+			</thead>
+			 <tbody>
 				<#list requests as request>
 				<tr>
 					<td>&#9731 ${request.request_id} &nbsp;</td>
@@ -194,13 +198,13 @@
 					<#else>
 					<td>&#9731 N/A &nbsp;</td>
 					</#if> <#if request.note??>
-					<td>&#9731 ${request.note} &nbsp;</td>
+					<td> ${request.note} &nbsp;</td>
 					<#else>
-					<td>&#9731 N/A &nbsp;</td>
+					<td>N/A &nbsp;</td>
 					</#if> <#if request.purpose??>
-									<td>&#9731 ${request.purpose} &nbsp;</td>
+									<td>${request.purpose} &nbsp;</td>
 									<#else>
-									<td>&#9731 N/A &nbsp;</td>
+									<td>N/A &nbsp;</td>
 									</#if>
 									<td>&dollar; ${request.amount} &nbsp;</td>
 									<td> ${request.state.name} &nbsp;</td>
@@ -216,6 +220,7 @@
 				
 				</tr>
 				</#list>
+				 </tbody>
 			</table>
 		</div>
 	</section>
@@ -240,7 +245,7 @@
 								<label for="purpose">Purpose</label> <input type="text"
 									class="form-control" placeholder="Purpose" id="Purpose"
 									required
-									data-validation-required-message="Please enter your first name.">
+									data-validation-required-message="Please enter the purpose.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -250,7 +255,7 @@
 								<label for="Amount">&dollar; Amount</label> <input type="number"
 									min="0.01" step="0.01" max="9999999.99" class="form-control"
 									placeholder="Amount" id="Amount" required
-									data-validation-required-message="Please enter your last name.">
+									data-validation-required-message="Please enter the amount.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -275,8 +280,10 @@
 				<div class="row">
 					<div class="footer-col col-md-4">
 						<h3>Location</h3>
+						<p>Revature<p>
 						<p>
-							3481 Melrose Place <br>Beverly Hills, CA 90210
+							
+							11730 Plaza America Dr #205, Reston, VA 20190
 						</p>
 					</div>
 					<div class="footer-col col-md-4">
@@ -300,10 +307,10 @@
 						</ul>
 					</div>
 					<div class="footer-col col-md-4">
-						<h3>About Freelancer</h3>
+						<h3>About Reimbursement System</h3>
 						<p>
-							Freelance is a free to use, open source Bootstrap theme created
-							by <a href="http://startbootstrap.com">Start Bootstrap</a>.
+							Employee can view/update their information, view/update their 
+							requests. <a href="https://github.com/Revature1705May15Java/1705May15Java">My Github Branch</a>.
 						</p>
 					</div>
 				</div>
@@ -312,7 +319,7 @@
 		<div class="footer-below">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">Copyright &copy; Your Website 2016</div>
+					<div class="col-lg-12">Copyright &copy; Liqun Zheng's Website 2017</div>
 				</div>
 			</div>
 		</div>
@@ -608,6 +615,14 @@
 
 	<!-- Theme JavaScript -->
 	<script src="js/freelancer.min.js"></script>
+	
+	 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+  $(function(){
+    $("#req").dataTable();
+  })
+  </script>
 
 </body>
 

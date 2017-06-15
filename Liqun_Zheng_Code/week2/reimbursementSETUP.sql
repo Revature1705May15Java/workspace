@@ -105,7 +105,7 @@ select r.request_id, r.requester_id, r.resolver_id, r.note,r.purpose,
   
   
 insert into request(requester_id, purpose, amount)
-values(60, 'relocation', 1000);
+values(70, 'relocation', 100);
 /
 
 select * from request r 
@@ -128,3 +128,27 @@ on e.EMPLOYEE_ID = r.REQUESTER_ID
 inner join state_type s
 on r.STATE_ID = s.STATE_ID
 where e.FIRST_NAME = 'test' AND e.LAST_NAME = 'test';
+/
+
+
+select *
+from request
+inner join state_type
+on state_type.state_id = request.state_id
+inner join employee
+on request.requester_id = employee.EMPLOYEE_ID;
+
+/
+
+update request
+set request.state_id = 2, request.closed = current_date
+where request.request_id = 120;
+/
+select *
+from state_type
+where state_type.name = 'Approve';
+/
+
+select e.first_name, last_name
+from employee e
+where e.employee_id = 10;/

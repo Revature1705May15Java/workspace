@@ -205,6 +205,7 @@ public class DaoImpl implements Dao {
 	
 	
 	//update Employee information by employee id, first name, last name, username, and password
+	@Override
 	public int updateEmployee(int empId, String fname, String lname, String uname, String pw) {
 		
 		int result = 0;
@@ -232,21 +233,71 @@ public class DaoImpl implements Dao {
 		return result;
 	}
 	//Get requests by searching firstname, lastname
-	public ArrayList<Request> getReqsByFnLn(String fname, String lname){
+//	@Override
+//	public ArrayList<Request> getReqsByFnLn(String fname, String lname){
+//		ArrayList<Request> result = null;
+//		Request r = null;
+//		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+//			String sql = "select r.REQUEST_ID, r.REQUESTER_ID, r.RESOLVER_ID, " +
+//					" r.note, r.purpose, r.state_id, r.OPENED, r.closed, r.amount, s.NAME "+
+//					" from employee e "+
+//					" inner join request r "+
+//					" on e.EMPLOYEE_ID = r.REQUESTER_ID " +
+//					" inner join state_type s " +
+//					" on r.STATE_ID = s.STATE_ID " +
+//					" where e.FIRST_NAME = ? AND e.LAST_NAME = ? ";
+//			PreparedStatement ps = connect.prepareStatement(sql);
+//			ps.setString(1, fname);
+//			ps.setString(2, lname);
+//			ResultSet info = ps.executeQuery();
+//			//request_id, requester_id, resolver_id, note, purpose, state_id
+//			//opened, closed, amount, state_id, name;
+//			result = new ArrayList<Request>();
+//			while(info.next()){
+//				r = new Request();
+//				r.setRequest_id(info.getInt(1));
+//				r.setRequester_id(info.getInt(2));
+//				r.setResolver_id(info.getInt(3));
+//				r.setNote(info.getString(4));
+//				r.setPurpose(info.getString(5));
+//				r.setState(new State_type(info.getInt(6),info.getString(10)));
+//				r.setOpened(info.getDate(7));
+//				r.setClosed(info.getDate(8));
+//				r.setAmount(info.getDouble(9));
+//				result.add(r);
+//				
+//			}
+//			
+//			if(!result.isEmpty()){
+//				return result;
+//			}
+//
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		
+//		
+//		
+//		return null;
+//		
+//	}
+	
+	//get all requests
+	@Override
+	public ArrayList<Request> getAllRequests(){
 		ArrayList<Request> result = null;
 		Request r = null;
 		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
-			String sql = "select r.REQUEST_ID, r.REQUESTER_ID, r.RESOLVER_ID, " +
-					" r.note, r.purpose, r.state_id, r.OPENED, r.closed, r.amount, s.NAME "+
-					" from employee e "+
-					" inner join request r "+
-					" on e.EMPLOYEE_ID = r.REQUESTER_ID " +
-					" inner join state_type s " +
-					" on r.STATE_ID = s.STATE_ID " +
-					" where e.FIRST_NAME = ? AND e.LAST_NAME = ? ";
+			String sql = "select * " +
+					" from request " +
+					" inner join state_type " +
+					" on state_type.state_id = request.state_id " + 
+					" inner join employee " +
+					" on request.requester_id = employee.EMPLOYEE_ID ";
 			PreparedStatement ps = connect.prepareStatement(sql);
-			ps.setString(1, fname);
-			ps.setString(2, lname);
+
 			ResultSet info = ps.executeQuery();
 			//request_id, requester_id, resolver_id, note, purpose, state_id
 			//opened, closed, amount, state_id, name;
@@ -258,10 +309,11 @@ public class DaoImpl implements Dao {
 				r.setResolver_id(info.getInt(3));
 				r.setNote(info.getString(4));
 				r.setPurpose(info.getString(5));
-				r.setState(new State_type(info.getInt(6),info.getString(10)));
+				r.setState(new State_type(info.getInt(6),info.getString(11)));
 				r.setOpened(info.getDate(7));
 				r.setClosed(info.getDate(8));
 				r.setAmount(info.getDouble(9));
+				r.setRequester_name(info.getString(13) + " " + info.getString(14));
 				result.add(r);
 				
 			}
@@ -282,4 +334,123 @@ public class DaoImpl implements Dao {
 		
 	}
 	
+	//get all Employees
+	@Override
+	public ArrayList<Employee> getAllEmployee(int isEmployee){
+		ArrayList<Employee> result = null;
+		Employee emp = null;
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "select * " +
+						" from Employee " +
+						" where EMPLOYEE.IS_MANAGER = ?";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setInt(1, isEmployee);
+			ResultSet info = ps.executeQuery();
+			//request_id, requester_id, resolver_id, note, purpose, state_id
+			//opened, closed, amount, state_id, name;
+			result = new ArrayList<Employee>();
+			while(info.next()){
+				emp = new Employee();
+				emp.setEmployee_id(info.getInt(1));
+				emp.setFn(info.getString(2));
+				emp.setLn(info.getString(3));
+
+				result.add(emp);
+				
+			}
+			
+			if(!result.isEmpty()){
+				return result;
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return null;
+		
+	}
+	
+	//approve request
+	@Override
+	public Request appDenReq(Employee emp, Request r, State_type state, String note){
+		Request result= null;
+		Dao dao = new DaoImpl();
+		
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "update request "+
+					" set request.state_id = ?, request.closed = current_date, "+
+					"  request.NOTE=?, request.RESOLVER_ID=?" +
+					" where request.request_id = ? ";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setInt(1, state.getState_id());
+			ps.setString(2, note);
+			ps.setInt(3, emp.getEmployee_id());
+			ps.setInt(4, r.getRequest_id());
+			int affect = ps.executeUpdate();
+			if(affect == 1){
+				result = dao.getRequest(r.getRequest_id());
+				return result;
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	// find state_type using state name;
+	@Override
+	public State_type findState(String state){
+		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+			String sql = "select * " +
+					" from state_type " +
+					" where state_type.name = ? ";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, state);
+			ResultSet info = ps.executeQuery();
+			if(info.next()){
+				State_type s = new State_type(
+				info.getInt(1), info.getString(2));
+				
+				return s;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+	
+//	//get full name of requester by input requester id
+//	@Override
+//	public String getFullName(int id){
+//		String result;
+//		try(Connection connect = ConnectionFactory.getInstance().getConnection();){
+//			String sql = " select e.first_name, last_name "+
+//					" from employee e " +
+//					" where e.employee_id = ? ";
+//			PreparedStatement ps = connect.prepareStatement(sql);
+//			ps.setInt(1, id);
+//			ResultSet info = ps.executeQuery();
+//			if(info.next()){
+//				
+//				result = info.getString(1) + " " + info.getString(2);
+//				return result;
+//			}
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		return null;
+//	}
 }

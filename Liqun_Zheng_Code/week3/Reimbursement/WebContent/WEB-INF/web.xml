@@ -67,11 +67,28 @@
 	
 	  <servlet>
     <servlet-name>updateInfo</servlet-name>
-    <servlet-class>com.bank.servlets.EmployeeServletHome</servlet-class>
+    <servlet-class>com.reim.servlets.EmployeeServletsUpdate</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>updateInfo</servlet-name>
     <url-pattern>/updateInfo</url-pattern>
   </servlet-mapping>
-	
+  
+	  <servlet>
+    <servlet-name>updateManager</servlet-name>
+    <servlet-class>com.reim.servlets.ManagerServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>updateManager</servlet-name>
+    <url-pattern>/updateManager</url-pattern>
+  </servlet-mapping>
+  
+		  <servlet>
+    <servlet-name>newReq</servlet-name>
+    <servlet-class>com.reim.servlets.newReqEmployeeServlets</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>newReq</servlet-name>
+    <url-pattern>/newReq</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -55,44 +55,46 @@ public class EmployeeServletHome extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String fname = request.getParameter("firstName");
-		String lname = request.getParameter("lastName");
-		String uname = request.getParameter("username");
-		String pw = request.getParameter("password");
-		Employee empl = new Employee();
-		HttpSession s = request.getSession(true);
+//		String fname = request.getParameter("firstName");
+//		System.out.println(fname);
+//		String lname = request.getParameter("lastName");
+//		String uname = request.getParameter("username");
+//		String pw = request.getParameter("password");
+//		Employee empl = new Employee();
+//		HttpSession s = request.getSession(true);
 		
-		empl = (Employee) s.getAttribute("Employee");
-		Service service = new Service();
-		
-		
-//		request.setAttribute("login", "-");
-		try{
-			Employee temp = service.updateInfo(empl, fname, lname, uname, pw);
-			if(temp!=null){
-	
-				s.setAttribute("Employee", temp);
-				request.setAttribute("update", "success");
-//				RequestDispatcher rd = request.getRequestDispatcher("home");
-//				rd.forward(request, response);
-			}
-			else{
-//				RequestDispatcher rd = request.getRequestDispatcher("Error.html");
-//				rd.forward(request, response);
-				request.setAttribute("update", "fail");
-				request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
-			}
-		}
-		catch(NullPointerException npe){
-			request.setAttribute("update", "fail");
-			request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
-//			response.sendRedirect("Error.html");
-//		} catch (ServletException e) {
+//		empl = (Employee) s.getAttribute("Employee");
+//		System.out.println(empl.toString());
+//		Service service = new Service();
+//		
+//		
+////		request.setAttribute("login", "-");
+//		try{
+//			Employee temp = service.updateInfo(empl, fname, lname, uname, pw);
+//			if(temp!=null){
+//	
+//				s.setAttribute("Employee", temp);
+//				request.setAttribute("update", "success");
+////				RequestDispatcher rd = request.getRequestDispatcher("home");
+////				rd.forward(request, response);
+//			}
+//			else{
+////				RequestDispatcher rd = request.getRequestDispatcher("Error.html");
+////				rd.forward(request, response);
+//				request.setAttribute("update", "fail");
+//				request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
+//			}
+//		}
+//		catch(NullPointerException npe){
+//			request.setAttribute("update", "fail");
+//			request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
+////			response.sendRedirect("Error.html");
+////		} catch (ServletException e) {
+////			// TODO Auto-generated catch block
+////			e.printStackTrace();
+//		} catch (IOException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		}
 	}
 }
