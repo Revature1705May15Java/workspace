@@ -1,0 +1,32 @@
+package com.ers.test;
+
+import java.util.Scanner;
+
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
+import com.ers.dao.DAO;
+import com.ers.dao.DaoImpl;;;
+
+public class test {
+	
+	static DAO d = new DaoImpl();
+	static Service service = new Service();
+	static Employee ce = new Employee();
+	
+	static Scanner scan;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//ce = service.login("225Yose", "yose");
+		//service.getEmployee("225yose");
+		//System.out.println(ce.getFirstname());
+		//d.addEmployee("testUN", "pw", "John", "Doe", 0);
+		//ce = d.getEmployee("225Yose");
+		//System.out.println(ce.getFirstname());
+		//d.request(500, "R&R", 142);
+		//d.alterRequest(1, "You don't got it dude", 0,140);
+		//System.out.println(d.viewEmployees());
+		
+	}
+
+}

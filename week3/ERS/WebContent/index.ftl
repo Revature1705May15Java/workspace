@@ -1,6 +1,14 @@
 <html>
 <head>
+<style>
+body{
+	
+	background-image: url(http://www.powerpointhintergrund.com/uploads/ppt-business-background-16.jpg)
 
+
+}
+
+</style>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,17 +23,19 @@
 
 <body>
 
+
 <div class = "container">
 	<div class="wrapper">
 		<form action="login" method="post" name="Login_Form" class="form-signin">       
-		    <h3 class="text-center">Welcome to Data Access Bank, please Log in</h3>
+		    <h3 class="text-center">Welcome Employee, Please login to be directed to your homepage</h3>
 			  <hr class="colorgraph"><br>
 			  
 			  <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
 			  <input type="password" class="form-control" name="password" placeholder="Password"/>     		  
 			 
 			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
-		</form>			
+		</form>		
+	
 	</div>
 </div>
 </body>

@@ -32,6 +32,7 @@ public class ServletHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("HOME SERVLET RUNNING");
 		User u = new User();
 		HttpSession s = request.getSession(true);
 		

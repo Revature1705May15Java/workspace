@@ -8,6 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
 
 /**
  * Servlet implementation class LoginServlet
@@ -26,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String myContextParam, name, pw;
-		
+		System.out.println("LOGIN SERVLET RUNNING");
 		try{
 			PrintWriter out = response.getWriter();
 			
@@ -34,20 +38,42 @@ public class LoginServlet extends HttpServlet {
 			 myContextParam = request.getSession().getServletContext().getInitParameter("MyParam");
 			 name = request.getParameter("username");
 			 pw = request.getParameter("password");
+			 HttpSession sess = request.getSession(true);
+			 Service s = new Service();
+			 Employee e = new Employee();
 			 
-			 /*SET NAME and PW to getUser METHOD
-			  * IF u.IsManager==0 go to employee
-			  * Else go to Manager
-			  */
+			 e = s.login(name, pw);
+			 System.out.println("HIIII "+e.toString());
 			 
-			 if(name.equals("emp")){
-				 RequestDispatcher rd = request.getRequestDispatcher("eHome.html");
-				 rd.forward(request, response);
+			 
+			 
+			 if(e.getIsmanager() == 0 & e.getEid()==0){
+				 /**Add  functionality 
+				  * to show error message
+				  */
+				 
+				System.out.println("Invalid user"); 
 			 }
-			 else if(name.equals("man")){
+			 
+			 else if(e.getIsmanager()==0){
+				 sess = request.getSession(true);
+				 sess.setAttribute("empfn", e.getFirstname());
+				 sess.setAttribute("empln", e.getLastname());
+				 
+				 //request.getRequestDispatcher("eHome.ftl");
+				 RequestDispatcher rd = request.getRequestDispatcher("eHome.ftl");
+				 rd.forward(request, response);
+				 
+				 //response.sendRedirect("eHome.ftl");
+			 }
+			 
+			 else if(e.getIsmanager()==1){
 				 RequestDispatcher rd = request.getRequestDispatcher("mHome.html");
 				 rd.forward(request, response);
 			 }
+		
+			 
+			
 			
 			out.println(myContextParam + " "+name+" "+ pw);
 			

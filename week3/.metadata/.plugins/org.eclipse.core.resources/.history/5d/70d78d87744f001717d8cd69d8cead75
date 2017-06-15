@@ -1,0 +1,18 @@
+package com.ers.dao;
+
+import com.ers.pojos.Employee;
+import com.ers.pojos.Requests;
+
+public interface DAO {
+	
+	
+	public int addEmployee(String uname, String pw,String fn, String ln, int isManager);
+	public Employee getEmployee(String uname);
+	public int request(int amount, String purpose, int requesterid);
+	public Requests alterRequest(int Stateid int a);
+	
+	
+	
+	
+
+}

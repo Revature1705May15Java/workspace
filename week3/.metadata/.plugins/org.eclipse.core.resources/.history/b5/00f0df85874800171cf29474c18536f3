@@ -1,9 +1,0 @@
-package mysubstring;
-
-public class mysubstr {
-	
-	public String myss(String s, int indx){
-		
-	}
-
-}

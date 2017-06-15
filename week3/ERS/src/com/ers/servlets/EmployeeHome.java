@@ -1,12 +1,15 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
 
 /**
  * Servlet implementation class EmployeeHome
@@ -28,7 +31,19 @@ public class EmployeeHome extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		System.out.println("HOME SERVLET RUNNING");
+		Employee e = new Employee();
 		HttpSession s = request.getSession(true);
+		
+		e =(Employee)s.getAttribute("emp");
+		
+		System.out.println("HELLO");
+		
+		String fn = e.getFirstname();
+		String ln = e.getLastname();
+		PrintWriter out = response.getWriter();
+		out.print("GREETINGS: "+fn+" "+ln);
+		
 	}
 
 	/**

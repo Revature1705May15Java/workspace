@@ -54,13 +54,22 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  <servlet-name>eHome</servlet-name>
-  <servlet-class>com.ers.servlets.EmployeeHome</servlet-class>
+    <servlet-name>eHome</servlet-name>
+    <servlet-class>com.ers.servlets.EmployeeHome</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>eHome</servlet-name>
-  <url-pattern>/ehome</url-pattern>
+    <servlet-name>eHome</servlet-name>
+    <url-pattern>/ehome</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Logout</servlet-name>
+  <servlet-class>com.ers.servlets.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Logout</servlet-name>
+  <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

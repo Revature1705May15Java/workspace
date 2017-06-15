@@ -1,0 +1,56 @@
+package com.ers.service;
+
+
+import com.ers.dao.DAO;
+import com.ers.dao.DaoImpl;
+import com.ers.pojos.Employee;
+
+public class Service {
+	static DAO dao = new DaoImpl();
+	
+	public Employee addUser(String uname, String pw, String fn, String ln, int isManager ){
+		
+		Employee temp = new Employee();
+		temp = dao.getEmployee(uname);
+		if(temp!=null){
+			dao.addEmployee(uname, pw, fn, ln, isManager);
+			//username found     
+			System.out.println("USER FOUND! Try again!");
+			return null;	
+		}
+		else{
+			
+		}
+		return dao.getEmployee(uname);
+		
+	}
+	
+	public Employee login(String uname, String pw){
+
+		Employee currEmp = dao.getEmployee(uname);
+		if(pw.equals(currEmp.getPassword())){
+			System.out.println("Welcome "+currEmp.getFirstname());
+			return currEmp;
+		
+	}
+		return currEmp;
+	
+		
+	}
+	
+	public Employee getEmployee(String uname){
+
+		Employee temp = dao.getEmployee(uname);
+		System.out.println(temp.getFirstname());
+		System.out.println(temp.getLastname());
+		System.out.println(temp.getEid());
+		System.out.println(temp.getPassword());
+		
+		return temp;
+	}
+	
+	public int makeRequest(int amount, String purpose, int requesterid){
+		
+		
+	}
+}

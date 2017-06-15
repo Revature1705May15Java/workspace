@@ -23,7 +23,6 @@ public class Service {
 			//username found
 			System.out.println("USER FOUND! Try again!");
 			return null;
-			
 		}
 		else{
 			dao.addUser(fn, ln, uname, pw);
@@ -34,16 +33,7 @@ public class Service {
 	
 	
 	public  User login(int uID, String pw){
-		
-		
-		//System.out.println("Please enter your userID:");
-		//int userID = Integer.parseInt(scan.nextLine());
-		
-		//System.out.println("Please enter your password");
-		//String userPW = scan.nextLine();
-		
-		
-		
+
 		User currUser = getbyUserId(uID);
 		if(pw.equals(currUser.getPw())){
 			System.out.println("Welcome "+currUser.getFn());

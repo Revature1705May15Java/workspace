@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Home Page</title>
+</head>
+<body>
+<h1 style="color:red">Welcome Employee</h1>
+
+<div class = "container">
+	<div class="wrapper">
+		<form action="logout" method="post" name="Logout_Form" class="form-signin">       
+		    <h3 class="text-center">Welcome [Employee] please Log in</h3>
+			  <hr class="colorgraph"><br>
+
+			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Logout" type="Submit">Login</button>  			
+		</form>			
+	</div>
+</div>
+
+</body>
+</html>
