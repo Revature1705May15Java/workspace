@@ -16,7 +16,7 @@ import com.revature.ers.util.ConnectionFactory;
 import com.revature.ers.util.PasswordStorage;
 import com.revature.ers.util.PasswordStorage.CannotPerformOperationException;
 import com.revature.ers.util.PasswordStorage.InvalidHashException;
-import com.revature.ers.util.TemporaryLogger;
+import com.revature.ers.util.TempLogger;
 
 import oracle.jdbc.OraclePreparedStatement;
 import oracle.jdbc.OracleTypes;
@@ -24,7 +24,7 @@ import oracle.jdbc.OracleTypes;
 public class DbDAO implements DAO {
   
   private ConnectionFactory factory = ConnectionFactory.getInstance();
-  private TemporaryLogger logger = new TemporaryLogger();
+  private TempLogger logger = new TempLogger();
 
   @Override
   public boolean addUser(String email, String firstname, String lastname, boolean isManager) {

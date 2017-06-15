@@ -44,23 +44,23 @@ public class SetupServlet extends HttpServlet {
 	      setupAttempted = true;
 	      
 	      if (password.equals(confirm)) {
-	        System.out.println("passwords match");
+//	        System.out.println("passwords match");
 	        boolean changed = service.changePassword(u, password);
 	        if (changed) {
-	          System.out.println("change occurred, now redirecting");
+//	          System.out.println("change occurred, now redirecting");
 	          response.sendRedirect("main");
 	        } else {
-	          System.out.println("change was false");
+//	          System.out.println("change was false");
 	          request.setAttribute("setupAttempted", setupAttempted);
 	          request.getRequestDispatcher("setup.ftl").forward(request, response);
 	        }
         } else {
-          System.out.println("passwords did not match");
+//          System.out.println("passwords did not match");
           request.setAttribute("setupAttempted", setupAttempted);
           request.getRequestDispatcher("setup.ftl").forward(request, response);
         }
 	    } else {
-	      System.out.println("null or empty inputs");
+//	      System.out.println("null or empty inputs");
 	      request.setAttribute("setupAttempted", setupAttempted);
 	      request.getRequestDispatcher("setup.ftl").forward(request, response);
 	    }

@@ -20,7 +20,7 @@ public class ConnectionFactory {
     return INSTANCE;
   }
   
-  private TemporaryLogger logger = new TemporaryLogger();
+  private TempLogger logger = new TempLogger();
   
   private ConnectionFactory() {
     build = false;

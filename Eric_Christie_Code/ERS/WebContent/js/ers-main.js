@@ -1,12 +1,17 @@
 /* javascript file for the main page of the application */
 
 $(document).ready(function() {
-  let modals = ['#registrationModal', '#requestModal', '#settingsModal'];
-  modals.forEach((m) => {
-    setupAjaxSubmit(`${m} form`);
-    setupResetOnHide(m);
+  // TODO add feature detection and stuff to handle browsers with missing features
+  let links = ['#registrationButton', '#requestButton', '#settingsButton'];
+  links.forEach(function(ln) {
+    setupNavigationCancel(ln);
   });
-  activatePasswordConfirmation('#userPassword', '#userConfirm');
+  let modals = ['#registrationModal', '#requestModal', '#settingsModal'];
+  modals.forEach(function(modal) {
+    setupAjaxSubmit(modal + ' form');
+    setupResetOnHide(modal);
+  });
+  setupPasswordConfirmation('#userPassword', '#userConfirm');
 });
 
 /*
@@ -14,10 +19,17 @@ $(document).ready(function() {
  * - have the event fired when a modal is hidden trigger the calling of the reset method for the form in that modal
  */
 
-function activatePasswordConfirmation(passwordInputSelector, confirmationInputSelector) {
+function setupPasswordConfirmation(passwordInputSelector, confirmationInputSelector) {
   $(passwordInputSelector).on('change', function() {
     $(confirmationInputSelector).attr('pattern', '^' + $(passwordInputSelector).val() + '$');
   });
+}
+
+/**
+ * designate a javascript function to handle the http response received when a form is submitted via ajax
+ */
+function setupResponseHandler(formSelector, handler) {
+  
 }
 
 function setupAjaxSubmit(formSelector) {
@@ -29,7 +41,7 @@ function setupAjaxSubmit(formSelector) {
     event.preventDefault();
     let url = $(this).attr('action');
     let inputsObject = {};
-    let inputsArray = $(this).serializeArray().forEach((input) => {
+    let inputsArray = $(this).serializeArray().forEach(function(input) {
       console.log(input);
       inputsObject[input.name] = input.value;
     });
@@ -65,6 +77,17 @@ function setupResetOnHide(modalSelector) {
   //   modalSelector = '#' + modalSelector;
   // }
   $(modalSelector).on('hide.bs.modal', function(event) {
-    $(`${modalSelector} form`).get(0).reset();
+    $(modalSelector + ' form').get(0).reset();
   })
+}
+
+function setupNavigationCancel(linkSelector) {
+  // consider also changing the href attribute on the links
+
+  $(linkSelector).click(function(event) {
+    // TODO include feature detection to determine when link navigation cancelling should be activated
+
+    event.preventDefault(); // stop navigation to another page from occurring when links are clicked
+    // event.stopPropagation(); // stop the link click event from propagating
+  });
 }

@@ -16,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.revature.ers.pojos.User;
 import com.revature.ers.service.ERService;
+import com.revature.ers.util.TempLogger;
 
 /**
  * Servlet implementation class RegistrationServlet.
@@ -41,7 +42,7 @@ public class UsersServlet extends HttpServlet {
         /*
          * retrieve the account information for all employees, all managers, or all users
          */
-        System.out.println("\nTESTING JACKSON");
+        TempLogger.serverLog("\nTESTING JACKSON");
         ArrayList<User> employees = service.getEmployees();
         ArrayList<User> managers = service.getManagers(); // TODO decide whether or not to send this information
         
@@ -52,9 +53,9 @@ public class UsersServlet extends HttpServlet {
         String managersJson = mapper.writeValueAsString(managers);
         String json = "{employees: " + employeesJson + ", managers: " + managersJson + "}";
         response.setContentType("application/json");
-        System.out.println("employees: " + employeesJson);
-        System.out.println("managers: " + managersJson);
-        System.out.println("all users: " + json);
+        TempLogger.serverLog("employees: " + employeesJson);
+        TempLogger.serverLog("managers: " + managersJson);
+        TempLogger.serverLog("all users: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {
@@ -77,22 +78,21 @@ public class UsersServlet extends HttpServlet {
         /*
          * Register a new user
          */
-        
-        System.out.println("/ERS/user - printing request cookies, headers, and parameters:");
+        TempLogger.serverLog("/ERS/user - printing request cookies, headers, and parameters:");
         Cookie[] cookies = request.getCookies();
-        System.out.println("\nCOOKIES");
+        TempLogger.serverLog("\nCOOKIES");
         for (Cookie c: cookies) {
-          System.out.println(c);
+          TempLogger.serverLog("Cookie: " + c.getName() + " = " + c.getValue());
         }
-        System.out.println("\nHEADERS");
+        TempLogger.serverLog("\nHEADERS");
         for (Enumeration<String> headers = request.getHeaderNames(); headers.hasMoreElements();) {
           String h = headers.nextElement();
-          System.out.println(h + ": " + request.getHeader(h));
+          TempLogger.serverLog(h + ": " + request.getHeader(h));
         }
-        System.out.println("\nPARAMETERS");
+        TempLogger.serverLog("\nPARAMETERS");
         for (Enumeration<String> params = request.getParameterNames(); params.hasMoreElements();) {
           String p = params.nextElement();
-          System.out.println(p + ": " + request.getParameter(p));
+          TempLogger.serverLog(p + ": " + request.getParameter(p));
         }
         
 //        this is what this servlet method should actually do when it receives a request
@@ -107,7 +107,7 @@ public class UsersServlet extends HttpServlet {
         
         String json = mapper.writeValueAsString(noob);
         response.setContentType("application/json");
-        System.out.println("sending: " + json);
+        TempLogger.serverLog("sending: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {

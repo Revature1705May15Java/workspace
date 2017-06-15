@@ -41,9 +41,6 @@ public class LoginServlet extends HttpServlet {
     HttpSession session = request.getSession(true);
 	  boolean loginAttempted = false;
 	  
-	  /*
-	   */
-	  
 	  if (((User) session.getAttribute("user")) != null) {
       response.sendRedirect("main");
     } else {

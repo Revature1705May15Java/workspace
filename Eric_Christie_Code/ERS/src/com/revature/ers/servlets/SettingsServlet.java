@@ -102,11 +102,21 @@ public class SettingsServlet extends HttpServlet {
       if (password != null) {
         if (password.equals(confirm)) {
           User updated = service.updateUserInformation(u.getId(), email, password, firstname, lastname, emailAlertsOn);
+          String json = mapper.writeValueAsString(updated);
+          response.setContentType("application/json");
+          System.out.println("sending: " + json);
+          PrintWriter out = response.getWriter();
+          out.println(json);
         } else {
           response.sendError(400, "Password and password confirmation must match.");
         }
       } else {
         User updated = service.updateUserInformation(u.getId(), email, password, firstname, lastname, emailAlertsOn);
+        String json = mapper.writeValueAsString(updated);
+        response.setContentType("application/json");
+        System.out.println("sending: " + json);
+        PrintWriter out = response.getWriter();
+        out.println(json);
       }
     } else {
       response.sendRedirect("login");
