@@ -51,8 +51,8 @@ public class RefundServlet extends HttpServlet {
 				response.sendRedirect("home");//take response and send to an action to servlet(home is defined in web.x)
 			}
 		}catch(NullPointerException e){
-			request.setAttribute("login", "fail");
-			request.getRequestDispatcher("loginf.ftl").forward(request, response);
+			request.setAttribute("err", 1);
+			request.getRequestDispatcher("index.ftl").forward(request, response);
 //			response.sendRedirect("Error.html");
 		}
 	}

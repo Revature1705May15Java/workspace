@@ -39,18 +39,27 @@ public class ServletHome extends HttpServlet {
 		
 		u = (User) s.getAttribute("user");
 		
-		accs = serv.getUserRequests(u);
+		
 		System.out.println(u.toString());
 		
 		String fn = u.getFn();
 		String ln = u.getLn();
-		request.setAttribute("requests", accs);
+		
 		request.setAttribute("firstname", fn);
 		request.setAttribute("lastname", ln);
 		
 		if(u.getIsBoss()==1){
+			accs = serv.getAllRequests();
+			request.setAttribute("allReq", serv.allRequested());
+			request.setAttribute("allPend", serv.allPending());
+			request.setAttribute("allAppr", serv.allResolved());
+			request.setAttribute("allDen", serv.allDenied());
+			request.setAttribute("requests", accs);
 			request.getRequestDispatcher("boss.ftl").forward(request, response);
 		}else{
+			//add if string for search is empty
+			accs = serv.getUserRequests(u);//change to get all request
+			request.setAttribute("requests", accs);
 			request.getRequestDispatcher("user.ftl").forward(request, response);
 		}
 	}

@@ -3,19 +3,26 @@ package com.rev.pojo;
 import java.sql.Date;
 
 public class Request {
-	int id, stateId, amount, reqId, resId;
-	String purpose, note;
+	int id, stateId, reqId, resId;
+	double  amount;
+	String purpose, note, reqFn, reqLn, resFn, resLn;
 	Date reqDate, resDate;
-	public Request(int id, int stateId, int amount, int reqId, int resId, String purpose, String note, Date reqDate,
-			Date resDate) {
+	
+	
+	public Request(int id, int stateId, int reqId, int resId, double amount, String purpose, String note, String reqFn,
+			String reqLn, String resFn, String resLn, Date reqDate, Date resDate) {
 		super();
 		this.id = id;
 		this.stateId = stateId;
-		this.amount = amount;
 		this.reqId = reqId;
 		this.resId = resId;
+		this.amount = amount;
 		this.purpose = purpose;
 		this.note = note;
+		this.reqFn = reqFn;
+		this.reqLn = reqLn;
+		this.resFn = resFn;
+		this.resLn = resLn;
 		this.reqDate = reqDate;
 		this.resDate = resDate;
 	}
@@ -34,10 +41,10 @@ public class Request {
 	public void setStateId(int stateId) {
 		this.stateId = stateId;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public int getReqId() {
@@ -76,12 +83,35 @@ public class Request {
 	public void setResDate(Date resDate) {
 		this.resDate = resDate;
 	}
+	public String getReqFn() {
+		return reqFn;
+	}
+	public void setReqFn(String reqFn) {
+		this.reqFn = reqFn;
+	}
+	public String getReqLn() {
+		return reqLn;
+	}
+	public void setReqLn(String reqLn) {
+		this.reqLn = reqLn;
+	}
+	public String getResFn() {
+		return resFn;
+	}
+	public void setResFn(String resFn) {
+		this.resFn = resFn;
+	}
+	public String getResLn() {
+		return resLn;
+	}
+	public void setResLn(String resLn) {
+		this.resLn = resLn;
+	}
 	@Override
 	public String toString() {
-		return "Request [id=" + id + ", stateId=" + stateId + ", amount=" + amount + ", reqId=" + reqId + ", resId="
-				+ resId + ", purpose=" + purpose + ", note=" + note + ", reqDate=" + reqDate + ", resDate=" + resDate
-				+ "]";
+		return "Request [id=" + id + ", stateId=" + stateId + ", reqId=" + reqId + ", resId=" + resId + ", amount="
+				+ amount + ", purpose=" + purpose + ", note=" + note + ", reqFn=" + reqFn + ", reqLn=" + reqLn
+				+ ", resFn=" + resFn + ", resLn=" + resLn + ", reqDate=" + reqDate + ", resDate=" + resDate + "]";
 	}
-	
 	
 }

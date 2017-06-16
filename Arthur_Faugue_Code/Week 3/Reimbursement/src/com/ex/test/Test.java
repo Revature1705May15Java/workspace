@@ -1,7 +1,10 @@
 package com.ex.test;
 
+import java.util.ArrayList;
+
 import com.rev.dao.DAO;
 import com.rev.dao.DaoImpl;
+import com.rev.pojo.Request;
 import com.rev.pojo.User;
 
 public class Test {
@@ -11,10 +14,17 @@ public class Test {
 		DAO dao = new DaoImpl();
 		User u = new User();
 		
-		u = dao.userLogin("test", "test");
-		System.out.println(u.toString());
-		dao.getUserRequestsByStateId(u, 3);
+//		u = dao.userLogin("bb", "bb");
+//		System.out.println(u.toString());
+//		System.out.println("approved="+dao.allRequested());
+//		dao.getAllRequests();
+//		dao.getUserRequestsByStateId(u, 3);
 //		dao.makeRequest(u, 50, note);
+//		dao.updateUser(u, "aa", "aa");
+//		u = dao.getUser(u);
+//		System.out.println(u.toString());
+		boolean c = dao.approveRequest(760, 3, 200, "ok");
+//		ArrayList<User> r = dao.getAllEmployees();
 	}
 
 }

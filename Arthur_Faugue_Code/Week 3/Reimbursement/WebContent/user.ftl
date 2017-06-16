@@ -29,6 +29,8 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
 	rel="stylesheet" media="all" />
+	
+	<link href="css/user.css" rel="stylesheet">
 
 <title>Reimbursement</title>
 </head>
@@ -51,11 +53,14 @@
 					<ul class="nav navbar-nav">
 						<li><a href="#request" data-toggle="modal"
 							data-target="#request">Make Request</a></li>
-						<li><a href="#contact">View User</a></li>
+						<li><a href="user">View User</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="navbar-brand pull-right">Welcome ${firstname}</a></li>
-						<button type="button" class="btn btn-danger btn-rounded pull-right"  style="margin-top: 8px;margin-left: 5px;">Log Out</button>
+						<li><form action="logout" method="post">
+							<button type="submit" class="btn btn-danger btn-rounded pull-right"  style="margin-top: 8px;margin-left: 5px;">Log Out</button>
+						</form></li>
+						
 					</ul>
 				</div>
 			</div>
@@ -70,12 +75,12 @@
 				<h3 style="margin-bottom: 25px; text-align: center;">Request
 					Form</h3>
 				<div class="form-group">
-					<input type="text" class="form-control" name="amount"
-						placeholder="Enter Requested Amount" required>
+					<input type="number" min="1" step="0.01" class="form-control" name="amount"
+						placeholder="Enter Requested Amount" pattern="(0\.((0[1-9]{1})|([1-9]{1}([0-9]{1})?)))|(([1-9]+[0-9]*)(\.([0-9]{1,2}))?)" required>
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" type="text" name="purpose"
-						placeholder="Purpose" maxlength="500" rows="7"></textarea>
+						placeholder="Purpose (Optional)" maxlength="500" rows="7"></textarea>
 					<span class="help-block"><p id="characterLeft"
 							class="help-block ">You have reached the limit of 500
 							characters.</p></span>
@@ -118,7 +123,7 @@
 <div class="col-sm-5 col-xs-6 tital " >Request Number: </div><div class="col-sm-7"> ${request.id}</div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
-<div class="col-sm-5 col-xs-6 tital " >Pending Amount: </div><div class="col-sm-7"> ${request.amount} $</div>
+<div class="col-sm-5 col-xs-6 tital " >Pending Amount: </div><div class="col-sm-7">$ ${request.amount}</div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 <#if request.stateId == 1>
@@ -140,7 +145,7 @@
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 
-	<div id="${request.id}" class="modal" role="dialog">
+	<div id="${request.id}" class="modal fade in" style="vertical-align: middle; top:30%; left:5%;">
 
 			<div class="container bs-nopadding text-center well">
 				<div class="row" style="color: #fff">
@@ -175,7 +180,7 @@
 					<div style="background: #63102c" class="col-sm-3">Note</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-3">${request.amount} $</div>
+					<div class="col-sm-3">$ ${request.amount} $</div>
 					<#if request.resId??>
 					<div class="col-sm-3">${request.resId}</div>
 					<#else>
@@ -206,13 +211,6 @@
     </div> 
     </div>
 </div>  
-    <script>
-              $(function() {
-    $('#profile-image1').on('click', function() {
-        $('#profile-image-upload').click();
-    });
-});       
-              </script> 
         
    </div>
 

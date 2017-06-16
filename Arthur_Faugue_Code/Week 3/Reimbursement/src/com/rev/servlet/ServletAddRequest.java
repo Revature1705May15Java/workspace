@@ -34,7 +34,7 @@ public class ServletAddRequest extends HttpServlet {
 		HttpSession s = request.getSession(true);
 		
 		u = (User) s.getAttribute("user");
-		int amount = Integer.parseInt(request.getParameter("amount"));
+		double amount = Double.parseDouble(request.getParameter("amount"));
 		String purpose = request.getParameter("purpose");
 		
 		serv.makeRequest(u, amount, purpose);
