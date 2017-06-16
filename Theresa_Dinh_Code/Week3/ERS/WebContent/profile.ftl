@@ -55,7 +55,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="profile.ftl">View/Update Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="logout.ftl">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,42 +63,40 @@
             </div><!-- /.container-fluid -->
         </nav>
         
+
+        <!--  view current information  -->
         <h2 class="sub-header">Current Information</h2>
         <div id="current-info">
-            <h4>First Name: </h4>
-            <h4>Last Name: </h4>
-            <h4>Email: </h4>
+            <h4>First Name: ${employee.firstName} </h4>
+            <h4>Last Name: ${employee.lastName} </h4>
+            <h4>Email: ${employee.email} </h4>
         </div>
-            
         
+
+        <!-- form to update information  -->
         <h2 class="sub-header">Update Information</h2>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="profile" method="post">
             <div class="form-group">
-                <label for="first-name" class="control-label col-sm-2">First Name:</label>
+                <label for="first-name" class="control-label col-sm-2">First Name: </label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="first-name" placeholder="Enter new first name">
+                    <input type="text" class="form-control" name="first-name" id="first-name" placeholder="Enter new first name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="last-name" class="control-label col-sm-2">Last Name:</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="last-name" placeholder="Enter new last name">
+                    <input type="text" class="form-control" name="last-name" id="last-name" placeholder="Enter new last name">
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="new-email" class="control-label col-sm-2">Email:</label>
-                <div class="col-xs-5">
-                    <input type="text" class="form-control" id="new-email" placeholder="Enter new email">
-                </div>
-            </div>
 <!--
             <label for="password" class="control-label">Password: </label>
             <input type="text" class="form-control" id="password">            
 -->
             <br>
-            <button type="submit" class="btn btn-default">Save Changes</button>
+            <button type="submit" class="btn btn-default" value="update">Save Changes</button>
         </form>
         
+
+        <!-- footer -->
         <div id="footer">
             <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
                 <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 

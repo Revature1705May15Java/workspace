@@ -57,11 +57,45 @@ public class ERSDao
 		return null; 
 	}
 	
+    // update an Employee's data in the db 
+    // parameter: an Employee with the new names and emails set 
+    public boolean updateEmployee(Employee employee)
+    {
+        try(Connection c = ConnectionFactory.getInstance().getConnection();)
+		{
+			c.setAutoCommit(false);
+			
+			String s = "UPDATE EMPLOYEE SET FIRSTNAME = ?, LASTNAME = ?, EMAIL = ? WHERE ID = ?";
+			PreparedStatement ps = c.prepareStatement(s); 
+			ps.setString(1, employee.getFirstName());
+            ps.setString(2, employee.getLastName()); 
+            ps.setString(3, employee.getEmail()); 
+            ps.setInt(4, employee.getId());
+			
+			int rowCheck = ps.executeUpdate();		// safety check for later 
+			if(rowCheck != 1)
+			{
+				System.out.println("Row Update Failure");
+				return false; 
+			}
+			
+			c.commit();
+			ps.close();
+			c.setAutoCommit(true);	
+			return true; 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace(); 
+		}
+        return false; 
+    }
+    
 	// allow a manager to set another Employee as manager 
 	// or to demote an Employee from manager
 	// Parameters: the email of the Employee to be promoted/demoted 
 	// and a boolean TRUE if manager, FALSE if not manager 
-	public void setManager(Employee employee, boolean isManager)
+	public boolean setManager(Employee employee, boolean isManager)
 	{
 		try(Connection c = ConnectionFactory.getInstance().getConnection();)
 		{
@@ -80,17 +114,19 @@ public class ERSDao
 			if(rowCheck != 1)
 			{
 				System.out.println("Row Update Failure");
-				throw new SQLException(); 
+				return false;
 			}
 			
 			c.commit();
 			ps.close();
-			c.setAutoCommit(true);			
+			c.setAutoCommit(true);	
+			return true; 
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace(); 
 		}
+		return false; 
 	}
 	
 	// retrieves an Employee's information from the database and
@@ -266,7 +302,7 @@ public class ERSDao
     // approves a Request by setting its status ID to 1 in the database 
     // may not need to update resolve date, have db trigger do it 
 	// Parameters: Request that has its Request ID and the ID of the approving Manager set 
-    public void approveRequest(Request request)
+    public boolean approveRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
@@ -283,23 +319,25 @@ public class ERSDao
 			if(rowCheck != 1)
 			{
 				System.out.println("Row Update Failure");
-				throw new SQLException(); 
+				return false; 
 			}
 			
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	return true; 
     	}
     	catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
+    	return false; 
     }
     
     // denies a Request by settings its status ID to 2 in the database
 	// Parameters: Request that has its Request ID and the ID of the denying Manager set 
 
-    public void denyRequest(Request request)
+    public boolean denyRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
@@ -320,23 +358,25 @@ public class ERSDao
 			if(rowCheck != 1)
 			{
 				System.out.println("Row Update Failure");
-				throw new SQLException(); 
+				return false; 
 			}
 	    	
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	return true; 
     	}
     	catch(SQLException e)
     	{
     		e.printStackTrace();
     	}
+    	return false; 
     }
     
 	// submit a Request 
 	// Parameters: Request that has its amount requested, 
 	// its purpose, and the Employee's email set 
-    public void submitRequest(Request request)
+    public boolean submitRequest(Request request)
     {
     	try(Connection c = ConnectionFactory.getInstance().getConnection();)
     	{
@@ -354,16 +394,18 @@ public class ERSDao
 			if(rowCheck != 1)
 			{
 				System.out.println("Row Update Failure");
-				throw new SQLException(); 
+				return false; 
 			}
 			
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	return true; 
     	}
     	catch(SQLException e)
     	{
     		e.printStackTrace(); 
     	}
+    	return false; 
     }
 }

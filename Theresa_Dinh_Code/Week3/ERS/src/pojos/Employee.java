@@ -22,6 +22,13 @@ public class Employee
 		this.password = password; 
 	}
 
+    public Employee(String email, String firstName, String lastName)
+	{
+		super(); 
+		this.email = email; 
+		this.firstName = firstName;
+		this.lastName = lastName;        
+	}
 
 	public Employee(String email, String password, int id, String firstName, 
 			String lastName, int managerId) 

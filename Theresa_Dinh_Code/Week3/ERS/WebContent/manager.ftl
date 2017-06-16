@@ -52,9 +52,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profile.ftl">View/Update Profile</a></li>
+                                <li name="update-prof"><a href="profile.ftl">View/Update Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li name="logout"><a href="logout.ftl">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -74,7 +74,7 @@
                         <li><a id="all-req" href="javascript:void(0)">View All Requests</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li><a id="new-req" href="submission.ftl">Submit New Request</a></li>
+                        <li name="submit-new"><a id="new-req" href="submission.ftl">Submit New Request</a></li>
                         <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li>
                     </ul>
                 </div>
@@ -84,8 +84,8 @@
             <!--        Badge of Total Pending Requests -->
                     <h2 class="sub-header" id="table-header">Requests Awaiting Approval</h2>
                     <!--    -->
-                    <div class="table-responsive" id="body-table">
-                        <table class="table table-striped" id="pendingRequests">
+                    <div class="table-responsive" id="body-table" action="RequestsServlet" method="get">
+                        <table class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Firstname</th>

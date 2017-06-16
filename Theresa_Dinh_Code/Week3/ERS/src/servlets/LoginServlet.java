@@ -3,6 +3,8 @@ package servlets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -60,8 +62,10 @@ public class LoginServlet extends HttpServlet
 				}
 				else if(employee.getManagerId() == 1)	// a Manager
 				{
-					rd = request.getRequestDispatcher("manager.html"); 
+					rd = request.getRequestDispatcher("manager.ftl"); 
 					rd.forward(request, response);
+					ServletContext context = request.getServletContext(); 
+					rd = context.getNamedDispatcher("HomeServlet"); 
 				}
 			}
 			else
@@ -69,6 +73,9 @@ public class LoginServlet extends HttpServlet
 				session.setAttribute("login", "fail");
 				RequestDispatcher rd = request.getRequestDispatcher("login.ftl");
 				rd.forward(request, response);
+				
+//				ServletContext context = request.getServletContext(); 
+//				rd = context.getNamedDispatcher("HomeServlet"); 
 			}
 		}
 		catch(NullPointerException n)

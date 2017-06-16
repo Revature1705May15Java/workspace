@@ -56,7 +56,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="profile.ftl">View/Update Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Logout</a></li>
+                                <li><a href="logout.ftl">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -65,40 +65,49 @@
         </nav>
         
         <h2 class="sub-header">Submit New Reimbursement Request</h2>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="request" method="post">
+<!--
             <div class="form-group">
                 <label for="first-name" class="control-label col-sm-2">First Name:</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="first-name" placeholder="Enter your first name">
+                    <input type="text" name="first-name" class="form-control" id="first-name" placeholder="Enter your first name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="last-name" class="control-label col-sm-2">Last Name:</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+                    <input type="text" name="last-name" class="form-control" id="last-name" placeholder="Enter your last name">
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="control-label col-sm-2">Email:</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Enter your email">
                 </div>
             </div>
+-->
             <div class="form-group">
                 <label for="amount" class="control-label col-sm-2">Amount:</label>
                 <div class="col-xs-5">
-                    <input type="text" class="form-control" id="amount" placeholder="Enter the amount you're requesting $">
+                    <input type="text" name="amount" class="form-control" id="amount" placeholder="Enter the amount you're requesting $">
                 </div>
             </div>
             <div class="form-group">
                 <label for="purpose" class="control-label col-sm-2">Purpose:</label>
                 <div class="col-xs-7">
-                    <input type="text" class="form-control" id="purpose" placeholder="Enter reason for requesting (Optional)">
+                    <input type="text" name="purpose" class="form-control" id="purpose" placeholder="Enter reason for requesting (Optional)">
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" value="submit">Submit</button>
         </form>
+        
+        <#if request! == "pass">
+            <h3 style="color:#14b251">Your request has been sucessfully submitted.</h3>
+        </#if>
+        <#if request! == "fail">
+            <h3 style="color:#c91d1d">Your request was not processed correctly Please try again later.</h3>
+        </#if>
         
         <div id="footer">
             <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 

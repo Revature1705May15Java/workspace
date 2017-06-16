@@ -1,5 +1,10 @@
 <html>
     <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">      
+        
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Latest compiled and minified CSS -->
@@ -10,22 +15,54 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
         
         <title>ERS Portal Login</title>
-        <link rel="stylesheet" href="logout.css">
+        <link rel="stylesheet" href="login.css">
     </head>
     
-    <body>
-        <h1>Welcome to your Employee Reimbursement System Portal.</h1>
-        <h3>Please log in.</h3>
-        <div class="loginform">
-            <form name="loginform" action="login" method="post">
-                Email: <input type="text" name="email"> 
-                Password: <input type="password" name="password">
-                <input type="submit" value="Login">
-            </form>
-        </div>
+    <body>     
+        <!-- Top Nav Bar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>  ERS</a>   
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+            
+    <div class="jumbotron">
+        <h1><center>Welcome to your Employee Reimbursement System.</center></h1>
+    </div>        
         
+    <div class="container">
+        <form class="form-signin" name="loginform" action="login" method="post">
+            <h3 class="form-signin-heading"><center>Please sign in to continue.</center></h3>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" value="login">Log in</button>
+        </form>
+    </div> <!-- /container -->
+
         <#if login! == "fail">
-            <h3 style="color:#c91d1d">Your login information is incorrect.</h3>
+            <header style="color:#c91d1d">Your login information is incorrect.</header>
         </#if>
+        
+<!--        add registration button -->
+        
     </body>
 </html>

@@ -17,14 +17,14 @@ public class ErsService
 	
 	// allow new Employees to register into the system  
 	// with their name, a unique email, and a password 
-	public void registerEmployee(String email, String password, String firstName, String lastName)
+	public Employee registerEmployee(String email, String password, String firstName, String lastName)
 	{		
 		// if an Employee with the email already exists, prevent addition of Employee to database
 		if(dao.getEmployee(email) != null)
 		{
 			System.out.println("An Employee has already been registered with that email."
 					+ "Please try another email.");
-			return; 
+			return null; 
 		}
 		
 		Employee employee = new Employee(); 
@@ -33,18 +33,35 @@ public class ErsService
 		employee.setFirstName(firstName);
 		employee.setLastName(lastName);
 		
-		dao.registerEmployee(employee); 
+		return dao.registerEmployee(employee);
 	}
+    
+    // allow Employee to update their personal info 
+    // parameters: the Employee of the current session with their id, the first and last names to be changed 
+    public boolean updateEmployee(Employee employee, String firstName, String lastName)
+    {
+        //if the names are empty, keep the old names to prevent overwriting with empty values to db 
+        if(!firstName.equals(""))
+            employee.setFirstName(firstName); 
+        if(!lastName.equals(""))
+            employee.setLastName(lastName);    
+    
+        if(dao.updateEmployee(employee))
+        	return true;
+        return false; 
+    }
 	
 	// allow manager to promote or demote Employee to manager in db 
 	// Parameters: the email of the Employee to be promoted/demoted 
 	// and a boolean TRUE if manager, FALSE if not manager 
-	public void setManager(String email, boolean isManager)
+	public boolean setManager(String email, boolean isManager)
 	{
 		Employee employee = new Employee();
 		employee.setEmail(email);
 		
-		dao.setManager(employee, isManager);
+		if(dao.setManager(employee, isManager))
+			return true; 
+		return false; 
 	}
 	
 	// retrieves user from their unique email login 
@@ -78,7 +95,7 @@ public class ErsService
 	// manager's employee id 
 	// Parameters: the ID of the Request, and an Employee manager 
 	// that has at least its Email set
-	public void approveRequest(int requestId, Employee employee)
+	public boolean approveRequest(int requestId, Employee employee)
 	{		
 		Request request = new Request(); 
 		Employee e = dao.getEmployee(employee);
@@ -90,17 +107,18 @@ public class ErsService
 		if((dao.getRequest(request)).getStatusId() != 0)
 		{
 			System.out.println("This request has already been resolved.");
-			return; 
+			return false; 
 		}
 		
-		dao.approveRequest(request);
-		return; 
+		else if(dao.approveRequest(request))
+			return true;
+		return false; 
 	}
 	
 	// Denies a Request
 	// If the Request is resolved already, don't change its status
 	// Parameters: the ID of the Request, and an Employee that has at least its Email set
-	public void denyRequest(int requestId, Employee employee)
+	public boolean denyRequest(int requestId, Employee employee)
 	{
 		Request request = new Request(); 
 		Employee e = dao.getEmployee(employee);
@@ -112,25 +130,26 @@ public class ErsService
 		if((dao.getRequest(request)).getStatusId() != 0)
 		{
 			System.out.println("This request has already been resolved.");
-			return; 
+			return false; 
 		}
-		
-		dao.denyRequest(request);
-		return; 
+		else if(dao.denyRequest(request))
+			return true;
+		return false; 
 	}
 	
 	// submit a Request 
 	// Parameters: a double of the amount requested, 
 	// a String representation of the purpose (can be empty), 
 	// and the email of the Employee submitting the request 
-	public void submitRequest(double amount, String purpose, String email)
+	public boolean submitRequest(double amount, String purpose, String email)
 	{
 		Request request = new Request(); 
 		request.setAmount(amount);
 		request.setPurpose(purpose);
 		request.setRequesterId((dao.getEmployee(email)).getId()); 
 		
-		dao.submitRequest(request);
-		return;
+		if(dao.submitRequest(request))
+			return true;
+		return false; 
 	}
 }
