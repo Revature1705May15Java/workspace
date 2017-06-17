@@ -1,0 +1,58 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojo.Request;
+import com.ers.pojo.User;
+import com.ers.service.Service;
+
+import oracle.sql.DATE;
+
+/**
+ * Servlet implementation class EditRequestServlet
+ */
+@WebServlet("/EditRequestServlet")
+public class EditRequestServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User u = (User) session.getAttribute("user");
+		Service service = new Service();
+		boolean wasUpdated = false;
+		System.out.println("In edit servlet! " + u.toString());
+		try{
+			System.out.println("In try... this should run every time!");
+			Request req = new Request();
+			System.out.println(request.getParameter("requestid") + "????");
+			req.setId(Integer.parseInt(request.getParameter("requestid")));
+			req.setBalance(Double.parseDouble(request.getParameter("amt")));
+			req.setPurpose(request.getParameter("purpose"));
+			req.setType(request.getParameter("status"));
+			req.setDateClosed(request.getParameter("dateClosed"));
+			if(u.getRank() == 1) req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
+			req.setAdminNote(request.getParameter("adminNote"));
+			System.out.println("In edit before update...");
+			wasUpdated = service.updateRequestById(req, u);
+			if(!wasUpdated) request.setAttribute("reqEdit", "false");
+			System.out.println("At end of edit servlet + " + wasUpdated);
+		}
+		catch(Exception e){
+			request.setAttribute("reqEdit", "false");
+			e.printStackTrace();
+		}
+		finally { // redirect to homepage whether success or fail.
+			System.out.println("finally + " + wasUpdated);
+			if(u.getRank() == 0) request.getRequestDispatcher("home").forward(request, response); // employee page
+			if(u.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response); // manager page
+		}
+	}
+
+}

@@ -6,6 +6,8 @@ import com.ers.pojo.Request;
 import com.ers.pojo.User;
 
 public interface Dao {
+	boolean deleteRequest(int id);
+	boolean updateRequestById(Request req);
 	User getUser(String username);
 	User getUser(int id);
 	int addUser(String uname, String pw, String fn, String ln, int emp_rank);

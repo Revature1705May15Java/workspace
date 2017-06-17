@@ -50,6 +50,14 @@
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>ManagerHome</servlet-name>
+    <servlet-class>com.ers.servlets.ManagerHomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerHome</servlet-name>
+    <url-pattern>/home2</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>EditServlet</servlet-name>
     <servlet-class>com.ers.servlets.EditInfoServlet</servlet-class>
   </servlet>
@@ -57,6 +65,19 @@
     <servlet-name>EditServlet</servlet-name>
     <url-pattern>/editInfo</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>EditRequestServlet</servlet-name>
+    <servlet-class>com.ers.servlets.EditRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditRequestServlet</servlet-name>
+    <url-pattern>/editRequest</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
   <servlet>
     <servlet-name>freemarker</servlet-name>
     <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>

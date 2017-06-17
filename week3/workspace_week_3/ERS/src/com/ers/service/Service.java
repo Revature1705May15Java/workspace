@@ -2,15 +2,32 @@ package com.ers.service;
 
 import com.ers.dao.Dao;
 import com.ers.dao.ImplDao;
+import com.ers.pojo.Request;
 import com.ers.pojo.User;
 
 public class Service {
 	static Dao dao = new ImplDao();
 	
+	public boolean deleteRequest(int id){
+		return dao.deleteRequest(id);
+	}
+	
+	public boolean updateRequestById(Request req, User u){
+		return dao.updateRequestById(req);
+	}
+	
 	public User getUserInfo(String username) {
 		User temp = new User();
 		
 		temp = dao.getUser(username);
+		
+		return temp;
+	}
+	
+	public User getUserInfo(int id) {
+		User temp = new User();
+		
+		temp = dao.getUser(id);
 		
 		return temp;
 	}

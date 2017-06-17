@@ -13,7 +13,69 @@ import com.ers.util.ConnectionFactory;
 public class ImplDao implements Dao{
 
 	static ArrayList<Request> requests = new ArrayList<Request>();
-
+	static String[] stateTypes = getRequestStates();
+	
+	public boolean deleteRequest(int id){
+		String sql = "DELETE FROM requests WHERE requestid = ?";
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet info = ps.executeQuery();
+			return true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	static private String[] getRequestStates(){
+		String[] types = new String[10];
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT name FROM statetype";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+							 
+			ResultSet info = ps.executeQuery();
+			
+			int i = 0;
+			while(info.next()){ // setting request state types for use in other methods.
+				types[i] = info.getString(1);
+				i++;			
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			for(int i = 0; i < types.length; i++){
+				types[i] = "";
+			}
+		}
+		return types;
+	}
+	
+	public boolean updateRequestById(Request req){
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "UPDATE requests SET amount = ?, purpose = ?, admin_note = ?, resolverid = ?, stateid = ? WHERE requestid = ?";
+					
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setDouble(1, req.getBalance());
+			ps.setString(2, req.getPurpose());
+			ps.setString(3, req.getAdminNote());
+			ps.setInt(4, req.getAdminId());
+			ps.setString(5, req.getType());
+			ps.setInt(6, req.getId());
+			
+			ps.executeUpdate();
+ 
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 	
 	public boolean editUser(String editCol, String change, User u) {
 		
@@ -173,6 +235,49 @@ public class ImplDao implements Dao{
 			return null;
 		}
 	}
+	
+	public ArrayList<Request> getAllRequests(){ 
+		requests = new ArrayList<Request>();
+		Request temp = new Request();
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT * FROM requests";
+			String sql2 = "SELECT name FROM statetype WHERE stateid = ?";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			
+			ResultSet info = ps.executeQuery();
+			int i = 0, num = 0;
+			while(info.next()){
+				
+				temp = new Request();
+				temp.setId(info.getInt(1));
+				temp.setDateOpened(info.getDate(2));
+				temp.setDateClosed(info.getDate(3));
+				temp.setBalance(info.getDouble(4));
+				temp.setPurpose(info.getString(5));
+				temp.setRequesterId(info.getInt(6));
+				temp.setAdminId(info.getInt(7));
+				
+				num = info.getInt(8);
+				ps2.setInt(1, num); // setting request state so it can be queried each iteration to
+									// collect the correct state type in the look-up table.
+				ResultSet info2 = ps2.executeQuery();
+				info2.next();
+				temp.setType(info2.getString(1));
+				System.out.println(temp.toString());
+				requests.add(i, temp);
+				i++;			
+			}
+			return requests;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 	@Override
 	public int addRequest(double amt, String purpose, int id) {
@@ -202,10 +307,8 @@ public class ImplDao implements Dao{
 		Request request = new Request();
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM requests WHERE empid = ?";
-			String sql2 ="SELECT name FROM statetype WHERE stateid = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
-			PreparedStatement ps2 = connection.prepareStatement(sql2);
 			
 			ps.setInt(1, id);
 			ResultSet info = ps.executeQuery();
@@ -222,12 +325,7 @@ public class ImplDao implements Dao{
 				request.setRequesterId(6);
 				request.setAdminId(info.getInt(7));
 				
-				int num = info.getInt(8);
-				ps2.setInt(1, num); // setting request type so it can be queried each iteration to
-									// collect the correct request type in the look-up table.
-				ResultSet info2 = ps2.executeQuery();
-				info2.next();
-				request.setType(info2.getString(1));
+				request.setType(stateTypes[info.getInt(8)]);
 				
 				request.setAdminNote(info.getString(9));
 				list.add(i, request);

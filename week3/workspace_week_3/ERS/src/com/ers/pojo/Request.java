@@ -7,6 +7,8 @@ public class Request {
 	int id, requesterId, adminId;
 	double balance;
 	String purpose, adminNote, type;
+	Date dateOpened, dateClosed;
+	
 	public String getAdminNote() {
 		return adminNote;
 	}
@@ -31,8 +33,6 @@ public class Request {
 	public void setPurpose(String purpose) {
 		this.purpose = purpose;
 	}
-
-	Date dateOpened, dateClosed;
 	
 	public Request(){}
 	

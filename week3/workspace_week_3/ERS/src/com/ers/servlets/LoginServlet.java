@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("user", temp);
 		}
 		// if the user is found (not null, their rank matches (0=employee, 1=manager), and password matches... send them to the corresponding homepage.
-		if(temp != null && temp.getRank() == 1 && pw.equals(temp.getPassword())) response.sendRedirect("Home2.ftl");
+		if(temp != null && temp.getRank() == 1 && pw.equals(temp.getPassword())) response.sendRedirect("home2");
 		else if (temp != null && temp.getRank() == 0 && pw.equals(temp.getPassword())) response.sendRedirect("home");
 		else{
 			request.setAttribute("login", "fail");

@@ -22,17 +22,13 @@ public class EmployeeHomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Home..?");
 		
 		HttpSession session = request.getSession(true);
 		u = (User) session.getAttribute("user");
-		u = service.getUserInfo(u.getUsername()); // updating all request information about the user.
-		
 		if(u == null) response.sendRedirect("logout");
 		else{	
-			System.out.println("Requests: " + u.getRequests().size());
-			request.setAttribute("fn", u.getFn());
-			request.setAttribute("ln", u.getLn());
+			u = service.getUserInfo(u.getId()); // updating all request information about the user.
+			
 			request.setAttribute("Requests", u.getRequests());
 			request.setAttribute("user", u);
 			request.getRequestDispatcher("/Home.ftl").forward(request, response);

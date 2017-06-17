@@ -18,11 +18,6 @@ public class ManagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Service service = new Service();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-	
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -42,7 +37,7 @@ public class ManagerServlet extends HttpServlet {
 		
 		if(test == 1) {
 			request.setAttribute("createuser", "success");
-			request.getRequestDispatcher("Home2.ftl").forward(request, response);
+			request.getRequestDispatcher("home2").forward(request, response);
 		} else if(test == 0) {
 			request.setAttribute("createuser", "fail");
 			request.getRequestDispatcher("Home2.ftl").forward(request, response);

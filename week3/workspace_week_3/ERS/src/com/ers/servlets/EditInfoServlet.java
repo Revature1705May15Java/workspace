@@ -22,41 +22,43 @@ public class EditInfoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		User u = (User) session.getAttribute("user");
-		session.removeAttribute("user");
 		Service service = new Service();
-		
+		System.out.println(u.toString());
 		try{
 			String temp = request.getParameter("newusername");
 			if(temp != null) {
 				u.setUsername(temp);
 			}
 			
-			
 			temp = request.getParameter("newpw");
+			System.out.println(temp.equals("") + "  AND  " + temp.equals(null));
 			if(temp.equals(request.getParameter("newpw2")) && u.getPassword().equals(request.getParameter("oldpw"))){
-				u.setPassword(temp);
-			}
+				u.setPassword(temp); // If the original password matches the database and both new password fields match each other, change the password.
+			} else if(request.getParameter("oldpw").equals("") && request.getParameter("newpw").equals("") && request.getParameter("newpw2").equals("")){} //If all passwords are null they do not wish to edit. Do nothing.
 			else {
-				request.setAttribute("editing", "fail");
+				request.setAttribute("editing", "pwfail");
 				request.getRequestDispatcher("home").forward(request, response);
 				return;
 			}
 			
 			temp = request.getParameter("newfn");
-			if(temp != null) u.setFn(temp);
+			if(!temp.equals("")) u.setFn(temp);
 			
 			temp = request.getParameter("newln");
-			if(temp != null) u.setLn(temp);
+			if(!temp.equals("")) u.setLn(temp);
 			
 			service.editUser(u);
-			request.setAttribute("user", u);
+			session.removeAttribute("user");
+			session.setAttribute("user", u);
 			
 			request.setAttribute("editing", "success");
-			request.getRequestDispatcher("home").forward(request, response);
 		}
-		catch(Exception e){
+		catch(IOException e){
 			request.setAttribute("editing", "fail");
-			request.getRequestDispatcher("Home.ftl").forward(request, response);
+		}
+		finally {
+			if(u.getRank() == 0) request.getRequestDispatcher("home").forward(request, response);
+			if(u.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response);
 		}
 	}
 
