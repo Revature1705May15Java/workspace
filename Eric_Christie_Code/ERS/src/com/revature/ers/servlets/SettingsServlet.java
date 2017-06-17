@@ -15,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.revature.ers.pojos.User;
 import com.revature.ers.service.ERService;
+import com.revature.ers.util.TempLogger;
 
 /**
  * Servlet implementation class SettingsServlet.
@@ -35,19 +36,24 @@ public class SettingsServlet extends HttpServlet {
     User u = (User) session.getAttribute("user");
     if (u != null) {
       /*
-       * retrieve the account settings/information for the current user (and MAYBE change the "user" attribute of the current session)
+       * retrieve the account settings/information for the current user and change the "user" attribute of the current session)
        * (this method will likely not be used directly by the user)
        */
       User current = service.getUserById(u.getId());
+      if (current != null) {
+        session.setAttribute("user", current);
+        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        
+        String json = mapper.writeValueAsString(current);
+        response.setContentType("application/json");
+        TempLogger.serverLog("sending: " + json);
+        PrintWriter out = response.getWriter();
+        out.println(json);
+      }
       
-      ObjectMapper mapper = new ObjectMapper();
-      mapper.registerModule(new JavaTimeModule());
       
-      String json = mapper.writeValueAsString(current);
-      response.setContentType("application/json");
-      System.out.println("sending: " + json);
-      PrintWriter out = response.getWriter();
-      out.println(json);
     } else {
       response.sendRedirect("login");
     }
@@ -64,57 +70,57 @@ public class SettingsServlet extends HttpServlet {
       /*
        * parse request body and (if there is nothing wrong with it) use its contents to update the current user's account settings/information
        */
-      System.out.println("/ERS/settings - printing request cookies, headers, and parameters:");
+      TempLogger.serverLog("/ERS/settings - printing request cookies, headers, and parameters:");
       Cookie[] cookies = request.getCookies();
-      System.out.println("\nCOOKIES");
+      TempLogger.serverLog("\nCOOKIES");
       for (Cookie c: cookies) {
-        System.out.println(c);
+        TempLogger.serverLog("Cookie: " + c.getName() + " = " + c.getValue());
       }
-      System.out.println("\nHEADERS");
+      TempLogger.serverLog("\nHEADERS");
       for (Enumeration<String> headers = request.getHeaderNames(); headers.hasMoreElements();) {
         String h = headers.nextElement();
-        System.out.println(h + ": " + request.getHeader(h));
+        TempLogger.serverLog(h + ": " + request.getHeader(h));
       }
-      System.out.println("\nPARAMETERS");
+      TempLogger.serverLog("\nPARAMETERS");
       for (Enumeration<String> params = request.getParameterNames(); params.hasMoreElements();) {
         String p = params.nextElement();
-        System.out.println(p + ": " + request.getParameter(p));
+        TempLogger.serverLog(p + ": " + request.getParameter(p));
       }
 
       String email = request.getParameter("email");
-      System.out.println("email = " + email);
+      TempLogger.serverLog("email = " + email);
       String password = request.getParameter("password");
       password = password.equals("") ? null : password;
-      System.out.println("password = " + password);
+      TempLogger.serverLog("password = " + password);
       String confirm = request.getParameter("confirm");
       confirm = confirm.equals("") ? null : confirm;
-      System.out.println("confirm = " + confirm);
+      TempLogger.serverLog("confirm = " + confirm);
       String firstname = request.getParameter("firstname");
-      System.out.println("firstname = " + firstname);
+      TempLogger.serverLog("firstname = " + firstname);
       String lastname = request.getParameter("lastname");
-      System.out.println("lastname = " + lastname);
+      TempLogger.serverLog("lastname = " + lastname);
       Boolean emailAlertsOn = request.getParameter("emailAlerts") != null;
-      System.out.println("emailAlertsOn = " + emailAlertsOn);
+      TempLogger.serverLog("emailAlertsOn = " + emailAlertsOn);
       
       ObjectMapper mapper = new ObjectMapper();
       mapper.registerModule(new JavaTimeModule());
       
       if (password != null) {
         if (password.equals(confirm)) {
-          User updated = service.updateUserInformation(u.getId(), email, password, firstname, lastname, emailAlertsOn);
+          User updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
           String json = mapper.writeValueAsString(updated);
           response.setContentType("application/json");
-          System.out.println("sending: " + json);
+          TempLogger.serverLog("sending: " + json);
           PrintWriter out = response.getWriter();
           out.println(json);
         } else {
           response.sendError(400, "Password and password confirmation must match.");
         }
       } else {
-        User updated = service.updateUserInformation(u.getId(), email, password, firstname, lastname, emailAlertsOn);
+        User updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
         String json = mapper.writeValueAsString(updated);
         response.setContentType("application/json");
-        System.out.println("sending: " + json);
+        TempLogger.serverLog("sending: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
       }

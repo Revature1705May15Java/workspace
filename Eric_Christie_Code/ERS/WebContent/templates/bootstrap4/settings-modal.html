@@ -57,9 +57,11 @@
               <label for="userEmailAlerts" class="input-group-addon align-middle mr-4">Email Alerts:&nbsp;</label>
                 <!--<span class="align-middle mr-4 input-group-addon">Email Alerts:&nbsp;</span>-->
                 <#if user.isEmailAlertsOn()>
-                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle" checked>
+                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true"
+                    data-toggle="toggle" data-on="" data-off="" checked>
                 <#else>
-                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true" data-toggle="toggle">
+                  <input type="checkbox" name="emailAlerts" id="userEmailAlerts" class="align-middle ml-4" value="true"
+                    data-toggle="toggle" data-on="<i class='meterial-icons'></i>" data-off="">
                 </#if>
               <!--</label>-->
             </div>
@@ -70,7 +72,7 @@
         <button type="reset" id="settingsCancel" form="settingsForm" class="btn btn-secondary" data-dismiss="modal">
           Cancel
         </button>
-        <button type="submit" id="settingsSubmit" form="settingsForm" class="btn btn-primary">
+        <button type="submit" id="settingsSubmit" form="settingsForm" class="btn btn-primary" data-dismiss="modal">
           Save changes
         </button>
       </div>

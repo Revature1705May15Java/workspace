@@ -59,7 +59,16 @@ public class UsersServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {
-        response.sendError(403, "You do not have the necessary permissions for this.");
+//        response.sendError(403, "You do not have the necessary permissions for this.");
+        ArrayList<User> managers = service.getManagers();
+        
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+        String json = mapper.writeValueAsString(managers);
+        response.setContentType("application/json");
+        TempLogger.serverLog("all managers: " + json);
+        PrintWriter out = response.getWriter();
+        out.println(json);
       }
     } else {
       response.sendRedirect("login");
@@ -111,7 +120,7 @@ public class UsersServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {
-        response.sendError(403, "You do not have the necessary permissions for this.");
+        response.sendError(403, "You do not have the necessary permissions for this action.");
       }
     } else {
       response.sendRedirect("login");

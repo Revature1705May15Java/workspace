@@ -1,0 +1,36 @@
+<body>
+  <a href="main" id="back" class="close" aria-label="Back">
+    <i class="material-icons md-light">keyboard_backspace</i>
+  </a>
+  <div class="container">
+    <!--<#if loginAttempted??>
+      <#if loginAttempted>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="material-icons">close</i>
+          </button>
+          <i class="material-icons vert-align-middle">error</i> 
+          Incorrect email address or password. Please try again.
+        </div>
+      </#if>
+    </#if>-->
+
+    <form name="request" id="requestForm" method="post" action="request"> <!--might need action="aux/request"-->
+      <h3 class="form-page-heading">Submit a Request</h3>
+      <label for="purpose" class="sr-only">Purpose</label>
+      <textarea name="purpose" id="purpose" maxlength="140" cols="50" rows="3"
+        placeholder="Please explain your reason for making this request."></textarea>
+      <div class="input-group">
+        <label for="amount">Amount Requested</label>
+        <span class="input-group-addon">$</span>
+        <input type="number" name="amount" id="amount" min="0.01" step="0.01" placeholder="0.00" required>
+      </div>
+      <button type="reset" id="requestReset" class="btn btn-secondary">
+        Reset
+      </button>
+      <button type="submit" id="requestSubmit" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</body>

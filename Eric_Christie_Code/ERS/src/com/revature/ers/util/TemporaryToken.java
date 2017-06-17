@@ -1,9 +1,9 @@
-package com.revature.ers.service;
+package com.revature.ers.util;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-import org.abstractj.kalium.crypto.Random;
+import org.apache.commons.text.RandomStringGenerator;
 
 /**
  * A class for randomly generated temporary password reset tokens.
@@ -19,8 +19,8 @@ public class TemporaryToken {
   
   public TemporaryToken(String email) {
     this.recipient = email;
-    Random rando = new Random();
-    this.token = new String(rando.randomBytes());
+    RandomStringGenerator generator = new RandomStringGenerator.Builder().withinRange('0', 'z').build();
+    this.token = generator.generate(20);
     this.creationTimestamp = LocalDateTime.now();
     this.expirationTimestamp = this.creationTimestamp.plus(LIFESPAN);
   }

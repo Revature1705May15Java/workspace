@@ -14,7 +14,6 @@ import com.revature.ers.pojos.RequestState;
 public interface DAO {
   
   /**
-   * TODO find a better way to securely generate random passwords for new users. (currently it is just a hash of the email address)
    * Insert a record into the user table.
    * @param email
    * @param password The new User's plaintext password, which is stored as a salted hash
@@ -23,7 +22,7 @@ public interface DAO {
    * @param isManager
    * @return true if successful, false otherwise
    */
-  boolean addUser(String email, String firstname, String lastname, boolean isManager);
+  boolean addUser(String email, String temporaryPassword, String firstname, String lastname, boolean isManager);
   
   /**
    * Insert a record into the request table.
@@ -44,25 +43,25 @@ public interface DAO {
   
   /**
    * Retrieve information for all employees and managers.
-   * @return an ArrayList of User objects for all users
+   * @return an ArrayList of User objects for all users, in descending order by lastModified timestamp
    */
   ArrayList<User> getAllUsers();
   
   /**
    * Retrieve information for all employees.
-   * @return an ArrayList of employee User objects
+   * @return an ArrayList of employee User objects, in descending order by lastModified timestamp
    */
   ArrayList<User> getAllEmployees();
   
   /**
    * Retrieve information for all managers.
-   * @return an ArrayList of manager User objects
+   * @return an ArrayList of manager User objects, in descending order by lastModified timestamp
    */
   ArrayList<User> getAllManagers();
   
   /**
    * Retrieve information for all requests.
-   * @return an ArrayList of Request objects for all requests
+   * @return an ArrayList of Request objects for all requests, in descending order by id 
    */
   ArrayList<Request> getAllRequests();
   
@@ -96,23 +95,23 @@ public interface DAO {
   /**
    * Retrieve all requests created by the user with the given email.
    * @param email
-   * @return an ArrayList of complete Request objects
+   * @return an ArrayList of complete Request objects, in descending order by id
    */
-  ArrayList<Request> getRequestsByRequester(String email); // might not need this
-  
-  /**
-   * Retrieve all requests resolved by the user with the given email.
-   * @param email
-   * @return an ArrayList of complete Request objects
-   */
-  ArrayList<Request> getRequestsByResolver(String email); // might not need this
+  ArrayList<Request> getRequestsByRequester(String email);
   
   /**
    * Retrieve all requests in the given state.
-   * @param state
-   * @return an ArrayList of complete Request objects
+   * @param stateName
+   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
    */
-  ArrayList<Request> getRequestsByState(RequestState state); // might not need this
+  ArrayList<Request> getRequestsByState(String stateName);
+  
+  /**
+   * Retrieve all requests created by the user with the given email that are in the given state
+   * @param email
+   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
+   */
+  ArrayList<Request> getRequestsByRequesterAndState(String email, String stateName);
   
   /**
    * Make the given user a manager. (This should only be accessible to managers.)
@@ -131,14 +130,6 @@ public interface DAO {
    * @return true if successful, false otherwise
    */
   boolean updateUser(User old, String email, String firstname, String lastname, boolean emailAlertsOn);
-  
-  /**
-   * Update the latest logout date and time for the given user to the current date and time.
-   * @param e
-   * @param latestLogout
-   * @return true if successful, false otherwise
-   */
-  boolean updateUserLatestLogout(User e);
   
   /**
    * Change the password for the given user.

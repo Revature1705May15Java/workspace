@@ -24,7 +24,7 @@ public class TempLogger {
   
   public static void serverLog(String message) {
     try (BufferedWriter bw = new BufferedWriter(new FileWriter(serverLogfile, true));) {
-      bw.write(LocalDateTime.now() + " - " + message + "\n");
+      bw.write(LocalDateTime.now() + " - SERVER: " + message + "\n");
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -66,7 +66,7 @@ public class TempLogger {
   
   public void catching(Throwable t) {
     try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(filename, true)));) {
-      pw.write(LocalDateTime.now() + " CAUGHT " + t.toString() + " with stack trace:\n");
+      pw.write(LocalDateTime.now() + " - CAUGHT: " + t.toString() + " with stack trace:\n");
       t.printStackTrace(pw);
     } catch (IOException e) {
       e.printStackTrace();

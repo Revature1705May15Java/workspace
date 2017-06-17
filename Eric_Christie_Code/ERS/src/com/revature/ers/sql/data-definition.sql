@@ -16,7 +16,7 @@ create table employee (
   isManager int not null check (isManager in (0,1)),
   emailAlertsOn int not null check (emailAlertsOn in (0,1)),
   setupDone int not null check (setupDone in (0,1)),
-  latestLogout timestamp
+  lastModified timestamp not null
 );
 /
 create table request (
@@ -64,6 +64,9 @@ begin
   if :new.setupDone is null then
     select 0 into :new.setupDone from dual;
   end if;
+  if :new.lastModified is null then
+    select localtimestamp into :new.lastModified from dual;
+  end if;
 end;
 /
 create or replace trigger insert_request
@@ -80,6 +83,12 @@ begin
   end if;
 end;
 /
+create or replace trigger update_employee
+before update on employee for each row
+begin
+  select localtimestamp into :new.lastModified from dual;
+end;
+/
 create or replace trigger update_request
 before update on request for each row --request records should only be updated when they are resolved
 begin
@@ -92,6 +101,5 @@ end;
  * Add the first manager to the database.
  * DML Script
  */
-delete from employee where id=2;
 insert into employee (email, passwordHash, firstname, lastname, isManager)
-values ('admin@email.com', 'sha1:64000:18:GL54ziHM0839IKt5xA556y+MtGIKWzpF:sCIFPjMZws/AKd0YrzGvCYXe', 'ADMIN', 'USER', 1);
+values ('admin@email.com', 'sha1:64000:18:8djK1uCof8paNoR4k2QjYuQ8hisiJak4:2BGCT9PVcAikRPZjKM2Y/Rnj', 'ADMIN', 'USER', 1);

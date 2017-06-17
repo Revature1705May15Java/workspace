@@ -9,9 +9,9 @@ import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.revature.ers.pojos.User;
 import com.revature.ers.pojos.Request;
 import com.revature.ers.pojos.RequestState;
+import com.revature.ers.pojos.User;
 import com.revature.ers.util.ConnectionFactory;
 import com.revature.ers.util.PasswordStorage;
 import com.revature.ers.util.PasswordStorage.CannotPerformOperationException;
@@ -27,7 +27,7 @@ public class DbDAO implements DAO {
   private TempLogger logger = new TempLogger();
 
   @Override
-  public boolean addUser(String email, String firstname, String lastname, boolean isManager) {
+  public boolean addUser(String email, String temporaryPassword, String firstname, String lastname, boolean isManager) {
     boolean success = false;
     try (Connection conn = factory.getConnection();) {
       conn.setAutoCommit(false);
@@ -36,7 +36,7 @@ public class DbDAO implements DAO {
           + "values (?, ?, ?, ?, ?)";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
-      ps.setString(2, PasswordStorage.createHash(email));
+      ps.setString(2, PasswordStorage.createHash(temporaryPassword));
       ps.setString(3, firstname);
       ps.setString(4, lastname);
       ps.setInt(5, isManager ? 1 : 0);
@@ -112,7 +112,8 @@ public class DbDAO implements DAO {
   public ArrayList<User> getAllUsers() {
     ArrayList<User> users = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout from employee";
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, lastModified "
+          + "from employee order by lastModified desc";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
@@ -134,8 +135,8 @@ public class DbDAO implements DAO {
   public ArrayList<User> getAllEmployees() {
     ArrayList<User> employees = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
-          + "from employee where isManager=0";
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, lastModified "
+          + "from employee where isManager=0 order by lastModified desc";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
@@ -155,8 +156,8 @@ public class DbDAO implements DAO {
   public ArrayList<User> getAllManagers() {
     ArrayList<User> managers = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
-          + "from employee where isManager=1";
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, lastModified "
+          + "from employee where isManager=1 order by lastModified desc";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
@@ -176,16 +177,16 @@ public class DbDAO implements DAO {
   public ArrayList<Request> getAllRequests() {
     ArrayList<Request> requests = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, m.email, rq.requestedTimestamp, rq.resolvedTimestamp, "
+      String sql = "select rq.id, e.id, m.id, rs.id, rs.name, rq.amount, rq.requestedTimestamp, rq.resolvedTimestamp, "
           + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
-          + "where rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id";
+          + "where rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id order by rq.id desc";
       Statement statement = conn.createStatement();
       
       ResultSet info = statement.executeQuery(sql);
       while (info.next()) {
-        requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
-            info.getString(9), info.getString(10)));
+        requests.add(new Request(info.getInt(1), info.getInt(2), info.getInt(3), new RequestState(info.getInt(4), info.getString(5)),
+            info.getBigDecimal(6), info.getTimestamp(7)==null ? null : info.getTimestamp(7).toLocalDateTime(),
+                info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime(), info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -216,7 +217,7 @@ public class DbDAO implements DAO {
   public User getUser(int id) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, lastModified "
           + "from employee where id=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setInt(1, id);
@@ -238,7 +239,7 @@ public class DbDAO implements DAO {
   public User getUser(String email) {
     User result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, latestLogout "
+      String sql = "select id, email, firstname, lastname, isManager, emailAlertsOn, setupDone, lastModified "
           + "from employee where email=?";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
@@ -260,8 +261,7 @@ public class DbDAO implements DAO {
   public Request getRequest(int id) {
     Request result = null;
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, e.firstname, e.lastname, "
-          + "m.email, m.firstname, m.lastname, rq.requestedTimestamp, rq.resolvedTimestamp, "
+      String sql = "select rq.id, e.id, m.id, rs.id, rs.name, rq.amount, rq.requestedTimestamp, rq.resolvedTimestamp, "
           + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
           + "where rq.id=? and rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id";
       PreparedStatement ps = conn.prepareStatement(sql);
@@ -269,9 +269,9 @@ public class DbDAO implements DAO {
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        result = new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
-            info.getString(9), info.getString(10));
+        result = new Request(info.getInt(1), info.getInt(2), info.getInt(3), new RequestState(info.getInt(4), info.getString(5)),
+            info.getBigDecimal(6), info.getTimestamp(7)==null ? null : info.getTimestamp(7).toLocalDateTime(),
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime(), info.getString(9), info.getString(10));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -284,18 +284,17 @@ public class DbDAO implements DAO {
   public ArrayList<Request> getRequestsByRequester(String email) {
     ArrayList<Request> requests = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, e.firstname, e.lastname, "
-          + "m.email, m.firstname, m.lastname, rq.requestedTimestamp, rq.resolvedTimestamp, "
+      String sql = "select rq.id, e.id, m.id, rs.id, rs.name, rq.amount, rq.requestedTimestamp, rq.resolvedTimestamp, "
           + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
-          + "where e.email=? and rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id";
+          + "where e.email=? and rq.requesterId=e.id and rq.resolverId=m.id and rq.stateId=rs.id order by rq.id desc";
       PreparedStatement ps = conn.prepareStatement(sql);
       ps.setString(1, email);
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
-            info.getString(9), info.getString(10)));
+        requests.add(new Request(info.getInt(1), info.getInt(2), info.getInt(3), new RequestState(info.getInt(4), info.getString(5)), 
+            info.getBigDecimal(6), info.getTimestamp(7)==null ? null : info.getTimestamp(7).toLocalDateTime(),
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime(), info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -305,21 +304,21 @@ public class DbDAO implements DAO {
   }
 
   @Override
-  public ArrayList<Request> getRequestsByResolver(String email) {
+  public ArrayList<Request> getRequestsByState(String stateName) {
     ArrayList<Request> requests = new ArrayList<>();
+    stateName = stateName.toLowerCase();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, e.firstname, e.lastname, "
-          + "m.email, m.firstname, m.lastname, rq.requestedTimestamp, rq.resolvedTimestamp, "
-          + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
-          + "where m.email=? and rq.resolverId=m.id and rq.requesterId=e.id and rq.stateId=rs.id";
+      String sql = "select rq.id, e.id, m.id, rs.id, rs.name, rq.amount, rq.requestedTimestamp, rq.resolvedTimestamp, "
+          + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m where rs.name=? "
+          + (stateName.equalsIgnoreCase("pending") ? "order by rq.requestedTimestamp desc" : "order by rq.resolvedTimestamp desc");
       PreparedStatement ps = conn.prepareStatement(sql);
-      ps.setString(1, email);
+      ps.setString(1, stateName);
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
-            info.getString(9), info.getString(10)));
+        requests.add(new Request(info.getInt(1), info.getInt(2), info.getInt(3), new RequestState(info.getInt(4), info.getString(5)),
+            info.getBigDecimal(6), info.getTimestamp(7)==null ? null : info.getTimestamp(7).toLocalDateTime(),
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime(), info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -327,23 +326,24 @@ public class DbDAO implements DAO {
     }
     return requests;
   }
-
+  
   @Override
-  public ArrayList<Request> getRequestsByState(RequestState state) {
+  public ArrayList<Request> getRequestsByRequesterAndState(String email, String stateName) {
     ArrayList<Request> requests = new ArrayList<>();
     try (Connection conn = factory.getConnection();) {
-      String sql = "select rq.id, rs.id, rs.name, rq.amount, e.email, e.firstname, e.lastname, "
-          + "m.email, m.firstname, m.lastname, rq.requestedTimestamp, rq.resolvedTimestamp, "
+      String sql = "select rq.id, e.id, m.id, rs.id, rs.name, rq.amount, rq.requestedTimestamp, rq.resolvedTimestamp, "
           + "rq.purpose, rq.note from request rq, requestState rs, employee e, employee m "
-          + "where rs.id=?";
+          + "where e.email=? and rs.name=? and rq.resolverId=m.id and rq.requesterId=e.id and rq.stateId=rs.id "
+          + (stateName.equalsIgnoreCase("pending") ? "order by rq.requestedTimestamp desc" : "order by rq.resolvedTimestamp desc");
       PreparedStatement ps = conn.prepareStatement(sql);
-      ps.setInt(1, state.getId());
+      ps.setString(1, email);
+      ps.setString(2, stateName);
       
       ResultSet info = ps.executeQuery();
       while (info.next()) {
-        requests.add(new Request(info.getInt(1), new RequestState(info.getInt(2), info.getString(3)), info.getBigDecimal(4), 
-            info.getString(5), info.getString(6), info.getTimestamp(7).toLocalDateTime(), info.getTimestamp(8).toLocalDateTime(), 
-            info.getString(9), info.getString(10)));
+        requests.add(new Request(info.getInt(1), info.getInt(2), info.getInt(3), new RequestState(info.getInt(4), info.getString(5)),
+            info.getBigDecimal(6), info.getTimestamp(7)==null ? null : info.getTimestamp(7).toLocalDateTime(),
+            info.getTimestamp(8)==null ? null : info.getTimestamp(8).toLocalDateTime(), info.getString(9), info.getString(10)));
       }
     } catch (SQLException ex) {
       logger.catching(ex);
@@ -392,30 +392,6 @@ public class DbDAO implements DAO {
       ps.setInt(4, emailAlertsOn ? 1 : 0);
       ps.setInt(5, old.getId());
 
-      int rowCount = ps.executeUpdate();
-      if (rowCount == 1) {
-        success = true;
-        conn.commit();
-      } else {
-        conn.rollback(save);
-      }
-    } catch (SQLException ex) {
-      logger.catching(ex);
-      ex.printStackTrace();
-    }
-    return success;
-  }
-
-  @Override
-  public boolean updateUserLatestLogout(User e) {
-    boolean success = false;
-    try (Connection conn = factory.getConnection();) {
-      conn.setAutoCommit(false);
-      Savepoint save = conn.setSavepoint();
-      String sql = "update employee set latestLogout=localtimestamp where id=?";
-      PreparedStatement ps = conn.prepareStatement(sql);
-      ps.setInt(1, e.getId());
-      
       int rowCount = ps.executeUpdate();
       if (rowCount == 1) {
         success = true;

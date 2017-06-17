@@ -8,8 +8,8 @@ Presentation 6/23
 - An Employee can view their pending reimbursement requests
 - An Employee can view their resolved reimbursement requests
 -x An Employee can view their information
-- An Employee can update their information
-- An Employee receives an email when one of their reimbursement requests is resolved (optional)
+-x An Employee can update their information
+-x An Employee receives an email when one of their reimbursement requests is resolved (optional)
 
 -x A Manager can login
 -x A Manager can view the Manager Homepage

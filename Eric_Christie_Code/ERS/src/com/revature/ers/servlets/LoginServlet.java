@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  ERService service = new ERService();
     HttpSession session = request.getSession(true);
+    session.setMaxInactiveInterval(60 * 60);
 	  boolean loginAttempted = false;
 	  
 	  if (((User) session.getAttribute("user")) != null) {

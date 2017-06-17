@@ -76,3 +76,128 @@
 2017-06-14T23:54:05.576 - INFO: ADMIN USER logged in
 2017-06-14T23:56:54.463 - INFO: ADMIN USER logged out
 2017-06-14T23:56:58.420 - INFO: ADMIN USER logged in
+2017-06-15T01:30:24.949 - INFO: ADMIN USER logged in
+2017-06-15T01:37:28.393 - INFO: ADMIN USER logged in
+2017-06-15T01:37:46.400 CAUGHT java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (ERSDB.SYS_C007337) violated
+ with stack trace:
+java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint (ERSDB.SYS_C007337) violated
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForRows(T4CPreparedStatement.java:943)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1075)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:3897)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeUpdate(OraclePreparedStatementWrapper.java:1361)
+	at com.revature.ers.dao.DbDAO.addUser(DbDAO.java:44)
+	at com.revature.ers.service.ERService.registerUser(ERService.java:28)
+	at com.revature.ers.servlets.UsersServlet.doPost(UsersServlet.java:103)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1533)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-06-15T02:37:32.278 - INFO: ADMIN USER logged in
+2017-06-15T02:37:53.554 - INFO: ADMIN USER changed their password
+2017-06-15T02:39:26.775 - INFO: User [id=1, email=admin@email.com, firstname=ADMIN, lastname=USER, isManager=true, emailAlertsOn=false, setupDone=true, latestLogout=null] changed their account information
+2017-06-15T02:39:36.941 - INFO: ADMIN USER logged out
+2017-06-15T02:44:15.946 - INFO: Admin User logged in
+2017-06-15T02:44:42.012 - INFO: Admin User logged out
+2017-06-15T02:58:56.799 - INFO: Admin User logged in
+2017-06-15T03:08:59.542 - INFO: Admin User logged out
+2017-06-15T03:10:39.563 - INFO: Admin User logged in
+2017-06-15T03:27:06.356 - INFO: Admin User logged out
+2017-06-15T03:33:59.884 - INFO: Admin User logged in
+2017-06-15T03:34:13.542 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=User, isManager=true, emailAlertsOn=false, setupDone=true, latestLogout=2017-06-15T03:27:06.355] changed their account information
+2017-06-15T04:32:58.867 - INFO: Admin User logged in
+2017-06-15T04:34:42.066 - INFO: Admin User logged out
+2017-06-15T04:36:29.163 - INFO: Admin User logged in
+2017-06-15T04:38:36.640 - INFO: Admin User logged out
+2017-06-15T05:03:41.621 - INFO: Admin User logged in
+2017-06-15T05:03:58.784 - INFO: An account was created for Eric Christie with the temporary password <CCEf9pK0TjUrfk\=^mM
+2017-06-15T05:05:37.868 - INFO: Admin User logged out
+2017-06-15T07:04:36.350 - INFO: ADMIN USER logged in
+2017-06-15T07:05:36.682 - INFO: ADMIN USER changed their password
+2017-06-15T07:06:12.478 - INFO: An account was created for Eric Christie with the temporary password PoNl[VMGj]uD>8F1?9Pe
+2017-06-15T07:09:01.781 - INFO: User [id=1, email=admin@email.com, firstname=ADMIN, lastname=USER, isManager=true, emailAlertsOn=false, setupDone=false, latestLogout=null] changed their account information
+2017-06-15T07:10:26.716 - INFO: User [id=1, email=admin@email.com, firstname=ADMIN, lastname=USER, isManager=true, emailAlertsOn=false, setupDone=false, latestLogout=null] changed their account information
+2017-06-15T07:10:54.684 - INFO: ADMIN USER logged out
+2017-06-15T12:49:41.884 - CAUGHT: java.sql.SQLSyntaxErrorException: ORA-00904: "LATESTLOGOUT": invalid identifier
+ with stack trace:
+java.sql.SQLSyntaxErrorException: ORA-00904: "LATESTLOGOUT": invalid identifier
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:450)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:399)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1017)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:655)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:249)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:566)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:215)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:58)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:776)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:897)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1034)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3820)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:3867)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.executeQuery(OraclePreparedStatementWrapper.java:1502)
+	at com.revature.ers.dao.DbDAO.getUser(DbDAO.java:247)
+	at com.revature.ers.service.ERService.login(ERService.java:59)
+	at com.revature.ers.servlets.LoginServlet.doPost(LoginServlet.java:57)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.logging.log4j.web.Log4jServletFilter.doFilter(Log4jServletFilter.java:71)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:94)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:502)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1132)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1533)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1489)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-06-15T12:53:53.582 - INFO: ADMIN USER logged in
+2017-06-15T12:54:11.991 - INFO: ADMIN USER changed their password
+2017-06-15T12:54:40.015 - INFO: An account was created for Eric Christie with the temporary password 1>Aj_zYFk61][qAnTI4a
+2017-06-16T12:15:18.749 - INFO: Eric Christie logged in
+2017-06-16T12:16:07.907 - INFO: Eric Christie changed their password

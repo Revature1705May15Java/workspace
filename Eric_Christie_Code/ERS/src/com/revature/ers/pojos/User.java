@@ -7,12 +7,12 @@ public class User {
   private int id;
   private String email, firstname, lastname;
   private boolean isManager, emailAlertsOn, setupDone;
-  private LocalDateTime latestLogout;
+  private LocalDateTime lastModified;
   
   public User() { super(); }
 
   public User(String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
-      LocalDateTime latestLogout) {
+      LocalDateTime lastModified) {
     super();
     this.email = email;
     this.firstname = firstname;
@@ -20,11 +20,11 @@ public class User {
     this.isManager = isManager;
     this.emailAlertsOn = emailAlertsOn;
     this.setupDone = setupDone;
-    this.latestLogout = latestLogout;
+    this.lastModified = lastModified;
   }
 
   public User(int id, String email, String firstname, String lastname, boolean isManager, boolean emailAlertsOn, boolean setupDone,
-      LocalDateTime latestLogout) {
+      LocalDateTime lastModified) {
     super();
     this.id = id;
     this.email = email;
@@ -33,7 +33,7 @@ public class User {
     this.isManager = isManager;
     this.emailAlertsOn = emailAlertsOn;
     this.setupDone = setupDone;
-    this.latestLogout = latestLogout;
+    this.lastModified = lastModified;
   }
 
   public int getId() {
@@ -93,18 +93,18 @@ public class User {
   }
 
   public LocalDateTime getLatestLogout() {
-    return latestLogout;
+    return lastModified;
   }
 
-  public void setLatestLogout(LocalDateTime latestLogout) {
-    this.latestLogout = latestLogout;
+  public void setLatestLogout(LocalDateTime lastModified) {
+    this.lastModified = lastModified;
   }
 
   @Override
   public String toString() {
     return "User [id=" + id + ", email=" + email + ", firstname=" + firstname + ", lastname=" + lastname
         + ", isManager=" + isManager + ", emailAlertsOn=" + emailAlertsOn + ", setupDone=" + setupDone
-        + ", latestLogout=" + latestLogout + "]";
+        + ", lastModified=" + lastModified + "]";
   }
 
 }

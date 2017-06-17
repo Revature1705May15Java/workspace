@@ -5,37 +5,45 @@ import java.time.LocalDateTime;
 
 public class Request {
 
-  private int id;
+  private int id, requesterId, resolverId;
   private RequestState state;
   private BigDecimal amount;
-  private String requesterEmail; 
-  private String resolverEmail;
   private LocalDateTime dateTimeRequested, dateTimeResolved;
   private String purpose, note;
   
   public Request() { super(); }
 
-  public Request(RequestState state, BigDecimal amount, String requesterEmail, String resolverEmail,
-      LocalDateTime dateTimeRequested, LocalDateTime dateTimeResolved, String purpose, String note) {
+  public Request(int requesterId, RequestState state, BigDecimal amount, LocalDateTime dateTimeRequested,
+      String purpose) {
     super();
+    this.requesterId = requesterId;
     this.state = state;
     this.amount = amount;
-    this.requesterEmail = requesterEmail;
-    this.resolverEmail = resolverEmail;
+    this.dateTimeRequested = dateTimeRequested;
+    this.purpose = purpose;
+  }
+
+  public Request(int requesterId, int resolverId, RequestState state, BigDecimal amount,
+      LocalDateTime dateTimeRequested, LocalDateTime dateTimeResolved, String purpose, String note) {
+    super();
+    this.requesterId = requesterId;
+    this.resolverId = resolverId;
+    this.state = state;
+    this.amount = amount;
     this.dateTimeRequested = dateTimeRequested;
     this.dateTimeResolved = dateTimeResolved;
     this.purpose = purpose;
     this.note = note;
   }
-
-  public Request(int id, RequestState state, BigDecimal amount, String requesterEmail, String resolverEmail,
+  
+  public Request(int id, int requesterId, int resolverId, RequestState state, BigDecimal amount,
       LocalDateTime dateTimeRequested, LocalDateTime dateTimeResolved, String purpose, String note) {
     super();
     this.id = id;
+    this.requesterId = requesterId;
+    this.resolverId = resolverId;
     this.state = state;
     this.amount = amount;
-    this.requesterEmail = requesterEmail;
-    this.resolverEmail = resolverEmail;
     this.dateTimeRequested = dateTimeRequested;
     this.dateTimeResolved = dateTimeResolved;
     this.purpose = purpose;
@@ -48,6 +56,22 @@ public class Request {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public int getRequesterId() {
+    return requesterId;
+  }
+
+  public void setRequesterId(int requesterId) {
+    this.requesterId = requesterId;
+  }
+
+  public int getResolverId() {
+    return resolverId;
+  }
+
+  public void setResolverId(int resolverId) {
+    this.resolverId = resolverId;
   }
 
   public RequestState getState() {
@@ -64,22 +88,6 @@ public class Request {
 
   public void setAmount(BigDecimal amount) {
     this.amount = amount;
-  }
-
-  public String getRequesterEmail() {
-    return requesterEmail;
-  }
-
-  public void setRequesterEmail(String requesterEmail) {
-    this.requesterEmail = requesterEmail;
-  }
-
-  public String getResolverEmail() {
-    return resolverEmail;
-  }
-
-  public void setResolverEmail(String resolverEmail) {
-    this.resolverEmail = resolverEmail;
   }
 
   public LocalDateTime getDateTimeRequested() {
@@ -116,11 +124,9 @@ public class Request {
 
   @Override
   public String toString() {
-    return "Request [id=" + id + ", state=" + state + ", amount=" + amount + ", requesterEmail=" + requesterEmail
-        + ", resolverEmail=" + resolverEmail + ", dateTimeRequested=" + dateTimeRequested + ", dateTimeResolved="
-        + dateTimeResolved + ", purpose=" + purpose + ", note=" + note + "]";
+    return "Request [id=" + id + ", requesterId=" + requesterId + ", resolverId=" + resolverId + ", state=" + state
+        + ", amount=" + amount + ", dateTimeRequested=" + dateTimeRequested + ", dateTimeResolved=" + dateTimeResolved
+        + ", purpose=" + purpose + ", note=" + note + "]";
   }
-
-  
   
 }

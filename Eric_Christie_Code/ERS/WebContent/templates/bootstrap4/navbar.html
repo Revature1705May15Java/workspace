@@ -12,10 +12,10 @@
     <ul class="navbar-nav mr-auto" id="navbar-spacer"></ul>
     <ul class="navbar-nav">
       <#if user.isManager()>
-        <li class="nav-item mx-md-1 my-1">
+        <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Register a User">
           <a href="aux/user" id="registrationButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#registrationModal" >
             <i class="material-icons align-middle">group_add</i>
-            <span class="hidden-md-up align-middle">&nbsp;Register Employees</span>
+            <span class="hidden-md-up align-middle">&nbsp;Register&nbsp;Users</span>
           </a>
           <!--<button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#registrationModal">
             <i class="material-icons align-middle">group_add</i>
@@ -23,10 +23,14 @@
           </button>-->
         </li>
       <#else>
-        <li class="nav-item mx-md-1 my-1">
+        <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Submit a Request">
           <a href="aux/request" id="requestButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#requestModal" >
-            <i class="material-icons vert-align"></i>
-            <span class="hidden-md-up align-middle">&nbsp;Create Request</span>
+            <!--<i class="material-icons vert-align">receipt</i>-->
+            <i class="material-icons vert-align">note_add</i>
+            <!--<i class="material-icons vert-align">queue</i>-->
+            <!--<i class="material-icons vert-align">attach_money</i>-->
+            <!--<i class="material-icons vert-align">monetization_on</i>--> 
+            <span class="hidden-md-up align-middle">&nbsp;Submit&nbsp;Requests</span>
           </a>
           <!--<button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#requestModal">
             <i class="material-icons vert-align"></i>
@@ -34,17 +38,17 @@
           </button>-->
         </li>
       </#if>
-      <li class="nav-item mx-md-1 my-1">
+      <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Account Settings">
         <a href="aux/settings" id="settingsButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#settingsModal" >
           <i class="material-icons align-middle">settings</i>
-          <span class="hidden-md-up align-middle">&nbsp;Account Settings</span>
+          <span class="hidden-md-up align-middle">&nbsp;Account&nbsp;Settings</span>
         </a>
         <!--<button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#settingsModal">
           <i class="material-icons align-middle">settings</i>
           <span class="hidden-md-up align-middle">&nbsp;Account Settings</span>
         </button>-->
       </li>
-      <li class="nav-item mx-md-1 my-1">
+      <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Logout">
         <form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
           <button type="submit" class="btn btn-outline-secondary w-100">
             <i class="material-icons align-middle">exit_to_app</i>
