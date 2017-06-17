@@ -12,3 +12,6 @@ Eric_Christie_Code/RemoteSystemsTempFiles/
 
 # NodeJS Stuff
 node_modules
+
+hibernate.cfg.xml
+.settings
