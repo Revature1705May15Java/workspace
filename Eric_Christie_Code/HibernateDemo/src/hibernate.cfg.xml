@@ -5,9 +5,9 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
-    <property name="hibernate.connection.username">demo</property>
-    <property name="hibernate.connection.password">PnjDqYOdi8ytRPpDP2sU</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@revature-rds-1.cqbaqztrliqw.us-east-1.rds.amazonaws.com:1521:1521:ORCL</property>
+    <property name="hibernate.connection.username">daMaster</property>
+    <property name="hibernate.connection.password">zjxfw2ytbz8h581avkhe94hka252lt</property>
     <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
     
     <property name="show_sql">true</property>
@@ -15,17 +15,14 @@
     
     
     <!-- Specify Caching Provider -->
-    <property name="hibernate.generate_statistics">true</property>
+    <!-- <property name="hibernate.generate_statistics">true</property>
 		<property name="hibernate.cache.use_second_level_cache">true</property>
 		<property name="hibernate.cache.use_query_cache">true</property>
 		<property name="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</property>
 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<property name="hibernate.connection.release_mode">on_close</property>
-		<property name="hibernate.connection.isolation">8</property>
+		<property name="hibernate.connection.isolation">8</property> -->
     
     <mapping class="com.ex.pojos.Person"/>
-    <mapping class="com.ex.pojos.Bear"/>
-    <mapping class="com.ex.pojos.HoneyPot"/>
-    <mapping class="com.ex.pojos.Cave"/>
   </session-factory>
 </hibernate-configuration>
