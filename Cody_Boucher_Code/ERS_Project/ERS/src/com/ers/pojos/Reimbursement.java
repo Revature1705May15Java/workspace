@@ -1,6 +1,7 @@
 package com.ers.pojos;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Reimbursement {
 	private int stateId;
@@ -50,8 +51,8 @@ public class Reimbursement {
 		return dateResolved;
 	}
 
-	public void setDateResolved(Date dateResolved) {
-		this.dateResolved = dateResolved;
+	public void setDateResolved(Date localDate) {
+		this.dateResolved = localDate;
 	}
 
 	public double getAmount() {

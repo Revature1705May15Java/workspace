@@ -1,9 +1,11 @@
 package com.ers.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.ers.pojos.Employee;
 import com.ers.pojos.Reimbursement;
@@ -133,5 +135,114 @@ public class DaoImp implements DAO{
 			e.printStackTrace();
 		}
 		return emp;
+	}
+
+	@Override
+	public ArrayList<Reimbursement> getEmployeeReimbursement(int id) {
+		ArrayList<Reimbursement> employeeReimbursements = new ArrayList<Reimbursement>();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql ="select * from requests where requesterid = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet info = ps.executeQuery();
+			while(info.next()) {
+				Reimbursement temp = new Reimbursement();
+				temp.setStateId(info.getInt(1));
+				temp.setDateRequested(info.getDate(2));
+				temp.setDateResolved(info.getDate(3));
+				temp.setAmount(info.getDouble(4));
+				temp.setPurpose(info.getString(5));
+				temp.setRequestId(info.getInt(6));
+				temp.setRequesterId(info.getInt(7));
+				temp.setResolverId(info.getInt(8));
+				temp.setNotes(info.getString(9));
+				employeeReimbursements.add(temp);
+			}
+			return employeeReimbursements;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public ArrayList<Reimbursement> getReimbursements() {
+		ArrayList<Reimbursement> allReimbursements = new ArrayList<Reimbursement>();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "select * from requests";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet info = ps.executeQuery();
+			while(info.next()) {
+				Reimbursement temp = new Reimbursement();
+				temp.setStateId(info.getInt(1));
+				temp.setDateRequested(info.getDate(2));
+				temp.setDateResolved(info.getDate(3));
+				temp.setAmount(info.getDouble(4));
+				temp.setPurpose(info.getString(5));
+				temp.setRequestId(info.getInt(6));
+				temp.setRequesterId(info.getInt(7));
+				temp.setResolverId(info.getInt(8));
+				temp.setNotes(info.getString(9));
+				allReimbursements.add(temp);
+			}
+			return allReimbursements;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Reimbursement updateReimbursement(Reimbursement reim, String note, int state) {
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "update requests set stateid = ?, dateResolved = ?, resolverid = ?, notes = ? where requestid = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			ps.setInt(1, reim.getStateId());
+			System.out.println("dao reim state" + reim.getStateId());
+			
+			ps.setDate(2, reim.getDateResolved());
+			
+			ps.setInt(3, reim.getResolverId());
+			System.out.println("dao reim resolver" + reim.getResolverId());
+			
+			ps.setString(4, reim.getNotes());
+			System.out.println("dao reim note" + reim.getNotes());
+			
+			ps.setInt(5, reim.getRequestId());
+			System.out.println("dao reim requestId" + reim.getRequestId());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return reim;
+	}
+
+	@Override
+	public Reimbursement getReimbursement(int id) {
+		Reimbursement reim = new Reimbursement();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "select * from requests where requestid = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet info = ps.executeQuery();
+			while (info.next()) {
+				reim.setStateId(info.getInt(1));
+				reim.setDateRequested(info.getDate(2));
+				reim.setDateResolved(info.getDate(3));
+				reim.setAmount(info.getDouble(4));
+				reim.setPurpose(info.getString(5));
+				reim.setRequestId(info.getInt(6));
+				reim.setRequesterId(info.getInt(7));
+				reim.setResolverId(info.getInt(8));
+				reim.setNotes(info.getString(9));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return reim;
 	}
 }

@@ -1,5 +1,9 @@
 package com.ers.service;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 import com.ers.dao.DAO;
 import com.ers.dao.DaoImp;
 import com.ers.pojos.Employee;
@@ -44,10 +48,35 @@ public class Service {
 		
 	}
 	
+	public Reimbursement updateReimbursement(int id, Employee emp, String note, int state) {
+		Reimbursement reim = dao.getReimbursement(id);
+		reim.setStateId(state);
+		System.out.println("service" + state);
+		reim.setResolverId(emp.getId());
+		System.out.println("service" + reim.getResolverId());
+		reim.setNotes(note);
+		System.out.println("service" + note);
+		reim = dao.updateReimbursement(reim, note, state);
+		return reim;
+		
+	}
+	
 	
 	public Reimbursement requestReimbursement(Employee emp, Double amount, String purpose) {
 		Reimbursement rem = new Reimbursement();
 		rem = dao.requestReimbursement(emp.getId(), amount, purpose);
 		return rem;
+	}
+	
+	public ArrayList<Reimbursement> getEmpReimbursements(Employee emp) {
+		ArrayList<Reimbursement> empReimbursements = new ArrayList<Reimbursement>();
+		empReimbursements = dao.getEmployeeReimbursement(emp.getId());
+		return empReimbursements;
+	}
+	
+	public ArrayList<Reimbursement> getAllReimbursements() {
+		ArrayList<Reimbursement> allReimbursements = new ArrayList<Reimbursement>();
+		allReimbursements = dao.getReimbursements();
+		return allReimbursements;
 	}
 }

@@ -113,4 +113,13 @@
   </servlet-mapping>
   
   
+  <servlet>
+    <servlet-name>UpdateReimbursement</servlet-name>
+    <servlet-class>com.ers.servlets.UpdateReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateReimbursement</servlet-name>
+    <url-pattern>/updateReimbursement</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

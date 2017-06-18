@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ers.pojos.Employee;
+import com.ers.pojos.Reimbursement;
 import com.ers.service.Service;
 
-public class AddEmployeeServlet extends HttpServlet{
+public class UpdateReimbursementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -20,20 +21,21 @@ public class AddEmployeeServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		Service service = new Service();
+		Reimbursement updatedReim = new Reimbursement();
 		HttpSession s = request.getSession(true);
-		//Employee emp = (Employee) s.getAttribute("emp");
-		String username = request.getParameter("username");
-		System.out.println(username);
-		String password = request.getParameter("password");
-		System.out.println(password);
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
-		boolean isManager =request.getParameter("isManager").equals("manager");
-		Employee newEmp = service.addEmploye(username, password, firstName, lastName, isManager);
-		if(newEmp != null) {
-			System.out.println("New Employee Added");
-		}
+		Employee emp = (Employee) s.getAttribute("employee");
+		System.out.println(emp);
+		int id = Integer.parseInt(request.getParameter("requestID"));
+		System.out.println(id);
+		String note = request.getParameter("notes");
+		System.out.println(note);
+	
+		int state = Integer.parseInt(request.getParameter("stateId"));
+		System.out.println(state);
+
+		updatedReim = service.updateReimbursement(id, emp, note, state);
+		System.out.println(updatedReim);
+		
 		request.getRequestDispatcher("managerHome.ftl").forward(request, response);
 	}
-
 }
