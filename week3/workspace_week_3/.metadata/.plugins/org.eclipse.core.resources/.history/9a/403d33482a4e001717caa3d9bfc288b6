@@ -1,9 +1,0 @@
-package com.ers.dao;
-
-import com.ers.pojo.User;
-
-public interface Dao {
-	User getUser(String username);
-	User getUser(int id);
-	int addUser(String uname, String pw, String fn, String ln);
-}

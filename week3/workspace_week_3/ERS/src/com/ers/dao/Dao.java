@@ -10,6 +10,7 @@ public interface Dao {
 	boolean updateRequestById(Request req);
 	User getUser(String username);
 	User getUser(int id);
+	Request getRequestById(int id);
 	int addUser(String uname, String pw, String fn, String ln, int emp_rank);
 	int addRequest(double amt, String purpose, int id);
 	boolean editUser(String col, String edit, User u);

@@ -220,7 +220,7 @@ div#editInfo{
       </div>
       <div class="modal-body">
       	<form method="POST" action="editRequest">
-        <pre style="float:left"> Request Id: <input class="form-control" type="text" class="input-sm" id="requestid" name="requestid"/></pre>
+        <pre style="float:left"> Request Id: <input class="form-control" type="text" class="input-sm" id="requestid" name="requestid" required="required" readonly/></pre>
         <pre>     Status: <input class="form-control" type="text" class="input-sm" name="status" id="status" disabled="true" readonly/></pre>
         <pre style="float:left">     Amount: <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter an amount" id="amt" name="amt"/></pre>
         <pre>   Admin Id: <input class="form-control" type="text" class="input-sm" id="adminid" name="adminid" disabled="true" readonly/></pre>

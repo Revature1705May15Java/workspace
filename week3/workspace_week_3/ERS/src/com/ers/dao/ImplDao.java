@@ -13,7 +13,11 @@ import com.ers.util.ConnectionFactory;
 public class ImplDao implements Dao{
 
 	static ArrayList<Request> requests = new ArrayList<Request>();
-	static String[] stateTypes = getRequestStates();
+	static ArrayList<String> stateTypes = getRequestStates();
+	
+	public String getStateType(int i){
+		return stateTypes.get(i);
+	}
 	
 	public boolean deleteRequest(int id){
 		String sql = "DELETE FROM requests WHERE requestid = ?";
@@ -32,8 +36,8 @@ public class ImplDao implements Dao{
 		}
 	}
 	
-	static private String[] getRequestStates(){
-		String[] types = new String[10];
+	static private ArrayList<String> getRequestStates(){
+		ArrayList<String> types = new ArrayList<String>();
 		
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT name FROM statetype";
@@ -44,13 +48,13 @@ public class ImplDao implements Dao{
 			
 			int i = 0;
 			while(info.next()){ // setting request state types for use in other methods.
-				types[i] = info.getString(1);
+				types.add(info.getString(1));
 				i++;			
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-			for(int i = 0; i < types.length; i++){
-				types[i] = "";
+			for(int i = 0; i < 10; i++){
+				types.add("");
 			}
 		}
 		return types;
@@ -65,7 +69,11 @@ public class ImplDao implements Dao{
 			ps.setString(2, req.getPurpose());
 			ps.setString(3, req.getAdminNote());
 			ps.setInt(4, req.getAdminId());
-			ps.setString(5, req.getType());
+			
+			int num = stateTypes.indexOf(req.getType());
+			System.out.println("num: " + num + " '" + req.getType() + "'.");
+			ps.setInt(5, num);
+			
 			ps.setInt(6, req.getId());
 			
 			ps.executeUpdate();
@@ -224,7 +232,7 @@ public class ImplDao implements Dao{
 				ResultSet info2 = ps2.executeQuery();
 				info2.next();
 				temp.setType(info2.getString(1));
-				System.out.println(temp.toString());
+				temp.setAdminNote(info.getString(9));
 				requests.add(i, temp);
 				i++;			
 			}
@@ -267,7 +275,7 @@ public class ImplDao implements Dao{
 				ResultSet info2 = ps2.executeQuery();
 				info2.next();
 				temp.setType(info2.getString(1));
-				System.out.println(temp.toString());
+				temp.setAdminNote(info.getString(9));
 				requests.add(i, temp);
 				i++;			
 			}
@@ -325,7 +333,7 @@ public class ImplDao implements Dao{
 				request.setRequesterId(6);
 				request.setAdminId(info.getInt(7));
 				
-				request.setType(stateTypes[info.getInt(8)]);
+				request.setType(stateTypes.get(info.getInt(8)));
 				
 				request.setAdminNote(info.getString(9));
 				list.add(i, request);
@@ -337,6 +345,37 @@ public class ImplDao implements Dao{
 		}
 		
 		return list;
+	}
+
+	@Override
+	public Request getRequestById(int id) {
+		Request request = new Request();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT * FROM requests WHERE requestid = ?";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			ps.setInt(1, id);
+			ResultSet info = ps.executeQuery();
+			
+			info.next();
+			request.setId(info.getInt(1));
+			request.setDateOpened(info.getDate(2));
+			request.setDateClosed(info.getDate(3));
+			request.setBalance(info.getInt(4));
+			request.setPurpose(info.getString(5));
+			request.setRequesterId(6);
+			request.setAdminId(info.getInt(7));
+			
+			request.setType(stateTypes.get(info.getInt(8)));
+			
+			request.setAdminNote(info.getString(9));
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return request;
 	}
 
 }

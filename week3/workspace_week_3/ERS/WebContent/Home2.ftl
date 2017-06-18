@@ -8,7 +8,17 @@
 	<script>
 	$(document).ready(function(){
 	    $('#reqTable').DataTable({
-	    	  "columnDefs": [{ "width": "30%", "targets": 2 }]
+	    	"columnDefs": [
+	    		{ "width": "7%", "targets": 0},
+	    		{ "width": "5%", "targets": 1},
+	    		{ "width": "25%", "targets": 2},
+	    		{ "width": "7%", "targets": 3},
+	    		{ "width": "8%", "targets": 4},
+	    		{ "width": "8%", "targets": 5},
+	    		{ "width": "25%", "targets": 6},
+	    		{ "width": "6%", "targets": 7},
+	    		{ "width": "9%", "targets": 8}
+	    	]
 	    });
 	});
 	</script>
@@ -23,6 +33,46 @@
 
 <style>
 
+/* The Modal (background) */
+.modal {
+	backdrop: 'static';
+	display: none;
+    position: fixed; /* Stay in place */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    data-backdrop: 'static';
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 table{
   margin: 0 auto;
   clear: both;
@@ -30,6 +80,15 @@ table{
 }
 
 div#newuser{
+    float: left;
+    margin-top: -370px;
+    margin-right: 10px;
+    height: 250px;
+    width: 350px;
+    color: black;
+}
+
+div#newrequest{
     float: left;
     margin-right: 10px;
     height: 250px;
@@ -47,7 +106,7 @@ div#requesttable{
 
 div#requestdiv{
     height: 900px;
-    width: 900px;
+    width: 1500px;
     overflow-y: scroll;
     color: black;
     background-color: white;
@@ -74,6 +133,66 @@ div#editInfo{
 			<input class="btn-primary" type="submit" name="logout" value="Log Out" />
 		</form>
 
+		<div id="newrequest" class="jumbotron">
+			<#if createrequest! == "success">
+			<h3 style="color:green">Request submitted.</h3>
+			</#if>
+			<#if createrequest! == "fail">
+			<h3 style="color:red">Invalid entry. Please try again.</h3>
+			</#if>
+			<h4>Create a New Reimbursement Request</h3>
+			<form method="POST" action="createRequest">
+			<input class="form-control" type="number" name="amount" min="1.00" min="1000.00" step="0.01" required="required" placeholder="$0.00">
+			<input class="form-control" type="text" name="purpose" placeholder="Purpose of spending" required="required" maxlength="255" style="margin-bottom: 10px"/>
+			<input class="btn-primary" type="submit" value="Submit Request"/>
+			</form>
+		</div>
+		
+		<div id="requestdiv" class="jumbotron">
+				<table id="reqTable" class="display" cellspacing="0" width="98%">
+					<thead>
+						<tr >
+							<th style="text-align:center;">Request ID</th>
+							<th style="text-align:center;">Amount</th>
+							<th style="text-align:center;">Purpose</th>
+							<th style="text-align:center;">Status</th>
+							<th style="text-align:center;">Date Opened</th>
+							<th style="text-align:center;">Date Closed</th>
+							<th style="text-align:center;">Admin Note</th>
+							<th style="text-align:center;">Admin ID</th>
+							<th style="text-align:center;">Employee ID</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<th>Request ID</th>
+							<th>Amount</th>
+							<th>Purpose</th>
+							<th>Status</th>
+							<th>Date Opened</th>
+							<th>Date Closed</th>
+							<th>Admin Note</th>
+							<th>Admin ID</th>
+							<th>Employee ID</th>
+						</tr>
+				   </tfoot>
+					<tbody>
+						<#list Requests as req>
+							<tr>
+								<td style="text-align:center;">${req.getId()}</td>
+								<td style="text-align:center;">${req.getBalance()}</td>
+								<td>${req.getPurpose()}</td>
+								<td style="text-align:center;">${req.getType()}</td>
+								<td style="text-align:center;">${req.getDateOpened()}</td>
+								<td style="text-align:center;">${req.getDateClosed()!"N/A"}</td>
+								<td>${req.getAdminNote()!"N/A"}</td>
+								<td style="text-align:center;">${req.getAdminId()!"N/A"}</td>
+								<td style="text-align:center;">${req.getRequesterId()}</td>
+							</tr>
+						</#list>
+					</tbody>
+				</table>
+		</div>
 		
 		<div id="newuser" class="jumbotron">
 			<#if createuser! == "success">
@@ -96,48 +215,6 @@ div#editInfo{
 			</form>
 		</div>
 		
-		<div id="requestdiv" class="jumbotron">
-				<table id="reqTable" class="display" cellspacing="0" width="98%">
-					<thead>
-						<tr >
-							<th style="text-align:center;">Request ID</th>
-							<th style="text-align:center;">Amount</th>
-							<th style="text-align:center;">Purpose</th>
-							<th style="text-align:center;">Status</th>
-							<th style="text-align:center;">Date Opened</th>
-							<th style="text-align:center;">Date Closed</th>
-							<th style="text-align:center;">Admin Note</th>
-							<th style="text-align:center;">Admin ID</th>
-						</tr>
-					</thead>
-					<tfoot>
-						<tr>
-							<th>Request ID</th>
-							<th>Amount</th>
-							<th>Purpose</th>
-							<th>Status</th>
-							<th>Date Opened</th>
-							<th>Date Closed</th>
-							<th>Admin Note</th>
-							<th>Admin ID</th>
-						</tr>
-				   </tfoot>
-					<tbody>
-						<#list Requests as req>
-							<tr>
-								<td>${req.getId()}</td>
-								<td>${req.getBalance()}</td>
-								<td>${req.getPurpose()}</td>
-								<td>${req.getType()}</td>
-								<td>${req.getDateOpened()}</td>
-								<td>${req.getDateClosed()!"N/A"}</td>
-								<td>${req.getAdminNote()!"N/A"}</td>
-								<td>${req.getAdminId()!"N/A"}</td>
-							</tr>
-						</#list>
-					</tbody>
-				</table>
-		</div>
 		
 		<div id="editInfo">
 			<#if editing! == "success">
@@ -171,6 +248,92 @@ div#editInfo{
 		</div>
 		
 	</div>
+	
+	
+	<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">EDIT</h4>
+      </div>
+      <div class="modal-body">
+      	<form method="POST" action="editRequest">
+        <pre style="float:left"> Request Id <input class="form-control" type="text" class="input-sm" id="requestid" name="requestid" required="required" readonly/></pre>
+        <pre style="float:left">     Status <input class="form-control" type="text" class="input-sm" name="status" id="status" disabled="true"/></pre>
+        <pre> Employee Id <input class="form-control" type="text" class="input-sm" id="employeeid" name="employeeid" required="required" readonly/></pre>
+        <pre style="float:left">     Amount <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter an amount" id="amt" name="amt"/></pre>
+        <pre>   Admin Id <input class="form-control" type="text" class="input-sm" id="adminid" name="adminid" disabled="true"/></pre>
+        <pre>    Purpose <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter a detailed purpose" id="purpose" name="purpose"/></pre>    
+        <pre> Admin Note <input class="form-control" type="text" class="input-sm" name="adminNote" id="adminNote" required="required"/></pre>
+        <pre style="float:left">Date Opened: <input class="form-control" type="text" class="input-sm" name="dateOpened" id="dateOpened" disabled="true"/></pre>
+        <pre>Date Closed <input class="form-control" type="text" class="input-sm" name="dateClosed" id="dateClosed" disabled="true" /></pre>
+		<div class="modal-footer">
+        	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        	<input type="submit" name="submit" class="btn btn-primary" value="Save changes"/>
+        </div>
+        <div class="modal-footer">
+        	<input style="background-color: crimson; color: white;" id="delete" name="delete" type="submit" class="btn" value="Delete Request"/>
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input style="background-color: indianred; color: white;" type="submit" id="deny" name="deny" class="btn" value="Deny"/>
+			<input style="background-color: limegreen; color: black;" type="submit" id="approve" name="approve" class="btn" value="Approve"/>
+        </div>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<script>
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+$('table tbody tr  td').on('click',function(){
+    $('#myModal').modal({
+  		backdrop: 'static'
+	}); 
+    $("#requestid").val($(this).closest('tr').children()[0].textContent);
+    $("#amt").val($(this).closest('tr').children()[1].textContent);
+    $("#purpose").val($(this).closest('tr').children()[2].textContent);
+    $("#status").val($(this).closest('tr').children()[3].textContent);
+    $("#dateOpened").val($(this).closest('tr').children()[4].textContent);
+    $("#dateClosed").val($(this).closest('tr').children()[5].textContent);
+    $("#adminNote").val($(this).closest('tr').children()[6].textContent);
+    $("#adminid").val($(this).closest('tr').children()[7].textContent);
+    $("#employeeid").val($(this).closest('tr').children()[8].textContent);
+    
+    var employeeid = document.getElementById('employeeid').value
+    
+    if(${user.getId()} ==  employeeid) {
+    	$('#deny').attr('disabled', 'disabled');
+    	$('#approve').attr('disabled', 'disabled');
+    	$('#adminNote').attr("readonly", "true");
+    }
+    else {
+    	$('#delete').attr('disabled', 'disabled');
+    }
+});
+
+
+$(function(){
+    /*
+     * this swallows backspace keys on any non-input element.
+     * stops backspace -> back
+     */
+    var rx = /INPUT|SELECT|TEXTAREA/i;
+
+    $(document).bind("keydown keypress", function(e){
+        if( e.which == 8 ){ // 8 == backspace
+            if(!rx.test(e.target.tagName) || e.target.disabled || e.target.readOnly ){
+                e.preventDefault();
+            }
+        }
+    });
+});
+
+</script>
 
 </body>
 

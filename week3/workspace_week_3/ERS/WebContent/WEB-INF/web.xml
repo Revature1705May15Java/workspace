@@ -34,11 +34,11 @@
     <url-pattern>/create</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>Employee</servlet-name>
-    <servlet-class>com.ers.servlets.EmployeeServlet</servlet-class>
+    <servlet-name>Request</servlet-name>
+    <servlet-class>com.ers.servlets.RequestServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Employee</servlet-name>
+    <servlet-name>Request</servlet-name>
     <url-pattern>/createRequest</url-pattern>
   </servlet-mapping>
   <servlet>

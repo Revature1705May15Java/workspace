@@ -31,7 +31,6 @@ public class EditInfoServlet extends HttpServlet {
 			}
 			
 			temp = request.getParameter("newpw");
-			System.out.println(temp.equals("") + "  AND  " + temp.equals(null));
 			if(temp.equals(request.getParameter("newpw2")) && u.getPassword().equals(request.getParameter("oldpw"))){
 				u.setPassword(temp); // If the original password matches the database and both new password fields match each other, change the password.
 			} else if(request.getParameter("oldpw").equals("") && request.getParameter("newpw").equals("") && request.getParameter("newpw2").equals("")){} //If all passwords are null they do not wish to edit. Do nothing.

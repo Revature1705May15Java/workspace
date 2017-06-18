@@ -27,7 +27,6 @@ public class EditRequestServlet extends HttpServlet {
 		User u = (User) session.getAttribute("user");
 		Service service = new Service();
 		boolean wasUpdated = false;
-		System.out.println("In edit servlet! " + u.toString());
 		try{
 			if(request.getParameter("delete") != null) { // delete button was pressed, delete request.
 				if(service.deleteRequest(Integer.parseInt(request.getParameter("requestid")))) {
@@ -38,23 +37,32 @@ public class EditRequestServlet extends HttpServlet {
 				}
 			}
 			else { // updating the request.
-				Request req = new Request();
-				System.out.println(request.getParameter("requestid") + "????");
-				req.setId(Integer.parseInt(request.getParameter("requestid")));
+				Request req = service.getRequestById(Integer.parseInt(request.getParameter("requestid")));
+				
+				if(request.getParameter("approve") != null) {
+					System.out.println("\n\n\nApproved! -->" + service.getStateType(1) + "\n");
+					req.setType(service.getStateType(1));
+				}
+				else if(request.getParameter("deny") != null) {
+					System.out.println("\n\n\nDeny! -->" + service.getStateType(2) + "\n");
+					req.setType(service.getStateType(2));
+				}
+
 				req.setBalance(Double.parseDouble(request.getParameter("amt")));
 				req.setPurpose(request.getParameter("purpose"));
-				req.setType(request.getParameter("status"));
-				
-				if(request.getParameter("dateClosed") != null) {
-					SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-					java.util.Date date = sdf.parse(request.getParameter("dateClosed"));
-					java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-					req.setDateClosed(sqlDate);
+//				req.setType(request.getParameter("status"));
+//				
+//				if(request.getParameter("dateClosed") != null) {
+//					SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+//					java.util.Date date = sdf.parse(request.getParameter("dateClosed"));
+//					java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+//					req.setDateClosed(sqlDate);
+//				}
+				if(u.getRank() == 1) {
+					req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
+					req.setAdminNote(request.getParameter("adminNote"));
 				}
-				
-				if(u.getRank() == 1) req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
-				req.setAdminNote(request.getParameter("adminNote"));
-				
+						
 				wasUpdated = service.updateRequestById(req, u);
 				if(!wasUpdated) request.setAttribute("reqEdit", "false");
 			}
@@ -64,7 +72,6 @@ public class EditRequestServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		finally { // redirect to homepage whether success or fail.
-			System.out.println("finally + " + wasUpdated);
 			if(u.getRank() == 0) request.getRequestDispatcher("home").forward(request, response); // employee page
 			if(u.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response); // manager page
 		}

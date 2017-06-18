@@ -6,7 +6,15 @@ import com.ers.pojo.Request;
 import com.ers.pojo.User;
 
 public class Service {
-	static Dao dao = new ImplDao();
+	static ImplDao dao = new ImplDao();
+	
+	public Request getRequestById(int id){
+		return dao.getRequestById(id);
+	}
+	
+	public String getStateType(int i){
+		return dao.getStateType(i);
+	}
 	
 	public boolean deleteRequest(int id){
 		return dao.deleteRequest(id);
@@ -42,9 +50,7 @@ public class Service {
 	
 	public boolean editUser(User u){
 		User temp = dao.getUser(u.getId());
-		
-		System.out.println("\n\nIN EDIT USER!! \n\n");
-		
+
 		if(!temp.getUsername().equals(u.getUsername())){
 			System.out.println("uname");
 			dao.editUser("USERNAME", u.getUsername(), u);
@@ -62,8 +68,6 @@ public class Service {
 			System.out.println("ln");
 			dao.editUser("LASTNAME", u.getLn(), u);
 		}
-		
-		
 		
 		return true;
 	}
