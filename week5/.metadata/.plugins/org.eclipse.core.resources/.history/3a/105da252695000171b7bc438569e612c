@@ -1,0 +1,26 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+
+import com.ex.pojos.Person;
+import com.ex.util.ConnectionUtil;
+
+public class DaoImpl implements DAO{
+
+	@Override
+	public void createPerson(Person p) {
+		Session session= ConnectionUtil.getSession();
+		try{
+			
+		}finally{
+			
+		}
+		
+	}
+
+	@Override
+	public Person getPersonById(int id) {
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.ex.pojos;
+
+public class Cave {
+	private int id;
+	private double squareFootage;
+	private double rent;
+	
+	
+}

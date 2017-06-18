@@ -51,9 +51,7 @@ public class DaoImpl implements DAO {
 			ResultSet info = ps.executeQuery();
 
 			Employee temp = new Employee();
-			System.out.println("here");
 			while(info.next()){
-				System.out.println("got it");
 				temp.setEmail(info.getString(1));
 				temp.setPassword(info.getString(2));
 				temp.setId(info.getInt(3));
@@ -65,7 +63,6 @@ public class DaoImpl implements DAO {
 
 
 		}catch(SQLException e){
-			System.out.println("uhoh");
 			e.printStackTrace();
 		}
 		return null;
@@ -154,7 +151,31 @@ public class DaoImpl implements DAO {
 		return null;
 	}
 
+	public ArrayList<Employee> getAllEmployees(){
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			ArrayList<Employee> emps=new ArrayList<Employee>();
+			String sql="select * from employee";
+			Statement s =connection.createStatement();
+			ResultSet info = s.executeQuery(sql);
 
+			
+			while(info.next()){
+				Employee temp = new Employee();
+				temp.setEmail(info.getString(1));
+				temp.setPassword(info.getString(2));
+				temp.setId(info.getInt(3));
+				temp.setFirstname(info.getString(4));
+				temp.setLastname(info.getString(5));
+				temp.setIsmanager(info.getInt(6));
+				emps.add(temp);
+			}
+			return emps;
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	@Override
 	public void addEmployee(String email, String pw, String fn, String ln, int ismanager) {
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
@@ -229,6 +250,52 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public void updateEmployee(String email, String pw, String fn, String ln, int empid) {
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql="update employee set email=?,password=?,firstname=?,lastname=? where id=?";
+			PreparedStatement ps =connection.prepareStatement(sql);
+			ps.setString(1,email);
+			ps.setString(2,pw);
+			ps.setString(3,fn);
+			ps.setString(4, ln);
+			ps.setInt(5, empid);
+			ps.executeUpdate();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void updateRequests(int newstate, int[] requestids,String[] notes,int resolverid) {
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql="update requests set stateid=?, resolverid=?, resdate = current_date where requestid=?";
+			for(int i=0;i<requestids.length-1;i++){
+				sql=sql+" or requestid=?";
+			}
+			PreparedStatement ps =connection.prepareStatement(sql);
+			ps.setInt(1, newstate);
+			ps.setInt(2, resolverid);
+			for(int i=0;i<requestids.length;i++){
+				ps.setInt(i+3, requestids[i]);
+			}
+			ps.executeUpdate();
+			String sql2 ="update requests set note=? where requestid=?";
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			for(int i=0;i<notes.length;i++){
+				if(notes[i]!=""){
+					ps2.setString(1,notes[i]);
+					ps2.setInt(2, requestids[i]);
+					ps2.executeUpdate();
+				}
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		
 	}
 
 

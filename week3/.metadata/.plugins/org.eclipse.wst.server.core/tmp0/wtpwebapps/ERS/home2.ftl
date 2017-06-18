@@ -8,58 +8,82 @@
 
 </head>
 <body>
-
-	<div class="jumbotron">
-		<form method = "post" action = "logout">
-			<p>Logged in as <#if employee??>
+<!--jquerydatatables-->
+<div class="jumbotron">
+	<form class="" action="show" method="post">
+		Logged in as <#if employee??>
 			${employee.firstname} ${employee.lastname}
-			</#if></p>
-  		<input type="submit" class="btn btn-primary" value="Logout"/>
- 		</form>
- 	</div>
+		</#if><br />
+		Options:
+		<input type="submit" name="show" value="request">
+		<input type="submit" name="show" value="info">
+		<input type="submit" name="show" value="newreq">
+	</form>
+	<form method = "post" action = "logout">
+	 <input type="submit" class="btn btn-primary" value="Logout">
+	 </form>
+</div>
 
 
 
 
-
+<#if showing==""||showing=="reqs">
 <div class = "jumbotron">
-	 <div class="col-sm-4">
+	 <div class="col-md-8">
+		 <form method = "post" action = "filter">
+	 	 <p>Filter Your Requests</p>
+	 	 Pending:
+	 	 <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending">
+	 	 Approved:
+	 	 <input type="checkbox" class="btn btn-primary" name="Approved" value="Approved">
+	 	 Denied:
+	 	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied"><br /><br />
+	 	 <input type="submit" class="btn btn-primary" name="Filter" value="Filter">
     <p>
 			Employee Requests:
 		</p>
 
     <ul>
 			<#list modrequests as request>
-			<p>${request.amt?string.currency}<br /> Date made:  ${request.reqdate} <br />Status: ${request.name}</p>
-			Purpose: ${request.purpose}<br />
+			Amount: ${request.amt?string.currency} Date made:  ${request.reqdate} <br />Status: ${request.name}<br />
+			Purpose: ${request.purpose}<br />Note: ${request.note!"none"}
+			<br /> Resolved by:${request.resname!"none"}
 			<br /><br />
 			</#list>
     </ul>
   </div>
+	</#if>
 
-	<div class="jumbotron">
-	<form method = "post" action = "filter">
-	 <p>Filter Employee Requests</p>
-	 Pending:
-	 <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending"><br />
-	 Approved:
-	 <input type="checkbox" class="btn btn-primary" name="Approved" value="Approved"><br />
-	 Denied:
-	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied"><br />
-	 <input type="submit" class="btn btn-primary" name="Filter" value="Filter">
-	 </form>
+<#if showing==""||showing=="info">
+ <div class="jumbotron">
+ <form method = "post" action = "info">
+ 	<#if employee??>
+ 	Edit First Name:
+  <input type="text" name="newfn" class="form-control" value=${employee.firstname} placeholder="New First Name"><br />
+   Edit Last Name:
+ <input type="text" name="newln" class="form-control" value=${employee.lastname} placeholder="New Last Name"><br />
+ 	Edit Email:
+  <input type="text" name="newemail" class="form-control" value=${employee.email} placeholder="New Email"><br />
+   Edit Password:
+  <input type="password" name="newpw" class="form-control" value=${employee.password} placeholder="New Password"><br />
+  <input type="Submit" class="btn btn-primary" value="Change Account Information">
+  </#if>
+  </form>
+	</#if>
 
+<#if showing==""||showing=="newreq">
 	<div class="col-sm-4">
 		 <form method="post" action="makerequest">
 			 <p>Create New Request</p>
 			 <br/>Amount:
-			 <input type="number" step=".01" name="Amount">
+			 <input type="number" step=".01" min="0" max="10000" name="Amount" required="required">
 			 <br/>Reason:
-			 <input type="text" name="Purpose">
-			 <br/><input type="submit" class="btn btn-primary" value="Submit Request">
+			 <input type="text" name="Purpose" required="required" maxlength="50" size="50">
+			 <br/><input type="submit" class="btn btn-primary" value="Submit Request" >
 		 </form>
 		 </div>
 </div>
+</#if>
 
 </body>
 </html>

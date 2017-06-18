@@ -1,0 +1,94 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+import com.ers.service.Service;
+
+public class FilterRequestsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+   
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req,resp);
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession session = req.getSession();
+		Employee emp=(Employee)session.getAttribute("employee");
+		ArrayList<Employee> emps=new ArrayList<Employee>();
+		if(emp==null){
+			resp.sendRedirect("logout");
+		}
+		ArrayList<Request> reqs=new ArrayList<Request>();
+		if(emp.getIsmanager()==1){
+			reqs=Service.getAllRequests();
+		}
+		if(emp.getIsmanager()==0){
+			reqs=Service.getRequests(emp);
+		}
+		
+		ArrayList<Request> modreqs=new ArrayList<Request>();
+		if(req.getParameter("Pending")!=null){
+			for(Request request:reqs){
+				if(request.getName().equals("Pending")){
+					modreqs.add(request);
+				}
+			}
+		}
+		if(req.getParameter("Approved")!=null){
+			for(Request request:reqs){
+				if(request.getName().equals("Approved")){
+					modreqs.add(request);
+				}
+			}
+		}
+		if(req.getParameter("Denied")!=null){
+			for(Request request:reqs){
+				if(request.getName().equals("Denied")){
+					modreqs.add(request);
+				}
+			}
+		}
+		if(req.getParameter("Denied")==null&&req.getParameter("Approved")==null&&req.getParameter("Pending")==null){
+			for(Request request:reqs){
+				modreqs.add(request);
+			}
+		}
+		if(emp.getIsmanager()==1&&req.getParameter("showing")=="emps"){
+			emps=Service.getAllEmployees();
+			for(Employee temp:emps){
+				if(req.getParameter(""+temp.getId())==null&&temp.getIsmanager()==0){
+					int id=temp.getId();
+					for(int i=0;i<modreqs.size();i++){
+						System.out.println(""+i+" "+modreqs.get(i).getRequesterid()+" "+id);
+						if(modreqs.get(i).getRequesterid()==id){
+							modreqs.remove(i);
+						}
+					}
+				}
+			}
+			
+		}
+		
+		session.setAttribute("modrequests",modreqs);		
+		if(emp!=null&&emp.getIsmanager()==0){
+			resp.sendRedirect("home2");
+		}else if(emp!=null&&emp.getIsmanager()==1){
+			if(session.getAttribute("showing")=="emps"){
+				session.setAttribute("showing", "reqs");
+			}
+			resp.sendRedirect("home");
+		}else{
+			resp.sendRedirect("logout");
+		}
+	}
+
+}

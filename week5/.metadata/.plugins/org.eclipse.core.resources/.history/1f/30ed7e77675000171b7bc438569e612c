@@ -1,0 +1,8 @@
+package com.ex.pojos;
+
+public class Person {
+	private int id;
+	private String firstname;
+	private String lastname;
+	
+}

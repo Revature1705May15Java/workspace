@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\aguac\my_git_repos\1705May15Java\week5\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3966106090.index
+2389551406.index
+2869735360.index
+1967145874.index
+3587390039.index
+197741054.index

@@ -28,13 +28,15 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("attempt", "");
 		if(name!=null&&name!=""&&pw!=null&&pw!=""){
 			Employee emp = Service.loginUser(name, pw);
-			
 			if(emp!=null){
 				ArrayList<Request> reqs=new ArrayList<Request>();
 				session.setAttribute("employee", emp);
+				session.setAttribute("showing", "none");
 				if(emp.getIsmanager()==1){
 					resp.sendRedirect("home");
 					reqs=Service.getAllRequests();
+					ArrayList<Employee>emps=Service.getAllEmployees();
+					session.setAttribute("employees", emps);
 					session.setAttribute("requests", reqs);
 					session.setAttribute("modrequests", reqs);
 				}else if(emp.getIsmanager()==0){

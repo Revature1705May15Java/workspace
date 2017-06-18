@@ -13,7 +13,7 @@ public class Test {
 	
 	
 	public static void main(String[] args) {
-		Employee emp = Service.loginUser("markworth@gmail.com", "password");
+		Employee emp = Service.loginUser("a", "a");
 		ArrayList<Request>reqs= Service.getRequests(emp);
 		System.out.println(reqs.get(0).getName());
 		

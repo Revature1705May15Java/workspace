@@ -21,7 +21,9 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		Employee emp=(Employee)session.getAttribute("employee");
 		if(emp!=null&&emp.getIsmanager()==1){
-			System.out.println(emp.getFirstname()+" "+emp.getLastname());
+			if(session.getAttribute("showing")==null){
+				session.setAttribute("showing", "none");
+			}
 			req.getRequestDispatcher("home.ftl").forward(req, resp);
 		}else if(emp!=null&&emp.getIsmanager()==0){
 			req.getRequestDispatcher("home2").forward(req, resp);

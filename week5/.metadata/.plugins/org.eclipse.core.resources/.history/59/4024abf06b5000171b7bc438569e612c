@@ -1,0 +1,13 @@
+package com.ex.main;
+
+import com.ex.dao.DaoImpl;
+import com.ex.pojos.Person;
+
+public class MainClass {
+	
+	public static void main(String[] args) {
+		Person p = new Person(1,"Mark","Worth");
+		DaoImpl dao = new DaoImpl();
+		dao.createPerson(p);
+	}
+}

@@ -93,24 +93,40 @@
     <servlet-name>Filter</servlet-name>
     <url-pattern>/filter</url-pattern>
   </servlet-mapping>
-  
-<!--   <servlet> -->
-<!--     <servlet-name>Home_f</servlet-name> -->
-<!--     <servlet-class>com.ers.servlets.FilterRequestsServlet</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--     <servlet-name>Home_f</servlet-name> -->
-<!--     <url-pattern>/home_f</url-pattern> -->
-<!--   </servlet-mapping> -->
-  
-<!--   <servlet> -->
-<!--     <servlet-name>Home2_f</servlet-name> -->
-<!--     <servlet-class>com.ers.servlets.FilterRequestsServlet</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--     <servlet-name>Home2_f</servlet-name> -->
-<!--     <url-pattern>/home2_f</url-pattern> -->
-<!--   </servlet-mapping> -->
-  
-  
+
+	<servlet>
+	<servlet-name>Info</servlet-name>
+	<servlet-class>com.ers.servlets.InfoServlet</servlet-class>
+	</servlet>
+  	<servlet-mapping>
+  	<servlet-name>Info</servlet-name>
+  	<url-pattern>/info</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+	<servlet-name>Process</servlet-name>
+	<servlet-class>com.ers.servlets.ProcessRequestsServlet</servlet-class>
+	</servlet>
+  	<servlet-mapping>
+  	<servlet-name>Process</servlet-name>
+  	<url-pattern>/process</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+	<servlet-name>Newemployee</servlet-name>
+	<servlet-class>com.ers.servlets.NewEmployeeServlet</servlet-class>
+	</servlet>
+  	<servlet-mapping>
+  	<servlet-name>Newemployee</servlet-name>
+  	<url-pattern>/newemployee</url-pattern>
+  	</servlet-mapping>
+  	
+  	<servlet>
+  	<servlet-name>Show</servlet-name>
+  	<servlet-class>com.ers.servlets.ShowServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+  	<servlet-name>Show</servlet-name>
+  	<url-pattern>/show</url-pattern>
+  	</servlet-mapping>
 </web-app>

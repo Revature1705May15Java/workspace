@@ -6,8 +6,20 @@ public class Request {
 	int stateid,requestid,requesterid,resolverid;
 	double amt;
 	Date reqdate,resdate;
-	String purpose,note,name;
+	String purpose,note,name,reqname,resname;
 	
+	public String getReqname() {
+		return reqname;
+	}
+	public void setReqname(String reqname) {
+		this.reqname = reqname;
+	}
+	public String getResname() {
+		return resname;
+	}
+	public void setResname(String resname) {
+		this.resname = resname;
+	}
 	public int getStateid() {
 		return stateid;
 	}

@@ -23,10 +23,18 @@ public class FilterRequestsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession();
 		Employee emp=(Employee)session.getAttribute("employee");
+		
 		if(emp==null){
 			resp.sendRedirect("logout");
 		}
-		ArrayList<Request> reqs=(ArrayList<Request>)session.getAttribute("requests");
+		ArrayList<Request> reqs=new ArrayList<Request>();
+		if(emp.getIsmanager()==1){
+			reqs=Service.getAllRequests();
+		}
+		if(emp.getIsmanager()==0){
+			reqs=Service.getRequests(emp);
+		}
+		
 		ArrayList<Request> modreqs=new ArrayList<Request>();
 		if(req.getParameter("Pending")!=null){
 			for(Request request:reqs){
@@ -49,10 +57,56 @@ public class FilterRequestsServlet extends HttpServlet {
 				}
 			}
 		}
+		if(req.getParameter("Denied")==null&&req.getParameter("Approved")==null&&req.getParameter("Pending")==null){
+			for(Request request:reqs){
+				modreqs.add(request);
+			}
+		}
+		String filter=req.getParameter("Filter");
+		if(filter!=null&&emp.getIsmanager()==1&&filter.equals("Filter Employee Requests")){
+			
+			ArrayList<Employee> emps=new ArrayList<Employee>();
+			emps=Service.getAllEmployees();
+			boolean isonechecked=false;
+			for(Employee temp1:emps){
+				String boxid=""+temp1.getId()+"c";
+				System.out.println(boxid);
+				if(req.getParameter(boxid)!=null){
+					isonechecked=true;
+				}
+			}
+			if(isonechecked){
+				for(Employee temp:emps){
+					System.out.println("EMPLOYEEEEEEEEEEEEEEEEEEEEEEEEE        "+temp.getId());
+					if(temp.getIsmanager()==0){
+						System.out.println("got here");
+						String checkboxid=""+temp.getId()+"c";
+						String param=(String) req.getParameter(checkboxid);
+						System.out.println(checkboxid);
+						System.out.println(param);
+						if(param==null){
+							int id=temp.getId();
+							for(int i=modreqs.size()-1;i>-1;i--){
+								System.out.println("i: "+i+"requester id: "+modreqs.get(i).getRequesterid()+"current empid:"+id);
+								if(modreqs.get(i).getRequesterid()==id){
+									System.out.println("removing");
+									modreqs.remove(i);
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+		
 		session.setAttribute("modrequests",modreqs);		
 		if(emp!=null&&emp.getIsmanager()==0){
 			resp.sendRedirect("home2");
 		}else if(emp!=null&&emp.getIsmanager()==1){
+			if(session.getAttribute("showing")=="emps"){
+				session.setAttribute("showing", "reqs");
+			}
 			resp.sendRedirect("home");
 		}else{
 			resp.sendRedirect("logout");
