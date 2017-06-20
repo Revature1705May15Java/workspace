@@ -1,0 +1,11 @@
+package com.ex.annotatedbeans;
+
+public class Main {
+	public static void main(String[] args) {
+		AbstractApplicationContext ctxt = 
+				new AnnotationConfigApplicationContext(
+						BasicExampleConfigClass.class);
+		System.out.println(ctxt.getBean("jon"));
+	}
+
+}
