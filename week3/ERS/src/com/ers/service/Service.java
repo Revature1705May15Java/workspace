@@ -1,9 +1,12 @@
 package com.ers.service;
 
 
+import java.util.ArrayList;
+
 import com.ers.dao.DAO;
 import com.ers.dao.DaoImpl;
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
 
 public class Service {
 	static DAO dao = new DaoImpl();
@@ -49,10 +52,24 @@ public class Service {
 		return temp;
 	}
 	
+	
+	
 	public int makeRequest(int amount, String purpose, int requesterid){
 		
 		return dao.request(amount, purpose, requesterid);
 		
 		
+	}
+	
+	public ArrayList <Request> viewRequestbyId(int id){
+		return dao.getRequestsById(id);
+		
+		
+		
+	}
+	
+	public Employee updateEmployee(String uname, String pw, String fn, String ln, int id){
+		Employee updatedEmp = dao.updateEmployee(uname, pw, fn, ln, id);
+		return updatedEmp;
 	}
 }

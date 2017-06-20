@@ -2,12 +2,15 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ArrayList" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf8&quot; src=&quot;http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js&quot;&gt;&lt;/script&gt;"/>
+			<item value="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css&quot;&gt;"/>
+			<item value="getEmplo"/>
 			<item value="&lt;ArrayList&gt;"/>
 			<item value="ConnectionUtil.getConnection()"/>
 			<item value="ConnectionFac"/>

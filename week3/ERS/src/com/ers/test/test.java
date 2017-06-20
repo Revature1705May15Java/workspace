@@ -1,5 +1,6 @@
 package com.ers.test;
 
+import java.awt.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -27,13 +28,22 @@ public class test {
 		//ce = d.getEmployee("225Yose");
 		//System.out.println(ce.getFirstname());
 		//d.request(500, "R&R", 142);
-		d.alterRequest(2, "You don't got it dude", 0,140);
+		//d.alterRequest(2, "You don't got it dude", 0,140);
 		//System.out.println(d.viewEmployees());
-		//r= (d.getRequestsById(142));
-		//System.out.println(r);
-		//r =d.viewOpenRequestsById(142);
-		r = d.viewClosedRequests(142);
+		r= (d.getRequestsById(142));
 		System.out.println(r);
+		//r =d.viewOpenRequestsById(142);
+		//r = d.viewClosedRequests(142);
+		//System.out.println(r);
+		String uname = "test@un";
+		String pw = "pw";
+		String fn ="Jane";
+		String ln ="Dane";
+		int id = 142;
+		
+		//d.updateEmployee(uname, pw, fn, ln, id);
+		
+		
 	}
 
 }

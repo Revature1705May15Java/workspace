@@ -254,6 +254,36 @@ public class DaoImpl implements DAO {
 		return null;
 	}
 
+	@Override
+	public Employee updateEmployee(String uname, String pw, String fn, String ln, int id) {
+		Request r = new Request();
+		
+		
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "UPDATE Employee "
+					+ "SET USERNAME = ?,"
+					+ "PW= ?,"
+					+ "FIRSTNAME = ?"
+					+ ", LASTNAME =?"
+					+ "WHERE EID=?";
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, uname);
+			ps.setString(2, pw);
+			ps.setString(3, fn);
+			ps.setString(4, ln);
+			ps.setInt(5, id);
+			int numRows = ps.executeUpdate();
+
+			System.out.println("Number of rows updated: "+numRows);
+			return getEmployee(uname);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return getEmployee(uname);
+	}
+
 
 
 

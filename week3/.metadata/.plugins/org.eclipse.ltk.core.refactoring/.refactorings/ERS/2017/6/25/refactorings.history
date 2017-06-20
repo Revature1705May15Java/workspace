@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ERS/WebContent/mHome.html&apos; to &apos;mHome.ftl&apos;" description="Rename resource &apos;mHome.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/mHome.html" name="mHome.ftl" stamp="1497923632932" updateReferences="true"/>
+</session>

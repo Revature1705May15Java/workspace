@@ -10,6 +10,7 @@ public interface DAO {
 	
 	public int addEmployee(String uname, String pw,String fn, String ln, int isManager);
 	public Employee getEmployee(String uname);
+	public Employee updateEmployee(String uname, String pw, String fn, String ln, int id);
 	public int request(int amount, String purpose, int requesterid);
 	
 	public ArrayList <Request> getRequestsById(int id);
