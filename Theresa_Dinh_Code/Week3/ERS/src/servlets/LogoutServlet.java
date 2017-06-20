@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +15,8 @@ import javax.servlet.http.HttpSession;
  * Servlet implementation class LogoutServlet
  */
 @WebServlet({ "/LogoutServlet", "/logout" })
-public class LogoutServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet 		// DONE!!!
+{
 	private static final long serialVersionUID = 1L;
 
     public LogoutServlet() 
@@ -33,7 +35,8 @@ public class LogoutServlet extends HttpServlet {
 	{
 		HttpSession session = request.getSession(false);
 		session.invalidate();
-		
+		RequestDispatcher rd = request.getRequestDispatcher("logout.ftl"); 
+		rd.forward(request, response);
 		ServletContext context = request.getServletContext(); 
 		context.getNamedDispatcher("LoginServlet"); 
 	}

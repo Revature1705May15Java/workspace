@@ -50,9 +50,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profile.ftl">View/Update Profile</a></li>
+                                <li name="update-prof"><a href="profile.ftl"><button id="hidden-button" type="submit" action="profile" method="post">View/Update Profile</button></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="logout.ftl">Logout</a></li>
+                                <li name="logout"><a href="logout.ftl"><button id="hidden-button" type="submit" action="logout" method="post">Logout</button></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -67,8 +67,8 @@
                 <!-- Nav Sidebar -->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a id="employee-list" href="javascript:void(0)">View All Employees <span class="sr-only">(current)</span></a></li>
-                        <li><a id="manager-list" href="javascript:void(0)">View All Managers</a></li>
+                        <li class="active"><a id="employee-list" href="javascript:void(0)"><button id="hidden-button" type="submit" action="emptables" method="post" name="all-emps">View All Employees</button><span class="sr-only">(current)</span></a></li>
+                        <li><a id="manager-list" href="javascript:void(0)"><button id="hidden-button" type="submit" action="emptables" method="post" name="all-mngrs">View All Managers</button></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

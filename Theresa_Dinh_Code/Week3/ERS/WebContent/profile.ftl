@@ -53,9 +53,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profile.ftl">View/Update Profile</a></li>
+                              <li name="update-prof"><a href="profile.ftl"><button id="hidden-button" type="submit" action="profile" method="post">View/Update Profile</button></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="logout.ftl">Logout</a></li>
+                                <li name="logout"><a href="logout.ftl"><button id="hidden-button" type="submit" action="logout" method="post">Logout</button></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -91,9 +91,15 @@
             <label for="password" class="control-label">Password: </label>
             <input type="text" class="form-control" id="password">            
 -->
-            <br>
+            <br><br><br>
             <button type="submit" class="btn btn-default" value="update">Save Changes</button>
         </form>
+        <#if profile! == "pass">
+            <h3 style="color:#14b251">      Your personal info has been sucessfully updated.</h3>
+        </#if>
+        <#if profile! == "fail">
+            <h3 style="color:#c91d1d">      Your request was not processed correctly. Please try again later.</h3>
+        </#if>
         
 
         <!-- footer -->

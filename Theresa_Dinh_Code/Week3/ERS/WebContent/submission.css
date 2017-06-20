@@ -5,6 +5,11 @@ body
     padding-left: 20px; 
 /*    padding-bottom: 20px;    */
 }
+#hidden-button 
+{
+    background: transparent;
+    border: none !important;
+}
 .sub-header 
 {
   padding-bottom: 10px;

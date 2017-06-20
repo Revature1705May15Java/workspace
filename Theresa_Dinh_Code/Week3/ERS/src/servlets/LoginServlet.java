@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,10 +50,12 @@ public class LoginServlet extends HttpServlet
 				employee = service.getEmployee(new Employee(email, password)); 
 				RequestDispatcher rd; 
 				
+
 				session.setAttribute("employee", employee);
 				
 				if(employee.getManagerId() == 0)	//not a Manager
 				{
+					session.setAttribute("manager", "false");
 					rd = request.getRequestDispatcher("home.ftl");
 					rd.forward(request, response);
 //					response.sendRedirect("home");
@@ -62,10 +63,11 @@ public class LoginServlet extends HttpServlet
 				}
 				else if(employee.getManagerId() == 1)	// a Manager
 				{
+					session.setAttribute("manager", "true");
 					rd = request.getRequestDispatcher("manager.ftl"); 
 					rd.forward(request, response);
-					ServletContext context = request.getServletContext(); 
-					rd = context.getNamedDispatcher("HomeServlet"); 
+//					ServletContext context = request.getServletContext(); 
+//					rd = context.getNamedDispatcher("HomeServlet"); 
 				}
 			}
 			else

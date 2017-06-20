@@ -40,12 +40,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>  ERS</a>   
+                    <!-- brand -->
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>  ERS</a>   
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="manager.ftl">Requests<span class="sr-only">(current)</span></a></li>
+
+                        <!-- redirect to manager or regular home -->
+                        <#if manager! == "false">
+                            <li><a href="manager.ftl">Requests<span class="sr-only">(current)</span></a></li>
+                        </#if>
+                        <#if manager! == "true">
+                            <li><a href="home.ftl">Requests<span class="sr-only">(current)</span></a></li>
+                        </#if>
                         <li><a href="employees.ftl">Employees</a></li>
                     </ul>
                     
@@ -54,9 +62,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profile.ftl">View/Update Profile</a></li>
+                              <li name="update-prof"><a href="profile.ftl"><button id="hidden-button" type="submit" action="profile" method="post">View/Update Profile</button></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="logout.ftl">Logout</a></li>
+                                <li name="logout"><a href="logout.ftl"><button id="hidden-button" type="submit" action="logout" method="post">Logout</button></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -66,26 +74,6 @@
         
         <h2 class="sub-header">Submit New Reimbursement Request</h2>
         <form class="form-horizontal" action="request" method="post">
-<!--
-            <div class="form-group">
-                <label for="first-name" class="control-label col-sm-2">First Name:</label>
-                <div class="col-xs-5">
-                    <input type="text" name="first-name" class="form-control" id="first-name" placeholder="Enter your first name">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="last-name" class="control-label col-sm-2">Last Name:</label>
-                <div class="col-xs-5">
-                    <input type="text" name="last-name" class="form-control" id="last-name" placeholder="Enter your last name">
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email" class="control-label col-sm-2">Email:</label>
-                <div class="col-xs-5">
-                    <input type="text" name="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-            </div>
--->
             <div class="form-group">
                 <label for="amount" class="control-label col-sm-2">Amount:</label>
                 <div class="col-xs-5">
@@ -99,14 +87,14 @@
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-default" value="submit">Submit</button>
+            <button type="submit" action="request" method="post" class="btn btn-default" value="submit">Submit</button>
         </form>
         
         <#if request! == "pass">
             <h3 style="color:#14b251">Your request has been sucessfully submitted.</h3>
         </#if>
         <#if request! == "fail">
-            <h3 style="color:#c91d1d">Your request was not processed correctly Please try again later.</h3>
+            <h3 style="color:#c91d1d">Your request was not processed correctly. Please try again later.</h3>
         </#if>
         
         <div id="footer">

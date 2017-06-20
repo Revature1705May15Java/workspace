@@ -8,6 +8,10 @@
         <!-- JQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         
+        <!-- Data Tables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.css"/>
+        
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Latest compiled and minified CSS -->
@@ -16,13 +20,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
-
-        <!-- Data Tables -->
-        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
         
         <title>ERS Portal</title>
         <link rel="stylesheet" href="manager.css">
+
         <script src="manager.js"></script>
     </head>
     
@@ -47,14 +48,14 @@
                         <li><a href="employees.ftl">Employees</a></li>
                     </ul>
                     
-
+                    <!-- dropdown menu-->
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li name="update-prof"><a href="profile.ftl">View/Update Profile</a></li>
+                                <li name="update-prof"><a href="profile.ftl"><button id="hidden-button" type="submit" action="profile" method="post">View/Update Profile</button></a></li>
                                 <li role="separator" class="divider"></li>
-                                <li name="logout"><a href="logout.ftl">Logout</a></li>
+                                <li name="logout"><a href="logout.ftl"><button id="hidden-button" type="submit" action="logout" method="post">Logout</button></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -68,24 +69,25 @@
                 <!-- Nav Sidebar -->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active"><a href="javascript:void(0)">Pending Requests <span class="sr-only">(current)</span></a></li>
-                        <li><a id="approve-req" href="javascript:void(0)">Approved Requests</a></li>
-                        <li><a id="deny-req" href="javascript:void(0)">Denied Requests</a></li>
-                        <li><a id="all-req" href="javascript:void(0)">View All Requests</a></li>
+                        <li class="active" name="pending-req"><a href="javascript:void(0)"><button name="pending-req" id="hidden-button" action="reqtables" method="post">Pending Requests</button><span class="sr-only">(current)</span></a></li>
+                        <li name="approve-req"><a id="approve-req" href="manager.ftl"><button id="hidden-button" action="reqtables" method="post">Approved Requests</button></a></li>
+                        <li name="deny-req"><a id="deny-req" href="javascript:addParam('table','deny-req')">Denied Requests</a></li>
+                        <li name="all-req"><a id="all-req" href="javascript:addParam('table=all-req)">View All Requests</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li name="submit-new"><a id="new-req" href="submission.ftl">Submit New Request</a></li>
-                        <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li>
+                        <li name="submit-new"><a id="new-req" href="submission.ftl"><button id="hidden-button" type="submit" action="request" method="post">Submit New Request</button></a></li>
+                        <li><a id="own-req" href="javascript:addParam('table=own-req)">View Your Requests</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <h1 class="page-header">Dashboard</h1>     
+                    <h1 class="page-header">Dashboard</h1>   
+                    
                     <!-- Pending Requests Table -->
             <!--        Badge of Total Pending Requests -->
-                    <h2 class="sub-header" id="table-header">Requests Awaiting Approval</h2>
+                    <h2 class="sub-header" id="table-subheader">Requests Awaiting Approval</h2>
                     <!--    -->
                     <div class="table-responsive" id="body-table" action="RequestsServlet" method="get">
-                        <table class="table table-striped">
+                        <table class="table display dataTable" id="req-table">
                             <thead>
                                 <tr>
                                     <th>Firstname</th>
@@ -94,21 +96,12 @@
                                     <th>Amount Requested</th>
                                     <th>Purpose</th>
                                     <th>Date Submitted</th>
-                                    <th>Approve/Deny Requests</th>
+<!--                                    <th>Approve/Deny Requests</th>-->
                                 </tr>
                             </thead>
                             <tbody>
                                 <!-- On rows -->
                                 <tr>
-<!--
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
-                                    <td><center>...</center></td>
--->
                                     <td>...</td>
                                     <td>...</td>
                                     <td>...</td>
@@ -117,29 +110,18 @@
                                     <td>...</td>
                                     <td>...</td>
                                 </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                <!--                <tr class="info">...</tr>-->
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Firstname</th>
+                                    <th>Lastname</th>
+                                    <th>Email</th>
+                                    <th>Amount Requested</th>
+                                    <th>Purpose</th>
+                                    <th>Date Submitted</th>
+<!--                                    <th>Approve/Deny Requests</th>-->
+                                </tr>
+                            </tfoot>                            
                         </table>
                     </div>
                 </div>

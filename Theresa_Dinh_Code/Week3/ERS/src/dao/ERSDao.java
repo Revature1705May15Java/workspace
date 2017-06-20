@@ -48,7 +48,7 @@ public class ERSDao
 			c.commit();
 			ps.close();
 			c.setAutoCommit(true);
-			
+			c.close();
 		}
 		catch(SQLException e)
 		{
@@ -82,6 +82,7 @@ public class ERSDao
 			c.commit();
 			ps.close();
 			c.setAutoCommit(true);	
+			c.close();
 			return true; 
 		}
 		catch(SQLException e)
@@ -120,6 +121,7 @@ public class ERSDao
 			c.commit();
 			ps.close();
 			c.setAutoCommit(true);	
+			c.close();
 			return true; 
 		}
 		catch(SQLException e)
@@ -155,6 +157,7 @@ public class ERSDao
 			
 				return temp; 
 			}
+			c.close();
 		}
 		catch(SQLException e)
 		{
@@ -188,6 +191,7 @@ public class ERSDao
 			
 				return temp; 
 			}
+			c.close();
 		}
 		catch(SQLException e)
 		{
@@ -196,6 +200,100 @@ public class ERSDao
 		return null;
 	}
     
+	public Employee getEmployee(int id)
+	{
+		try(Connection c = ConnectionFactory.getInstance().getConnection();)
+		{
+			String s = "SELECT * FROM EMPLOYEE WHERE ID = ?"; 
+			PreparedStatement ps = c.prepareStatement(s);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery(); 
+			while(rs.next())
+			{
+				// email, password, id, firstname, lastname, ismanager 
+				Employee temp = new Employee(); 
+				temp.setEmail(rs.getString(1));
+				temp.setPassword(rs.getString(2));
+				temp.setId(rs.getInt(3));
+				temp.setFirstName(rs.getString(4));
+				temp.setLastName(rs.getString(5));
+				temp.setManagerId(rs.getInt(6));
+				return temp; 
+			}
+			c.close();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		} 
+		return null;
+	}
+	
+	// returns an ArrayList of all Employees
+	public ArrayList<Employee> getAllEmployees()
+	{
+		ArrayList<Employee> employees = new ArrayList<Employee>(); 
+        
+        try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM EMPLOYEE"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+				Employee temp = new Employee(); 
+				temp.setEmail(rs.getString(1));
+				temp.setPassword(rs.getString(2));
+				temp.setId(rs.getInt(3));
+				temp.setFirstName(rs.getString(4));
+				temp.setLastName(rs.getString(5));
+				temp.setManagerId(rs.getInt(6));
+                employees.add(temp); 
+            }
+            c.close(); 
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return employees; 
+	}
+	
+	// returns an ArrayList of all Employees that are Managers
+	public ArrayList<Employee> getAllManagers()
+	{
+		ArrayList<Employee> employees = new ArrayList<Employee>(); 
+        
+        try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM EMPLOYEE WHERE ISMANAGER = 1"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+				Employee temp = new Employee(); 
+				temp.setEmail(rs.getString(1));
+				temp.setPassword(rs.getString(2));
+				temp.setId(rs.getInt(3));
+				temp.setFirstName(rs.getString(4));
+				temp.setLastName(rs.getString(5));
+				temp.setManagerId(rs.getInt(6));
+                employees.add(temp); 
+            }
+            c.close(); 
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return employees; 
+	}
+	
     // returns an ArrayList of all Requests ever submitted by the Employee
     // takes the Employee's username/email to find all their requests in db 
     public ArrayList<Request> getRequests(String email)
@@ -224,6 +322,74 @@ public class ERSDao
                 temp.setApproverId(rs.getInt(8));
                 requests.add(temp); 
             }
+            c.close();
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return requests; 
+    }
+    
+	
+	public ArrayList<Request> getAllRequests()
+	{
+		ArrayList<Request> requests = new ArrayList<Request>(); 
+
+    	try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM REQUEST"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+                Request temp = new Request(); 
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
+                requests.add(temp); 
+            }
+            c.close();
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return requests; 
+	}
+    
+    public ArrayList<Request> getApprovedRequests()
+    {
+    	ArrayList<Request> requests = new ArrayList<Request>(); 
+
+    	try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM REQUEST WHERE STATUSID = 1"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+                Request temp = new Request(); 
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
+                requests.add(temp); 
+            }
+            c.close();
         }
         catch(SQLException e)
         {
@@ -232,6 +398,39 @@ public class ERSDao
         return requests; 
     }
 	
+    public ArrayList<Request> getDeniedRequests()
+    {
+    	ArrayList<Request> requests = new ArrayList<Request>(); 
+
+    	try(Connection c = ConnectionFactory.getInstance().getConnection();)
+        {
+            String s = "SELECT * FROM REQUEST WHERE STATUSID = 2"; 
+            PreparedStatement ps = c.prepareStatement(s); 
+            
+            ResultSet rs = ps.executeQuery(); 
+            
+            while(rs.next())
+            {
+                Request temp = new Request(); 
+                temp.setStatusId(rs.getInt(1)); 
+                temp.setRequestDate(rs.getTimestamp(2));
+                temp.setResolveDate(rs.getTimestamp(3));
+                temp.setAmount(rs.getDouble(4));
+                temp.setPurpose(rs.getString(5));
+                temp.setRequestId(rs.getInt(6));
+                temp.setRequesterId(rs.getInt(7));
+                temp.setApproverId(rs.getInt(8));
+                requests.add(temp); 
+            }
+            c.close();
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace(); 
+        }
+        return requests;     	
+    }
+    
     // returns an ArrayList of all requests that are still pending 
     // Parameter: none 
     public ArrayList<Request> getPendingRequests()
@@ -258,6 +457,7 @@ public class ERSDao
                 temp.setApproverId(rs.getInt(8));
                 requests.add(temp); 
             }
+            c.close();
         }
         catch(SQLException e)
         {
@@ -290,6 +490,7 @@ public class ERSDao
                 temp.setRequesterId(rs.getInt(7));
                 temp.setApproverId(rs.getInt(8));
             }
+            c.close();
         }
         catch(SQLException e)
         {
@@ -325,6 +526,7 @@ public class ERSDao
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	c.close();
 	    	return true; 
     	}
     	catch(SQLException e)
@@ -364,6 +566,7 @@ public class ERSDao
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	c.close();
 	    	return true; 
     	}
     	catch(SQLException e)
@@ -400,6 +603,7 @@ public class ERSDao
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);
+	    	c.close();
 	    	return true; 
     	}
     	catch(SQLException e)

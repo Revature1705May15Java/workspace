@@ -1,0 +1,22 @@
+package servlets;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class Redirect 
+{
+	public void process(HttpServletRequest request)
+	{
+		switch(request.getRequestURI())
+		{
+			case "":
+			{
+				TableEmployeeServlet.writeTable(""); 
+				break;
+			}
+			case "/FilesFun/profile.do":
+			{
+				return UploadImageController.uploadImage(request); 
+			}
+		}
+	}
+}

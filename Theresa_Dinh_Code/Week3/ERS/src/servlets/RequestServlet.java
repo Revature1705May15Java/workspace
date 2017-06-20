@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,8 @@ import service.ErsService;
  * Servlet implementation class RequestServlet
  */
 @WebServlet({ "/RequestServlet", "/request" })
-public class RequestServlet extends HttpServlet {
+public class RequestServlet extends HttpServlet 	// DONE!!!!
+{
 	private static final long serialVersionUID = 1L;
        
 
@@ -38,7 +40,7 @@ public class RequestServlet extends HttpServlet {
 		HttpSession session = request.getSession(true); 
 		Employee employee = (Employee)session.getAttribute("employee"); 
 		ErsService service = new ErsService(); 
-		
+		RequestDispatcher rd; 
 		double amount = Double.parseDouble(request.getParameter("amount")); 
 		String purpose = request.getParameter("purpose"); 
 		
@@ -47,12 +49,18 @@ public class RequestServlet extends HttpServlet {
 		if(service.submitRequest(amount, purpose, employee.getEmail()))
 		{
 			session.setAttribute("request", "pass");
+			rd = request.getRequestDispatcher("submission.ftl");
+			rd.forward(request, response);
 			ServletContext context = request.getServletContext(); 
 			context.getNamedDispatcher("HomeServlet"); 
 		}
 		else
 		{
 			session.setAttribute("request", "fail");
+			rd = request.getRequestDispatcher("submission.ftl");
+			rd.forward(request, response);
+			ServletContext context = request.getServletContext(); 
+			context.getNamedDispatcher("HomeServlet"); 
 		}
 		
 	}

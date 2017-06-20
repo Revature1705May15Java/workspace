@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +15,8 @@ import service.ErsService;
 
 
 @WebServlet({ "/ProfileServlet", "/profile" })
-public class ProfileServlet extends HttpServlet {
+public class ProfileServlet extends HttpServlet 	// DONE!!!
+{
 	private static final long serialVersionUID = 1L;
        
     public ProfileServlet() 
@@ -37,11 +39,25 @@ public class ProfileServlet extends HttpServlet {
         ErsService service = new ErsService(); 
 
     
+        // get updated names from HTML form 
         String firstName = request.getParameter("first-name"); 
         String lastName = request.getParameter("last-name"); 
         
+        RequestDispatcher rd; 
+        session.setAttribute("profile", "-");
 
-        service.updateEmployee(employee, firstName, lastName); 
+        if(service.updateEmployee(employee, firstName, lastName))
+        {
+        	session.setAttribute("profile", "pass");
+        	rd = request.getRequestDispatcher("profile.ftl");
+			rd.forward(request, response);
+        }
+        else
+        {
+        	session.setAttribute("profile", "fail");
+        	rd = request.getRequestDispatcher("profile.ftl");
+			rd.forward(request, response);
+        }
 	}
 
 }

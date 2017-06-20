@@ -13,7 +13,11 @@ body
 {
   border: 0;
 }
-
+#hidden-button 
+{
+    background: transparent;
+    border: none !important;
+}
 .sidebar 
 {
   display: none;
