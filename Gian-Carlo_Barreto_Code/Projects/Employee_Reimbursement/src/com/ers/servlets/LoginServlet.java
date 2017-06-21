@@ -2,6 +2,7 @@ package com.ers.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
 import com.ers.service.Service;
 
 /**
@@ -19,6 +21,9 @@ import com.ers.service.Service;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final int NOTFOUND = -1;
+	private static final int WPASS = 0;
+	private static final int FOUND = 1;
        
     public LoginServlet() {
         super();
@@ -30,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Gets the username and password from the login form
-		String user = request.getParameter("username");
+		String email = request.getParameter("email");
 		String pass = request.getParameter("password");
 		Employee employee = new Employee();
 		Service service = new Service();
@@ -41,15 +46,21 @@ public class LoginServlet extends HttpServlet {
 		request.setAttribute("login", "-");
 		
 		try {
-			employee = service.confirmLogin(user, pass);
-			if (employee != null) {
+			int status = service.confirmLogin(email, pass);
+			if (status == FOUND) {
 				System.out.println("Success");
+				employee = service.getEmployee(email, pass);
 				session.setAttribute("employee", employee);
 				response.sendRedirect("empHome");
 			}
-			else {
+			else if (status == WPASS) {
 				System.out.println("ERROR");
-				request.setAttribute("login", "fail");
+				request.setAttribute("login", "wpass");
+				request.getRequestDispatcher("index.ftl").forward(request, response);
+			}
+			else if (status == NOTFOUND) {
+				System.out.println("ERROR");
+				request.setAttribute("login", "not found");
 				request.getRequestDispatcher("index.ftl").forward(request, response);
 			}
 		}

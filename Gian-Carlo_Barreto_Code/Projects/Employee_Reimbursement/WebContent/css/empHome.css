@@ -1,24 +1,123 @@
-.page-header h1 {
-	text-align: center;
-}
-
-.page-header h3 {
-	text-align: center;
-}
-
-.row {
-	margin-left: 50px;
-}
-
-.thumbnail {
-	width: 300px;
-	height: 200px;
-	text-align: center;
-	background: cyan;
-}
-
-.row h4 {
+body {
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%); 
+}
+
+#info {
+	padding-top: 50px;
+	height: 500px;
+	color: black;
+	background-color: white;
+}
+
+#reqView {
+	padding-top: 50px;
+	height: 500px;
+	color: #fff;
+	background-color: lightblue;
+}
+
+#reqView h1 {
+	text-align: center;
+	color: black;
+}
+
+#pending {
+	padding-top: 50px;
+	height: 500px;
+	color: #fff;
+	background-color: white;
+}
+
+#pending h1 {
+	text-align: center;
+	color: black;
+}
+
+table.table-bordered{
+    border:1px solid black;
+}
+
+table.table-bordered > thead > tr > th{
+    border:1px solid black;
+}
+
+table.table-bordered > tbody > tr > td{
+    border:1px solid black;
+}
+
+
+
+#empView {
+	padding-top: 50px;
+	height: 500px;
+	color: #fff;
+	background-color: lightgray;
+}
+
+#empView h1 {
+	text-align: center;
+	color: black;
+}
+
+#personal {
+	padding-top: 50px;
+	height: 500px;
+	color: #fff;
+	background-color: #00bcd4;
+	text-align: center;
+}
+
+#logout {
+	float: right;
+}
+
+#money {
+	width: 100%;
+	height: 450px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+}
+
+.text1 {
+	color: black;
+}
+
+.text2 {
+	color: white;
+}
+
+.btn {
+	width: 100px;
+	margin: auto;
+	display: block;
+}
+
+#subReq {
+	width: 200px;
+}
+
+.modal-content {
+    color: #000;
+}
+
+.modal-body {
+	text-align: left;
 }

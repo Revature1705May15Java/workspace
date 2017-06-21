@@ -17,6 +17,9 @@ import com.ers.pojos.StateType;
  */
 public class Service {
 	private DAO dao;
+	private static final int NOTFOUND = -1;
+	private static final int WPASS = 0;
+	private static final int FOUND = 1;
 	
 	/*
 	 * No-arg constructor that creates an instance of the DAO
@@ -29,9 +32,28 @@ public class Service {
 	 * Confirms the employee's login information
 	 * @param email, employee's email
 	 * @param password, employee's password
+	 * @return NOTFOUND if employee not found
+	 * 		   WPASS if password is incorrect
+	 * 		   FOUND if employee found
+	 */
+	public int confirmLogin(String email, String password) {
+		Employee e = this.dao.getEmployee(email, password);
+		
+		if (e == null)
+			return NOTFOUND;
+		else if (!password.equals(e.getPassword()))
+			return WPASS;
+		else
+			return FOUND;
+	}
+	
+	/**
+	 * Gets an employee
+	 * @param email, employee's email
+	 * @param password, employee's password
 	 * @return the employee's information
 	 */
-	public Employee confirmLogin(String email, String password) {
+	public Employee getEmployee(String email, String password) {
 		return this.dao.getEmployee(email, password);
 	}
 	
@@ -111,20 +133,17 @@ public class Service {
 	
 	/**
 	 * Close a request
-	 * @param r, the request to be closed
-	 * @return true if request was closed successfully, false otherwise
+	 * @param requestId, id of the request
+	 * @param state, 2 for approved or 3 for denied
+	 * @param managerId, id of the manager
+	 * @param managerNote, manager's note
+	 * @return true if request closed successfully, false otherwise
 	 */
-	public boolean closeRequest(Request r) {
-		int state = 0;
-		if (r.getType() == StateType.APPROVED)
-			state = 2;
-		else if (r.getType() == StateType.DENIED)
-			state = 3;
-		if (this.dao.closeRequest(r.getRequestId(), state, r.getManagerId(), r.getManagerNote())) {
-			r.setCloseDate(LocalDate.now());
+	public boolean closeRequest(int requestId, int state, int managerId, String managerNote) {
+		if (this.dao.closeRequest(requestId, state, managerId, managerNote))
 			return true;
-		}
-		return false;
+		else
+			return false;
 	}
 	
 	/**

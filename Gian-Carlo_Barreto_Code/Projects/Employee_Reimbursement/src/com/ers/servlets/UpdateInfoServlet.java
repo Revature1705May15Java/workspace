@@ -51,25 +51,26 @@ public class UpdateInfoServlet extends HttpServlet {
 				else {
 					System.out.println("ERROR");
 					request.setAttribute("updated", "fail");
-					request.getRequestDispatcher("updateInfo.ftl").forward(request, response);
+					request.getRequestDispatcher("empHome").forward(request, response);
 				}
 			}
 			else {
 				if (service.isEmailAvailable(email)) {
 					boolean update = service.updateEmployee(employee.getEmployeeId(), firstName, lastName, email);
 					if (update) {
+						//session.setAttribute("updated", "");
 						response.sendRedirect("empHome");
 					}
 					else {
 						System.out.println("ERROR");
 						request.setAttribute("updated", "fail");
-						request.getRequestDispatcher("updateInfo.ftl").forward(request, response);
+						request.getRequestDispatcher("empHome").forward(request, response);
 					}
 				}
 				else {
 					System.out.println("Email not available");
 					request.setAttribute("updated", "fail");
-					request.getRequestDispatcher("updateInfo.ftl").forward(request, response);
+					request.getRequestDispatcher("empHome").forward(request, response);
 				}
 			}
 		} 

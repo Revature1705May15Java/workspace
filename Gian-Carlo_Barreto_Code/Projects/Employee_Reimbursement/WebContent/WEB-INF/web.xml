@@ -113,7 +113,6 @@
     <servlet-name>ResolvedView</servlet-name>
     <url-pattern>/resView</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>AllRequestView</servlet-name>
     <servlet-class>com.ers.servlets.ViewAllRequestsServlet</servlet-class>
@@ -121,5 +120,14 @@
   <servlet-mapping>
     <servlet-name>AllRequestView</servlet-name>
     <url-pattern>/allResView</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ApproveDeny</servlet-name>
+    <servlet-class>com.ers.servlets.ApproveDenyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveDeny</servlet-name>
+    <url-pattern>/appden</url-pattern>
   </servlet-mapping>
 </web-app>

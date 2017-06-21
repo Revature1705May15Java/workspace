@@ -34,13 +34,14 @@ public class DaoImpl implements DAO {
 		// Creates a Connection to the database;
 		try (Connection connect = ConnectionFactory.getInstance().getConnection();) {
 			// SQL statement for getting a specific Employee
-			String sql = "SELECT * FROM Employee WHERE email = ? AND password = ?";
+			//String sql = "SELECT * FROM Employee WHERE email = ? AND password = ?";
+			String sql = "SELECT * FROM Employee WHERE email = ?";
 			
 			// Creates a PreparedStatement object for sending the SQL statement to the database
 			PreparedStatement ps = connect.prepareStatement(sql);
 			
 			ps.setString(1, email);
-			ps.setString(2, password);
+			//ps.setString(2, password);
 			
 			// Set the attributes of the employee using the result from the sql query
 			ResultSet info = ps.executeQuery();

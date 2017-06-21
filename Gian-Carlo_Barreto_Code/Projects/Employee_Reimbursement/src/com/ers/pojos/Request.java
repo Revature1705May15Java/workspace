@@ -188,8 +188,9 @@ public class Request {
 		this.managerId = managerId;
 	}
 
+	
 	/**
-	 * Gets the manager's note
+	 * Get the manager's note
 	 * @return the manager's note
 	 */
 	public String getManagerNote() {
@@ -197,7 +198,7 @@ public class Request {
 	}
 
 	/**
-	 * Sets the manager's note
+	 * Set the manager's note
 	 * @param managerNote, the manager's note
 	 */
 	public void setManagerNote(String managerNote) {

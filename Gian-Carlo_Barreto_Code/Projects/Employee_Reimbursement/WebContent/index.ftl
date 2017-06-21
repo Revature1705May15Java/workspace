@@ -17,19 +17,31 @@
 		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		<div id="middle">
-		<form name="loginform" action="login" method="POST">
-			<div class="input-group">
-			Username: <input type="text" class="form-control" name="username" placeholder="Username" required="required"> <br>
-			Password: <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+		<div class="container">
+		    <div class="row">
+		        <div class="col-sm-6 col-md-4 col-md-offset-4">
+		            <h1 class="text-center login-title">ERS Sign In</h1>
+		            <div class="account-wall">
+		                <img class="profile-img" src="img/profile-pic.png" alt="">
+		                
+		                <!-- Freemarker  -->
+		                <#if login! == "not found">
+							<div class="alert alert-danger" role="alert"> Incorrect Email </div>
+						<#elseif login! == "wpass">
+							<div class="alert alert-danger" role="alert"> Incorrect Password </div>
+						</#if>
+						
+		                <form class="form-signin" name="loginform" action="login" method="POST">
+		                <input type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+		                <input type="password" class="form-control password" name="password" placeholder="Password" required>
+		                <input type="checkbox" id="showhide"> Show password <br><br>
+		                <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                    Sign in</button>
+				    </div>
+				</div>
 			</div>
-			<div id="btn">
-				<input type="submit" value="Login">
-			</div>
-		</form>
+		</div>
 		
-		<#if login! == "fail">
-			<h3 style="color:red"> Login information is incorrect <h3>
-		</#if>
+	<script type="text/javascript" src="js/login.js"></script>
 	</body>
 </html>
