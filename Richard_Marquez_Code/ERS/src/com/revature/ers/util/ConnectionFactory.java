@@ -24,6 +24,10 @@ public class ConnectionFactory {
     private static String pwd;
     private static Connection conn;
 
+    // Ensure connection does not exceed max cursor count; reset after a number of connection usages
+    private static int connCount = 0;
+    private static final int maxConnCount = 10;
+
 
     private ConnectionFactory() {
         build = false;
@@ -52,7 +56,8 @@ public class ConnectionFactory {
 
     public Connection getConnection() throws InterruptedException, IOException {
         try {
-            if (conn == null || conn.isClosed()) {
+            if (connCount > maxConnCount || conn == null || conn.isClosed()) {
+                connCount = 0;
                 conn = DriverManager.getConnection(url, usr, pwd);
             }
         } catch (Exception e) {

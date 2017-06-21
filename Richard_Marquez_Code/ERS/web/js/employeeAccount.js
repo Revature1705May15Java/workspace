@@ -16,5 +16,5 @@ function initPasswordValidation() {
     }
 
     password.onchange = validatePassword;
-    confirm.onkeyup = validatePassword;
+    confirm.onchange = validatePassword;
 }
