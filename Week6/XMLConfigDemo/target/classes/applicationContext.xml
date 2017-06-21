@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Defining our XML namespace - the default of beans
+xsi: XML Schema instance:
+schemaLocation is added to our XML file and gives us
+context sensitive help inside of our inside of our 
+application. Makes sure that we have well formed and valid
+XML. It follows the correct structure if its well formed but
+valid makes sure it has the appropriate elements to be recognized
+as a beans.xml file
+This namespace simply acts like a library for the properties
+that we can use to create and inject into a bean
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- can use name or id but id would have to be
+valid XML so we may not be able to use some of the names
+we might want to. stick to using name -->
+<bean name="customerRepository" class="com.ex.model.repository.HibernateCustomerRepositoryImpl" ></bean>
+
+<!--  adding this property is implementing our setter injection -->
+<!-- <bean name="customerService" class="com.ex.service.CustomerServiceImpl"> -->
+<!-- <property name="customerRepository" ref  = "customerRepository" /> --
+<!-- </bean> -->
+
+<!-- Constructor injection is index based not name based like setter injection is
+"index" is the # of args
+ if we had multiple args we'd do more constructor-arg elements -->
+<!-- <bean name="customerService" class="com.ex.service.CustomerServiceImpl"> -->
+<!-- <constructor-arg index="0" ref  = "customerRepository" /> -->
+<!-- </bean> -->
+
+<bean name="customerService" class="com.ex.service.CustomerServiceImpl" autowire="constructor">
+</bean>
+<!-- <bean name="customerService" class="com.ex.service.CustomerServiceImpl" autowire="byType"> -->
+<!-- </bean> -->
+
+<!-- goes off of setter name -->
+<!-- <bean name="customerService" class="com.ex.service.CustomerServiceImpl" autowire="byName"> -->
+<!-- </bean> -->
+
+</beans>

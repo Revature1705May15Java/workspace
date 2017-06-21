@@ -1,0 +1,16 @@
+package com.ex.service;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.model.repository.CustomerRepository;
+import com.ex.model.repository.HibernateCustomerRepositoryImpl;
+//aka the DAO layer
+public class CustomerServiceImpl implements CustomerService {
+	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
+	
+	public List<Customer> findAll(){
+		return customerRepository.findAll();
+	}
+
+}

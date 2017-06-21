@@ -1,0 +1,47 @@
+package com.ex.model.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import org.springframework.stereotype.Repository;
+
+import com.ex.model.Customer;
+
+@Repository("customerRepository")
+public class HibernateCustomerRepositoryImpl implements CustomerRepository {
+
+	
+	/* (non-Javadoc)
+	 * @see com.ex.model.repository.CustomerRepository#findAll()
+	 */
+	@Override
+	public  List<Customer> findAll(){
+		// dummy method to illustrate what's happening
+		List<Customer> customers = new ArrayList<>();
+		Customer c = new Customer();
+		for (int i= 0; i < 10; i ++){
+			c.setFirstname(getSaltString());
+			c.setLastname(getSaltString());
+			customers.add(c);
+		}
+		
+		return customers;
+		
+	}
+	
+	private static String getSaltString() {
+	    String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	    StringBuilder salt = new StringBuilder();
+	    Random rnd = new Random();
+	    while (salt.length() < 8) { // length of the random string.
+	        int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+	        salt.append(SALTCHARS.charAt(index));
+	    }
+	    String saltStr = salt.toString();
+	    return saltStr;
+
+	}
+}
+
+

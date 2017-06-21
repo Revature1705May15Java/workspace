@@ -1,0 +1,14 @@
+package com.ex.model.repository;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+
+public class HibernateCustomerRepositoryImpl {
+
+	public List<Customer> findAll(){
+		// dummy method to illustrate what's happening
+		List<Customer> customers = new ArrayList<>();
+		
+	}
+}
