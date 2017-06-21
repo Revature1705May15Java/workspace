@@ -6,27 +6,110 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+	<style >
+	.shows {
+		background-color: #242424;
+		border: none;
+		color: grey;
+		padding:10px 5px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 1.5em;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+</style>
 </head>
 <body>
-<!--jquerydatatables-->
-<div class="jumbotron">
-	<form class="" action="show" method="post">
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" style="text-align:center;text-decoration: none; font-size: 3em"></a>
+		</div>
+		<form class="" action="show" method="post">
+		<ul class="nav navbar-nav">
+
+			<li><a><input type="submit" class="shows" name="show" value="Revature ERS" style="font-size:3em;"></a></li>
+			<li><a><input type="submit" class="shows" name="show" value="View Requests"></input></a></li>
+			<li><a><input type="submit" class="shows" name="show" value="New Reimbursement Request"></a></li>
+			<li><a><input type="submit" class="shows" name="show" value="Change Account Information"></a></li>
+			<li><a><input type="submit" class="shows" name="show" value="Logout"></a></li>
+		</ul>
+		</form>
+	</div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-6 col-md-offset-3">
+	<p style="text-align:center;font-size:1.2em">
 		Logged in as <#if employee??>
-			${employee.firstname} ${employee.lastname}
-		</#if><br />
-		Options:
-		<input type="submit" name="show" value="request">
-		<input type="submit" name="show" value="info">
-		<input type="submit" name="show" value="newreq">
-	</form>
-	<form method = "post" action = "logout">
-	 <input type="submit" class="btn btn-primary" value="Logout">
-	 </form>
+		 ${employee.firstname} ${employee.lastname}
+ </#if>
+</p>
 </div>
 
 
 
 
+<#if showing==""||showing=="reqs">
+	<div class="col-xs-12" style="height:60px;"></div>
+	<div class="col-lg-10 col-lg-offset-1">
+	<p class="text-right">
+	 Filter Your Requests:<br />
+	 Pending:
+	 <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending">
+	 Approved:
+	 <input type="checkbox" class="btn btn-primary" name="Approved" value="Approved">
+	 Denied:
+	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied">
+	 </p>
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="Filter Requests">
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="View All Employee Requests" style="margin-right:5px">
+  <table class="table table-condensed">
+    <thead>
+  <ul>
+		<thead>
+       <tr>
+         <th>Amount</th>
+         <th>Date made</th>
+         <th>Requested by</th>
+         <th>Purpose</th>
+ 				 <th>Status</th>
+         <th>Resolved by</th>
+         <th>Note</th>
+       </tr>
+     </thead>
+ 		<tbody>
+ 	 <#list modrequests as request>
+	 <tr>
+ 	 <td>${request.amt?string.currency}</td>
+   <td>${request.reqdate}</td>
+	 <td>${request.reqname!"none"}</td>
+ 	 <td>${request.purpose}</td>
+	 <td>${request.name}</td>
+	 <td>${request.resname!"none"}</td>
+ 	 <td>${request.note!"none"}</td>
+ </tr>
+ </ul>
+ 	 </#list>
+ </tbody>
+</div>
+</table>
+</#if>
+<!--
 <#if showing==""||showing=="reqs">
 <div class = "jumbotron">
 	 <div class="col-md-8">
@@ -53,24 +136,27 @@
     </ul>
   </div>
 	</#if>
+-->
 
-<#if showing==""||showing=="info">
- <div class="jumbotron">
- <form method = "post" action = "info">
- 	<#if employee??>
- 	Edit First Name:
-  <input type="text" name="newfn" class="form-control" value=${employee.firstname} placeholder="New First Name"><br />
-   Edit Last Name:
- <input type="text" name="newln" class="form-control" value=${employee.lastname} placeholder="New Last Name"><br />
- 	Edit Email:
-  <input type="text" name="newemail" class="form-control" value=${employee.email} placeholder="New Email"><br />
-   Edit Password:
-  <input type="password" name="newpw" class="form-control" value=${employee.password} placeholder="New Password"><br />
-  <input type="Submit" class="btn btn-primary" value="Change Account Information">
-  </#if>
-  </form>
-	</#if>
+	<#if showing==""||showing=="info">
+	<div class="col-sm-2 col-sm-offset-5">
+		<form method = "post" action = "info">
+	 	<#if employee??>
+	 	Edit First Name:
+	  <input type="text" name="newfn" class="form-control" value="${employee.firstname}" placeholder="New First Name"><br />
+	   Edit Last Name:
+	 <input type="text" name="newln" class="form-control" value="${employee.lastname}" placeholder="New Last Name"><br />
+	 	Edit Email:
+	  <input type="text" name="newemail" class="form-control" value="${employee.email}" placeholder="New Email"><br />
+	   Edit Password:
+	  <input type="password" name="newpw" class="form-control"  value="${employee.password}" placeholder="${employee.password}"><br />
+	  <input type="Submit" class="btn btn-primary" value="Change Account Information">
+	  </#if>
+	  </form>
+	</div>
+		</#if>
 
+<!--
 <#if showing==""||showing=="newreq">
 	<div class="col-sm-4">
 		 <form method="post" action="makerequest">
@@ -84,6 +170,22 @@
 		 </div>
 </div>
 </#if>
+-->
+<#if showing==""||showing=="newreq">
+<div class="col-md-4 col-sm-offset-4">
+	<form method="post" action="makerequest">
+		<p style="text-align:center;">Create New Request
+		<br/>Amount:<br />
+		<input type="number" step=".01" min="0" max="10000" name="Amount" required="required">
+		<br/>Reason:<br />
+		<input type="text" name="Purpose" required="required" maxlength="50" size="50">
+		<br /><br/><input type="submit" class="btn btn-primary" value="Submit Request" >
+		</p>
+	</form>
+</div>
+	</#if>
+
+
 
 </body>
 </html>

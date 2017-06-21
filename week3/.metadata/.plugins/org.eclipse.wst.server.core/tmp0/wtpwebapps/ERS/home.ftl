@@ -6,11 +6,42 @@ crossorigin="anonymous"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
 integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<style >
+.shows {
+	background-color: #242424;
+	border: none;
+	color: grey;
+	padding:10px 5px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 1.5em;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+</style>
 </head>
 <body>
 
-<div class="jumbotron">
-	<form class="" action="show" method="post">
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" style="text-align:center;text-decoration: none; font-size: 3em"></a>
+	    </div>
+			<form class="" action="show" method="post">
+	    <ul class="nav navbar-nav">
+
+				<li><a><input type="submit" class="shows" name="show" value="Revature ERS" style="font-size:3em;"></a></li>
+	      <li><a><input type="submit" class="shows" name="show" value="View Requests"></input></a></li>
+	      <li><a><input type="submit" class="shows" name="show" value="View Employees"></a></li>
+	      <li><a><input type="submit" class="shows" name="show" value="Add Employee"></a></li>
+	      <li><a><input type="submit" class="shows" name="show" value="Change Account Information"></a></li>
+				<li><a><input type="submit" class="shows" name="show" value="Logout"></a></li>
+	    </ul>
+			</form>
+	  </div>
+	</nav>
+<!--
 		Logged in as <#if employee??>
 			${employee.firstname} ${employee.lastname}
 		</#if><br />
@@ -19,71 +50,107 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 		<input type="submit" name="show" value="employee">
 		<input type="submit" name="show" value="newemp">
 		<input type="submit" name="show" value="info">
-	</form>
+
 	<form method = "post" action = "logout">
 	 <input type="submit" class="btn btn-primary" value="Logout">
 	 </form>
-</div>
+ -->
 
 
+ <div class="col-md-6 col-md-offset-3">
+   <p style="text-align:center;font-size:1.2em">
+		 Logged in as <#if employee??>
+		 	${employee.firstname} ${employee.lastname}
+ 	</#if>
+ </p>
+ </div>
 
 
 
 
 <#if showing==""||showing=="info">
- <div class="jumbotron">
- <form method = "post" action = "info">
+<div class="col-sm-2 col-sm-offset-5">
+	<form method = "post" action = "info">
  	<#if employee??>
  	Edit First Name:
-  <input type="text" name="newfn" class="form-control" value=${employee.firstname} placeholder="New First Name"><br />
+  <input type="text" name="newfn" class="form-control" value="${employee.firstname}" placeholder="New First Name"><br />
    Edit Last Name:
- <input type="text" name="newln" class="form-control" value=${employee.lastname} placeholder="New Last Name"><br />
+ <input type="text" name="newln" class="form-control" value="${employee.lastname}" placeholder="New Last Name"><br />
  	Edit Email:
-  <input type="text" name="newemail" class="form-control" value=${employee.email} placeholder="New Email"><br />
+  <input type="text" name="newemail" class="form-control" value="${employee.email}" placeholder="New Email"><br />
    Edit Password:
-  <input type="password" name="newpw" class="form-control" value=${employee.password} placeholder="New Password"><br />
+  <input type="password" name="newpw" class="form-control"  value="${employee.password}" placeholder="${employee.password}"><br />
   <input type="Submit" class="btn btn-primary" value="Change Account Information">
   </#if>
   </form>
+</div>
 	</#if>
 
 <#if showing==""||showing=="reqs">
 <form method = "post" action="process">
- <div class="col-md-8">
-	 <p name ="requests">Filter Employee Requests</p>
+	<div class="col-xs-12" style="height:60px;"></div>
+	<div class="col-lg-10 col-lg-offset-1">
+	<p class="text-right">
+	 Filter Employee Requests:<br />
 	 Pending:
 	 <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending">
 	 Approved:
 	 <input type="checkbox" class="btn btn-primary" name="Approved" value="Approved">
 	 Denied:
-	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied"><br /><br />
-	 <input type="submit" class="btn btn-primary" name="Filter" value="Filter Employee Requests">
-	 <input type="submit" class="btn btn-primary" name="Filter" value="View All Employee Requests">
-  <p>
- 	 Requests
-  </p>
+	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied">
+	 </p>
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="Filter Requests">
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="View All Employee Requests" style="margin-right:5px">
+  <table class="table table-condensed">
+    <thead>
   <ul>
+		<thead>
+       <tr>
+         <th>Amount</th>
+         <th>Date made</th>
+         <th>Requested by</th>
+         <th>Purpose</th>
+ 				 <th>Status</th>
+         <th>Resolved by</th>
+         <th>Note</th>
+ 				<th>Add note</th>
+ 				<th>Approve</th>
+ 				<th>Deny</th>
+       </tr>
+     </thead>
+ 		<tbody>
  	 <#list modrequests as request>
- 	 Amount: ${request.amt?string.currency} Date made:  ${request.reqdate}<br />Status: ${request.name}<br />
- 	 Purpose: ${request.purpose}<br />Note: ${request.note!"none"}
- 	<br />Requested by:${request.reqname!"none"} <br /> Resolved by:${request.resname!"none"}
- 	 <br />
+	 <tr>
+ 	 <td>${request.amt?string.currency}</td>
+   <td>${request.reqdate}</td>
+	 <td>${request.reqname!"none"}</td>
+ 	 <td>${request.purpose}</td>
+	 <td>${request.name}</td>
+	 <td>${request.resname!"none"}</td>
+ 	 <td>${request.note!"none"}</td>
 	 <#if request.stateid==1>
-	 Add Note:<input type = "text" name=${request.requestid}n />
-	 Approve:<input type ="radio" name=${request.requestid} value="Approve" />
-	 Deny:<input type ="radio" name=${request.requestid} value="Deny" /><br />
-	 </#if><br /><br />
+	 <td><input type = "text" name=${request.requestid}n /></td>
+	 <td><input type ="radio" name=${request.requestid} value="Approve" /></td>
+	 <td><input type ="radio" name=${request.requestid} value="Deny" /></td>
+	 <#else>
+	 <td> </td>
+	 <td> </td>
+	 <td> </td>
+	 </#if>
+ </tr>
+ </ul>
  	 </#list>
-  </ul>
-		<input type="submit" class="btn btn-primary" name="Update Requests" value="Update Requests">
-
- 	</div>
+ </tbody>
+</div>
+</table>
+		<input type="submit" class="btn btn-primary pull-right" name="Update Requests" value="Update Requests">
 </form>
 </#if>
 
+<!--
 <#if showing==""||showing=="emps">
 <form method = "post" action="filter">
- <div class="col-md-8">
+ <div class="col-lg-10 col-lg-offset-1">
 	 <p>Filter Employee Requests</p>
    Pending:
    <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending">
@@ -114,6 +181,86 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 </form>
 </#if>
+-->
+
+
+
+
+
+
+
+
+
+
+<#if showing==""||showing=="emps">
+<form method = "post" action="filter">
+	<div class="col-xs-12" style="height:60px;"></div>
+	<div class="col-lg-10 col-lg-offset-1">
+	<p class="text-right">
+	 Filter Employee Requests:<br />
+	 Pending:
+	 <input type="checkbox" class="btn btn-primary" name="Pending" value="Pending">
+	 Approved:
+	 <input type="checkbox" class="btn btn-primary" name="Approved" value="Approved">
+	 Denied:
+	 <input type="checkbox" class="btn btn-primary" name="Denied" value="Denied">
+	 </p>
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="Filter Requests">
+	 <input type="submit" class="btn btn-primary pull-right" name="Filter" value="View All Employee Requests" style="margin-right:5px">
+  <table class="table table-condensed">
+    <thead>
+  <ul>
+		<thead>
+       <tr>
+         <th>First Name</th>
+         <th>Last Name</th>
+         <th>Email</th>
+         <th>Id</th>
+ 				 <th>Manager</th>
+				 <th>View Requests</th>
+       </tr>
+     </thead>
+ 		<tbody>
+ 	 <#list employees as employee>
+	 <tr>
+ 	 <td>${employee.firstname}</td>
+   <td>${employee.lastname}</td>
+	 <td>${employee.email}</td>
+ 	 <td>${employee.id}</td>
+	 <td><#if employee.ismanager==1>Yes</#if>
+	  <#if employee.ismanager==0>No</#if></td>
+	 <td><#if employee.ismanager==0><input type ="checkbox" name=${employee.id}c /></#if></td>
+
+ </tr>
+ </ul>
+ 	 </#list>
+ </tbody>
+
+</div>
+</table>
+		<input type="submit" class="btn btn-primary pull-right" name="Filter" value="Filter Employee Requests">
+</form>
+</#if>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--
 <#if showing==""||showing=="reqs"||showing="emps">
@@ -134,8 +281,10 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 -->
 
 
+
+<!--
 	<#if showing==""||showing=="newemp">
-<div class="jumbotron">
+	<div class="col-sm-2 col-sm-offset-1">
 <form method = "post" action = "newemployee">
 	<#if employee??>
 	<br />
@@ -150,7 +299,25 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
  <input type="Submit" class="btn btn-primary" value="Create New Employee">
  </#if>
  </form>
+ </div>
  </#if>
+ -->
 
+
+ <#if showing==""||showing=="newemp">
+ <div class="col-sm-2 col-sm-offset-5">
+ 	<form method = "post" action = "newemployee">
+		New Employee First Name:
+	 <input type="text" name="newempfn" class="form-control" placeholder="New Employee First Name" required="required"><br />
+	  New Employee Last Name:
+	<input type="text" name="newempln" class="form-control"placeholder="New Employee Last Name" required="required"><br />
+		New Employee Email:
+	 <input type="text" name="newempemail" class="form-control" placeholder="New Employee Email" required="required"><br />
+	 Manager?
+	 <input type="checkbox" name="newempismanager"/><br /><br />
+	 <input type="Submit" class="btn btn-primary" value="Create New Employee">
+   </#if>
+   </form>
+ </div>
 </body>
 </html>

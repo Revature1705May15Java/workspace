@@ -37,24 +37,32 @@ public class ShowServlet extends HttpServlet {
 		if (show == null){
 		    //no button has been selected
 			session.setAttribute("showing", "");
-		} else if (show.equals("request")) {
+		} else if (show.equals("View Requests")) {
 		    //requests button was pressed
 			session.setAttribute("showing", "reqs");
-		} else if (show.equals("employee")) {
+		} else if (show.equals("View Employees")) {
 		    //employees button was pressed
 			session.setAttribute("showing", "emps");
-		} else if (show.equals("newemp")){
+		} else if (show.equals("Add Employee")){
 			//new employee button was pressed
 			session.setAttribute("showing", "newemp");
-		} else if (show.equals("info")){
+		} else if (show.equals("Change Account Information")){
 			//edit info button was pressed
 			session.setAttribute("showing", "info");
-		} else if (show.equals("newreq")){
+		} else if (show.equals("New Reimbursement Request")){
 			//edit info button was pressed
 			session.setAttribute("showing", "newreq");
+		}else if (show.equals("Revature ERS")){
+			//edit info button was pressed
+			session.setAttribute("showing", "none");
+		}else if (show.equals("Logout")){
+			//edit info button was pressed
+			session.setAttribute("showing", "logout");
 		}
 				
-		if(emp!=null&&emp.getIsmanager()==0){
+		if(session.getAttribute("showing").equals("logout")){
+			resp.sendRedirect("logout");
+		}else if(emp!=null&&emp.getIsmanager()==0){
 			resp.sendRedirect("home2");
 		}else if(emp!=null&&emp.getIsmanager()==1){
 			resp.sendRedirect("home");

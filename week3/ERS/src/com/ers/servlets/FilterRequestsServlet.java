@@ -63,7 +63,7 @@ public class FilterRequestsServlet extends HttpServlet {
 			}
 		}
 		String filter=req.getParameter("Filter");
-		if(filter!=null&&emp.getIsmanager()==1&&filter.equals("Filter Employee Requests")){
+		if(filter!=null&&emp.getIsmanager()==1&&filter.equals("Filter Requests")){
 			
 			ArrayList<Employee> emps=new ArrayList<Employee>();
 			emps=Service.getAllEmployees();
