@@ -38,29 +38,27 @@ public class EditRequestServlet extends HttpServlet {
 			}
 			else { // updating the request.
 				Request req = service.getRequestById(Integer.parseInt(request.getParameter("requestid")));
-				
 				if(request.getParameter("approve") != null) {
-					System.out.println("\n\n\nApproved! -->" + service.getStateType(1) + "\n");
 					req.setType(service.getStateType(1));
+					
+					req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
+					req.setAdminNote(request.getParameter("adminNote"));
 				}
 				else if(request.getParameter("deny") != null) {
-					System.out.println("\n\n\nDeny! -->" + service.getStateType(2) + "\n");
 					req.setType(service.getStateType(2));
+					
+					req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
+					req.setAdminNote(request.getParameter("adminNote"));
 				}
 
 				req.setBalance(Double.parseDouble(request.getParameter("amt")));
 				req.setPurpose(request.getParameter("purpose"));
-//				req.setType(request.getParameter("status"));
-//				
-//				if(request.getParameter("dateClosed") != null) {
-//					SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-//					java.util.Date date = sdf.parse(request.getParameter("dateClosed"));
-//					java.sql.Date sqlDate = new java.sql.Date(date.getTime());
-//					req.setDateClosed(sqlDate);
-//				}
-				if(u.getRank() == 1) {
-					req.setAdminId(u.getId()); // update this value automatically to the last manager that edited this request.
-					req.setAdminNote(request.getParameter("adminNote"));
+				
+				if(request.getParameter("dateClosed") != null && req.getRequesterId() != u.getId() && u.getRank() > 0) {
+					SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+					java.util.Date date = sdf.parse(request.getParameter("dateClosed"));
+					java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+					req.setDateClosed(sqlDate);
 				}
 						
 				wasUpdated = service.updateRequestById(req, u);
@@ -72,8 +70,7 @@ public class EditRequestServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		finally { // redirect to homepage whether success or fail.
-			if(u.getRank() == 0) request.getRequestDispatcher("home").forward(request, response); // employee page
-			if(u.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response); // manager page
+			request.getRequestDispatcher("home").forward(request, response);
 		}
 	}
 

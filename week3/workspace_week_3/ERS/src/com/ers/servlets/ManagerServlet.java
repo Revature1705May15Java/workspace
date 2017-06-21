@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ers.service.Service;
 
 /**
- * Servlet implementation class ManagerServlet
+ * This servlet is handling the creation of a new employee account.
  */
 @WebServlet("/ManagerServlet")
 public class ManagerServlet extends HttpServlet {
@@ -37,11 +37,9 @@ public class ManagerServlet extends HttpServlet {
 		
 		if(test == 1) {
 			request.setAttribute("createuser", "success");
-			request.getRequestDispatcher("home2").forward(request, response);
 		} else if(test == 0) {
 			request.setAttribute("createuser", "fail");
-			request.getRequestDispatcher("Home2.ftl").forward(request, response);
 		}
-		
+		request.getRequestDispatcher("home").forward(request, response);
 	}
 }

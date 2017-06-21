@@ -42,21 +42,24 @@
     <url-pattern>/createRequest</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>EmployeeHome</servlet-name>
-    <servlet-class>com.ers.servlets.EmployeeHomeServlet</servlet-class>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>com.ers.servlets.PopulateTableServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>EmployeeHome</servlet-name>
+    <servlet-name>Home</servlet-name>
     <url-pattern>/home</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ManagerHome</servlet-name>
-    <servlet-class>com.ers.servlets.ManagerHomeServlet</servlet-class>
+    <servlet-name>TestHome</servlet-name>
+    <servlet-class>com.ers.servlets.TestHomeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ManagerHome</servlet-name>
-    <url-pattern>/home2</url-pattern>
+    <servlet-name>TestHome</servlet-name>
+    <url-pattern>/test</url-pattern>
   </servlet-mapping>
+  
+  
+  
   <servlet>
     <servlet-name>EditServlet</servlet-name>
     <servlet-class>com.ers.servlets.EditInfoServlet</servlet-class>

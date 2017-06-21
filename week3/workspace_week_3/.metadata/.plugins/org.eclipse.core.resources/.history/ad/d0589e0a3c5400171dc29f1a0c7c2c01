@@ -1,0 +1,51 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojo.User;
+import com.ers.service.Service;
+
+/**
+ * 
+ */
+@WebServlet("/EmployeeServlet")
+public class RequestServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	Service service = new Service();
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		User temp = service.getUserInfo(session.getAttribute("uname").toString());
+		
+		int test = 0;
+		try{
+			double amount = Double.parseDouble(request.getParameter("amount"));
+			String purpose = request.getParameter("purpose");
+		
+			test = service.addRequest(amount, purpose, temp.getId());
+			request.setAttribute("firstname", temp.getFn());
+			request.setAttribute("lastname", temp.getLn());
+			if(test == 1) {
+				request.setAttribute("createrequest", "success");
+			} else if(test == 0) {
+				request.setAttribute("createrequest", "fail");
+			}
+		}
+		catch(NumberFormatException e){
+			request.setAttribute("createrequest", "fail");
+		}
+		finally { // redirect to homepage whether success or fail.
+			if(temp.getRank() == 0) request.getRequestDispatcher("home").forward(request, response); // employee page
+			else if(temp.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response); // manager page
+			else if(temp.getRank() == 2) request.getRequestDispatcher("test").forward(request, response); // test page
+		}
+	}
+
+}

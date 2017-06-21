@@ -2,22 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="delete" key="selection"/>
+		<item value="getReq" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="delete"/>
+			<item value="Getreq"/>
+			<item value="getUs"/>
+			<item value="myFunction"/>
+			<item value="addrequ"/>
 			<item value="add"/>
-			<item value="requesterId"/>
-			<item value="getrequester"/>
-			<item value="request"/>
-			<item value="adminNote"/>
-			<item value="setadmin"/>
-			<item value="etad"/>
+			<item value="editInfo"/>
+			<item value="equesttable"/>
+			<item value="requestdiv"/>
 		</list>
 		<list key="replacehistory">
+			<item value="createReq"/>
+			<item value="viewRequestModal"/>
 			<item value="temp"/>
 			<item value="/"/>
 			<item value="UserTwo"/>

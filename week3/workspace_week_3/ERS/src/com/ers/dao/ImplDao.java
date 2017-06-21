@@ -40,7 +40,7 @@ public class ImplDao implements Dao{
 		ArrayList<String> types = new ArrayList<String>();
 		
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
-			String sql = "SELECT name FROM statetype";
+			String sql = "SELECT name FROM statetype ORDER BY stateid";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 							 
@@ -49,8 +49,16 @@ public class ImplDao implements Dao{
 			int i = 0;
 			while(info.next()){ // setting request state types for use in other methods.
 				types.add(info.getString(1));
-				i++;			
+				i++;
 			}
+			
+			for(int h = 0; h < types.size(); h++){
+				System.out.println("Statetype[" + h + "] = " + types.get(h));
+			}
+			
+			
+			
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			for(int i = 0; i < 10; i++){
@@ -62,7 +70,7 @@ public class ImplDao implements Dao{
 	
 	public boolean updateRequestById(Request req){
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
-			String sql = "UPDATE requests SET amount = ?, purpose = ?, admin_note = ?, resolverid = ?, stateid = ? WHERE requestid = ?";
+			String sql = "UPDATE requests SET amount = ?, purpose = ?, admin_note = ?, resolverid = ?, stateid = ?, date_resolved = ? WHERE requestid = ?";
 					
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setDouble(1, req.getBalance());
@@ -74,7 +82,8 @@ public class ImplDao implements Dao{
 			System.out.println("num: " + num + " '" + req.getType() + "'.");
 			ps.setInt(5, num);
 			
-			ps.setInt(6, req.getId());
+			ps.setDate(6, req.getDateClosed());
+			ps.setInt(7, req.getId());
 			
 			ps.executeUpdate();
  
@@ -226,12 +235,8 @@ public class ImplDao implements Dao{
 				temp.setRequesterId(info.getInt(6));
 				temp.setAdminId(info.getInt(7));
 				
-				num = info.getInt(8);
-				ps2.setInt(1, num); // setting request state so it can be queried each iteration to
-									// collect the correct state type in the look-up table.
-				ResultSet info2 = ps2.executeQuery();
-				info2.next();
-				temp.setType(info2.getString(1));
+				temp.setType(stateTypes.get(info.getInt(8)));
+				
 				temp.setAdminNote(info.getString(9));
 				requests.add(i, temp);
 				i++;			
@@ -250,14 +255,11 @@ public class ImplDao implements Dao{
 		
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM requests";
-			String sql2 = "SELECT name FROM statetype WHERE stateid = ?";
 			
 			PreparedStatement ps = connection.prepareStatement(sql);
 			
-			PreparedStatement ps2 = connection.prepareStatement(sql2);
-			
 			ResultSet info = ps.executeQuery();
-			int i = 0, num = 0;
+			int i = 0;
 			while(info.next()){
 				
 				temp = new Request();
@@ -269,12 +271,8 @@ public class ImplDao implements Dao{
 				temp.setRequesterId(info.getInt(6));
 				temp.setAdminId(info.getInt(7));
 				
-				num = info.getInt(8);
-				ps2.setInt(1, num); // setting request state so it can be queried each iteration to
-									// collect the correct state type in the look-up table.
-				ResultSet info2 = ps2.executeQuery();
-				info2.next();
-				temp.setType(info2.getString(1));
+				temp.setType(stateTypes.get(info.getInt(8)));
+				
 				temp.setAdminNote(info.getString(9));
 				requests.add(i, temp);
 				i++;			
@@ -291,7 +289,6 @@ public class ImplDao implements Dao{
 	public int addRequest(double amt, String purpose, int id) {
 		int numRowsAffected = 0;
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
-			System.out.println("VALUES: " + amt + " : "+ purpose + " : "+ id);
 			String sql = "INSERT INTO requests(amount,purpose,empid)"
 						+ "VALUES (?,?,?)";
 					
@@ -364,7 +361,7 @@ public class ImplDao implements Dao{
 			request.setDateClosed(info.getDate(3));
 			request.setBalance(info.getInt(4));
 			request.setPurpose(info.getString(5));
-			request.setRequesterId(6);
+			request.setRequesterId(info.getInt(6));
 			request.setAdminId(info.getInt(7));
 			
 			request.setType(stateTypes.get(info.getInt(8)));

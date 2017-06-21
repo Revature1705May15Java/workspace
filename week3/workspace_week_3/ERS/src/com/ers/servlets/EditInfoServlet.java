@@ -26,7 +26,7 @@ public class EditInfoServlet extends HttpServlet {
 		System.out.println(u.toString());
 		try{
 			String temp = request.getParameter("newusername");
-			if(temp != null) {
+			if(temp != null && temp != "") {
 				u.setUsername(temp);
 			}
 			
@@ -56,8 +56,7 @@ public class EditInfoServlet extends HttpServlet {
 			request.setAttribute("editing", "fail");
 		}
 		finally {
-			if(u.getRank() == 0) request.getRequestDispatcher("home").forward(request, response);
-			if(u.getRank() == 1) request.getRequestDispatcher("home2").forward(request, response);
+			request.getRequestDispatcher("home").forward(request, response);
 		}
 	}
 

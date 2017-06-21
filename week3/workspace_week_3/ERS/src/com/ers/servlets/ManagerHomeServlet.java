@@ -22,21 +22,16 @@ public class ManagerHomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("ManagerHomeServlet");
 		HttpSession session = request.getSession(true);
 		u = (User) session.getAttribute("user");
 		
 		if(u == null) response.sendRedirect("logout");
 		else{	
 			u = service.getUserInfo(u.getId()); // updating all request information about the user.
-			System.out.println("Requests: " + u.getRequests().size());
-			
-			request.setAttribute("fn", u.getFn());
-			request.setAttribute("ln", u.getLn());
+
 			request.setAttribute("Requests", u.getRequests());		
 			request.setAttribute("user", u);
-			System.out.println("\n\nManagerHomeServlet 2 \n");
-			request.getRequestDispatcher("/Home2.ftl").forward(request, response);
+			request.getRequestDispatcher("home").forward(request, response);
 		}			
 	}
 

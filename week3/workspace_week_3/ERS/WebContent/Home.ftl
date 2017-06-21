@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Employee Page</title>
+<meta charset="ISO-8859-1">
+<title>Testing Grounds</title>
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
@@ -8,7 +10,17 @@
 	<script>
 	$(document).ready(function(){
 	    $('#reqTable').DataTable({
-	    	  "columnDefs": [{ "width": "30%", "targets": 2 }]
+	    	"columnDefs": [
+	    		{ "width": "7%", "targets": 0},
+	    		{ "width": "5%", "targets": 1},
+	    		{ "width": "25%", "targets": 2},
+	    		{ "width": "7%", "targets": 3},
+	    		{ "width": "8%", "targets": 4},
+	    		{ "width": "8%", "targets": 5},
+	    		{ "width": "25%", "targets": 6},
+	    		{ "width": "6%", "targets": 7},
+	    		{ "width": "9%", "targets": 8}
+	    	]
 	    });
 	});
 	</script>
@@ -37,7 +49,6 @@
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     data-backdrop: 'static';
-    data-keyboard: false;
 }
 
 /* Modal Content */
@@ -72,66 +83,106 @@ table{
 
 div#newuser{
     float: left;
+    margin-top: -370px;
     margin-right: 10px;
     height: 250px;
     width: 350px;
     color: black;
 }
 
-div#requesttable{
-	text-align: center; 
-	position: fixed;
-	height: 300px;
-    width: 750px;
-    x: 200px;
+div#newrequest{
+    float: left;
+    margin-right: 10px;
+    height: 250px;
+    width: 350px;
+    color: black;
 }
 
 div#requestdiv{
+	margin: 10%;
+	margin-top: 30px;
     height: 900px;
-    width: 900px;
-    overflow-y: scroll;
+    width: 1500px;
+    overflow-y: auto;
     color: black;
     background-color: white;
 }
 
 div#editInfo{
 	margin-top: -650px;
-    height: 400px;
+    height: 250px;
     width: 350px;
     overflow-y: scroll;
     color: black;
     background-color: white;
 }
 
+ #nav {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    list-style: none;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc; 
+    margin-left: 0px;  // looks like bootstrap is putting a left margin on your #nav you may want it off.
+
+}
+#nav li {
+   display: inline-block;
+   text-align:center; 
+}
+
 </style>
 
-<title>Welcome Page</title>
+
+ <script type="text/javascript">
+
+<?php if(isset($_POST['edits'])) { ?> /* Your (php) way of checking that the form has been submitted */
+
+            $(function() {                       // On DOM ready
+                $('#editInfoModal').modal('show');     // Show the modal
+            });
+
+<?php } ?>                                    /* /form has been submitted */
+
+        </script>
+
+
 </head>
 <body style="background-color: aquamarine;">
-	<div class="jumbotron" style="background-color: skyblue; color: purple; text-align: center;">
-		<h3>Welcome ${user.getFn()} ${user.getLn()}!!</h3>
-		
-		<form method="POST" action="logout">
-			<input class="btn-primary" type="submit" name="logout" value="Log Out" />
-		</form>
 
-		
-		<div id="newuser" class="jumbotron">
-			<#if createrequest! == "success">
-			<h3 style="color:green">Request submitted.</h3>
-			</#if>
-			<#if createrequest! == "fail">
-			<h3 style="color:red">Invalid entry. Please try again.</h3>
-			</#if>
-			<h4>Create a New Reimbursement Request</h3>
-			<form method="POST" action="createRequest">
-			<input class="form-control" type="number" name="amount" min="1.00" step="0.01" required="required" placeholder="$0.00">
-			<input class="form-control" type="text" name="purpose" placeholder="Purpose of spending" required="required" maxlength="255" style="margin-bottom: 10px"/>
-			<input class="btn-primary" type="submit" value="Submit Request"/>
-			</form>
-		</div>
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">E.R.S.</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">View
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="home?r=req">My Requests</a></li>
+          <li><a href="home?r=closed">Archives</a></li>
+        </ul>
+      </li>
+      <li><a id="createReq" href="#">Submit a Request</a></li>
+      <li><a id="editInformation" href="#">My Account Info</a></li>
+      <li style="background-color: DimGray;"><a href="logout">Log Out</a></li>
+	</ul>
+	<h3 style="color: white; text-align: center;'">Welcome ${user.getFn()} ${user.getLn()}!</h3>
+  </div>
+</nav>
+
+
+	<div class="jumbotron" style="background-color: skyblue; color: purple; text-align: center;">
 		
 		<div id="requestdiv" class="jumbotron">
+				<h3 id="textAlert" style="text-align: center; margin-top: -15px"></h3>
 				<table id="reqTable" class="display" cellspacing="0" width="98%">
 					<thead>
 						<tr >
@@ -143,6 +194,7 @@ div#editInfo{
 							<th style="text-align:center;">Date Closed</th>
 							<th style="text-align:center;">Admin Note</th>
 							<th style="text-align:center;">Admin ID</th>
+							<th style="text-align:center;">Employee ID</th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -155,63 +207,81 @@ div#editInfo{
 							<th>Date Closed</th>
 							<th>Admin Note</th>
 							<th>Admin ID</th>
+							<th>Employee ID</th>
 						</tr>
 				   </tfoot>
 					<tbody>
 						<#list Requests as req>
 							<tr>
-								<td>${req.getId()}</td>
-								<td>${req.getBalance()}</td>
+								<td style="text-align:center;">${req.getId()}</td>
+								<td style="text-align:center;">${req.getBalance()}</td>
 								<td>${req.getPurpose()}</td>
-								<td>${req.getType()}</td>
-								<td>${req.getDateOpened()}</td>
-								<td>${req.getDateClosed()!"N/A"}</td>
+								<td style="text-align:center;">${req.getType()}</td>
+								<td style="text-align:center;">${req.getDateOpened()}</td>
+								<td style="text-align:center;">${req.getDateClosed()!"N/A"}</td>
 								<td>${req.getAdminNote()!"N/A"}</td>
-								<td>${req.getAdminId()!"N/A"}</td>
+								<td style="text-align:center;">${req.getAdminId()!"N/A"}</td>
+								<td style="text-align:center;">${req.getRequesterId()}</td>
 							</tr>
 						</#list>
 					</tbody>
 				</table>
 		</div>
-		
-		
-		<div id="editInfo">
-			<#if editing! == "success">
-			<h3 style="color:green">Edit Successful.</h3>
+	</div>
 
-			<#elseif editing! == "fail">
-			<h3 style="color:red">Invalid Edit, please try again.</h3>
-			
-			<#elseif editing! == "pwfail">
-			<h3 style="color:red">Password mismatch, please try again.</h3>
-			
-			</#if>
-			
+
+<div class="modal fade" id="editInfoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">EDIT</h4>
+      </div>
+      <div class="modal-body">
 			<h3>Edit Personal Information</h3>
 			<h5>If you do not wish to edit a value, leave it blank.</h5>
 			<form method="POST" action="editInfo">
 			<p>Username: ${user.getUsername()}</p>
-			<input class="form-control" type="text" name="newusername" placeholder="New Username" maxlength="20" style="margin-top: -15px; margin-bottom:25px"/>
+			<input class="form-control" type="text" name="newusername" placeholder="New Username" maxlength="20" style="margin-top: -5px; margin-bottom:25px"/>
 			
 			<p>Password</p>
-			<input class="form-control" type="text" name="oldpw" placeholder="Enter Current Password" maxlength="30" style="margin-top: -15px"/>
+			<input class="form-control" type="text" name="oldpw" placeholder="Enter Current Password" maxlength="30" style="margin-top: -5px"/>
 			<input class="form-control" type="text" name="newpw" placeholder="New Password" maxlength="30" />
 			<input class="form-control" type="text" name="newpw2" placeholder="Re-enter New Password" maxlength="30" style="margin-bottom: 25px;">
 			
 			<p>Name: ${user.getFn()} ${user.getLn()}</p>
-			<input class="form-control" type="text" name="newfn" placeholder="first name" maxlength="50" style="margin-top: -15px"/>
+			<input class="form-control" type="text" name="newfn" placeholder="first name" maxlength="50" style="margin-top: -5px"/>
 			<input class="form-control" type="text" name="newln" placeholder="last name" maxlength="50" style="margin-bottom: 25px"/>
 			
-			<input class="btn-primary" type="submit" value="Submit Edits"/>
+			<input class="btn-primary" id="edits" name="edits" type="submit" value="Submit Edits"/>
 			</form>
-		</div>
-		
-	</div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
-
-
-<div class="modal fade" id="myModal">
+<div class="modal fade" id="createRequestModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">EDIT</h4>
+      </div>
+      <div class="modal-body">
+			<h4>Create a New Reimbursement Request</h3>
+			<form method="POST" action="createRequest">
+			<input class="form-control" type="number" name="amount" min="1.00" max="1000.00" step="0.01" required="required" placeholder="$0.00">
+			<input class="form-control" type="text" name="purpose" placeholder="Purpose of spending" required="required" maxlength="255" style="margin-bottom: 10px"/>
+			<input class="btn-primary" type="submit" value="Submit Request"/>
+			</form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+	
+	
+<div class="modal fade" id="viewRequestModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -220,34 +290,57 @@ div#editInfo{
       </div>
       <div class="modal-body">
       	<form method="POST" action="editRequest">
-        <pre style="float:left"> Request Id: <input class="form-control" type="text" class="input-sm" id="requestid" name="requestid" required="required" readonly/></pre>
-        <pre>     Status: <input class="form-control" type="text" class="input-sm" name="status" id="status" disabled="true" readonly/></pre>
-        <pre style="float:left">     Amount: <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter an amount" id="amt" name="amt"/></pre>
-        <pre>   Admin Id: <input class="form-control" type="text" class="input-sm" id="adminid" name="adminid" disabled="true" readonly/></pre>
-        <pre>    Purpose: <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter a detailed purpose" id="purpose" name="purpose"/></pre>    
-        <pre> Admin Note: <input class="form-control" type="text" class="input-sm" name="adminNote" id="adminNote" disabled="true" readonly/></pre>
-        <pre style="float:left">Date Opened: <input class="form-control" type="text" class="input-sm" name="dateOpened" id="dateOpened" disabled="true" readonly/></pre>
-        <pre>Date Closed: <input class="form-control" type="text" class="input-sm" name="dateClosed" id="dateClosed" disabled="true" readonly/></pre>
+        <pre style="float:left"> Request Id <input class="form-control" type="text" class="input-sm" id="requestid" name="requestid" required="required" readonly/></pre>
+        <pre style="float:left">     Status <input class="form-control" type="text" class="input-sm" name="status" id="status" disabled="true"/></pre>
+        <pre> Employee Id <input class="form-control" type="text" class="input-sm" id="employeeid" name="employeeid" required="required" readonly/></pre>
+        <pre style="float:left">     Amount <input class="form-control" type="text" class="input-sm" required="required" placeholder="Enter an amount" id="amt" name="amt"/></pre>
+        <pre>   Admin Id <input class="form-control" type="text" class="input-sm" id="adminid" name="adminid" disabled="true"/></pre>
+        <pre style="clear:both">    Purpose <textarea class="form-control" type="text" class="input-sm" required="required" placeholder="Enter a detailed purpose" id="purpose" name="purpose"></textarea></pre>    
+        <pre> Admin Note <textarea class="form-control" type="text" class="input-sm" name="adminNote" id="adminNote" required="required"></textarea></pre>
+        <pre style="float:left">Date Opened: <input class="form-control" type="text" class="input-sm" name="dateOpened" id="dateOpened" disabled="true"/></pre>
+        <pre>Date Closed <input class="form-control" type="text" class="input-sm" name="dateClosed" id="dateClosed" disabled="true" /></pre>
 		<div class="modal-footer">
         	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         	<input type="submit" name="submit" class="btn btn-primary" value="Save changes"/>
         </div>
-        <input style="background-color: crimson; color: white;" name="delete" type="submit" class="btn" value="Delete Request"/>
+        <div class="modal-footer">
+        	<input style="background-color: crimson; color: white;" id="delete" name="delete" type="submit" class="btn" value="Delete Request"/>
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input style="background-color: indianred; color: white;" type="submit" id="deny" name="deny" class="btn" value="Deny"/>
+			<input style="background-color: limegreen; color: black;" type="submit" id="approve" name="approve" class="btn" value="Approve"/>
+        </div>
         </form>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-	
-	
-	
+
+
 <script>
 
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('viewRequestModal');
+
+$('#createReq').on('click',function(){
+    $('#createRequestModal').modal({
+  		backdrop: 'static'
+	}); 
+});
+
+$('#editInformation').on('click',function(){
+    $('#editInfoModal').modal({
+  		backdrop: 'static'
+	}); 
+});
+
+$('#createEmployee').on('click',function(){
+    $('#createEmployeeModal').modal({
+  		backdrop: 'static'
+	}); 
+});
 
 $('table tbody tr  td').on('click',function(){
-    $('#myModal').modal({
+    $('#viewRequestModal').modal({
   		backdrop: 'static'
 	}); 
     $("#requestid").val($(this).closest('tr').children()[0].textContent);
@@ -258,9 +351,34 @@ $('table tbody tr  td').on('click',function(){
     $("#dateClosed").val($(this).closest('tr').children()[5].textContent);
     $("#adminNote").val($(this).closest('tr').children()[6].textContent);
     $("#adminid").val($(this).closest('tr').children()[7].textContent);
+    $("#employeeid").val($(this).closest('tr').children()[8].textContent);
     
+    var employeeid = document.getElementById('employeeid').value
+    
+    if(${user.getId()} ==  employeeid) {
+    	$('#deny').prop("disabled", true);
+    	$('#approve').prop("disabled", true);
+    	$('#adminNote').prop("readonly", true);;
+    	$('#delete').prop("disabled", false);
+    	$('#amt').prop("readonly", false);
+    	$('#purpose').prop("readonly", false);
+    }
+    else {
+    	$('#delete').prop("disabled", true);
+    	$('#amt').prop("readonly", true);
+    	$('#purpose').prop("readonly", true);
+    	$('#deny').prop("disabled", false);
+    	$('#approve').prop("disabled", false);
+    	$('#adminNote').prop("readonly", false);
+    }
 });
 
+var lastID;
+$(function() {
+    $("a").on("click", function() {
+        lastID = $(this).attr("id");
+    });
+});
 
 $(function(){
     /*
@@ -278,6 +396,31 @@ $(function(){
     });
 });
 
+setTimeout(function(){
+	<#if editing! == "success">
+	$("#textAlert").html("Edits Successful!");
+	$('#textAlert').css('color', 'green');
+	<#elseif editing! == "fail">
+	$("#textAlert").html("Invalid Edit, please try again.");
+	$('#textAlert').css('color', 'red');
+	<#elseif editing! == "pwfail">
+	$("#textAlert").html("Password mismatch, please try again.");
+	$('#textAlert').css('color', 'red');
+	</#if>
+	
+	<#if createrequest! == "success">
+	$("#textAlert").html("Request Submitted. Thank you!");
+	$('#textAlert').css('color', 'green');
+	<#elseif createrequest! == "fail">
+	$("#textAlert").html("Invalid entry. Please try again.");
+	$('#textAlert').css('color', 'red');
+	</#if>
+	
+	$('#textAlert').fadeIn().delay(500).fadeOut(4000);
+}, 1000);
+
 </script>
+
+
 </body>
 </html>

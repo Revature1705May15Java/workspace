@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public class Request {
 	int id, requesterId, adminId;
 	double balance;
-	String purpose, adminNote, type;
+	String purpose, adminNote, type, empFn, empLn;
+
 	Date dateOpened, dateClosed;
 	
 	public String getAdminNote() {
@@ -28,6 +29,22 @@ public class Request {
 				+ ", dateClosed=" + dateClosed + "]";
 	}
 
+	public String getEmpFn() {
+		return empFn;
+	}
+
+	public void setEmpFn(String empFn) {
+		this.empFn = empFn;
+	}
+
+	public String getEmpLn() {
+		return empLn;
+	}
+
+	public void setEmpLn(String empLn) {
+		this.empLn = empLn;
+	}
+	
 	public void setPurpose(String purpose) {
 		this.purpose = purpose;
 	}

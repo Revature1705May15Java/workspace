@@ -1,6 +1,9 @@
 package com.ers.service;
 
-import com.ers.dao.Dao;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Calendar;
+
 import com.ers.dao.ImplDao;
 import com.ers.pojo.Request;
 import com.ers.pojo.User;
@@ -8,8 +11,58 @@ import com.ers.pojo.User;
 public class Service {
 	static ImplDao dao = new ImplDao();
 	
+	public ArrayList<Request> getAllOpenRequests(){
+		ArrayList<Request> req = dao.getAllRequests();
+		
+		for(int i = 0; i < req.size(); i++){
+			if(req.get(i).getDateClosed() != null) {
+				req.remove(i);
+				i--;
+				continue;
+			}
+			if(!req.get(i).getType().equals(dao.getStateType(0))) {
+				req.remove(i);
+				i--;
+			}
+		}
+		
+		return req;
+	}
+	
+	public ArrayList<Request> getAllClosedRequests(){
+		ArrayList<Request> req = dao.getAllRequests();
+		
+		for(int i = 0; i < req.size(); i++){
+			if(req.get(i).getDateClosed() == null) {
+				req.remove(i);
+				i--; // decrement because the arraylist is now 1 element shorter, this stops from skipping an element.
+			}
+		}
+		
+		return req;
+	}
+	
+	public ArrayList<Request> getAllUserClosedRequests(User u){
+		ArrayList<Request> req = dao.getAllRequests();
+		
+		for(int i = 0; i < req.size(); i++){
+			if(req.get(i).getDateClosed() == null || req.get(i).getRequesterId() != u.getId()) {
+				req.remove(i);
+				i--; // decrement because the arraylist is now 1 element shorter, this stops from skipping an element.
+			}
+		}
+		
+		return req;
+	}
+	
 	public Request getRequestById(int id){
-		return dao.getRequestById(id);
+		Request req = dao.getRequestById(id);
+		User u = dao.getUser(req.getRequesterId());
+		System.out.println("REQUESTERID: " + req.getRequesterId());
+		req.setEmpFn(u.getFn()); // Adding the user names to the req to simplify the front end displaying this
+		req.setEmpLn(u.getLn()); // information in the data table.
+		
+		return req;
 	}
 	
 	public String getStateType(int i){
@@ -21,6 +74,9 @@ public class Service {
 	}
 	
 	public boolean updateRequestById(Request req, User u){
+		Date timeNow = new Date(Calendar.getInstance().getTimeInMillis());
+		if(u.getRank() > 0 && u.getId() != req.getRequesterId()) req.setDateClosed(timeNow);
+		
 		return dao.updateRequestById(req);
 	}
 	
