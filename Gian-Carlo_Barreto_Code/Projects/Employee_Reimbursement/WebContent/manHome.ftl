@@ -211,6 +211,9 @@
 	<!-- View/Update personal information -->
 	<div id="personal" class="container-fluid">
 		<h1>Personal Information</h1>
+		<#if updated! == "fail">
+			<div class="alert alert-danger" role="alert"> Email not available </div>
+		</#if>
 		<h3>First Name: ${employee.firstName}</h3>
 		<h3>Last Name: ${employee.lastName}</h3>
 		<h3>Email: ${employee.email}</h3>

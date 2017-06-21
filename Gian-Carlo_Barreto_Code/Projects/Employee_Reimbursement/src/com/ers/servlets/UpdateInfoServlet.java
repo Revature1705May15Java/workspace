@@ -58,7 +58,10 @@ public class UpdateInfoServlet extends HttpServlet {
 				if (service.isEmailAvailable(email)) {
 					boolean update = service.updateEmployee(employee.getEmployeeId(), firstName, lastName, email);
 					if (update) {
-						//session.setAttribute("updated", "");
+						employee.setFirstName(firstName);
+						employee.setLastName(lastName);
+						employee.setEmail(email);
+						session.setAttribute("employee", employee);
 						response.sendRedirect("empHome");
 					}
 					else {
