@@ -2,6 +2,7 @@ initPasswordValidation();
 
 $('#employeeAccountForm input').alphanum({
     allow: '.@!#$%^&*()_-=+',
+    allowSpace: false,
     maxLength: 50
 });
 
