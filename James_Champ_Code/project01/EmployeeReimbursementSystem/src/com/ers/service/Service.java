@@ -68,7 +68,7 @@ public class Service {
 		return (ArrayList<Employee>) dao.getAllEmployees();
 	}
 	
-	public ArrayList<Request> getAllRequests(RequestState state) {
+	public ArrayList<Request> getAllRequestsByState(RequestState state) {
 		return (ArrayList<Request>) dao.getAllRequests(state);
 	}
 	
@@ -76,6 +76,7 @@ public class Service {
 		return (ArrayList<Request>) dao.getRequests(employee, isResolved);
 	}
 	
+	// TODO: Test
 	public ArrayList<Request> getRequestsByEmployee(Employee employee) {
 		return (ArrayList<Request>) dao.getRequests(employee);
 	}
@@ -88,11 +89,23 @@ public class Service {
 		return result;
 	}
 	
+	// TODO: Test
 	public Employee updateEmployee(Employee employee) {
 		Employee result = dao.updateEmployee(employee);
 		
 		if(result == null) {
 			// TODO: Throw exception if update was unsuccessful.
+		}
+		
+		return result;
+	}
+	
+	// TODO: Test
+	public Request updateRequest(Request request) {
+		Request result = dao.updateRequest(request);
+		
+		if(result == null) {
+			// TODO: Throw exception when update is unsuccessful
 		}
 		
 		return result;

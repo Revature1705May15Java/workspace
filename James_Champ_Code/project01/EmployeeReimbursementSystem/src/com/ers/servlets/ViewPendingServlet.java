@@ -11,7 +11,10 @@ import javax.servlet.http.HttpSession;
 
 import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
+import com.ers.pojos.RequestState;
 import com.ers.service.Service;
+import com.ers.servlets.states.SessionState;
+import com.ers.util.RequestStatePool;
 
 public class ViewPendingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,9 +24,17 @@ public class ViewPendingServlet extends HttpServlet {
 		Employee employee = (Employee) session.getAttribute("user");
 		
 		Service service = new Service();
-		ArrayList<Request> requests = service.getRequestsByState(employee, false);
+		ArrayList<Request> pending;
 		
-		request.setAttribute("requests", requests);
-		request.getRequestDispatcher("viewRequests.ftl").forward(request, response);
+		if(employee.getIsManager()) {
+			pending = service.getAllRequestsByState(RequestStatePool.getState(RequestState.PENDING));
+		}
+		else {
+			pending = service.getRequestsByState(employee, false);
+		}
+		
+		session.setAttribute("requests", pending);
+		session.setAttribute("state", SessionState.VIEW_PENDING);
+		request.getRequestDispatcher("site.ftl").forward(request, response);
 	}
 }

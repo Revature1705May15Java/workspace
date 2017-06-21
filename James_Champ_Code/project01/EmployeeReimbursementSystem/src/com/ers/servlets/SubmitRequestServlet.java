@@ -11,10 +11,18 @@ import javax.servlet.http.HttpSession;
 import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
 import com.ers.service.Service;
+import com.ers.servlets.states.SessionState;
 
 public class SubmitRequestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.setAttribute("state", SessionState.CREATE_REQUEST);
+		
+		request.getRequestDispatcher("site.ftl").forward(request, response);
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		double amount = Double.parseDouble(request.getParameter("amount"));
 		String purpose = request.getParameter("purpose");
@@ -28,7 +36,7 @@ public class SubmitRequestServlet extends HttpServlet {
 		
 		// TODO: Display results
 		// TODO: Accept decimal values for reimbursement amount.
-		request.getRequestDispatcher("employee.ftl").forward(request, response);
+		request.getRequestDispatcher("site.ftl").forward(request, response);
 	}
 
 }

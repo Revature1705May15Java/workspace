@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +12,11 @@ import javax.servlet.http.HttpSession;
 import com.ers.exceptions.InvalidPasswordException;
 import com.ers.exceptions.NoSuchEmployeeException;
 import com.ers.pojos.Employee;
+import com.ers.pojos.Request;
+import com.ers.pojos.RequestState;
 import com.ers.service.Service;
+import com.ers.servlets.states.SessionState;
+import com.ers.util.RequestStatePool;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,21 +32,24 @@ public class LoginServlet extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("user", employee);
+			session.setAttribute("state", SessionState.VIEW_PENDING);
+			
+			ArrayList<Request> pendingRequests;
 			
 			if(employee.getIsManager()) {
-				request.getRequestDispatcher("manager.ftl").forward(request, response);		
+				pendingRequests = service.getAllRequestsByState(RequestStatePool.getState(RequestState.PENDING));
 			}
 			else {
-				request.getRequestDispatcher("employee.ftl").forward(request, response);
+				pendingRequests = service.getRequestsByState(employee, false);
 			}
+			
+			session.setAttribute("pendingRequests", pendingRequests);
+			
+			request.getRequestDispatcher("site.ftl").forward(request, response);
 		} 
-		catch(NoSuchEmployeeException e) {
-			request.setAttribute("noEmployee", "true");
-			request.getRequestDispatcher("index.ftl").forward(request, response);
-		}
-		catch(InvalidPasswordException e) {
-			request.setAttribute("wrongPassword", "true");
-			request.getRequestDispatcher("index.ftl").forward(request, response);
+		catch(NoSuchEmployeeException | InvalidPasswordException e) {
+			request.setAttribute("error", "true");
+			request.getRequestDispatcher("site.ftl").forward(request, response);
 		}
 	}
 }

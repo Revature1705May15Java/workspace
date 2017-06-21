@@ -11,20 +11,32 @@ import javax.servlet.http.HttpSession;
 
 import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
+import com.ers.pojos.RequestState;
 import com.ers.service.Service;
+import com.ers.servlets.states.SessionState;
+import com.ers.util.RequestStatePool;
 
 public class ViewResolvedServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Employee employee = (Employee) session.getAttribute("user");
 		
 		Service service = new Service();
-		ArrayList<Request> requests = service.getRequestsByState(employee, true);
+		ArrayList<Request> requests;
 		
-		request.setAttribute("requests", requests);
-		request.getRequestDispatcher("viewRequests.ftl").forward(request, response);
+		if(employee.getIsManager()) {
+			requests = service.getAllRequestsByState(RequestStatePool.getState(RequestState.APPROVED));
+			requests.addAll(service.getAllRequestsByState(RequestStatePool.getState(RequestState.DENIED)));
+		}
+		else {
+			requests = service.getRequestsByState(employee, true);
+		}
+		
+		session.setAttribute("requests", requests);
+		session.setAttribute("state", SessionState.VIEW_RESOLVED);
+		request.getRequestDispatcher("site.ftl").forward(request, response);
 	}
 
 }

@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>EmployeeReimbursementSystem</display-name>
   <welcome-file-list>
-    <welcome-file>index.ftl</welcome-file>
+    <welcome-file>site.ftl</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>freemarker</servlet-name>
@@ -21,7 +21,7 @@
     </init-param>
     <init-param>
       <param-name>template_update_delay</param-name>
-      <param-value>0</param-value>
+      <param-value>10</param-value>
     </init-param>
     <init-param>
       <param-name>default_encoding</param-name>
@@ -37,6 +37,16 @@
     <servlet-name>freemarker</servlet-name>
     <url-pattern>*.ftl</url-pattern>
   </servlet-mapping>
+  <!--
+  <servlet>
+    <servlet-name>ViewAllPending</servlet-name>
+    <servlet-class>com.ers.servlets.ViewAllPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllPending</servlet-name>
+    <url-pattern>/viewAllPending</url-pattern>
+  </servlet-mapping> -->
+  <!-- Keep -->
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>com.ers.servlets.LoginServlet</servlet-class>
@@ -46,36 +56,12 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>ViewEmployees</servlet-name>
-    <servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.ers.servlets.LogoutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ViewEmployees</servlet-name>
-    <url-pattern>/viewEmployees</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>RegisterEmployee</servlet-name>
-    <servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>RegisterEmployee</servlet-name>
-    <url-pattern>/register</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>SubmitRequest</servlet-name>
-    <servlet-class>com.ers.servlets.SubmitRequestServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>SubmitRequest</servlet-name>
-    <url-pattern>/submitRequest</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>ViewAllPending</servlet-name>
-    <servlet-class>com.ers.servlets.ViewAllPendingServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewAllPending</servlet-name>
-    <url-pattern>/viewAllPending</url-pattern>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ViewPending</servlet-name>
@@ -86,11 +72,35 @@
     <url-pattern>/viewPending</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>ViewResolved</servlet-name>
-	<servlet-class>com.ers.servlets.ViewResolvedServlet</servlet-class>
+    <servlet-name>ViewResolved</servlet-name>
+    <servlet-class>com.ers.servlets.ViewResolvedServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ViewResolved</servlet-name>
-  	<url-pattern>/viewResolved</url-pattern>
+    <servlet-name>ViewResolved</servlet-name>
+    <url-pattern>/viewResolved</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RegisterEmployee</servlet-name>
+    <servlet-class>com.ers.servlets.RegisterEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterEmployee</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewEmployees</servlet-name>
+    <servlet-class>com.ers.servlets.ListEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewEmployees</servlet-name>
+    <url-pattern>/viewEmployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubmitRequest</servlet-name>
+    <servlet-class>com.ers.servlets.SubmitRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitRequest</servlet-name>
+    <url-pattern>/submitRequest</url-pattern>
   </servlet-mapping>
 </web-app>
