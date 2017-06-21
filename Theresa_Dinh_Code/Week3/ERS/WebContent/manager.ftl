@@ -2,29 +2,33 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         
         <!-- JQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         
         <!-- Data Tables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+<!--
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.css"/>
+-->
         
         <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
-        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <title>ERS Portal</title>
         <link rel="stylesheet" href="manager.css">
+<!--        <script async src="manager.js" onload="myInit()"></script>-->
 
-        <script src="manager.js"></script>
     </head>
     
     <body>    
@@ -70,13 +74,13 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active" name="pending-req"><a href="javascript:void(0)"><button name="pending-req" id="hidden-button" action="reqtables" method="post">Pending Requests</button><span class="sr-only">(current)</span></a></li>
-                        <li name="approve-req"><a id="approve-req" href="manager.ftl"><button id="hidden-button" action="reqtables" method="post">Approved Requests</button></a></li>
-                        <li name="deny-req"><a id="deny-req" href="javascript:addParam('table','deny-req')">Denied Requests</a></li>
-                        <li name="all-req"><a id="all-req" href="javascript:addParam('table=all-req)">View All Requests</a></li>
+                        <li name="approve-req"><a id="approve-req" href="manager.ftl">Approved Requests</a></li>
+                        <li name="deny-req"><a id="deny-req" href="javascript:void(0)">Denied Requests</a></li>
+                        <li name="all-req"><a id="all-req" href="javascript:void(0)">View All Requests</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
-                        <li name="submit-new"><a id="new-req" href="submission.ftl"><button id="hidden-button" type="submit" action="request" method="post">Submit New Request</button></a></li>
-                        <li><a id="own-req" href="javascript:addParam('table=own-req)">View Your Requests</a></li>
+                        <li name="submit-new"><a id="new-req" href="submission.ftl">Submit New Request</a></li>
+                        <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -87,7 +91,7 @@
                     <h2 class="sub-header" id="table-subheader">Requests Awaiting Approval</h2>
                     <!--    -->
                     <div class="table-responsive" id="body-table" action="RequestsServlet" method="get">
-                        <table class="table display dataTable" id="req-table">
+                        <table class="table" id="req-table">
                             <thead>
                                 <tr>
                                     <th>Firstname</th>
@@ -96,21 +100,8 @@
                                     <th>Amount Requested</th>
                                     <th>Purpose</th>
                                     <th>Date Submitted</th>
-<!--                                    <th>Approve/Deny Requests</th>-->
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- On rows -->
-                                <tr>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                    <td>...</td>
-                                </tr>
-                            </tbody>
                             <tfoot>
                                 <tr>
                                     <th>Firstname</th>
@@ -119,7 +110,6 @@
                                     <th>Amount Requested</th>
                                     <th>Purpose</th>
                                     <th>Date Submitted</th>
-<!--                                    <th>Approve/Deny Requests</th>-->
                                 </tr>
                             </tfoot>                            
                         </table>
@@ -135,14 +125,10 @@
         </div>
         
 <!--        script -->
+        <script src="manager.js"></script>
         <script type="text/javascript">
         $(".dropdown-toggle").dropdown();
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
         
     </body>
 </html>

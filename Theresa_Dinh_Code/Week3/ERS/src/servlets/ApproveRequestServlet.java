@@ -34,14 +34,14 @@ public class ApproveRequestServlet extends HttpServlet
 		
 		ErsService service = new ErsService(); 
 		
-		if(service.approveRequest(requestId, employee))
-		{
-			session.setAttribute("resolve", "pass");
-		}
-		else
-		{
-			session.setAttribute("resolve", "fail");
-		}
+//		if(service.approveRequest(requestId, employee))
+//		{
+//			session.setAttribute("resolve", "pass");
+//		}
+//		else
+//		{
+//			session.setAttribute("resolve", "fail");
+//		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 

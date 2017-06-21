@@ -1,10 +1,9 @@
 package servlets;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,68 +38,26 @@ public class TableEmployeeServlet extends HttpServlet
 				throws ServletException, IOException 
 		{
 			HttpSession session = request.getSession(true); 
-
-			session.setAttribute("table", "-");		
-			ServletContext context = request.getServletContext(); 
+//
+//			session.setAttribute("table", "-");		
+//			ServletContext context = request.getServletContext(); 
+//			context.getNamedDispatcher("HomeServlet"); 
 			
-			
-		
-			context.getNamedDispatcher("HomeServlet"); 
-		}
-		
-		public static void writeTable(String table)
-		{
 			ErsService service = new ErsService(); 
-			BufferedWriter writer;
 			
-			try
+			
+			try(PrintWriter writer = response.getWriter();)
 			{		
-				switch(table)	//adjust for employees 
-				{
-					case "pending-req":
-					{
-						writer =  new BufferedWriter(new FileWriter("pendingRequests.txt", true));
-						// { "data": [
-						writer.write("{\"data\":[");
-						for(Request r : service.getPendingRequests())
-						{
-							Employee e = new Employee(); 
-							e.setId(r.getRequesterId());
-							
-							e = service.getEmployee(e); 
-							// [ "firstName", "lastName", "email", "amount", "date submit", "approve/deny"],
-							writer.write("[\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
-									"\",\"" + e.getEmail() + "\",\"" + r.getAmount() + "\",\"" +
-									r.getRequestDate() + "\",\"" + "\"]");	// what do for approve button 
-						}
-						// ]}
-						writer.write("]}");
-						break;
-					}
-					case "approve-req":
-					{
-						writer =  new BufferedWriter(new FileWriter("approvedRequests.txt", true));
-						// { "data": [
-						writer.write("{\"data\":[");
-						for(Request r : service.getApprovedRequests())
-						{
-							Employee e = new Employee(); 
-							e.setId(r.getRequesterId());
-							
-							e = service.getEmployee(e); 
-							// [ "firstName", "lastName", "email", "amount", "date submit"
-							writer.write("[\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
-									"\",\"" + e.getEmail() + "\",\"" + r.getAmount() + "\",\"" +
-									r.getRequestDate() + "\"]");	// what do for approve button 
-						}
-						writer.write("]}");
-						break; 
-					}
-				}
+				
 			}
 			catch(IOException e)
 			{
 				e.printStackTrace();
 			}
+		}
+		
+		public static void writeTable(String table)
+		{
+			
 		}
 }

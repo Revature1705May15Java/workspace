@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,13 +32,11 @@ public class HomeServlet extends HttpServlet 	// portal hub, directs to other se
 			throws ServletException, IOException 
 	{
 		HttpSession session = request.getSession(true); 
-		
-		Employee employee = (Employee)session.getAttribute("employee"); 	
-		RequestDispatcher rd; 
+//		
+//		Employee employee = (Employee)session.getAttribute("employee"); 	
+//		RequestDispatcher rd; 
 				
 		session.setAttribute("table", "pending-req");
-		TableEmployeeServlet.writeTable(request.getParameter("table")); 
-
 		
 //		String choice = (String)session.getAttribute("choice"); 
 //		ServletContext context = request.getServletContext(); 

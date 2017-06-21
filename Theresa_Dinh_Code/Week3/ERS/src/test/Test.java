@@ -45,27 +45,26 @@ public class Test {
 //		service.approveRequest(41, e);
 //		service.denyRequest(21, e);
 		
-		BufferedWriter writer; 
-		writer =  new BufferedWriter(new FileWriter("src/data/pendingRequests.txt", false));
-		// { "data": [
-		writer.write("{\"data\":[");
+		String json = ""; 
+		json += "{\"data\":[";
 		ArrayList<Request> list = service.getPendingRequests(); 
-//		for(Request r : service.getPendingRequests())
+				
 		for(int i = 0; i < list.size(); i++)
 		{
-			Request r = list.get(i); 
-			Employee e = service.getEmployee(r.getRequesterId()); 
-			// [ "firstName", "lastName", "email", "amount", "date submit", "approve/deny"],
-			writer.write("[\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
-					"\",\"" + e.getEmail() + "\",\"" + r.getAmount() + "\",\"" +
-					r.getRequestDate() + "\",\"" + "\"]");	// what do for approve button 
-			if(i == list.size()-1)
-				continue;
-			writer.write(",");
-		}
-		// ]}
-		writer.write("]}");
-		writer.close();
+            Request r = list.get(i); 
+            Employee e = service.getEmployee(r.getRequesterId()); 
+
+            // [ "firstName", "lastName", "email", "amount", "date submit", "approve/deny"],
+            json += ("[\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
+                    "\",\"" + e.getEmail() + "\",\"" + r.getAmount() + "\",\"" +
+                    r.getRequestDate() + "\",\"" + r.getPurpose() + "\"]");	// what do for approve button 
+            if(i == list.size()-1)
+                continue;
+            json += (",");
+        }
+        // ]}
+        json += ("]}");
+        System.out.println(json);
 	}
 
 }
