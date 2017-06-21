@@ -37,16 +37,6 @@
     <servlet-name>freemarker</servlet-name>
     <url-pattern>*.ftl</url-pattern>
   </servlet-mapping>
-  <!--
-  <servlet>
-    <servlet-name>ViewAllPending</servlet-name>
-    <servlet-class>com.ers.servlets.ViewAllPendingServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ViewAllPending</servlet-name>
-    <url-pattern>/viewAllPending</url-pattern>
-  </servlet-mapping> -->
-  <!-- Keep -->
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>com.ers.servlets.LoginServlet</servlet-class>
@@ -102,5 +92,13 @@
   <servlet-mapping>
     <servlet-name>SubmitRequest</servlet-name>
     <url-pattern>/submitRequest</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<servlet-class>com.ers.servlets.UpdateEmployeeInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<url-pattern>/updateEmployee</url-pattern>
   </servlet-mapping>
 </web-app>

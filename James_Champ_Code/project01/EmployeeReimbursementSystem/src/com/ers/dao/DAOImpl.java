@@ -159,7 +159,6 @@ public class DAOImpl implements DAO{
 			
 			if(numUpdated == 1) {
 				result = employee;
-				result.setPassword(null);
 			}
 		}
 		catch(SQLException e) {
