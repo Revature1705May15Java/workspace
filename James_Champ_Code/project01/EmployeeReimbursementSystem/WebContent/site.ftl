@@ -23,7 +23,5 @@
 	</div>
 	
 		
-	<!-- scripts -->
-	<script type="text/javascript" src="js/action.js"></script>
 </body>
 </html>

@@ -22,5 +22,5 @@
 	<button id="cancel-update-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 	<button id="update-btn" type="submit" class="btn btn-default">Update</button>
 	
-	<script type="text/javascript" src="js/validateUpdate.js"/>
+	<script type="text/javascript" src="js/validateUpdate.js"></script>
 </form>

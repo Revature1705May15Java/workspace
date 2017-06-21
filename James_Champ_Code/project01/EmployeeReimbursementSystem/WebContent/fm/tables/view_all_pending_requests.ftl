@@ -14,6 +14,7 @@
 	            </#if>
 			</tr>
 		</thead>
+		<tbody>
 		<#list pendingRequests as pr>
 			<tr>
 				<td>${pr.requestId}</td>
@@ -22,9 +23,10 @@
 				<td>${pr.purpose}</td>
 				<td>${pr.openDate}</td>
 				<#if user.isManager>
-					<td><button type="button">Action</button></td>
+					<td><button id="request-action-btn" class="btn btn-default" type="button">Action</button></td>
 				</#if>
 			</tr>
 		</#list>
+		</tbody>
 	</table>
 </div>
