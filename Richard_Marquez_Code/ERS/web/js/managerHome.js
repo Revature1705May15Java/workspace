@@ -1,5 +1,15 @@
 initTables();
 
+$('#newUserForm input').alphanum({
+    allow: '-_$.',
+    maxLength: 50
+});
+
+$('#viewRequestForm input, #viewRequestForm textarea').alphanum({
+    allow: '!@#$%^&*()-_=+[]{};:,.?/',
+    maxLength: 100
+});
+
 function initTables() {
     // $.tablesorter.defaults.sortList = [[0,0]];
 

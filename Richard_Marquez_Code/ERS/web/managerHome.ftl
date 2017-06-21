@@ -71,7 +71,7 @@
                 <h4 class="modal-title id" id="viewRequestModalLabel">View Request</h4>
                 <h3 class="state">Status</h3>
             </div>
-            <form method="POST">
+            <form id="viewRequestForm" method="POST">
                 <div class="modal-body">
                     <table class="table">
                         <tr>
@@ -116,7 +116,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title id" id="newUserModalLabel">New User</h4>
             </div>
-            <form name="newUserForm" action="/NewUser" method="POST">
+            <form id="newUserForm" name="newUserForm" action="/NewUser" method="POST">
                 <div class="modal-body">
                     <table class="table">
                         <tr>

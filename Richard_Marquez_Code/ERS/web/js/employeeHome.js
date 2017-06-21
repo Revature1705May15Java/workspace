@@ -1,5 +1,10 @@
 initTables();
 
+$('#newRequestForm textarea').alphanum({
+    allow: '.@!#$%^&*()_-=+',
+    maxLength: 50
+});
+
 // Thanks to Arbiter Christie for the idea
 function initTables() {
     $.tablesorter.defaults.sortList = [[1,1]];

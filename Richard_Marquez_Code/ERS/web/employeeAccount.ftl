@@ -3,7 +3,7 @@
 
 <div id="employeeAccountContainer" class="white-container container-fluid">
     <#--<h3>${user.getEmail()}</h3>-->
-    <form name="employeeAccountForm" action="/EmployeeAccount" method="POST">
+    <form id="employeeAccountForm" name="employeeAccountForm" action="/EmployeeAccount" method="POST">
         <table class="table">
             <tr>
                 <td>First Name</td>

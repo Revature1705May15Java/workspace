@@ -78,7 +78,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title id" id="newRequestModalLabel">New Request</h4>
             </div>
-            <form name="newRequestForm" action="/NewRequest" method="POST">
+            <form id="newRequestForm" name="newRequestForm" action="/NewRequest" method="POST">
                 <div class="modal-body">
                     <table class="table">
                         <tr>

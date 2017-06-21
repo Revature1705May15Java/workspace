@@ -1,5 +1,10 @@
 initPasswordValidation();
 
+$('#employeeAccountForm input').alphanum({
+    allow: '.@!#$%^&*()_-=+',
+    maxLength: 50
+});
+
 function initPasswordValidation() {
     // Only attempt validate passwords on employee account page
     if ($('#employeeAccountContainer').length == 0) return;
