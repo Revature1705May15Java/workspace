@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.revature.ers.pojos.Request;
 import com.revature.ers.pojos.RequestState;
 import com.revature.ers.pojos.User;
 import com.revature.ers.service.ERService;
@@ -42,21 +43,36 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  ERService service = new ERService();
     HttpSession session = request.getSession();
-    if (((User) session.getAttribute("user")) != null) {
+    User u = (User) session.getAttribute("user");
+    if (u != null) {
       /*
        * employees and managers get forwarded to the main.ftl page, and FreeMarker determines what content they see
        */
       ArrayList<RequestState> states = service.getRequestStates();
       for (RequestState s: states) {
-        request.setAttribute(s.getName(), s);
+        session.setAttribute(s.getName(), s);
       }
+      
+      // when the main page is loaded, initialize the page with all required information using FreeMarker
+      if (u.isManager()) {
+        ArrayList<User> employees = service.getEmployees();
+        ArrayList<Request> pending = service.getPendingRequests();
+        ArrayList<Request> resolved = service.getResolvedRequests();
+
+        request.setAttribute("employees", employees);
+        request.setAttribute("pending", pending);
+        request.setAttribute("resolved", resolved);
+      } else {
+        ArrayList<Request> pending = service.getPendingRequestsByEmployee(u);
+        ArrayList<Request> resolved = service.getResolvedRequestsByEmployee(u);
+        
+        request.setAttribute("pending", pending);
+        request.setAttribute("resolved", resolved);
+      }
+      
       request.getRequestDispatcher("main.ftl").forward(request, response);
     } else {
-      /*
-       * if there is no current user stored in the session, redirect to (login or logout ?) page
-       */
-      response.sendRedirect("login");
-//      response.sendRedirect("logout");
+      response.sendRedirect("logout");
     }
 	}
 
@@ -64,7 +80,7 @@ public class MainServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    doGet(request, response); 
+    doGet(request, response);
 	}
 	
 }

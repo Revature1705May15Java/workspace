@@ -1,128 +1,346 @@
 <main>
-  <!--sortable, filterable tables go here-->
-  <!--<table id="unresolved" class="table table-hover"></table>
-  <table id="resolved" class="table table-hover"></table>-->
+  <div class="container">
+    <#if user.isManager()>
+      <div class="row">
+        <div class="col-md-3 hidden-md-down">
+          <div id="employees">
+            <label for="employeeSearch" class="sr-only">Search Employees</label>
+            <input type="search" id="employeeSearch" class="search form-control" placeholder="Search Employees">
+            <br>
+            <ul class="list list-group" id="employeesColumn">
+              <#if employees?size == 0>
+                There are currently no employee accounts.
+              <#else>
+                <#list employees as employee>
+                  <button type="button" class="list-group-item list-group-item-action justify-content-between" data-id="${employee.getId()}">
+                    <p class="h5">
+                      <span class="firstname">${employee.getFirstname()}</span>&nbsp;<span class="lastname">${employee.getLastname()}</span>
+                    </p>
+                    <p class="email"><small>${employee.getEmail()}</small></p>
+                  </button>
+                </#list>
+              </#if>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-1 hidden-lg-down" id="spacer-column"></div>
+        <div class="col" id="tablesColumn">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item visible-md-down hidden-lg-up">
+              <a class="nav-link" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
+            </li>
+          </ul>
 
-  <!--SINCE MANAGERS ALREADY GET A COMPLETE LIST OF EMPLOYEES, YOU SHOULD CREATE A DATALIST CONTAINING
-  REPRESENTATIONS OF ALL THE EMPLOYEES (PROBABLY AS JSON STRINGS)-->
-
-
-
-
-
-
-
-  <!--testing some stuff-->
-  <!--datetime picker minimum setup-->
-  <!--<div class="container">
-    <div class="row">
-      <div class='col-sm-6'>
-        <div class="form-group">
-          <div class='input-group date' id='datetimepicker1'>
-            <input type='text' class="form-control" />
-            <span class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane visible-md-down hidden-lg-up" id="employeesPane" role="tabpanel">
+              <div id="employees">
+                <label for="employeeSearch" class="sr-only">Search Employees</label>
+                <input type="search" id="employeeSearch" class="search form-control my-2" placeholder="Search">
+                <br>
+                <ul class="list list-group" id="employeesColumn">
+                  <#if employees?size == 0>
+                    There are currently no employee accounts.
+                  <#else>
+                    <#list employees as employee>
+                      <button type="button" class="employeeButton list-group-item list-group-item-action justify-content-between" data-id="${employee.getId()}">
+                        <p class="h5">
+                          <span class="firstname">${employee.getFirstname()}</span>&nbsp;<span class="lastname">${employee.getLastname()}</span>
+                        </p>
+                        <p class="email"><small>${employee.getEmail()}</small></p>
+                      </button>
+                    </#list>
+                  </#if>
+                </ul>
+              </div>
+            </div>
+            <div class="tab-pane active" id="pendingPane" role="tabpanel">
+              <div id="pendingRequests">
+                <label for="pendingSearch" class="sr-only">Search Pending Requests</label>
+                <input type="search" id="pendingSearch" class="search form-control my-2" placeholder="Search Pending Requests">
+                <table id="pendingTable" class="table table-hover table-bordered table-responsive">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th class="sort" data-sort="requestId">#</th>
+                      <th class="sort" data-sort="requesterFirstname">Requester</th>
+                      <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                      <th>Purpose</th>
+                      <th class="sort" data-sort="amount">Amount</th>
+                      <th colspan="2">Approve&nbsp;or&nbsp;Deny</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <#if pending?size == 0>
+                      <tr><td colspan="6">There are currently no pending requests to display.</td></tr>
+                    <#else>
+                      <#list pending as r>
+                        <tr class="pendingRow" data-requesterId="${r.getRequesterId()}" data-toggle="modal" data-target="#pendingDisplayModal">
+                          <td class="requestId">${r.getId()}</td>
+                          <td data-requesterId="${r.getRequesterId()}" data-requesterEmail="${r.getRequesterEmail()}">
+                            <span class="requesterFirstname">${r.getRequesterFirstname()}</span>&nbsp;
+                            <span class="requesterLastname">${r.getRequesterLastname()}</span>
+                          </td>
+                          <td class="requestTimestamp">
+                            <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                          </td>
+                          <td class="requestPurpose">${r.getPurpose()}</td>
+                          <td class="amount">${r.getAmount()?string.currency}</td>
+                          <td data-toggle="tooltip" data-placement="bottom" title="Approve this Request">
+                            <a href="aux/request" class="approveButton btn btn-outline-success" data-value="Approve"
+                               data-toggle="modal" data-target="#resolveModal" data-id="${r.getId()}">
+                              <i class="material-icons align-middle">thumb_up</i>
+                              <span class="sr-only align-middle">Approve Request</span>
+                            </a>
+                          </td>
+                          <td data-toggle="tooltip" data-placement="bottom" title="Deny this Request">
+                            <a href="aux/request" class="denyButton btn btn-outline-danger" data-value="Deny"
+                               data-toggle="modal" data-target="#resolveModal" data-requestId="${r.getId()}">
+                              <i class="material-icons align-middle">thumb_down</i>
+                              <span class="sr-only align-middle">Deny Request</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </#list>
+                    </#if>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-pane" id="resolvedPane" role="tabpanel">
+              <div id="resolvedRequests">
+                <label for="resolvedSearch" class="sr-only">Search Resolved Requests</label>
+                <input type="search" id="resolvedSearch" class="search form-control my-2" placeholder="Search Resolved Requests">
+                <table id="resolvedTable" class="table table-hover table-bordered table-responsive">
+                  <thead class="thead-inverse">
+                    <tr>
+                      <th class="sort" data-sort="requestId">#</th>
+                      <th class="sort" data-sort="status">Status</th>
+                      <th class="sort" data-sort="requesterFirstname">Requester</th>
+                      <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                      <th class="sort" data-sort="resolverFirstname">Resolver</th>
+                      <th class="sort" data-sort="resolveTimestamp">Date&nbsp;Resolved</th>
+                      <th class="sort" data-sort="amount">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <#if resolved?size == 0>
+                      <tr><td colspan="7">There are currently no resolved requests to display.</td></tr>
+                    <#else>
+                      <#list resolved as r>
+                        <tr class="resolvedRow" data-state="${r.getState().getName()}" data-purpose="${r.getPurpose()}"
+                            data-note="${r.getNote()}">
+                          <td class="requestId">${r.getId()}</td>
+                          <td class="state">${r.getState().getName()}</td>
+                          <td data-requester-id="${r.getRequesterId()}" data-requester-email="${r.getRequesterEmail()}">
+                            <span class="requesterFirstname">${r.getRequesterFirstname()}</span>&nbsp;
+                            <span class="requesterLastname">${r.getRequesterLastname()}</span>
+                          </td>
+                          <td class="requestTimestamp">
+                            <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                          </td>
+                          <td data-resolver-id="${r.getResolverId()}" data-resolver-email="${r.getResolverEmail()}">
+                            <span class="resolverFirstname">${r.getResolverFirstname()}</span>&nbsp;
+                            <span class="resolverLastname">${r.getResolverLastname()}</span>
+                          </td>
+                          <td class="resolveTimestamp">
+                            <time datetime="${r.getDateTimeResolved()}">${r.getDateTimeResolved().toLocalDate()}</time>
+                          </td>
+                          <!--<td class="requestPurpose">${r.getPurpose()}</td>-->
+                          <td class="amount">${r.getAmount()?string.currency}</td>
+                          
+                        </tr>
+                      </#list>
+                    </#if>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker();
-        });
-      </script>
-    </div>
-  </div>-->
-  <!--datetime picker view mode-->
-  <!--<div class="container">
-    <div class="col-sm-6" style="height:130px;">
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker9'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar">
-            </span>
-          </span>
+    <#else>
+      <!--
+      For employees, the tables for pending requests and resolved requests will both omit columns containing 
+      information used to identify the requester, since employees can only see requests made by themselves. 
+      There also won't be any buttons for employees to use to manupulate individual table rows or the displayed requests.
+      -->
+      <div class="row hidden-sm-down visible-md-up">
+        <div class="col-md-5">
+          <div id="employeePendingRequests">
+            <label for="pendingSearch" class="sr-only">Search Pending Requests</label>
+            <input type="search" id="pendingSearch" class="search form-control my-2" placeholder="Search Pending Requests">
+            <table id="pendingTable" class="table table-hover table-bordered table-responsive">
+              <thead class="thead-inverse">
+                <tr>
+                  <th class="sort" data-sort="requestId">#</th>
+                  <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                  <th>Purpose</th>
+                  <th class="sort" data-sort="amount">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <#if pending?size == 0>
+                  <tr><td colspan="6">None of your requests are pending.</td></tr>
+                <#else>
+                  <#list pending as r>
+                    <tr class="pendingRow" data-requesterId="${r.getRequesterId()}" data-requesterEmail="${r.getRequesterEmail()}"
+                        data-toggle="modal" data-target="#pendingDisplayModal">
+                      <td class="requestId">${r.getId()}</td>
+                      <td class="requestTimestamp">
+                        <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                      </td>
+                      <td class="requestPurpose">${r.getPurpose()}</td>
+                      <td class="amount">${r.getAmount()?string.currency}</td>
+                    </tr>
+                  </#list>
+                </#if>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div id="employeeResolvedRequests">
+            <label for="employeeResolvedSearch" class="sr-only">Search Resolved Requests</label>
+            <input type="search" id="resolvedSearch" class="search form-control my-2" placeholder="Search Resolved Requests">
+            <table id="employeeResolvedTable" class="table table-hover table-bordered table-responsive">
+              <thead class="thead-inverse">
+                <tr>
+                  <th class="sort" data-sort="requestId">#</th>
+                  <th class="sort" data-sort="status">Status</th>
+                  <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                  <th class="sort" data-sort="resolverFirstname">Resolver</th>
+                  <th class="sort" data-sort="resolveTimestamp">Date&nbsp;Resolved</th>
+                  <th class="sort" data-sort="amount">Amount</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <#if resolved?size == 0>
+                  <tr><td colspan="7">None of your requests have been resolved.</td></tr>
+                <#else>
+                  <#list resolved as r>
+                    <tr class="resolvedRow" data-state="${r.getState().getName()}" data-purpose="${r.getPurpose()}" data-note="${r.getNote()}">
+                      <td class="requestId">${r.getId()}</td>
+                      <td class="state">${r.getState().getName()}</td>
+                      <td class="requestTimestamp">
+                        <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                      </td>
+                      <td data-resolver-id="${r.getResolverId()}" data-resolver-email="${r.getResolverEmail()}">
+                        <span class="resolverFirstname">${r.getResolverFirstname()}</span>&nbsp;
+                        <span class="resolverLastname">${r.getResolverLastname()}</span>
+                      </td>
+                      <td class="resolveTimestamp">
+                        <time datetime="${r.getDateTimeResolved()}">${r.getDateTimeResolved().toLocalDate()}</time>
+                      </td>
+                      <td class="amount">${r.getAmount()?string.currency}</td>
+                    </tr>
+                  </#list>
+                </#if>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-    <script type="text/javascript">
-      $(function () {
-          $('#datetimepicker9').datetimepicker({
-              viewMode: 'years'
-          });
-      });
-    </script>
-  </div>-->
-  <!--datetime picker min view mode-->
-  <!--<div class="container">
-    <div class="col-sm-6" style="height:130px;">
-      <div class="form-group">
-        <div class='input-group date' id='datetimepicker10'>
-          <input type='text' class="form-control" />
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-calendar">
-            </span>
-          </span>
+
+      <div class="row visible-sm-down hidden-md-up" id="tablesColumn">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!--<div class="tab-pane hidden-md-up" id="employeesPane" role="tabpanel"></div>-->
+          <div class="tab-pane active" id="pendingPane" role="tabpanel">
+            <div id="employeePendingRequests">
+              <label for="pendingSearch" class="sr-only">Search Pending Requests</label>
+              <input type="search" id="pendingSearch" class="search form-control my-2" placeholder="Search Pending Requests">
+              <table id="pendingTable" class="table table-hover table-bordered table-responsive">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th class="sort" data-sort="requestId">#</th>
+                    <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                    <th>Purpose</th>
+                    <th class="sort" data-sort="amount">Amount</th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  <#if pending?size == 0>
+                    <tr><td colspan="6">None of your requests are pending.</td></tr>
+                  <#else>
+                    <#list pending as r>
+                      <tr class="pendingRow" data-requesterId="${r.getRequesterId()}" data-requesterEmail="${r.getRequesterEmail()}">
+                        <td class="requestId">${r.getId()}</td>
+                        <td class="requestTimestamp">
+                          <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                        </td>
+                        <td class="requestPurpose">${r.getPurpose()}</td>
+                        <td class="amount">${r.getAmount()?string.currency}</td>
+                      </tr>
+                    </#list>
+                  </#if>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="resolvedPane" role="tabpanel">
+            <div id="employeeResolvedRequests">
+              <label for="employeeResolvedSearch" class="sr-only">Search Resolved Requests</label>
+              <input type="search" id="resolvedSearch" class="search form-control my-2" placeholder="Search Resolved Requests">
+              <table id="employeeResolvedTable" class="table table-hover table-bordered table-responsive">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th class="sort" data-sort="requestId">#</th>
+                    <th class="sort" data-sort="status">Status</th>
+                    <th class="sort" data-sort="requestTimestamp">Date&nbsp;Requested</th>
+                    <th class="sort" data-sort="resolverFirstname">Resolver</th>
+                    <th class="sort" data-sort="resolveTimestamp">Date&nbsp;Resolved</th>
+                    <th class="sort" data-sort="amount">Amount</th>
+                  </tr>
+                </thead>
+                <tbody class="list">
+                  <#if resolved?size == 0>
+                    <tr><td colspan="7">None of your requests have been resolved.</td></tr>
+                  <#else>
+                    <#list resolved as r>
+                      <tr class="resolvedRow" data-state="${r.getState().getName()}" data-purpose="${r.getPurpose()}" data-note="${r.getNote()}">
+                        <td class="requestId">${r.getId()}</td>
+                        <td class="state">${r.getState().getName()}</td>
+                        <td class="requestTimestamp">
+                          <time datetime="${r.getDateTimeRequested()}">${r.getDateTimeRequested().toLocalDate()}</time>
+                        </td>
+                        <td data-resolver-id="${r.getResolverId()}" data-resolver-email="${r.getResolverEmail()}">
+                          <span class="resolverFirstname">${r.getResolverFirstname()}</span>&nbsp;
+                          <span class="resolverLastname">${r.getResolverLastname()}</span>
+                        </td>
+                        <td class="resolveTimestamp">
+                          <time datetime="${r.getDateTimeResolved()}">${r.getDateTimeResolved().toLocalDate()}</time>
+                        </td>
+                        <td class="amount">${r.getAmount()?string.currency}</td>
+                      </tr>
+                    </#list>
+                  </#if>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+     
+     
+     <!--data-toggle="modal" data-target="#resolvedDisplayModal"-->
       </div>
-    </div>
-    <script type="text/javascript">
-      $(function () {
-          $('#datetimepicker10').datetimepicker({
-              viewMode: 'years',
-              format: 'MM/YYYY'
-          });
-      });
-    </script>
-  </div>-->
-
-
-    <!--
-  <#if user.isManager()>
-    <h2>Welcome to the Manager Homepage, ${user.getFirstname()} ${user.getLastname()}</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Status</th>
-          <th >Amount</th>
-          <th id="requester">Requested by</th>
-          <th id="request-date">On</th>
-          <th id="request-purpose">For</th>
-          <th id="resolver">Resolved by</th>
-          <th id="resolved-date">On</th>
-          <th id="resolve-note">Because</th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
-  <#else>
-    <h2>Welcome to the Employee Homepage, ${user.getFirstname()} ${user.getLastname()}</h2>
-    <table>
-      <thead>
-        <tr>
-          <th id="request-id">ID</th>
-          <th id="request-state">Status</th>
-          <th id="request-amount">Amount</th>
-          <th id="requester">Requested by</th>
-          <th id="request-purpose">For</th>
-          <th id="resolver">Resolved by</th>
-          <th id="resolved-date">On</th>
-          <th id="resolve-note">Because</th>
-        </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
-  </#if>
-  -->
+    </#if>
+  </div>
 
 </main>

@@ -1,0 +1,41 @@
+<div class="modal fade" id="resolveModal" tabindex="-1" role="dialog" aria-labelledby="resolveModalLabel"
+    aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="form">
+    <!--This modal's content should change based on whether it is reached using the approve or deny button-->
+    <!--The modal's content should state whether it is being used to approve or deny a request and should also 
+    specify which request is being resolved-->
+    <div class="modal-content">
+      <div class="modal-header bg-inverse text-white">
+        <h5 class="modal-title" id="resolveModalLabel"></h5>
+        <button type="reset" id="resolveClose" form="resolveForm" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons md-light">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="progress hidden-xs-up my-2">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+          <br>
+        </div>
+        <h5 id="error-message" class="hidden-xs-up font-weight-bold bg-danger text-white" role="alert">
+          <i class="material-icons align-middle">warning</i>An error occurred and the reimbursement request could not be resolved.
+        </h5>
+        <form name="resolve" id="resolveForm" method="post" action="request">
+          <label for="note" class="sr-only">Note</label>
+          <textarea name="note" id="note" maxlength="140" cols="50" rows="3" placeholder="Please leave a note for the requester explaining your decision."
+             pattern="^[\w]*$" title="You can only input letters, numbers, and underscores."></textarea>
+          <input type="hidden" name="state" required>
+          <input type="hidden" name="requestId" required>
+        </form>
+      </div>
+      <div class="modal-footer bg-inverse text-white">
+        <button type="reset" id="resolveCancel" form="resolveForm" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="submit" id="resolveSubmit" form="resolveForm" class="btn btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

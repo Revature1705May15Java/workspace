@@ -49,6 +49,24 @@ var modals = [
     }
   ];
 
+$(document).ready(function() {
+
+  // TODO add feature detection and stuff to handle browsers with missing features
+  $('[data-toggle="tooltip"]').tooltip(); // initialize tooltips
+  $('[data-toggle="popover"]').popover(); // enable popovers
+  links.forEach(function(link) {
+    setupNavigationCancel(link);
+  });
+  
+  modals.forEach(function(modal) {
+    setupAjaxSubmit(modal);
+    setupResetOnHide(modal.selector);
+  });
+  setupPasswordConfirmation('#userPassword', '#userConfirm');
+  setupVaryingResolveModal();
+  setupTables();
+});
+
 /*
  * -** checkbox inputs can be toggled programmatically via $('#checkboxId').get(0).checked = true/false
  */
@@ -153,8 +171,5 @@ function setupRequestDisplayModal() {
   });
 }
 
-function setupFilterByEmployee() {
-  $('#employeesColumn button').on('click', function(event) {
 
-  });
-}
+/* javascript for handling data presentation on the main page */

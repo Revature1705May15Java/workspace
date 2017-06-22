@@ -55,7 +55,7 @@ public class SettingsServlet extends HttpServlet {
       
       
     } else {
-      response.sendRedirect("login");
+      response.sendRedirect("logout");
     }
 	}
 
@@ -102,30 +102,32 @@ public class SettingsServlet extends HttpServlet {
       Boolean emailAlertsOn = request.getParameter("emailAlerts") != null;
       TempLogger.serverLog("emailAlertsOn = " + emailAlertsOn);
       
+      User updated = null;
       ObjectMapper mapper = new ObjectMapper();
       mapper.registerModule(new JavaTimeModule());
       
       if (password != null) {
         if (password.equals(confirm)) {
-          User updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
-          String json = mapper.writeValueAsString(updated);
-          response.setContentType("application/json");
-          TempLogger.serverLog("sending: " + json);
-          PrintWriter out = response.getWriter();
-          out.println(json);
+          updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
         } else {
           response.sendError(400, "Password and password confirmation must match.");
         }
       } else {
-        User updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
+        updated = service.updateUserInformation(u, email, password, firstname, lastname, emailAlertsOn);
+      }
+      if (updated != null) {
+        session.setAttribute("user", updated);
         String json = mapper.writeValueAsString(updated);
         response.setContentType("application/json");
         TempLogger.serverLog("sending: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
+      } else {
+        response.sendError(400, "Account settings update failed.");
       }
+      
     } else {
-      response.sendRedirect("login");
+      response.sendRedirect("logout");
     }
 	}
 

@@ -3,9 +3,9 @@ package com.revature.ers.dao;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-import com.revature.ers.pojos.User;
 import com.revature.ers.pojos.Request;
 import com.revature.ers.pojos.RequestState;
+import com.revature.ers.pojos.User;
 
 /*
  * TODO remove unused DAO methods
@@ -59,11 +59,11 @@ public interface DAO {
    */
   ArrayList<User> getAllManagers();
   
-  /**
-   * Retrieve information for all requests.
-   * @return an ArrayList of Request objects for all requests, in descending order by id 
-   */
-  ArrayList<Request> getAllRequests();
+//  /**
+//   * Retrieve information for all requests.
+//   * @return an ArrayList of Request objects for all requests, in descending order by id 
+//   */
+//  ArrayList<Request> getAllRequests();
   
   /**
    * Retrieve all possible request states.
@@ -90,35 +90,63 @@ public interface DAO {
    * @param id
    * @return a complete Request object (contains all available information from the database), or null if no such request exists
    */
-  Request getRequest(int id);
+  Request getUnresolvedRequest(Integer id);
   
   /**
-   * Retrieve all requests created by the user with the given email.
+   * Retrieve all unresolved requests.
    * @param email
    * @return an ArrayList of complete Request objects, in descending order by id
    */
-  ArrayList<Request> getRequestsByRequester(String email);
+  ArrayList<Request> getUnresolvedRequests();
   
   /**
-   * Retrieve all requests in the given state.
-   * @param stateName
-   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
-   */
-  ArrayList<Request> getRequestsByState(String stateName);
-  
-  /**
-   * Retrieve all requests created by the user with the given email that are in the given state
+   * Retrieve all unresolved requests created by the user with the given email.
    * @param email
-   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
+   * @return an ArrayList of complete Request objects, in descending order by id
    */
-  ArrayList<Request> getRequestsByRequesterAndState(String email, String stateName);
+  ArrayList<Request> getUnresolvedRequestsByRequester(String email);
   
   /**
-   * Make the given user a manager. (This should only be accessible to managers.)
-   * @param e
-   * @return true if successful, false otherwise
+   * Retrieve the request with the given id.
+   * @param id
+   * @return a complete Request object (contains all available information from the database), or null if no such request exists
    */
-  boolean promoteEmployee(User e);
+  Request getResolvedRequest(Integer id);
+  
+  /**
+   * Retrieve all resolved requests.
+   * @param email
+   * @return an ArrayList of complete Request objects, in descending order by id
+   */
+  ArrayList<Request> getResolvedRequests();
+  
+  /**
+   * Retrieve all resolved requests created by the user with the given email.
+   * @param email
+   * @return an ArrayList of complete Request objects, in descending order by id
+   */
+  ArrayList<Request> getResolvedRequestsByRequester(String email);
+  
+//  /**
+//   * Retrieve all requests in the given state.
+//   * @param stateName
+//   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
+//   */
+//  ArrayList<Request> getRequestsByState(String stateName);
+//  
+//  /**
+//   * Retrieve all requests created by the user with the given email that are in the given state
+//   * @param email
+//   * @return an ArrayList of complete Request objects, in descending order by request/resolve date
+//   */
+//  ArrayList<Request> getRequestsByRequesterAndState(String email, String stateName);
+//  
+//  /**
+//   * Make the given user a manager. (This should only be accessible to managers.)
+//   * @param e
+//   * @return true if successful, false otherwise
+//   */
+//  boolean promoteEmployee(User e);
   
   /**
    * Update the information for the given user.
@@ -147,6 +175,20 @@ public interface DAO {
    * @param note
    * @return true if successful, false otherwise
    */
-  boolean updateRequest(Request r, User resolver, RequestState state, String note);
+  boolean updateRequest(int requestId, User resolver, RequestState state, String note);
+  
+//  /**
+//   * Get employee information that has been added or updated since the specified time.
+//   * @param previous
+//   * @return an ArrayList of Employee objects
+//   */
+//  ArrayList<User> getEmployeeUpdatesSince(LocalDateTime previous);
+//  
+//  /**
+//   * Get request information that has been added or updated since the specified time.
+//   * @param previous
+//   * @return an ArrayList of Request objects
+//   */
+//  ArrayList<Request> getRequestUpdatesSince(LocalDateTime previous);
   
 }

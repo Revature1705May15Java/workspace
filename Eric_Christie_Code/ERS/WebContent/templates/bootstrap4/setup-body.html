@@ -16,7 +16,7 @@
       <h2 class="form-page-heading">Please set a password for your account.</h2>
       <label for="setupPassword" class="sr-only">Password</label>
       <input type="password" name="pw" id="setupPassword" class="form-control" placeholder="Password"
-        maxlength="100" minlength="8" required autofocus>
+        maxlength="100" minlength="8" required autofocus pattern="^[\w]*$" title="You can only input letters, numbers, and underscores.">
       <label for="setupConfirm" class="sr-only">Confirm Password</label>
       <input type="password" name="cp" id="setupConfirm" class="form-control" placeholder="Confirm Password"
         maxlength="100" minlength="8" required title="Password fields must match.">

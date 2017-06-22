@@ -133,12 +133,29 @@ public class ERService {
   }
   
   /**
+   * Retrieve all resolved requests made by the given employee.
+   * @param e
+   * @return an ArrayList of Request objects
+   */
+  public ArrayList<Request> getPendingRequests() {
+    return dao.getUnresolvedRequests();
+  }
+  
+  /**
    * Retrieve all requests made by the given employee.
    * @param e
    * @return an ArrayList of Request objects
    */
-  public ArrayList<Request> getRequestsByEmployee(User e) {
-    return dao.getRequestsByRequester(e.getEmail());
+  public ArrayList<Request> getPendingRequestsByEmployee(User e) {
+    return dao.getUnresolvedRequestsByRequester(e.getEmail());
+  }
+  
+  /**
+   * Retrieve all pending requests.
+   * @return an ArrayList of pending Request objects
+   */
+  public ArrayList<Request> getResolvedRequests() {
+    return dao.getResolvedRequests();
   }
   
   /**
@@ -146,46 +163,17 @@ public class ERService {
    * @param e
    * @return an ArrayList of Request objects
    */
-  public ArrayList<Request> getPendingRequestsForEmployee(User e) {
-    return dao.getRequestsByRequesterAndState(e.getEmail(), "pending");
+  public ArrayList<Request> getResolvedRequestsByEmployee(User e) {
+    return dao.getResolvedRequestsByRequester(e.getEmail());
   }
   
-  /**
-   * Retrieve all resolved requests made by the given employee.
-   * @param e
-   * @return an ArrayList of Request objects
-   */
-  public ArrayList<Request> getResolvedRequestsForEmployee(User e) {
-    ArrayList<Request> result = dao.getRequestsByRequesterAndState(e.getEmail(), "approved");
-    result.addAll(dao.getRequestsByRequesterAndState(e.getEmail(), "denied"));
-    return result;
-  }
-  
-  /**
-   * Retrieve all requests from the database.
-   * @return an ArrayList containing all the Request objects
-   */
-  public ArrayList<Request> getRequests() {
-    return dao.getAllRequests();
-  }
-  
-  /**
-   * Retrieve all pending requests.
-   * @return an ArrayList of pending Request objects
-   */
-  public ArrayList<Request> getPendingRequests() {
-    return dao.getRequestsByState("pending");
-  }
-  
-  /**
-   * Retrieve all resolved requests.
-   * @return an ArrayList of resolved Request objects
-   */
-  public ArrayList<Request> getResolvedRequests() {
-    ArrayList<Request> result = dao.getRequestsByState("approved");
-    result.addAll(dao.getRequestsByState("denied"));
-    return result;
-  }
+//  /**
+//   * Retrieve all requests from the database.
+//   * @return an ArrayList containing all the Request objects
+//   */
+//  public ArrayList<Request> getRequests() {
+//    return dao.getAllRequests();
+//  }
   
   /**
    * Create a new reimbursement request.
@@ -197,8 +185,10 @@ public class ERService {
   public Request createRequest(User requester, BigDecimal amount, String purpose) {
     Request result = null;
     Integer id = dao.addRequest(requester, amount, purpose);
+    System.out.println("new request id: " + id);
     if (id != null) {
-      result = dao.getRequest(id);
+      result = dao.getUnresolvedRequest(id);
+      System.out.println("new request: " + result);
     }
     return result;
   }
@@ -211,17 +201,16 @@ public class ERService {
    * @param note
    * @return the updated Request object, or null if nothing was changed
    */
-  public Request resolveRequest(Request r, User resolver, Boolean approved, String note) {
+  public Request resolveRequest(int requestId, User resolver, Boolean approved, String note) {
     Request result = null;
     RequestState state = approved ? new RequestState(2, "approved") : new RequestState(3, "denied");
-    if (dao.updateRequest(r, resolver, state, note)) {
-      result = dao.getRequest(r.getId());
+    if (dao.updateRequest(requestId, resolver, state, note)) {
+      result = dao.getResolvedRequest(requestId);
       if (dao.getUser(result.getRequesterId()).isEmailAlertsOn()) {
         Mailer mailer = Mailer.getInstance();
-        mailer.sendMail(dao.getUser(r.getRequesterId()).getEmail(), "One of your reimbursement requests has been resolved",
-            "Your request for " + r.getAmount() + " was " + (approved ? "approved" : "denied") + ". Login to your account to view the request.");
+        mailer.sendMail(dao.getUser(result.getRequesterId()).getEmail(), "One of your reimbursement requests has been resolved",
+            "Your request for " + result.getAmount() + " was " + (approved ? "approved" : "denied") + ". Login to your account to view the request.");
       }
-      
     }
     return result;
   }

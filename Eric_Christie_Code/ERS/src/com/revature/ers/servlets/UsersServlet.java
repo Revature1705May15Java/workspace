@@ -40,38 +40,24 @@ public class UsersServlet extends HttpServlet {
     if (u != null) {
       if (u.isManager()) {
         /*
-         * retrieve the account information for all employees, all managers, or all users
+         * retrieve the account information for all employees
          */
         TempLogger.serverLog("\nTESTING JACKSON");
         ArrayList<User> employees = service.getEmployees();
-        ArrayList<User> managers = service.getManagers(); // TODO decide whether or not to send this information
         
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         
-        String employeesJson = mapper.writeValueAsString(employees);
-        String managersJson = mapper.writeValueAsString(managers);
-        String json = "{employees: " + employeesJson + ", managers: " + managersJson + "}";
+        String json = mapper.writeValueAsString(employees);
         response.setContentType("application/json");
-        TempLogger.serverLog("employees: " + employeesJson);
-        TempLogger.serverLog("managers: " + managersJson);
-        TempLogger.serverLog("all users: " + json);
+        TempLogger.serverLog("sending employees: " + json);
         PrintWriter out = response.getWriter();
         out.println(json);
       } else {
-//        response.sendError(403, "You do not have the necessary permissions for this.");
-        ArrayList<User> managers = service.getManagers();
-        
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new JavaTimeModule());
-        String json = mapper.writeValueAsString(managers);
-        response.setContentType("application/json");
-        TempLogger.serverLog("all managers: " + json);
-        PrintWriter out = response.getWriter();
-        out.println(json);
+        response.sendError(403, "You do not have the necessary permissions for this.");
       }
     } else {
-      response.sendRedirect("login");
+      response.sendRedirect("logout");
     }
 	}
 
@@ -114,16 +100,21 @@ public class UsersServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         
-        String json = mapper.writeValueAsString(noob);
-        response.setContentType("application/json");
-        TempLogger.serverLog("sending: " + json);
-        PrintWriter out = response.getWriter();
-        out.println(json);
+        if (noob != null) {
+          String json = mapper.writeValueAsString(noob);
+          response.setContentType("application/json");
+          TempLogger.serverLog("sending: " + json);
+          PrintWriter out = response.getWriter();
+          out.println(json);
+        } else {
+          response.sendError(400, "New user registration failed.");;
+        }
+        
       } else {
         response.sendError(403, "You do not have the necessary permissions for this action.");
       }
     } else {
-      response.sendRedirect("login");
+      response.sendRedirect("logout");
     }
 	}
 

@@ -1,0 +1,60 @@
+<div class="modal fade bd-example-modal-lg" id="pendingDisplayModal" tabindex="-1" role="dialog"
+    aria-labelledby="pendingDisplayModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-lg" role="form">
+    <div class="modal-content">
+      <div class="modal-header bg-inverse text-white">
+        <h5 class="modal-title" id="pendingDisplayModalLabel">Reimbursement Request</h5>
+        <button type="button" id="pendingDisplayClose" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons md-light">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr><td class="fieldname">#</td><td id="r-id"></tr>
+          <tr><td class="fieldname">Status</td><td id="r-status"></td></tr>
+          <tr><td class="fieldname">Amount</td><td id="r-amount"></td></tr>
+          <tr><td class="fieldname">Requester</td><td><span id="req-fname"></span> <span id="req-lname"></span> (<span id="req-email"></span>)</td></tr>
+          <tr><td class="fieldname">Date Requested</td><td id="req-date"></td></tr>
+          <tr><td class="fieldname">Purpose</td><td id="r-purpose"></td></tr>
+        </table>
+      </div>
+      <div class="modal-footer bg-inverse text-white">
+        <button type="button" id="pendingDisplayCancel" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="resolvedDisplayModal" tabindex="-1" role="dialog"
+    aria-labelledby="resolvedDisplayModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog modal-lg" role="form">
+    <div class="modal-content">
+      <div class="modal-header bg-inverse text-white">
+        <h5 class="modal-title" id="resolvedDisplayModalLabel">Reimbursement Request</h5>
+        <button type="button" id="resolvedDisplayClose" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="material-icons md-light">close</i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr><td class="fieldname">#</td><td id="r-id"></tr>
+          <tr><td class="fieldname">Status</td><td id="r-status"></td></tr>
+          <tr><td class="fieldname">Amount</td><td id="r-amount"></td></tr>
+          <tr><td class="fieldname">Requester</td><td><span id="req-fname"></span> <span id="req-lname"></span> (<span id="req-email"></span>)</td></tr>
+          <tr><td class="fieldname">Date Requested</td><td id="req-date"></td></tr>
+          <tr><td class="fieldname">Purpose</td><td id="r-purpose"></td></tr>
+          <tr><td class="fieldname">Resolver</td><td><span id="res-fname"></span> <span id="res-lname"></span> (<span id="res-email"></span>)</td></tr>
+          <tr><td class="fieldname">Date Resolved</td><td id="res-date"></td></tr>
+          <tr><td class="fieldname">Note</td><td id="r-note"></td></tr>
+        </table>
+      </div>
+      <div class="modal-footer bg-inverse text-white">
+        <button type="button" id="resolvedDisplayCancel" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

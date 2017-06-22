@@ -9,10 +9,18 @@
         </button>
       </div>
       <div class="modal-body">
+        <div class="progress hidden-xs-up my-2">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+          <br>
+        </div>
+        <h6 id="error-message" class="hidden-xs-up font-weight-bold bg-danger text-white" role="alert">
+          <i class="material-icons align-middle">warning</i>This reimbursement request was not submitted successfully.
+        </h6>
         <form name="request" id="requestForm" method="post" action="request">
           <label for="purpose" class="sr-only">Purpose</label>
-          <textarea name="purpose" id="purpose" maxlength="140" cols="50" rows="3"
-            placeholder="Please explain your reason for making this request."></textarea>
+          <textarea name="purpose" id="purpose" maxlength="140" cols="50" rows="3" placeholder="Please explain your reason for making this request."
+             pattern="^[\w]*$" title="You can only input letters, numbers, and underscores."></textarea>
           <div class="input-group">
             <label for="amount">Amount Requested</label>
             <span class="input-group-addon">$</span>
@@ -24,7 +32,7 @@
         <button type="reset" id="requestCancel" form="requestForm" class="btn btn-secondary" data-dismiss="modal">
           Cancel
         </button>
-        <button type="submit" id="requestSubmit" form="requestForm" class="btn btn-primary" data-dismiss="modal">
+        <button type="submit" id="requestSubmit" form="requestForm" class="btn btn-primary">
           Submit
         </button>
       </div>

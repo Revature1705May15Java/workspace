@@ -1,0 +1,119 @@
+<main>
+  <ul class="nav nav-tabs" role="tablist">
+    <#if user.isManager()>
+      <li class="nav-item visible-md-down hidden-lg-up">
+        <a class="nav-link" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
+      </li>
+    </#if>
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <#if user.isManager()>
+      <div class="tab-pane visible-md-down hidden-lg-up" id="employeesPane" role="tabpanel">
+      </div>
+    </#if>
+    <div class="tab-pane" id="pendingPane" role="tabpanel">
+      <table id="pendingTable" class="display" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Requester</th>
+            <th>Requester's Email</th>
+            <th>Date Requested</th>
+            <th>Purpose</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>Requester</th>
+            <th>Requester's Email</th>
+            <th>Date Requested</th>
+            <th>Purpose</th>
+            <th>Amount</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <#if pending?size == 0>
+            There are currently no pending requests to display.
+          <#else>
+            <#list pending as r>
+              <tr>
+                <td>${r.getId()}</td>
+                <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                <td>${r.getRequesterEmail()}</td>
+                <td>${r.getDateTimeRequested()}</td>
+                <td>${r.getPurpose()}</td>
+                <td>$${r.getAmount()}</td>
+              </tr>
+            </#list>
+          </#if>
+        </tbody>
+      </table>
+    </div>
+    <div class="tab-pane" id="resolvedPane" role="tabpanel">
+      <table id="resolvedTable" class="display" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th>Requester</th>
+            <th>Requester's Email</th>
+            <th>Date Requested</th>
+            <th>Purpose</th>
+            <th>Resolver</th>
+            <th>Resolver's Email</th>
+            <th>Date Resolved</th>
+            <th>Note</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th>Requester</th>
+            <th>Requester's Email</th>
+            <th>Date Requested</th>
+            <th>Purpose</th>
+            <th>Resolver</th>
+            <th>Resolver's Email</th>
+            <th>Date Resolved</th>
+            <th>Note</th>
+            <th>Amount</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <#if resolved?size == 0>
+            There are currently no resolved requests to display.
+          <#else>
+            <#list resolved as r>
+              <tr>
+                <td>${r.getId()}</td>
+                <td>${r.getState().getName()}</td>
+                <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                <td>${r.getRequesterEmail()}</td>
+                <td>${r.getDateTimeRequested()}</td>
+                <td>${r.getPurpose()}</td>
+                <td>${r.getResolverFirstname()} ${r.getResolverLastname()}</td>
+                <td>${r.getResolverEmail()}</td>
+                <td>${r.getDateTimeResolved()}</td>
+                <td>${r.getNote()}</td>
+                <td>$${r.getAmount()}</td>
+              </tr>
+            </#list>
+          </#if>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+      
+</main>

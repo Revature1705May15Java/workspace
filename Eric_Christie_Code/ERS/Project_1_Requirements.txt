@@ -1,19 +1,19 @@
 Expense Reimbursement System (ERS) - Final Code - Wed 6/21
 Presentation 6/23
 
--x An Employee can login
--x An Employee can view the Employee Homepage
--x An Employee can logout
+- An Employee can login
+- An Employee can view the Employee Homepage
+- An Employee can logout
 - An Employee can submit a reimbursement request
 - An Employee can view their pending reimbursement requests
 - An Employee can view their resolved reimbursement requests
--x An Employee can view their information
--x An Employee can update their information
--x An Employee receives an email when one of their reimbursement requests is resolved (optional)
+- An Employee can view their information
+- An Employee can update their information
+- An Employee receives an email when one of their reimbursement requests is resolved (optional)
 
--x A Manager can login
--x A Manager can view the Manager Homepage
--x A Manager can logout
+- A Manager can login
+- A Manager can view the Manager Homepage
+- A Manager can logout
 - A Manager can approve/deny pending reimbursement requests
 - A Manager can view all pending requests from all employees
 - A Manager can view all resolved requests from all employees and see which manager resolved it
@@ -21,7 +21,7 @@ Presentation 6/23
 - A Manager can view reimbursement requests from a single Employee
 
 ------------------------------------------------------------------
--x A Manager can register an Employee, which sends the Employee an email with their username and temp password (optional)
+- A Manager can register an Employee, which sends the Employee an email with their username and temp password (optional)
 - An Employee can reset their password (Optional - tied with above functional requirement)
 
 Technologies:

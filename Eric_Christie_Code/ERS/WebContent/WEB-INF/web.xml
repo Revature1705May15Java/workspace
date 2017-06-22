@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>ERS</display-name>
-  <welcome-file-list>
+  <!-- <welcome-file-list>
     <welcome-file>login.ftl</welcome-file>
     <welcome-file>login.html</welcome-file>
-  </welcome-file-list>
+  </welcome-file-list> -->
   <!-- <context-param>
     <param-name>myParam</param-name>
     <param-value>myParamValue</param-value>
@@ -57,10 +57,10 @@
     <servlet-name>Requests</servlet-name>
     <url-pattern>/request</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+  <!-- <servlet-mapping>
     <servlet-name>Requests</servlet-name>
     <url-pattern>/aux/request</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <servlet>
     <servlet-name>Users</servlet-name>
     <servlet-class>com.revature.ers.servlets.UsersServlet</servlet-class>
@@ -69,10 +69,10 @@
     <servlet-name>Users</servlet-name>
     <url-pattern>/user</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+  <!-- <servlet-mapping>
     <servlet-name>Users</servlet-name>
     <url-pattern>/aux/user</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <servlet>
     <servlet-name>Settings</servlet-name>
     <servlet-class>com.revature.ers.servlets.SettingsServlet</servlet-class>
@@ -81,10 +81,10 @@
     <servlet-name>Settings</servlet-name>
     <url-pattern>/settings</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+  <!-- <servlet-mapping>
     <servlet-name>Settings</servlet-name>
     <url-pattern>/aux/settings</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <servlet>
     <servlet-name>freemarker</servlet-name>
     <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>

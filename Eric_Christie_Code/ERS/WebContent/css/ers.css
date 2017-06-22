@@ -1,12 +1,34 @@
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+
 body {
   padding-top: 70px;
   padding-bottom: 40px;
   background-color: #eeeeee;
 }
+/*
+main {
+  padding: 50px;
+}*/
+
+#employeesColumn {
+  /*background-color: #2ecc71;*/
+  /*text-align: center;*/
+  height:100%;
+  /*position: absolute;*/
+  /*top: 0px;*/
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*width: 75%;*/
+  overflow-y: scroll; 
+}
+
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-
   src: url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot');
   src: url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
     url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
@@ -14,16 +36,6 @@ body {
     url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
     url('../libs/bootstrap-3.3.7-dist/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-
-/*.align-middle {*/
-  /*float: none;
-  display: inline-block;*/
-  /*vertical-align: middle;*/
-/*}*/
-
-/*.align-top {
-  vertical-align: top;
-}*/
 
 .center-block {
   display: block;
