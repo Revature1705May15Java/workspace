@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,12 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import pojos.Employee;
 import service.ErsService;
 
 /**
  * Servlet implementation class ResolveRequest
  */
-@WebServlet({ "/ApproveRequest", "/approve"})
+@WebServlet("/ApproveRequestServlet")
 public class ApproveRequestServlet extends HttpServlet
 {
 	
@@ -28,26 +30,33 @@ public class ApproveRequestServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-		HttpSession session = request.getSession(true); 
-		
-		session.setAttribute("resolve", "-");
-		
-		ErsService service = new ErsService(); 
-		
-//		if(service.approveRequest(requestId, employee))
-//		{
-//			session.setAttribute("resolve", "pass");
-//		}
-//		else
-//		{
-//			session.setAttribute("resolve", "fail");
-//		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-
+		System.out.println("in approve post");
+		HttpSession session = request.getSession(true); 
+		Employee e = (Employee)session.getAttribute("employee");
+		
+		int id = Integer.parseInt(request.getParameter("reqid"));
+		System.out.println(id);
+		ErsService service = new ErsService(); 
+		RequestDispatcher rd; 
+		
+		if(service.approveRequest(id, e))
+		{
+			session.setAttribute("approve", "pass");
+        	rd = request.getRequestDispatcher("manager.ftl");
+			rd.forward(request, response);
+		}
+		else
+		{
+			session.setAttribute("approve", "fail");
+        	rd = request.getRequestDispatcher("manager.ftl");
+			rd.forward(request, response);
+		}
 	}
 
 }

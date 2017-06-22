@@ -2,116 +2,95 @@ $(document).ready(function()
 {
     console.log("ready called"); 
     
-    var pending = 
-    $('#req-table').dataTable( 
+    table = $('#req-table').dataTable( 
     {
         columns: 
         [
+            {title: "Request ID"},
             {title: "First Name"},
             {title: "Last Name"},
             {title: "Email"},
             {title: "Amount Requested"},
             {title: "Date Submitted"},
-            {title: "Purpose"}
-//            {title: "Approve/Deny Request"}
+            {title: "Purpose"},
+            {title: "Request Status"}
         ],
         "processing": true, 
-//        "serverSide": true,
         "ajax": 
         {
-            "url": "/ERS/TableRequestServlet",  // table data supplied by Ajax json file instead
+            "url": "/ERS/TableRequestServlet",  
             "dataSrc": "data",
             "type": "POST"
+        },
+        "orderFixed": [7, 'asc'],
+        "rowGroup": 
+        {
+            "dataSrc": 7
         }
+    });
+    table.on('click', 'tr', function()
+    {
+        console.log("click acknowledged");
+        if($(this).hasClass('selected'))
+        {
+            $(this).removeClass('selected'); 
+        }
+        else
+        {
+            table.$('tr.selected').removeClass('selected'); 
+            $(this).addClass('selected'); 
+            
+            var id = parseInt($('.selected :first-child').text());  
+            var status = $('.selected :last-child').text(); 
+            
+            var $row = $('tr.selected').closest('tr'); 
+            
+            var $data = $row.find("td:nth-child(2)"); 
+            $.each($data, function()
+            {
+                firstname = $(this).text(); 
+            }); 
+                        
+            $data = $row.find("td:nth-child(3)"); 
+            $.each($data, function()
+            {
+                lastname = $(this).text(); 
+            }); 
+            name = firstname + " " + lastname; 
+            
+            $data = $row.find("td:nth-child(4)"); 
+            $.each($data, function()
+            {
+                email = $(this).text(); 
+            }); 
+            
+            $data = $row.find("td:nth-child(5)"); 
+            $.each($data, function()
+            {
+                amount = $(this).text(); 
+            });             
+            
+            $data = $row.find("td:nth-child(6)"); 
+            $.each($data, function()
+            {
+                purpose = $(this).text();
+                if(purpose == null)
+                    purpose = "-"; 
+            });             
+
+            if(status == "Pending")
+            {
+                $('#resolve-modal').modal('show');
+                $('#reqid').val(id); 
+                $('#reqid').html(id);
+            }
+        }
+    }); 
+    $('#resolve-modal').on('show.bs.modal', function () 
+    {
+        $('#rname').text(name); 
+        $('#remail').text(email);
+        $("#ramount").text(amount); 
+        $("#rpurpose").text(purpose); 
     });
 });
-
-//function addParam(name, value)
-//{
-//    var href = window.location.href;
-//    var regex = new RegExp("[&\\?]" + name + "=");
-//    if(regex.test(href))
-//    {
-//    regex = new RegExp("([&\\?])" + name + "=\\d+");
-//    window.location.href = href.replace(regex, "$1" + name + "=" + value);
-//    }
-//    else
-//    {
-//        if(href.indexOf("?") > -1)
-//          window.location.href = href + "&" + name + "=" + value;
-//        else
-//          window.location.href = href + "?" + name + "=" + value;
-//    }
-//}
-
-$("#approve-req").click
-(
-    alert("approve clicked"); 
-    var approve = 
-    $('#req-table').dataTable( 
-    {
-        columns: 
-        [
-            {title: "First Name"},
-            {title: "Last Name"},
-            {title: "Email"},
-            {title: "Amount Requested"},
-            {title: "Date Submitted"}
-        ],
-        "processing": true, 
-        "ajax": 
-        {
-            "url": "/ERS/TableApproveServlet",  
-            "dataSrc": "data",
-            "type": "POST"
-        }
-    });
-);    
-
-$("#deny-req").click
-(
-    alert("denied clicked"); 
-    var deny = 
-    $('#req-table').dataTable( 
-    {
-        columns: 
-        [
-            {title: "First Name"},
-            {title: "Last Name"},
-            {title: "Email"},
-            {title: "Amount Requested"},
-            {title: "Date Submitted"}
-        ],
-        "processing": true, 
-        "ajax": 
-        {
-            "url": "/ERS/TableDenyServlet",  
-            "dataSrc": "data",
-            "type": "POST"
-        }
-    });
-);      
-//
-//$("#all-req").click
-//(
-//function()
-//{
-//    // show table of all requests 
-//}
-//);  
-//
-//$("own-req").click
-//(
-//function()
-//{
-//    //show table of your own requests 
-//}
-//)
-//
-//$("new-req").click
-//(
-//    function()
-//    {
-//        //popup window to to submit new request 
-//    }
-//)

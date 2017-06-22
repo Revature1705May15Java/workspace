@@ -6,6 +6,18 @@
         <!-- JQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         
+        <!-- Data Tables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+        
+        <!-- Row Group Extension for Data Tables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.0.0/js/dataTables.rowGroup.min.js"></script> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.0.0/css/rowGroup.bootstrap.min.css">
+
+        <!-- Bootstrap Extension for DataTables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,10 +25,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
-
-        <!-- Data Tables -->
-        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"></script>
         
         <title>ERS Portal</title>
         <link rel="stylesheet" href="employees.css">
@@ -65,79 +73,80 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active"><a id="employee-list" href="javascript:void(0)"><button id="hidden-button" type="submit" action="emptables" method="post" name="all-emps">View All Employees</button><span class="sr-only">(current)</span></a></li>
-                        <li><a id="manager-list" href="javascript:void(0)"><button id="hidden-button" type="submit" action="emptables" method="post" name="all-mngrs">View All Managers</button></a></li>
+<!--                        <li><a id="manager-list" href="javascript:void(0)"><button id="hidden-button" type="submit" action="emptables" method="post" name="all-mngrs">View All Managers</button></a></li>-->
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">ERS Employee Database</h1>     
-                    <!-- Pending Requests Table -->
-            <!--        Badge of Total Pending Requests -->
+                    <!-- Employee Table -->
                     <h2 class="sub-header" id="table-header">Employees</h2>
-                    <!--    -->
                     <div class="table-responsive">
-                        <table class="table table-striped" id="pendingRequests">
-                            <thead>
-                                <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                    <th>Manager</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                                <tr>
-                                    <td>...</td>
-                                </tr>
-                            </tbody>
+                        <table class="table table-striped" id="emp-table">
                         </table>
                     </div>
                 </div>
             </div>
         </div>
 
-<!--        footer-->
+        <!-- Modal -->
+        <div id="manager-modal" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Promote/Demote Employee</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="name"></p>
+                        <p id="email"></p>
+                        <button name="approve" action="resolve" method="post" type="submit">Promote</button>
+                        <button name="deny" type="submit">Demote</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data- dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>       
+        
+<!-- footer-->
+<!--
         <div id="footer">
             <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
                 <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
             </footer>
         </div>
+-->
         
-<!--        script -->
+<!-- script -->
         <script type="text/javascript">
-        $(".dropdown-toggle").dropdown();     
-            
-        $("#employee-list").click
-        (
-            function()
-            {
-                // show table of all employees 
-            }
-        );      
-            
-        $("#manager-list").click
-        (
-            function()
-            {
-                // show table of all managers 
-            }
-        );        
+        $(".dropdown-toggle").dropdown(); 
+        $('#req-table tbody').on('click', function()
+{
+    alert("click acknowledged"); 
+//        if($(this).hasClass('selected'))
+//        {
+//                $(this.removeClass('selected')); 
+//        }
+//        else
+//        {
+//            table.$('tr.selected').removeClass('selected'); 
+//            $(this).addClass('selected'); 
+//            
+//            var id = parseInt($('.selected :first-child').text()); 
+//            
+//            var status = $('.selected :last-child').text(); 
+//            
+//            if(status == "Pending")
+//            {
+//                $('#resolve-modal').modal('show');
+//                $('#reqid').val(content); 
+//            }
+//        }
+});
         </script>
-        <script 
+        <script src="employees.js"></script>
         
     </body>
 </html>

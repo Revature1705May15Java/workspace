@@ -47,10 +47,10 @@
 
                         <!-- redirect to manager or regular home -->
                         <#if manager! == "false">
-                            <li><a href="manager.ftl">Requests<span class="sr-only">(current)</span></a></li>
+                            <li><a href="home.ftl">Requests<span class="sr-only">(current)</span></a></li>
                         </#if>
                         <#if manager! == "true">
-                            <li><a href="home.ftl">Requests<span class="sr-only">(current)</span></a></li>
+                            <li><a href="manager.ftl">Requests<span class="sr-only">(current)</span></a></li>
                             <li><a href="employees.ftl">Employees</a></li>
                         </#if>
                     </ul>

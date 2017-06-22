@@ -5,8 +5,19 @@
         <!-- JQuery CDN -->
         <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         
+         <!-- Data Tables -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+        
+        <!-- Row Group Extension for Data Tables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.0.0/js/dataTables.rowGroup.min.js"></script> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.0.0/css/rowGroup.bootstrap.min.css">
+
+        <!-- Bootstrap Extension for DataTables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+        
         <!-- Bootstrap -->
-<!--        <link href="css/bootstrap.min.css" rel="stylesheet">-->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <!-- Optional theme -->
@@ -15,8 +26,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
 
         <title>ERS Portal</title>
-        <link rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="manager.css">
     </head>
+    <body>
         <!-- Top Nav Bar-->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -35,7 +47,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Requests<span class="sr-only">(current)</span></a></li>
                     </ul>
-                    
+                    <!-- dropdown menu -->
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  ${employee.firstName}<span class="caret"></span></a>
@@ -57,9 +69,6 @@
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
                         <li class="active" name="pending-req"><a href="javascript:void(0)">Your Pending Requests <span class="sr-only">(current)</span></a></li>
-                        <li name="approve-req"><a id="approve-req" href="javascript:addParam('table=approve-req');">Your Approved Requests</a></li>
-                        <li name="deny-req"><a id="deny-req" href="javascript:addParam('table=deny-req')">Your Denied Requests</a></li>
-                        <li name="all-req"><a id="all-req" href="javascript:addParam('table=all-req)">View All Your Requests</a></li>
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li name="submit-new"><a id="new-req" href="submission.ftl"><button id="hidden-button" type="submit" action="request" method="post">Submit New Request</button></a></li>
@@ -70,38 +79,54 @@
                     
                     <!-- Pending Requests Table -->
             <!--        Badge of Total Pending Requests -->
-                    <h2 class="sub-header" id="table-subheader">Your Pending Requests</h2>
+                    <h2 class="sub-header" id="table-subheader">Your Requests</h2>
                     <!--    -->
                     <div class="table-responsive" id="body-table" action="RequestsServlet" method="get">
-                        <table class="table table-striped" id="pending-table">
-                            <thead>
-                                <tr>
-                                    <th>Amount Requested</th>
-                                    <th>Purpose</th>
-                                    <th>Date Submitted</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Amount Requested</th>
-                                    <th>Purpose</th>
-                                    <th>Date Submitted</th>
-                                </tr>
-                            </tfoot>                            
+                        <table class="table table-striped" id="req-table">                        
                         </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="footer">
-            <footer class="container-fluid text-center">Vivamus molestie pretium nunc tempus enim &copy; 2017 
-                <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
-            </footer>
-        </div>
         
 <!--        script -->
         <script type="text/javascript">
         $(".dropdown-toggle").dropdown();
         </script>
+        <script>
+        $(document).ready(function() 
+        {
+            console.log("ready called"); 
+
+            var table = 
+            $('#req-table').dataTable( 
+            {
+                columns: 
+                [
+                    {title: "Request ID"},
+                    {title: "First Name"},
+                    {title: "Last Name"},
+                    {title: "Email"},
+                    {title: "Amount Requested"},
+                    {title: "Date Submitted"},
+                    {title: "Purpose"},
+                    {title: "Request Status"}
+                ],
+                "processing": true, 
+                "ajax": 
+                {
+                    "url": "/ERS/TableRequestServlet",  
+                    "dataSrc": "data",
+                    "type": "POST"
+                },
+                "orderFixed": [7, 'asc'],
+                "rowGroup": 
+                {
+                    dataSrc: 7,
+                }
+            });
+        });
+        </script>
+    </body>
 </html>

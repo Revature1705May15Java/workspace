@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import pojos.Employee;
 import pojos.Request;
@@ -38,12 +39,11 @@ public class TableRequestServlet extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-//		HttpSession session = request.getSession(true); 
+		HttpSession session = request.getSession(true); 
+		String isManager = (String) session.getAttribute("manager"); 
 	
 		ErsService service = new ErsService(); 
-		
-//		String table = (String)session.getAttribute("table"); 
-//		String table = request.getParameter("table"); 
+
 		ServletContext context = request.getServletContext(); 
 		
 		try(PrintWriter writer =  response.getWriter();)
@@ -52,24 +52,44 @@ public class TableRequestServlet extends HttpServlet
 			// { "data": [
 			String json = ""; 
 			json += "{\"data\":[";
-			ArrayList<Request> list = service.getPendingRequests(); 
+			ArrayList<Request> list;
+			
+			if(isManager.equals("true"))
+				list = service.getAllRequests(); 
+			else
+			{
+				Employee e = (Employee)session.getAttribute("employee"); 
+				list = service.getRequests(e.getEmail()); 
+			}
 					
 			for(int i = 0; i < list.size(); i++)
 			{
                 Request r = list.get(i); 
                 Employee e = service.getEmployee(r.getRequesterId()); 
 
-                // [ "firstName", "lastName", "email", "amount", "date submit", "approve/deny"],
-                json += ("[\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
+                // [ "requestid", "firstName", "lastName", "email", "amount", "date submit", "approve/deny"],
+                json += ("[\"" + r.getRequestId() + "\",\"" + e.getFirstName() + "\",\"" + e.getLastName() + 
                         "\",\"" + e.getEmail() + "\",\"" + r.getAmount() + "\",\"" +
-                        r.getRequestDate() + "\",\"" + r.getPurpose() + "\"]");	// what do for approve button 
+                        r.getRequestDate() + "\",\"" + r.getPurpose() + "\",\"");
+                switch(r.getStatusId())
+                {
+                	case 0: 
+                		json += "Pending\"]";
+                		break;
+                	case 1: 
+                		json += "Approved\"]"; 
+                		break;
+                	case 2:
+                		json += "Denied\"]"; 
+                		break;
+                }
+                
                 if(i == list.size()-1)
                     continue;
                 json += (",");
             }
             // ]}
             json += ("]}");
-            System.out.println(json);
             writer.println(json); 
         }
 		catch(IOException e)

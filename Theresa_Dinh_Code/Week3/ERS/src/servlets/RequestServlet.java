@@ -41,20 +41,33 @@ public class RequestServlet extends HttpServlet 	// DONE!!!!
 		Employee employee = (Employee)session.getAttribute("employee"); 
 		ErsService service = new ErsService(); 
 		RequestDispatcher rd; 
-		double amount = Double.parseDouble(request.getParameter("amount")); 
-		String purpose = request.getParameter("purpose"); 
+		double amount;	
 		
-		session.setAttribute("request", "-");
-		
-		if(service.submitRequest(amount, purpose, employee.getEmail()))
+		try //in case user tries to submit something that's not a number 
 		{
-			session.setAttribute("request", "pass");
-			rd = request.getRequestDispatcher("submission.ftl");
-			rd.forward(request, response);
-			ServletContext context = request.getServletContext(); 
-			context.getNamedDispatcher("HomeServlet"); 
+			amount = Double.parseDouble(request.getParameter("amount")); 
+			String purpose = request.getParameter("purpose"); 
+			
+			session.setAttribute("request", "-");
+			
+			if(service.submitRequest(amount, purpose, employee.getEmail()))
+			{
+				session.setAttribute("request", "pass");
+				rd = request.getRequestDispatcher("submission.ftl");
+				rd.forward(request, response);
+				ServletContext context = request.getServletContext(); 
+				context.getNamedDispatcher("HomeServlet"); 
+			}
+			else
+			{
+				session.setAttribute("request", "fail");
+				rd = request.getRequestDispatcher("submission.ftl");
+				rd.forward(request, response);
+				ServletContext context = request.getServletContext(); 
+				context.getNamedDispatcher("HomeServlet"); 
+			}
 		}
-		else
+		catch(NumberFormatException e)
 		{
 			session.setAttribute("request", "fail");
 			rd = request.getRequestDispatcher("submission.ftl");

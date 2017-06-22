@@ -11,10 +11,13 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
 
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
-<!--
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.15/datatables.min.css"/>
--->
+        
+        <!-- Row Group Extension for Data Tables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/rowgroup/1.0.0/js/dataTables.rowGroup.min.js"></script> 
+        <link rel="stylesheet" href="https://cdn.datatables.net/rowgroup/1.0.0/css/rowGroup.bootstrap.min.css">
+
+        <!-- Bootstrap Extension for DataTables -->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
         
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
@@ -25,9 +28,10 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
         <title>ERS Portal</title>
         <link rel="stylesheet" href="manager.css">
-<!--        <script async src="manager.js" onload="myInit()"></script>-->
+        <script src="manager.js"></script>
 
     </head>
     
@@ -73,62 +77,73 @@
                 <!-- Nav Sidebar -->
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        <li class="active" name="pending-req"><a href="javascript:void(0)"><button name="pending-req" id="hidden-button" action="reqtables" method="post">Pending Requests</button><span class="sr-only">(current)</span></a></li>
-                        <li name="approve-req"><a id="approve-req" href="manager.ftl">Approved Requests</a></li>
-                        <li name="deny-req"><a id="deny-req" href="javascript:void(0)">Denied Requests</a></li>
-                        <li name="all-req"><a id="all-req" href="javascript:void(0)">View All Requests</a></li>
+                        <li class="active" name="pending-req"><a href="javascript:void(0)"><button name="pending-req" id="hidden-button" action="reqtables" method="post">View Requests</button><span class="sr-only">(current)</span></a></li>
+<!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <ul class="dropdown-menu">
+                                    <li class="active" name="pending-req"><a href="javascript:void(0)"><button name="pending-req" id="hidden-button" action="reqtables" method="post">View Requests</button><span class="sr-only">(current)</span></a></li>
+                                    <li name="approve-req"><button name="approve-req" id="hidden-button" type="submit">Pending Requests</button></li>
+                                </ul>
+                            </a>            
+                        </li>
+-->
                     </ul>
                     <ul class="nav nav-sidebar">
                         <li name="submit-new"><a id="new-req" href="submission.ftl">Submit New Request</a></li>
-                        <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li>
+<!--                        <li><a id="own-req" href="javascript:void(0)">View Your Requests</a></li> -->
                     </ul>
                 </div>
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                     <h1 class="page-header">Dashboard</h1>   
                     
-                    <!-- Pending Requests Table -->
-            <!--        Badge of Total Pending Requests -->
-                    <h2 class="sub-header" id="table-subheader">Requests Awaiting Approval</h2>
-                    <!--    -->
-                    <div class="table-responsive" id="body-table" action="RequestsServlet" method="get">
-                        <table class="table" id="req-table">
-                            <thead>
-                                <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                    <th>Amount Requested</th>
-                                    <th>Purpose</th>
-                                    <th>Date Submitted</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                    <th>Amount Requested</th>
-                                    <th>Purpose</th>
-                                    <th>Date Submitted</th>
-                                </tr>
-                            </tfoot>                            
+                    <!-- Requests Table -->
+                    <h2 class="sub-header" id="table-subheader">Reimbursement Requests</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="req-table">            
                         </table>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal -->
+        <div id="resolve-modal" class="modal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Approve/Deny Request</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="reqid"></input>
+                        <p id="rname"></p>
+                        <p id="remail"></p>
+                        <p id="ramount"></p>
+                        <p id="rpurpose"></p>
+                        <button id="approve" class="btn btn-default" name="approve" action="ApproveRequestServlet" method="post" type="submit"><a href="manager.ftl">Approve</a></button>
+                        <button id="deny" name="deny" class="btn btn-default" action="DenyRequestServlet" method="post" type="submit"><a href="manager.ftl">Deny</a></button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<!--
         <div id="footer">
             <footer class="container-fluid text-center">Vivamus molestie pretium nunc tempus enim &copy; 2017 
                 <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
             </footer>
         </div>
+-->
         
-<!--        script -->
-        <script src="manager.js"></script>
+<!-- script -->
         <script type="text/javascript">
         $(".dropdown-toggle").dropdown();
+        $("#reqid").hide();
         </script>
-        
     </body>
 </html>

@@ -1,0 +1,97 @@
+$(document).ready(function() 
+{
+    console.log("ready called"); 
+    
+    var pending = 
+    $('#req-table').dataTable( 
+    {
+        columns: 
+        [
+            {title: "First Name"},
+            {title: "Last Name"},
+            {title: "Email"},
+            {title: "Amount Requested"},
+            {title: "Date Submitted"},
+            {title: "Purpose"}
+        ],
+        "processing": true, 
+        "ajax": 
+        {
+            "url": "/ERS/TableRequestServlet",  
+            "dataSrc": "data",
+            "type": "POST"
+        }
+    });
+});
+
+$("#approve-req").click
+(
+    alert("approve clicked"); 
+    
+    $('#table-subheader').text("Approved Requests"); 
+    
+    var approve = 
+    $('#req-table').dataTable( 
+    {
+        columns: 
+        [
+            {title: "First Name"},
+            {title: "Last Name"},
+            {title: "Email"},
+            {title: "Amount Requested"},
+            {title: "Date Submitted"}
+        ],
+        "processing": true, 
+        "ajax": 
+        {
+            "url": "/ERS/TableApproveServlet",  
+            "dataSrc": "data",
+            "type": "POST"
+        }
+    });
+);    
+
+$("#deny-req").click
+(
+    alert("denied clicked"); 
+    
+    $('#table-subheader').text("Denied Requests"); 
+
+    var deny = 
+    $('#req-table').dataTable( 
+    {
+        columns: 
+        [
+            {title: "First Name"},
+            {title: "Last Name"},
+            {title: "Email"},
+            {title: "Amount Requested"},
+            {title: "Date Submitted"}
+        ],
+        "processing": true, 
+        "ajax": 
+        {
+            "url": "/ERS/TableDenyServlet",  
+            "dataSrc": "data",
+            "type": "POST"
+        }
+    });
+);      
+//
+//$("#all-req").click
+//(
+//function()
+//{
+//    // show table of all requests 
+//}
+//);  
+//
+//$("own-req").click
+//(
+//function()
+//{
+//    //show table of your own requests 
+//}
+//)
+
+

@@ -32,46 +32,5 @@ public class HomeServlet extends HttpServlet 	// portal hub, directs to other se
 			throws ServletException, IOException 
 	{
 		HttpSession session = request.getSession(true); 
-//		
-//		Employee employee = (Employee)session.getAttribute("employee"); 	
-//		RequestDispatcher rd; 
-				
-		session.setAttribute("table", "pending-req");
-		
-//		String choice = (String)session.getAttribute("choice"); 
-//		ServletContext context = request.getServletContext(); 
-//		
-//		switch(choice)
-//		{
-//			case "pending-req":
-//			case "approve-req":
-//			case "deny-req":
-//			case "all-req":
-//			{	
-//				context.getNamedDispatcher("TableRequestServlet"); 
-//				break;
-//			}
-//		
-//			case "submit-new": 
-//			{
-//				rd = request.getRequestDispatcher("submission.ftl"); 
-//				rd.forward(request, response);
-//				context.getNamedDispatcher("RequestServlet"); 
-//				break; 
-//			}
-//			case "update-prof":
-//			{
-//				rd = request.getRequestDispatcher("profile.ftl"); 
-//				rd.forward(request, response);
-//				context.getNamedDispatcher("ProfileServlet"); 
-//				break; 
-//			}
-//			case "logout":
-//			{
-//				rd = request.getRequestDispatcher("logout.ftl"); 
-//				rd.forward(request, response);
-//				context.getNamedDispatcher("LogoutServlet");
-//			}
-//		}
 	}
 }
