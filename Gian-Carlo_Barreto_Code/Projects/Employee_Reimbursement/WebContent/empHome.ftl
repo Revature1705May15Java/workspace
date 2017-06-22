@@ -25,6 +25,11 @@
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
 
+<!-- jQuery Data Tables -->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
 <!-- Employee Home Page css file -->
 <link rel="stylesheet" type="text/css" href="css/empHome.css">
 
@@ -123,38 +128,42 @@
 	<div id="reqView" class="container-fluid">
 		<h1>Reimbursements</h1>
 		<div class="container">
+			<!-- <table id="reqTable" class="table table-bordered"> -->
 			<table id="reqTable" class="table table-bordered">
 				<thead>
 					<tr>
 						<th>Request Id</th>
-						<th>Employee Id</th>
 						<th>State</th>
 						<th>Amount</th>
 						<th>Open Date</th>
 						<th>Close Date</th>
+						<th style="display:none;"></th>
+						<th style="display:none;"></th>
+						<th style="display:none;"></th>
 					</tr>
 				</thead>
-				<#list requests as request>
-					<tr>
-						<td class="reqid">${request.requestId}</td>
-						<td class="empid">${request.employeeId}</td>
-						<td class="state">${request.type}</td>
-						<td class="amount">${request.amount?string.currency}</td>
-						<td class="opendate">${request.openDate}</td>
-						<#if (request.closeDate)??>
-						<td class="closedate">${request.closeDate}</td>
-						<#else>
-							<td class="closedate"></td>
-						</#if>
-						<td style="display:none;" class="purpose">${request.purpose}</td>
-						<td style="display:none;" class="manid">${request.managerId}</td>
-						<#if (request.managerNote)??>
-							<td style="display:none;" class="mannote">${request.managerNote}</td>
-						<#else>
-							<td style="display:none;" class="mannote"></td>
-						</#if>
-					</tr>
-				</#list>
+				<tbody>
+					<#list requests as request>
+						<tr>
+							<td class="reqid">${request.requestId}</td>
+							<td class="state">${request.type}</td>
+							<td class="amount">${request.amount?string.currency}</td>
+							<td class="opendate">${request.openDate}</td>
+							<#if (request.closeDate)??>
+							<td class="closedate">${request.closeDate}</td>
+							<#else>
+								<td class="closedate"></td>
+							</#if>
+							<td style="display:none;" class="purpose">${request.purpose}</td>
+							<td style="display:none;" class="manname">${request.managerName}</td>
+							<#if (request.managerNote)??>
+								<td style="display:none;" class="mannote">${request.managerNote}</td>
+							<#else>
+								<td style="display:none;" class="mannote"></td>
+							</#if>
+						</tr>
+					</#list>
+				</tbody>
 			</table>
 			
 			<!-- Request View Modal -->
@@ -169,13 +178,12 @@
 						</div>
 						<div class="modal-body">
 							<p class="reqid"></p>
-							<p class="empid"></p>
 							<p class="state"></p>
 							<p class="amount"></p>
 							<p class="opendate"></p>
 							<p class="closedate"></p>
 							<p class="purpose"></p>
-							<p class="manid"></p>
+							<p class="manname"></p>
 							<p class="mannote"></p>
 						</div>
 					</div>

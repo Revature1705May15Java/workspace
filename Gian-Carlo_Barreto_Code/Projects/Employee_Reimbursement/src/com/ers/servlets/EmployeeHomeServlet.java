@@ -39,6 +39,7 @@ public class EmployeeHomeServlet extends HttpServlet {
 		String firstName = employee.getFirstName();
 		String lastName = employee.getLastName();
 		ArrayList<Request> requests = service.getEmployeeRequests(employee.getEmployeeId());
+		ArrayList<Employee> employees = service.getAllEmployees();
 		
 		// Sets the firstname and lastname attributes of the request
 		request.setAttribute("firstname", firstName);
@@ -48,12 +49,41 @@ public class EmployeeHomeServlet extends HttpServlet {
 		// Go to the employee home page if employee is not a manager, 
 		// else go to the manager home page
 		if (employee.isManager()) {
-			request.setAttribute("pending", service.getAllPendingRequest());
-			request.setAttribute("resolved", service.getAllResolvedRequest());
-			request.setAttribute("employees", service.getAllEmployees());
+			ArrayList<Request> pending = service.getAllPendingRequest();
+			ArrayList<Request> resolved = service.getAllResolvedRequest();
+			
+			for (Request pend : pending) {
+				for (Employee emp : employees) {
+					if (pend.getEmployeeId() == emp.getEmployeeId()) {
+						pend.setEmployeeName(emp.getFirstName() + " " + emp.getLastName());
+					}
+				}
+			}
+			
+			for (Request res : resolved) {
+				for (Employee emp : employees) {
+					if (res.getEmployeeId() == emp.getEmployeeId()) {
+						res.setEmployeeName(emp.getFirstName() + " " + emp.getLastName());
+					}
+					if (res.getManagerId() == emp.getEmployeeId()) {
+						res.setManagerName(emp.getFirstName() + " " + emp.getLastName());
+					}
+				}
+			}
+			
+			request.setAttribute("pending", pending);
+			request.setAttribute("resolved", resolved);
+			request.setAttribute("employees", employees);
 			request.getRequestDispatcher("/manHome.ftl").forward(request, response);
 		}
 		else {
+			for (Request req : requests) {
+				for (Employee emp : employees) {
+					if (req.getManagerId() == emp.getEmployeeId()) {
+						req.setManagerName(emp.getFirstName() + " " + emp.getLastName());
+					}
+				}
+			}
 			request.setAttribute("requests", requests);
 			request.getRequestDispatcher("/empHome.ftl").forward(request, response);
 		}

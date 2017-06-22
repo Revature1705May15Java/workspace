@@ -24,6 +24,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 	crossorigin="anonymous"></script>
+	
+<!-- jQuery Data Tables -->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+  
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
 
 <!-- Employee Home Page css file -->
 <link rel="stylesheet" type="text/css" href="css/empHome.css">
@@ -63,17 +68,20 @@
 				<thead>
 					<tr>
 						<th>Request Id</th>
-						<th>Employee Id</th>
+						<th>Employee Name</th>
 						<th>State</th>
 						<th>Amount</th>
 						<th>Open Date</th>
 						<th>Close Date</th>
+						<th style="display:none;"></th>
+						<th style="display:none;"></th>
+						<th style="display:none;"></th>
 					</tr>
 				</thead>
 				<#list resolved as request>
 					<tr>
 						<td class="reqid">${request.requestId}</td>
-						<td class="empid">${request.employeeId}</td>
+						<td class="empname">${request.employeeName}</td>
 						<td class="state">${request.type}</td>
 						<td class="amount">${request.amount?string.currency}</td>
 						<td class="opendate">${request.openDate}</td>
@@ -83,7 +91,7 @@
 							<td class="closedate"></td>
 						</#if>
 						<td style="display:none;" class="purpose">${request.purpose}</td>
-						<td style="display:none;" class="manid">${request.managerId}</td>
+						<td style="display:none;" class="manname">${request.managerName}</td>
 						<#if (request.managerNote)??>
 							<td style="display:none;" class="mannote">${request.managerNote}</td>
 						<#else>
@@ -104,13 +112,13 @@
 						</div>
 						<div class="modal-body">
 							<p class="reqid"></p>
-							<p class="empid"></p>
+							<p class="empname"></p>
 							<p class="state"></p>
 							<p class="amount"></p>
 							<p class="opendate"></p>
 							<p class="closedate"></p>
 							<p class="purpose"></p>
-							<p class="manid"></p>
+							<p class="manname"></p>
 							<p class="mannote"></p>
 						</div>
 					</div>
@@ -128,16 +136,17 @@
 				<thead>
 					<tr>
 						<th>Request Id</th>
-						<th>Employee Id</th>
+						<th>Employee Name</th>
 						<th>State</th>
 						<th>Amount</th>
 						<th>Open Date</th>
+						<th style="display:none;"></th>
 					</tr>
 				</thead>
 				<#list pending as request>
 					<tr>
 						<td class="reqid">${request.requestId}</td>
-						<td class="empid">${request.employeeId}</td>
+						<td class="empname">${request.employeeName}</td>
 						<td class="state">${request.type}</td>
 						<td class="amount">${request.amount?string.currency}</td>
 						<td class="opendate">${request.openDate}</td>
@@ -158,7 +167,7 @@
 						</div>
 						<div class="modal-body">
 							<p class="reqid"></p>
-							<p class="empid"></p>
+							<p class="empname"></p>
 							<p class="state"></p>
 							<p class="amount"></p>
 							<p class="opendate"></p>
@@ -182,7 +191,7 @@
 	<div id="empView" class="container-fluid">
 		<h1>Employees</h1>
 		<div class="container">
-			<table class="table table-bordered">
+			<table id="employees" class="table table-bordered">
 				<thead>
 					<tr>
 						<th>First Name</th>

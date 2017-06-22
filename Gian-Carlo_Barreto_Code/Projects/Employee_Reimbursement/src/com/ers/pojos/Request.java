@@ -17,6 +17,8 @@ public class Request {
 	private String purpose;
 	private int managerId;
 	private String managerNote;
+	private String employeeName;
+	private String managerName;
 	
 	/**
 	 * No-args constructor
@@ -32,6 +34,8 @@ public class Request {
 		this.purpose = "";
 		this.managerId = 0;
 		this.managerNote = "";
+		this.employeeName = "";
+		this.managerName = "";
 	}
 	
 	/**
@@ -203,6 +207,38 @@ public class Request {
 	 */
 	public void setManagerNote(String managerNote) {
 		this.managerNote = managerNote;
+	}
+	
+	/**
+	 * Get the employee's name
+	 * @return th employee's name
+	 */
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	/**
+	 * Set the employee's name
+	 * @param employeeName, the employee's name
+	 */
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	/**
+	 * Get the manager's name
+	 * @return the manager's name
+	 */
+	public String getManagerName() {
+		return managerName;
+	}
+
+	/**
+	 * Set the manager's name
+	 * @param managerName
+	 */
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
 	}
 
 	/**
