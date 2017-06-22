@@ -102,4 +102,6 @@ public interface DAO {
 	 * 					or {@code null} if the request could not be updated.
 	 */
 	public Request updateRequest(Request request);
+	
+	public Request getRequest(int id);
 }

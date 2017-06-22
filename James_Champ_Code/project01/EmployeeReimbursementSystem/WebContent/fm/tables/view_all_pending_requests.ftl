@@ -23,7 +23,19 @@
 				<td>${pr.purpose}</td>
 				<td>${pr.openDate}</td>
 				<#if user.isManager>
-					<td><button id="request-action-btn" class="btn btn-default" type="button">Action</button></td>
+					<td>
+						<div class="btn-group">
+  							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    						Action <span class="caret"></span>
+  							</button>
+  							<ul class="dropdown-menu">
+   					 			<li class="approve-request"><a href="#requestActionModal" data-toggle="modal">Approve</a></li>
+    							<li class="deny-request"><a href="#requestActionModal" data-toggle="modal">Deny</a></li>
+    							<li role="separator" class="divider"></li>
+    							<li class="view-employees-requests"><a href="#">View Employee's Requests</a></li>
+  							</ul>
+						</div>
+					</td>
 				</#if>
 			</tr>
 		</#list>

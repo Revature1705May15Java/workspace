@@ -94,11 +94,27 @@
     <url-pattern>/submitRequest</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<servlet-name>UpdateEmployee</servlet-name>
-  	<servlet-class>com.ers.servlets.UpdateEmployeeInfo</servlet-class>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <servlet-class>com.ers.servlets.UpdateEmployeeInfo</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>UpdateEmployee</servlet-name>
-  	<url-pattern>/updateEmployee</url-pattern>
+    <servlet-name>UpdateEmployee</servlet-name>
+    <url-pattern>/updateEmployee</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewEmployeesRequests</servlet-name>
+    <servlet-class>com.ers.servlets.ViewEmployeesRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewEmployeesRequests</servlet-name>
+    <url-pattern>/viewEmployeesRequests</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>UpdateRequest</servlet-name>
+  	<servlet-class>com.ers.servlets.UpdateRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UpdateRequest</servlet-name>
+  	<url-pattern>/updateRequest</url-pattern>
   </servlet-mapping>
 </web-app>

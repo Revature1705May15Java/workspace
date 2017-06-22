@@ -358,6 +358,39 @@ public class DAOImpl implements DAO{
 		return result;
 	}
 	
+	public Request getRequest(int id) {
+		Request r = null;
+		
+		try(Connection conn = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "SELECT * FROM request " 
+					+ "WHERE request_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				r = new Request();
+				
+				r.setRequestId(rs.getInt(1));                                
+				r.setState(RequestStatePool.getState(rs.getInt(2))); 
+				r.setOpenDate(rs.getDate(3));                                
+				r.setCloseDate(rs.getDate(4));                               
+				r.setAmount(rs.getDouble(5));                                
+				r.setPurpose(rs.getString(6));                               
+				r.setRequester(getEmployee(rs.getInt(7)));                   
+				r.setManager(getEmployee(rs.getInt(8)));                     
+				r.setNote(rs.getString(9));                                                                                      
+			}
+		}
+		catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return r;
+	}
+	
 	private Request extractRequest(ResultSet rs) throws SQLException {
 		Request result = new Request();
 		

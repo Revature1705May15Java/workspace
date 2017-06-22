@@ -111,6 +111,14 @@ public class Service {
 		return result;
 	}
 	
+	public Request getRequest(int id) {
+		return dao.getRequest(id);
+	}
+	
+	public Employee getEmployee(int id) {
+		return dao.getEmployee(id);
+	}
+	
 	public boolean isEmailUnique(String email) {
 		if(dao.getEmployee(email) == null) {
 			return true;

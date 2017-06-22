@@ -1,3 +1,5 @@
+// Validates input and trims leading and trailing whitespace from
+// input.
 $('#update-btn').click(function() {
 	var fname = $('#new-first-name').val();
 	fname = fname.trim();
@@ -26,8 +28,9 @@ $('#update-btn').click(function() {
 	}
 });
 
+// Clears all fields in modal.
 $('#cancel-update-btn').click(function () {
-	$('#update-employee-form')[0].reset();
+	$('#update-employee-form').trigger('reset');
 	
 	return true;
 });

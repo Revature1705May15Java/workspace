@@ -7,6 +7,7 @@ public class SessionState {
 	public static final String ADD_EMPLOYEE = "addEmployee";
 	public static final String CREATE_REQUEST = "createRequest";
 	public static final String UPDATE_EMPLOYEE = "updateEmployee";
+	public static final String VIEW_EMPLOYEES_REQUESTS = "viewEmployeesRequests";
 	
 	private SessionState() {}
 }
