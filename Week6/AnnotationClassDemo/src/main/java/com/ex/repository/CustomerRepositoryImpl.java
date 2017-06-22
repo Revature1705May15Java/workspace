@@ -25,6 +25,11 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 		return customers;
 	}
 	
+	public String getName(){
+		return "Genesis";
+	
+	}
+	
 
 
 }

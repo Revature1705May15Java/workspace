@@ -1,0 +1,59 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+
+
+
+
+
+
+
+
+@Component
+@Aspect
+public class Logs {
+	
+	static String filename="src/main/java/com/ex/aop/logs.txt";
+	
+	@Before("pc()")
+	public void logRepoMethods(){
+		LocalDateTime now = LocalDateTime.now();
+		System.out.println("logging");
+		write(now +": Performing repo method\n");
+	}
+	
+	
+	@Pointcut("execution(* com.ex..* (..))")
+	public void pc(){}
+	
+	
+	
+	
+	
+	
+	
+	
+	static void write(String message){
+		try(BufferedWriter bw = 
+				new BufferedWriter(new FileWriter(filename, true));){
+			bw.write(message);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
+
+}
