@@ -1,0 +1,47 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
+
+/**
+ * Servlet implementation class goHome
+ */
+@WebServlet("/goHome")
+public class goHome extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	static Employee e = new Employee();
+	static Service service = new Service();  
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		
+		HttpSession sess = request.getSession(true);
+		Service s = new Service ();
+		e = (Employee)sess.getAttribute("user");
+		
+		
+		//checks if user is manager and preforms appropriate display forward action
+		if(e.getIsManager() == 1)
+		{
+			sess.setAttribute("user", e);
+			request.setAttribute("add", "-");
+			request.setAttribute("name", e.getfName() + " " + e.getlName());
+			request.getRequestDispatcher("mHomeDataTable.ftl").forward(request, response);
+		}
+		else
+		{
+			sess.setAttribute("user", e);
+			request.setAttribute("name", e.getfName() + " " + e.getlName());
+			request.getRequestDispatcher("eHome.ftl").forward(request, response);
+		}
+	}
+
+}

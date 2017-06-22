@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Defining our XML namespace - default space for beans.xml
+xsi: XML schema instance
+SchemaLocation is added to our XML file and gives us context sensitive
+help inside of our app
+Make sure that we have both well formed and valid XML
+The namespace simply acts like a library for the properties that 
+we can use to create and inject into a bean
+ -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+	
+	<context:annotation-config/>
+	<context:component-scan base-package="com.ex"/>
+	
+<!-- 	SteroType annotations
+	@Component - used for any bean
+	@Service - used for buisness logic layer. NOt web service
+	@Repository - DAO Layer
+	
+	 -->
+	
+</beans>

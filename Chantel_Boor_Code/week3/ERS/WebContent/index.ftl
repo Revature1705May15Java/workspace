@@ -21,7 +21,7 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: 00004d;
+  background-color: #222;
   border: none;
   border-radius: 20px;
   -webkit-user-select:none;
@@ -30,10 +30,10 @@
   user-select:none;
 }
 
-.button:hover {background-color: #000033;}
+.button:hover {background-color: #333;}
 
 .button:active {
-  background-color: #000033;
+  background-color: #333;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   
@@ -53,15 +53,23 @@ th,td
 	padding-left: 10px;
 }
 
+.content
+ {
+	width:85%;
+   margin-left: 7.5%;
+    padding: 10px;
+}
 
 </style>
 
 </head>
 <body>
 
+<div class = "content">
+
 <table>
 
-<tr style = "background-color:00004d; border: 1px solid black;"><td style = "padding-bottom: 5px;"><h5 style = "color:white">Login<h5><td></tr>
+<tr style = "background-color:#222; border: 1px solid black;"><td style = "padding-bottom: 5px;"><h5 style = "color:white">Login<h5><td></tr>
 
 
 <form name = "loginform" action="login" method="post">
@@ -91,7 +99,7 @@ th,td
 
 </table>
 
-
+</div>
 
 
 </body>

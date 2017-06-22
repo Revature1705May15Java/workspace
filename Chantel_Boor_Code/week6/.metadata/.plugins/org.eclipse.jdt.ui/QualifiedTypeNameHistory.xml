@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.ex.beans.HelloWorld"/>
+<fullyQualifiedTypeName name="com.ex.model.Customer"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.ex.service.CustomerService"/>
+<fullyQualifiedTypeName name="com.ex.service.CustomerServiceImpl"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Around"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.reflect.MethodSignature"/>
+</qualifiedTypeNameHistroy>

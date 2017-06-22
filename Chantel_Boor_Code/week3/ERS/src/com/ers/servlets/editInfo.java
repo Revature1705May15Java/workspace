@@ -1,0 +1,42 @@
+package com.ers.servlets;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.ers.pojos.Employee;
+import com.ers.service.Service;
+
+/**
+ * Servlet implementation class editInfo
+ */
+@WebServlet("/editInfo")
+public class editInfo extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+	static Employee e = new Employee();
+	static Service service = new Service();
+       
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		//get session info 
+		HttpSession sess = request.getSession(true);
+		Service s = new Service ();
+		e = (Employee)sess.getAttribute("user");
+		
+		//get user input
+		String fName = request.getParameter("fn");
+		String lName = request.getParameter("ln");
+		
+		//make request and send back to e home
+		Employee newE = s.updateEmployee(e.getEmployeeId(), fName, lName);
+		sess.setAttribute("user", newE);
+		request.getRequestDispatcher("/goProfile").forward(request, response);
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.ex.service;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.repo.CustomerRepository;
+import com.ex.repo.CustomerRepositoryImpl;
+
+public class CustomerServiceImpl implements CustomerService 
+{
+	//private CustomerRepository cr = new CustomerRepositoryImpl();
+	
+	private CustomerRepository customerRepository;
+	
+	
+	public CustomerServiceImpl()
+	{
+		
+	}
+	
+	//create constructor for constructor injection
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		super();
+		this.customerRepository = customerRepository;
+	}
+
+	public void setCustomerRepository(CustomerRepository cr) 
+	{
+		this.customerRepository = cr;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.ex.service.CustomerService#findAll()
+	 */
+	public List<Customer> findAll()
+	{
+		return customerRepository.findAll();
+	}
+	
+}

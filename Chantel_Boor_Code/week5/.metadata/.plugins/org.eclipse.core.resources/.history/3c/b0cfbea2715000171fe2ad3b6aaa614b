@@ -1,0 +1,27 @@
+package com.rev.main;
+
+import java.util.List;
+
+import com.ex.dao.DAOImp;
+import com.ex.pojos.Person;
+
+public class MainClass 
+{
+	public static void main(String[] args) 
+	{
+		Person p = new Person("test","test");
+		
+		DAOImp dao = new DAOImp();
+		
+		dao.createPerson(p);
+		
+		//dao.getPersonById(1);
+		
+		List<Person> people = dao.getAll();
+		
+		for(Person temp:people)
+		{
+			System.out.println(temp);
+		}
+	}
+}

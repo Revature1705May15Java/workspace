@@ -1,0 +1,9 @@
+package com.ex.cache;
+
+public class EHCacheDemo 
+{
+	public static void main(String[] args) 
+	{
+		
+	}
+}

@@ -1,0 +1,20 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+
+import com.ex.pojos.Bear;
+import com.ex.pojos.Cave;
+import com.ex.pojos.HoneyPot;
+import com.ex.util.ConnectionUtil;
+
+public class BearDAO 
+{
+
+	public void createBear (Bear b,HoneyPot hp, Cave c)
+	{
+		Session session = ConnectionUtil.getSession();
+		
+		
+	}
+	
+}

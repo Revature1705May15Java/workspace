@@ -1,0 +1,36 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class logs 
+{
+	
+	static String filname = "src/main/java/com/ex/aop/logs.txt";
+	
+	@Before("execution(* com.ex.repo.CustomerRepositoryImpl.* (..))")
+	public void logRepoMethods()
+	{
+		write("performing repo method \n");
+	}
+	
+	
+	static void write(String message)
+	{
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filname,true));)
+		{
+			bw.write(message);
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

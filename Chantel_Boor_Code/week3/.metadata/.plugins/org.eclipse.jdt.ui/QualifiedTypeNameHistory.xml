@@ -19,8 +19,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.bank.pojos.Account"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.ers.dao.DAO"/>
 <fullyQualifiedTypeName name="com.ers.dao.DaoImp"/>
 <fullyQualifiedTypeName name="com.ers.util.ConnectionFactory"/>
@@ -28,4 +26,14 @@
 <fullyQualifiedTypeName name="com.ers.service.Service"/>
 <fullyQualifiedTypeName name="com.ers.pojos.Requests"/>
 <fullyQualifiedTypeName name="com.ers.pojos.RequestType"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.text.DateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletResponse"/>
+<fullyQualifiedTypeName name="javax.servlet.FilterChain"/>
 </qualifiedTypeNameHistroy>

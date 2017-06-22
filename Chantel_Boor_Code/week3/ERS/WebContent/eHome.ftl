@@ -1,39 +1,76 @@
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- JQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- JQuery DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+
+
+<!--Bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style>
+.content {
+	width:85%;
+   margin-left: 7.5%;
+    padding: 10px;
+}
+</style>
+
 
 </head>
 <body>
 
-Employee
 
-<br>
+<div class="container">
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-inverse bg-inverse">
+		
+		<form method = "post">
+			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
+			<input type="submit" value="Profile" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
+			<input type="submit" value="Logout" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
+		</form>
+
+    </nav>
+
 
  Welcome! ${name}
  <br>
 
+	<table  class="table" cellpadding="0" cellspacing="0" border="0" id="tableId">
+		<thead>
+		<tr>
+			<th>Request ID</th>
+			<th>Status</th>
+			<th>Amount</th>
+			<th>Purpose</th>
+			<th>Requested</th>
+			<th>Resolved</th>
+			<th>Requester</th>
+			<th>Resolver</th>
+			<th>Note</th>
+		</tr>
+		</thead>
+	</table>
 
-<#if display! == "yes">
-<#list requests as requests>
-<tr>
- <td>Amount: 	$</td> <td>${requests.amount}</td> <td>	Reason: </td> <td>${requests.purpose}</td> <td>	Status: </td> <td>${requests.type.name}</td> <br>
-</tr>
-</#list>
-<#else>
-No Requests have been made
-<b>
-</#if>
 
-
-
-
-<div class="container">
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Request</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
@@ -46,14 +83,15 @@ No Requests have been made
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">New Request</h4>
         </div>
         <div class="modal-body">
           <form name = "requestForm" action="addRequest" method="post">
 			Amount <br>
-			<input type = "number" step=".01" name ="amount" required = required/> <br>
+			<input type = "number" step=".01" name ="amount" min=".01" required = required/> <br>
 			Purpose <br>
-			<input type = "text" name = "purp" required = required/> 
+			<input type = "text" name = "purp" required = required maxlength="300"/> 
+			<br>
 			<input type="submit" value="submit"/>
 			</form>
         </div>
@@ -66,10 +104,27 @@ No Requests have been made
   </div>
   
   
-  
+	<script>
+
+	$(document).ready(function() {
+	var oTable = $('#tableId').dataTable( {
+	"processing": true,
+	"ajax": {
+	"url": "/ERS/displayRequets",
+	"dataSrc": "demo",
+	"type": "POST"
+	}
+	} );
+}	 );
+
+
+	</script>  
   
   
 </div>
+
+
+
 
 
 </body>

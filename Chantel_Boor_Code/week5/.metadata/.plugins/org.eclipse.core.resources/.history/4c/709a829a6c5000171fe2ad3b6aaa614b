@@ -1,0 +1,16 @@
+package com.rev.main;
+
+import com.ex.dao.DAOImp;
+import com.ex.pojos.Person;
+
+public class MainClass 
+{
+	public static void main(String[] args) 
+	{
+		Person p = new Person(1,"Chantel","Boor");
+		
+		DAOImp dao = new DAOImp();
+		
+		dao.createPerson(p);
+	}
+}

@@ -1,0 +1,123 @@
+<html>
+<head>
+
+<!-- JQuery -->
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<style>
+.button 
+{
+  display: inline-block;
+  padding: 10px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: 00004d;
+  border: none;
+  border-radius: 20px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+.button:hover {background-color: #000033;}
+
+.button:active 
+{
+  background-color: #000033;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+   
+}
+
+.content
+ {
+	width:85%;
+   margin-left: 7.5%;
+    padding: 10px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class = "content">
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-inverse bg-inverse">
+		
+		<form method = "post">
+			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
+			<input type="submit" value="Profile" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
+			<input type="submit" value="Logout" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
+		</form>
+
+    </nav>
+	
+	<h2>Profile</h2>
+	<br>
+	<p>Name: ${name}</p>
+	<br>
+	<p>Email:${email}</p>
+	<br>
+	<br>
+	
+	  <!-- Trigger the modal with a button -->
+  <button type="button" class="button" data-toggle="modal" data-target="#myModal">Edit</button>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" data-backdrop="static">
+    <div class="modal-dialog">
+    
+    
+    
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Information</h4>
+        </div>
+        <div class="modal-body">
+          <form name = "editInfo" action="editInfo" method="post">
+			First Name <br>
+			<input type = "text" name = "fn" required = required maxlength="300"/> 
+			<br>
+			Last Name <br>
+			<input type = "text" name = "ln" required = required maxlength="300"/> 
+			<br>
+			<input type="submit" value="submit"/>
+			</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+</body>
+</head>

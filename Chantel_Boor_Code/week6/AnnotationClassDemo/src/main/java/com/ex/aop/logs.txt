@@ -1,0 +1,9 @@
+performing repo method 
+performing repo method 
+performing repo method 
+performing repo method 
+performing repo method 
+performing repo method 
+performing repo method 
+performing repo method The method findAll took 52878 nanoSeconds to complete 
+The method findAll took 790609 nanoSeconds to complete 

@@ -1,0 +1,86 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class logs 
+{
+	
+	static String filname = "src/main/java/com/ex/aop/logs.txt";
+	
+//	@Before("pc()")
+//	public void logRepoMethods()
+//	{
+//		write("performing repo method \n");
+//	}
+	
+	
+//	@Around("pc()")
+//	public void doThings (ProceedingJoinPoint pjp)
+//	{
+//		System.out.println("starting around");
+//		MethodSignature sign = (MethodSignature) pjp.getSignature();
+//		String [] paramNames = sign.getParameterNames();
+//		String message = "Message with paramaters logging";
+//		
+//		for(String p: paramNames)
+//		message = message + " " + p;
+//		try
+//		{
+//			pjp.proceed();
+//			
+//		}catch(Throwable e)
+//		{
+//			e.printStackTrace();
+//		}
+//		System.out.println("ending method");
+//	}
+	
+	@Around("pc()")
+	public void time(ProceedingJoinPoint pjp)
+	{
+		System.out.println("starting around");
+		long startTime = System.nanoTime();
+		try
+		{
+			pjp.proceed();
+			
+		}catch(Throwable e)
+		{
+			e.printStackTrace();
+		}
+		long endTime = System.nanoTime();
+		String message = "Method took " + (endTime-startTime) + "nanoSeconds to complete";
+		System.out.println("ending method");
+	}
+	
+	static void write(String message)
+	{
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filname,true));)
+		{
+			System.out.println("logging");
+			bw.write(message);
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Pointcut("execution(* com.ex..* (..))")
+	public void pc()
+	{
+		
+	}
+}

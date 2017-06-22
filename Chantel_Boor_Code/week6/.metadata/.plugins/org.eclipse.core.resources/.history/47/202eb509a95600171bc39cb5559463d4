@@ -1,0 +1,5 @@
+package com.ex.repo;
+
+public class CustomerRepositoryImpl {
+
+}

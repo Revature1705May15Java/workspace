@@ -1,0 +1,30 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class logs 
+{
+	
+	static String filname = "src/com/ex/aop/logs.txt";
+	
+	
+	public void logRepoMethods()
+	{
+		write("performing method");
+	}
+	
+	
+	static void write(String message)
+	{
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filname,true));)
+		{
+			bw.write(message);
+		} 
+		catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,14 @@
+package com.ex.dao;
+
+import java.util.List;
+
+import com.ex.pojos.Person;
+
+public interface DAO 
+{
+	void createPerson (Person p);
+	void updatePerson (Person p);
+	void deletePerson (int id);
+	Person getPersonById (int id);
+	List<Person> getAll();
+}
