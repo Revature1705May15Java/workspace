@@ -22,20 +22,20 @@ var modals = [
       responseHandler: function(res, status, xhr) {
         var modalSelector = '#settingsModal';
 
-        var emailInput = $(modalSelector + ' form input[name="email"]').get(0);
-        var firstnameInput = $(modalSelector + ' form input[name="firstname"]').get(0);
-        var lastnameInput = $(modalSelector + ' form input[name="lastname"]').get(0);
-        var emailAlertsInput = $(modalSelector + ' form input[name="emailAlerts"]').get(0);
+        // var emailInput = $(modalSelector + ' form input[name="email"]').get(0);
+        // var firstnameInput = $(modalSelector + ' form input[name="firstname"]').get(0);
+        // var lastnameInput = $(modalSelector + ' form input[name="lastname"]').get(0);
+        // var emailAlertsInput = $(modalSelector + ' form input[name="emailAlerts"]').get(0);
 
-        emailInput.defaultValue = res.email;
-        firstnameInput.defaultValue = res.firstname;
-        lastnameInput.defaultValue = res.lastname;
-        emailAlertsInput.defaultChecked = res.emailAlertsOn;
+        // emailInput.defaultValue = res.email;
+        // firstnameInput.defaultValue = res.firstname;
+        // lastnameInput.defaultValue = res.lastname;
+        // emailAlertsInput.defaultChecked = res.emailAlertsOn;
 
-        emailInput.value = res.email;
-        firstnameInput.value = res.firstname;
-        lastnameInput.value = res.lastname;
-        emailAlertsInput.checked = res.emailAlertsOn;
+        // emailInput.value = res.email;
+        // firstnameInput.value = res.firstname;
+        // lastnameInput.value = res.lastname;
+        // emailAlertsInput.checked = res.emailAlertsOn;
 
         location.reload(true);
       }

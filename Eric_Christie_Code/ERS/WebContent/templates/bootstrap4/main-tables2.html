@@ -1,35 +1,35 @@
 <main>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-8">
         <ul class="nav nav-tabs" role="tablist">
           <#if user.isManager()>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
+              <a class="nav-link employeesTab" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
             </li>
           </#if>
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
+            <a class="nav-link active pendingTab" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
+            <a class="nav-link resolvedTab" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
           </li>
         </ul>
 
         <div class="tab-content">
           <#if user.isManager()>
-            <div class="tab-pane" id="employeesPane" role="tabpanel">
+            <div class="tab-pane employeesTab" id="employeesPane" role="tabpanel">
               <table id="employeesTable" class="display" cellspacing="10" width="60%">
                 <thead class="thead-inverse">
                   <tr class="text-white">
                     <th>Employee</th>
-                    <th>Email Address</th>
+                    <th>Email&nbsp;Address</th>
                   </tr>
                 </thead>
                 <tfoot class="thead-inverse">
                   <tr class="text-white">
                     <th>Employee</th>
-                    <th>Email Address</th>
+                    <th>Email&nbsp;Address</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -47,14 +47,14 @@
               </table>
             </div>
           </#if>
-          <div class="tab-pane active" id="pendingPane" role="tabpanel">
+          <div class="tab-pane active pendingTab" id="pendingPane" role="tabpanel">
             <table id="pendingTable" class="display" cellspacing="0" width="100%">
               <thead class="thead-inverse">
                 <tr class="text-white">
                   <th>#</th>
                   <th>Requester</th>
-                  <th>Requester's Email</th>
-                  <th>Date Requested</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
                   <th>Purpose</th>
                   <th>Amount</th>
                   <#if user.isManager()>
@@ -67,8 +67,8 @@
                 <tr class="text-white">
                   <th>#</th>
                   <th>Requester</th>
-                  <th>Requester's Email</th>
-                  <th>Date Requested</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
                   <th>Purpose</th>
                   <th>Amount</th>
                   <#if user.isManager()>
@@ -111,19 +111,19 @@
               </tbody>
             </table>
           </div>
-          <div class="tab-pane" id="resolvedPane" role="tabpanel">
+          <div class="tab-pane resolvedTab" id="resolvedPane" role="tabpanel">
             <table id="resolvedTable" class="display" cellspacing="0" width="100%">
               <thead class="thead-inverse">
                 <tr class="text-white">
                   <th>#</th>
                   <th>Status</th>
                   <th>Requester</th>
-                  <th>Requester's Email</th>
-                  <th>Date Requested</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
                   <th>Purpose</th>
                   <th>Resolver</th>
-                  <th>Resolver's Email</th>
-                  <th>Date Resolved</th>
+                  <th>Resolver's&nbsp;Email</th>
+                  <th>Date&nbsp;Resolved</th>
                   <th>Note</th>
                   <th>Amount</th>
                 </tr>
@@ -133,12 +133,12 @@
                   <th>#</th>
                   <th>Status</th>
                   <th>Requester</th>
-                  <th>Requester's Email</th>
-                  <th>Date Requested</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
                   <th>Purpose</th>
                   <th>Resolver</th>
-                  <th>Resolver's Email</th>
-                  <th>Date Resolved</th>
+                  <th>Resolver's&nbsp;Email</th>
+                  <th>Date&nbsp;Resolved</th>
                   <th>Note</th>
                   <th>Amount</th>
                 </tr>

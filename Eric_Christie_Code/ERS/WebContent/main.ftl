@@ -22,7 +22,8 @@
   <!-- MAIN CONTENT -->
   <#-- <#include "./templates/bootstrap4/main-tables.html" parse=true> -->
   <#-- <#include "./templates/bootstrap4/main-content.html" parse=true> -->
-  <#include "./templates/bootstrap4/main-tables2.html" parse=true>
+  <#-- <#include "./templates/bootstrap4/main-tables2.html" parse=true> -->
+  <#include "./templates/bootstrap4/main-tables3.html" parse=true>
 
   
   <script>
@@ -41,43 +42,40 @@
       setupPasswordConfirmation('#userPassword', '#userConfirm');
       setupVaryingResolveModal();
       $('#pendingTable').DataTable({
+        info: false,
         responsive: true,
         paging: false,
-        scrollY: '80%',
+        scrollY: '40%',
+        //scrollCollapse: true,
         columnDefs: [
-          { // request id
-            targets: 0,
-            visible: false,
-            searchable: false
-          },
           { // requester
-            targets: 1,
+            targets: 0,
             responsivePriority: 1
           },
           { // requester email
-            targets: 2,
+            targets: 1,
             responsivePriority: 4
           },
           { // date requested
-            targets: 3,
+            targets: 2,
             responsivePriority: 3
           },
           { // purpose
-            targets: 4,
+            targets: 3,
             responsivePriority: 5
           },
           { // amount
-            targets: 5,
+            targets: 4,
             responsivePriority: 2
           },
           { // approve
-            targets: 6,
+            targets: 5,
             responsivePriority: 7,
             searchable: false,
             orderable: false
           },
           { // deny
-            targets: 7,
+            targets: 6,
             responsivePriority: 7,
             searchable: false,
             orderable: false
@@ -85,63 +83,72 @@
         ]
       });
       $('#resolvedTable').DataTable({
+        info: false,
         responsive: true,
         paging: false,
-        scrollY: '80%',
+        scrollY: '50%',
+        //scrollCollapse: true,
         columnDefs: [
-          { // request id
-            targets: 0,
-            visible: false,
-            searchable: false
-          },
           { // status
-            targets: 1,
+            targets: 0,
             responsivePriority: 2
           },
           { // requester
-            targets: 2,
+            targets: 1,
             responsivePriority: 3
           },
           { // requester email
-            targets: 3,
+            targets: 2,
             responsivePriority: 7
           },
           { // date requested
-            targets: 4,
+            targets: 3,
             responsivePriority: 6
           },
           { // purpose
-            targets: 5,
+            targets: 4,
             responsivePriority: 10
           },
           { // resolver
-            targets: 6,
+            targets: 5,
             responsivePriority: 4
           },
           { // resolver email
-            targets: 7,
+            targets: 6,
             responsivePriority: 8
           },
           { // date resolved
-            targets: 8,
+            targets: 7,
             responsivePriority: 5
           },
           { // note
-            targets: 9,
+            targets: 8,
             responsivePriority: 9
           },
           { // amount
-            targets: 10,
+            targets: 9,
             responsivePriority: 1
           }
         ]
       });
       $('#employeesTable').DataTable({
-        // responsive: true,
+        info: false,
+        responsive: true,
         paging: false,
-        scrollY: '80%'
+        scrollY: '50%',
+        //scrollCollapse: true,
+        columnDefs: [
+          { // employee
+            targets: 0
+          },
+          { // email
+            targets: 1
+          }
+        ]
       });
-      $('.dataTables_filter input').removeClass('form-control-sm')
+      $('.dataTables_filter input').removeClass('form-control-sm');
+      //$('#pendingTable_wrapper .col-sm-12.col-md-6').html('Pending Reimbursement Requests');
+      //$('#resolvedTable_wrapper .col-sm-12.col-md-6').html('Resolved Reimbursement Requests');
     });
   </script>
 </body>

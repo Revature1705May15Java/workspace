@@ -729,3 +729,38 @@ java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint 
 2017-06-22T10:31:24.069 - INFO: Eric Christie logged in
 2017-06-22T23:37:06.200 - INFO: Eric Christie logged in
 2017-06-22T23:44:17.270 - INFO: Eric Christie logged in
+2017-06-23T09:22:36.733 - INFO: Eric Christie logged in
+2017-06-23T09:28:13.640 - INFO: Eric Christie logged in
+2017-06-23T09:40:36.564 - INFO: Eric Christie logged in
+2017-06-23T09:58:27.015 - INFO: Eric Christie logged in
+2017-06-23T10:28:11.896 - INFO: Eric Christie logged in
+2017-06-23T11:03:04.165 - INFO: Eric Christie logged in
+2017-06-23T11:06:06.072 - INFO: Eric Christie logged in
+2017-06-23T11:10:27.880 - INFO: Eric Christie logged in
+2017-06-23T11:14:34.747 - INFO: Eric Christie logged in
+2017-06-23T11:17:48.233 - INFO: Mark Worth logged in
+2017-06-23T11:17:58.974 - INFO: Mark Worth changed their password
+2017-06-23T11:18:07.929 - INFO: Mark Worth logged in
+2017-06-23T11:18:44.234 - INFO: Richard Marquez logged in
+2017-06-23T11:18:59.088 - INFO: Richard Marquez changed their password
+2017-06-23T11:20:06.448 - INFO: User [id=46, email=markworth89@gmail.com, firstname=Mark, lastname=Worth, isManager=false, emailAlertsOn=true, setupDone=true, lastModified=2017-06-23T11:17:58.945] changed their account information
+2017-06-23T11:21:33.532 - INFO: Richard Marquez logged in
+2017-06-23T11:23:09.995 - INFO: Cody Boucher logged in
+2017-06-23T11:23:28.153 - INFO: Cody Boucher changed their password
+2017-06-23T11:23:58.364 - INFO: Eric Christie logged in
+2017-06-23T11:24:04.312 - INFO: Mark Worth logged in
+2017-06-23T11:24:44.539 - INFO: Cody Boucher logged in
+2017-06-23T11:26:20.679 - INFO: Miztar Bossmann logged in
+2017-06-23T11:39:07.669 - INFO: Eric Christie logged in
+2017-06-23T11:43:35.482 - INFO: Cody Boucher logged in
+2017-06-23T11:47:37.017 - INFO: Eric Christie logged in
+2017-06-23T11:49:41.614 - INFO: Cody Boucher logged in
+2017-06-23T11:52:03.352 - INFO: Eric Christie logged in
+2017-06-23T11:52:58.846 - INFO: Eric Christie logged in
+2017-06-23T12:18:16.626 - INFO: Eric Christie logged in
+2017-06-23T12:19:32.742 - INFO: Eric Christie logged in
+2017-06-23T12:21:10.370 - INFO: Eric Christie logged in
+2017-06-23T12:23:27.261 - INFO: User [id=1, email=admin@email.com, firstname=Eric, lastname=Christie, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-22T10:21:08.896] changed their account information
+2017-06-23T12:23:29.180 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:23:27.257] changed their account information
+2017-06-23T12:24:10.418 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:23:29.179] changed their account information
+2017-06-23T12:24:23.120 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:24:10.417] changed their account information

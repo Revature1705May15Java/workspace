@@ -46,7 +46,7 @@ public class SetupServlet extends HttpServlet {
 	      if (password.equals(confirm)) {
 	        boolean changed = service.changePassword(u, password);
 	        if (changed) {
-	          response.sendRedirect("main");
+	          response.sendRedirect("login");
 	        } else {
 	          request.setAttribute("setupAttempted", setupAttempted);
 	          request.getRequestDispatcher("setup.ftl").forward(request, response);

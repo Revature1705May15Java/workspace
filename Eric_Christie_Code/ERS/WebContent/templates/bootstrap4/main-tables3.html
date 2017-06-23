@@ -1,0 +1,146 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <#if user.isManager()>
+        <#if employees?size != 0>
+          <div class="col-3">
+            <table id="employeesTable" class="display" cellspacing="10" width="60%">
+              <thead class="thead-inverse">
+                <tr class="text-white">
+                  <th>Employee</th>
+                  <th>Email&nbsp;Address</th>
+                </tr>
+              </thead>
+              <tfoot class="thead-inverse">
+                <tr class="text-white">
+                  <th>Employee</th>
+                  <th>Email&nbsp;Address</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <#list employees as e>
+                  <tr>
+                    <td>${e.getFirstname()}&nbsp;${e.getLastname()}</td>
+                    <td>${e.getEmail()}</td>
+                  </tr>
+                </#list>
+              </tbody>
+            </table>
+          </div>
+        </#if>
+      </#if>
+      <div class="col-9" id="tablesColumn">
+        <#if pending?size != 0>
+          <div class="tableBox">
+            <table id="pendingTable" class="display" cellspacing="0" width="100%">
+              <thead class="thead-inverse">
+                <tr class="text-white">
+                  <th>Requester</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
+                  <th>Purpose</th>
+                  <th>Amount</th>
+                  <#if user.isManager()>
+                    <th>Approve</th>
+                    <th>Deny</th>
+                  </#if>
+                </tr>
+              </thead>
+              <tfoot class="thead-inverse">
+                <tr class="text-white">
+                  <th>Requester</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
+                  <th>Purpose</th>
+                  <th>Amount</th>
+                  <#if user.isManager()>
+                    <th>Approve</th>
+                    <th>Deny</th>
+                  </#if>
+                </tr>
+              </tfoot>
+              <tbody class="tableBody">
+                <#list pending as r>
+                  <tr>
+                    <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                    <td>${r.getRequesterEmail()}</td>
+                    <td>${r.getDateTimeRequested().toLocalDate()}</td>
+                    <td>${r.getPurpose()}</td>
+                    <td>${r.getAmount()?string.currency}</td>
+                    <#if user.isManager()>
+                      <td class="px-1">
+                        <a href="aux/request" class="approveButton btn btn-outline-success mx-1" data-value="Approve"
+                            data-toggle="modal" data-target="#resolveModal" data-id="${r.getId()}">
+                          <i class="material-icons align-middle">thumb_up</i>
+                          <span class="align-middle font-weight-bold">&nbsp;Approve</span>
+                        </a>
+                      </td>
+                      <td class="px-1">
+                        <a href="aux/request" class="denyButton btn btn-outline-danger mx-1" data-value="Deny"
+                            data-toggle="modal" data-target="#resolveModal" data-requestId="${r.getId()}">
+                          <i class="material-icons align-middle">thumb_down</i>
+                          <span class="align-middle font-weight-bold">&nbsp;Deny</span>
+                        </a>
+                      </td>
+                    </#if>
+                  </tr>
+                </#list>
+              </tbody>
+            </table>
+          </div>
+        </#if>
+        <br>
+        <#if resolved?size != 0>
+          <div class="tableBox">
+            <table id="resolvedTable" class="display" cellspacing="0" width="100%">
+              <thead class="thead-inverse">
+                <tr class="text-white">
+                  <th>Status</th>
+                  <th>Requester</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
+                  <th>Purpose</th>
+                  <th>Resolver</th>
+                  <th>Resolver's&nbsp;Email</th>
+                  <th>Date&nbsp;Resolved</th>
+                  <th>Note</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tfoot class="thead-inverse">
+                <tr class="text-white">
+                  <th>Status</th>
+                  <th>Requester</th>
+                  <th>Requester's&nbsp;Email</th>
+                  <th>Date&nbsp;Requested</th>
+                  <th>Purpose</th>
+                  <th>Resolver</th>
+                  <th>Resolver's&nbsp;Email</th>
+                  <th>Date&nbsp;Resolved</th>
+                  <th>Note</th>
+                  <th>Amount</th>
+                </tr>
+              </tfoot>
+              <tbody class="tableBody">
+                <#list resolved as r>
+                  <tr>
+                    <td>${r.getState().getName()}</td>
+                    <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                    <td>${r.getRequesterEmail()}</td>
+                    <td>${r.getDateTimeRequested().toLocalDate()}</td>
+                    <td>${r.getPurpose()}</td>
+                    <td>${r.getResolverFirstname()} ${r.getResolverLastname()}</td>
+                    <td>${r.getResolverEmail()}</td>
+                    <td>${r.getDateTimeResolved().toLocalDate()}</td>
+                    <td>${r.getNote()}</td>
+                    <td>${r.getAmount()?string.currency}</td>
+                  </tr>
+                </#list>
+              </tbody>
+            </table>
+          </div>
+        </#if>
+      </div> 
+    </div>
+  </div>
+</main>
