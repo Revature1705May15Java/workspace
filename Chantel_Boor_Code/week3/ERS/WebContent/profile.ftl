@@ -62,7 +62,7 @@
 <div class = "content">
 
 	<!-- Navbar -->
-	<nav class="navbar navbar-inverse bg-inverse">
+	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top"">
 		
 		<form method = "post">
 			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
@@ -71,6 +71,9 @@
 		</form>
 
     </nav>
+	
+	<br>
+	<br>
 	
 	<h2>Profile</h2>
 	<p>Name: ${name}</p>
@@ -90,7 +93,7 @@
     
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header"  style = "background-color:#222;color:white;">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Update Information</h4>
         </div>
@@ -102,11 +105,11 @@
 			Last Name <br>
 			<input type = "text" name = "ln" required = required maxlength="30"/> 
 			<br>
-			<input type="submit" value="submit"/>
+			<input type="submit" class = "button" value="submit"/>
 			</form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="button" data-dismiss="modal">Close</button>
         </div>
       </div>
       

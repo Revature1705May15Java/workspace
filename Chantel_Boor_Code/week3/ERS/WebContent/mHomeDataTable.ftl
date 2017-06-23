@@ -70,7 +70,8 @@
 <div class="content">
 
 	<!-- Navbar -->
-	<nav class="navbar navbar-inverse bg-inverse">
+	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
+		
 		
 		<form method = "post">
 			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
@@ -80,9 +81,15 @@
 
     </nav>
 
+	<br>
+	<br>
+	
 	 <h2>Welcome ${name}!</h2>
  	<br>
 
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="button" data-toggle="modal" data-target="#eModal">Add Employee</button>
+  <br>
 	
 	<h3>Requests</h3>
 	<!-- Request Table -->
@@ -93,8 +100,6 @@
 			<th>Status</th>
 			<th>Amount</th>
 			<th>Purpose</th>
-			<th>Requested</th>
-			<th>Resolved</th>
 			<th>Requester</th>
 			<th>Resolver</th>
 			<th>Note</th>
@@ -195,7 +200,7 @@
 			  <input type="radio" name="stat" value="accepted" checked> Accept<br>
   			<input type="radio" name="stat" value="denied"> Deny
   			<br>
-			<input type="submit" value="submit"/>
+			<input type="submit" class="button" value="submit"/>
 			</form>
         </div>
         <div class="modal-footer">
@@ -219,6 +224,7 @@
 	"url": "/ERS/displayRequets",
 	"dataSrc": "demo",
 	"type": "POST"
+	
 	}
 	});
 	
