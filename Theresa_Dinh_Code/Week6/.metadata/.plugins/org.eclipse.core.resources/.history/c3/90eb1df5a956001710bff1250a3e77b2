@@ -1,0 +1,16 @@
+package com.ex.service;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.repository.CustomerRepoImpl;
+
+public class CustomerService 
+{
+	private CustomerRepoImpl repo = new CustomerRepoImpl(); 
+	
+	public List<Customer> findAll()
+	{
+		return repo.findAll(); 
+	}
+}

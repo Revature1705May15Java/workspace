@@ -1,0 +1,11 @@
+package com.ex.aop;
+
+public class Log 
+{
+	static String filename = "src/com/ex/aop/log.txt"; 
+	
+	static void write(String message)
+	{
+		
+	}
+}

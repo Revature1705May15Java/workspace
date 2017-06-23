@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.ex.service.Service&apos; to &apos;cService&apos;&#x0D;&#x0A;- Original project: &apos;AnnotationIntro&apos;&#x0D;&#x0A;- Original element: &apos;com.ex.service.Service&apos;&#x0D;&#x0A;- Renamed element: &apos;com.ex.service.cService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Service&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.ex.service{Service.java[Service" matchStrategy="1" name="cService" qualified="false" references="true" similarDeclarations="false" stamp="1498072260787" textual="false" version="1.0"/>
+</session>

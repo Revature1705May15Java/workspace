@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- default space for beans.xml. schema location is added to xml file and 
+gives us context sensitive help inside our app. 
+have wellformed valid xml . 
+namespace acts like library for beans' properties 
+that we can use to create and inject. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="customerRepository" class="com.ex.repository.CustomerRepoImpl"/>
+	<!-- setter injection below 
+	<bean name="customerService" class="com.ex.service.CustomerService">
+	<property name="customerRepository" ref="customerRepository"/></bean>
+	-->
+	<!-- constructor injection below -->
+	<bean name="customerService" class="com.ex.service.CustomerService">
+	<constructor-arg index="0" ref="customerRepository"></constructor-arg></bean>
+
+</beans>

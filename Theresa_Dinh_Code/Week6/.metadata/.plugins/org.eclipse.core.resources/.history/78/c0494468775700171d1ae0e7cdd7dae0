@@ -1,0 +1,38 @@
+package com.ex.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.ex.beans.Bear;
+import com.ex.beans.Cave;
+
+public class DaoImpl 
+{
+	private SessionFactory sessionFactory;
+
+	public List<Bear> getBears()
+	{
+		Session s = sessionFactory.getCurrentSession(); 
+	}
+	
+	public void setSessionFactory(SessionFactory sessionFactory) 
+	{
+		this.sessionFactory = sessionFactory;
+	} 
+	
+	public List<Bear> getBears()
+	{
+		Session s = sessionFactory.getCurrentSession();
+		List<Bear> bears = new ArrayList<Bear>(); 
+		bears = s.createQuery("from Bear").list(); 
+		return bears;
+	}
+	
+	public List<Cave> getCaves()
+	{
+		return null; 
+	}
+}

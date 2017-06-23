@@ -1,0 +1,4 @@
+1498067040080	Extract interface 'CustomerRepo'
+1498067362055	Extract interface 'Service'
+1498068593695	Rename field 'repo'
+1498069143973	Rename resource 'AppContext.sml.xml'

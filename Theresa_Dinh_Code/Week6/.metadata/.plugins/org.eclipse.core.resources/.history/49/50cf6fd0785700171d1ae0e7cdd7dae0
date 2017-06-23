@@ -1,0 +1,17 @@
+package com.ex.dao;
+
+import java.util.List;
+
+import com.ex.beans.Bear;
+import com.ex.beans.Cave;
+
+public interface DaoInterface {
+
+	List<Bear> getBears();
+
+	List<Cave> getCaves();
+
+	//	@Transaction()
+	void makeBear();
+
+}
