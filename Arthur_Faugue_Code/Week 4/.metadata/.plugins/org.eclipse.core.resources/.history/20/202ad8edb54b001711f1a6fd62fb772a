@@ -1,6 +1,0 @@
-//is mouse on Ryu
-var isHovered = false;
-
-$document.ready(function(){
-	
-});

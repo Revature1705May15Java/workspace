@@ -2,35 +2,38 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="632" key="DIALOG_X_ORIGIN"/>
-		<item value="55" key="DIALOG_Y_ORIGIN"/>
+		<item value="9" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>
 		<item value="350" key="dialogWidth"/>
 		<list key="textEntries">
+			<item value="2"/>
 			<item value="1"/>
-			<item value="3"/>
+			<item value="1"/>
 		</list>
 		<list key="orderedElements">
-			<item value="org.eclipse.ui.preferencePages.ContentTypes"/>
 			<item value="org.eclipse.epp.mpc.ui.command.showMarketplaceWizard"/>
+			<item value="org.jboss.tools.jst.css.view.preview"/>
+			<item value="org.eclipse.ui.preferencePages.ContentTypes"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.preferences"/>
 			<item value="org.eclipse.ui.commands"/>
+			<item value="org.eclipse.e4.ui.parts"/>
+			<item value="org.eclipse.ui.preferences"/>
 		</list>
 		<list key="textArray">
-			<item value="content ty"/>
-			<item value="market"/>
+			<item value="m"/>
 			<item value="mar"/>
-			<item value="marke"/>
+			<item value="jboss"/>
+			<item value="content ty"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.jboss.tools.common.model.ui.wizard.newfile.NewPropertiesFileWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.wst.css.ui.internal.wizard.NewCSSWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.jboss.tools.jst.web"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">

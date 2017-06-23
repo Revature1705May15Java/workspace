@@ -2,18 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="color" key="selection"/>
+		<item value="id=&quot;err" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="color"/>
-			<item value="real"/>
-			<item value="arrayli"/>
-			<item value="test"/>
-			<item value="Connection connect = ConnectionUtil.getConnection();"/>
-			<item value="Connection connect = ConnectionFactory.getInstance().getConnection();"/>
+			<item value="id=&quot;err"/>
+			<item value="error"/>
+			<item value="value"/>
+			<item value="hidde"/>
+			<item value="hidden"/>
+			<item value="login-form"/>
+			<item value="modal"/>
+			<item value="pendingreq"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Connection connect = ConnectionFactory.getInstance().getConnection();"/>

@@ -1,8 +1,0 @@
-package com.rev.dao;
-
-import com.rev.pojo.User;
-
-public interface DAO {
-	User userLogin(String em, String pw);
-	
-}

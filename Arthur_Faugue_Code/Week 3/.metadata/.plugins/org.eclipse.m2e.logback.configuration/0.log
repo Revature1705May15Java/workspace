@@ -15,3 +15,23 @@
 2017-06-08 18:25:42,063 [Worker-8] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2017-06-08 21:58:45,528 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null
 2017-06-09 18:38:43,934 [Worker-6] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-10 12:36:04,819 [Worker-4] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-10 18:07:48,643 [Worker-242] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.15/freemarker-2.3.15-sources.jar
+2017-06-10 18:07:48,810 [Worker-242] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/freemarker/freemarker/2.3.15/freemarker-2.3.15-sources.jar
+2017-06-12 20:03:14,686 [Worker-11] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-13 19:04:53,620 [Worker-7] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-13 20:11:54,609 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-14 20:50:43,185 [Worker-831] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.0.44/tomcat-servlet-api-8.0.44-sources.jar
+2017-06-14 20:50:43,323 [Worker-831] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.0.44/tomcat-servlet-api-8.0.44-sources.jar
+2017-06-14 21:08:37,317 [Worker-6] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-16 10:47:11,914 [Worker-9] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-16 11:30:24,685 [Worker-6] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-16 14:16:06,777 [Worker-7] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-16 15:01:49,978 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-16 19:31:00,898 [Worker-3] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-19 09:20:24,479 [Worker-3] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-20 14:50:45,077 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-20 15:53:14,534 [Worker-5] WARN  org.eclipse.jgit.util.FS_Win32 - Exception caught during execution of command '[bash, --login, -c, which git]' in 'C:\Users\User', return code '1', error message 'which: git: unknown command
+'
+2017-06-21 09:53:46,320 [main] WARN  org.eclipse.jgit.util.FS_Win32 - null
+2017-06-23 09:41:54,999 [Worker-10] WARN  org.eclipse.jgit.util.FS_Win32 - null
