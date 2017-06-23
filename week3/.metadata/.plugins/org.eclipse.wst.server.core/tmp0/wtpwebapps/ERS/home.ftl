@@ -25,18 +25,16 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" style="text-align:center;text-decoration: none; font-size: 3em"></a>
-	    </div>
+
 			<form class="" action="show" method="post">
 	    <ul class="nav navbar-nav">
 
-				<li><a><input type="submit" class="shows" name="show" value="Revature ERS" style="font-size:3em;"></a></li>
-	      <li><a><input type="submit" class="shows" name="show" value="View Requests"></input></a></li>
-	      <li><a><input type="submit" class="shows" name="show" value="View Employees"></a></li>
-	      <li><a><input type="submit" class="shows" name="show" value="Add Employee"></a></li>
-	      <li><a><input type="submit" class="shows" name="show" value="Change Account Information"></a></li>
-				<li><a><input type="submit" class="shows" name="show" value="Logout"></a></li>
+				<li><a><span class="glyphicon glyphicon-home" id="home" style="font-size:3em;color:#48a2be;padding-right:10px"></span><input type="submit" class="shows" name="show" value="Revature ERS" style="font-size:3em;"></a></li>
+	      <li><a><span class="glyphicon glyphicon-inbox"></span><input type="submit" class="shows" name="show" value="View Requests"></input></a></li>
+	      <li><a><span class="glyphicon glyphicon-user"></span><input type="submit" class="shows" name="show" value="View Employees"></a></li>
+	      <li><a><span class="glyphicon glyphicon-plus"></span><input type="submit" class="shows" name="show" value="Add Employee"></a></li>
+	      <li><a><span class="glyphicon glyphicon-cog"></span><input type="submit" class="shows" name="show" value="Change Account Information"></a></li>
+				<li><a><span class="glyphicon glyphicon-log-out"></span><input type="submit" class="shows" name="show" value="Logout"></a></li>
 	    </ul>
 			</form>
 	  </div>
@@ -79,7 +77,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
  	Edit Email:
   <input type="text" name="newemail" class="form-control" value="${employee.email}" placeholder="New Email"><br />
    Edit Password:
-  <input type="password" name="newpw" class="form-control"  value="${employee.password}" placeholder="${employee.password}"><br />
+  <input type="password" name="newpw" class="form-control"  value="" placeholder="New Password"><br />
   <input type="Submit" class="btn btn-primary" value="Change Account Information">
   </#if>
   </form>

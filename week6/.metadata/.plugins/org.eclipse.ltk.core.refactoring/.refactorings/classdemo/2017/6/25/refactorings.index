@@ -1,0 +1,3 @@
+1498067208764	Extract interface 'CustomerRepository'
+1498067278616	Rename type 'CustomerServiceImple'
+1498067373986	Extract interface 'CustomerService'

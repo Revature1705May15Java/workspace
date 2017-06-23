@@ -2,10 +2,19 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.revature"/>
+			<item value="SpringORMDemo"/>
+			<item value="com.ex"/>
 		</list>
 		<list key="name">
+			<item value="SpringMVC"/>
+			<item value="springormdemo"/>
+			<item value="demo"/>
 		</list>
 		<list key="artifactId">
+			<item value="SpringMVCExample"/>
+			<item value="ormdemo"/>
+			<item value="classdemo"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

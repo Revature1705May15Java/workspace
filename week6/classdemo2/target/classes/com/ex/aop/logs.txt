@@ -1,0 +1,21 @@
+
+Performing method!!
+Performing method!!
+Performing method!!
+Performing method!!strings
+Performing method!!stringsclass com.ex.aop.Logs
+Performing method!!stringsclass com.sun.proxy.$Proxy11
+Performing method!!strings
+class com.sun.proxy.$Proxy11
+Performing method!!strings
+method-execution
+Performing method!!strings
+method-execution
+Performing method!!stringsMessage with parameter logging
+Performing method!!stringsclass java.lang.Class
+Performing method!!stringsclass java.lang.String
+Performing method!!stringsclass java.lang.String
+Performing method!!stringsclass java.lang.String
+Performing method!!stringsclass java.lang.String
+Performing method!!stringsclass java.lang.String
+Performing method!!strings

@@ -1,0 +1,9 @@
+package com.ex.service;
+
+public class CustomerServiceImpl {
+	private CustomerRepository cr = new CustomerRepositoryImpl();
+	
+	public Lis<Customer> findAll(){
+		return cr.findAll();
+	}
+}

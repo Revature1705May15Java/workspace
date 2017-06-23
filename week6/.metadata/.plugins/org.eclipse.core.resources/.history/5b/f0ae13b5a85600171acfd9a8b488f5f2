@@ -1,0 +1,7 @@
+package com.ex.repository;
+
+public class CustomerRepositoryImpl {
+	public List<Customer> findAll(){
+		
+	}
+}

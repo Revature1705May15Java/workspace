@@ -1,0 +1,22 @@
+package com.ex.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ex.model.Customer;
+
+public class CustomerRepositoryImpl {
+	public List<Customer> findAll(){
+		List<Customer> customers = new ArrayList<Customer>();
+		for(int i=0i;i<6;i++){
+			Customer c = new Customer();
+			c.setFirstname("Firstname "+(char)i+"name");
+			c.setLastname("Lastname "+(char)i+"name");
+			customers.add(c);
+		}
+		return customers;
+	}
+	private static String getSaltString(){
+		
+	}
+}
