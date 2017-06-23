@@ -152,9 +152,3 @@ function setupRequestDisplayModal() {
     
   });
 }
-
-function setupFilterByEmployee() {
-  $('#employeesColumn button').on('click', function(event) {
-
-  });
-}

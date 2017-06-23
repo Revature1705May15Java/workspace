@@ -712,3 +712,20 @@ java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint 
 2017-06-22T08:42:32.706 - INFO: Admin Userman logged in
 2017-06-22T09:24:29.966 - INFO: Admin Userman logged in
 2017-06-22T09:28:25.562 - INFO: Admin Userman logged in
+2017-06-22T09:40:23.293 - INFO: Admin Userman logged in
+2017-06-22T09:42:42.233 - INFO: An account was created for Miztar Bossmann with the temporary password QytWEMPqG@?v[\Q5:PG^
+2017-06-22T09:45:54.647 - INFO: Miztar Bossmann logged in
+2017-06-22T09:46:13.891 - INFO: Miztar Bossmann changed their password
+2017-06-22T09:46:43.918 - INFO: Eric Christie logged in
+2017-06-22T09:48:56.491 - INFO: User [id=2, email=ejc.other@gmail.com, firstname=Eric, lastname=Christie, isManager=false, emailAlertsOn=true, setupDone=true, lastModified=2017-06-19T07:59:24.102] changed their account information
+2017-06-22T09:52:49.834 - INFO: Admin Userman logged in
+2017-06-22T09:54:59.401 - INFO: Admin Userman logged in
+2017-06-22T10:18:25.145 - INFO: Admin Userman logged in
+2017-06-22T10:20:06.773 - INFO: An account was created for Darrin M with the temporary password =W49nu]@]]dTC5p\PrCT
+2017-06-22T10:21:08.897 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Userman, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-19T04:19:29.125] changed their account information
+2017-06-22T10:21:38.133 - INFO: Eric Christie logged in
+2017-06-22T10:26:25.273 - INFO: Eric Christie logged in
+2017-06-22T10:28:46.902 - INFO: Eric Christie logged in
+2017-06-22T10:31:24.069 - INFO: Eric Christie logged in
+2017-06-22T23:37:06.200 - INFO: Eric Christie logged in
+2017-06-22T23:44:17.270 - INFO: Eric Christie logged in

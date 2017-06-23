@@ -11,32 +11,32 @@
     <ul class="navbar-nav mr-auto" id="navbar-spacer"></ul>
     <ul class="navbar-nav">
       <#if user.isManager()>
-        <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Register a User">
+        <li class="nav-item mx-md-1 my-1">
           <a href="aux/user" id="registrationButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#registrationModal">
             <i class="material-icons align-middle">group_add</i>
-            <span class="hidden-md-up align-middle">&nbsp;Register&nbsp;Users</span>
+            <span class="align-middle">&nbsp;Register&nbsp;User</span>
           </a>
         </li>
       <#else>
-        <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Submit a Request">
+        <li class="nav-item mx-md-1 my-1">
           <a href="aux/request" id="requestButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#requestModal">
-            <!--<i class="material-icons vert-align">note_add</i>-->
-            <i class="material-icons vert-align">attach_money</i>
-            <span class="hidden-md-up align-middle">&nbsp;Submit&nbsp;Requests</span>
+            <!--<i class="material-icons align-middle">note_add</i>-->
+            <i class="material-icons align-middle">attach_money</i>
+            <span class="align-middle">&nbsp;Submit&nbsp;Request</span>
           </a>
         </li>
       </#if>
-      <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Account Settings">
+      <li class="nav-item mx-md-1 my-1">
         <a href="aux/settings" id="settingsButton" class="btn btn-outline-secondary w-100" data-toggle="modal" data-target="#settingsModal">
           <i class="material-icons align-middle">settings</i>
-          <span class="hidden-md-up align-middle">&nbsp;Account&nbsp;Settings</span>
+          <span class="align-middle">&nbsp;Account&nbsp;Settings</span>
         </a>
       </li>
-      <li class="nav-item mx-md-1 my-1" data-toggle="tooltip" data-placement="bottom" title="Logout">
+      <li class="nav-item mx-md-1 my-1">
         <form class="navbar-form" role="logout" name="logoutForm" method="POST" action="logout">
           <button type="submit" class="btn btn-outline-secondary w-100">
             <i class="material-icons align-middle">exit_to_app</i>
-            <span class="hidden-md-up align-middle">&nbsp;Logout</span>
+            <span class="align-middle">&nbsp;Logout</span>
           </button>
         </form>
       </li>

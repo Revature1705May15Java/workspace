@@ -754,3 +754,119 @@ PARAMETERS
 2017-06-22T02:01:05.682 - SERVER: email: richard92m@me.com
 2017-06-22T02:01:05.682 - SERVER: accountType: employee
 2017-06-22T02:01:07.791 - SERVER: sending: {"id":48,"email":"richard92m@me.com","firstname":"Richard","lastname":"Marquez","emailAlertsOn":true,"setupDone":false,"manager":false,"latestLogout":[2017,6,22,2,1,5,817000000]}
+2017-06-22T09:42:37.323 - SERVER: /ERS/user - printing request cookies, headers, and parameters:
+2017-06-22T09:42:37.324 - SERVER: 
+COOKIES
+2017-06-22T09:42:37.324 - SERVER: Cookie: JSESSIONID = F873446455FBDAFE677FC6BB6B14B1BB
+2017-06-22T09:42:37.325 - SERVER: 
+HEADERS
+2017-06-22T09:42:37.326 - SERVER: host: localhost:8081
+2017-06-22T09:42:37.327 - SERVER: connection: keep-alive
+2017-06-22T09:42:37.328 - SERVER: content-length: 86
+2017-06-22T09:42:37.329 - SERVER: accept: application/json, text/javascript, */*; q=0.01
+2017-06-22T09:42:37.329 - SERVER: origin: http://localhost:8081
+2017-06-22T09:42:37.330 - SERVER: x-requested-with: XMLHttpRequest
+2017-06-22T09:42:37.331 - SERVER: user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36
+2017-06-22T09:42:37.331 - SERVER: content-type: application/x-www-form-urlencoded; charset=UTF-8
+2017-06-22T09:42:37.332 - SERVER: referer: http://localhost:8081/ERS/main
+2017-06-22T09:42:37.332 - SERVER: accept-encoding: gzip, deflate, br
+2017-06-22T09:42:37.333 - SERVER: accept-language: en-US,en;q=0.8
+2017-06-22T09:42:37.334 - SERVER: cookie: JSESSIONID=F873446455FBDAFE677FC6BB6B14B1BB
+2017-06-22T09:42:37.334 - SERVER: 
+PARAMETERS
+2017-06-22T09:42:37.335 - SERVER: firstname: Miztar
+2017-06-22T09:42:37.336 - SERVER: lastname: Bossmann
+2017-06-22T09:42:37.336 - SERVER: email: randomaddress@email.com
+2017-06-22T09:42:37.337 - SERVER: accountType: manager
+2017-06-22T09:42:43.149 - SERVER: sending: {"id":49,"email":"randomaddress@email.com","firstname":"Miztar","lastname":"Bossmann","emailAlertsOn":false,"setupDone":false,"latestLogout":[2017,6,22,9,42,37,459000000],"manager":true}
+2017-06-22T09:48:56.307 - SERVER: /ERS/settings - printing request cookies, headers, and parameters:
+2017-06-22T09:48:56.308 - SERVER: 
+COOKIES
+2017-06-22T09:48:56.308 - SERVER: Cookie: JSESSIONID = F36E21C0F396434991EE8EAD0F59C232
+2017-06-22T09:48:56.309 - SERVER: 
+HEADERS
+2017-06-22T09:48:56.310 - SERVER: host: localhost:8081
+2017-06-22T09:48:56.310 - SERVER: connection: keep-alive
+2017-06-22T09:48:56.311 - SERVER: content-length: 112
+2017-06-22T09:48:56.311 - SERVER: accept: application/json, text/javascript, */*; q=0.01
+2017-06-22T09:48:56.312 - SERVER: origin: http://localhost:8081
+2017-06-22T09:48:56.312 - SERVER: x-requested-with: XMLHttpRequest
+2017-06-22T09:48:56.313 - SERVER: user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36
+2017-06-22T09:48:56.313 - SERVER: content-type: application/x-www-form-urlencoded; charset=UTF-8
+2017-06-22T09:48:56.314 - SERVER: referer: http://localhost:8081/ERS/main
+2017-06-22T09:48:56.314 - SERVER: accept-encoding: gzip, deflate, br
+2017-06-22T09:48:56.314 - SERVER: accept-language: en-US,en;q=0.8
+2017-06-22T09:48:56.315 - SERVER: cookie: JSESSIONID=F36E21C0F396434991EE8EAD0F59C232
+2017-06-22T09:48:56.315 - SERVER: 
+PARAMETERS
+2017-06-22T09:48:56.315 - SERVER: email: ejc.other@gmail.com
+2017-06-22T09:48:56.316 - SERVER: password: demodemo
+2017-06-22T09:48:56.316 - SERVER: confirm: demodemo
+2017-06-22T09:48:56.316 - SERVER: firstname: Eric
+2017-06-22T09:48:56.317 - SERVER: lastname: Christie
+2017-06-22T09:48:56.318 - SERVER: emailAlerts: true
+2017-06-22T09:48:56.318 - SERVER: email = ejc.other@gmail.com
+2017-06-22T09:48:56.319 - SERVER: password = demodemo
+2017-06-22T09:48:56.319 - SERVER: confirm = demodemo
+2017-06-22T09:48:56.320 - SERVER: firstname = Eric
+2017-06-22T09:48:56.320 - SERVER: lastname = Christie
+2017-06-22T09:48:56.320 - SERVER: emailAlertsOn = true
+2017-06-22T09:48:56.516 - SERVER: sending: {"id":2,"email":"ejc.other@gmail.com","firstname":"Eric","lastname":"Christie","emailAlertsOn":true,"setupDone":true,"latestLogout":[2017,6,22,9,48,56,489000000],"manager":false}
+2017-06-22T10:20:03.659 - SERVER: /ERS/user - printing request cookies, headers, and parameters:
+2017-06-22T10:20:03.660 - SERVER: 
+COOKIES
+2017-06-22T10:20:03.661 - SERVER: Cookie: JSESSIONID = E4919636FFA5AF9B8DD06C6759EC0069
+2017-06-22T10:20:03.662 - SERVER: 
+HEADERS
+2017-06-22T10:20:03.664 - SERVER: host: 192.168.60.51:8081
+2017-06-22T10:20:03.665 - SERVER: accept: application/json, text/javascript, */*; q=0.01
+2017-06-22T10:20:03.666 - SERVER: x-requested-with: XMLHttpRequest
+2017-06-22T10:20:03.666 - SERVER: accept-language: en-us
+2017-06-22T10:20:03.667 - SERVER: accept-encoding: gzip, deflate
+2017-06-22T10:20:03.668 - SERVER: content-type: application/x-www-form-urlencoded; charset=UTF-8
+2017-06-22T10:20:03.669 - SERVER: origin: http://192.168.60.51:8081
+2017-06-22T10:20:03.670 - SERVER: user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4
+2017-06-22T10:20:03.671 - SERVER: connection: keep-alive
+2017-06-22T10:20:03.672 - SERVER: referer: http://192.168.60.51:8081/ERS/main
+2017-06-22T10:20:03.672 - SERVER: content-length: 85
+2017-06-22T10:20:03.673 - SERVER: cookie: JSESSIONID=E4919636FFA5AF9B8DD06C6759EC0069
+2017-06-22T10:20:03.674 - SERVER: 
+PARAMETERS
+2017-06-22T10:20:03.676 - SERVER: firstname: Darrin
+2017-06-22T10:20:03.677 - SERVER: lastname: M
+2017-06-22T10:20:03.678 - SERVER: email: darrinmcintyre1515@gmail.com
+2017-06-22T10:20:03.679 - SERVER: accountType: employee
+2017-06-22T10:20:07.799 - SERVER: sending: {"id":50,"email":"darrinmcintyre1515@gmail.com","firstname":"Darrin","lastname":"M","emailAlertsOn":true,"setupDone":false,"latestLogout":[2017,6,22,10,20,3,809000000],"manager":false}
+2017-06-22T10:21:08.862 - SERVER: /ERS/settings - printing request cookies, headers, and parameters:
+2017-06-22T10:21:08.863 - SERVER: 
+COOKIES
+2017-06-22T10:21:08.863 - SERVER: Cookie: JSESSIONID = E4919636FFA5AF9B8DD06C6759EC0069
+2017-06-22T10:21:08.863 - SERVER: 
+HEADERS
+2017-06-22T10:21:08.864 - SERVER: host: 192.168.60.51:8081
+2017-06-22T10:21:08.864 - SERVER: accept: application/json, text/javascript, */*; q=0.01
+2017-06-22T10:21:08.865 - SERVER: x-requested-with: XMLHttpRequest
+2017-06-22T10:21:08.865 - SERVER: accept-language: en-us
+2017-06-22T10:21:08.865 - SERVER: accept-encoding: gzip, deflate
+2017-06-22T10:21:08.866 - SERVER: content-type: application/x-www-form-urlencoded; charset=UTF-8
+2017-06-22T10:21:08.866 - SERVER: origin: http://192.168.60.51:8081
+2017-06-22T10:21:08.867 - SERVER: user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4
+2017-06-22T10:21:08.867 - SERVER: connection: keep-alive
+2017-06-22T10:21:08.867 - SERVER: referer: http://192.168.60.51:8081/ERS/main
+2017-06-22T10:21:08.868 - SERVER: content-length: 75
+2017-06-22T10:21:08.868 - SERVER: cookie: JSESSIONID=E4919636FFA5AF9B8DD06C6759EC0069
+2017-06-22T10:21:08.868 - SERVER: 
+PARAMETERS
+2017-06-22T10:21:08.869 - SERVER: email: admin@email.com
+2017-06-22T10:21:08.869 - SERVER: password: 
+2017-06-22T10:21:08.870 - SERVER: confirm: 
+2017-06-22T10:21:08.870 - SERVER: firstname: Eric
+2017-06-22T10:21:08.870 - SERVER: lastname: Christie
+2017-06-22T10:21:08.871 - SERVER: email = admin@email.com
+2017-06-22T10:21:08.871 - SERVER: password = null
+2017-06-22T10:21:08.872 - SERVER: confirm = null
+2017-06-22T10:21:08.872 - SERVER: firstname = Eric
+2017-06-22T10:21:08.872 - SERVER: lastname = Christie
+2017-06-22T10:21:08.872 - SERVER: emailAlertsOn = false
+2017-06-22T10:21:08.926 - SERVER: sending: {"id":1,"email":"admin@email.com","firstname":"Eric","lastname":"Christie","emailAlertsOn":false,"setupDone":true,"latestLogout":[2017,6,22,10,21,8,896000000],"manager":true}
+2017-06-22T10:22:43.928 - SERVER: sending: {"id":4,"requesterId":2,"resolverId":0,"requesterEmail":"ejc.other@gmail.com","requesterFirstname":"Eric","requesterLastname":"Christie","resolverEmail":null,"resolverFirstname":null,"resolverLastname":null,"state":{"id":1,"name":"pending"},"amount":1000,"dateTimeRequested":[2017,6,22,10,22,42,687000000],"dateTimeResolved":null,"purpose":"I want money.","note":null}

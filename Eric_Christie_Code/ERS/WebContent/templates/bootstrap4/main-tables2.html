@@ -1,119 +1,173 @@
 <main>
-  <ul class="nav nav-tabs" role="tablist">
-    <#if user.isManager()>
-      <li class="nav-item visible-md-down hidden-lg-up">
-        <a class="nav-link" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
-      </li>
-    </#if>
-    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs" role="tablist">
+          <#if user.isManager()>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#employeesPane" role="tab">Employees</a>
+            </li>
+          </#if>
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#pendingPane" role="tab">Pending&nbsp;Requests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#resolvedPane" role="tab">Resolved&nbsp;Requests</a>
+          </li>
+        </ul>
 
-  <div class="tab-content">
-    <#if user.isManager()>
-      <div class="tab-pane visible-md-down hidden-lg-up" id="employeesPane" role="tabpanel">
+        <div class="tab-content">
+          <#if user.isManager()>
+            <div class="tab-pane" id="employeesPane" role="tabpanel">
+              <table id="employeesTable" class="display" cellspacing="10" width="60%">
+                <thead class="thead-inverse">
+                  <tr class="text-white">
+                    <th>Employee</th>
+                    <th>Email Address</th>
+                  </tr>
+                </thead>
+                <tfoot class="thead-inverse">
+                  <tr class="text-white">
+                    <th>Employee</th>
+                    <th>Email Address</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <#if employees?size == 0>
+                    There are currently no employee accounts registered.
+                  <#else>
+                    <#list employees as e>
+                      <tr>
+                        <td>${e.getFirstname()}&nbsp;${e.getLastname()}</td>
+                        <td>${e.getEmail()}</td>
+                      </tr>
+                    </#list>
+                  </#if>
+                </tbody>
+              </table>
+            </div>
+          </#if>
+          <div class="tab-pane active" id="pendingPane" role="tabpanel">
+            <table id="pendingTable" class="display" cellspacing="0" width="100%">
+              <thead class="thead-inverse">
+                <tr class="text-white">
+                  <th>#</th>
+                  <th>Requester</th>
+                  <th>Requester's Email</th>
+                  <th>Date Requested</th>
+                  <th>Purpose</th>
+                  <th>Amount</th>
+                  <#if user.isManager()>
+                    <th>Approve</th>
+                    <th>Deny</th>
+                  </#if>
+                </tr>
+              </thead>
+              <tfoot class="thead-inverse">
+                <tr class="text-white">
+                  <th>#</th>
+                  <th>Requester</th>
+                  <th>Requester's Email</th>
+                  <th>Date Requested</th>
+                  <th>Purpose</th>
+                  <th>Amount</th>
+                  <#if user.isManager()>
+                    <th>Approve</th>
+                    <th>Deny</th>
+                  </#if>
+                </tr>
+              </tfoot>
+              <tbody>
+                <#if pending?size == 0>
+                  There are currently no pending requests to display.
+                <#else>
+                  <#list pending as r>
+                    <tr>
+                      <td>${r.getId()}</td>
+                      <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                      <td>${r.getRequesterEmail()}</td>
+                      <td>${r.getDateTimeRequested().toLocalDate()}</td>
+                      <td>${r.getPurpose()}</td>
+                      <td>${r.getAmount()?string.currency}</td>
+                      <#if user.isManager()>
+                        <td class="px-1">
+                          <a href="aux/request" class="approveButton btn btn-outline-success mx-1" data-value="Approve"
+                              data-toggle="modal" data-target="#resolveModal" data-id="${r.getId()}">
+                            <i class="material-icons align-middle">thumb_up</i>
+                            <span class="align-middle font-weight-bold">&nbsp;Approve</span>
+                          </a>
+                        </td>
+                        <td class="px-1">
+                          <a href="aux/request" class="denyButton btn btn-outline-danger mx-1" data-value="Deny"
+                              data-toggle="modal" data-target="#resolveModal" data-requestId="${r.getId()}">
+                            <i class="material-icons align-middle">thumb_down</i>
+                            <span class="align-middle font-weight-bold">&nbsp;Deny</span>
+                          </a>
+                        </td>
+                      </#if>
+                    </tr>
+                  </#list>
+                </#if>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane" id="resolvedPane" role="tabpanel">
+            <table id="resolvedTable" class="display" cellspacing="0" width="100%">
+              <thead class="thead-inverse">
+                <tr class="text-white">
+                  <th>#</th>
+                  <th>Status</th>
+                  <th>Requester</th>
+                  <th>Requester's Email</th>
+                  <th>Date Requested</th>
+                  <th>Purpose</th>
+                  <th>Resolver</th>
+                  <th>Resolver's Email</th>
+                  <th>Date Resolved</th>
+                  <th>Note</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tfoot class="thead-inverse">
+                <tr class="text-white">
+                  <th>#</th>
+                  <th>Status</th>
+                  <th>Requester</th>
+                  <th>Requester's Email</th>
+                  <th>Date Requested</th>
+                  <th>Purpose</th>
+                  <th>Resolver</th>
+                  <th>Resolver's Email</th>
+                  <th>Date Resolved</th>
+                  <th>Note</th>
+                  <th>Amount</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <#if resolved?size == 0>
+                  There are currently no resolved requests to display.
+                <#else>
+                  <#list resolved as r>
+                    <tr>
+                      <td>${r.getId()}</td>
+                      <td>${r.getState().getName()}</td>
+                      <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
+                      <td>${r.getRequesterEmail()}</td>
+                      <td>${r.getDateTimeRequested().toLocalDate()}</td>
+                      <td>${r.getPurpose()}</td>
+                      <td>${r.getResolverFirstname()} ${r.getResolverLastname()}</td>
+                      <td>${r.getResolverEmail()}</td>
+                      <td>${r.getDateTimeResolved().toLocalDate()}</td>
+                      <td>${r.getNote()}</td>
+                      <td>${r.getAmount()?string.currency}</td>
+                    </tr>
+                  </#list>
+                </#if>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    </#if>
-    <div class="tab-pane" id="pendingPane" role="tabpanel">
-      <table id="pendingTable" class="display" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Requester</th>
-            <th>Requester's Email</th>
-            <th>Date Requested</th>
-            <th>Purpose</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>#</th>
-            <th>Requester</th>
-            <th>Requester's Email</th>
-            <th>Date Requested</th>
-            <th>Purpose</th>
-            <th>Amount</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          <#if pending?size == 0>
-            There are currently no pending requests to display.
-          <#else>
-            <#list pending as r>
-              <tr>
-                <td>${r.getId()}</td>
-                <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
-                <td>${r.getRequesterEmail()}</td>
-                <td>${r.getDateTimeRequested()}</td>
-                <td>${r.getPurpose()}</td>
-                <td>$${r.getAmount()}</td>
-              </tr>
-            </#list>
-          </#if>
-        </tbody>
-      </table>
-    </div>
-    <div class="tab-pane" id="resolvedPane" role="tabpanel">
-      <table id="resolvedTable" class="display" cellspacing="0" width="100%">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Status</th>
-            <th>Requester</th>
-            <th>Requester's Email</th>
-            <th>Date Requested</th>
-            <th>Purpose</th>
-            <th>Resolver</th>
-            <th>Resolver's Email</th>
-            <th>Date Resolved</th>
-            <th>Note</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>#</th>
-            <th>Status</th>
-            <th>Requester</th>
-            <th>Requester's Email</th>
-            <th>Date Requested</th>
-            <th>Purpose</th>
-            <th>Resolver</th>
-            <th>Resolver's Email</th>
-            <th>Date Resolved</th>
-            <th>Note</th>
-            <th>Amount</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          <#if resolved?size == 0>
-            There are currently no resolved requests to display.
-          <#else>
-            <#list resolved as r>
-              <tr>
-                <td>${r.getId()}</td>
-                <td>${r.getState().getName()}</td>
-                <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
-                <td>${r.getRequesterEmail()}</td>
-                <td>${r.getDateTimeRequested()}</td>
-                <td>${r.getPurpose()}</td>
-                <td>${r.getResolverFirstname()} ${r.getResolverLastname()}</td>
-                <td>${r.getResolverEmail()}</td>
-                <td>${r.getDateTimeResolved()}</td>
-                <td>${r.getNote()}</td>
-                <td>$${r.getAmount()}</td>
-              </tr>
-            </#list>
-          </#if>
-        </tbody>
-      </table>
     </div>
   </div>
-
-      
 </main>
