@@ -97,13 +97,13 @@
 
 	<div id="update" class="modal" role="dialog">
 		<div class="container bs-nopadding text-center well">
-			<form role="form" action="user" method="post" data-toggle="validator">
+			<form role="form" action="user" method="post" data-toggle="validator" id="formUpdate">
 				<br style="clear: both">
 				<h3 style="margin-bottom: 25px; text-align: center;">Update
 					Employee Info</h3>
 				<div class="form-group">
 					<input type="text" class="form-control" name="email"
-						placeholder="Enter new email address" required>
+						placeholder="Enter new user name" required>
 				</div>
 				<label for="inputPassword" class="control-label">Password</label>
 				<div class="form-group">
@@ -155,18 +155,18 @@
 										<hr style="margin: 5px 0 5px 0;">
 
 
-										<div class="col-sm-5 col-xs-6 tital ">First Name:</div>
-										<div class="col-sm-7 col-xs-6 ">${firstname}</div>
+										<div class="col-sm-5 col-xs-6 tital ">First Name: ${firstname}</div>
+										<div class="col-sm-7 col-xs-6 "></div>
 										<div class="clearfix"></div>
 										<div class="bot-border"></div>
 
-										<div class="col-sm-5 col-xs-6 tital ">Last Name:</div>
-										<div class="col-sm-7">${lastname}</div>
+										<div class="col-sm-5 col-xs-6 tital ">Last Name: ${lastname}</div>
+										<div class="col-sm-7"></div>
 										<div class="clearfix"></div>
 										<div class="bot-border"></div>
 
-										<div class="col-sm-5 col-xs-6 tital ">Email Address:</div>
-										<div class="col-sm-7">${email}</div>
+										<div class="col-sm-5 col-xs-6 tital ">User Name: ${email}</div>
+										<div class="col-sm-7"></div>
 										<div class="clearfix"></div>
 										<div class="bot-border"></div>
 									</div>
@@ -181,9 +181,9 @@
 				</div>
 			</div>
 			<script type="text/javascript">
-			$('form').on('submit',function(){
+			$('#formUpdate').on('submit',function(){
 				   if($('#password').val()!=$('#passwordC').val()){
-				       alert('Password not matches');
+				       alert('Passwords do not match!');
 				       return false;
 				   }
 				   return true;

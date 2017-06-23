@@ -80,35 +80,59 @@
         </div>
     </nav>
 	
-	
-	<div id="newUser" class="modal" role="dialog">
-		<div class="container bs-nopadding text-center well">
-			<form role="form" action="user" method="post" data-toggle="validator">
-				<br style="clear: both">
-				<h3 style="margin-bottom: 25px; text-align: center;">Update
-					Employee Info</h3>
-				<div class="form-group">
-					<input type="text" class="form-control" name="email"
-						placeholder="Enter new email address" required>
-				</div>
-				<label for="inputPassword" class="control-label">Password</label>
-				<div class="form-group">
-					<input type="password" data-minlength="6" class="form-control"
-						name="password" id="password" placeholder="Password" required>
-				</div>
-				<div class="form-group">
-					<input type="password" class="form-control"
-						id="passwordC" data-match="#inputPassword"
-						data-match-error="Whoops, these don't match" placeholder="Confirm password"
-						required>
-						<div class="help-block with-errors"></div>
-				</div>
-				
-				<button type="submit" class="btn btn-lg btn-success btn-block">Submit
-					Form</button>
-			</form>
+	<!-- BEGIN # MODAL LOGIN -->
+		<div class="modal fade" id="newUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+             
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form" name="user" action="employee" method="post">
+		                <div class="modal-body">
+				    		<br style="clear: both">
+							<h3 style="margin-bottom: 25px; text-align: center;">New Employee Info.</h3>
+							<div class="form-group">
+								<input type="text" class="form-control" name="firstn"
+									placeholder="Enter first name" required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" name="lastn"
+									placeholder="Enter last name" required>
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" name="email"
+									placeholder="Enter user name" required>
+							</div>
+							<label for="inputPassword" class="control-label">Password</label>
+							<div class="form-group">
+								<input type="password" data-minlength="6" class="form-control"
+									name="password" id="password" placeholder="Password" required>
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control"
+									id="passwordC" data-match="#inputPassword"
+									data-match-error="Whoops, these don't match" placeholder="Confirm password"
+									required>
+									<div class="help-block with-errors"></div>
+							</div>
+							<div class="radio">
+							  	<label><input type="radio" name="isBoss" value="0">Employee</label>
+							</div>
+							<div class="radio">
+							  	<label><input type="radio" name="isBoss" value="1">Manager</label>
+							</div>
+							<button type="submit" class="btn btn-lg btn-success btn-block">Submit
+								Form</button>
+						</div>
+                    </form>
+                    <!-- End # Login Form -->
+                </div>
+			</div>
 		</div>
 	</div>
+    <!-- END # MODAL LOGIN -->
 	
 	
     <div class="content-wrapper py-3">
@@ -390,7 +414,14 @@
     	    else {$('.no-result').hide();}
     			  });
     	});
-
+	
+    $('form').on('submit',function(){
+		   if($('#password').val()!=$('#passwordC').val()){
+		       alert('Password not matches');
+		       return false;
+		   }
+		   return true;
+		});
     </script>
 </body>
 

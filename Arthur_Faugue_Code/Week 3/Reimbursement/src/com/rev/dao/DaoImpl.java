@@ -454,7 +454,6 @@ public class DaoImpl implements DAO {
 	public ArrayList<User> getAllEmployees() {
 		ArrayList<User> usrArr = new ArrayList<User>();
 		User usr = new User();
-		ArrayList<String> info = new ArrayList<String>();
 		DAO dao = new DaoImpl();
 		try (Connection connect = ConnectionFactory.getInstance().getConnection();) {
 			String sql = "SELECT * FROM USER_E ";
@@ -479,6 +478,26 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 		return usrArr;
+	}
+
+	@Override
+	public void makeNewUser(String fn, String ln, String usrName, String pw, int boss) {
+		try (Connection connect = ConnectionFactory.getInstance().getConnection();) {
+			System.out.println("here1");
+			String sql = "INSERT INTO USER_E(EMAIL, PASSWRD, FIRSTNAME, LASTNAME, ISBOSS) "
+					+ "VALUES(?, ?, ?, ?, ?)";
+			PreparedStatement ps = connect.prepareStatement(sql);
+			ps.setString(1, usrName);
+			ps.setString(2, pw);
+			ps.setString(3, fn);
+			ps.setString(4, ln);
+			ps.setInt(5, boss);
+			
+			int x = ps.executeUpdate();
+			System.out.println(x +" Rows Updated");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	
 

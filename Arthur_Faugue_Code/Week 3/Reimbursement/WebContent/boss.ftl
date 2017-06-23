@@ -30,6 +30,10 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/tether/tether.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+`
+	<script type="text/javascript" src="js/tablesorter/jquery.tablesorter.pager.js"></script> 
 	
 	<style>
 	body{
@@ -351,15 +355,14 @@
     <!--Table Sorter -->
     <script type="text/javascript" src="js/tablesorter/jquery-latest.js"></script> 
 	<script type="text/javascript" src="js/tablesorter/jquery.tablesorter.js"></script> 
-	<script type="text/javascript" src="js/tablesorter/jquery.tablesorter.pager.js"></script> 
-	
+ 
 	<script>
     $(document).ready(function() 
     	    { 
     	        $("#pendingRequestsTable").tablesorter(); 
     	    } 
     	); 
-	
+
 	$(document).ready(function() {
     	  $(".search").keyup(function () {
     	    var searchTerm = $(".search").val();
@@ -387,7 +390,7 @@
     			  });
     	});
     
-
+	
     </script>
 </body>
 

@@ -54,9 +54,30 @@ public class ServletEmployee extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User u = new User();
 		ArrayList<Request> accs = new ArrayList<Request>();
+		ArrayList<User> usrArr = new ArrayList<User>();
 		HttpSession s = request.getSession(true);
 		
+		String fName = request.getParameter("firstn");
+		String lName = request.getParameter("lastn");
+		String email = request.getParameter("email");
+		String pass = request.getParameter("password");
+		int boss = Integer.parseInt(request.getParameter("isBoss"));
+		serv.makeNewUser(fName, lName, email, pass, boss);
+		
 		u = (User) s.getAttribute("user");
+		
+		String fn = u.getFn();
+		String ln = u.getLn();
+		request.setAttribute("firstname", fn);
+		request.setAttribute("lastname", ln);
+		
+		
+		accs = serv.getAllRequests();
+		usrArr = serv.getAllEmployees();
+		
+		request.setAttribute("users", usrArr);
+		request.setAttribute("requests", accs);
+		request.getRequestDispatcher("bossEmployees.ftl").forward(request, response);
 	}
 
 }

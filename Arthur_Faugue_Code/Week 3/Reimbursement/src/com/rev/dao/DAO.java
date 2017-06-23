@@ -2,7 +2,8 @@ package com.rev.dao;
 
 import java.util.ArrayList;
 
-import com.rev.pojo.*;
+import com.rev.pojo.Request;
+import com.rev.pojo.User;
 
 public interface DAO {
 	
@@ -23,5 +24,5 @@ public interface DAO {
 	ArrayList<Request> getAllRequestsByStateId(int id);
 	boolean approveRequest(int rid, int sid, int resid, String note);
 	ArrayList<User> getAllEmployees();
-	
+	void makeNewUser(String fn, String ln, String usrName, String pw, int boss);
 }

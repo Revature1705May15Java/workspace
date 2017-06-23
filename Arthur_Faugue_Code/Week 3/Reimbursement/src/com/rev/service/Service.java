@@ -69,7 +69,12 @@ public class Service {
 	public boolean approveRequest(int rid, int sid, int resid, String note){
 		return dao.approveRequest(rid, sid, resid, note);
 	}
+	
 	public ArrayList<User> getAllEmployees(){
 		return dao.getAllEmployees();
+	}
+	
+	public void makeNewUser(String fn, String ln, String usrName, String pw, int boss){
+		dao.makeNewUser(fn, ln, usrName, pw, boss);
 	}
 }

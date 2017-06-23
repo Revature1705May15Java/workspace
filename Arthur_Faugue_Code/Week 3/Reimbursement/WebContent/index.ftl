@@ -46,9 +46,6 @@
                     <li class="nav-item active">
                         <a class="nav-link">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about">About</a>
-                    </li>
                 </ul>
                 
                 <button type="button" class="btn btn-primary btn-rounded pull-right" data-toggle="modal"
@@ -75,18 +72,12 @@
                             </div>
 				    		<input id="login_username" class="form-control" type="text" placeholder="Username" name="userName" required>
 				    		<input id="login_password" class="form-control" type="password" placeholder="Password" name="pwd" required>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
         		    	</div>
 				        <div class="modal-footer">
                             <div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                             </div>
 				    	    <div>
-                                <a id="login_lost_btn" href="#" class="btn btn-link">Lost Password?</a>
                                 <#if err == 1>
                  				<input id="error" class="form-control" type="text" value="1" name="errorCheck" style="display: none;" />
                  				<#else>

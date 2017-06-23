@@ -120,7 +120,7 @@
 
 <#list requests as request>
 <hr style="margin:5px 0 5px 0;">
-<div class="col-sm-5 col-xs-6 tital " >Request Number: </div><div class="col-sm-7"> ${request.id}</div>
+<div class="col-sm-5 col-xs-6 tital " >Date Requested: </div><div class="col-sm-7"> ${request.reqDate}</div>
   <div class="clearfix"></div>
 <div class="bot-border"></div>
 <div class="col-sm-5 col-xs-6 tital " >Pending Amount: </div><div class="col-sm-7">$ ${request.amount}</div>
