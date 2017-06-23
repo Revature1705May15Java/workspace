@@ -65,7 +65,13 @@
                     <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
                     <td>${r.getRequesterEmail()}</td>
                     <td>${r.getDateTimeRequested().toLocalDate()}</td>
-                    <td>${r.getPurpose()}</td>
+                    <td>
+                      <#if r.getPurpose()??>
+                        ${r.getPurpose()}
+                      <#else>
+                        n/a
+                      </#if>
+                    </td>
                     <td>${r.getAmount()?string.currency}</td>
                     <#if user.isManager()>
                       <td class="px-1">
@@ -128,11 +134,23 @@
                     <td>${r.getRequesterFirstname()} ${r.getRequesterLastname()}</td>
                     <td>${r.getRequesterEmail()}</td>
                     <td>${r.getDateTimeRequested().toLocalDate()}</td>
-                    <td>${r.getPurpose()}</td>
+                    <td>
+                      <#if r.getPurpose()??>
+                        ${r.getPurpose()}
+                      <#else>
+                        n/a
+                      </#if>
+                    </td>
                     <td>${r.getResolverFirstname()} ${r.getResolverLastname()}</td>
                     <td>${r.getResolverEmail()}</td>
                     <td>${r.getDateTimeResolved().toLocalDate()}</td>
-                    <td>${r.getNote()}</td>
+                    <td>
+                      <#if r.getNote()??>
+                        ${r.getNote()}
+                      <#else>
+                        n/a
+                      </#if>
+                    </td>
                     <td>${r.getAmount()?string.currency}</td>
                   </tr>
                 </#list>

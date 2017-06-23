@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Defining our XML namespace - default space for beans.xml.
+  xsi : XML schema instance
+  SchemaLocation is added to our XML file and gives us context sensitive help inside of our application.
+  Makes sure that we have well-formed and valid XML.
+  The namespace acts like a library for the properties that we can use to create and inject into a bean.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+  
+  <!-- <bean name="customerRepository" class="com.ex.repository.MyCustomerRepository"/> -->
+  
+  <!-- <bean name="customerService" class="com.ex.service.MyCustomerService">
+    since we are doing setter injection, name must be the name used for the setter method 
+    <property name="customerRepository" ref="customerRepository"/>
+  </bean> -->
+  <!-- <bean name="customerService" class="com.ex.service.MyCustomerService">
+    <constructor-arg index="0" ref="customerRepository"/>
+  </bean> -->
+  <!-- now for some autowiring -->
+  <!-- <bean name="customerService" class="com.ex.service.MyCustomerService" autowire="constructor"/> -->
+  
+  <context:annotation-config/>
+  <context:component-scan base-package="com.ex"/>
+  
+  <!-- 
+    Stereotype annotations:
+    @Component - used for any bean
+    @Service - used for business logic layer. NOT web service
+    @Repository - DAO layer
+  -->
+  
+  
+  <!-- Enable AOP -->
+  <aop:aspectj-autoproxy/>
+  
+</beans>

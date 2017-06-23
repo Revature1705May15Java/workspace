@@ -764,3 +764,13 @@ java.sql.SQLIntegrityConstraintViolationException: ORA-00001: unique constraint 
 2017-06-23T12:23:29.180 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:23:27.257] changed their account information
 2017-06-23T12:24:10.418 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:23:29.179] changed their account information
 2017-06-23T12:24:23.120 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:24:10.417] changed their account information
+2017-06-23T14:24:02.442 - INFO: Admin Usermann logged in
+2017-06-23T14:27:06.539 - INFO: Admin Usermann logged in
+2017-06-23T14:27:58.668 - INFO: Mark Worth logged in
+2017-06-23T14:28:24.938 - INFO: User [id=46, email=markworth89@gmail.com, firstname=Mark, lastname=Worth, isManager=false, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T11:20:06.447] changed their account information
+2017-06-23T14:29:33.744 - INFO: Miztar Bossmann logged in
+2017-06-23T14:31:16.036 - INFO: Admin Usermann logged in
+2017-06-23T14:32:38.832 - INFO: User [id=1, email=admin@email.com, firstname=Admin, lastname=Usermann, isManager=true, emailAlertsOn=false, setupDone=true, lastModified=2017-06-23T12:24:23.119] changed their account information
+2017-06-23T14:33:13.619 - INFO: An account was created for Eric Christie with the temporary password aq`HyKvnT9VQN1>TdMgu
+2017-06-23T14:33:45.831 - INFO: Eric Christie logged in
+2017-06-23T14:34:00.951 - INFO: Eric Christie changed their password

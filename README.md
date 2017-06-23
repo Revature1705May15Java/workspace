@@ -38,6 +38,15 @@
 >#### [AjaxIntro](https://github.com/Revature1705May15Java/1705May15Java/tree/Eric_Christie/Eric_Christie_Code/AjaxIntro)
 >> 
 
+### **Week 5**
+>####
+>####
+>####
+
+### **Week 6**
+>####
+>####
+>####
 
 ### **Other Directories**
 >#### [Servers](https://github.com/Revature1705May15Java/1705May15Java/tree/Eric_Christie/Eric_Christie_Code/Servers)
