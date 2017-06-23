@@ -135,9 +135,8 @@ public class ImplDao implements Dao{
 				u.setRequests(getUserRequests(u.getId()));
 			}
 			
-			if(u.getUsername() != null){System.out.println("Found a user");} //log.log("Retrieved user by username: " + userName);
+			if(u.getUsername() != null){}
 			else {
-				//log.log("Failed to retrieve user by username: " + userName);
 				return null;
 			}
 			
@@ -171,9 +170,8 @@ public class ImplDao implements Dao{
 				u.setRequests(getUserRequests(u.getId()));
 			}
 			
-			if(u.getUsername() != null){System.out.println("Found a user");} //log.log("Retrieved user by username: " + userName);
+			if(u.getUsername() != null){}
 			else {
-				//log.log("Failed to retrieve user by username: " + userName);
 				return null;
 			}
 			
@@ -212,6 +210,7 @@ public class ImplDao implements Dao{
 	public ArrayList<Request> getUserRequests(int id){ 
 		requests = new ArrayList<Request>();
 		Request temp = new Request();
+		User u;
 		
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM requests WHERE empid = ?";
@@ -238,6 +237,7 @@ public class ImplDao implements Dao{
 				temp.setType(stateTypes.get(info.getInt(8)));
 				
 				temp.setAdminNote(info.getString(9));
+				
 				requests.add(i, temp);
 				i++;			
 			}
@@ -246,7 +246,11 @@ public class ImplDao implements Dao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
+		} catch (Exception e) {
+			System.out.println("Prepared Exception... ImplDao 250");
+			return null;
 		}
+	
 	}
 	
 	public ArrayList<Request> getAllRequests(){ 

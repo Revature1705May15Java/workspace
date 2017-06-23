@@ -387,3 +387,6 @@ Jun 17, 2017 16:21:14.15 [11736:10016:0617/162114.152:ERROR:ssl_client_socket_im
 Jun 17, 2017 16:44:09.17 [0617/164409.172:ERROR:process_info.cc(625)] range at 0xe38a340600000000, size 0x15e fully unreadable
 Jun 17, 2017 16:44:09.18 [0617/164409.173:ERROR:process_info.cc(625)] range at 0xe38a346a00000000, size 0x15e fully unreadable
 Jun 17, 2017 16:44:09.18 [0617/164409.173:ERROR:process_info.cc(625)] range at 0x0, size 0x15e fully unreadable
+
+Jun 22, 2017 01:11:25.15 NEW SESSION
+Jun 22, 2017 01:11:25.15 [5624:5856:0622/011125.152:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener

@@ -1,7 +1,8 @@
 package com.ers.pojo;
 
 import java.sql.Date;
-import java.util.ArrayList;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 public class Request {
 	int id, requesterId, adminId;

@@ -23,6 +23,10 @@ public class Service {
 			if(!req.get(i).getType().equals(dao.getStateType(0))) {
 				req.remove(i);
 				i--;
+			} else {
+				User u = dao.getUser(req.get(i).getRequesterId());
+				req.get(i).setEmpFn(u.getFn()); // Adding the user names to the req to simplify the front end displaying this
+				req.get(i).setEmpLn(u.getLn()); // information in the data table.
 			}
 		}
 		
@@ -36,6 +40,10 @@ public class Service {
 			if(req.get(i).getDateClosed() == null) {
 				req.remove(i);
 				i--; // decrement because the arraylist is now 1 element shorter, this stops from skipping an element.
+			} else {
+				User u = dao.getUser(req.get(i).getRequesterId());
+				req.get(i).setEmpFn(u.getFn()); // Adding the user names to the req to simplify the front end displaying this
+				req.get(i).setEmpLn(u.getLn()); // information in the data table.
 			}
 		}
 		
@@ -49,7 +57,7 @@ public class Service {
 			if(req.get(i).getDateClosed() == null || req.get(i).getRequesterId() != u.getId()) {
 				req.remove(i);
 				i--; // decrement because the arraylist is now 1 element shorter, this stops from skipping an element.
-			}
+			} 
 		}
 		
 		return req;
@@ -58,10 +66,9 @@ public class Service {
 	public Request getRequestById(int id){
 		Request req = dao.getRequestById(id);
 		User u = dao.getUser(req.getRequesterId());
-		System.out.println("REQUESTERID: " + req.getRequesterId());
+		
 		req.setEmpFn(u.getFn()); // Adding the user names to the req to simplify the front end displaying this
 		req.setEmpLn(u.getLn()); // information in the data table.
-		
 		return req;
 	}
 	
@@ -82,16 +89,34 @@ public class Service {
 	
 	public User getUserInfo(String username) {
 		User temp = new User();
-		
-		temp = dao.getUser(username);
-		
-		return temp;
+		try {
+			temp = dao.getUser(username);
+			ArrayList<Request> req = temp.getRequests();
+			
+			
+			for(int i = 0; i < req.size(); i++){  // adding the first and last name to the requests so the can be used 
+				req.get(i).setEmpFn(temp.getFn());// on the front-end by the data table.
+				req.get(i).setEmpLn(temp.getLn());
+			}
+			temp.setRequests(req);
+			return temp;
+		} catch (Exception e){
+			return null;
+		}
 	}
 	
 	public User getUserInfo(int id) {
 		User temp = new User();
 		
 		temp = dao.getUser(id);
+		ArrayList<Request> req = temp.getRequests();
+		
+		
+		for(int i = 0; i < req.size(); i++){  // adding the first and last name to the requests so the can be used 
+			req.get(i).setEmpFn(temp.getFn());// on the front-end by the data table.
+			req.get(i).setEmpLn(temp.getLn());
+		}
+		temp.setRequests(req);
 		
 		return temp;
 	}

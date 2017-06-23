@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,6 +25,7 @@ public class EditInfoServlet extends HttpServlet {
 		User u = (User) session.getAttribute("user");
 		Service service = new Service();
 		System.out.println(u.toString());
+		int passTest = 0;
 		try{
 			String temp = request.getParameter("newusername");
 			if(temp != null && temp != "") {
@@ -36,8 +38,7 @@ public class EditInfoServlet extends HttpServlet {
 			} else if(request.getParameter("oldpw").equals("") && request.getParameter("newpw").equals("") && request.getParameter("newpw2").equals("")){} //If all passwords are null they do not wish to edit. Do nothing.
 			else {
 				request.setAttribute("editing", "pwfail");
-				request.getRequestDispatcher("home").forward(request, response);
-				return;
+				passTest = 1;
 			}
 			
 			temp = request.getParameter("newfn");
@@ -50,9 +51,9 @@ public class EditInfoServlet extends HttpServlet {
 			session.removeAttribute("user");
 			session.setAttribute("user", u);
 			
-			request.setAttribute("editing", "success");
+			if(passTest == 0) request.setAttribute("editing", "success");
 		}
-		catch(IOException e){
+		catch(Exception e){
 			request.setAttribute("editing", "fail");
 		}
 		finally {

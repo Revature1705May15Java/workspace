@@ -36,8 +36,9 @@ public class PopulateTableServlet extends HttpServlet {
 			request.setAttribute("user", u);
 		}
 		else if(u.getRank() == 0 || (sortBy != null && sortBy.equals("req"))){ // View selected = "My Requests", default for employees.
+			System.out.println("Run");
 			u = service.getUserInfo(u.getId()); // updating all request information about the user.
-			
+			System.out.println("Run2");
 			request.setAttribute("Requests", u.getRequests());
 			request.setAttribute("user", u);
 		}

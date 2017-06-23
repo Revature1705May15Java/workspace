@@ -51,7 +51,7 @@ public class EditRequestServlet extends HttpServlet {
 					req.setAdminNote(request.getParameter("adminNote"));
 				}
 
-				req.setBalance(Double.parseDouble(request.getParameter("amt")));
+				req.setBalance(Double.parseDouble(request.getParameter("amt").substring(1)));
 				req.setPurpose(request.getParameter("purpose"));
 				
 				if(request.getParameter("dateClosed") != null && req.getRequesterId() != u.getId() && u.getRank() > 0) {
@@ -59,8 +59,8 @@ public class EditRequestServlet extends HttpServlet {
 					java.util.Date date = sdf.parse(request.getParameter("dateClosed"));
 					java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 					req.setDateClosed(sqlDate);
-				}
-						
+				}	
+				System.out.println("Updating next??");
 				wasUpdated = service.updateRequestById(req, u);
 				if(!wasUpdated) request.setAttribute("reqEdit", "false");
 			}

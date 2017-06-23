@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Testing Grounds</title>
+<title>Home</title>
 	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
@@ -151,7 +151,7 @@ div#editInfo{
 
 
 </head>
-<body style="background-color: aquamarine;">
+<body background="images/home.jpg; no-repeat;">
 
 
 
@@ -179,8 +179,6 @@ div#editInfo{
 </nav>
 
 
-	<div class="jumbotron" style="background-color: skyblue; color: purple; text-align: center;">
-		
 		<div id="requestdiv" class="jumbotron">
 				<h3 id="textAlert" style="text-align: center; margin-top: -15px"></h3>
 				<table id="reqTable" class="display" cellspacing="0" width="98%">
@@ -201,11 +199,11 @@ div#editInfo{
 						<tr>
 							<th>Request ID</th>
 							<th>Amount</th>
-							<th>Purpose</th>
+							<th style="text-align:center;">Purpose</th>
 							<th>Status</th>
 							<th>Date Opened</th>
 							<th>Date Closed</th>
-							<th>Admin Note</th>
+							<th style="text-align:center;">Admin Note</th>
 							<th>Admin ID</th>
 							<th>Employee ID</th>
 						</tr>
@@ -214,7 +212,7 @@ div#editInfo{
 						<#list Requests as req>
 							<tr>
 								<td style="text-align:center;">${req.getId()}</td>
-								<td style="text-align:center;">${req.getBalance()}</td>
+								<td style="text-align:center;">$${req.getBalance()?string(",##0.00")}</td>
 								<td>${req.getPurpose()}</td>
 								<td style="text-align:center;">${req.getType()}</td>
 								<td style="text-align:center;">${req.getDateOpened()}</td>
@@ -227,7 +225,6 @@ div#editInfo{
 					</tbody>
 				</table>
 		</div>
-	</div>
 
 
 <div class="modal fade" id="editInfoModal">
@@ -242,12 +239,12 @@ div#editInfo{
 			<h5>If you do not wish to edit a value, leave it blank.</h5>
 			<form method="POST" action="editInfo">
 			<p>Username: ${user.getUsername()}</p>
-			<input class="form-control" type="text" name="newusername" placeholder="New Username" maxlength="20" style="margin-top: -5px; margin-bottom:25px"/>
+			<input class="form-control" type="email" name="newusername" placeholder="New Username" maxlength="20" style="margin-top: -5px; margin-bottom:25px"/>
 			
 			<p>Password</p>
-			<input class="form-control" type="text" name="oldpw" placeholder="Enter Current Password" maxlength="30" style="margin-top: -5px"/>
-			<input class="form-control" type="text" name="newpw" placeholder="New Password" maxlength="30" />
-			<input class="form-control" type="text" name="newpw2" placeholder="Re-enter New Password" maxlength="30" style="margin-bottom: 25px;">
+			<input class="form-control" type="password" name="oldpw" placeholder="Enter Current Password" maxlength="30" style="margin-top: -5px"/>
+			<input class="form-control" type="password" name="newpw" placeholder="New Password" maxlength="30" />
+			<input class="form-control" type="password" name="newpw2" placeholder="Re-enter New Password" maxlength="30" style="margin-bottom: 25px;">
 			
 			<p>Name: ${user.getFn()} ${user.getLn()}</p>
 			<input class="form-control" type="text" name="newfn" placeholder="first name" maxlength="50" style="margin-top: -5px"/>
