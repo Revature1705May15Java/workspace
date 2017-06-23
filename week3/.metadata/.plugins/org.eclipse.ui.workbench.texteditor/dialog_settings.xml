@@ -8,14 +8,14 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="&lt;script type=&quot;text/javascript&quot; charset=&quot;utf8&quot; src=&quot;http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js&quot;&gt;&lt;/script&gt;"/>
-			<item value="&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css&quot;&gt;"/>
-			<item value="getEmplo"/>
-			<item value="&lt;ArrayList&gt;"/>
-			<item value="ConnectionUtil.getConnection()"/>
-			<item value="ConnectionFac"/>
-			<item value="ConnectionUtil"/>
-			<item value="\"/>
+			<item value="last"/>
+			<item value="fieldset"/>
+			<item value="input"/>
+			<item value="myMod"/>
+			<item value="viewEm"/>
+			<item value="viewa"/>
+			<item value="update"/>
+			<item value="openb"/>
 		</list>
 		<list key="replacehistory">
 			<item value="ArrayList"/>
@@ -28,7 +28,7 @@
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="827" key="DIALOG_X_ORIGIN"/>
-		<item value="216" key="DIALOG_Y_ORIGIN"/>
+		<item value="995" key="DIALOG_X_ORIGIN"/>
+		<item value="227" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

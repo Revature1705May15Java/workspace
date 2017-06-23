@@ -56,7 +56,7 @@ public class EmployeeHome extends HttpServlet {
 
 		String newUn, newPw, newFn, newLn;
 		int id;
-		ArrayList <Request> rs;
+		ArrayList <Request> rs,mr;
 		e = (Employee) s.getAttribute("emp");
 		 
 		
@@ -68,10 +68,11 @@ public class EmployeeHome extends HttpServlet {
 		Employee temp = sv.updateEmployee(newUn, newUn, newFn, newLn, id);
 		s.setAttribute("emp", temp);
 		
-
+		mr = sv.ViewAllRequests();
 		rs = sv.viewRequestbyId(id);
 		System.out.println("Requests "+rs);
 		request.setAttribute("Requests", rs);
+		request.setAttribute("allReqs", mr);
 		
 		
 		

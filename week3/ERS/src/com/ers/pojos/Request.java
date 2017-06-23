@@ -29,7 +29,7 @@ public class Request {
 
 
 
-	public Request(int stateid, int amount, int requestid, int requesterid, int resolverid, Date open, Date closed,
+	public Request(int stateid, double amount, int requestid, int requesterid, int resolverid, Date open, Date closed,
 			String purpose, String note) {
 		super();
 		this.stateid = stateid;
@@ -47,7 +47,7 @@ public class Request {
 
 
 
-	public Request(int amount, int requesterid, String purpose) {
+	public Request(double amount, int requesterid, String purpose) {
 		super();
 		this.amount = amount;
 		this.requesterid = requesterid;

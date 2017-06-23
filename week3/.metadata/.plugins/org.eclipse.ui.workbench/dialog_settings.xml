@@ -6,8 +6,8 @@
 	</section>
 	<section name="EditorSelectionDialog">
 		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
-		<item value=".ftl" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
-		<item value="org.eclipse.pde.ui.schemaPreviewLauncher" key="EditorSelectionDialog.STORE_ID_DESCR"/>
+		<item value=".xml" key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION"/>
+		<item value="org.eclipse.wst.xsl.ui.XSLEditor" key="EditorSelectionDialog.STORE_ID_DESCR"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="250" key="dialogHeight"/>

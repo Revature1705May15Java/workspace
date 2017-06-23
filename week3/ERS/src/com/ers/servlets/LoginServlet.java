@@ -58,16 +58,25 @@ public class LoginServlet extends HttpServlet {
 			}
 
 			else if(e.getIsmanager()==0){
-				ArrayList <Request> rs;
-				rs = s.viewRequestbyId(142);
-				System.out.println("Requests "+rs);
-				request.setAttribute("Requests", rs);
-
-
-				sess = request.getSession(true);
+				ArrayList <Request> rs, ors, crs;
+				rs = s.viewRequestbyId(e.getEid());
+				ors = s.viewOpenRequestById(e.getEid());
+				crs = s.viewResolvedById(e.getEid());
+				
+				System.out.println("Requests "+rs+"\n"
+						+ ors+"\n"
+								+ crs+"");
+				
+				
+				
+				//sess = request.getSession(true);
 				sess.setAttribute("emp", e);
 				sess.setAttribute("empln", e.getLastname());
-
+				sess.setAttribute("Requests", rs);
+				sess.setAttribute("OpenReqs", ors);
+				sess.setAttribute("ClosedReqs", crs);
+				
+				
 				//request.getRequestDispatcher("eHome.ftl");
 				RequestDispatcher rd = request.getRequestDispatcher("eHome.ftl");
 				rd.forward(request, response);
@@ -77,9 +86,20 @@ public class LoginServlet extends HttpServlet {
 
 			else if(e.getIsmanager()==1){
 				if(pw.contentEquals(e.getPassword())){
-					
-					sess = request.getSession(true);
+					ArrayList <Request> rs, ors, crs;
+					ArrayList <Employee> el;
+					rs = s.ViewAllRequests();
+					ors = s.viewOpenRequestById(e.getEid());
+					crs = s.viewResolvedById(e.getEid());
+					el = s.ViewAllEmployees();
+					//sess = request.getSession(true);
 					sess.setAttribute("emp", e);
+					sess.setAttribute("empln", e.getLastname());
+					sess.setAttribute("Requests", rs);
+					sess.setAttribute("OpenReqs", ors);
+					sess.setAttribute("ClosedReqs", crs);
+					sess.setAttribute("AllEmps", el);
+					
 					RequestDispatcher rd = request.getRequestDispatcher("mHome.ftl");
 					rd.forward(request, response);
 					

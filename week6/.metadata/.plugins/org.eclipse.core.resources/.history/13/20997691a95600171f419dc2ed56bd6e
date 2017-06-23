@@ -1,0 +1,31 @@
+package com.ex.repo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ex.model.Customer;
+
+public class CustomerRepoImpl {
+	
+	public List <Customer> findAll(){
+		
+		List<Customer> customers = new ArrayList<Customer>();
+		Customer c = new Customer();
+		c.setFirstname("Greg");
+		c.setLastname("Monroe");
+		customers.add(c);
+		
+		c.setFirstname("John");
+		c.setLastname("Wall");
+		customers.add(c);
+		
+		c.setFirstname("Lebron");
+		c.setLastname("James");
+		
+		
+		
+		
+		return customers;
+	}
+
+}

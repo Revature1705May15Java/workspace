@@ -54,7 +54,7 @@ public class Service {
 	
 	
 	
-	public int makeRequest(int amount, String purpose, int requesterid){
+	public int makeRequest1(Double amount, String purpose, int requesterid){
 		
 		return dao.request(amount, purpose, requesterid);
 		
@@ -63,13 +63,35 @@ public class Service {
 	
 	public ArrayList <Request> viewRequestbyId(int id){
 		return dao.getRequestsById(id);
-		
-		
-		
+	}
+	
+	public ArrayList <Request> viewResolvedById(int id){
+		return dao.viewClosedRequestsById(id);
+	}
+	
+	public ArrayList <Request> viewOpenRequestById(int id){
+		return dao.viewOpenRequestsById(id);
 	}
 	
 	public Employee updateEmployee(String uname, String pw, String fn, String ln, int id){
 		Employee updatedEmp = dao.updateEmployee(uname, pw, fn, ln, id);
 		return updatedEmp;
+	}
+
+	public void makeRequest(Double amount, String purpose, int requesterid) {
+		dao.request(amount, purpose, requesterid);
+		
+	}
+	
+	public void approvedeny(int Stateid, String note, int requestid, int managerid){
+		dao.alterRequest(Stateid, note, requestid, managerid);
+	}
+	
+	public ArrayList <Request> ViewAllRequests(){
+		return dao.viewAllRequests();
+	}
+	
+	public ArrayList <Employee> ViewAllEmployees(){
+		return dao.viewEmployees();
 	}
 }

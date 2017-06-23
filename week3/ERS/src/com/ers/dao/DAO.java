@@ -11,7 +11,8 @@ public interface DAO {
 	public int addEmployee(String uname, String pw,String fn, String ln, int isManager);
 	public Employee getEmployee(String uname);
 	public Employee updateEmployee(String uname, String pw, String fn, String ln, int id);
-	public int request(int amount, String purpose, int requesterid);
+	
+	public int request(Double amount, String purpose, int requesterid);
 	
 	public ArrayList <Request> getRequestsById(int id);
 	
@@ -23,9 +24,10 @@ public interface DAO {
 	
 	
 	public ArrayList <Request> viewOpenRequests();
-	public ArrayList <Request> viewClosedRequests(int id);
 	
+	public ArrayList <Request> viewClosedRequestsById(int id);
 	public ArrayList <Request> viewOpenRequestsById(int id);
+	int request(int amount, String purpose, int requesterid);
 	
 	
 	

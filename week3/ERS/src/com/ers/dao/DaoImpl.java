@@ -151,7 +151,7 @@ public class DaoImpl implements DAO {
 	}
 
 	@Override
-	public ArrayList<Request> viewClosedRequests(int id) {
+	public ArrayList<Request> viewClosedRequestsById(int id) {
 		ArrayList <Request> req = new ArrayList <Request>();
 		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
 			String sql = "SELECT * FROM REQUESTS WHERE REQUESTERID=? AND NOT STATEID= ?";
@@ -185,9 +185,35 @@ public class DaoImpl implements DAO {
 
 	@Override
 	public ArrayList<Request> viewAllRequests() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList <Request> req = new ArrayList <Request>();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "SELECT * FROM REQUESTS";
+			PreparedStatement ps = connection.prepareStatement(sql);
+
+			ResultSet rinfo = ps.executeQuery();
+			while(rinfo.next()){
+				Request r = new Request();
+				r.setStateid(rinfo.getInt(1));
+				r.setOpen(rinfo.getDate(2));
+				r.setClosed(rinfo.getDate(3));
+				r.setAmount(rinfo.getDouble(4));//CHANGE TO DOUBLE
+				r.setPurpose(rinfo.getString(5));
+				r.setRequestid(rinfo.getInt(6));
+				r.setRequesterid(rinfo.getInt(7));
+				r.setResolverid(rinfo.getInt(8));
+				r.setNote(rinfo.getString(9));
+				req.add(r);
+			}
+			return req;
+
+		} catch (SQLException ex) {
+			System.out.println("CAUGHT");
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
+		return req;
 	}
+	
 
 	@Override
 	public ArrayList<Request> viewOpenRequestsById(int id) {
@@ -282,6 +308,28 @@ public class DaoImpl implements DAO {
 			e.printStackTrace();
 		}
 		return getEmployee(uname);
+	}
+
+	@Override
+	public int request(Double amount, String purpose, int requesterid) {
+		try(Connection connection = ConnectionFactory.getInstance().getConnection();){
+			String sql = "insert into requests(Amount, Purpose,Requesterid)VAlues(?,?,?)";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setDouble(1, amount);
+			ps.setString(2, purpose);
+			ps.setInt(3, requesterid);
+
+			int numRows = ps.executeUpdate();
+
+			System.out.println("Number of rows affected: "+numRows);
+			return numRows;
+
+		} catch (SQLException e) {
+			System.out.println("Caught");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return -1;
+		}
 	}
 
 

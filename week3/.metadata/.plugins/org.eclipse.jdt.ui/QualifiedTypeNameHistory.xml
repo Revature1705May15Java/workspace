@@ -22,7 +22,7 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.ers.dao.DaoImpl"/>
 <fullyQualifiedTypeName name="com.ers.dao.DAO"/>
-<fullyQualifiedTypeName name="com.ers.service.Service"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.ers.service.Service"/>
 <fullyQualifiedTypeName name="com.ers.pojos.Request"/>
 </qualifiedTypeNameHistroy>
