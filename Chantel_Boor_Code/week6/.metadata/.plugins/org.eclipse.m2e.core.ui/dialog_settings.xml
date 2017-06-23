@@ -6,11 +6,13 @@
 			<item value="com.revature"/>
 		</list>
 		<list key="name">
+			<item value="ORMClassDemo"/>
 			<item value="ClassDemo"/>
 			<item value="SpringIntro"/>
 			<item value="HelloSpring"/>
 		</list>
 		<list key="artifactId">
+			<item value="ORMClassDemo"/>
 			<item value="ClassDemo"/>
 			<item value="SpringIntro"/>
 			<item value="HelloSpring"/>
@@ -85,5 +87,11 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.editor.dialogs.ManageDependenciesDialog">
+		<item value="903" key="width"/>
+		<item value="509" key="x"/>
+		<item value="210" key="y"/>
+		<item value="450" key="height"/>
 	</section>
 </section>

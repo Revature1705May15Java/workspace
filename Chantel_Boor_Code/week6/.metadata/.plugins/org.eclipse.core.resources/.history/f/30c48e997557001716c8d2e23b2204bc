@@ -1,0 +1,35 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+public class Bear extends Animal implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int wieght;
+	private String name;
+	
+	
+	public Bear(int wieght, String name, Cave cave) 
+	{
+		this.wieght = wieght;
+		this.name = name;
+		this.cave = cave;
+	}
+
+
+	public int getWieght() {
+		return wieght;
+	}
+
+
+	public void setWieght(int wieght) {
+		this.wieght = wieght;
+	}
+	
+	
+	
+	
+}

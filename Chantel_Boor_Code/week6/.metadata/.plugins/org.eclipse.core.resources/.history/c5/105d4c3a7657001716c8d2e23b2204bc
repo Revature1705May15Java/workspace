@@ -1,0 +1,58 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ANIMAL")
+@Inheritance(stategy= InheritanceType.TABLE_PER_CLASS)
+public class Animal implements Serializable
+{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="aniSeq")
+	@SequenceGenerator(allocationSize=1,name="aniSeq", sequenceName="ANI_SEQ")
+	@Column(name="ANI_ID")
+	protected int id;
+	
+	Cave cave;
+	
+	protected String name;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Cave getCave() {
+		return cave;
+	}
+	public void setCave(Cave cave) {
+		this.cave = cave;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+
+}

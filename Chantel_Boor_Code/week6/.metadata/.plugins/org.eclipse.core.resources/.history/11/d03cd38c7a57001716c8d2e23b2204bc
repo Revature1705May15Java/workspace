@@ -1,0 +1,63 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import org.springframework.stereotype.Component;
+
+
+@NamedQueries
+({
+	@NamedQuery()
+})
+
+@Component
+@Entity
+@Table(name="BEAR")
+@AttributeOverrides
+({
+	@AttributeOverride(name="id",column=@Column(name = "BEAR_ID")),
+	@AttributeOverride(name="name",column=@Column(name = "BEAR_NAME")),
+	@AttributeOverride(name="cave",column=@Column(name = "BEAR_CAVE"))
+})
+public class Bear extends Animal implements Serializable
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int wieght;
+	private String name;
+	
+	
+	public Bear(String name, int wieght, Cave cave) 
+	{
+		this.wieght = wieght;
+		this.name = name;
+		this.cave = cave;
+	}
+
+
+	public int getWieght() {
+		return wieght;
+	}
+
+
+	public void setWieght(int wieght) {
+		this.wieght = wieght;
+	}
+	
+	
+	
+	
+}

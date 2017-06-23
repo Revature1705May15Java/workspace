@@ -1,0 +1,24 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+public class Cave implements Serializable
+{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8408419350337584400L;
+	
+	int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
+}
