@@ -33,7 +33,7 @@ public class ViewPendingServlet extends HttpServlet {
 			pending = service.getRequestsByState(employee, false);
 		}
 		
-		session.setAttribute("requests", pending);
+		session.setAttribute("pendingRequests", pending);
 		session.setAttribute("state", SessionState.VIEW_PENDING);
 		request.getRequestDispatcher("site.ftl").forward(request, response);
 	}
