@@ -33,7 +33,8 @@ public class AddEmployeeServlet extends HttpServlet{
 		if(newEmp != null) {
 			System.out.println("New Employee Added");
 		}
-		request.getRequestDispatcher("managerHome.ftl").forward(request, response);
+		//request.getRequestDispatcher("managerHome.ftl").forward(request, response);
+		response.sendRedirect("managerHome");
 	}
 
 }

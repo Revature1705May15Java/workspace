@@ -13,6 +13,7 @@ public class Reimbursement {
 	private int requesterId;
 	private int resolverId;
 	private String notes;
+	private String stateName;
 	
 	public Reimbursement() {
 		
@@ -101,6 +102,14 @@ public class Reimbursement {
 
 	public void setNotes(String notes) {
 		this.notes = notes;
+	}
+	
+	public String getStateName() {
+		return stateName;
+	}
+
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
 	}
 
 	@Override

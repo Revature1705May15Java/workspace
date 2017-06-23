@@ -19,9 +19,18 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$('#reimbursementTable').dataTable( {
-
 				});
-	
+			});
+			
+			$(document).ready(function() {
+				$('#archiveTable').dataTable( {
+				});
+			});
+			
+			
+			$("#refreshButton").on("click", function() {
+    			console.log('test');
+
 			});
 		</script>
 		
@@ -111,6 +120,9 @@
 	</nav>
 	
 	
+	
+	
+	
 		<#if employee??>
     		${employee.getUsername()} 
     		${employee.getPassword()} 
@@ -122,30 +134,68 @@
 		
 		
 		<div class="container">
+		<h3>Pending Reimbursements</h3>
 		<table id="reimbursementTable" class="table table-bordered table-hover" cellspacing="0" width="100%">
 			 <thead>
 			    <tr>
+			  		<th>Request Id</th>
 			    	<th>Date Requested</th>
 			        <th>Amount</th>
 					<th>Purpose</th>
-					<th>State</th>
 			    </tr>
 			</thead>
 			<tbody>
-				<#list empReimbursements as empR>
+				<#list penReimbursements as penR>
 			    <tr>
-			    	<td>${empR.getDateRequested()}</td>
-			        <td>${empR.getAmount()}</td>
-					<td>${empR.getPurpose()}</td>
-					<td>${empR.getStateId()}</td>
+			   		<td>${penR.getRequestId()}</td>
+			    	<td>${penR.getDateRequested()}</td>
+			        <td>${penR.getAmount()}</td>
+					<td>${penR.getPurpose()}</td>
 			
 			    </tr>
-			    		</#list>
+			    </#list>
 			</tbody>
 		</table>
 	</div>
-		
-		<h3>EMPLOYEE HOME PAGE</h3>
+	
+	<div class="container">
+	<h3>Archived Reimbursements</h3>
+		<table id="archiveTable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+			 <thead>
+			    <tr>
+			    	<th>Request ID</th>
+			    	<th>Resolver ID</th>
+			    	<th>Date Requested</th>
+			    	<th>Date Resolved</th>
+			        <th>Amount</th>
+					<th>Purpose</th>
+					<th>State</th>
+					<th>Note</th>
+					
+
+			    </tr>
+			</thead>
+			<tbody>
+				<#list arcReimbursements as arcR>
+			    <tr>
+			    	<td>${arcR.getRequestId()}</td>
+			    	<td>${arcR.getResolverId()}</td>
+			    	<td>${arcR.getDateRequested()}</td>
+			    	<td>${arcR.getDateResolved()}</td>
+			        <td>${arcR.getAmount()}</td>
+					<td>${arcR.getPurpose()}</td>
+					<td>${arcR.getStateName()}</td>
+					<td>${arcR.getNotes()}</td>
+					
+
+			    </tr>
+			    </#list>
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
 		
 		<div class="container">
 		  <!-- Modal -->
@@ -201,6 +251,8 @@
 		  </div> 
 		</div>
 		
+		
+		<button type="button" id="refreshButton">Click Me!</button>
 		
 	</body>
 </html>

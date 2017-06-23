@@ -148,6 +148,12 @@ public class DaoImp implements DAO{
 			while(info.next()) {
 				Reimbursement temp = new Reimbursement();
 				temp.setStateId(info.getInt(1));
+				if(temp.getStateId()==2) {
+					temp.setStateName("Approved");
+				}
+				else {
+					temp.setStateName("Denied");
+				}
 				temp.setDateRequested(info.getDate(2));
 				temp.setDateResolved(info.getDate(3));
 				temp.setAmount(info.getDouble(4));
@@ -176,6 +182,12 @@ public class DaoImp implements DAO{
 			while(info.next()) {
 				Reimbursement temp = new Reimbursement();
 				temp.setStateId(info.getInt(1));
+				if(temp.getStateId()==2) {
+					temp.setStateName("Approved");
+				}
+				else {
+					temp.setStateName("Denied");
+				}
 				temp.setDateRequested(info.getDate(2));
 				temp.setDateResolved(info.getDate(3));
 				temp.setAmount(info.getDouble(4));
@@ -244,5 +256,27 @@ public class DaoImp implements DAO{
 			e.printStackTrace();
 		}
 		return reim;
+	}
+
+	@Override
+	public ArrayList<Employee> getEmployees() {
+		ArrayList<Employee> employees = new ArrayList<Employee>();
+		try(Connection connection = ConnectionFactory.getInstance().getConnection()) {
+			String sql = "select * from employee";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ResultSet info = ps.executeQuery();
+			while(info.next()) {
+				Employee temp = new Employee();
+				temp.setId(info.getInt(3));
+				temp.setFirstName(info.getString(4));
+				temp.setLastName(info.getString(5));
+				employees.add(temp);
+			}
+			return employees;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

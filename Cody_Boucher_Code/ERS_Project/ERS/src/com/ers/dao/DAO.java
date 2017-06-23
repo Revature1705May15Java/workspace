@@ -7,6 +7,7 @@ import com.ers.pojos.Reimbursement;
 
 
 public interface DAO {
+	public ArrayList<Employee> getEmployees();
 	public Employee getEmployee(String username);
 	public Employee getEmployee(int id);
 	public Employee addEmployee(String username, String password, String firstName, String lastName, boolean isManager);

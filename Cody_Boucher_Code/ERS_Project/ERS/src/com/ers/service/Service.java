@@ -79,4 +79,10 @@ public class Service {
 		allReimbursements = dao.getReimbursements();
 		return allReimbursements;
 	}
+	
+	public ArrayList<Employee> getEmployees() {
+		ArrayList<Employee> employees = new ArrayList<Employee>();
+		employees = dao.getEmployees();
+		return employees;
+	}
 }

@@ -57,7 +57,17 @@
      	$("#updateReimbursementModal #requestId").val(requestId);	
 		});
 		});
+		
+		$(document).ready(function(){
+    		$('#archiveTable').DataTable();
+		});
+		
+		$(document).ready(function(){
+    		$('#employeesTable').DataTable();
+		});
 		</script>
+		
+
 		
 		
 		
@@ -130,8 +140,10 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
+	      		<li><button class ="btn btn-default navbar-btn" data-toggle="modal" id="updateReimbursement" data-target="#updateReimbursementModal">Approve / Deny</button></li>
+	      		<li><button class ="btn btn-default navbar-btn" data-toggle="modal" data-target="#viewEmployeesModal">View Employees</button></li>
 	        	<li><button class ="btn btn-default navbar-btn" data-toggle="modal" data-target="#addEmployeeModal">Add Employee</button></li>
-	        	<li><button class ="btn btn-default navbar-btn" data-toggle="modal" id="updateReimbursement" data-target="#updateReimbursementModal">Approve / Deny</button></li>
+	        	
 	      	<li class="dropdown">
   				<button class="btn btn-default dropdown-toggle navbar-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			Welcome, <#if employee??>${employee.getFirstName()}</#if> <span class="caret"></span>
@@ -147,6 +159,8 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
+	
+	
 	      	
 	
 	
@@ -165,15 +179,15 @@
 			    </tr>
 			</thead>
 			<tbody>
-				<#list allReimbursements as allR>
+				<#list penReimbursements as penR>
 			    <tr>
 			    	<td></td>
-			    	<td>${allR.getRequesterId()}</td>
-			    	<td>${allR.getDateRequested()}</td>
-			        <td>${allR.getAmount()}</td>
-					<td>${allR.getPurpose()}</td>
-					<td>${allR.getStateId()}</td>
-					<td>${allR.getRequestId()}</td>
+			    	<td>${penR.getRequesterId()}</td>
+			    	<td>${penR.getDateRequested()}</td>
+			        <td>${penR.getAmount()}</td>
+					<td>${penR.getPurpose()}</td>
+					<td>${penR.getStateId()}</td>
+					<td>${penR.getRequestId()}</td>
 			
 			    </tr>
 			    </#list>
@@ -181,10 +195,89 @@
 		</table>
 	</div>
 	
-		<#if employee??>
-    		${employee.getFirstName()} ${employee.getLastName()}
-		</#if>
-		<h3>MANAGER HOME PAGE</h3>
+	
+	<div class="container">
+	<h3>Archived Reimbursements</h3>
+	<table id="archiveTable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+			 <thead>
+			    <tr>
+					<th>Request ID</th>
+			    	<th>Requester ID</th>
+			    	<th>Resolver ID</th>
+			    	<th>Date Requested</th>
+			    	<th>Date Resolved</th>
+			        <th>Amount</th>
+					<th>Purpose</th>
+					<th>State</th>
+					<th>Note</th>
+
+			    </tr>
+			</thead>
+			<tbody>
+				<#list arcReimbursements as arcR>
+			    <tr>
+					<td>${arcR.getRequestId()}</td>
+			    	<td>${arcR.getRequesterId()}</td>
+			    	<td>${arcR.getResolverId()}</td>
+			    	<td>${arcR.getDateRequested()}</td>
+			    	<td>${arcR.getDateResolved()}</td>
+			        <td>${arcR.getAmount()}</td>
+					<td>${arcR.getPurpose()}</td>
+					<td>${arcR.getStateName()}</td>
+					<td>${arcR.getNotes()}</td>
+			
+			    </tr>
+			    </#list>
+			</tbody>
+		</table>
+	</div>
+	
+	
+
+	
+	
+	
+	<div class="container">
+		  <!-- Modal -->
+		  <div class="modal fade" id="viewEmployeesModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Employees</h4>
+		        </div>
+			        <div class="modal-body">
+			          
+			          <table id="employeesTable" class="table table-bordered table-hover" cellspacing="0" width="100%">
+						 <thead>
+						    <tr>
+								<th>Employee ID</th>
+						    	<th>First Name</th>
+						    	<th>Last Name</th>
+			
+						    </tr>
+						</thead>
+						<tbody>
+							<#list employees as emp>
+						    <tr>
+								<td>${emp.getId()}</td>
+						    	<td>${emp.getFirstName()}</td>
+						    	<td>${emp.getLastName()}</td>
+						    </tr>
+						    </#list>
+						</tbody>
+					</table>
+			         
+	
+		      </div>    
+		    </div>
+		  </div> 
+		</div>
+	
+
+	
 		
 		
 		<div class="container">
@@ -216,6 +309,13 @@
 		    </div>
 		  </div> 
 		</div>
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

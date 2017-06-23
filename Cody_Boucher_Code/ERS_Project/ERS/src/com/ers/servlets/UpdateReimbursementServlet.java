@@ -36,6 +36,7 @@ public class UpdateReimbursementServlet extends HttpServlet {
 		updatedReim = service.updateReimbursement(id, emp, note, state);
 		System.out.println(updatedReim);
 		
-		request.getRequestDispatcher("managerHome.ftl").forward(request, response);
+		//request.getRequestDispatcher("managerHome.ftl").forward(request, response);
+		response.sendRedirect("managerHome");
 	}
 }

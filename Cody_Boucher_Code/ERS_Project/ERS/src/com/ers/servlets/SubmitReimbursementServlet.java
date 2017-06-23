@@ -32,6 +32,7 @@ public class SubmitReimbursementServlet extends HttpServlet{
 		if(rem != null) {
 			System.out.println("Request Submitted");
 		}
-		request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
+		//request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
+		response.sendRedirect("employeeHome");
 	}
 }

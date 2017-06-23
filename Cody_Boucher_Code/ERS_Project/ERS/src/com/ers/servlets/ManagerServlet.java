@@ -26,8 +26,22 @@ public class ManagerServlet extends HttpServlet{
 	    	 Service service = new Service();
 	    	 System.out.println(emp.getFirstName()+" "+emp.getLastName());
 	    	 ArrayList<Reimbursement> allReimbursements = new ArrayList<Reimbursement>();
-			allReimbursements = service.getAllReimbursements();
-			s.setAttribute("allReimbursements", allReimbursements);
+	    	 ArrayList<Reimbursement> penReimbursements = new ArrayList<Reimbursement>();
+		     ArrayList<Reimbursement> arcReimbursements = new ArrayList<Reimbursement>();
+		     ArrayList<Employee> employees = new ArrayList<Employee>();
+		     allReimbursements = service.getAllReimbursements();
+				for(Reimbursement r : allReimbursements) {
+					if(r.getStateId() == 1) {
+						penReimbursements.add(r);
+					}
+					else {
+						arcReimbursements.add(r);
+					}
+				}
+			employees = service.getEmployees();
+			s.setAttribute("employees", employees);
+			s.setAttribute("penReimbursements", penReimbursements);
+	    	s.setAttribute("arcReimbursements", arcReimbursements);
 	    	 request.getRequestDispatcher("managerHome.ftl").forward(request, response);
 	    }
 	    else {

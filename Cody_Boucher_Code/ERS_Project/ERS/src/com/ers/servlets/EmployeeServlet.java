@@ -26,10 +26,21 @@ public class EmployeeServlet extends HttpServlet{
 	    	Employee emp = (Employee)s.getAttribute("employee");
 	    	Service service = new Service();
 	    	ArrayList<Reimbursement> empReimbursements = new ArrayList<Reimbursement>();
+	    	ArrayList<Reimbursement> penReimbursements = new ArrayList<Reimbursement>();
+	    	ArrayList<Reimbursement> arcReimbursements = new ArrayList<Reimbursement>();
 			empReimbursements = service.getEmpReimbursements(emp);
+			for(Reimbursement r : empReimbursements) {
+				if(r.getStateId() == 1) {
+					penReimbursements.add(r);
+				}
+				else {
+					arcReimbursements.add(r);
+				}
+			}
 			System.out.println(empReimbursements.toString());
 	    	System.out.println(emp.getFirstName()+" "+emp.getLastName());
-	    	s.setAttribute("empReimbursements", empReimbursements);
+	    	s.setAttribute("penReimbursements", penReimbursements);
+	    	s.setAttribute("arcReimbursements", arcReimbursements);
 	    	System.out.println(emp.getFirstName()+" "+emp.getLastName());
 	    	request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
 	    }
