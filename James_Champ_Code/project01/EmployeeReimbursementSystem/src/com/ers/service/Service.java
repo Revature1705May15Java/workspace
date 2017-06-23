@@ -83,9 +83,7 @@ public class Service {
 	
 	public Request submitRequest(Request request) {
 		Request result = dao.addRequest(request);
-		
-		System.out.println(result.getRequestId());
-		
+				
 		return result;
 	}
 	

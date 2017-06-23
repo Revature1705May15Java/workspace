@@ -1,3 +1,3 @@
 <header>
-	<h2>[Placeholder System Name]</h2>
+	<h2>Employee Reimbursement System</h2>
 </header>

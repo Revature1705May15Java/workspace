@@ -19,8 +19,8 @@
 		<label class="control-label col-md-5" for="confirm-new-pwd">Confirm Password:</label>
 		<input type="password" id="confirm-new-pwd" name="pwd2"></input>
 	</div>
-	<button id="cancel-update-btn" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	<button id="update-btn" type="submit" class="btn btn-default">Update</button>
+	<button id="cancel-update-btn" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+	<button id="update-btn" type="submit" class="btn btn-success">Update</button>
 	
 	<script type="text/javascript" src="js/validateUpdate.js"></script>
 </form>

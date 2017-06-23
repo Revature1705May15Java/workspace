@@ -6,7 +6,7 @@
     </div>
     <input type="hidden" id="hidden-action-field" name="action"/>
     <input type="hidden" id="hidden-id-field" name="id"/>
-	<button id="cancel-action-btn" class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
-    <button class="btn btn-default" type="submit">Submit</button>
+	<button id="cancel-action-btn" class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
+    <button class="btn btn-success" type="submit">Submit</button>
   </form>
 </div>

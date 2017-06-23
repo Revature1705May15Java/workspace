@@ -1,3 +1,3 @@
   <div class="text-center">
-	   <footer><h4>[Placeholder Footer]</h4></footer>
+	   <footer><h5>&copy; 2017 Payroll Solutions</h5></footer>
   </div>

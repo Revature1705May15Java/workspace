@@ -28,6 +28,6 @@
                 	<input type="radio" name="manager" value="yes"><label>Yes</label>
               	</div>
             </div>
-        <button type="submit" class="btn btn-default">Add Employee</button>
+        <button type="submit" class="btn btn-success">Add Employee</button>
 	</form>
 </div>

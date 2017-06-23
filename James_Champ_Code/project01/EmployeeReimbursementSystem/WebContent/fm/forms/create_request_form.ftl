@@ -9,6 +9,6 @@
       <label class="control-label col-md-2" for="amount-field">Amount:</label>
       <input type="number" id="amount-field" step=".01" min="0" name="amount"/>
     </div>
-    <button class="btn btn-default" type="submit">Submit Request</button>
+    <button class="btn btn-success" type="submit">Submit Request</button>
   </form>
 </div>
