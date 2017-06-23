@@ -17,4 +17,7 @@
 <fullyQualifiedTypeName name="com.ers.util.ConnectionFactory"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="com.ers.service.Service"/>
+<fullyQualifiedTypeName name="com.ers.pojos.StateType"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="com.ers.pojos.Request"/>
 </qualifiedTypeNameHistroy>

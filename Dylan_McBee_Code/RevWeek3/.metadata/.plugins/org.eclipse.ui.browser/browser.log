@@ -1,0 +1,566 @@
+
+Jun 17, 2017 15:00:12.67 NEW SESSION
+Jun 17, 2017 15:00:12.67 [GPU 1484] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 17, 2017 15:00:33.21 [GPU 1484] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 17, 2017 15:00:33.23 [Child 232] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 17, 2017 15:00:33.24 [Child 232] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 17, 2017 15:00:33.86 
+Jun 17, 2017 15:00:33.87 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 17, 2017 15:00:33.87 
+
+Jun 21, 2017 22:22:05.71 NEW SESSION
+Jun 21, 2017 22:22:05.71 [16052:16072:0621/222205.712:ERROR:render_process_host_impl.cc(2094)] Request for unknown Channel-associated interface: device::mojom::ScreenOrientationListener
+Jun 21, 2017 22:48:25.06 [GPU 15008] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:48:25.14 [Child 7896] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:48:25.14 [Child 7896] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:48:25.47 
+Jun 21, 2017 22:48:25.47 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 22:48:25.48 
+Jun 21, 2017 22:55:44.20 [GPU 9992] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:55:44.21 [GPU 9992] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:55:44.31 [Child 19652] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:55:44.32 [Child 19652] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 22:55:44.68 
+Jun 21, 2017 22:55:44.68 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 22:55:44.69 
+Jun 21, 2017 23:00:58.68 [GPU 19008] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:00:58.69 [GPU 19008] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:00:59.01 
+Jun 21, 2017 23:00:59.02 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:00:59.02 
+Jun 21, 2017 23:17:02.14 [GPU 19060] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:17:02.22 [GPU 19060] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:17:02.23 [GPU 19060] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:17:02.24 [Child 11856] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:17:02.24 [Child 11856] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:17:02.67 
+Jun 21, 2017 23:17:02.67 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:17:02.67 
+Jun 21, 2017 23:21:23.21 [GPU 10432] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:21:23.22 IPDL protocol error: Handler returned error code!
+Jun 21, 2017 23:21:23.22 
+Jun 21, 2017 23:21:23.23 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 21, 2017 23:21:23.23 
+Jun 21, 2017 23:21:23.24 [Child 6904] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:21:23.24 [Child 6904] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:21:23.63 
+Jun 21, 2017 23:21:23.64 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:21:23.64 
+Jun 21, 2017 23:27:07.89 [GPU 13028] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:27:07.91 [Child 17788] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:27:07.91 [Child 17788] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:27:08.20 
+Jun 21, 2017 23:27:08.20 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:27:08.21 
+Jun 21, 2017 23:29:09.77 [GPU 12088] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:29:09.78 IPDL protocol error: Handler returned error code!
+Jun 21, 2017 23:29:09.78 
+Jun 21, 2017 23:29:09.78 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 21, 2017 23:29:09.79 
+Jun 21, 2017 23:29:09.80 [GPU 12088] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:29:09.86 [Child 19172] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:29:09.86 [Child 19172] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:29:10.22 
+Jun 21, 2017 23:29:10.23 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:29:10.23 
+Jun 21, 2017 23:30:54.27 [GPU 11708] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:30:54.27 IPDL protocol error: Handler returned error code!
+Jun 21, 2017 23:30:54.28 
+Jun 21, 2017 23:30:54.28 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 21, 2017 23:30:54.29 
+Jun 21, 2017 23:30:54.29 [Child 15228] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:30:54.30 [Child 15228] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:30:54.63 
+Jun 21, 2017 23:30:54.64 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:30:54.64 
+Jun 21, 2017 23:32:41.62 [GPU 19044] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:32:41.73 [Child 5008] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:32:41.74 [Child 5008] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:32:42.15 
+Jun 21, 2017 23:32:42.16 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:32:42.17 
+Jun 21, 2017 23:34:40.01 [GPU 20512] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:34:40.02 [GPU 20512] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:34:40.03 [Child 17568] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:34:40.04 [Child 17568] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:34:40.31 
+Jun 21, 2017 23:34:40.32 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:34:40.32 
+Jun 21, 2017 23:48:37.22 [GPU 7108] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:48:37.23 [Child 1796] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:48:37.23 [Child 1796] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:48:37.63 
+Jun 21, 2017 23:48:37.64 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:48:37.64 
+Jun 21, 2017 23:49:46.12 [GPU 17368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:49:46.13 IPDL protocol error: Handler returned error code!
+Jun 21, 2017 23:49:46.13 
+Jun 21, 2017 23:49:46.14 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 21, 2017 23:49:46.14 
+Jun 21, 2017 23:49:46.21 [Child 20180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:49:46.21 [Child 20180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:49:46.59 
+Jun 21, 2017 23:49:46.60 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:49:46.60 
+Jun 21, 2017 23:52:36.17 [GPU 6904] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:52:36.25 [GPU 6904] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:52:36.26 [GPU 6904] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:52:36.27 [Child 16292] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 21, 2017 23:52:36.76 
+Jun 21, 2017 23:52:36.76 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 21, 2017 23:52:36.77 
+Jun 22, 2017 24:08:54.12 [GPU 20532] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 24:08:54.12 [GPU 20532] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 24:08:54.21 [Child 8776] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 24:08:54.22 [Child 8776] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 24:08:54.45 
+Jun 22, 2017 24:08:54.46 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 24:08:54.46 
+Jun 22, 2017 07:19:34.42 [GPU 19592] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:19:34.44 [Child 21044] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:19:34.44 [Child 21044] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:19:34.81 
+Jun 22, 2017 07:19:34.81 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:19:34.82 
+Jun 22, 2017 07:26:19.15 [GPU 14560] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:26:19.16 [Child 18876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:26:19.17 [Child 18876] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:26:19.61 
+Jun 22, 2017 07:26:19.61 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:26:19.62 
+Jun 22, 2017 07:27:08.72 [GPU 2820] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:27:08.73 [Child 16288] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:27:08.74 [Child 16288] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:27:09.20 
+Jun 22, 2017 07:27:09.21 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:27:09.21 
+Jun 22, 2017 07:28:18.84 [GPU 18756] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:28:18.85 [GPU 18756] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:28:18.85 [Child 20508] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:28:18.86 [Child 20508] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:28:19.27 
+Jun 22, 2017 07:28:19.27 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:28:19.28 
+Jun 22, 2017 07:29:43.89 [GPU 17256] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:29:43.91 [Child 5196] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:29:43.92 [Child 5196] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:29:44.35 
+Jun 22, 2017 07:29:44.35 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:29:44.36 
+Jun 22, 2017 07:35:02.56 [GPU 10456] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:35:02.58 [Child 14804] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:35:03.03 
+Jun 22, 2017 07:35:03.03 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:35:03.04 
+Jun 22, 2017 07:36:58.69 [GPU 12460] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:36:58.71 [Child 16596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:36:58.71 [Child 16596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:36:59.12 
+Jun 22, 2017 07:36:59.12 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:36:59.13 
+Jun 22, 2017 07:42:08.36 [GPU 11012] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:42:08.38 [Child 20548] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:42:08.39 [Child 20548] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:42:08.93 
+Jun 22, 2017 07:42:08.93 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:42:08.94 
+Jun 22, 2017 07:44:00.13 [GPU 1844] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:44:00.14 [GPU 1844] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:44:00.15 [Child 19520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:44:00.16 [Child 19520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:44:00.67 
+Jun 22, 2017 07:44:00.67 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:44:00.68 
+Jun 22, 2017 07:47:37.51 [GPU 1984] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:47:37.51 [GPU 1984] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:47:37.52 [Child 17736] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:47:37.53 [Child 17736] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:47:38.04 
+Jun 22, 2017 07:47:38.04 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:47:38.05 
+Jun 22, 2017 07:48:26.69 [GPU 3028] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:48:26.69 [GPU 3028] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:48:26.70 [Child 10812] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:48:26.71 [Child 10812] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:48:27.17 
+Jun 22, 2017 07:48:27.17 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:48:27.18 
+Jun 22, 2017 07:49:11.50 [GPU 5696] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:49:11.51 [Child 17492] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 07:49:11.90 
+Jun 22, 2017 07:49:11.91 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 07:49:11.91 
+
+Jun 22, 2017 10:02:03.01 NEW SESSION
+Jun 22, 2017 10:02:03.01 [GPU 13180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:03.02 [GPU 13180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:03.35 [GPU 13180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:03.38 
+Jun 22, 2017 10:02:03.39 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:02:03.40 
+Jun 22, 2017 10:02:57.19 [GPU 7108] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:57.20 [Child 4536] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:57.21 [Child 4536] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:02:57.79 
+Jun 22, 2017 10:02:57.80 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:02:57.80 
+Jun 22, 2017 10:04:08.18 [GPU 20808] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:08.26 [Child 17436] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:08.26 [Child 17436] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:08.54 
+Jun 22, 2017 10:04:08.54 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:04:08.55 
+Jun 22, 2017 10:04:25.44 [GPU 20916] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:25.54 [Child 21932] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:25.55 [Child 21932] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:04:25.86 
+Jun 22, 2017 10:04:25.87 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:04:25.87 
+Jun 22, 2017 10:05:00.87 [GPU 20660] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:05:00.89 [Child 8368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:05:00.89 [Child 8368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:05:01.20 
+Jun 22, 2017 10:05:01.20 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:05:01.21 
+Jun 22, 2017 10:06:33.21 [GPU 21016] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:06:33.57 
+Jun 22, 2017 10:06:33.58 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:06:33.58 
+
+Jun 22, 2017 10:08:25.47 NEW SESSION
+Jun 22, 2017 10:08:25.47 [GPU 21244] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:08:25.48 [Child 21552] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:08:25.86 
+Jun 22, 2017 10:08:25.86 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:08:25.87 
+Jun 22, 2017 10:20:52.11 [GPU 5336] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:20:52.16 [GPU 5336] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:20:52.20 [Child 17720] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 10:20:52.35 
+Jun 22, 2017 10:20:52.35 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 10:20:52.36 
+Jun 22, 2017 11:00:53.71 [GPU 20244] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:00:53.72 [GPU 20244] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:00:53.81 [Child 19344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:00:53.82 [Child 19344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:00:54.09 
+Jun 22, 2017 11:00:54.10 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:00:54.10 
+Jun 22, 2017 11:01:28.58 [GPU 16392] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:01:28.59 [GPU 16392] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:01:28.59 [Child 21368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:01:28.60 [Child 21368] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:01:29.02 
+Jun 22, 2017 11:01:29.02 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:01:29.03 
+Jun 22, 2017 11:05:09.23 [GPU 19428] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:05:09.24 [GPU 19428] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:05:09.25 [Child 3892] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:05:09.26 [Child 3892] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:05:09.62 
+Jun 22, 2017 11:05:09.63 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:05:09.63 
+Jun 22, 2017 11:09:18.74 [GPU 21180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:09:18.74 [GPU 21180] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:09:18.75 [Child 15776] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:09:18.76 [Child 15776] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:09:19.13 
+Jun 22, 2017 11:09:19.14 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:09:19.14 
+Jun 22, 2017 11:12:17.39 [GPU 20364] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:12:17.40 IPDL protocol error: Handler returned error code!
+Jun 22, 2017 11:12:17.41 
+Jun 22, 2017 11:12:17.42 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 22, 2017 11:12:17.42 
+Jun 22, 2017 11:12:17.43 [GPU 20364] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:12:17.50 [Child 6500] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:12:17.51 [Child 6500] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:12:17.68 
+Jun 22, 2017 11:12:17.69 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:12:17.69 
+Jun 22, 2017 11:13:05.35 [GPU 20564] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:13:05.35 [GPU 20564] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:13:05.36 [Child 11768] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:13:05.37 [Child 11768] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:13:05.72 
+Jun 22, 2017 11:13:05.72 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:13:05.73 
+Jun 22, 2017 11:26:02.00 [GPU 16304] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:26:02.01 [GPU 16304] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:26:02.02 [Child 15484] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:26:02.02 [Child 15484] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 11:26:02.43 
+Jun 22, 2017 11:26:02.44 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 11:26:02.44 
+Jun 22, 2017 11:51:34.58 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:34.95 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:35.02 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.24 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.29 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.31 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.85 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.88 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.91 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:36.93 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:37.50 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:37.72 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:37.73 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:37.84 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:38.42 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 11:51:38.44 [GFX1-]: ClientLayerManager::BeginTransaction with IPC channel down. GPU process may have died.
+Jun 22, 2017 13:03:00.93 1498150980938	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+Jun 22, 2017 13:03:00.94 1498150980948	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+Jun 22, 2017 13:03:00.95 1498150980957	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+Jun 22, 2017 13:03:00.97 1498150980977	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+Jun 22, 2017 13:03:01.01 1498150981017	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+Jun 22, 2017 13:05:00.32 *************************
+Jun 22, 2017 13:05:00.33 A coding exception was thrown and uncaught in a Task.
+Jun 22, 2017 13:05:00.34 
+Jun 22, 2017 13:05:00.35 Full message: TypeError: NetworkError when attempting to fetch resource.
+Jun 22, 2017 13:05:00.36 Full stack: loadFile@resource://gre/modules/services-common/blocklist-clients.js:119:30
+Jun 22, 2017 13:05:00.37 TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+Jun 22, 2017 13:05:00.38 TaskImpl@resource://gre/modules/Task.jsm:277:3
+Jun 22, 2017 13:05:00.38 asyncFunction@resource://gre/modules/Task.jsm:252:14
+Jun 22, 2017 13:05:00.39 Task_spawn@resource://gre/modules/Task.jsm:166:12
+Jun 22, 2017 13:05:00.39 loadDumpFile@resource://gre/modules/services-common/blocklist-clients.js:118:12
+Jun 22, 2017 13:05:00.40 syncCollection@resource://gre/modules/services-common/blocklist-clients.js:212:39
+Jun 22, 2017 13:05:00.40 TaskImpl_run@resource://gre/modules/Task.jsm:319:42
+Jun 22, 2017 13:05:00.41 
+Jun 22, 2017 13:05:00.41 *************************
+Jun 22, 2017 13:07:08.68 [GPU 20268] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 13:07:08.68 [GPU 20268] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 13:07:08.83 [Child 7948] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 13:07:08.83 [Child 7948] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 13:07:09.18 [GPU 20268] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 13:07:09.20 
+Jun 22, 2017 13:07:09.20 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 13:07:09.21 
+
+Jun 22, 2017 21:48:14.67 NEW SESSION
+Jun 22, 2017 21:48:14.67 [GPU 3252] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:14.79 [Child 21976] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:14.79 [Child 21976] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:15.03 
+Jun 22, 2017 21:48:15.04 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 21:48:15.04 
+Jun 22, 2017 21:48:45.03 [GPU 23488] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:45.04 [Child 15768] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:45.04 [Child 15768] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:48:45.52 
+Jun 22, 2017 21:48:45.52 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 21:48:45.53 
+Jun 22, 2017 21:51:54.98 [GPU 17448] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:51:55.06 [Child 20968] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:51:55.07 [Child 20968] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 21:51:55.29 
+Jun 22, 2017 21:51:55.30 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 21:51:55.30 
+Jun 22, 2017 22:20:58.86 [GPU 3744] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:20:59.27 
+Jun 22, 2017 22:20:59.28 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:20:59.28 
+Jun 22, 2017 22:50:15.11 [GPU 18520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:50:15.12 [GPU 18520] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:50:15.13 [Child 17012] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:50:15.40 
+Jun 22, 2017 22:50:15.40 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:50:15.40 
+Jun 22, 2017 22:51:00.57 [GPU 23500] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:51:00.58 [GPU 23500] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:51:00.60 [Child 20660] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:51:00.60 [Child 20660] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:51:00.98 
+Jun 22, 2017 22:51:00.99 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:51:00.99 
+Jun 22, 2017 22:52:58.79 [GPU 21124] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:52:58.80 [GPU 21124] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:52:58.89 [Child 21920] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:52:58.89 [Child 21920] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:52:59.46 
+Jun 22, 2017 22:52:59.47 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:52:59.47 
+Jun 22, 2017 22:56:02.94 [GPU 20376] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:56:02.96 [Child 4648] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:56:02.96 [Child 4648] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:56:03.29 
+Jun 22, 2017 22:56:03.29 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:56:03.29 
+Jun 22, 2017 22:57:01.47 [GPU 14296] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:57:01.48 [Child 7740] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:57:01.49 [Child 7740] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 22:57:01.89 
+Jun 22, 2017 22:57:01.89 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 22:57:01.90 
+Jun 22, 2017 23:00:48.89 [GPU 15448] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:00:48.89 [GPU 15448] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:00:48.91 [Child 23516] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:00:49.23 
+Jun 22, 2017 23:00:49.23 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:00:49.24 
+Jun 22, 2017 23:01:26.80 [GPU 19028] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:01:26.81 [Child 7896] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:01:26.82 [Child 7896] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:01:27.18 
+Jun 22, 2017 23:01:27.19 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:01:27.19 
+Jun 22, 2017 23:12:49.26 [GPU 15016] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:12:49.29 [Child 17592] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:12:49.29 [Child 17592] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:12:49.70 
+Jun 22, 2017 23:12:49.71 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:12:49.72 
+Jun 22, 2017 23:15:10.29 [GPU 20848] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:10.30 [Child 1288] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:10.30 [Child 1288] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:10.69 
+Jun 22, 2017 23:15:10.70 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:15:10.70 
+Jun 22, 2017 23:15:54.48 [GPU 23540] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:54.49 [GPU 23540] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:54.50 [Child 15708] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:54.50 [Child 15708] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:15:54.89 
+Jun 22, 2017 23:15:54.90 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:15:54.90 
+Jun 22, 2017 23:16:28.20 [GPU 18532] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:16:28.21 [Child 16344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:16:28.22 [Child 16344] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:16:28.59 
+Jun 22, 2017 23:16:28.59 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:16:28.60 
+Jun 22, 2017 23:17:07.65 [GPU 17760] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:17:07.68 [Child 19316] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:17:08.10 
+Jun 22, 2017 23:17:08.10 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:17:08.11 
+Jun 22, 2017 23:17:59.53 [GPU 18800] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:17:59.54 IPDL protocol error: Handler returned error code!
+Jun 22, 2017 23:17:59.54 
+Jun 22, 2017 23:17:59.55 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 22, 2017 23:17:59.56 
+Jun 22, 2017 23:18:00.01 
+Jun 22, 2017 23:18:00.01 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:18:00.02 
+Jun 22, 2017 23:19:54.78 [GPU 11572] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:19:54.80 [Child 22264] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:19:54.80 [Child 22264] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:19:55.25 
+Jun 22, 2017 23:19:55.25 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:19:55.26 
+Jun 22, 2017 23:20:41.31 [GPU 2816] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:20:41.34 [Child 9960] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:20:41.35 [Child 9960] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:20:41.75 
+Jun 22, 2017 23:20:41.75 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:20:41.76 
+Jun 22, 2017 23:26:09.26 [GPU 21072] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:09.26 [GPU 21072] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:09.35 [Child 14296] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:09.35 [Child 14296] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:09.55 
+Jun 22, 2017 23:26:09.55 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:26:09.56 
+Jun 22, 2017 23:26:43.90 [GPU 18696] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:43.93 [Child 21112] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:43.93 [Child 21112] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:26:44.33 
+Jun 22, 2017 23:26:44.34 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:26:44.34 
+Jun 22, 2017 23:29:12.12 [GPU 11168] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:12.24 [Child 7696] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:12.24 [Child 7696] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:12.68 
+Jun 22, 2017 23:29:12.68 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:29:12.69 
+Jun 22, 2017 23:29:32.73 [GPU 8784] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:32.74 [Child 9900] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:32.75 [Child 9900] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:29:33.15 
+Jun 22, 2017 23:29:33.15 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:29:33.16 
+Jun 22, 2017 23:30:03.99 [GPU 1016] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:30:04.00 [Child 22704] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:30:04.01 [Child 22704] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:30:04.43 
+Jun 22, 2017 23:30:04.43 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:30:04.44 
+Jun 22, 2017 23:32:15.32 [GPU 13544] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:32:15.35 [Child 21272] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:32:15.36 [Child 21272] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:32:15.74 
+Jun 22, 2017 23:32:15.74 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:32:15.75 
+Jun 22, 2017 23:39:23.23 [GPU 23488] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:39:23.33 [GPU 23488] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:39:23.33 [GPU 23488] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:39:23.73 
+Jun 22, 2017 23:39:23.73 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:39:23.74 
+Jun 22, 2017 23:40:04.36 [GPU 21108] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:40:04.37 IPDL protocol error: Handler returned error code!
+Jun 22, 2017 23:40:04.37 
+Jun 22, 2017 23:40:04.38 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 22, 2017 23:40:04.38 
+Jun 22, 2017 23:40:04.39 [Child 13596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:40:04.39 [Child 13596] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:40:04.75 
+Jun 22, 2017 23:40:04.76 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:40:04.76 
+Jun 22, 2017 23:44:00.19 [Child 22056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:44:00.19 [Child 22056] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:44:00.54 
+Jun 22, 2017 23:44:00.55 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:44:00.55 
+Jun 22, 2017 23:44:41.82 [GPU 21556] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:44:41.85 [Child 19676] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:44:41.85 [Child 19676] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:44:42.18 
+Jun 22, 2017 23:44:42.19 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:44:42.19 
+Jun 22, 2017 23:45:25.13 [GPU 18348] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:45:25.14 [Child 19952] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:45:25.15 [Child 19952] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:45:25.51 
+Jun 22, 2017 23:45:25.51 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:45:25.52 
+Jun 22, 2017 23:46:57.13 [GPU 9900] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:46:57.14 IPDL protocol error: Handler returned error code!
+Jun 22, 2017 23:46:57.14 
+Jun 22, 2017 23:46:57.15 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+Jun 22, 2017 23:46:57.16 
+Jun 22, 2017 23:46:57.23 [Child 12384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:46:57.23 [Child 12384] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:46:57.45 
+Jun 22, 2017 23:46:57.45 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:46:57.46 
+Jun 22, 2017 23:47:36.88 [GPU 1984] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:47:36.89 [Child 9000] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:47:36.90 [Child 9000] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:47:37.25 
+Jun 22, 2017 23:47:37.26 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:47:37.26 
+Jun 22, 2017 23:49:19.56 [GPU 14256] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:49:19.56 [GPU 14256] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:49:19.57 [Child 22392] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:49:19.58 [Child 22392] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 22, 2017 23:49:20.01 
+Jun 22, 2017 23:49:20.01 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 22, 2017 23:49:20.01 
+Jun 23, 2017 24:07:19.74 [GPU 1896] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 24:07:19.76 [Child 14784] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 24:07:19.77 [Child 14784] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 24:07:20.24 
+Jun 23, 2017 24:07:20.24 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 23, 2017 24:07:20.25 
+Jun 23, 2017 07:39:28.41 [GPU 23544] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:39:28.43 [GPU 23544] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:39:28.50 [Child 24240] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:39:28.50 [Child 24240] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:39:28.78 
+Jun 23, 2017 07:39:28.78 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 23, 2017 07:39:28.79 
+Jun 23, 2017 07:58:35.09 [GPU 20984] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:58:35.11 [Child 19676] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Jun 23, 2017 07:58:35.72 
+Jun 23, 2017 07:58:35.73 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+Jun 23, 2017 07:58:35.73 

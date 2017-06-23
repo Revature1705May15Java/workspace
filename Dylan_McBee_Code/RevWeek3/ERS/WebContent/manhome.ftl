@@ -8,16 +8,50 @@ background-image: url("img/emp page background.jpg");
 background-repeat: no-repeat;
 background-position: 50% 0%;
 }
-.logout{
-margin: -100px 0 0 -150px;
+.results2 tr[visible='false'], .no-result {
+	display: none;
+}
 
+.results2 tr[visible='true'] {
+	display: table-row;
+}
+
+.counter2 {
+	padding: 8px;
+	color: #ccc;
+}
+.results tr[visible='false'], .no-result {
+	display: none;
+}
+
+.results tr[visible='true'] {
+	display: table-row;
+}
+
+.counter {
+	padding: 8px;
+	color: #ccc;
+}
+.results1 tr[visible='false'], .no-result {
+	display: none;
+}
+
+.results1 tr[visible='true'] {
+	display: table-row;
+}
+
+.counter1 {
+	padding: 8px;
+	color: #ccc;
+}
+.logout{
+	float:right;
     padding: 10px;
-    position: absolute;
+    position: relative;
     width: 200px;
     height: 200px;
     z-index: 15;
-	top: 80%;
-	left: 138%
+
 
 }
  .card {
@@ -116,16 +150,17 @@ margin: -100px 0 0 -150px;
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-<script src="js/manpage.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="col-lg-6 col-sm-6">
-    <div class="card hovercard"style = "margin-left:350px;margin-right:-350px;">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-8 col-sm-8 col-lg-offset-2">
+    <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-            <!-- http://lorempixel.com/850/280/people/9/ -->
+            <img class="card-bkimg" alt="" src="https://kbdevstorage1.blob.core.windows.net/asset-blobs/19177_en_1">
         </div>
         <div class="useravatar">
             <img alt="" src="http://arabiants.com/media/com_teamchart/2427df0a64e7663e36b6494529ffb80e.png">
@@ -134,63 +169,240 @@ margin: -100px 0 0 -150px;
 
         </div>
     </div>
-    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="..."style = "margin-left:350px;margin-right:-450px;">
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
         <div class="btn-group" role="group">
-            <button type="button" id="reimbursements" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <button type="button" id="reimbursements" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 <div class="hidden-xs">Pending Reimbursements</div>
             </button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" id="employees" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            <button type="button" id="reimbursements" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                <div class="hidden-xs">All Reimbursements</div>
+            </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" id="employees" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 <div class="hidden-xs">All Employees</div>
             </button>
         </div>
         <div class="btn-group" role="group">
-            <button type="button" id="account" class="btn btn-default" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <button type="button" id="account" class="btn btn-default" href="#tab4" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <div class="hidden-xs">Account Info & Logout</div>
             </button>
         </div>
     </div>
 
-        <div class="well"style = "margin-left:350px;margin-right:-350px;">
+        <div class="well">
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
-          <h3>Pending</h3>
+          <div class="form-group pull-right">
+						<input type="text" class="search form-control"
+							placeholder="What you looking for?">
+					</div>
+					<span class="counter pull-right"></span>
+					<table class="table table-hover table-bordered results" id="pendingRequests">
+						<thead>
+							<tr>
+								<th>Request Id</th>
+								<th class ="col-md-3 col-cs-3">Employee</th>
+								<th class="col-md-3 col-xs-3">Amount</th>
+								<th class="col-md-3 col-xs-3">Purpose</th>
+								<th class="col-md-3 col-xs-3">Status</th>
+								<th class="col-md-3 col-xs-3">Date Requested</th>
+								
+							</tr>
+							
+							<tr class="warning no-result">
+								<td colspan="5"><i class="fa fa-warning"></i> No result</td>
+							</tr>
+							<#list pRequests as request>
+							
+						</thead>
+						<tbody>
+							<tr class = "rows">
+								<td class = "pRequestId">${request.requestId}</td>
+								<td class = "pRequestorId">${request.requestorId}</td>
+								<td class = "pAmount">${request.amount?string.currency}</td>
+								<td class = "pPurpose">${request.purpose}</td>
+								<td class ="pState">${request.type}</td>
+								<td class = "pOpen">${request.dateRequested}</td>
+
+
+
+
+							</tr>
+
+						</tbody>
+						</#list>
+					</table>
+					<!-- Modal -->
+			<div id="pendingModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+	
+					<!--  Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Request Information</h4>
+						</div>
+						<div class="modal-body">
+							<p class="requestId"></p>
+							<p class="requestorId"></p>
+							<p class="state"></p>
+							<p class="amount"></p>
+							<p class="opendate"></p>
+							<p class="purpose"></p>
+							<form name="resolveform" action="resolve" method="POST">
+								<input type="radio" name="choice" value="approve"/>Approve
+								<input type="radio" name="choice" value="deny"/>Deny
+								<input type="hidden" name="requestId" value="" id="hiddenRequestId"/>
+								<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
           
         </div>
         <div class="tab-pane fade in" id="tab2">
-          <h3>List of Employees</h3>
-          <form action="showEmployee" method="GET" name="Show_Employee">
-          <input type="number" name="eId" placeholder="Enter ID of employee"/>
+          <div class="form-group pull-right">
+						<input type="text" class="search2 form-control"
+							placeholder="What you looking for?">
+					</div>
+					<span class="counter2 pull-right"></span>
+					<table class="table table-hover table-bordered results2" id = "allRequests">
+						<thead>
+							<tr>
+								<th class="col-md-3 col-xs-3">Requestor</th>
+								<th class="col-md-4 col-xs-4">Request Status</th>
+								<th class="col-md-3 col-xs-3">Amount</th>
+								<th class="col-md-2 col-xs-2">Purpose</th>
+								<th class="col-md-2 col-xs-2">Requested</th>
+								<th class="col-md-2 col-xs-2">Resolved</th>
+								<th class="col-md-1 col-xs-1">Manager Name</th>
+							</tr>
+							<tr class="warning no-result">
+								<td colspan="7"><i class="fa fa-warning"></i> No result</td>
+							</tr>
+							<#list aRequests as request>
+						
+						</thead>
+						<tbody>
+							<tr>
+								<td>${request.eLastName}</td>
+								<td>${request.type}</td>
+								<td>${request.amount?string.currency}</td>
+								<td>${request.purpose}</td>
+								<td>${request.dateRequested}</td>
+								<#if request.dateResolved??>
+								<td>${request.dateResolved}</td>
+								<#else><td>-</td>
+								</#if>
+								<td>${request.lastName}</td>
+
+
+
+							</tr>
+
+						</tbody>
+						</#list>
+
+					</table>
           
-          </form>
-          <table class="datatable">
-			<tr>
-			<th>Emp Id</th>
-			<th>First Name</th>
-			</tr>
-			<#list employees as employee>
-			<tr>
-			<td>${employee.id}</td> <td>${employee.firstName}</td>
-			</tr>
-			</#list>
-			</table>
         </div>
         <div class="tab-pane fade in" id="tab3">
+          <h3>List of Employees</h3>
+          <div class="form-group pull-right">
+						<input type="text" class="search1 form-control"
+							placeholder="What you looking for?">
+					</div>
+					<span class="counter1 pull-right"></span>
+					<table class="table table-hover table-bordered results1" id="allEmployees">
+						<thead>
+							<tr>
+								<th>Employee Id</th>
+								<th class="col-md-4 col-xs-4">First Name</th>
+								<th class="col-md-3 col-xs-3">Last Name</th>
+								<th class="col-md-2 col-xs-2">Manager</th>
+								
+							</tr>
+							
+							<tr class="warning no-result">
+								<td colspan="4"><i class="fa fa-warning"></i> No result</td>
+							</tr>
+							<#list employees as employee>
+							
+						</thead>
+						<tbody>
+							<tr>
+								<td class = "employeeId">${employee.id}</td>
+								<td class = "fn">${employee.firstName}</td>
+								<td class = "ln">${employee.lastName}</td>
+
+								<#if employee.isManager! ==1>
+								<td class = "man">Yes</td>
+								<#else>
+								<td class = "man">No</td>
+								</#if>
+
+
+
+							</tr>
+
+						</tbody>
+						</#list>
+					</table>
+        </div>
+        <div class="tab-pane fade in" id="tab4">
         
           <h3>Account Info</h3>
-          <div class="logout">
-		  <form action="logout" method="POST" name="Logout_Form">
-          <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Logout" type="Submit">Logout</button>
-          </form>
-          </div>
-          ${fn}<br>${ln}<br>${email}
-        </div>
-      </div>
-    </div>
+					<div class="logout">
+						<form action="logout" method="POST" name="Logout_Form">
+							<button class="btn btn-lg btn-primary btn-block" name="Submit"
+								value="Logout" type="Submit">Logout</button>
+						</form>
+					</div>
+					ID number: ${id}<br>First Name: ${fn}<br>Last Name: ${ln}<br>Email
+					Address: ${email}<br>
+					<!-- Trigger the modal with a button -->
+
+					<button type="button" class="btn btn-info btn-lg"
+						data-toggle="modal" data-target="#myModal">Update
+						Information</button>
+
+
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" role="dialog">
+						<div class="modal-dialog">
+
+							<!-- Modal content-->
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Modal Header</h4>
+								</div>
+								<div class="modal-body">
+									<form action="update" method="POST" name="update_form">
+										First Name: <input type="text" name="firstname" value="${fn}" /><br>
+										Last Name: <input type="text" name="lastname" value="${ln}" /><br>
+										Email: <input type="text" name="email" value="${email}" /><br>
+										<button class="btn btn-lg btn-primary btn-block" name="Submit"
+											value="Update" type="Submit">Update Info</button>
+									</form>
+
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
     
     </div>
-
-
+</div>
+</div>
+	<script type= "text/javascript" src="js/manpage.js"></script>
 </body>
 </html>
