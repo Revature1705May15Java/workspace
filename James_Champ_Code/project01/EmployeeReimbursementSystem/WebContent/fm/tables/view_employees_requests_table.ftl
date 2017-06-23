@@ -26,12 +26,16 @@
 					<td>
 						<#if r.closeDate??>
 							${r.closeDate}
+						<#else>
+							N/A
 						</#if>
 					</td>
 					<td>${r.state.name}</td>
 					<td>
 						<#if r.manager??>
 							${r.manager.lastName}, ${r.manager.firstName}
+						<#else>
+							N/A
 						</#if>
 					</td>
 					<td>

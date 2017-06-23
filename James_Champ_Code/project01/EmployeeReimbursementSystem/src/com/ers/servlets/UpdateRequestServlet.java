@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import com.ers.pojos.Employee;
 import com.ers.pojos.Request;
 import com.ers.pojos.RequestState;
 import com.ers.service.Service;
+import com.ers.servlets.states.SessionState;
 import com.ers.util.RequestStatePool;
 
 public class UpdateRequestServlet extends HttpServlet {
@@ -27,6 +29,16 @@ public class UpdateRequestServlet extends HttpServlet {
 		
 		Service service = new Service();
 		Request r = service.getRequest(id);
+		
+		ArrayList<Request> requests = (ArrayList<Request>) session.getAttribute("pendingRequests");
+		for(int i = 0; i < requests.size(); i++) {
+			if(requests.get(i).getRequestId() == r.getRequestId()) {
+				requests.remove(i);
+				break;
+			}
+		}
+		//requests.remove(r);
+		
 		r.setNote(note);
 		r.setManager(manager);
 		
@@ -39,6 +51,7 @@ public class UpdateRequestServlet extends HttpServlet {
 		
 		service.updateRequest(r);
 		
+		session.setAttribute("pendingRequests", requests);
 		request.getRequestDispatcher("site.ftl").forward(request, response);
 	}
 

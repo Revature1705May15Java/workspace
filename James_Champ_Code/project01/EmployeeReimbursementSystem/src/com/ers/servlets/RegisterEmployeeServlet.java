@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,10 @@ public class RegisterEmployeeServlet extends HttpServlet {
 			service.addEmployee(employee);
 			
 			// TODO: Show success message
+			HttpSession session = request.getSession();
+			session.setAttribute("state", SessionState.VIEW_EMPLOYEES);
+			ArrayList<Employee> employees = service.getAllEmployees();
+			session.setAttribute("employees", employees);
 			request.getRequestDispatcher("site.ftl").forward(request, response);
 		}
 		else {
