@@ -54,7 +54,7 @@ body, html {
 						<h3 style="color:red"> Your login information is incorrect <h3>
 						</#if>
 					
-						<h3 style="color: blue">Welcome to Reimbursement System</h3>
+						<h3 style="color: blue">Welcome to ERS</h3>
 						<input type="text" id="userName"
 							class="form-control input-sm chat-input" placeholder="username"
 							name="username" /> </br> <input type="password" id="userPassword"

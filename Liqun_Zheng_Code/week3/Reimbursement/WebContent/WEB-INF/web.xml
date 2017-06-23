@@ -83,6 +83,25 @@
     <url-pattern>/updateManager</url-pattern>
   </servlet-mapping>
   
+  	  <servlet>
+    <servlet-name>managerApprove</servlet-name>
+    <servlet-class>com.reim.servlets.ManagerServletApprove</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managerApprove</servlet-name>
+    <url-pattern>/managerApprove</url-pattern>
+  </servlet-mapping>
+  
+  
+    	  <servlet>
+    <servlet-name>managerDeny</servlet-name>
+    <servlet-class>com.reim.servlets.ManagerServletDeny</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>managerDeny</servlet-name>
+    <url-pattern>/managerDeny</url-pattern>
+  </servlet-mapping>
+  
 		  <servlet>
     <servlet-name>newReq</servlet-name>
     <servlet-class>com.reim.servlets.newReqEmployeeServlets</servlet-class>

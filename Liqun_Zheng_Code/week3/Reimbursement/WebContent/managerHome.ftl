@@ -18,19 +18,6 @@
 <!-- Theme CSS -->
 <link href="CSS/freelancer.min.css" rel="stylesheet">
 
-
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-	rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
 
 </head>
@@ -59,10 +46,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="hidden"><a href="#page-top"></a></li>
-					<li class="page-scroll"><a href="#portfolio">Update My
+					<li class="page-scroll"><a href="#updateInfo">Update My
 							Information</a></li>
-					<li class="page-scroll"><a href="#about">View All Employees</a></li>
-					<li class="page-scroll"><a href="#contact">View All Requests</a></li>
+					<li class="page-scroll"><a href="#allEmployees">View All Employees</a></li>
+					<li class="page-scroll"><a href="#allRequests">View All Requests</a></li>
 					<li><form name="Logout" action="login" method="GET">
 					<button type="submit" class="btn btn-success btn-lg">Log out</button>
 					</form>
@@ -91,15 +78,14 @@
 
 						<hr class="star-light">
 						<h2>Username: ${uname}</h2>
-						<h2>Password: *****</h2>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 
-	<!-- Portfolio Grid Section -->
-	<section id="portfolio">
+	<!-- Update information Section -->
+	<section id="updateInfo">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -116,7 +102,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="firstName">First Name</label> <input type="text"
-									class="form-control" placeholder="First Name" id="firstName"
+									class="form-control" placeholder="First Name" name="firstName"
 									required
 									data-validation-required-message="Please enter your first name.">
 								<p class="help-block text-danger"></p>
@@ -126,7 +112,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="lastName">Last Name</label> <input type="text"
-									class="form-control" placeholder="Last Name" id="lastName"
+									class="form-control" placeholder="Last Name" name="lastName"
 									required
 									data-validation-required-message="Please enter your last name.">
 								<p class="help-block text-danger"></p>
@@ -136,7 +122,7 @@
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
 								<label for="username">Username</label> <input type="text"
-									class="form-control" placeholder="Username" id="username"
+									class="form-control" placeholder="Username" name="username"
 									required
 									data-validation-required-message="Please enter your Username.">
 								<p class="help-block text-danger"></p>
@@ -145,10 +131,23 @@
 						<div class="row control-group">
 							<div
 								class="form-group col-xs-12 floating-label-form-group controls">
-								<label for="password">Password</label> <input type="password"
-									class="form-control" placeholder="Password" id="password"
+								<label for="password">Password</label> <input type ="password"
+									class="form-control" placeholder="Password" name = "password"
 									required
-									data-validation-required-message="Please enter your password.">
+									
+									data-validation-required-message="Please enter your password."
+									onchange="form.password1.pattern = this.value;">
+								<p class="help-block text-danger"></p>
+							</div>
+						</div>
+						<div class="row control-group">
+							<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label for="password">Confirm Password</label> <input type ="password"
+									class="form-control" placeholder="Confirm Password" name = "password1"
+									required
+									
+									data-validation-required-message="Please confirm your password.">
 								<p class="help-block text-danger"></p>
 							</div>
 						</div>
@@ -157,7 +156,7 @@
 						<div id="success"></div>
 						<div class="row">
 							<div class="form-group col-xs-12">
-								<button type="submit" class="btn btn-success btn-lg">Send</button>
+								<button type="submit" class="btn btn-success btn-lg">Update</button>
 							</div>
 						</div>
 					</form>
@@ -167,8 +166,8 @@
 
 	</section>
 
-	<!-- About Section -->
-	<section class="success" id="about">
+	<!-- all Employees Section -->
+	<section class="success" id="allEmployees">
 		<div class="container">
 
 					<div class="row">
@@ -200,8 +199,8 @@
 		</div>
 	</section>
 
-	<!-- Contact Section -->
-	<section id="contact">
+	<!-- allRequests Section -->
+	<section id="allRequests">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
@@ -209,6 +208,7 @@
 					<hr class="star-primary">
 				</div>
 			</div>
+			<input type="hidden" name="hdnbt" />
 			<table id = "req">
 			<thead>
 				<tr>
@@ -224,6 +224,7 @@
 					<th>Close Date</th>
 					<th>Approve</th>
 					<th>Deny</th>
+				
 
 				</tr>
 			</thead>
@@ -257,14 +258,96 @@
 									<#if request.closed??>
 									<td> </td>
 									<#else>
-									<td> <input type="submit" value="Approve"> </td>
+									<td> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#appReq${request.request_id}">Approve</button>
+									<div class="modal fade" id="appReq${request.request_id}" role="dialog">
+								    <div class="modal-dialog">
+								    
+								      <!-- Modal content-->
+								      <div class="modal-content">
+								     
+								        <div class="modal-header">
+								          
+								          <h4>Are You Sure You Want To Approve This Request</h4>
+								        </div>
+								         <form name="managerApprove" action="managerApprove" method="POST">
+								        <div class="modal-body">
+								          	<p>Request Id: ${request.request_id}</p>
+								          	<p>Requester Id: ${request.requester_id}</p>
+								          	<p>Requester Name: ${request.requester_name}</p>
+								          	<#if request.purpose??>
+								          	<p>Purpose: ${request.purpose} </p>
+											<#else>
+											<p>Purpose: N/A &nbsp;</p>
+											</#if>
+											<p>Amount: &dollar;${request.amount}</p>
+								    	  	<input type="hidden" name="approveId" value= "${request.request_id}" >
+								    	  	<input type="text"
+												class="form-control" placeholder="Note to requester: " id="lastName" name = "noteApprove"> 
+								    	  
+								        </div>
+								        
+								        
+								        <div class="modal-footer">
+								     
+								        
+										<button type="submit" class="btn btn-success btn-lg">Approve</button>
+										
+								          <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Cancel</button>
+								        </div>
+								        </form>
+								      </div>
+								      
+								    </div>
+								  </div>
+								</td>
+									
 									</#if>
+									
 									<#if request.closed??>
-									<td></td>
+									<td> </td>
 									<#else>
-									<td><input type="submit" value="Deny"></td>
-									</#if>
-								
+									<td> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#denyReq${request.request_id}">Deny</button>
+									  <div class="modal fade" id="denyReq${request.request_id}" role="dialog">
+								    <div class="modal-dialog">
+								    
+								      <!-- Modal content-->
+								      <div class="modal-content">
+								        <div class="modal-header">
+								          
+								          <h4>Are You Sure You Want To Deny This Request</h4>
+								        </div>
+								        <form name="managerDeny" action="managerDeny" method="POST">
+								        <div class="modal-body">
+								          	<p>Request Id: ${request.request_id}</p>
+								          	<p>Requester Id: ${request.requester_id}</p>
+								          	<p>Requester Name: ${request.requester_name}</p>
+								          	<#if request.purpose??>
+								          	<p>Purpose: ${request.purpose} </p>
+											<#else>
+											<p>Purpose: N/A &nbsp;</p>
+											</#if>
+											<p>Amount: &dollar;${request.amount}</p>
+								    	  	<input type="hidden" name="denyId" value= "${request.request_id}" >
+								    	  	<input type="text"
+												class="form-control" placeholder="Note to requester: " name = "noteDeny"> 
+								    	  
+								        </div>
+								        
+								        
+								        <div class="modal-footer">
+								     
+								        
+										<button type="submit" class="btn btn-success btn-lg">Deny</button>
+										
+								          <button type="button" class="btn btn-success btn-lg" data-dismiss="modal">Cancel</button>
+								        </div>
+								       </form>
+								      </div>
+								    </div>
+								  </div>
+									
+								</td>
+								</#if>
 				
 				</tr>
 				</#list>
@@ -272,6 +355,10 @@
 			</table>
 		</div>
 	</section>
+
+
+	
+
 
 	<!-- Footer -->
 	<footer class="text-center">
@@ -287,22 +374,19 @@
 						</p>
 					</div>
 					<div class="footer-col col-md-4">
-						<h3>Around the Web</h3>
+						<h3>In This Page</h3>
 						<ul class="list-inline">
-							<li><a href="#" class="btn-social btn-outline"><span
-									class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+							<li><a href="#page-top" class="btn-social btn-outline"><span
+									class="sr-only">Top Page</span></a>
 							</li>
-							<li><a href="#" class="btn-social btn-outline"><span
-									class="sr-only">Google Plus</span><i
+							<li><a href="#updateInfo" class="btn-social btn-outline"><span
+									class="sr-only">Update Info</span><i
 									class="fa fa-fw fa-google-plus"></i></a></li>
-							<li><a href="#" class="btn-social btn-outline"><span
-									class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+							<li><a href="#allEmployees" class="btn-social btn-outline"><span
+									class="sr-only">All Employees</span></a>
 							</li>
-							<li><a href="#" class="btn-social btn-outline"><span
-									class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
-							</li>
-							<li><a href="#" class="btn-social btn-outline"><span
-									class="sr-only">Dribble</span><i class="fa fa-fw fa-dribbble"></i></a>
+							<li><a href="#allRequests" class="btn-social btn-outline"><span
+									class="sr-only">All Requests</span></a>
 							</li>
 						</ul>
 					</div>
@@ -325,290 +409,23 @@
 		</div>
 	</footer>
 
-	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-	<div
-		class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
-		<a class="btn btn-primary" href="#page-top"> <i
-			class="fa fa-chevron-up"></i>
-		</a>
-	</div>
 
-	<!-- Portfolio Modals -->
-	<div class="portfolio-modal modal fade" id="portfolioModal1"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-						
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade" id="portfolioModal2"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-							
-								
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade" id="portfolioModal3"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-						
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade" id="portfolioModal4"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-						
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade" id="portfolioModal5"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-							
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade" id="portfolioModal6"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Project Title</h2>
-							<hr class="star-primary">
-							
-							<p>
-								Use this area of the page to describe your project. The icon
-								above is part of a free icon set by <a
-									href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On
-								their website, you can download their free set with 16 icons, or
-								you can purchase the entire set with 146 icons for only $12!
-							</p>
-							<ul class="list-inline item-details">
-								<li>Client: <strong><a
-										href="http://startbootstrap.com">Start Bootstrap</a> </strong>
-								</li>
-								<li>Date: <strong><a
-										href="http://startbootstrap.com">April 2014</a> </strong>
-								</li>
-								<li>Service: <strong><a
-										href="http://startbootstrap.com">Web Development</a> </strong>
-								</li>
-							</ul>
-							<button id="btnSubmit" type="button" class="btn btn-default"
-								data-dismiss="modal">
-								<i class="fa fa-times"></i> Close
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<!-- jQuery -->
+	<!-- jQuery for slide motion-->
 	<script src="js/jquery.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
+	<!-- Bootstrap Core JavaScript for bold topic on top -->
 	<script src="js/bootstrap.min.js"></script>
 
-	<!-- Plugin JavaScript -->
+	<!-- Plugin JavaScript  for slide motion -->
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-	<!-- Contact Form JavaScript -->
+	<!-- Contact Form JavaScript for validations -->
 	<script src="js/jqBootstrapValidation.js"></script>
 	
 
-	<!-- Theme JavaScript -->
+	<!-- Theme JavaScript for slide motion-->
 	<script src="js/freelancer.min.js"></script>
 	
 	 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>

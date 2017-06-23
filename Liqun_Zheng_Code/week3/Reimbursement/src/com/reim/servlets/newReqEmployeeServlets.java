@@ -57,7 +57,7 @@ public class newReqEmployeeServlets extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String purpose = request.getParameter("purpose"); 
 		System.out.println(purpose);
-		int amount = Integer.parseInt(request.getParameter("amount"));
+		double amount = Double.parseDouble(request.getParameter("amount"));
 		
 		Employee emp = new Employee();
 		HttpSession s = request.getSession(true);

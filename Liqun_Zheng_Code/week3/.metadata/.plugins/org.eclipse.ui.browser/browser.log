@@ -79,3 +79,17 @@ Jun 14, 2017 21:54:33.21 [9444:9688:0614/215433.215:ERROR:render_process_host_im
 Jun 14, 2017 22:08:03.77 [9444:9688:0614/220803.775:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 494
 Jun 14, 2017 22:21:57.66 [9444:9688:0614/222157.662:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 536
 Jun 14, 2017 22:22:00.69 [9444:9688:0614/222200.695:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 541
+
+Jun 22, 2017 23:49:12.32 NEW SESSION
+Jun 22, 2017 23:49:12.32 [10372:11036:0622/234912.320:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 52
+Jun 22, 2017 23:49:59.12 [10372:11036:0622/234959.124:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 54
+Jun 22, 2017 23:56:37.87 [10372:11036:0622/235637.870:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 87
+Jun 23, 2017 24:06:26.24 [10372:11036:0623/000626.243:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 117
+Jun 23, 2017 24:07:06.51 [10372:11036:0623/000706.510:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 126
+
+Jun 23, 2017 09:14:48.37 NEW SESSION
+Jun 23, 2017 09:14:48.37 [10876:9172:0623/091448.367:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 1
+Jun 23, 2017 09:30:33.01 [3548:12944:0623/093033.012:ERROR:socket_stream.cc(210)] Closing stream with result -100
+Jun 23, 2017 10:04:17.17 [3548:8020:0623/100417.177:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 221
+Jun 23, 2017 10:05:06.24 [3548:8020:0623/100506.240:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 223
+Jun 23, 2017 10:06:14.55 [3548:8020:0623/100614.555:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 235

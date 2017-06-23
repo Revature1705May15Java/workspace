@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+p.ex1 {
+	margin-top: 8cm;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("http://wallpapercave.com/wp/dBKSyRO.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Bank App Login</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+
+	
+	
+<!-- Theme CSS -->
+<link href="CSS/signin.css" rel="stylesheet">
+<body>
+<div class="bg">
+<div class = "container">
+	<div class="wrapper">
+		<div class="col-md-offset-5 col-md-5">
+		<form action="post" method="post" name="login" class="login">       
+		    <h3 class="form-signin-heading">Welcome To ERS</h3>
+			  <hr class="colorgraph"><br>
+			  
+			  <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
+			 
+			  <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
+		</form>	
+		</div>		
+	</div>
+</div>
+</div>
+</body>
+</html>

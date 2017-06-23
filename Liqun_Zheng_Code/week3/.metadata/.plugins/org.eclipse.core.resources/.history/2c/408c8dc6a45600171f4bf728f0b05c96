@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+p.ex1 {
+	margin-top: 9cm;
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://previews.123rf.com/images/j0yce/j0yce1205/j0yce120500030/13805396-Simple-stone-abstract-background-Stock-Photo.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Bank App Login</title>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+
+	
+	
+<!-- Theme CSS -->
+<link href="CSS/signin.css" rel="stylesheet">
+<body>
+<div class="bg">
+<div class = "container">
+	<div class="wrapper">
+		<div class="col-md-offset-3 col-md-6">
+		<form name="loginform" action="login" method="POST">
+		    <h3 class="form-signin-heading">Welcome To ERS</h3>
+			  <hr class="colorgraph"><br>
+			  
+			  <input style="background-color:#89DA59;" type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+			  <input style="background-color:#89DA59;" type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
+			 
+			  <button style="background-color:#89DA59;" class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>  			
+		</form>	
+		</div>		
+	</div>
+</div>
+</div>
+</body>
+</html>

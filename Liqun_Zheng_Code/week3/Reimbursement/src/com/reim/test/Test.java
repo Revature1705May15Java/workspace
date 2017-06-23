@@ -12,9 +12,9 @@ import com.reim.service.Service;
 public class Test {
 	public static void main(String[] args) {
 		
-		Dao dao = new DaoImpl();
+//		Dao dao = new DaoImpl();
 //		Service s = new Service();
-//		Employee e = s.Signin("test1", "test");
+//		Employee e = s.Signin("lzheng", "123");
 //		System.out.println(e.toString());
 //		
 //		Request r = dao.addRequest(e, "moving", 1500);
@@ -33,6 +33,9 @@ public class Test {
 //		Request re = dao.appDenReq(r, 2);
 //		System.out.println(re.toString());
 		
-		
+//		Request req = s.approveReq(e, 125, "");
+//		System.out.println(req.toString());
+//		Employee emp = s.addEmployee(e, "Amy", "Bond", "AmyBond", "123", "employee");
+//		System.out.println(emp.toString());
 	}
 }

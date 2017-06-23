@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="View Request" key="selection"/>
+		<item value="closed" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="view request"/>
-			<item value="all emp"/>
-			<item value="all"/>
-			<item value="#if"/>
-			<item value="getReqsByFnLn"/>
-			<item value="button"/>
-			<item value="png"/>
-			<item value="form"/>
+			<item value="closed"/>
+			<item value="section"/>
+			<item value="star-primary"/>
+			<item value="system"/>
+			<item value="btn btn-lg btn-primary btn-block"/>
+			<item value="col-md-offse"/>
+			<item value="margin-top"/>
+			<item value="findEmpByUname"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/"/>
@@ -26,7 +26,7 @@
 		<item value="336" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="454" key="DIALOG_HEIGHT"/>
-		<item value="1452" key="DIALOG_X_ORIGIN"/>
-		<item value="340" key="DIALOG_Y_ORIGIN"/>
+		<item value="1167" key="DIALOG_X_ORIGIN"/>
+		<item value="326" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

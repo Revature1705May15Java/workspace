@@ -106,3 +106,6 @@ Jun 08, 2017 21:56:04.80 [10924:4120:0608/215604.803:ERROR:navigation_entry_scre
 Jun 08, 2017 21:56:05.13 [10924:5564:0608/215605.134:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/underscore-min.mapfrom unknown origin. Could not find user data for request.
 Jun 08, 2017 21:56:05.13 [10924:5564:0608/215605.136:ERROR:extension_protocols.cc(340)] Allowing load of chrome-extension://chhjbpecpncaggjpdakmflnfcopglcmi/js/libs/backbone-min.mapfrom unknown origin. Could not find user data for request.
 Jun 08, 2017 22:00:42.14 [10924:4120:0608/220042.087:ERROR:navigation_entry_screenshot_manager.cc(135)] Invalid entry with unique id: 184
+
+Jun 15, 2017 22:09:14.31 NEW SESSION
+Jun 15, 2017 22:09:14.31 [7180:8108:0615/220914.311:ERROR:entry_impl.cc(1039)] No file for 8000002c

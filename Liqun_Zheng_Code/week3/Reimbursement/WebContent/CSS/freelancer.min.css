@@ -36,7 +36,7 @@ hr.star-light, hr.star-primary {
 }
 
 hr.star-light:after, hr.star-primary:after {
-	content: "\f005";
+	
 	font-family: FontAwesome;
 	display: inline-block;
 	position: relative;
@@ -193,7 +193,7 @@ section h2 {
 
 section.success {
 	background: #18BC9C;
-	color: #333
+	color: #000000
 }
 
 @media ( max-width :767px) {

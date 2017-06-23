@@ -62,7 +62,7 @@ public class ManagerServletUpdate extends HttpServlet {
 		Employee emp = new Employee();
 		HttpSession s = request.getSession(true);
 		
-		emp = (Employee) s.getAttribute("Employee");
+		emp = (Employee) s.getAttribute("Manager");
 		System.out.println(emp.toString());
 		Service service = new Service();
 		
@@ -70,8 +70,7 @@ public class ManagerServletUpdate extends HttpServlet {
 		try{
 			Employee temp = service.updateInfo(emp, fname, lname, uname, pw);
 			if(temp!=null){
-	
-				s.setAttribute("Employee", temp);
+				s.setAttribute("Manager", temp);
 				response.sendRedirect("managerHome");
 				//request.getRequestDispatcher("employeeHome.ftl").forward(request, response);
 			}
@@ -89,6 +88,7 @@ public class ManagerServletUpdate extends HttpServlet {
 				request.setAttribute("lastname", ln);
 				request.setAttribute("uname", username);
 				request.setAttribute("requests", reqs);
+				request.setAttribute("employees", emp.getEmployees());
 				request.getRequestDispatcher("managerHome.ftl").forward(request, response);
 			}
 		}
@@ -104,6 +104,7 @@ public class ManagerServletUpdate extends HttpServlet {
 			request.setAttribute("lastname", ln);
 			request.setAttribute("uname", username);
 			request.setAttribute("requests", reqs);
+			request.setAttribute("employees", emp.getEmployees());
 			request.getRequestDispatcher("managerHome.ftl").forward(request, response);
 //			response.sendRedirect("Error.html");
 //		} catch (ServletException e) {
