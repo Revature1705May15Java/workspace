@@ -36,12 +36,10 @@ public class ApproveRequestServlet extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-		System.out.println("in approve post");
 		HttpSession session = request.getSession(true); 
 		Employee e = (Employee)session.getAttribute("employee");
-		
+
 		int id = Integer.parseInt(request.getParameter("reqid"));
-		System.out.println(id);
 		ErsService service = new ErsService(); 
 		RequestDispatcher rd; 
 		

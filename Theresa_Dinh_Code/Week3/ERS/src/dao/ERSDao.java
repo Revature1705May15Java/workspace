@@ -489,11 +489,13 @@ public class ERSDao
                 temp.setRequestId(rs.getInt(6));
                 temp.setRequesterId(rs.getInt(7));
                 temp.setApproverId(rs.getInt(8));
+                return temp; 
             }
             c.close();
         }
         catch(SQLException e)
         {
+        	System.out.println("exception caught");
             e.printStackTrace(); 
         }
         return null; 
@@ -549,10 +551,6 @@ public class ERSDao
 	    			+ "WHERE REQUESTID = ?"; 
 	    	PreparedStatement ps = c.prepareStatement(s); 
 	    	
-//	    	Date date = new Date(); 
-//			Timestamp ts = new Timestamp(date.getTime()); 
-	    	
-//			ps.setTimestamp(1, ts);
 			ps.setInt(1, request.getApproverId());
 	    	ps.setInt(2, request.getRequestId());
 	    	
@@ -562,7 +560,6 @@ public class ERSDao
 				System.out.println("Row Update Failure");
 				return false; 
 			}
-	    	
 	    	c.commit();
 	    	ps.close();
 	    	c.setAutoCommit(true);

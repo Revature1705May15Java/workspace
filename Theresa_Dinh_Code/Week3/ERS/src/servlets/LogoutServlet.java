@@ -37,8 +37,8 @@ public class LogoutServlet extends HttpServlet 		// DONE!!!
 		session.invalidate();
 		RequestDispatcher rd = request.getRequestDispatcher("logout.ftl"); 
 		rd.forward(request, response);
-		ServletContext context = request.getServletContext(); 
-		context.getNamedDispatcher("LoginServlet"); 
+//		ServletContext context = request.getServletContext(); 
+//		context.getNamedDispatcher("LoginServlet"); 
 	}
 
 }

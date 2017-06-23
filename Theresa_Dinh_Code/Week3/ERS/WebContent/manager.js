@@ -1,8 +1,6 @@
 $(document).ready(function() 
 {
-    console.log("ready called"); 
-    
-    table = $('#req-table').dataTable( 
+    var table = $('#req-table').dataTable( 
     {
         columns: 
         [
@@ -30,13 +28,13 @@ $(document).ready(function()
     });
     table.on('click', 'tr', function()
     {
-        console.log("click acknowledged");
         if($(this).hasClass('selected'))
         {
             $(this).removeClass('selected'); 
         }
         else
         {
+            console.log("else called"); 
             table.$('tr.selected').removeClass('selected'); 
             $(this).addClass('selected'); 
             
@@ -80,9 +78,10 @@ $(document).ready(function()
 
             if(status == "Pending")
             {
+                console.log("if" + id); 
                 $('#resolve-modal').modal('show');
                 $('#reqid').val(id); 
-                $('#reqid').html(id);
+//                $('#reqid').html(id);
             }
         }
     }); 

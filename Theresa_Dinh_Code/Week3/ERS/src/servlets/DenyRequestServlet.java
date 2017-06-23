@@ -43,12 +43,10 @@ public class DenyRequestServlet extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-		System.out.println("in deny post");
 		HttpSession session = request.getSession(true); 
 		Employee e = (Employee)session.getAttribute("employee");
 		
 		int id = Integer.parseInt(request.getParameter("reqid"));
-		System.out.println(id);
 		ErsService service = new ErsService(); 
 		RequestDispatcher rd; 
 		

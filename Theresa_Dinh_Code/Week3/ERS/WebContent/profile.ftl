@@ -100,13 +100,6 @@
             <h3 style="color:#c91d1d">      Your request was not processed correctly. Please try again later.</h3>
         </#if>
         
-
-        <!-- footer -->
-        <div id="footer">
-            <footer>Vivamus molestie pretium nunc tempus enim &copy; 2017 
-                <br><a href="http://www.lipsum.com/">Dummy text provided by: http://www.lipsum.com</a> 
-            </footer>
-        </div>
         
 <!--        script -->
         <script type="text/javascript">

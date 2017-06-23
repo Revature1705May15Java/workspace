@@ -117,13 +117,15 @@
                         <h4 class="modal-title">Approve/Deny Request</h4>
                     </div>
                     <div class="modal-body">
-                        <input type="text" id="reqid"></input>
                         <p id="rname"></p>
                         <p id="remail"></p>
                         <p id="ramount"></p>
                         <p id="rpurpose"></p>
-                        <button id="approve" class="btn btn-default" name="approve" action="ApproveRequestServlet" method="post" type="submit"><a href="manager.ftl">Approve</a></button>
-                        <button id="deny" name="deny" class="btn btn-default" action="DenyRequestServlet" method="post" type="submit"><a href="manager.ftl">Deny</a></button>
+                        <form method="post" class="dummy">
+                            <input type="number" name="reqid" id="reqid" value="0" readonly></input>
+                            <input id="approve" name="approve" type="submit" value="Approve" onclick="form.action='ApproveRequestServlet';"/>
+                            <input id="deny" value="Deny" name="deny" type="submit" onclick="form.action='DenyRequestServlet';"/>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

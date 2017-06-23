@@ -148,7 +148,6 @@ public class ErsService
 			System.out.println("This request has already been resolved.");
 			return false; 
 		}
-		
 		else if(dao.approveRequest(request))
 			return true;
 		return false; 
