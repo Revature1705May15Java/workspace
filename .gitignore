@@ -8,3 +8,9 @@ Richard_Marquez_Code/ERS/log.txt
 Richard_Marquez_Code/**/out/*
 Richard_Marquez_Code/**/hibernate.cfg.xml
 Richard_Marquez_Code/**/out/**/hibernate.cfg.xml
+
+Richard_Marquez_Code/HelloSummer/src/main/resources/META-INF/applicationContext.xml
+
+Richard_Marquez_Code/HelloSummer/target/classes/applicationContext.xml
+
+Richard_Marquez_Code/HelloSummer/target/classes/META-INF/applicationContext.xml

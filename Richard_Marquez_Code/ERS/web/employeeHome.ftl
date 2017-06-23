@@ -1,73 +1,75 @@
 <#include "./header.ftl">
 
 
-<div class="row container-fluid">
-    <div id="pendingRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
-        <h3><strong>Open</strong> Requests</h3>
-        <table id="pendingRequestsTable" class="table table-hover tablesorter">
-            <thead>
-            <tr>
-                <th class="col-md-1 hidden-xs hidden-sm">Status</th>
-                <th class="col-md-1 col-xs-1">#</th>
-                <th class="col-md-6 hidden-xs hidden-sm">Purpose</th>
-                <th class="col-md-2">Amount</th>
-                <th class="col-md-2">Opened</th>
-            </tr>
-            </thead>
-
-            <tbody>
-            <#list pendingRequests as r>
-                <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                    <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
-                    <td class="id">${r.getId()}</td>
-                    <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
-                    <td class="amount">${r.getAmount()?string.currency}</td>
-                    <td class="dateRequested">${r.getDateRequested()}</td>
-                </tr>
-            </#list>
-            </tbody>
-        </table>
-        <#if pendingRequests?size < 1>
-        <h4 class="unavailable alert alert-warning">No requests available</h4>
-        </#if>
-    </div>
-
-
-    <div id="resolvedRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
-        <h3><strong>Resolved</strong> Requests</h3>
-
-        <table id="resolvedRequestsTable" class="table table-hover tablesorter">
-            <thead>
+<div class="container-fluid">
+    <div class="row">
+        <div id="pendingRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+            <h3><strong>Open</strong> Requests</h3>
+            <table id="pendingRequestsTable" class="table table-hover tablesorter">
+                <thead>
                 <tr>
                     <th class="col-md-1 hidden-xs hidden-sm">Status</th>
                     <th class="col-md-1 col-xs-1">#</th>
-                    <th class="col-md-5 hidden-xs hidden-sm">Purpose</th>
-                    <th class="col-md-1">Amount</th>
-                    <th class="col-md-2 hidden-xs hidden-sm">Opened</th>
-                    <th class="col-md-2">Closed</th>
+                    <th class="col-md-6 hidden-xs hidden-sm">Purpose</th>
+                    <th class="col-md-2">Amount</th>
+                    <th class="col-md-2">Opened</th>
                 </tr>
-            </thead>
+                </thead>
 
-            <tbody>
-            <#list resolvedRequests as r>
-                <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                    <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
-                    <td class="id">${r.getId()}</td>
-                    <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
-                    <td class="amount">${r.getAmount()?string.currency}</td>
-                    <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
-                    <td class="dateResolved">${r.getDateResolved()}</td>
-                    <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
-                    <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
-                </tr>
-            </#list>
-            </tbody>
-        </table>
-        <#if resolvedRequests?size < 1>
-        <h4 class="unavailable alert alert-warning">No requests available</h4>
-        </#if>
+                <tbody>
+                <#list pendingRequests as r>
+                    <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
+                        <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                        <td class="id">${r.getId()}</td>
+                        <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
+                        <td class="amount">${r.getAmount()?string.currency}</td>
+                        <td class="dateRequested">${r.getDateRequested()}</td>
+                    </tr>
+                </#list>
+                </tbody>
+            </table>
+            <#if pendingRequests?size < 1>
+            <h4 class="unavailable alert alert-warning">No requests available</h4>
+            </#if>
+        </div>
+
+
+        <div id="resolvedRequests" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+            <h3><strong>Resolved</strong> Requests</h3>
+
+            <table id="resolvedRequestsTable" class="table table-hover tablesorter">
+                <thead>
+                    <tr>
+                        <th class="col-md-1 hidden-xs hidden-sm">Status</th>
+                        <th class="col-md-1 col-xs-1">#</th>
+                        <th class="col-md-5 hidden-xs hidden-sm">Purpose</th>
+                        <th class="col-md-1">Amount</th>
+                        <th class="col-md-2 hidden-xs hidden-sm">Opened</th>
+                        <th class="col-md-2">Closed</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <#list resolvedRequests as r>
+                    <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
+                        <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                        <td class="id">${r.getId()}</td>
+                        <td class="text purpose hidden-xs hidden-sm"><span>${r.getPurpose()}</span></td>
+                        <td class="amount">${r.getAmount()?string.currency}</td>
+                        <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
+                        <td class="dateResolved">${r.getDateResolved()}</td>
+                        <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
+                        <td class="handler" style="display:none;">${r.getHandlerEmail()}</td>
+                    </tr>
+                </#list>
+                </tbody>
+            </table>
+            <#if resolvedRequests?size < 1>
+            <h4 class="unavailable alert alert-warning">No requests available</h4>
+            </#if>
+        </div>
+
     </div>
-
 </div>
 
 

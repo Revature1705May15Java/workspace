@@ -1,41 +1,43 @@
 <#include "./header.ftl">
 
-<div id="managerMain" class="row container-fluid">
-    <div id="requestArchiveTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1">
-        <h3><strong>Closed</strong> Requests</h3>
-        <table id="requestArchiveTable" class="table table-hover tablesorter">
-            <thead>
-            <tr>
-                <th class="">#</th>
-                <th class="hidden-xs hidden-sm">Status</th>
-                <th class="hidden-xs hidden-sm">Opened</th>
-                <th class="hidden-xs hidden-sm">Closed</th>
-                <th class="">Requester</th>
-                <th class="hidden-xs hidden-sm">Handler</th>
-                <th class="">Amount</th>
-                <th style="display:none;">Purpose</th>
-                <th style="display:none;">Note</th>
-            </tr>
-            </thead>
+<div class="container-fluid">
+    <div id="managerMain" class="row">
+        <div id="requestArchiveTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1">
+            <h3><strong>Resolved</strong> Requests</h3>
+            <table id="requestArchiveTable" class="table table-hover tablesorter">
+                <thead>
+                <tr>
+                    <th class="">#</th>
+                    <th class="hidden-xs hidden-sm">Status</th>
+                    <th class="hidden-xs hidden-sm">Opened</th>
+                    <th class="hidden-xs hidden-sm">Closed</th>
+                    <th class="">Requester</th>
+                    <th class="hidden-xs hidden-sm">Handler</th>
+                    <th class="">Amount</th>
+                    <th style="display:none;">Purpose</th>
+                    <th style="display:none;">Note</th>
+                </tr>
+                </thead>
 
-            <tbody>
-            <#list requestArchive as r>
-            <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
-                <td class="id">${r.getId()}</td>
-                <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
-                <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
-                <td class="dateResolved hidden-xs hidden-sm">${r.getDateResolved()}</td>
-                <td class="requester">${r.getRequesterEmail()}</td>
-                <td class="handler hidden-xs hidden-sm">${r.getHandlerEmail()}</td>
-                <td class="amount">${r.getAmount()?string.currency}</td>
-                <td class="purpose" style="display:none;">${r.getPurpose()}</td>
-                <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
-            </tr>
-            </#list>
-            </tbody>
-        </table>
+                <tbody>
+                <#list requestArchive as r>
+                <tr id="request${r.getId()}" data-toggle="modal" data-target="#viewRequestModal">
+                    <td class="id">${r.getId()}</td>
+                    <td class="state hidden-xs hidden-sm">${r.getState().name()}</td>
+                    <td class="dateRequested hidden-xs hidden-sm">${r.getDateRequested()}</td>
+                    <td class="dateResolved hidden-xs hidden-sm">${r.getDateResolved()}</td>
+                    <td class="requester">${r.getRequesterEmail()}</td>
+                    <td class="handler hidden-xs hidden-sm">${r.getHandlerEmail()}</td>
+                    <td class="amount">${r.getAmount()?string.currency}</td>
+                    <td class="purpose" style="display:none;">${r.getPurpose()}</td>
+                    <td class="note" style="display:none;"><#if r.getNote()??>${r.getNote()}</#if></td>
+                </tr>
+                </#list>
+                </tbody>
+            </table>
+        </div>
+
     </div>
-
 </div>
 
 

@@ -26,7 +26,7 @@ public class ConnectionFactory {
 
     // Ensure connection does not exceed max cursor count; reset after a number of connection usages
     private static int connCount = 0;
-    private static final int maxConnCount = 10;
+    private static final int maxConnCount = 25;
 
 
     private ConnectionFactory() {
@@ -56,13 +56,18 @@ public class ConnectionFactory {
 
     public Connection getConnection() throws InterruptedException, IOException {
         try {
-            if (connCount > maxConnCount || conn == null || conn.isClosed()) {
+            if (connCount > maxConnCount) {
                 connCount = 0;
+                conn.close();
+                conn = null;
+            }
+
+            if (connCount > maxConnCount || conn == null || conn.isClosed()) {
                 conn = DriverManager.getConnection(url, usr, pwd);
             }
         } catch (Exception e) {
             Logger.getLogger(ConnectionFactory.class).error("Failed to get connection");
-            Thread.sleep(500);
+//            Thread.sleep(500);
             return getConnection();
         }
 

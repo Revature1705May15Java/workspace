@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
     <div id="managerMain" class="row">
-        <div id="managerPendingRequestsTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1 col-md-5 col-md-offset-1">
+        <div id="managerPendingRequestsTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-1">
             <h3><strong>Open</strong> Requests</h3>
             <table id="pendingRequestsTable" class="table table-hover tablesorter">
                 <thead>
@@ -34,7 +34,7 @@
 
 
 
-        <div id="managerEmployeesTableContainer" class="white-container request-table-container col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-1">
+        <div id="managerEmployeesTableContainer" style="margin-left: 2em;" class="white-container request-table-container col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-0">
             <h3><strong>Employees</strong></h3>
             <table id="employeesTable" class="table table-hover tablesorter">
                 <thead>

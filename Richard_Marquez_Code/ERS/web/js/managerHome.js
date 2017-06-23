@@ -1,7 +1,7 @@
 initTables();
 
 $('#newUserForm input').alphanum({
-    allow: '-_$.',
+    allow: '-_$.@',
     maxLength: 50
 });
 
