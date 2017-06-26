@@ -3,6 +3,7 @@ package com.revature.controllers;
 import com.revature.model.Employee;
 import com.revature.services.EmployeeService;
 import com.revature.services.RequestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,11 @@ import java.io.IOException;
 @Controller
 public class EmployeeController {
 
-    private EmployeeService svc = EmployeeService.getInstance();
+//    private EmployeeService svc = EmployeeService.getInstance();
+    @Autowired
+    private EmployeeService svc;
+    @Autowired
+    private RequestService rSvc;
 
     @RequestMapping(value = { "", "/", }, method = RequestMethod.GET)
     public String getLanding() {
@@ -66,16 +71,17 @@ public class EmployeeController {
         return result;
     }
 
-    @ResponseBody
-    @RequestMapping(value = "addRequest", method = RequestMethod.POST)
-    public boolean addRequest(HttpServletRequest request, HttpServletResponse response) {
-        boolean result = RequestService.getInstance().addRequest(
-                Double.parseDouble(request.getParameter("amount")),
-                ((Employee)request.getSession().getAttribute("employee")).getId(),
-                request.getParameter("purpose")
-        );
-
-        return result;
-    }
+//    @ResponseBody
+//    @RequestMapping(value = "addRequest", method = RequestMethod.POST)
+//    public boolean addRequest(HttpServletRequest request, HttpServletResponse response) {
+////        boolean result = RequestService.getInstance().addRequest(
+//        boolean result = rSvc.addRequest(
+//                Double.parseDouble(request.getParameter("amount")),
+//                ((Employee)request.getSession().getAttribute("employee")).getId(),
+//                request.getParameter("purpose")
+//        );
+//
+//        return result;
+//    }
 
 }

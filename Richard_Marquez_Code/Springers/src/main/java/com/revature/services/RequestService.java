@@ -1,20 +1,27 @@
 package com.revature.services;
 
-        import com.revature.dao.Dao;
-        import com.revature.dao.DaoImpl;
-        import com.revature.model.Employee;
-        import com.revature.model.ReimbursementRequest;
+import com.revature.dao.Dao;
+import com.revature.dao.DaoImpl;
+import com.revature.model.Employee;
+import com.revature.model.ReimbursementRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RequestService {
-    private static RequestService INSTANCE = new RequestService();
-    Dao dao = DaoImpl.getInstance();
+//    private static RequestService INSTANCE = new RequestService();
+//    Dao dao = DaoImpl.getInstance();
 
-    private RequestService() {
-    }
+//    private RequestService() {
+//    }
+//
+//    public static RequestService getInstance() {
+//        return INSTANCE;
+//    }
 
-    public static RequestService getInstance() {
-        return INSTANCE;
-    }
+    @Autowired
+    Dao dao;
 
 
     public boolean addRequest(double amount, int requesterId, String purpose) {

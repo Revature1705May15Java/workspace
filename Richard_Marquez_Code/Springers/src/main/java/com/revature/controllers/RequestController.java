@@ -2,6 +2,7 @@ package com.revature.controllers;
 
         import com.revature.model.Employee;
         import com.revature.services.RequestService;
+        import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.stereotype.Controller;
         import org.springframework.web.bind.annotation.*;
 
@@ -9,10 +10,12 @@ package com.revature.controllers;
         import javax.servlet.http.HttpServletResponse;
         import java.io.IOException;
 
-//@Controller
+@Controller
 public class RequestController {
 
-    private RequestService svc = RequestService.getInstance();
+//    private RequestService svc = RequestService.getInstance();
+    @Autowired
+    private RequestService svc;
 
 
     @ResponseBody

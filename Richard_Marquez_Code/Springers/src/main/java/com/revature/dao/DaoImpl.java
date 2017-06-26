@@ -10,28 +10,50 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+@Repository
 @Transactional
 public class DaoImpl implements Dao {
-    private static AbstractApplicationContext appContext = new ClassPathXmlApplicationContext("beans.xml");
+//    private static AbstractApplicationContext appContext = new ClassPathXmlApplicationContext("beans.xml");
+//    private SessionFactory sessionFactory;
+//
+//    public DaoImpl() {
+//    }
+//
+//    public DaoImpl(SessionFactory sessionFactory) {
+//        this.sessionFactory = sessionFactory;
+//    }
+//
+//    public static Dao getInstance() {
+//        return appContext.getBean("dao", Dao.class);
+//    }
+//
+//    public void setSessionFactory(SessionFactory sessionFactory) {
+//        this.sessionFactory = sessionFactory;
+//    }
+//
+
+
+
+
     private SessionFactory sessionFactory;
 
-    public DaoImpl() {
-    }
+    public DaoImpl() {}
 
     public DaoImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
-    public static Dao getInstance() {
-        return appContext.getBean("dao", Dao.class);
-    }
-
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
+
+
+
 
 
     @Override
