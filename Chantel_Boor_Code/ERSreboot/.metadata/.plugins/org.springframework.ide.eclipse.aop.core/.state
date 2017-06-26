@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ERSReboot">
+<aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="12" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#ERSReboot#src/main/resources/beans.xml#12" aspect-start-line-number="12" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/ERSReboot/src/main/resources/beans.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:ERSReboot|3:src/main/resources/beans.xml|7:beans:8|8:myDao:45" bean-file="/ERSReboot/src/main/resources/beans.xml" bean-start-line="45" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/ERSReboot/src/main/resources/beans.xml" source="=ERSReboot/C:\/Users\/Chantel\/.m2\/repository\/org\/springframework\/spring-tx\/4.2.5.RELEASE\/spring-tx-4.2.5.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=ERSReboot/src\/main\/java&lt;com.revature.dao{DaoImpl.java[DaoImpl~makeEmployee~QEmployee;" target-start-line="28"/>
+</aspect-definition>
+</aop-project>
+</aop-reference-model>

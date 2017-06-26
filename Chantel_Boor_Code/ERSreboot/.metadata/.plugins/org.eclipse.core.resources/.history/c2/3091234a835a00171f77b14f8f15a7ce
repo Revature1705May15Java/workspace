@@ -1,0 +1,17 @@
+package com.revature.dao;
+
+import org.hibernate.SessionFactory;
+
+public class DaoImpl 
+{
+	//varible gets set by spring through setter injection
+	private SessionFactory sessionFactory;
+
+	//setter method for sessionFactory this is needed to inject the 
+	//dependency for this object
+	public void setSessionFactory(SessionFactory sessionFactory) 
+	{
+		this.sessionFactory = sessionFactory;
+	}
+	
+}
