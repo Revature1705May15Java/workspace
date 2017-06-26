@@ -14,3 +14,15 @@ Richard_Marquez_Code/HelloSummer/src/main/resources/META-INF/applicationContext.
 Richard_Marquez_Code/HelloSummer/target/classes/applicationContext.xml
 
 Richard_Marquez_Code/HelloSummer/target/classes/META-INF/applicationContext.xml
+
+Richard_Marquez_Code/Springers/src/main/webapp/WEB-INF/beans.xml
+
+Richard_Marquez_Code/Springers/target/classes/beans.xml
+
+Richard_Marquez_Code/Springers/target/Springers/WEB-INF/beans.xml
+
+Richard_Marquez_Code/Springers/target/Springers/WEB-INF/classes/beans.xml
+
+Richard_Marquez_Code/SpringMVCExample/src/main/webapp/WEB-INF/beans.xml
+
+Richard_Marquez_Code/SpringMVCExample/target/SpringMVCExample/WEB-INF/beans.xml
