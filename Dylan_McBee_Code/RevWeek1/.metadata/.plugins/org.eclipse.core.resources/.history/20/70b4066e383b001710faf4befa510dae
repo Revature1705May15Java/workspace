@@ -1,0 +1,9 @@
+package com.ex.lambdas;
+
+public class LamdaEx {
+
+	public static void main(String[] args) {
+
+	}
+
+}

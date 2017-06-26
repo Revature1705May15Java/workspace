@@ -1,0 +1,9 @@
+package com.ex.dao;
+
+import org.hibernate.SessionFactory;
+
+public class DaoImpl {
+
+	private SessionFactory sessionFactory;
+	
+}

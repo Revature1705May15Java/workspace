@@ -1,0 +1,27 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.ex.pojos.Bear;
+import com.ex.pojos.Cave;
+import com.ex.pojos.HoneyPot;
+import com.ex.util.ConnectionUtil;
+
+public class BearDAO {
+	// pass in bear object storing no dependencies
+	public void createBear(Bear b, HoneyPot hp, Cave c){
+		Session session = ConnectionUtil.getSession();
+		
+		
+		Transaction tx = session.beginTransaction();
+		b.setDwelling(c);
+		int hpId = (Integer) session.save(b.getHoneyPot());
+		System.out.println("Generated honey pot " + hpId);
+		
+		Bear child = new Bear();
+		child.setHeight(2.5);
+		
+	}
+	
+}

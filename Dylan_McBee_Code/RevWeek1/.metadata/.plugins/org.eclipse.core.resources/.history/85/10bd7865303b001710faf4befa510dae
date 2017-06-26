@@ -1,0 +1,15 @@
+package com.ex.nested;
+
+public class Doggo {
+
+	static int doggos= 1;
+	
+	static class DoggoCount{
+		void message(){
+			System.out.println("In my inner class! Data is: " + data);
+			System.out.println(this.getClass());
+			//System.out.println(x); //Cannot reference x because it is not static.
+		}
+	}
+	
+}

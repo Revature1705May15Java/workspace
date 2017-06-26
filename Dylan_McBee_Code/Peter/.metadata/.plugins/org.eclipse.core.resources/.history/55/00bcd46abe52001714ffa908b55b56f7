@@ -1,0 +1,43 @@
+package com.revature.model;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "USER_T")
+public class User {
+	
+	@Id
+	@Column(name= "U_ID")
+	private int id;
+	
+	@Column(name= "U_USERNAME")
+	private String userName;
+	
+	@Column(name= "U_PASSWORD")
+	private String password;
+	
+	@Column(name= "U_IMAGE")
+	private byte[] image;
+	
+	@Column(name = "U_S3_IMAGE")
+	private String s3Image;
+	
+	public User(){
+		
+	}
+	
+	public User(String userName){
+		this.userName = username;
+	}
+
+	public User(int id, String userName, String password, byte[] image, String s3Image) {
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		this.image = image;
+		this.s3Image = s3Image;
+	}
+	
+	
+}

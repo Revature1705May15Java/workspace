@@ -1,0 +1,17 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
+public class Logs {
+
+	static String fileName="src/com/ex/aop/logs.txt";
+	
+
+	static void write(String message){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true));){
+			
+		}
+	}
+	
+}

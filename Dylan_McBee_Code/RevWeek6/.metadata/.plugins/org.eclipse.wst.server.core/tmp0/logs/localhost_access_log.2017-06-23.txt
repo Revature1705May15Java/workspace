@@ -1,0 +1,10 @@
+127.0.0.1 - - [23/Jun/2017:12:28:46 -0400] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [23/Jun/2017:12:32:54 -0400] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [23/Jun/2017:12:32:55 -0400] "GET /SpringMVCExample/WEB-INF/pages/home.jsp HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [23/Jun/2017:12:33:07 -0400] "GET /SpringMVCExample/home HTTP/1.1" 200 208
+127.0.0.1 - - [23/Jun/2017:12:45:55 -0400] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [23/Jun/2017:12:45:56 -0400] "GET /SpringMVCExample/WEB-INF/pages/login.jsp HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [23/Jun/2017:12:46:11 -0400] "GET /SpringMVCExample/login HTTP/1.1" 200 625
+192.168.60.51 - - [23/Jun/2017:12:50:46 -0400] "GET /ERS/index.ftl HTTP/1.1" 404 1020
+192.168.60.51 - - [23/Jun/2017:12:50:47 -0400] "GET /favicon.ico HTTP/1.1" 404 1016
+192.168.60.51 - - [23/Jun/2017:12:52:49 -0400] "GET /ERS/index.ftl HTTP/1.1" 404 1020

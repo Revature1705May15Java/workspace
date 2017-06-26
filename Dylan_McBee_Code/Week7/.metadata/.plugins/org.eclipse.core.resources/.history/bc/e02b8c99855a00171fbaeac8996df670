@@ -1,0 +1,10 @@
+package com.ers.beans;
+
+
+@Entity
+@Table(name="EMPLOYEE")
+public class Employee {
+
+	
+	
+}

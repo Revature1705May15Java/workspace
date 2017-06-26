@@ -244,7 +244,7 @@ body {
 								<th class="col-md-1 col-xs-1">Manager Name</th>
 							</tr>
 							<tr class="warning no-result">
-								<td colspan="5"><i class="fa fa-warning"></i> No result</td>
+								<td colspan="6"><i class="fa fa-warning"></i> No result</td>
 							</tr>
 							<#list requests as request>
 						

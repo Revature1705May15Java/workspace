@@ -1,0 +1,25 @@
+package com.ex.nested;
+
+
+public class Doggo {
+
+	static int doggos= 1;
+	
+	static class DoggoCount{
+		void message(){
+			System.out.println("In my inner class! Doggos present " + doggos);
+			System.out.println(this.getClass());
+			//System.out.println(x); //Cannot reference x because it is not static.
+		}
+	}
+	public static void main(String[] args) {
+		Doggo.DoggoCount objectOfDc = new Doggo.DoggoCount();
+		DoggoCount objDc = new DoggoCount();
+		
+		objDc.message();
+		// in order to create an object of B, we must use [outerclass].[innerclass]
+		
+		objectOfDc.message();
+	}
+	
+}

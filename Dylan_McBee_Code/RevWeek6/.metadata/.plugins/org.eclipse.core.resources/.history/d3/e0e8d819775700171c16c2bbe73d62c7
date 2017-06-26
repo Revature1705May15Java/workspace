@@ -1,0 +1,21 @@
+package com.ex.dao;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+
+import com.ex.beans.Bear;
+
+public class DaoImpl {
+
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	public List<Bear> getBears(){
+		
+	}
+	
+}

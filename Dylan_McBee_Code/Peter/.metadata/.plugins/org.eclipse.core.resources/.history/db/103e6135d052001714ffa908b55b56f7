@@ -1,0 +1,11 @@
+package com.revature.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class UploadImageController {
+
+	public static String uploadImage(HttpServletRequest request){
+		return "profile.jsp";
+	}
+	
+}

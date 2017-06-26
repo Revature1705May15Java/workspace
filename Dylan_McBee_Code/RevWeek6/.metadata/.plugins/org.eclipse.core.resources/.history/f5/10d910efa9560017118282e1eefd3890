@@ -1,0 +1,14 @@
+package com.ex.respository;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+
+public class CustomerServiceImpl {
+
+	private CustomerRepository cr = new CustomerRepositoryImpl();
+	public List<Customer> findAll(){
+		return cr.findAll();
+	}
+	
+}

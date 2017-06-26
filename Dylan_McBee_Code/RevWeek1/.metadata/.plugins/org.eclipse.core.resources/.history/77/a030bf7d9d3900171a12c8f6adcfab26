@@ -1,0 +1,25 @@
+package com.rev.pojos;
+
+public class Student {
+	
+	int id;
+	String firstName, lastName, email;
+	
+	public Student(){
+		
+	}
+	public Student(String firstName, String lastName){
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public Student(int id, String firstName, String lastName, String email) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+	
+}

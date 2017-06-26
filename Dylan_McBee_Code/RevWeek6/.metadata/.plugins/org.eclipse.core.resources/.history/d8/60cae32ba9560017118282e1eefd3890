@@ -1,0 +1,17 @@
+package com.ex.respository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ex.model.Customer;
+
+public class CustomerRepositoryImpl {
+
+	public List<Customer> findAll(){
+		List<Customer> customers = new ArrayList<Customer>();
+		Customer c = new Customer("Dylan", "McBee");
+		
+		return customers;
+	}
+	
+}

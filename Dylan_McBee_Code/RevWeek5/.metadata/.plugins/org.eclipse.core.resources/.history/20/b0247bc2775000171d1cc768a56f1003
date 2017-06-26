@@ -1,0 +1,18 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.ex.pojos.Bear;
+import com.ex.util.ConnectionUtil;
+
+public class BearDAO {
+
+	public void createBear(Bear b){
+		Session session = ConnectionUtil.getSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+	}
+	
+}

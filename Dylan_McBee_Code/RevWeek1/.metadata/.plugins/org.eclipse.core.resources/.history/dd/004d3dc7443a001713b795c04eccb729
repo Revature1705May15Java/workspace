@@ -1,0 +1,32 @@
+package com.ex.p2;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class FSTest {
+
+	Fibonacci fs;
+	@Before
+	public void setUp() throws Exception {
+		fs = new Fibonacci();
+		System.out.println("in setUp()");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	fs = null;
+	}
+
+	@Test
+	public void test() {
+		int input = 5;
+		int[] expected = {0,0,1,2,3};
+		actual = printFibonacci(5);
+		
+		
+	}
+
+}

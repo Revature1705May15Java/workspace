@@ -1,0 +1,21 @@
+package com.revature.model;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "USER_T")
+public class User {
+	
+	@Id
+	@Column
+	private int id;
+	
+	private String userName;
+	
+	private String password;
+	
+	private byte[] image;
+	
+	
+}

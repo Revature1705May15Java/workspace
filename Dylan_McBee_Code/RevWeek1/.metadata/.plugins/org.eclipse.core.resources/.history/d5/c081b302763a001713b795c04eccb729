@@ -1,0 +1,15 @@
+package com.ex.service;
+
+import com.ex.dao.DAO;
+import com.ex.dao.IoDAO;
+
+public class StudentService {
+	DAO dao = new IoDAO();
+	
+	/* - create student oject taking in only 3 params
+	 *  - fn, ln, email
+	 *  service layer aka business logic layer handles the functionality of
+	 *  getting the most recently used ID and assigning the new student the next value
+	 *  - must also only accept unique email address
+	 */
+}

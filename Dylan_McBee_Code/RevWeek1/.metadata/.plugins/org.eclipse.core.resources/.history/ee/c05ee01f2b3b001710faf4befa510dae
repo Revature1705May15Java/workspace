@@ -1,0 +1,10 @@
+package com.ex.nested;
+//non static inner class
+public class MemberInner {
+	int data = 50;
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

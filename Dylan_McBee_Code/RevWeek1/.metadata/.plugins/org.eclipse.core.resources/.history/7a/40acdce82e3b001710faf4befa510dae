@@ -1,0 +1,28 @@
+package com.ex.nested;
+/*
+ * a class that has no name is known as an anonymous class
+ * it should be used if you have to override the method 
+ * of a class or an interface
+ * 
+ */
+abstract class Person{
+	abstract void eat();
+}
+
+public class AnonymousInner {
+
+	public static void main(String[] args) {
+		
+		Person p = new Person(){
+
+			@Override
+			void eat() {
+				System.out.println("yum");
+			}
+			
+		};
+		p.eat();
+		
+	}
+
+}

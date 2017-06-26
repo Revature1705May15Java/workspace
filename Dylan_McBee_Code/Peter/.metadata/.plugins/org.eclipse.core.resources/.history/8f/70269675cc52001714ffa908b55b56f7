@@ -1,0 +1,19 @@
+package com.revature.dao;
+
+import org.hibernate.Session;
+
+import com.revature.model.User;
+import com.revature.util.HibernateUtil;
+
+public class UserDaoHibernate implements UserDao{
+
+	@Override
+	public void update(User user){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.saveOrUpdate(user);
+		session.getTransaction().commit();
+		
+	}
+	
+}

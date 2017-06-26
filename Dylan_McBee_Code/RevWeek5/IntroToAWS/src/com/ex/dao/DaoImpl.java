@@ -1,0 +1,24 @@
+package com.ex.dao;
+
+import org.hibernate.Transaction;
+
+import org.hibernate.Session;
+
+import com.ex.pojos.Person;
+import com.ex.util.ConnectionUtil;
+
+public class DaoImpl {
+
+	
+	public void addPerson(Person p){
+		Session session = ConnectionUtil.getSession();
+		try{
+			Transaction tx = session.beginTransaction();
+			session.save(p);
+			tx.commit();
+		}
+		finally{
+			session.close();
+		}
+	}
+}

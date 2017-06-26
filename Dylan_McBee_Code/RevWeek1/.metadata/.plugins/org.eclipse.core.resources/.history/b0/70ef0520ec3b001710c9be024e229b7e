@@ -1,0 +1,10 @@
+package com.ex.strings;
+
+public class StringSBCompare {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

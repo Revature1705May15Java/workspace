@@ -1,0 +1,25 @@
+package com.rev.intro;
+
+public class HelloWorld {
+	
+	public static void main(String[] args) {
+		//public = access modifier
+		//static = belongs to the class, not the object
+		//void = return type
+		// main = method name
+		// () = parameters
+		// String = data type [] array of strings
+		// args - var name
+		System.out.println("Hello World!");
+		
+		int a = 0;
+		char b = '0';
+		short c = 0;
+		long d = 0;;
+		float e = 0.0f;
+		byte f = 0;
+		double g = 0.0;
+		boolean h = false;
+	}
+
+}

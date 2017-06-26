@@ -1,0 +1,13 @@
+package com.ex.dao;
+
+import java.util.ArrayList;
+
+import com.ex.pojos.Student;
+
+public interface DAO {
+
+	 boolean addStudents(Student s);
+	 boolean removeStudents(Student s);
+	 ArrayList<Student> getAllStudents();
+	
+}

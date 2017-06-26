@@ -1,0 +1,13 @@
+package com.ex.p5;
+
+import java.util.ArrayList;
+
+public class Prime {
+
+	public static void main(String[] args) {
+
+		
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+	}
+
+}

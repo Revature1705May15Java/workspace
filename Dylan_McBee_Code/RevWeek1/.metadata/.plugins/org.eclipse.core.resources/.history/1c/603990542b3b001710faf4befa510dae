@@ -1,0 +1,19 @@
+package com.ex.nested;
+//non static inner class
+public class MemberInner {
+	int data = 50;
+	static int staticdata = 100;
+	
+	
+	class Inner{
+		void message(){
+			System.out.println("in inner method. data is " + data);
+			System.out.println("static data is " + data);
+		}
+	}
+	public static void main(String[] args) {
+		
+		
+	}
+
+}

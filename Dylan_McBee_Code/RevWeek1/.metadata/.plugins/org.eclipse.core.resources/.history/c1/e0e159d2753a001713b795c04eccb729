@@ -1,0 +1,8 @@
+package com.ex.service;
+
+import com.ex.dao.DAO;
+import com.ex.dao.IoDAO;
+
+public class StudentService {
+	DAO dao = new IoDAO();
+}

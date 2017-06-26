@@ -1,0 +1,31 @@
+package com.ex.nested;
+
+
+public class Doggo {
+
+	static int doggos= 1;
+	static int manyDoggos = 10;
+	class Inner{
+		int moreDoggos = 3; // shadowing
+		void message(){
+			System.out.println("in inner method. New count of Doggos is " + moreDoggos);
+			System.out.println("Many more doggos! New count is " + manyDoggos);;
+		}
+	}
+	
+	static class DoggoCount{
+		void message(){
+			System.out.println("In my inner class! Doggos present " + doggos);
+			System.out.println(this.getClass());
+		}
+	}
+	public static void main(String[] args) {
+		Doggo.DoggoCount objectOfDc = new Doggo.DoggoCount();
+		DoggoCount objDc = new DoggoCount();
+		
+		objDc.message();
+		
+		objectOfDc.message();
+	}
+	
+}

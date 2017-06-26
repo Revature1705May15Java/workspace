@@ -1,0 +1,11 @@
+package com.revature.request;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class RequestHelper {
+
+	public String process(HttpServletRequest request){
+		return "";
+	}
+	
+}

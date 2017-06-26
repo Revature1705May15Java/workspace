@@ -1,0 +1,23 @@
+package com.ex.strings;
+
+public class StringSBCompare {
+
+	public static void main(String[] args) {
+		String str = "hello";
+		StringBuilder sbuild = new StringBuilder(str);
+		StringBuffer sbuff = new StringBuffer(str);
+		
+		str = str.concat(" world");
+		sbuild.append(" world");
+		sbuff.append(" world");
+		
+		System.out.println(str);
+		System.out.println(sbuild);
+		System.out.println(sbuff);
+		
+		char x = 0;
+		int y = x; //implicit
+		char z = (char) y;//explicit
+	}
+
+}

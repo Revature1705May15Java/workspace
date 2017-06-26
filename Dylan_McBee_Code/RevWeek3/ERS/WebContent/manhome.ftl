@@ -213,7 +213,7 @@ background-position: 50% 0%;
 							</tr>
 							
 							<tr class="warning no-result">
-								<td colspan="5"><i class="fa fa-warning"></i> No result</td>
+								<td colspan="6"><i class="fa fa-warning"></i> No result</td>
 							</tr>
 							<#list pRequests as request>
 							

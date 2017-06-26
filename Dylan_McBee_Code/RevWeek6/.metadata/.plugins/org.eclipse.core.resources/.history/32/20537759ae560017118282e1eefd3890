@@ -1,0 +1,32 @@
+package com.ex.repository;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.repository.CustomerRepository;
+import com.ex.repository.CustomerService;
+
+public class CustomerServiceImpl implements CustomerService {
+	private CustomerRepository customerRepository;
+	
+	
+	public CustomerServiceImpl(){
+		
+	}
+
+	public void setCustomerRepository(CustomerRepository cr) {
+		this.customerRepository = cr;
+	}
+
+	// private CustomerRepository cr = new CustomerRepositoryImpl();
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.ex.respository.CustomerService#findAll()
+	 */
+	public List<Customer> findAll() {
+		System.out.println("In service layer!");
+		return customerRepository.findAll();
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.ex.serialization;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class Serialize {
+
+	
+	public static void main(String[] args) {
+		String byteStream = "src/com/ex/serialization/bytestream.txt";
+	}
+	
+	
+	static void writeObject(String byteStream, Object obj){
+		
+		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(byteStream))){
+			oos.writeObject(obj);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+}

@@ -1,0 +1,54 @@
+package com.ex.pojos;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "HONEYPOT")
+public class HoneyPot {
+
+	@Id
+	@Column(name = "H_ID")
+	@SequenceGenerator(name="HONEYPOTID_SEQ", sequenceName="HONEYPOTID_SEQ")
+	private int id;
+	private double amount;
+	
+	public HoneyPot(){
+		
+	}
+
+	public HoneyPot(int id, double honeyAmount) {
+		super();
+		this.id = id;
+		this.amount = honeyAmount;
+	}
+
+	public HoneyPot(double honeyAmount) {
+		super();
+		this.amount = honeyAmount;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public double getHoneyAmount() {
+		return amount;
+	}
+
+	public void setHoneyAmount(double honeyAmount) {
+		this.amount = honeyAmount;
+	}
+
+	@Override
+	public String toString() {
+		return "HoneyPot [id=" + id + ", honeyAmount=" + amount + "]";
+	}
+	
+}

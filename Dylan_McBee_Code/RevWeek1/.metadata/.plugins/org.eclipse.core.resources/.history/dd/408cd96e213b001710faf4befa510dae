@@ -1,0 +1,47 @@
+package com.ex.p4;
+
+import java.util.ArrayList;
+
+public class Palindrome {
+
+	public static boolean checkPalindrome(ArrayList<String> words){
+		
+		for(String w: words){
+			int i1 = 0;
+			int i2 = w.length()-1;
+			while(i2 > i1){
+				if(w.indexOf(i1) != w.indexOf(i2)){
+					return false;
+				}
+				++i1;
+				--i2;
+			}
+		}
+		
+		return true;
+	}
+	
+	public static void main(String[] args) {
+		
+		ArrayList<String> words = new ArrayList<String>();
+		words.add("karan");
+		words.add("madam");
+		words.add("tom");
+		words.add("civic");
+		words.add("radar");
+		words.add("sexes");
+		words.add("jimmy");
+		words.add("kayak");
+		words.add("john");
+		words.add("refer");
+		words.add("billy");
+		words.add("did");
+		for(int i = 0; i<=words.size();i++)
+			if(checkPalindrome(words)==false){
+			ArrayList<String> palindrome = new ArrayList<String>();
+			palindrome.add(words.toString());
+		}
+		
+	} 
+	
+}

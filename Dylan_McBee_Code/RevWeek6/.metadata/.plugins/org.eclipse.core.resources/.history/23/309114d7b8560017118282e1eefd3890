@@ -1,0 +1,21 @@
+package com.ex.aop;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Logs {
+
+	static String fileName="src/com/ex/aop/logs.txt";
+	
+
+	static void write(String message){
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true));){
+			bw.write(message);
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	
+}

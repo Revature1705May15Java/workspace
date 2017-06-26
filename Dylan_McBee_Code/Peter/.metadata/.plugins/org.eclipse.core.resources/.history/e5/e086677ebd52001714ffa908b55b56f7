@@ -1,0 +1,9 @@
+package com.revature.model;
+
+
+@Entity
+@Table(name = "USER_T")
+public class User {
+
+	
+}

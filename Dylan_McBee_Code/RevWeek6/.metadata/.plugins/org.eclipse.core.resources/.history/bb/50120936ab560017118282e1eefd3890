@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Defining our XML namespace - default space for beans.xml
+	xsi: XML Schema Instance:
+	SchemaLocation is added to our XML file and gives us context sensitive
+	help inside of our App. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+</beans>

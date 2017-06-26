@@ -1,0 +1,9 @@
+package com.ex.serialization;
+
+public class Serialize {
+
+	
+	public static void main(String[] args) {
+		String byteStream = "src/com/ex/serialization/bytestream.txt";
+	}
+}

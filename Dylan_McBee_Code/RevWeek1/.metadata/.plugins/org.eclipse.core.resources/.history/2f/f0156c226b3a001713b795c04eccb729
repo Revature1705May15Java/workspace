@@ -1,0 +1,6 @@
+package com.ex.exceptions;
+
+public class StudentNotFoundException extends Exception {
+
+	
+}

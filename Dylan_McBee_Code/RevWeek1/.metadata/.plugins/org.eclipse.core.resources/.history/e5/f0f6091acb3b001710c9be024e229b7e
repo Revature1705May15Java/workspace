@@ -1,0 +1,10 @@
+package com.ex.p5;
+
+import java.util.ArrayList;
+
+public class Prime {
+
+	public static void main(String[] args) {
+	}
+
+}

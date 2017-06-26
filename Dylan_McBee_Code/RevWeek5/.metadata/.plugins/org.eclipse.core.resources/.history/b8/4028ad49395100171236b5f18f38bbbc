@@ -1,0 +1,13 @@
+package com.ex.cache;
+
+import net.sf.ehcache.CacheManager;
+
+public class EHCacheDemo {
+
+	public static void main(String[] args) {
+		
+		CacheManager cm = CacheManager.getInstance();
+		
+	}
+	
+}

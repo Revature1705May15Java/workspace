@@ -1,0 +1,14 @@
+package com.ex.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+
+import com.ex.dao.Dao;
+import com.ex.dao.DaoImpl;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext ac = ClassPathXmlApplicationContext("beans.xml");
+		Dao dao = new DaoImpl();
+	}
+}

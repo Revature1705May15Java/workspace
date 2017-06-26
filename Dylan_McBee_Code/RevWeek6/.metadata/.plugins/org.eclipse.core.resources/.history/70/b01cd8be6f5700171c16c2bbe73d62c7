@@ -1,0 +1,11 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+public class Cave implements Serializable{
+
+	private int id;
+	
+	private String name;
+	
+}
