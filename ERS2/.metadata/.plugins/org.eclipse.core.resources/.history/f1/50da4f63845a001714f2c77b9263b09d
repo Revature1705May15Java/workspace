@@ -1,0 +1,5 @@
+package com.springers.pojos;
+
+public class User {
+
+}
