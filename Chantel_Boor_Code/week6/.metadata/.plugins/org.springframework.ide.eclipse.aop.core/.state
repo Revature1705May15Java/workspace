@@ -7,4 +7,5 @@
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:ORMClassDemo|3:src/main/resources/beans.xml|7:beans:8|8:myDao:45" bean-file="/ORMClassDemo/src/main/resources/beans.xml" bean-start-line="45" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/ORMClassDemo/src/main/resources/beans.xml" source="=ORMClassDemo/C:\/Users\/Chantel\/.m2\/repository\/org\/springframework\/spring-tx\/4.2.5.RELEASE\/spring-tx-4.2.5.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=ORMClassDemo/src\/main\/java&lt;com.ex.dao{DaoImpl.java[DaoImpl~getCaves" target-start-line="40"/>
 </aspect-definition>
 </aop-project>
+<aop-project name="AnnotationClassDemo"/>
 </aop-reference-model>

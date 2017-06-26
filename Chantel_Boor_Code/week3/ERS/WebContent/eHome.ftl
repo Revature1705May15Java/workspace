@@ -51,7 +51,9 @@
   transform: translateY(4px);
    
 }
+body {background-color: #444;}
 .content {
+background-color: white;
 	width:85%;
    margin-left: 7.5%;
     padding: 10px;
@@ -69,10 +71,11 @@
 	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top"">
 		
 		<form method = "post">
-			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
-			<input type="submit" value="Profile" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
-			<input type="submit" value="Logout" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
+			<input type="submit" value="     Home     " style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
+			<input type="submit" value="Profile     " style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
+			<input type="submit" value="Logout     " style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
 		</form>
+		
 
     </nav>
 
@@ -88,7 +91,7 @@
   <br>
 
 <h3>Requests</h3>
-	<table  class="table-striped" cellpadding="0" cellspacing="0" border="0" id="tableId">
+	<table  class="table" cellpadding="0" cellspacing="0" border="0" id="tableId">
 		<thead>
 		<tr>
 			<th>Request ID</th>
@@ -125,6 +128,7 @@
 			<input type = "number" step=".01" name ="amount" min=".01" required = required/> <br>
 			Purpose <br>
 			<input type = "text" name = "purp" required = required maxlength="300"/> 
+			<br>
 			<br>
 			<input type="submit" class="button" value="submit"/>
 			</form>

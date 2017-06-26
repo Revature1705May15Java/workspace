@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;    &lt;div class=&quot;navbar-header&quot;&gt;"/>
 			<item value="System"/>
 			<item value="system"/>
 			<item value="th"/>

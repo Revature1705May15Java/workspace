@@ -19,6 +19,7 @@ public class logout extends HttpServlet {
 	{
 		HttpSession sess = request.getSession(true);
 		sess.setAttribute("user", null);
+		sess.invalidate();
 		request.getRequestDispatcher("index.ftl").forward(request, response);
 	}
 

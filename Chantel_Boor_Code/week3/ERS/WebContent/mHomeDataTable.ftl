@@ -54,8 +54,9 @@
   
   
 }
-
+body {background-color: #444;}
 .content {
+	background-color: white;
 	width:85%;
    margin-left: 7.5%;
     padding: 10px;
@@ -69,15 +70,16 @@
 
 <div class="content">
 
+
 	<!-- Navbar -->
-	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top">
-		
-		
+	<nav class="navbar navbar-inverse bg-inverse navbar-fixed-top"">
+	
 		<form method = "post">
-			<input type="submit" value="Home" style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
-			<input type="submit" value="Profile" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
-			<input type="submit" value="Logout" style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
+			<input type="submit" value="Home     " style = "background-color: Transparent; border: none; color: white;" onclick="form.action='goHome';"/>
+			<input type="submit" value="Profile     " style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='goProfile';"/>
+			<input type="submit" value="Logout     " style = "background-color: Transparent; border: none;  color: white;" onclick="form.action='logout';"/>
 		</form>
+		
 
     </nav>
 
@@ -90,6 +92,10 @@
   <!-- Trigger the modal with a button -->
   <button type="button" class="button" data-toggle="modal" data-target="#eModal">Add Employee</button>
   <br>
+  
+  	<#if add! == "fail">
+	<h5 style="color:red">Employee already exists or email is in use.</h5>
+	</#if>
 	
 	<h3>Requests</h3>
 	<!-- Request Table -->
@@ -163,6 +169,7 @@
 			<input type="radio" name="isManager" value="yes" > Yes<br>
   			<input type="radio" name="isManager" value="no"checked> No
   			<br>
+  			<br>
 			<input type="submit" class="button" value="submit"/>
 		   </form>
         </div>
@@ -199,6 +206,7 @@
 			<br>
 			  <input type="radio" name="stat" value="accepted" checked> Accept<br>
   			<input type="radio" name="stat" value="denied"> Deny
+  			<br>
   			<br>
 			<input type="submit" class="button" value="submit"/>
 			</form>
