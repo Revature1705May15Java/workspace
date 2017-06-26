@@ -1,0 +1,43 @@
+package com.ex.pojos;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+/*
+ * 
+ * 
+ * @Inheritance - defines the inheritance strategy to be used for an entity class
+ * hierarchy. It is specified on the entity class that is the root of the hierarchy
+ * If the @Inheritance annotation is not specified or if no inheritance type is 
+ * specified for an entity class hierarchy, the SINGLE_TABLE mapping strategy is used
+ * 
+ * InheritanceType enum:
+ * 	- JOINED - a strategy in which fields that are specific to a subclass are mapped to 
+ * a separate table than the fields that are common to the parent class, and a join 
+ * is performed to instantiate the subclass
+ * - SINGLE_TABLE - a single table per class hierarchy
+ * - TABLE_PER_CLASS - a table per concrete entity class
+ */
+
+
+@Entity
+@Table(name="USER")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class User {
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USeq")
+	@SequenceGenerator(allocationSize=1,name="USeq", sequenceName="U_SEQ")
+	@Column(name="U_ID")
+	private int id;
+
+}

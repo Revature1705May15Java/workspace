@@ -1,0 +1,47 @@
+package com.ex.pojos;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="REIMBURSEMENT")
+public class Reimbursement {
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USeq")
+	@SequenceGenerator(allocationSize=1,name="USeq", sequenceName="U_SEQ")
+	@Column(name="U_ID")
+	private int id;
+	
+	@Column(name="DATE_CREATED")
+	private Date dateCreated;
+	
+	@Column(name="DATE_RESOLVED")
+	private Date dateResolved;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name="R_CREATOR")
+	private User creator;
+	
+	@OneToOne(mappedBy="REIMBURSEMENT", fetch=FetchType.EAGER)
+	private User resolver;
+	
+	@Column(name="R_DESCRIPTION")
+	private String description;
+	
+	@Column(name="R_STATUS")
+	private String status;
+
+}

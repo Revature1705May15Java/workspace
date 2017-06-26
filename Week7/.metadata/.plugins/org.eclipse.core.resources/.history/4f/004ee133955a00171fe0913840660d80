@@ -1,0 +1,43 @@
+package com.ex.dao;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ex.pojos.Reimbursement;
+import com.ex.pojos.User;
+
+@Transactional 
+public class DaoImpl implements Dao {
+	
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.ex.dao.Dao#addUser(com.ex.pojos.User)
+	 */
+	public void addUser(User u){
+		Session s = sessionFactory.getCurrentSession();
+		s.save(u);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ex.dao.Dao#addReimbursement(com.ex.pojos.Reimbursement)
+	 */
+	public void addReimbursement(Reimbursement r){
+		Session s = sessionFactory.getCurrentSession();
+		s.saveOrUpdate(r.getCreator());
+		Date date = new Date();
+		r.setTimestampCreated(new Timestamp(date.getTime()));
+		
+		s.save(r);
+	}
+	
+
+}

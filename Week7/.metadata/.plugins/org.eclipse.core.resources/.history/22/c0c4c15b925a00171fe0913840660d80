@@ -1,0 +1,24 @@
+package com.ex.test;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.ex.dao.Dao;
+import com.ex.pojos.User;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
+		Dao dao = (Dao) ac.getBean("myDao");
+		
+		User u = new User();
+		u.setFirstname("Genesis");
+		u.setLastname("Bonds");
+		u.setUsername("gtest");
+		u.setPassword("1234");
+		u.setRole("M");
+		
+	}
+
+}

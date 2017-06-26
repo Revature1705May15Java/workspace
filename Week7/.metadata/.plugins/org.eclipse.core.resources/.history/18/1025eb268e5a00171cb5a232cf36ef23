@@ -1,0 +1,58 @@
+package com.ex.pojos;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+/*
+ * @Entity, labels class as an entity. Unless we explicitly give it the param(name="x"), 
+ * when writing HQL or JPQL we will use the name of the class to refer to this entity, 
+ * if we do label the entity with a name, we will refer to it with that name
+ * 
+ * @Table gives a name to the table in the database
+ * 
+ * @Inheritance - defines the inheritance strategy to be used for an entity class
+ * hierarchy. It is specified on the entity class that is the root of the hierarchy
+ * If the @Inheritance annotation is not specified or if no inheritance type is 
+ * specified for an entity class hierarchy, the SINGLE_TABLE mapping strategy is used
+ * 
+ * InheritanceType enum:
+ * 	- JOINED - a strategy in which fields that are specific to a subclass are mapped to 
+ * a separate table than the fields that are common to the parent class, and a join 
+ * is performed to instantiate the subclass
+ * - SINGLE_TABLE - a single table per class hierarchy
+ * - TABLE_PER_CLASS - a table per concrete entity class
+ * 
+ * --> We don't have an inheritance tree here but thought I'd detail the possibilities 
+ */
+
+
+@Entity
+@Table(name="USER")
+public class User {
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USeq")
+	@SequenceGenerator(allocationSize=1,name="USeq", sequenceName="U_SEQ")
+	@Column(name="U_ID")
+	private int id;
+	
+	
+	@Column(name="FIRST_NAME")
+	private String firstname;
+	
+	@Column(name="LAST_NAME")
+	private String  lastname;
+	
+	@Column(name="ROLE")
+	private String role;
+
+}

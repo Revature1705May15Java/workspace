@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="ComprehensiveERS">
+<aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="14" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#ComprehensiveERS#src/main/resources/beans.xml#14" aspect-start-line-number="14" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/ComprehensiveERS/src/main/resources/beans.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:ComprehensiveERS|3:src/main/resources/beans.xml|7:beans:10|8:myDao:47" bean-file="/ComprehensiveERS/src/main/resources/beans.xml" bean-start-line="47" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/ComprehensiveERS/src/main/resources/beans.xml" source="=ComprehensiveERS/C:\/Users\/Genesis\/.m2\/repository\/org\/springframework\/spring-tx\/4.2.5.RELEASE\/spring-tx-4.2.5.RELEASE.jar&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=ComprehensiveERS/src\/main\/java&lt;com.ex.dao{DaoImpl.java[DaoImpl~setSessionFactory~QSessionFactory;" target-start-line="11"/>
+</aspect-definition>
+</aop-project>
+</aop-reference-model>

@@ -1,0 +1,3 @@
+INDEX VERSION 1.3+C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3220196810.index
+485413751.index

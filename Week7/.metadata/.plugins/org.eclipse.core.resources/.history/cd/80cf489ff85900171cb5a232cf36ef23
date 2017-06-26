@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+<meta charset="ISO-8859-1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+
+<script>
+	var model = {
+		user : "Adam",
+		items : [ {
+			action : "Buy Flowers",
+			done : false
+		}, {
+			action : "Get Shoes",
+			done : false
+		}, {
+			action : "Collect Tickets",
+			done : false
+		}, {
+			action : "Call Joe",
+			done : false
+		} ]
+	};
+	var todoApp = angular.module("todoApp", []);
+
+	todoApp.controller("ToDoCtrl", function($scope) {
+		$scope.todo = model;
+	});
+</script>
+
+
+
+</head>
+
+<body ng-controller="ToDoCtrl">
+<!-- One of the purpose of the controller is to provide views with the data they require
+You don't always want views to have access to the complete model, so you use the 
+controller to explicitly select those portions of the data that are going to be available,
+known as the scope
+The argument to the controller function is the $scope -->
+
+	<h1>{{user}}'sTo Do List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Description</th>
+				<th>Done</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in todo.items">
+				<td>{{item.action}}</td>
+				<td>{{item.done}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
