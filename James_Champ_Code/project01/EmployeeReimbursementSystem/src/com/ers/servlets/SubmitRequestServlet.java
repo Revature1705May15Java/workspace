@@ -1,6 +1,7 @@
 package com.ers.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,8 +33,14 @@ public class SubmitRequestServlet extends HttpServlet {
 		
 		Request submission = new Request(amount, purpose, employee);
 		Service service = new Service();
-		service.submitRequest(submission);
+		submission = service.submitRequest(submission);
 		
+		// change
+		ArrayList<Request> requests = (ArrayList<Request>) session.getAttribute("pendingRequests");
+		requests.add(submission);
+		session.setAttribute("pendingRequests", requests);
+		session.setAttribute("state", SessionState.VIEW_PENDING);
+		//after change
 		// TODO: Display results
 		// TODO: Accept decimal values for reimbursement amount.
 		request.getRequestDispatcher("site.ftl").forward(request, response);
