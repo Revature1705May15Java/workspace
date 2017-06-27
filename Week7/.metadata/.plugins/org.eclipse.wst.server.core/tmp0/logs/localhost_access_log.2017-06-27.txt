@@ -8,3 +8,7 @@
 0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:22:34 -0400] "GET /AngularDemo/HelloWorld.html HTTP/1.1" 200 536
 0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:33:38 -0400] "GET /AngularDemo/HelloWorld.html HTTP/1.1" 200 1445
 0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:34:32 -0400] "GET /AngularDemo/HelloWorld.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:54:14 -0400] "GET /AngularDemo/IntroToControllerLogic.html HTTP/1.1" 200 674
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:54:30 -0400] "GET /AngularDemo/IntroToControllerLogic.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:56:05 -0400] "GET /AngularDemo/IntroToControllerLogic.html HTTP/1.1" 200 728
+0:0:0:0:0:0:0:1 - - [27/Jun/2017:10:56:58 -0400] "GET /AngularDemo/IntroToControllerLogic.html HTTP/1.1" 200 740
