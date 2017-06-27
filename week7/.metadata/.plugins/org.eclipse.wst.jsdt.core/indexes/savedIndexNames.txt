@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/Tez/Documents/week7/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1390432077.index
+661751970.index
+1853723918.index
+3162250250.index
+3986895721.index
+729115506.index
