@@ -18,6 +18,12 @@ public class ReimbursementRequest {
     @Column(name = "requesterId", nullable = false)
     int requesterId;
 
+
+//    @Column(name = "handler")
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    Employee handler;
+
+
     @Column(name = "handlerId")
     int handlerId;
 

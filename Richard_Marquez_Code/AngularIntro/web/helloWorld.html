@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Angular World</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="HelloController">
+    <h1>Hello, World: {{ message }}</h1>
+    <h1>Math: {{ 5 + 3 }}</h1>
+</div>
+
+<div ng-controller="MySecondController">
+    Name <input type="text" ng-model="name" /><br/>
+    <h1>Hey, {{ name }}</h1>
+</div>
+
+
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("HelloController", function($scope) {
+        $scope.message = "This is AngularJS!";
+    });
+
+    app.controller("MySecondController", function($scope) {
+        //
+    });
+
+</script>
+
+
+</body>
+</html>
