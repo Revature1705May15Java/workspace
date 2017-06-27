@@ -12,4 +12,5 @@ public interface Dao {
 	public void updatePersons(Person p);
 	public void deletePersons(int id);
 	public Person getPersonByID(int id);
+	Person getPersonByLname();
 }

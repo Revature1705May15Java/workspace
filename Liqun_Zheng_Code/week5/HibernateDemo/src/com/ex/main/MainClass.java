@@ -23,7 +23,7 @@ public class MainClass {
 //		bearDao.createBear(b, hp, c);
 //		p = dao.getPersonByID(52);
 //		System.out.println(p.toString());
-//		p = dao.getPersonByLname();
-//		System.out.println(p.toString());
+		p = dao.getPersonByLname();
+		System.out.println(p.toString());
 	}
 }

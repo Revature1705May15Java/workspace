@@ -1,8 +1,8 @@
 package com.reim.pojos;
 
 public class State_type {
-	int state_id;
-	String name;
+	private int state_id;
+	private String name;
 	
 	public State_type(){}
 	public State_type(int state_id, String name) {

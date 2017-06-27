@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+<meta charset="UTF-8">
+<title>To DO</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+<body ng-controller="ToDoCtrl">
+
+<!-- 	Name:
+	<input class="form-control" type="text" ng-model="user" />
+	</br> -->
+	<h1>Hey, {{ todo.user }}</h1>
+	<input type ="text" ng-model="actionText"/>
+	<button ng-click="addNewItem(actionText)">Add</button>
+	
+	<p ng-hide="incompleteCount()==0">Items Left :{{ incompleteCount() }}</p>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Description</th>
+				<th>Done</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in todo.items | checkedItems:showComplete | orderBy:'action'">
+				<td>{{item.action}}</td>
+				<td><input type="checkbox" ng-model="item.done" /></td>
+				<td>{{item.done}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		var model = {
+			user : "UserName",
+			items : [ {
+				action : "Complete project 2",
+				done : false
+			}, {
+				action : "Study",
+				done : false
+			}, {
+				action : "Make dinner",
+				done : false
+			} ]
+		};
+		var todoApp = angular.module("todoApp", []);
+		todoApp.filter("checkedItems", function() {
+			return function(items, showComplete) {
+				var resultArr = [];
+				angular.forEach(items, function(item) {
+					if (item.done == false || showComplete == true) {
+						resultArr.push(item);
+					}
+				});
+				return resultArr;
+			}
+		});
+		todoApp.controller("ToDoCtrl", function($scope) {
+			$scope.todo = model;
+			$scope.incompleteCount = function(){
+				var count =0;
+				angular.forEach($scope.todo.items, function(item){
+					if(!item.done){
+						count++;
+					}
+				});
+				return count;
+			}
+			
+			$scope.addNewItem = function(actionText){
+				$scope.todo.items.unshift({
+					action : actionText,
+					done : false
+				});
+			}
+		});
+	</script>
+</body>
+</html>

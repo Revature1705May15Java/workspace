@@ -115,7 +115,8 @@ public class DaoImpl implements Dao {
 		
 		return p;
 	}
-
+	
+	@Override
 	public Person getPersonByLname(){
 		Person p = new Person();
 		Session session = ConnectionUtil.getSession();

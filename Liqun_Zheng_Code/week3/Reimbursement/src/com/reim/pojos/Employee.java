@@ -3,11 +3,11 @@ package com.reim.pojos;
 import java.util.ArrayList;
 
 public class Employee {
-	int employee_id;
-	String fn, ln, pw, uname;
-	int is_manager;
-	ArrayList<Request> employee_request;
-	ArrayList<Employee> employees;
+	private int employee_id;
+	private String fn, ln, pw, uname;
+	private int is_manager;
+	private ArrayList<Request> employee_request;
+	private ArrayList<Employee> employees;
 	
 	
 	public Employee(){}

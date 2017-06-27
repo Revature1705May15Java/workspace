@@ -3,12 +3,12 @@ package com.reim.pojos;
 import java.sql.Date;
 
 public class Request {
-	int request_id, requester_id, resolver_id;
-	String note, purpose;
-	State_type state;
-	Date opened, closed;
-	double amount;
-	String requester_name;
+	private int request_id, requester_id, resolver_id;
+	private String note, purpose;
+	private State_type state;
+	private Date opened, closed;
+	private double amount;
+	private String requester_name;
 	
 	public Request(){}
 	public Request(int request_id, int requester_id, int resolver_id, String note, String purpose, State_type state,

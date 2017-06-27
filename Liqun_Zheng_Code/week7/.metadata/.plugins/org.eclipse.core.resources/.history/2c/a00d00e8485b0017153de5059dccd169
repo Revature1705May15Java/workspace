@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lets do some more ANGULARJS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="MyController">
+	First Name: <input type="text" ng-model="firstName"/> </br>
+	Last Name: <input type="text" ng-model="lastName" /><br>
+	
+	<h2>Heyyyyyy {{getFullName()}}</h2>
+
+</div>
+
+<script>
+angular.module("myApp", []).controller("MyController", function($scope){
+	$scope.firstName= "Liqun";
+	$scope.lastName= "Zheng";
+	$scope.getFullName = function(){
+		return $scope.firstName + " " + $scope.lastName;
+	}
+});
+</script>
+
+
+</body>
+</html>
