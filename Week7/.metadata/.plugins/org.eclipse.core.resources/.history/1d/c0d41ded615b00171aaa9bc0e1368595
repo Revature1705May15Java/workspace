@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="calcApp" >
+<head>
+<meta charset="ISO-8859-1">
+<title>Calc App</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+
+<script type="text/javascript">
+	var calcApp = angular.module("calcApp", []);
+
+	calcApp.controller("calcCtrl", function() {
+		var calc = this;
+
+		calc.calc = {
+			num1 : 0,
+			num2 : 0,
+			op : "",
+			result : 0
+		};
+
+		calc.results = [];
+
+		calc.doAdd = function() {
+			calc.calc.result = calc.calc.num1 + calc.calc.num2;
+			calc.calc.op = "Addition";
+			calc.results.push(calc.calc);
+			calc.calc = {};
+		};
+
+		calc.doSub = function() {
+			calc.calc.result = calc.calc.num1 - calc.calc.num2;
+			calc.calc.op = "Subtraction";
+			calc.results.push(calc.calc);
+			calc.calc = {};
+		};
+		
+		calc.doMul = function() {
+			calc.calc.result = calc.calc.num1 * calc.calc.num2;
+			calc.calc.op = "Multiplication";
+			calc.results.push(calc.calc);
+			calc.calc = {};
+		};
+		
+		calc.doDiv = function() {
+			calc.calc.result = calc.calc.num1 / calc.calc.num2;
+			calc.calc.op = "Division";
+			calc.results.push(calc.calc);
+			calc.calc = {};
+		};
+
+	});
+</script>
+
+</head>
+<body ng-controller="calcCtrl as calc">
+
+	<div class="form-group"  class="col-lg-6">
+		Num1 : <input class="form-control" type="number" ng-model="calc.calc.num1">
+	
+		Num2 : <input class="form-control"  type="number" ng-model="calc.calc.num2">
+	</div>
+	<div class="btn-group">
+		<button class="btn btn-primary" ng-click="calc.doAdd()">Add</button>
+		<button class="btn btn-primary" ng-click="calc.doSub()">Subtract</button>
+		<button class="btn btn-primary" ng-click="calc.doMul()">Multiply</button>
+		<button class="btn btn-primary" ng-click="calc.doDiv()">Divide</button>
+	</div>
+	
+	<table class="table table-striped table-hover" >
+	
+		<tr>
+			<th>Num1 ({{calc.calc.num1}})</th>
+			<th>Num2 ({{calc.calc.num2}})</th>
+			<th>OP</th>
+			<th>Result</th>
+		</tr>
+		
+		<tr ng-repeat="record in calc.results">
+			<td>{{record.num1}}</td>
+			<td>{{record.num2}}</td>
+			<td>{{record.op}}</td>
+			<td>{{record.result}}</td>
+		</tr>
+		<!-- The ng-repeat directive actually clones HTML elements once for each item in a collection. -->
+	</table>
+
+</body>
+</html>

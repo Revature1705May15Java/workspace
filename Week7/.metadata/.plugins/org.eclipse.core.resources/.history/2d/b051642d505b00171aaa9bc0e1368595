@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Angular World</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
+</script>
+
+</head>
+
+
+<!--  The App -->
+<body ng-controller="ToDoCtrl"> 
+
+
+
+<div >
+Name: <input type="text" ng-model="name"/></br>
+<h1>Hey, {{name}}</h1>
+
+</div>
+
+
+
+<script>
+// Angular module
+var app = angular.module("todoApp",[]);
+
+
+app.controller("ToDoCtrl", function($scope){
+});
+
+
+</script>
+
+</body>
+
+</html>
+
+
+
