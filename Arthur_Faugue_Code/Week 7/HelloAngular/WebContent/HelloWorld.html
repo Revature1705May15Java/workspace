@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<title>My AngularJS App</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="HelloController">
+		<h1>Hello World: {{ message }}</h1>
+	</div>
+	
+	<div ng-controller="MySecondController">
+		Name: <input type="text" ng-model="name"/>
+		<h1>Hello: {{ name }}</h1>
+	</div>
+
+	<script>
+	//angular module
+	var app = angular.module("myApp", []);
+	app.controller("HelloController", function($scope) {
+		$scope.message = "This is AngularJS or is it?";
+	});
+
+	app.controller("MySecondController", function($scope) {
+		
+	});
+	</script>
+</body>
+</html>
+<!-- 
+-Html is loaded and evaluated by the browser
+-Angular is loaded and executed, creating the angular global object
+-the js is loaded and executed the myApp module and registers the HomeController
+function is executed.
+-->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name="customerRepo" class="com.ex.repo.CustomerRepoImpl"/>
+	
+<!-- The following is used for setter injection -->
+<!-- 	<bean name="customerService" class="com.ex.service.CustomerServiceImpl"> -->
+<!-- 	<property name="customerRepo" ref="customerRepo"></property> -->
+<!-- 	</bean> -->
+
+<!-- The following is used for constructor injection -->
+<!-- 	<bean name="customerService" class="com.ex.service.CustomerServiceImpl"> -->
+<!--  		<constructor-arg index="0" ref="customerRepo" /> -->
+<!-- 	</bean>  -->
+
+<!-- The following is used for autowiring -->	
+	<bean name="customerService" class="com.ex.service.CustomerServiceImpl" autowire="constructor"/>
+</beans>
