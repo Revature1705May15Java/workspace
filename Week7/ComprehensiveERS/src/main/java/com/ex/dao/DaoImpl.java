@@ -1,7 +1,9 @@
 package com.ex.dao;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -39,5 +41,10 @@ public class DaoImpl implements Dao {
 		s.save(r);
 	}
 	
+	public List<User> getAllUsers(){
+		Session s = sessionFactory.getCurrentSession();
+		List<User> users = s.createCriteria(User.class).list();
+		return users;
+	}
 
 }

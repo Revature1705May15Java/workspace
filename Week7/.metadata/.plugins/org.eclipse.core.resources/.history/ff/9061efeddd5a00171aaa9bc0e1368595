@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello World</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+
+
+</head>
+
+<!-- Add the ng-app attribute to the body element
+to indicate what part of the HTML page contains the
+AngularJS application  -->
+<body ng-agg="myApp">
+
+
+<!-- THE VIEW:
+in this example, the view is  the <div> element and everything inside it. The 
+div element contains the controller attribute specifying a controller (JS function)
+named HelloController
+Also, within the <h1> element there is a <h1> element there is an angular 
+expression (which is specified using {{ }} ). The expression is telling angular
+to insert the model value named message into the HTML at that location 
+ -->
+<div ng-controller="HelloController">
+<h1>{{message}}</h1>
+</div>
+</body>
+</html>

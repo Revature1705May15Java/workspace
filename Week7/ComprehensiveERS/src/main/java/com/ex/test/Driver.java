@@ -1,5 +1,7 @@
 package com.ex.test;
 
+import java.util.List;
+
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -29,6 +31,12 @@ public class Driver {
 		r.setCreator(u);
 		
 		dao.addReimbursement(r);
+		
+		List<User> users = dao.getAllUsers();
+		
+		for(User x : users){
+			System.out.println(x.getFirstname());
+		}
 	}
 
 }

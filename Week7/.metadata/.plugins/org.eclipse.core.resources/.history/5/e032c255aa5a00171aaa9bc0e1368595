@@ -1,0 +1,128 @@
+package com.ex.pojos;
+
+/*
+ * Hibernate is an implementation of the Java Persistence API, and where possible,
+ *  you should use the standard annotations (in javax.persistence). This way, you 
+ *  could theoretically run your code on other JPA implementations.
+ *  
+ *  Only when you need Hibernate-specific functionality should you use the Hibernate annotations.
+ *  The extra dependency is only on the JPA interface/annotation jar files and very light.
+ */
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+/*
+ * @Entity, labels class as an entity. Unless we explicitly give it the param(name="x"), 
+ * when writing HQL or JPQL we will use the name of the class to refer to this entity, 
+ * if we do label the entity with a name, we will refer to it with that name
+ * 
+ * @Table gives a name to the table in the database
+ * 
+ * @Inheritance - defines the inheritance strategy to be used for an entity class
+ * hierarchy. It is specified on the entity class that is the root of the hierarchy
+ * If the @Inheritance annotation is not specified or if no inheritance type is 
+ * specified for an entity class hierarchy, the SINGLE_TABLE mapping strategy is used
+ * 
+ * InheritanceType enum:
+ * 	- JOINED - a strategy in which fields that are specific to a subclass are mapped to 
+ * a separate table than the fields that are common to the parent class, and a join 
+ * is performed to instantiate the subclass
+ * - SINGLE_TABLE - a single table per class hierarchy
+ * - TABLE_PER_CLASS - a table per concrete entity class
+ * 
+ * --> We don't have an inheritance tree here but thought I'd detail the possibilities 
+ */
+
+
+@Entity
+@Table(name="USERS")
+public class User {
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USeq")
+	@SequenceGenerator(allocationSize=1,name="USeq", sequenceName="U_SEQ")
+	@Column(name="U_ID")
+	private int id;
+	
+	@Column(name="USERNAME")
+	private String username;
+	
+	@Column(name="PASSWORD")
+	private String password;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Column(name="FIRST_NAME")
+	private String firstname;
+	
+	@Column(name="LAST_NAME")
+	private String  lastname;
+	
+	@Column(name="ROLE")
+	private String role;
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public User(String firstname, String lastname, String role) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.role = role;
+	}
+
+	public User(){}
+}
