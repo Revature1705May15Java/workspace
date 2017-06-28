@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+</head>
+
+<body ng-app="appName" ng-controller="Controller">
+	<div class="container">
+	<div class="col-lg-2"></div>
+	<div>
+		<div class="col-lg-4 push-right">Number 1:<input class="form-control" type="number" ng-model="eq.op1" width="50%"/></div>
+		<div class="col-lg-4 push-right">Number 2: <input class="form-control" type="number" ng-model="eq.op2" /></div>
+		<br>
+		<div class="btn-group">
+		    <a href="javascript:void(0)" ng-click="eq.operation = '+'" ng-class="{ 'active' : button == 'Add' }" class="btn">Add</a>
+		    <a href="javascript:void(0)" ng-click="eq.operation = '-'" ng-class="{ 'active' : button == 'Subtract' }" class="btn">Subtract</a>
+		    <a href="javascript:void(0)" ng-click="eq.operation = '*'" ng-class="{ 'active' : button == 'Multiply' }" class="btn">Multiply</a>
+		    <a href="javascript:void(0)" ng-click="eq.operation = '/'" ng-class="{ 'active' : button == 'Divide' }" class="btn">Divide</a>
+		</div>
+		<button ng-click="doMath()">Get Result</button>
+		<h1>
+			<span ng-bind="eq.op1"></span> <span ng-bind="eq.operation"></span> <span  ng-bind="eq.op2"></span> <span>= {{eq.result}}</span>
+		</h1>
+	</div>
+
+	<table class="table table-striped" ng-show="results.length > 0">
+		<thead>
+			<tr>
+				<th>Number 1:</th>
+				<th>Operation:</th>
+				<th>Number 2:</th>
+				<th>Result:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="r in results">
+				<td ng-bind="r.op1"></td>
+				<td ng-bind="r.operation"></td>
+				<td ng-bind="r.op2"></td>
+				<td ng-bind="r.result"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div class="col-lg-2"></div>
+	</div>
+	<script>
+		var app = angular.module("appName", []);
+		var equation = {
+				op1 : "?",
+				operation : "?",
+				op2 : "?",
+				result : "?"
+				};
+
+		app.controller("Controller", function($scope){
+			$scope.eq = equation;
+			$scope.results = [];
+			
+			$scope.doMath = function() {
+				if(angular.isNumber($scope.eq.op1) && angular.isNumber($scope.eq.op2) && !angular.equals("?", $scope.eq.operation)) {
+					switch($scope.eq.operation) {
+						case "+":
+							$scope.eq.result = $scope.eq.op1 + $scope.eq.op2;
+							break;
+						case "-":
+							$scope.eq.result = $scope.eq.op1 - $scope.eq.op2;
+							break;
+						case "*":
+							$scope.eq.result = $scope.eq.op1 * $scope.eq.op2;
+							break;
+						case "/":
+							if($scope.eq.op2 === 0) {
+								return false;
+							}
+							$scope.eq.result = $scope.eq.op1 / $scope.eq.op2;
+							break;
+					}
+
+					// There has to be a better way to do this.
+					// If I just push $scope.eq, the table does
+					// not update properly, but the length of the
+					// results array increments. Why???
+					$scope.results.push({op1 : $scope.eq.op1,
+						operation : $scope.eq.operation,
+						op2 : $scope.eq.op2,
+						result : $scope.eq.result});
+				}
+			};
+			
+		});
+		
+	</script>
+</body>
+</html>
