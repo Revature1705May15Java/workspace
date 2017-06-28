@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div id="mergeSortContainer" ng-controller="MergeSortController" ng-mouseover="changeColor('mergeSortContainer')" class="container-fluid col-xs-4 col-xs-offset-2">
+            <h1>Merge Sort</h1>
+
+            <input class="form-control" type="number" ng-model="actionText" placeholder="Add new item..."/>
+
+            <button class="btn btn-primary" ng-click="addNewItem(actionText)">Add Item</button>
+
+            <table ng-hide="unsorted.length < 1" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Unsorted</th>
+                        <th>Sorted</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="i in unsorted">
+                        <td>{{i}}</td>
+                        <td>{{sorted[$index]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div id="insertionSortContainer" ng-controller="InsertionSortController" ng-mouseover="changeColor('insertionSortContainer')" class="col-xs-4">
+
+            <h1>Insertion Sort</h1>
+
+            <input class="form-control" type="number" ng-model="actionText" placeholder="Add new item..."/>
+
+            <button class="btn btn-primary" ng-click="addNewItem(actionText)">Add Item</button>
+
+            <table ng-hide="unsorted.length < 1" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Unsorted</th>
+                    <th>Sorted</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="i in unsorted">
+                    <td>{{i}}</td>
+                    <td>{{sorted[$index]}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("MergeSortController", function ($scope) {
+        $scope.unsorted = [4, 11, 3, 6, 2, 1];
+        $scope.sorted = [];
+
+        refreshSorted();
+
+        $scope.addNewItem = function (actionText) {
+            $scope.unsorted.push(actionText);
+            refreshSorted();
+        };
+
+        function refreshSorted() {
+            var clone = $scope.unsorted.slice(0);
+            $scope.sorted = mergeSort(clone);
+        }
+
+        $scope.changeColor = function(elId) {
+            $('#' + elId).css('background-color', getRandomColor());
+        };
+    });
+
+    app.controller("InsertionSortController", function ($scope) {
+//        $scope.unsorted = [7, 1, 3, 5, 22, 2];
+        $scope.unsorted = [];
+        $scope.sorted = [];
+
+        refreshSorted();
+
+        $scope.addNewItem = function (actionText) {
+            $scope.unsorted.push(actionText);
+            refreshSorted();
+        };
+
+        function refreshSorted() {
+            var clone = $scope.unsorted.slice(0);
+            $scope.sorted = insertionSort(clone);
+        }
+
+        $scope.changeColor = function(elId) {
+            $('#' + elId).css('background-color', getRandomColor());
+        };
+    });
+
+
+    function mergeSort(arr) {
+        if (arr.length < 2) {
+            return arr;
+        }
+
+        var middle = Math.floor(arr.length / 2);
+        var left = arr.slice(0, middle);
+        var right = arr.slice(middle, arr.length);
+
+        return merge(mergeSort(left), mergeSort(right));
+    }
+
+    function merge(left, right) {
+        var result = [];
+
+        while (left.length && right.length) {
+            if (left[0] <= right[0]) {
+                result.push(left.shift());
+            } else {
+                result.push(right.shift());
+            }
+        }
+
+        while (left.length)
+            result.push(left.shift());
+
+        while (right.length)
+            result.push(right.shift());
+
+        return result;
+    }
+
+    function insertionSort(arr) {
+        var result = [];
+
+        var el;
+        while (el = arr.shift()) {
+            var i = 0;
+
+            while (i < result.length && el > result[i]) {
+                i++;
+            }
+
+            result.splice(i, 0, el);
+        }
+
+        return result;
+    }
+
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+        var color = '#';
+
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+    }
+
+</script>
+
+
+</body>
+</html>
