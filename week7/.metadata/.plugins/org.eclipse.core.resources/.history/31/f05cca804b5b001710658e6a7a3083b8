@@ -1,0 +1,67 @@
+package com.challenges;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+class Solution{
+   
+   public static void main(String []argh)
+   {
+      Scanner sc = new Scanner(System.in);
+      Character[] arrL={'(','[','{'};
+      Character[] arrR={')',']','}'};
+      
+      while (sc.hasNext()) {
+         String input=sc.next();
+          if(input.length()%2!=0){
+              System.out.println(false);
+          }else{
+              int len=input.length();
+              ArrayList<Character> chars=new ArrayList<Character>();
+              for(int i=0;i<len;i++){
+            	  chars.add(input.charAt(i));
+              }
+              while(chars.size()>0){
+            	  int Lpos=findIndex(chars.get(0),arrL);
+            	  System.out.println("Left: "+arrL[Lpos]);
+            	  System.out.println("Right: "+arrR[Lpos]);
+            	  if(Lpos>=0){
+            		  System.out.println();
+	            	  Character findR=arrR[Lpos];
+	            	  int Rpos=findIndex(findR,chars);
+	            	  if(Rpos%2!=0){
+	            		  System.out.println("modworks");
+	            		  chars.remove(Rpos);
+	            		  chars.remove(0);
+	            	  }else{
+	            		  break;
+	            	  }
+            	  }else{
+            		  break;
+            	  }
+              }
+	          if(chars.size()==0){
+	        	System.out.println(true);
+	          }else{
+	        	  System.out.println(false);
+	          }
+          }
+      }
+      
+   }
+   public static int findIndex(Character c,Character[] ca){
+	   for(int i=0;i<ca.length;i++){
+		   if(ca[i]==c){
+			   return i;
+		   }
+	   }
+	   return -1;
+   }
+   public static int findIndex(Character c,ArrayList<Character> ca){
+	   for(int i=0;i<ca.size();i++){
+		   if(ca.get(i)==c){
+			   return i;
+		   }
+	   }
+	   return -1;
+   }
+}

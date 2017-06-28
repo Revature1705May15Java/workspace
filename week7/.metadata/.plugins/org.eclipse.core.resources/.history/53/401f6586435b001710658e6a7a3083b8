@@ -1,0 +1,33 @@
+package com.challenges;
+
+import java.util.*;
+class Solution{
+   
+   public static void main(String []argh)
+   {
+      Scanner sc = new Scanner(System.in);
+      char[] arrL={'(','[','{'};
+      char[] arrR={')',']','}'};
+      
+      while (sc.hasNext()) {
+         String input=sc.next();
+          if(input.length()%2!=0){
+              System.out.println(false);
+          }else{
+              boolean isBalanced=true;
+              int len=input.length();
+              System.out.println(len);
+            for(int i=0;i<len/2;i++){
+            	String pair=""+input.charAt(i)+input.charAt(len-1-i);
+            	System.out.println();
+                if(pair!=arr[0]&&pair!=arr[1]&&pair!=arr[2]){
+                	System.out.println(input.charAt(i)+" "+input.charAt(len-1-i));
+                    isBalanced=false;
+                }
+            }
+              System.out.println(isBalanced);
+          }
+      }
+      
+   }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+</head>
+
+
+<body ng-app="calculatorApp" ng-controller="CalculatorCtrl">
+
+
+		Num1:<input class="form-control" type="number" ng-model="number1" /></br>
+		Num2:<input class="form-control" type="number" ng-model="number2" /></br>
+		<button ng-click="add(num1,num2)">Add</button>
+		<button ng-click="subtract(num1,num2)">Subtract</button>
+		<button ng-click="multiply(num1,num2)">Multiply</button>
+		<button ng-click="divide(num1,num2)">Divide</button>
+	<table class="table-striped">
+		<thead>
+			<tr>
+				<th>Num1</th>
+				<th>Num2</th>
+				<th>Operand</th>
+				<th>Result</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat= "item in calculator.items">
+				<td>{{item.num1}}</td>
+				<td>{{item.num2}}</td>
+				<td>{{item.operand}}</td>
+				<td>{{item.result}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<script>
+var model = {
+	items:[{
+		num1:1,
+		num2:2,
+		operand:'Multiply',
+		result:2
+	}]
+};
+
+var calculatorApp = angular.module("calculatorApp",[]);
+
+todoApp.controller("CalculatorCtrl",function($scope){
+	$scope.calculator=model;
+	
+	$scope.multiply=function(number1,number2){
+		var resultArr=[];
+		angular.forEach(items,function(item){
+			if(item.done==false||showComplete==true){
+			resultArr.push(item);
+			}
+		})
+		return resultArr;
+		$scope.calculator.items.unshift({
+			num1:number1,
+			num2:number2,
+			operand:'Multiply',
+			result:number1*number2
+		})
+	}
+	
+
+});
+
+</script>
+</body>
+</html>

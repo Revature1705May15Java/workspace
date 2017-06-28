@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Angular World</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div ng-controller="HelloController">
+	<h1>Hello World: {{ message }}</h1>
+</div>
+<div ng-controller="MySecondController">
+Name:<input type="text" ng-model="name"/></br>
+<h1>Hey, {{name}}</h1>
+</div>
+
+<script>
+var app = angular.module("myApp",[]);
+
+app.controller("HelloController",function($scope){
+	$scope.message = "This is AngularJS!";
+});
+
+app.controller("MySecondController",function($scope){
+	
+});
+</script>
+
+</body>
+</html>
+<!-- 
+-HTML is loaded and evaluated by the browser
+-AngularJS is loaded and executed, creating the angular global object
+-the JS that creates the myApp module and registers the HomeController function is executed
+-Angular scans HTML looking for apps and views. If AJS finds a view, it connects
+	that view with the specified controller function
+-AJS executes the controller functions and updates the views with the data from the model 
+	populated by the controller.
+-At this point, the HTML page is ready to be displayed
+-AJS now listens for the browser evens such as mouseover or click. If any of these events were
+	to require a view change, AJS will update the view accordingly.
+	
+****************************VOCABULARY
+-compiler: a compiler parses the template and instantiates the directives and expressions
+-controller: the business logic behind views
+-data binding: synchronizes data between the model and the view
+-dependency injection: creates and wires objects and functions
+-directives: extends HTML with custom attributes and elements
+-expressions: access variables and functions from the scope
+-filter: formats the value of an expression for display to the user, used after |
+-injector: a dependency injection container
+-model: the model is the data shown to the user in the view and with which the user interacts
+-module: a module is a container for the different parts of an app including controllers, 
+	services, filters and directives which configures the injector
+-scope: the scope is the context where the model is stored so that controllers, 
+	directives, and expressions can access it (this ties the view to controllers)
+-view: the view is ultimately what the user sees
+-service: the service is reusable business logic which is independent of views
+-template: HTML with additional markup
+ -->

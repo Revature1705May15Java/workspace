@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="calcApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-controller="CalcController">
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <table class="table">
+                <tr>
+                    <td>OP1:</td>
+                    <td><input class="form-control" type="number" ng-model="n1"/></td>
+                </tr>
+                <tr>
+                    <td>OP2:</td>
+                    <td><input class="form-control" type="number" ng-model="n2"/></td>
+                </tr>
+            </table>
+
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>OP1</th>
+                    <th>OP2</th>
+                    <th>Type</th>
+                    <th>Result</th>
+                </tr>
+                </thead>
+
+                <tr ng-repeat="result in results">
+                    <td>{{result.op1}}</td>
+                    <td>{{result.op2}}</td>
+                    <td>{{result.opType}}</td>
+                    <td>{{result.result}}</td>
+                </tr>
+
+            </table>
+
+            <p>
+                <button class="btn btn-primary" ng-click="add(n1, n2)">Add</button>
+                <button class="btn btn-primary" ng-click="subtract(n1, n2)">Subtract</button>
+                <button class="btn btn-primary" ng-click="multiply(n1, n2)">Multiply</button>
+                <button class="btn btn-primary" ng-click="divide(n1, n2)">Divide</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var model = [
+        { op1: 2, op2: 5, opType: "multiply", result: 10 },
+        { op1: 2, op2: 5, opType: "add", result: 7 }
+    ];
+    var app = angular.module('calcApp', [])
+        .controller('CalcController', function ($scope) {
+            $scope.results = model;
+            $scope.add = function(n1, n2) {
+                model.push({op1: n1, op2: n2, opType: 'add', result: n1 + n2 });
+            };
+            $scope.subtract = function(n1, n2) {
+                model.push({op1: n1, op2: n2, opType: 'add', result: n1 - n2 });
+            };
+            $scope.multiply = function(n1, n2) {
+                model.push({op1: n1, op2: n2, opType: 'add', result: n1 * n2 });
+            };
+            $scope.divide = function(n1, n2) {
+                model.push({op1: n1, op2: n2, opType: 'add', result: n1 / n2 });
+            };
+            $scope.addNewItem = function(actionText) {
+                if (actionText && actionText.length > 0) {
+                    model.items.push({action: actionText, done: false});
+                }
+                $('#newItem').val('');
+            }
+        });
+</script>
+
+</body>
+</html>

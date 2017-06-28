@@ -17,7 +17,6 @@ INDEX VERSION 1.129+C:\Users\aguac\my_git_repos\1705May15Java\week3\.metadata\.p
 1020904535.index
 4265864773.index
 2470519452.index
-2887851957.index
 2272273464.index
 180813574.index
 4030082832.index

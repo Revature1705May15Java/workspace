@@ -1,0 +1,45 @@
+package com.challenges;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+class Solution{
+   
+   public static void main(String []argh)
+   {
+      Scanner sc = new Scanner(System.in);
+      Character[] arrL={'(','[','{'};
+      Character[] arrR={')',']','}'};
+      
+      while (sc.hasNext()) {
+         String input=sc.next();
+          if(input.length()%2!=0){
+              System.out.println(false);
+          }else{
+              int len=input.length();
+              ArrayList<Character> chars=new ArrayList<Character>();
+              for(int i=0;i<len;i++){
+            	  chars.add(input.charAt(i));
+              }
+              while(chars.size()>0){
+	          for(int i=0;i<len-1;i++){
+	            if(chars.get(i).equals())
+	          }
+              }
+	          if(chars.size()==0){
+	        	System.out.println(true);
+	          }else{
+	        	  System.out.println(false);
+	          }
+          }
+      }
+      
+   }
+   public int findIndex(Character c,Character[] ca){
+	   for(int i=0;i<ca.length;i++){
+		   if(ca[i]==c){
+			   return i;
+		   }
+	   }
+	   return -1;
+   }
+}
