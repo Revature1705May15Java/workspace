@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Sorting algorithm comparisons</title>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="sortingApp" ng-controller="SortingController">
+	<div class="container">
+		<div class="col-lg-2"></div>
+			<div>
+				<div class="col-lg-8 push-right">
+					Number {{values.length + 1}}:<input class="form-control" type="number" ng-model="input" style="width: 50%"/>
+					<button ng-click="insertValue()">Insert Value</button>
+				</div>
+
+			</div>
+			<div>
+			<div class="col-lg-5">
+			<table class="table table-striped" ng-show="mergeArr.length > 0">
+				<thead>
+					<tr>
+						<th>Value:</th>
+						<th>Insertion Order:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="v in mergeArr">
+						<td ng-bind="v.value"></td>
+						<td ng-bind="v.order"></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<div class="col-lg-5">
+			<table class="table table-striped" ng-show="mergeArr.length > 0">
+				<thead>
+					<tr>
+						<th>Insertion Sort Time:</th>
+						<th>Merge Sort Time:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td ng-bind="insertTime"></td>
+						<td ng-bind="mergeTime"></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</div>
+		<div class="col-lg-2"></div>
+	</div>
+
+	<script>
+		var app = angular.module("sortingApp", []);
+
+		function insertionSort(arr) {
+			var result = arr;
+			var temp = {};
+
+			for(var i = 1; i < arr.length; i++) {
+				temp = arr[i];
+				var j = i - 1;
+				
+				while(j >= 0 && arr[j].value > temp.value) {
+					arr[j + 1] = arr[j];
+					j--;
+				}
+
+				arr[j + 1] = temp;
+			}
+			
+			return result;
+		}
+
+		function merge(left, right, arr) {
+			var a = 0;
+
+			while (left.length && right.length) {
+				arr[a++] = (right[0].value < left[0].value) ? right.shift() : left.shift();
+			}
+			while (left.length) {
+				arr[a++] = left.shift();
+			}
+ 			while (right.length) {
+				arr[a++] = right.shift();
+			}
+		}
+ 
+		function mergeSort(arr) {
+			var len = arr.length;
+ 
+			if (len === 1) { return; }
+ 
+			var mid = Math.floor(len / 2),
+			left = arr.slice(0, mid),
+      		right = arr.slice(mid);
+ 
+  			mergeSort(left);
+  			mergeSort(right);
+  			merge(left, right, arr);
+		}
+
+		
+		app.controller("SortingController", function($scope){
+			$scope.values = [];
+			$scope.input = "";
+
+			$scope.insertArr = [];
+			$scope.mergeArr = [];
+
+			$scope.insertTime;
+			$scope.mergeTime;
+			
+			$scope.insertValue = function() {
+				if(angular.isNumber($scope.input)) {
+					var kvPair = {};
+					kvPair.value = $scope.input;
+					kvPair.order = $scope.values.length + 1;
+
+					$scope.values.push(kvPair);
+
+					var startTime, endTime;
+
+					$scope.insertArr = JSON.parse(JSON.stringify($scope.values));
+					$scope.mergeArr = JSON.parse(JSON.stringify($scope.values));
+
+					startTime = performance.now();
+					$scope.insertArr = insertionSort($scope.insertArr);
+					endTime = performance.now();
+
+					$scope.insertTime = endTime - startTime;					
+
+					startTime = performance.now();
+					mergeSort($scope.mergeArr);
+					endTime = performance.now();
+
+					$scope.mergeTime = endTime - startTime;
+				}
+			};
+		});
+	
+	</script>
+</body>
+</html>
