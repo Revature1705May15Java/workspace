@@ -1,0 +1,37 @@
+package model;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+//@Component
+@Entity
+@Table(name = "REQUEST")
+public class Request 
+{
+	
+	int statusId; 
+	
+	@Column(name = "REQUESTDATE")
+	Timestamp requestDate; 
+	
+	@Column(name = "RESOLVEDATE")
+	Timestamp resolveDate; 
+	
+	@Column(name = "AMOUNTREQUESTED")
+	double amount; 
+	
+	@Column(name = "PURPOSE")
+	String purpose; 
+	
+	@Id
+	int requestId; 
+	
+	@Column
+	int requesterId; 
+	
+	@Column
+	int approverId;
+}

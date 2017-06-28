@@ -1,0 +1,19 @@
+package model;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+import org.springframework.stereotype.Component;
+
+@Component 
+public class Employee 
+{
+	@Id
+	@Column(name = "EMAIL")
+	String email; 
+	String password; 
+	int id; 
+	String firstName; 
+	String lastName;
+	int isManager; 
+}

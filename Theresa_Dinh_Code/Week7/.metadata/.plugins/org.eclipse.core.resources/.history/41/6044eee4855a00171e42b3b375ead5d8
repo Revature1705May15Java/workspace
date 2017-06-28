@@ -1,0 +1,14 @@
+package controller;
+
+public class EmployeeController 
+{
+	public void addUser()
+	{
+		
+	}
+	
+	public void submitRequest()
+	{
+		
+	}
+}

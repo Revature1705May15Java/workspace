@@ -1,0 +1,27 @@
+package dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+@Transactional
+public class EmployeeDao 
+{
+	private static AbstractApplicationContext appContext = new ClassPathXmlApplicationContext("beans.xml"); 
+	private SessionFactory sessionFactory;
+	
+	public EmployeeDao()
+	{
+	}
+	
+	// constructor injection 
+	public EmployeeDao(SessionFactory sf)
+	{
+		sessionFactory = sf; 
+	}
+	
+	public static Dao getInstance()
+	{
+		return appContext.getBean("dao", Dao.Class); 
+	}
+}

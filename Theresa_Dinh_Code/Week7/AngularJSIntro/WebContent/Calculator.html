@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <title>Insert title here</title>
+    </head>
+    <body ng-app="CalculatorApp" ng-controller="Controller">
+        <!-- Number input -->
+        <!-- functions not getting the number inputs???? -->
+        <div>
+            <input type="number" placeholder="Enter a number" ng-model="calculator.history.num1">
+            <input type="number" placeholder="Enter a number" ng-model="calculator.history.num2">
+        </div>
+        <hr>
+        <!-- Operator select --> 
+        <div>
+            Operation
+            <button ng-click="calculator.add()">Addition</button>
+            <button ng-click="calculator.subtract()">Subtraction</button>
+            <button ng-click="calculator.multiply()">Multiplication</button>
+            <button ng-click="calculator.divide()">Division</button>
+<!--
+            <input type="radio" name="operation" value="addition" checked ng-click="add()">Addition
+            <input type="radio" name="operation" value="subtraction" checked ng-click="subtract()">Subtraction
+            <input type="radio" name="operation" value="multiplication" checked ng-click="multiply()">Multiplication
+            <input type="radio" name="operation" value="division" checked ng-click="divide()">Division
+-->
+        </div>
+        <hr>
+        <!-- Result -->
+        <div>
+            <p ng-model="result">Result {{result}}</p>
+        </div>
+        <!-- Operation History -->
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operand 1</th>
+                        <th>Operand 2</th>
+                        <th>Operation</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="op in calculator.history">
+                        <td>{{op.num1}}</td>
+                        <td>{{op.num2}}</td>
+                        <td>{{op.operator}}</td>
+                        <td>{{op.result}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <script type="text/javascript">
+            var app = angular.module("CalculatorApp", []); 
+            
+            app.controller("Controller", function($scope)
+                {
+                    var calculator = this; 
+//                    var num1 = parseInt(calculator.history.num1); 
+//                    var num2 = parseInt(calculator.history.num2); 
+                    calculator.history = 
+                    {
+                        num1: 0, 
+                        num2: 0, 
+                        operator: "", 
+                        result: 0                        
+                    };
+                    calculator.results = []; 
+                
+                    calculator.add = function()
+                    {
+                        $scope.result = num1 + num2; 
+                        calculator.history.result = calculator.history.num1 + calculator.history.num2; 
+                        calculator.history.operator = "Addition"; 
+                        calculator.results.push(history); 
+                        calculator.history = {}; 
+                    }; 
+                    calculator.subtract = function()
+                    {
+//                        $scope.result = num1 - num2; 
+                        calculator.history.result = num1 - num2; 
+                        calculator.history.operator = "Subtraction"; 
+                        calculator.results.push(history);
+                    };
+                    calculator.multiply = function()
+                    {
+//                        $scope.result = num1 * num2; 
+                        calculator.history.result = num1 * num2; 
+                        calculator.history.operator = "Multiplication"; 
+                        calculator.history.result.push(history);
+                    };
+                    calculator.divide = function()
+                    {
+//                        $scope.result = num1 / num2; 
+                        calculator.history.result = num1 / num2; 
+                        calculator.history.operator = "Division"; 
+                        calculator.history.result.push(history);      
+                    };
+                }
+            ); 
+        </script>
+    </body>
+</html>

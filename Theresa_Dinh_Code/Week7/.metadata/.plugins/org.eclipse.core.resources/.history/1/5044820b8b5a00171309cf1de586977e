@@ -1,0 +1,19 @@
+package service;
+
+import dao.Dao;
+import dao.EmployeeDao;
+
+public class EmployeeService 
+{
+	Dao dao = EmployeeDao.getInstance(); 
+	
+	public Employee createEmployee()
+	{
+		return null; 
+	}
+	
+	public Request submitRequest()
+	{
+		return null; 
+	}
+}

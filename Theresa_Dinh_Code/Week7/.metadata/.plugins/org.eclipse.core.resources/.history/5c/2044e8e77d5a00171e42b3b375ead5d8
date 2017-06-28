@@ -1,0 +1,24 @@
+package model;
+
+import java.sql.Timestamp;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table(name = "REQUEST")
+public class Request 
+{
+	
+	int statusId; 
+	Timestamp requestDate; 
+	Timestamp resolveDate; 
+	double amount; 
+	String purpose; 
+	int requestId; 
+	int requesterId; 
+	int approverId;
+}

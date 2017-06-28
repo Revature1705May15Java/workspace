@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+<head>
+<meta charset="ISO-8859-1">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<title>Insert title here</title>
+</head>
+
+<body ng-controller="todocontroller">
+
+	<div>
+		Name: <input class="form-control" type="text" ng-model="user"><br>
+		<h1>{{user}}</h1>
+
+		<table>
+			<thead>
+				<tr>
+					<th>a description</th>
+					<th>done</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in todo.items">
+					<td>{{item.action}}</td>
+					<td><input type="checkbox" ng-model="item.done"></td>
+					<td>{{item.done}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+		var model = {
+			user : "username",
+			items : [ {
+				action : "complete project 2",
+				done : false
+			}, {
+				action : "study",
+				done : false
+			}, {
+				action : "make dinner",
+				done : false
+			} ]
+		};
+
+		var app = angular.module("todoapp", []);
+		app.filter("checkeditems", function() {
+			return function(items, showComplete) {
+				return
+			}
+		});
+		app.controller("todocontroller", function($scope) {
+			$scope.todo = model;
+		});
+	</script>
+
+</body>
+</html>

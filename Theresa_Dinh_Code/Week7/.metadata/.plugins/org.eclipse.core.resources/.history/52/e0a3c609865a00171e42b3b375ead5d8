@@ -1,0 +1,18 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class EmployeeController 
+{
+	
+	public void addUser()
+	{
+		
+	}
+	
+	public void submitRequest()
+	{
+		
+	}
+}

@@ -1,0 +1,21 @@
+package service;
+
+import dao.Dao;
+import dao.EmployeeDao;
+import model.Employee;
+import model.Request;
+
+public class EmployeeService 
+{
+	Dao dao = EmployeeDao.getInstance(); 
+	
+	public Employee createEmployee()
+	{
+		return null; 
+	}
+	
+	public Request submitRequest()
+	{
+		return null; 
+	}
+}

@@ -1,0 +1,14 @@
+package model;
+
+public class Employee 
+{
+	@Id
+	@Column(name = "EMAIL")
+	
+	String email; 
+	String password; 
+	int id; 
+	String firstName; 
+	String lastName;
+	int isManager; 
+}
