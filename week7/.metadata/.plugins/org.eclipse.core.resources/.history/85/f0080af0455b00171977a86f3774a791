@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello Angular World!</title>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp">
+	
+	<div ng-controller="HelloController">
+	
+		<h1>Hello World {{ message }}</h1>	
+	
+	</div>
+	
+	<div ng-controller="MySecondController">
+		
+		Name:<input type=text ng-model="name"/><br>
+		<h2>Hey, {{ name }}</h2>
+		
+	</div>
+
+<script>
+// Angular Module
+var app = angular.module("myApp", []);
+
+app.controller("HelloController", function($scope){
+	$scope.message = "This is AngularJS!";
+});
+
+app.controller("MySecondController", function($scope){
+	
+});
+
+
+</script>
+
+</body>
+</html>
+
+<!-- 
+- HTML is loaded and evaluated by the browser.
+- AngularJS (AJS) file is loaded and executed, creating the angular global object.
+- The JS that creates the myApp module and registers the HomeController function is created.
+- Angular scans HTML looking for apps and views. If AJS finds a view, it connects that view with the specified controller function.
+- AJS executes the controller functions and updates the views with the data from the model populated by the controller.
+- At this point, the HTML page is ready to be displayed.
+- AJS now listens for the browser events such as mouseover or click. If any of these events were to require a veiw change,
+  Angular will update the view accordingly.
+-->
+ 
+ 

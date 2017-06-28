@@ -1,0 +1,12 @@
+import java.util.*;
+class TestingGrounds{
+
+	public static void main(String []argh)
+	{
+			
+	}
+	
+	public <T> void printArray(T[] theArray){
+		for(int i = 0; i < theArray.length; i++) System.out.println(theArray[i]);
+	}
+}

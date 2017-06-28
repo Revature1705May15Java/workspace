@@ -1,0 +1,5 @@
+package com.ex.testpojo;
+
+public class UserStatus {
+
+}

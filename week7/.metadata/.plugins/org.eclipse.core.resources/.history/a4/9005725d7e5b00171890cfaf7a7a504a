@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>CALCULATOR!!</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+</head>
+<body ng-controller="ToDoCtrl">
+	<div>
+		<input type="number" ng-model="num1" placeholder="first number..."/>
+		<input type="number" ng-model="num2" placeholder="second number..."/>
+		<button class="btn btn-primary" ng-click="addItems(num1, num2)">Add</button>
+		<button class="btn btn-primary" ng-click="subtractItems(num1, num2)">Subtract</button>
+		<button class="btn btn-primary" ng-click="multiplyItems(num1, num2)">Multiply</button>
+		<button class="btn btn-primary" ng-click="divideItems(num1, num2)">Divide</button>
+	
+		<h1>Calculator</h1>
+		<table class="table">
+		<thead>
+			<tr>
+				<th>Num 1</th>
+				<th>Num 2</th>
+				<th>Operation</th>
+				<th>Result</th>
+			</tr>
+		<thead>
+		<tbody>
+			<tr ng-repeat="item in todo.items">
+				<td>{{ item.first }}</td>
+				<td>{{ item.second }}</td>
+				<td>{{ item.action }}</td>
+				<td>{{ item.result }}</td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+
+	<script>
+		var model = {
+			items : []
+		};
+		
+			var todoApp = angular.module("myApp", []);
+			
+			todoApp.filter("checkedItems", function(){
+				return function(items, showComplete){
+					var resultArr = [];
+					angular.forEach(items, function(item){
+						if(item.done == false || showComplete == true){
+							resultArr.push(item);	
+						}
+					});
+					return resultArr;
+				}
+			});
+			
+			todoApp.controller("ToDoCtrl", function($scope){
+			$scope.todo = model
+			
+			$scope.incompleteCount = function(){
+				var count = 0;
+				angular.forEach($scope.todo.items, function(item){
+					if(!item.done) {
+						count++;
+					}
+				});
+				return count;
+			};
+			
+			$scope.addItems = function(num1, num2){
+				if((num1 && num2) || (num1 == 0 && num2 == 0) || (num1 == 0 && num2) || (num1 && num2 == 0)){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "add", result: (num1+num2)
+					})
+				}
+			};
+			$scope.subtractItems = function(num1, num2){
+				if((num1 && num2) || (num1 == 0 && num2 == 0) || (num1 == 0 && num2) || (num1 && num2 == 0)){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "subtract", result: (num1-num2)
+					})
+				}
+			};
+			$scope.multiplyItems = function(num1, num2){
+				if((num1 && num2) || (num1 == 0 && num2 == 0) || (num1 == 0 && num2) || (num1 && num2 == 0)){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "multiply", result: (num1*num2)
+					})
+				}
+			};
+			$scope.divideItems = function(num1, num2){
+				if(num1 && num2 && num2 != 0){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "divid", result: (num1/num2)
+					})
+				} else if (num1 == 0){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "divid", result: 0
+					})
+				} else if (num2 == 0){
+					$scope.todo.items.push({
+						first: num1, second: num2, action: "divid", result: "UNDEFINED"
+					})
+				}
+			};
+		});
+			
+	
+	</script>
+
+</body>
+</html>
