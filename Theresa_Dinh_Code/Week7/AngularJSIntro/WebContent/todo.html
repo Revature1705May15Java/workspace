@@ -31,11 +31,12 @@
 <body ng-controller="todocontroller">
 
 	<div>
-		Name: <input class="form-control" type="text" ng-model="user"><br>
+		Name: <input type="text" placeholder="name" ng-model="user"><br>
 		<h1>{{user}}</h1>
 		
 		<input type="text" ng-model="actionText"/>
 		<button ng-click="addnewitem(actionText)">add</button>
+        
 		<p ng-hide="incompletecount()==0">Items Left: {{imcompletecount}}</p>
 		<table class="">
 			<thead>
@@ -73,34 +74,34 @@
 
 		var app = angular.module("todoapp", []);
 		
-		app.filter("checkeditems", function() 
-		{
-			return function(items, showComplete) 
-			{
-				var results = {};
-				angular.forEach(items, function(item) 
-				{
-					if(item.done==false || showComplete==true)
-						result.push(item);
-				}
-				
-			);
-				return results; 
-			}
-				
-		});
+//		app.filter("checkeditems", function() 
+//		{
+//			return function(items, showComplete) 
+//			{
+//				var results = {};
+//				angular.forEach(items, function(item) 
+//				{
+//					if(item.done==false || showComplete==true)
+//						result.push(item);
+//				}
+//				
+//			);
+//				return results; 
+//			}
+//				
+//		});
 		
 		
 		app.controller("todocontroller", function($scope) {
 			$scope.todo = model;
-			$scope.incompletecount = function(){
-				var count = 0; 
-				angular.forEach($scope.todo.items, function(item){
-					if(!item.done)
-						count++;
-				}); 
-				return count; 
-			};
+//			$scope.incompletecount = function(){
+//				var count = 0; 
+//				angular.forEach($scope.todo.items, function(item){
+//					if(!item.done)
+//						count++;
+//				}); 
+//				return count; 
+//			};
 			$scope.addnewitem = function(actionText){
 				$scope.todo.items.push({
 					action: actionText,

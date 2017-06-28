@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Wed Jun 28 00:16:31 EDT 2017
+#Wed Jun 28 10:35:48 EDT 2017
+org.eclipse.jst.jee.server\:AngularPractice=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.5.15\\wtpwebapps\\AngularPractice
 org.eclipse.jst.jee.server\:AngularJSIntro=C\:\\Users\\tmdin\\Downloads\\apache-tomcat-8.5.15\\wtpwebapps\\AngularJSIntro

@@ -10,17 +10,19 @@
         <!-- Number input -->
         <!-- functions not getting the number inputs???? -->
         <div>
-            <input type="number" placeholder="Enter a number" ng-model="calculator.history.num1">
-            <input type="number" placeholder="Enter a number" ng-model="calculator.history.num2">
+            <form>
+                <input type="number" placeholder="Enter a number" ng-model="calculator.history.num1">
+                <input type="number" placeholder="Enter a number" ng-model="calculator.history.num2">
+            </form>
         </div>
         <hr>
         <!-- Operator select --> 
         <div>
             Operation
-            <button ng-click="calculator.add()">Addition</button>
-            <button ng-click="calculator.subtract()">Subtraction</button>
-            <button ng-click="calculator.multiply()">Multiplication</button>
-            <button ng-click="calculator.divide()">Division</button>
+            <button type="submit" ng-click="calculator.add()">Addition</button>
+            <button type="submit" ng-click="calculator.subtract()">Subtraction</button>
+            <button type="submit" ng-click="calculator.multiply()">Multiplication</button>
+            <button type="submit" ng-click="calculator.divide()">Division</button>
 <!--
             <input type="radio" name="operation" value="addition" checked ng-click="add()">Addition
             <input type="radio" name="operation" value="subtraction" checked ng-click="subtract()">Subtraction

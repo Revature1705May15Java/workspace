@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="Sorter">
+    <head>
+        <meta charset="ISO-8859-1">
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="	crossorigin="anonymous"></script>
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"	crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <title>Insert title here</title>
+    </head>
+    
+    <body ng-controller="SortController">
+        <!-- Number Input -->
+        <div name="number-input">
+            <form>
+                <input type="text" placeholder="Enter a number" ng-model="number">
+                <button type="submit" ng-click="updateArray(number)">Add</button>
+            </form>
+        </div>
+        <hr>
+        <!-- Array Display -->
+        <div name="arrays">
+            <h2>Unsorted</h2>
+            <table name="unsorted" class="table-bordered">
+                <tbody>
+                    <tr>
+                        <td ng-repeat="element in ngArray">{{element}}</td>
+                    </tr>
+                </tbody>    
+            </table>
+            <hr>
+            <h2>Sorted</h2>
+            <table name="sorted" class="table-bordered">
+                <tr>
+                    <td ng-repeat="element in ngSortedArray">{{element}}</td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+<!------------------------------------------------------------------------------>
+        <script>
+            var array = [""]; 
+            var sortedArray = [""]; 
+            
+            
+            
+             var app = angular.module("Sorter", []);
+            app.controller("SortController", function($scope)
+                {
+                    $scope.ngArray = array; 
+                    $scope.ngSortedArray = sortedArray; 
+//                add new number to array 
+//                not sure why duplicates not allowed 
+                    $scope.updateArray = function(number){$scope.ngArray.push(number); $scope.ngSortedArray.push(number);console.log(typeof(parseInt($scope.ngArray[0])));}; 
+//                    angular.forEach($scope.ngArray, function(){0
+//                        angular.forEach(); 
+//                    }); 
+                
+                     
+//                    Insertion Sort
+                    for(var i = 1; i < $scope.ngSortedArray.length; i++)
+                    {
+                        for(var j = i; j > 0; j--)
+                        {
+                            //why is if broken ????????????
+                            if(((parseInt($scope.ngSortedArray[j-1]))) > (parseInt($scope.ngSortedArray[j])))
+                            {
+                                var temp = $scope.ngSortedArray[j-1]; 
+                                $scope.ngSortedArray[j-1] = $scope.ngSortedArray[j];
+                                $scope.ngSortedArray[j] = temp; 
+                            }
+                            else 
+                                break; 
+                        }
+                    }
+            }); 
+        </script>
+<!------------------------------------------------------------------------------>
+    </body>
+</html>
