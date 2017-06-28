@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- AngularJS CDN, put in projects that use Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body ng-app="sortApp" ng-controller="mergeSortCtrl">
+
+
+Merge Sort
+<input type="number" ng-model="newNum">
+<br>
+<button ng-click="addItem(newNum)">Add to list</button>
+<button ng-click="mergeSort()">Merge Sort</button>
+
+<br>
+Unsorted
+<br>
+<ul>
+
+	<li ng-repeat = "item in sort.items">
+		{{item.num}}
+	</li>
+
+</ul>
+
+Sorted
+<ul>
+
+	<li ng-repeat = "item in sort.sorted">
+		{{item.num}}
+	</li>
+
+</ul>
+
+
+Insertion Sort
+<input type="number" ng-model="newNum2">
+<button ng-click="addItem2(newNum2)">Add to list</button>
+<button ng-click="inSort()">Insertion Sort</button>
+
+<br>
+Unsorted
+<br>
+<ul>
+
+	<li ng-repeat = "item in sort.items2">
+		{{item.num}}
+	</li>
+
+</ul>
+
+Sorted
+<ul>
+
+	<li ng-repeat = "item in sort.sorted2">
+		{{item.num}}
+	</li>
+
+</ul>
+</div>
+
+<script>
+
+var model = { items : [], sorted : [], items2: [], sorted2: []};
+
+var sortApp = angular.module("sortApp",[]);
+
+sortApp.controller("mergeSortCtrl", function($scope){
+	
+	$scope.sort = model;
+
+	$scope.addItem = function (newNum){
+		
+		$scope.sort.items.push({ num : newNum });
+
+	}
+	
+	$scope.mergeSort = function()
+	{
+
+		//extract numbers from the list of items
+		var getItems = $scope.sort.items;
+		var unsorted = [];
+
+		for(var i=0;i<getItems.length; i++)
+		{
+			unsorted.push(getItems[i].num);
+		}
+
+
+		//take in the unsorted array and split in half if it has more than two items
+		function mergeSort(arr)
+		{
+		    if (arr.length < 2)
+		        return arr;
+		 
+		    var middle = parseInt(arr.length / 2);
+		    var left   = arr.slice(0, middle);
+		    var right  = arr.slice(middle, arr.length);
+		 
+		    return merge(mergeSort(left), mergeSort(right));
+		}
+
+		//merges two arrays given to it in ascending order
+		function merge(left, right)
+		{
+		    var result = [];
+
+			  
+		    while (left.length && right.length) {
+		        if (left[0] <= right[0]) {
+		            result.push(left.shift());
+		        } else {
+		            result.push(right.shift());
+		        }
+		    }
+
+		    while (left.length)
+		        result.push(left.shift());
+		 
+		    while (right.length)
+		        result.push(right.shift());
+		 
+		    return result;
+		}
+
+
+		//call sort function
+		var mergeSorted = mergeSort(unsorted);
+
+		//resets sorted items and updates the sorted list
+		$scope.sort.sorted = [];
+
+		for(var i=0;i<getItems.length; i++)
+		{
+			$scope.sort.sorted.push({ num : mergeSorted[i] });
+		}
+		
+	}
+
+
+
+	$scope.addItem2 = function (newNum){
+		
+		$scope.sort.items2.push({ num : newNum });
+
+	}
+
+	
+	$scope.inSort = function()
+	{
+
+		//extract numbers from the list of items
+		var getItems = $scope.sort.items2;
+		var unsorted = [];
+
+		for(var i=0;i<getItems.length; i++)
+		{
+			unsorted.push(getItems[i].num);
+		}
+
+		function inSort (arr)
+		{
+		   //outer loop goes through unsorted portion of array
+			for(var i=1;i<arr.length;i++)
+			{
+
+				var temp = arr[i];
+
+				//inner loop compares current value to sorted elements and puts in place
+				for(var j= i-1; j>=0;j--)
+				{
+					if(arr[j] < temp)
+					{
+						break;
+					}
+
+					arr[j+1]=arr[j];
+				}
+
+				arr[j+1] = temp;
+				
+			}
+
+			return arr;
+			
+		}
+
+		var inSorted = inSort(unsorted);
+
+		//resets sorted items and updates the sorted list
+		$scope.sort.sorted2 = [];
+
+		for(var i=0;i<inSorted.length; i++)
+		{
+			$scope.sort.sorted2.push({ num : inSorted[i] });
+		}
+}
+
+
+	
+});
+
+
+</script>
+
+</body>
+</html>

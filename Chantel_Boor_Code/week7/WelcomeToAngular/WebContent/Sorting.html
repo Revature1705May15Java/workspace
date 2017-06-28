@@ -24,14 +24,18 @@
 
 
 </head>
-<body ng-app="sortApp" ng-controller="sortCtrl">
+<body ng-app="sortApp" ng-controller="mergeSortCtrl">
+
 
 Merge Sort
 <input type="number" ng-model="newNum">
+<br>
 <button ng-click="addItem(newNum)">Add to list</button>
 <button ng-click="mergeSort()">Merge Sort</button>
 
+<br>
 Unsorted
+<br>
 <ul>
 
 	<li ng-repeat = "item in sort.items">
@@ -40,7 +44,7 @@ Unsorted
 
 </ul>
 
-Merge Sorted
+Sorted
 <ul>
 
 	<li ng-repeat = "item in sort.sorted">
@@ -49,13 +53,41 @@ Merge Sorted
 
 </ul>
 
+
+Insertion Sort
+<input type="number" ng-model="newNum2">
+<br>
+<button ng-click="addItem2(newNum2)">Add to list</button>
+<button ng-click="inSort()">Insertion Sort</button>
+
+<br>
+Unsorted
+<br>
+<ul>
+
+	<li ng-repeat = "item in sort.items2">
+		{{item.num}}
+	</li>
+
+</ul>
+
+Sorted
+<ul>
+
+	<li ng-repeat = "item in sort.sorted2">
+		{{item.num}}
+	</li>
+
+</ul>
+</div>
+
 <script>
 
-var model = { items : [], sorted : []};
+var model = { items : [], sorted : [], items2: [], sorted2: []};
 
 var sortApp = angular.module("sortApp",[]);
 
-sortApp.controller("sortCtrl", function($scope){
+sortApp.controller("mergeSortCtrl", function($scope){
 	
 	$scope.sort = model;
 
@@ -129,7 +161,68 @@ sortApp.controller("sortCtrl", function($scope){
 	}
 
 
+
+	$scope.addItem2 = function (newNum){
+		
+		$scope.sort.items2.push({ num : newNum });
+
+	}
+
+	
+	$scope.inSort = function()
+	{
+
+		//extract numbers from the list of items
+		var getItems = $scope.sort.items2;
+		var unsorted = [];
+
+		for(var i=0;i<getItems.length; i++)
+		{
+			unsorted.push(getItems[i].num);
+		}
+
+		function inSort (arr)
+		{
+		   //outer loop goes through unsorted portion of array
+			for(var i=1;i<arr.length;i++)
+			{
+
+				var temp = arr[i];
+
+				//inner loop compares current value to sorted elements and puts in place
+				for(var j= i-1; j>=0;j--)
+				{
+					if(arr[j] < temp)
+					{
+						break;
+					}
+
+					arr[j+1]=arr[j];
+				}
+
+				arr[j+1] = temp;
+				
+			}
+
+			return arr;
+			
+		}
+
+		var inSorted = inSort(unsorted);
+
+		//resets sorted items and updates the sorted list
+		$scope.sort.sorted2 = [];
+
+		for(var i=0;i<inSorted.length; i++)
+		{
+			$scope.sort.sorted2.push({ num : inSorted[i] });
+		}
+}
+
+
+	
 });
+
 
 </script>
 
