@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Hello Angular</title>
+		 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<h3>Testing test</h3>
+		<div ng-controller="helloController">
+			<h1>Hello World: {{message}}</h1>
+		</div>
+		
+		<div ng-controller="mySecondController">
+			Name: <input type="text" ng-model="name"/>
+			<h1>Hey, {{name}}</h1>
+		</div>
+		
+		<script>
+			var app = angular.module("myApp",[])
+			app.controller("helloController", function($scope) {
+				$scope.message = "this is AngularJS";
+			});
+			
+			app.controller("mySecondController", function($scope) {
+				$scope
+			});
+		</script>
+	</body>
+</html>
+<!-- 
+HTML is loaded and evaluated by browser
+AngularJS is loaded and executed, creating the angular global object
+javascript that creates the myApp module and registers the homeController function is executed
+Angular scans html looking for apps and views, if a view is found, connects the view with the specified controller function
+AngularJS executes the controller functions and updates the view with the data from the model populated by the controller.
+Displys pages and Angular listens for browsers events like mouseover and click and if any of these events require a view changes Angular updates the view as needed.
+
+controller - business logic behind views
+data binding - cynchronizes data between the model and the view
+dependency injection - creates and wires objects and functions
+directives - extend html with custom attributes and elements
+expressions access variables and functions from the scope
+filter - formats the value of an expression for display to the user.
+injector - dependency injection container
+model - the model is the data shown to the user in the view and with which the user interacts
+module - a container for the different parts of an app including controllers, services, filters, an directives which configure the injector
+scope - the context where the model is store so that controllers, directives, and expressions can access it, ties the view to the controller
+view - what the user sees
+service, a reusable business logic which is independent of views
+template - html with additional markup
+ -->
