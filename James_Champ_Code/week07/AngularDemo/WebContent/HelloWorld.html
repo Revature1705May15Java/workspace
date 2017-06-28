@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+	<title>Hello World Angular</title> 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="HelloController">
+		<h1>Hello World: {{ message }}</h1>
+	</div>
+	
+	<div ng-controller="NewController">
+		Name: <input type="text" ng-model="name"/><br>
+		<h2>Hey, {{ name }}</h2>
+	</div>
+	
+	<script>
+		// Angular module
+		var app = angular.module("myApp",[]);
+
+		app.controller("HelloController", function($scope) {
+			$scope.message = "This is AngularJS!";
+		});
+
+		app.controller("NewController", function($scope){
+
+		});
+		
+		// Steps:
+		// 1. HTML loaded/evaluated by the browser.
+		// 2. AngularJS is loaded and executed, reating the angular global object.
+		// 3. The JavaScript that creates the "myApp" module and registers the HomeController function is executed.
+		// 4. Angular scans html looking for apps and views.
+		//		- If AngularJS finds a view, it connects that view with the specified controller function.
+		// 5. AngularJS executes the controller functions and updates the views with the data from the
+		//	  model populated by the controller.
+		// 6. At this point, the HTML page is ready to be displayed.
+		// 7. AngularJS now listens for the browser events such as mouseover or click. If any of these events
+		//    were to require a view change, AngularJS will update the view accordingly.
+		
+	</script>
+</body>
+</html>
