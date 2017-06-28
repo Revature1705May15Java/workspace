@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- AngularJS CDN, put in projects that use Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+</head>
+<body ng-app="sortApp" ng-controller="sortCtrl">
+
+Merge Sort
+<input type="number" ng-model="newNum">
+<button ng-click="addItem(newNum)">Add to list</button>
+<button ng-click="mergeSort()">Add to list</button>
+
+Unsorted
+<ul>
+
+	<li ng-repeat = "item in sort.items">
+		{{item.num}}
+	</li>
+
+</ul>
+
+Merge Sorted
+<ul>
+
+	<li ng-repeat = "item in sort.sorted">
+		{{item.num}}
+	</li>
+
+</ul>
+
+<script>
+
+var model = { items : [], sorted : []};
+
+var sortApp = angular.module("sortApp",[]);
+
+sortApp.controller("sortCtrl", function($scope){
+	
+	$scope.sort = model;
+
+	$scope.addItem = function (newNum){
+		
+		$scope.sort.items.push({ num : newNum });
+
+	}
+	
+	$scope.mergeSort = function()
+	{
+
+		var getItems = $scope.sort.items;
+		var unsorted = [];
+
+		for(var i=0;i<getItems.length; i++)
+		{
+			unsorted.push(getItems[i].num);
+		}
+
+		console.log(unsorted);
+		
+		function mergeSort(arr)
+		{
+		    if (arr.length < 2)
+		        return arr;
+		 
+		    var middle = parseInt(arr.length / 2);
+		    var left   = arr.slice(0, middle);
+		    var right  = arr.slice(middle, arr.length);
+		 
+		    return merge(mergeSort(left), mergeSort(right));
+		}
+		 
+		function merge(left, right)
+		{
+		    var result = [];
+		 
+		    while (left.length && right.length) {
+		        if (left[0] <= right[0]) {
+		            result.push(left.shift());
+		        } else {
+		            result.push(right.shift());
+		        }
+		    }
+		 
+		    while (left.length)
+		        result.push(left.shift());
+		 
+		    while (right.length)
+		        result.push(right.shift());
+		 
+		    return result;
+		}
+
+		var mergeSorted = mergeSort(unsorted);
+
+		$scope.sort.sorted = mergeSorted;
+	}
+
+
+});
+
+</script>
+
+</body>
+</html>
