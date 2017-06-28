@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- AngularJS CDN, put in projects that use Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<body ng-app="calcApp" ng-controller="calcCtrl">
+
+Num 1: <input type="text" ng-model="num1" >
+Num 2: <input type="text" ng-model="num2" >
+<button ng-click="addNums(num1,num2)">Add</button>
+
+<table class = "table-striped">
+<thead>
+	<tr>
+		<th style="padding-right:20px">Num 1</th>
+		<th style="padding-right:20px">Num 2</th>
+		<th style="padding-right:20px">OP</th>
+		<th style="padding-right:20px">Result</th>
+	</tr>
+</thead>
+<tbody>
+
+	<tr ng-repeat= "item in todo.items | checkedItems:showComplete">
+		<td>{{item.num1}}</td>
+		<td>{{item.num2}}</td>
+		<td>{{item.op}}</td>
+		<td>{{item.result}}</td>
+	</tr>
+
+</tbody>
+
+</table>
+
+
+
+
+<script>
+
+var model = {
+		items : []
+}
+
+var calcApp = angular.module("calcApp",[]);
+
+calcApp.controller("calcCtrl",function($scope){
+
+$scope.calc = model;
+
+$scope.addNewItem = function (num1,num2){
+
+	$scope.calc.items.push({
+			num1 : num1,
+			num2 : num2
+			op : "add"
+			result : num1 + num2
+		});
+
+}
+	
+}
+
+</script>
+
+</body>
+</html>

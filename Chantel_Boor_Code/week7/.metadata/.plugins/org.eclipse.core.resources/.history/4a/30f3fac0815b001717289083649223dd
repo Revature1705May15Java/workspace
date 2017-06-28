@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculator</title>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<!-- AngularJS CDN, put in projects that use Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<body ng-app="calcApp" ng-controller="calcCtrl">
+
+
+
+Num 1: <input type="number" ng-model="num1">
+Num 2: <input type="number" ng-model="num2">
+<button ng-click="add(num1,num2)">Add</button>
+<button ng-click="subtract(num1,num2)">Subtract</button>
+<button ng-click="divide(num1,num2)">Divide</button>
+<button ng-click="multiply(num1,num2)">Multiply</button>
+
+<table class = "table-striped">
+<thead>
+	<tr>
+		<th style="padding-right:20px">Num1</th>
+		<th style="padding-right:20px">Num2</th>
+		<th style="padding-right:20px">op</th>
+		<th>Result</th>
+	</tr>
+</thead>
+<tbody>
+
+	<tr ng-repeat= "item in calc.items">
+		<td style="padding-right:20px">{{item.num1}}</td>
+		<td style="padding-right:20px">{{item.num2}}</td>
+		<td style="padding-right:20px">{{item.op}}</td>
+		<td>{{item.result}}</td>
+	</tr>
+
+</tbody>
+
+</table>
+
+<label> <input type="checkbox" ng-model="showComplete"> Show Complete</label>
+
+<script>
+
+var model = {
+		items : [
+			]
+};
+
+var calcApp = angular.module("calcApp",[]);
+
+
+calcApp.controller("calcCtrl",function($scope){
+	$scope.calc = model;
+
+	$scope.add = function (num1,num2){
+
+			$scope.calc.items.push({
+					num1 : num1,
+					num2 : num2,
+					op : "addition",
+					result : parseInt(num1) + parseInt(num2)
+				});
+
+		}
+
+
+$scope.subtract = function (num1,num2){
+
+	$scope.calc.items.push({
+			num1 : num1,
+			num2 : num2,
+			op : "subtraction",
+			result : parseInt(num1) - parseInt(num2)
+		});
+
+}
+
+
+$scope.divide = function (num1,num2){
+
+	$scope.calc.items.push({
+			num1 : num1,
+			num2 : num2,
+			op : "division",
+			result : parseInt(num1) / parseInt(num2)
+		});
+
+}
+
+
+$scope.multiply = function (num1,num2){
+
+	$scope.calc.items.push({
+			num1 : num1,
+			num2 : num2,
+			op : "multiplication",
+			result : parseInt(num1) * parseInt(num2)
+		});
+
+}
+});
+
+</script>
+
+</body>
+</html>
