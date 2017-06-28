@@ -37,12 +37,14 @@
 
 
 
-	Name:
-	<input class="form-control" type="text" ng-model="user" />
-	</br>
-	<h1>Hey, {{user}}</h1>
+	
+	<h1>Hey, {{todo.user}}</h1>
+	
+	<input type="text" ng-model="actionText"/>
+	<button ng-click="addNewItem(actionText)">Add</button>
 
-	<table>
+<p ng-hide="incompleteCount()==0">Items Left : {{ incompleteCount() }}</p>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Description</th>
@@ -50,7 +52,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in todo.items | checkedItems:showComplete">
+			<tr ng-repeat="item in todo.items | checkedItems:showComplete ">
 				<td>{{item.action}}</td>
 				<td><input type="checkbox" ng-model="item.done" /></td>
 				<td>{{item.done}}</td>
@@ -58,6 +60,7 @@
 		</tbody>
 	</table>
 
+<label> <input type="checkbox" ng-model="showComplete"> Show Complete </label>
 
 
 	<script>
@@ -96,6 +99,26 @@
 		
 		todoApp.controller("ToDoCtrl", function($scope) {
 			$scope.todo = model;
+			
+			$scope.incompleteCount = function(){
+				var count = 0;
+				angular.forEach($scope.todo.items, function(item){
+					if(!item.done){
+					count++
+					}
+				});
+				return count;
+			};
+			
+			$scope.addNewItem = function(actionText){
+				$scope.todo.items.unshift(
+				{
+					action : actionText,
+					done : false
+				});
+			}
+			
+			
 		});
 	</script>
 

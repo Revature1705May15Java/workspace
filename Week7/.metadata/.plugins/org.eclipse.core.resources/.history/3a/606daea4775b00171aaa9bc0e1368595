@@ -60,7 +60,6 @@
 		</tbody>
 	</table>
 
-<label> <input type="checkbox" ng-model="showComplete"> Show Complete </label>
 
 
 	<script>
@@ -111,7 +110,7 @@
 			};
 			
 			$scope.addNewItem = function(actionText){
-				$scope.todo.items.unshift(
+				$scope.todo.items.shift(
 				{
 					action : actionText,
 					done : false

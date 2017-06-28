@@ -52,7 +52,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in todo.items | checkedItems:showComplete ">
+			<tr ng-repeat="item in todo.items | done:false ">
 				<td>{{item.action}}</td>
 				<td><input type="checkbox" ng-model="item.done" /></td>
 				<td>{{item.done}}</td>
@@ -60,7 +60,6 @@
 		</tbody>
 	</table>
 
-<label> <input type="checkbox" ng-model="showComplete"> Show Complete </label>
 
 
 	<script>

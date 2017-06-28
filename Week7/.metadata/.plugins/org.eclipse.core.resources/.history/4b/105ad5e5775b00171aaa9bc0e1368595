@@ -60,7 +60,6 @@
 		</tbody>
 	</table>
 
-<label> <input type="checkbox" ng-model="showComplete"> Show Complete </label>
 
 
 	<script>
