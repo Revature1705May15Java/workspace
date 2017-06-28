@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NgCalc - The AngularJS Calculator</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="./js/calculator.js"></script>
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+  <!-- Tether -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+    integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap 4-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+    integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./css/calculator.css">
+</head>
+<body ng-app="calcApp" ng-controller="calcController">
+  <div class="container">
+    <h1>NgCalc</h1>
+    <br>
+    <div class="row">
+      <div class="col-7">
+        <form name="calcForm">
+          <div class="form-group row">
+            <label for="varA" class="col-1 col-form-label">a = </label>
+            <input type="number" id="varA" class="col-2 form-control" ng-model="varA">
+          </div>
+          <div class="form-group row">
+            <label for="varB" class="col-1 col-form-label">b = </label>
+            <input type="number" id="varB" class="col-2 form-control" ng-model="varB">
+          </div>
+          <div class="form-group row">
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="add()">+</button>
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="subtract()">-</button>
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="multiply()">*</button>
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="divide()">/</button>
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="modulo()">%</button>
+            <button type="button" class="btn btn-outline-primary font-weight-bold mx-2 my-2" ng-click="exponentiate()">^</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-2">
+        <ul class="list-group" id="results-list">
+            <li class="list-group-item" ng-repeat="line in history track by $index">
+              {{ line }}
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

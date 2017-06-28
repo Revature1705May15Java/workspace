@@ -1,0 +1,20 @@
+body, html {
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+div {
+  height: 100%;
+  overflow: hidden;
+}
+
+#results-list {
+  overflow-y: scroll;
+  height: 100%;
+}
