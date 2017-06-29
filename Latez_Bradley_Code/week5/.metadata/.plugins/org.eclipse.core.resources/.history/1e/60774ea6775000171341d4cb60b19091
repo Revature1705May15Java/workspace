@@ -1,7 +1,0 @@
-package com.ex.dao;
-
-public class BearDAO {
-	
-	public void createBer(Bear b);
-
-}

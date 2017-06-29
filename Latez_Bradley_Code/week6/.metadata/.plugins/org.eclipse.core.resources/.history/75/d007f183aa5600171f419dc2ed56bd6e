@@ -1,7 +1,0 @@
-package com.ex.service;
-
-public interface CustomerService {
-
-	List<Customer> findAll();
-
-}
