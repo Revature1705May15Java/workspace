@@ -1,0 +1,8 @@
+package com.ex.service;
+
+public interface UserService {
+
+	public UserDto authenticateUser(UserDto userDto);
+	public void createUser(UserDto userDto);
+
+}

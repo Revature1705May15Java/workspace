@@ -964,3 +964,641 @@ org.eclipse.core.runtime.CoreException: Launch configuration Driver (1) referenc
 2017-06-27 13:04:36,431 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\AngularJSTodoList\src\main\resources
 2017-06-27 13:04:36,436 [Worker-169] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-06-27 13:04:36,455 [Worker-169] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\AngularJSTodoList\src\test\resources
+2017-06-29 09:58:57,100 [Worker-241] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-29 09:58:59,278 [Worker-241] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:58:59,301 [Worker-241] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:58:59,306 [Worker-241] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:58:59,320 [Worker-241] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:00,511 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:00,822 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:00,883 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:00,931 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:01,656 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:01,734 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:01,735 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:01,769 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:02,612 [Worker-244] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:02,688 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:02,694 [Worker-244] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:02,721 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:03,063 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:03,142 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:03,143 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:03,172 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:03,809 [Worker-244] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:03,864 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:03,865 [Worker-244] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:03,879 [Worker-244] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:04,281 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:04,330 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:04,331 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:04,344 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:04,640 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:04,714 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 09:59:04,717 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:04,734 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 09:59:13,783 [Worker-238] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:CalcApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\CalcApp\pom.xml.
+2017-06-29 09:59:13,872 [Worker-238] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:13,882 [Worker-238] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\CalcApp\src\main\resources
+2017-06-29 09:59:13,888 [Worker-238] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 09:59:13,893 [Worker-238] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\CalcApp\src\test\resources
+2017-06-29 10:02:08,290 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:02:08,297 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 10:02:08,297 [Worker-245] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:02:08,304 [Worker-245] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 10:24:33,345 [Worker-249] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 10:24:33,504 [Worker-249] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 10:24:33,509 [Worker-249] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 10:24:33,515 [Worker-249] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 10:24:33,521 [Worker-249] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 10:24:34,500 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:34,543 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:24:34,544 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:34,557 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:24:35,638 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:35,656 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:24:35,663 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:35,674 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:24:48,218 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:48,230 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:24:48,231 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:24:48,257 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:26:13,030 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:26:13,041 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:26:13,049 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:26:13,060 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:26:43,429 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:26:43,436 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:26:43,437 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:26:43,447 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:00,198 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:00,225 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:00,236 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:00,257 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:35,497 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:35,506 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:35,507 [Worker-231] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:35,520 [Worker-231] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:59,147 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:59,170 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:28:59,179 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:28:59,190 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:29:04,906 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:29:04,913 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:29:04,914 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:29:04,927 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:02,897 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:02,918 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:02,925 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:02,939 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:18,700 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:18,707 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:18,708 [Worker-252] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:18,720 [Worker-252] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:19,781 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:19,790 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:19,795 [Worker-247] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:19,806 [Worker-247] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:27,443 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:27,453 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:27,456 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:27,478 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:42,674 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:42,683 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:30:42,688 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:30:42,697 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:40:47,099 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:40:47,111 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:40:47,112 [Worker-246] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:40:47,128 [Worker-246] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:45:04,406 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:45:04,421 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:45:04,432 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:45:04,443 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:45:51,818 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:45:51,843 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:45:51,845 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:45:51,870 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:01,724 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:01,737 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:01,742 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:01,752 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:09,223 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:09,231 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:09,232 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:09,248 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:24,361 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:24,379 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:46:24,385 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:46:24,395 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:49:10,707 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:49:10,712 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:49:10,713 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:49:10,727 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:49:44,307 [Worker-254] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 10:49:47,140 [Worker-254] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 10:49:47,333 [Worker-254] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 10:49:47,338 [Worker-254] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 10:49:47,343 [Worker-254] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 10:49:47,349 [Worker-254] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 10:49:47,646 [Worker-254] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 10:49:47,658 [Worker-254] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-06-29 10:49:48,257 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:49:48,279 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:49:48,281 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:49:48,321 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:49:48,322 [Worker-249] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 10:49:48,322 [Worker-249] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 10:49:48,330 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:24,396 [Worker-254] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 10:50:24,872 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:24,879 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:50:24,880 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:24,886 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:50:24,887 [Worker-254] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 10:50:24,887 [Worker-254] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 10:50:24,889 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:26,202 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:26,207 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:50:26,211 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:50:26,221 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:51:59,577 [Worker-248] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 10:51:59,678 [Worker-248] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 10:51:59,888 [Worker-248] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 10:51:59,888 [Worker-248] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 10:51:59,893 [Worker-248] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 10:51:59,901 [Worker-248] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 10:52:00,412 [Worker-248] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 10:52:00,418 [Worker-248] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-29 10:52:01,194 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:01,204 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:52:01,205 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:01,213 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:52:01,218 [Worker-243] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 10:52:01,219 [Worker-243] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 10:52:01,221 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:10,124 [Worker-257] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:10,137 [Worker-257] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:52:10,143 [Worker-257] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:10,154 [Worker-257] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:52:45,416 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:45,430 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:52:45,437 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:52:45,453 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:53:04,308 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:53:04,315 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 10:53:04,321 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 10:53:04,334 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:04:25,544 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:04:25,565 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:04:25,572 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:04:25,585 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:18,613 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:18,627 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:18,633 [Worker-255] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:18,641 [Worker-255] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:26,806 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:26,816 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:26,822 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:26,832 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:48,838 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:48,853 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:05:48,861 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:05:48,875 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:06:45,912 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:06:45,921 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:06:45,926 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:06:45,934 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:06:54,871 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:06:54,889 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:06:54,898 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:06:54,912 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:20,388 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:20,402 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:20,409 [Worker-262] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:20,422 [Worker-262] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:30,601 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:30,609 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:30,614 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:30,623 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:39,152 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:39,165 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:07:39,172 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:07:39,185 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:19:36,412 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:19:36,445 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:19:36,452 [Worker-249] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:19:36,467 [Worker-249] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:19:48,426 [Worker-253] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 11:19:52,024 [Worker-253] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 11:19:54,342 [Worker-253] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 11:19:54,349 [Worker-253] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 11:19:54,355 [Worker-253] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 11:19:54,361 [Worker-253] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 11:19:54,898 [Worker-253] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 11:19:54,903 [Worker-253] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 6 sec
+2017-06-29 11:19:57,140 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:19:57,189 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:19:57,205 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:19:57,226 [Worker-243] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:19:57,227 [Worker-243] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 11:19:57,233 [Worker-243] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 11:19:59,467 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:28:20,238 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:28:20,253 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:28:20,268 [Worker-254] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:28:20,280 [Worker-254] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:28:36,114 [Worker-258] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 11:28:36,658 [Worker-258] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 11:28:37,927 [Worker-258] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 11:28:37,936 [Worker-258] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 11:28:37,946 [Worker-258] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 11:28:37,946 [Worker-258] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 11:28:39,089 [Worker-258] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 11:28:39,182 [Worker-258] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2017-06-29 11:28:41,569 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:28:41,637 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:28:41,738 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:28:41,824 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:28:41,837 [Worker-248] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 11:28:41,837 [Worker-248] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 11:28:41,905 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:35:26,385 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:35:26,442 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 11:35:26,445 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:35:26,543 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 11:35:56,838 [Worker-266] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 11:35:57,290 [Worker-266] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 11:35:57,939 [Worker-266] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 11:35:57,944 [Worker-266] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 11:35:57,951 [Worker-266] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 11:35:57,956 [Worker-266] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 11:35:58,271 [Worker-266] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 11:35:58,306 [Worker-266] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-06-29 11:36:00,498 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:36:00,516 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:36:00,517 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:36:00,532 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:36:00,538 [Worker-253] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 11:36:00,545 [Worker-253] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 11:36:00,594 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:38:06,194 [Worker-265] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:38:06,204 [Worker-265] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:38:06,205 [Worker-265] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:38:06,211 [Worker-265] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:41:01,859 [Worker-243] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:ORMClassDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\ORMClassDemo\pom.xml.
+2017-06-29 11:41:02,112 [Worker-243] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-29 11:41:03,067 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-29 11:41:03,087 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:41:03,098 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 11:41:03,114 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:41:03,129 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:42:42,976 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:42:43,004 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:42:43,016 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:42:43,029 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:42:49,949 [Worker-243] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 11:42:55,179 [Worker-243] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 11:42:56,474 [Worker-243] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:42:56,494 [Worker-243] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 11:42:56,510 [Worker-243] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 11:42:56,520 [Worker-243] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 11:42:56,520 [Worker-243] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 11:42:57,256 [Worker-243] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 11:42:57,264 [Worker-243] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 7 sec
+2017-06-29 11:42:58,278 [Worker-270] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:42:59,061 [Worker-266] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:42:59,069 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:42:59,075 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:42:59,079 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:42:59,090 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:42:59,097 [Worker-266] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 11:42:59,097 [Worker-266] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 11:42:59,105 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:47:03,355 [Worker-267] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:47:20,466 [Worker-272] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:47:55,561 [Worker-248] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:48:05,813 [Worker-248] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:48:20,941 [Worker-266] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:49:32,985 [Worker-270] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 11:49:33,000 [Worker-270] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:49:33,315 [Worker-270] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 11:49:33,764 [Worker-270] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:49:33,919 [Worker-270] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/main/java
+2017-06-29 11:49:33,920 [Worker-270] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/main/resources
+2017-06-29 11:49:33,926 [Worker-270] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankingDemo/src/test/java
+2017-06-29 11:49:33,926 [Worker-270] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BankingDemo/src/test/resources
+2017-06-29 11:49:34,235 [Worker-270] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankingDemo
+2017-06-29 11:49:34,241 [Worker-270] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-06-29 11:49:35,344 [Worker-259] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:49:35,583 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:49:35,592 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:49:35,594 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:49:35,607 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:49:35,611 [Worker-259] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankingDemo
+2017-06-29 11:49:35,617 [Worker-259] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankingDemo
+2017-06-29 11:49:35,620 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:50:52,429 [Worker-248] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:50:52,511 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:50:52,528 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:50:52,529 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:50:52,551 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:52:38,094 [Worker-266] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:52:38,115 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:52:38,134 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:52:38,141 [Worker-266] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:52:38,148 [Worker-266] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:53:28,558 [Worker-270] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:53:28,566 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:53:28,618 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:53:28,626 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:53:28,644 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:53:36,207 [Worker-268] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:53:36,308 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:53:36,326 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:53:36,339 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:53:36,346 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 11:54:57,868 [Worker-248] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:54:58,135 [Worker-248] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:ORMClassDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\ORMClassDemo\pom.xml.
+2017-06-29 11:54:58,186 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-29 11:54:59,185 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-29 11:54:59,202 [Worker-270] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 11:54:59,327 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:54:59,336 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 11:54:59,341 [Worker-270] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 11:54:59,351 [Worker-270] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:02:44,714 [Worker-248] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:02:44,742 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:02:44,804 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:02:44,818 [Worker-248] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:02:44,836 [Worker-248] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:07:02,979 [Worker-259] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:07:02,990 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:07:03,006 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:07:03,013 [Worker-259] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:07:03,026 [Worker-259] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:24:29,511 [Worker-273] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:24:29,588 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:24:29,604 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:24:29,612 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:24:29,643 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:26:58,688 [Worker-273] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:26:58,715 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:26:58,729 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:26:58,730 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:26:58,744 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:29:09,824 [Worker-271] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:10,892 [Worker-253] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:16,343 [Worker-253] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-29 12:29:16,343 [Worker-271] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-29 12:29:19,814 [Worker-253] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:19,832 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:29:19,847 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 12:29:19,856 [Worker-253] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:29:19,864 [Worker-253] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 12:29:20,935 [Worker-274] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:21,401 [Worker-274] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-29 12:29:21,480 [Worker-274] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:22,321 [Worker-274] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:29:22,345 [Worker-274] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:29:22,383 [Worker-274] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:29:22,587 [Worker-258] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:29:22,607 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:29:22,621 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 12:29:22,622 [Worker-258] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:29:22,646 [Worker-258] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 12:29:27,172 [Worker-271] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:30:56,108 [Worker-274] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:30:57,545 [Worker-274] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankingDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\BankingDemo\pom.xml.
+2017-06-29 12:30:58,427 [Worker-268] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:30:58,456 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:30:58,481 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:30:58,490 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:30:58,511 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 12:31:13,138 [Worker-253] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:13,198 [Worker-253] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:31:13,216 [Worker-253] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:31:13,292 [Worker-253] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Test references closed project BankingDemo
+org.eclipse.core.runtime.CoreException: Launch configuration Test references closed project BankingDemo
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-29 12:31:25,520 [Worker-273] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:25,546 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:25,576 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 12:31:25,588 [Worker-273] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:25,601 [Worker-273] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 12:31:26,668 [Worker-271] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:26,680 [Worker-271] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:26,698 [Worker-271] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 12:31:26,707 [Worker-271] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:26,722 [Worker-271] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 12:31:32,038 [Worker-268] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 12:31:32,065 [Worker-268] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:35,328 [Worker-268] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-29 12:31:36,393 [Worker-268] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:36,684 [Worker-268] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankApp/src/main/java
+2017-06-29 12:31:36,691 [Worker-268] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BankApp/src/test/java
+2017-06-29 12:31:36,926 [Worker-268] ERROR o.e.m2e.wtp.WTPProjectConfigurator - Unable to configure BankApp
+org.eclipse.m2e.wtp.MarkedException: Unable to configure BankApp
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:98) ~[na:na]
+	at org.eclipse.m2e.wtp.WTPProjectConfigurator.configure(WTPProjectConfigurator.java:71) ~[na:na]
+	at org.eclipse.m2e.core.project.configurator.AbstractLifecycleMapping.configure(AbstractLifecycleMapping.java:120) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:501) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$3.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:494) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration0(ProjectConfigurationManager.java:432) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:345) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager$2.call(ProjectConfigurationManager.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1351) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.updateProjectConfiguration(ProjectConfigurationManager.java:342) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.ui.internal.UpdateMavenProjectJob.runInWorkspace(UpdateMavenProjectJob.java:77) [org.eclipse.m2e.core.ui_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39) [org.eclipse.core.resources_3.10.1.v20150725-1910.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have not been satisfied.
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modifyInternal(FacetedProject.java:363) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.mergeChangesInternal(FacetedProject.java:1181) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.access$2(FacetedProject.java:1117) ~[na:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject$1.run(FacetedProject.java:324) ~[na:na]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241) ~[org.eclipse.core.resources_3.10.1.v20150725-1910.jar:na]
+	at org.eclipse.wst.common.project.facet.core.internal.FacetedProject.modify(FacetedProject.java:339) ~[na:na]
+	at org.eclipse.m2e.wtp.WebProjectConfiguratorDelegate.configure(WebProjectConfiguratorDelegate.java:133) ~[na:na]
+	at org.eclipse.m2e.wtp.AbstractProjectConfiguratorDelegate.configureProject(AbstractProjectConfiguratorDelegate.java:94) ~[na:na]
+	... 18 common frames omitted
+2017-06-29 12:31:37,293 [Worker-268] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for BankApp
+2017-06-29 12:31:37,303 [Worker-268] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 5 sec
+2017-06-29 12:31:38,162 [Worker-268] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:31:38,367 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:38,439 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-29 12:31:38,457 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:31:38,503 [Worker-268] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-29 12:31:38,504 [Worker-268] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of BankApp
+2017-06-29 12:31:38,504 [Worker-268] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for BankApp
+2017-06-29 12:31:38,507 [Worker-268] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:55:41,055 [Worker-278] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:56:34,663 [Worker-278] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:56:38,809 [Worker-278] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RoutingExample:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\pom.xml.
+2017-06-29 12:56:39,791 [Worker-278] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:56:40,006 [Worker-278] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:56:40,024 [Worker-278] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\main\resources
+2017-06-29 12:56:40,026 [Worker-278] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:56:40,044 [Worker-278] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\test\resources
+2017-06-29 12:56:47,154 [Worker-283] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 12:56:47,194 [Worker-283] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:56:47,239 [Worker-283] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\main\resources
+2017-06-29 12:56:47,249 [Worker-283] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 12:56:47,491 [Worker-283] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\test\resources
+2017-06-29 13:11:36,163 [Worker-282] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 13:16:04,711 [Worker-282] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 13:16:05,030 [Worker-282] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RoutingExample:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\pom.xml.
+2017-06-29 13:16:06,001 [Worker-280] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-29 13:16:06,161 [Worker-280] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 13:16:06,176 [Worker-280] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\main\resources
+2017-06-29 13:16:06,181 [Worker-280] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 13:16:06,194 [Worker-280] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\test\resources
+2017-06-29 13:19:33,745 [Worker-274] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled

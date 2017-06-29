@@ -1,0 +1,42 @@
+package com.ex.dao;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.ex.domain.User;
+
+@Repository
+@Transactional
+public class UserDaoImpl implements UserDao{
+	
+	public UserDaoImpl(){}
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ex.dao.UserDao#findUserByUsername(java.lang.String)
+	 */
+	@Override
+	public User findUserByUsername(String username) {
+		return (User) sessionFactory.getCurrentSession()
+							.createQuery("from User where username=:username")
+							.setString("username", username)
+							.uniqueResult();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.ex.dao.UserDao#createUser(com.ex.domain.User)
+	 */
+	@Override
+	public void createUser(User user) {
+		sessionFactory.getCurrentSession().save(user);
+	}
+
+}

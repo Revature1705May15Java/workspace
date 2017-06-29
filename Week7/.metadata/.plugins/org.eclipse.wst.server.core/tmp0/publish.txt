@@ -1,2 +1,4 @@
 #Tomcat publish data
-#Tue Jun 27 13:14:06 EDT 2017
+#Thu Jun 29 13:52:20 EDT 2017
+org.eclipse.jst.jee.server\:RoutingClassDemo=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\RoutingClassDemo
+org.eclipse.jst.jee.server\:NgRouteDemo=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\NgRouteDemo
