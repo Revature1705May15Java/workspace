@@ -9,6 +9,10 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_71]"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
+<<<<<<< HEAD
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/Users/Tez/my_git_repos/1705May15Java/week7/.metadata/.plugins/org.eclipse.wst.server.core/tmp0&quot; -Dcatalina.home=&quot;/Volumes/NUMBER2/apache-tomcat-8.0.44&quot; -Dwtp.deploy=&quot;/Users/Tez/my_git_repos/1705May15Java/week7/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps&quot; -Djava.endorsed.dirs=&quot;/Volumes/NUMBER2/apache-tomcat-8.0.44/endorsed&quot;"/>
+=======
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;/Users/Tez/Documents/week7/.metadata/.plugins/org.eclipse.wst.server.core/tmp0&quot; -Dcatalina.home=&quot;/Volumes/NUMBER2/apache-tomcat-8.0.44&quot; -Dwtp.deploy=&quot;/Users/Tez/Documents/week7/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps&quot; -Djava.endorsed.dirs=&quot;/Volumes/NUMBER2/apache-tomcat-8.0.44/endorsed&quot;"/>
+>>>>>>> 94b67f0e77959fd6618ce907c10eb3cf5975c42e
 <stringAttribute key="server-id" value="Tomcat v8.0 Server at localhost"/>
 </launchConfiguration>
