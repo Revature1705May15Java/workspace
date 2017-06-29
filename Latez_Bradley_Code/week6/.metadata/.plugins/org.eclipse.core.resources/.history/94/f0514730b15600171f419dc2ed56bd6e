@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+XSI - XML Schema Instance
+	- SchemaLocation is added to our XML file and gives us context sesnitve help insode of our 
+	app
+	
+	MAKES SURE THAT WE HAVE BOTH WELL FORMED AND VALID XML
+	
+	NAMESPACE ACTS LIKE A LIBRARY FOR THE PROPERTIES THAT WE CAN USE TO CREATE AND INJECT 
+	INTO A BEAN
+
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean name = "customerRepo"
+	class="com.ex.repo.CustomerRepoImpl">
+	</bean>
+	
+	<!--  IMPLEMENTING SETTER INJECTION -->
+	
+<!-- 	<bean name= "customerService" -->
+<!-- 	class="com.ex.service.CustomerServiceImpl"> -->
+<!-- 	<property name="cr" ref="customerRepo" /> -->
+<!-- 	</bean> -->
+	
+	<bean name= "customerService"
+	class="com.ex.service.CustomerServiceImpl">
+	<constructor-arg index="0" ref="customerRepo"/>
+	</bean>
+
+</beans>
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="page">
+	<h1 id"header">List</h1>
+	<h2>Buy Groceries</h2>
+	
+	 <input type ="text" id="item"/>
+		  <button id="add">Add to list</button>
+	
+	<ul>
+		<li id="one" class="hot"><em>fresh</em>figs</li>
+		<li id="two" class="hot">pine nuts</li>
+		<li id="three" class="hot">honey</li>
+		<li id="four" class="hot">Balsamic Vinegar</li>
+		</ul>
+	
+	</div>	
+	<div class="col-sm-5">
+	<p>Hello World</p>
+	<ul id="done">
+	</ul>
+		
+		 
+	
+
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous"></script>
+
+  
+  <script>
+  //Create List item element
+  
+  
+  
+  //Get element with ID of add (button) on click do the THISfunction
+  $('#add').on('click', function(){
+	  var n = document.createElement('li');
+	  //Sets N to the input box
+	  n.innerHTML=$('#item').val();
+	
+	  //empties the input box
+	  $('#item').val('');
+	  $('ul').append(n);
+  })
+	  
+			
+  
+  
+  
+  
+  $('header').addClass('headline');
+  $('li:lt(4)').hide().fadeIn(1500);
+  
+  $('li').on('click', function(){
+	  var x = $(this);
+	  $('#done').append('<li>');
+	  $('#done').append ('new item');
+	  $('#done').append('</li>');
+	  $(this).remove();
+
+  })
+  
+
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>

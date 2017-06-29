@@ -1,0 +1,12 @@
+package com.ex.repo;
+
+import java.util.List;
+import com.ex.model.Customer;
+
+public class CustomerRepoImpl {
+	
+	public List <Customer> findAll(){
+		
+	}
+
+}

@@ -1,0 +1,34 @@
+package com.ex.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.ex.pojos.Person;
+import com.ex.util.ConnectionFactory;
+
+public class DaoImpl implements DAO {
+
+	@Override
+	public void createPerson(Person p) {
+		// TODO Auto-generated method stub
+		Session session = ConnectionFactory.getSession();
+		try{
+			Transaction tx = session.beginTransaction();
+			session.save(p);
+			tx.commit();
+			
+		}
+		finally{
+			session.close();
+		}
+		
+		
+	}
+
+	@Override
+	public Person getPersonById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,6 @@
+//is mouse over RYU
+var isHovered = false;
+
+$(document).ready(function(){
+	
+});
