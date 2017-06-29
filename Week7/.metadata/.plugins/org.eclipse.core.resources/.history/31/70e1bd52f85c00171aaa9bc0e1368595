@@ -13,7 +13,7 @@ app.config(function($routeProvider){
 	
 	.when('/about',{
 		templateUrl:'views/about.html',
-		controller:'demoCtrl'
+		contoller:'demoCtrl'
 	})
 	
 	.when('/contact',{

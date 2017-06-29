@@ -3,7 +3,7 @@
 <section>
 	<h1>About!</h1>
 	<h3 data-ng-model="result">{{result.name}}
-	<!--  	<button data-ng-click="resultFn()">click me</button>-->
+		<button data-ng-click="resultFn()">click me</button>
 	</h3>
 </section>
 

@@ -12,8 +12,7 @@ app.config(function($routeProvider){
 	})
 	
 	.when('/about',{
-		templateUrl:'views/about.html',
-		controller:'demoCtrl'
+		templateUrl:'views/about.html'
 	})
 	
 	.when('/contact',{
