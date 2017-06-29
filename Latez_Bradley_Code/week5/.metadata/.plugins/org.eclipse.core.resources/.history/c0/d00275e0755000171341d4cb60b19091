@@ -1,0 +1,108 @@
+package com.ex.dao;
+
+import java.util.Set;
+
+public class Bear {
+	
+	private String bearColor;
+	private String breed;
+	private double heihgt;
+	private double weight;
+	private Cave dwelling;
+	private HoneyPot honeyPot;
+
+	private Set<Bear> bearCubs;
+
+	
+	
+	
+	public Bear(int id) {
+		super();
+		this.id = id;
+	}
+
+	public Bear(int id, String bearColor, String breed, double heihgt, double weight, Cave dwelling,
+			HoneyPot honeyPot) {
+		super();
+		this.id = id;
+		this.bearColor = bearColor;
+		this.breed = breed;
+		this.heihgt = heihgt;
+		this.weight = weight;
+		this.dwelling = dwelling;
+		this.honeyPot = honeyPot;
+	}
+
+	private int id;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getBearColor() {
+		return bearColor;
+	}
+
+	public void setBearColor(String bearColor) {
+		this.bearColor = bearColor;
+	}
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
+
+	public double getHeihgt() {
+		return heihgt;
+	}
+
+	public void setHeihgt(double heihgt) {
+		this.heihgt = heihgt;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public Cave getDwelling() {
+		return dwelling;
+	}
+
+	public void setDwelling(Cave dwelling) {
+		this.dwelling = dwelling;
+	}
+
+	public HoneyPot getHoneyPot() {
+		return honeyPot;
+	}
+
+	public void setHoneyPot(HoneyPot honeyPot) {
+		this.honeyPot = honeyPot;
+	}
+
+	public Set<Bear> getBearCubs() {
+		return bearCubs;
+	}
+
+	public void setBearCubs(Set<Bear> bearCubs) {
+		this.bearCubs = bearCubs;
+	}
+
+	@Override
+	public String toString() {
+		return "Bear [bearColor=" + bearColor + ", breed=" + breed + ", heihgt=" + heihgt + ", weight=" + weight
+				+ ", dwelling=" + dwelling + ", honeyPot=" + honeyPot + ", bearCubs=" + bearCubs + ", id=" + id + "]";
+	}
+	
+	
+}

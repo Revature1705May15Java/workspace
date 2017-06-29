@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Simple Ajax</title>
+</head>
+<body>
+<button id='myBtn'>This does nothing</button>
+<div id="stuff">
+
+
+<script type="text/javascript">
+//get text from servlet
+function getText(){
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if(xhr.readystate ==4 && xhr.status==200){
+			document.getElementById("stuff").innerHTML = xhr.responseText();
+			
+		}
+	}
+	xhr.open("GET","getText", true);
+	xhr.send();
+	
+	
+	
+}
+document.getElementById("myBtn").addEventListener("click", getText, false);
+
+
+
+</script>
+
+
+
+</div>
+</body>
+</html>

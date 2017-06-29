@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#col1 {
+	float: left;
+}
+
+#col2 {
+	float: left;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="page">
+		<div id="col1">
+			<h1 id="header">Lists</h1>
+			<h2>To Do List</h2>
+
+			<input type="text" id="newItem" placeholder="Anything else?" /> <br>
+			<button id="add">Add Item</button>
+
+			<ul>
+				<li id="one" class="hot"><em>Clean</em> room</li>
+				<li id="two" class="hot">Put away Clothes</li>
+				<li id="three" class="hot">Wash Clothes</li>
+				<li id="four" class="hot">Sleep</li>
+			</ul>
+		</div>
+
+		<div id="col2">
+			<h2>Done List</h2>
+			<ul id="done">
+
+			</ul>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous"></script>
+
+	<script>
+		$('#add').on('click', function() {
+			//
+			var temp = document.createElement('li');
+
+			//
+			temp.innerHTML = $('#newItem').val();
+			$('#newItem').val('');
+			$('ul').append(temp);
+
+			$('li').on('click', function() {
+				$(this).remove();
+			});
+
+		});
+		$('li').on('click', function() {
+			$(this).remove();
+		});
+	</script>
+
+</body>
+</html>

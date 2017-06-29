@@ -1,0 +1,10 @@
+package com.ex.service;
+
+import com.ex.model.Customer;
+
+
+public interface CustomerService {
+
+	List<Customer> findAll();
+
+}

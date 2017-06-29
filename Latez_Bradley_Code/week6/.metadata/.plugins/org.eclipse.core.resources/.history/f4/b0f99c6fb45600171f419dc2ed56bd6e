@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<context : annotation-config />
+	<context:component-scan base-package="com.ex"/>
+	<!-- 
+	
+	Streotype Annotations
+	
+	@Component - used for any bean
+	@Service - used for business logic layer. NOT web service
+	@Repository - DAO Layer
+	
+	 -->
+	 
+	 
+
+</beans>
+

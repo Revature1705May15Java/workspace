@@ -1,0 +1,13 @@
+INDEX VERSION 1.3+/Users/Tez/my_git_repos/1705May15Java/week7/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3162250250.index
+<<<<<<< HEAD
+2392164836.index
+1853723918.index
+2769532316.index
+2130317545.index
+3595737370.index
+=======
+3986895721.index
+1066763792.index
+729115506.index
+>>>>>>> 94b67f0e77959fd6618ce907c10eb3cf5975c42e

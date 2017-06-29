@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+ 
+body {
+  background: #F1F3FA;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+.col-md-3{
+padding:0 0 0 15px;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+ 
+.profile-usermenu {
+  margin-top: 30px;
+  padding:0px !important;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* order Content */
+.order-content {
+  padding: 20px;
+  background: #F6F9FB;
+  min-height: 460px;
+}
+.form_main {
+    width: 100%;
+}
+.form_main h4 {
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+    border-bottom: 1px solid #A9A59F;
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: #6D6C6A none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+.txt[type="text"] {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 4px 0 4px 5px;
+	border-radius:5px;
+    width: 80%;
+}
+.txt[type="password"] {
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 4px 0 4px 5px;
+	border-radius:5px;
+    width: 80%;
+}
+/*.txt2[type="submit"] {
+    background: #949390 none repeat scroll 0 0;
+    border: 1px solid #949390;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    
+    width: 12%;
+}*/
+.txt2:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #949390;
+    transition: all 0.5s ease 0s;
+}
+
+
+
+</style>
+<link rel="stylesheet" type="text/css"
+	href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
+<title>Manger Home Page</title>
+</head>
+<body>
+<p>
+</p>
+
+<div class="container">
+  
+        <div class="row">
+
+            <div class="col-md-3">
+                <ul class="nav nav-pills nav-stacked admin-menu" >
+                    <li class="active"><a href="" data-target-id="profile"> Profile</a></li>
+                    <li><a href="" data-target-id="update"> Update Information</a></li>
+                    <li><a href="" data-target-id="requests"> View Closed Requests</a></li>
+                    <li><a href = ""data-target-id="OpenReq">View Open Requests</a></li>
+                    <li><a href="" data-target-id="logout"> Logout</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-md-9  admin-content" id="profile">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Name</h3>
+                    </div>
+                    <div class="panel-body">
+                        ${emp.firstname} ${emp.lastname}
+                    </div>
+                </div>
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Username</h3>
+                    </div>
+                    <div class="panel-body">
+                        ${emp.username}
+                    </div>
+                </div>
+                
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Id</h3>
+                    </div>
+                    <div class="panel-body">
+                        ${emp.eid}
+                    </div>
+                </div>
+
+            </div>
+            
+            
+   <div class="col-md-9  admin-content" id="requests">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">All Requests</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+						<table id="example">
+							<thead>
+								<tr>
+									<th>Sites</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>SitePoint</td>
+								</tr>
+								<tr>
+									<td>Learnable</td>
+								</tr>
+								<tr>
+									<td>Flippa</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+
+					</div>
+                </div>
+            </div>
+          
+     <div class="col-md-9  admin-content" id="OpenReq">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Notification</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="label label-success">allowed</div>
+                    </div>
+                </div>
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Newsletter</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="badge">Monthly</div>
+                    </div>
+                </div>
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Admin</h3>
+
+                    </div>
+                    <div class="panel-body">
+                         <div class="label label-success">yes</div>
+                    </div>
+                </div>
+
+            </div>        
+            
+            
+           
+            
+            
+
+
+
+            <div class="col-md-9  admin-content" id="update">
+                <form action="/password" method="post">
+
+           
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New Password</label></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password" id="new_password" >
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+             
+                    <div class="panel panel-info" style="margin: 1em;">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Confirm password</label></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" name="password_confirmation" id="confirm_password" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+           
+                 
+
+                </form>
+            </div>
+
+            <div class="col-md-9  admin-content" id="settings"></div>
+
+            <div class="col-md-9  admin-content" id="logout">
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Confirm Logout</h3>
+                    </div>
+                   
+					<form action="logout" method="post" name="Logout_Form"
+						class="form-signin">
+						<hr class="colorgraph">
+						<button class="btn btn-lg btn-primary btn-block" name="Submit"
+							value="Logout" type="Submit">Logout</button>
+
+
+					</form>
+
+
+
+				</div>
+            </div>
+        </div>
+</div>
+
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+ 
+<script type="text/javascript">
+$(document).ready(function()
+	      {
+	        var navItems = $('.admin-menu li > a');
+	        var navListItems = $('.admin-menu li');
+	        var allWells = $('.admin-content');
+	        var allWellsExceptFirst = $('.admin-content:not(:first)');
+	        allWellsExceptFirst.hide();
+	        navItems.click(function(e)
+	        {
+	            e.preventDefault();
+	            navListItems.removeClass('active');
+	            $(this).closest('li').addClass('active');
+	            allWells.hide();
+	            var target = $(this).attr('data-target-id');
+	            $('#' + target).show();
+	        });
+	        });
+$(function(){
+    $("#example").dataTable();
+  })
+</script>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

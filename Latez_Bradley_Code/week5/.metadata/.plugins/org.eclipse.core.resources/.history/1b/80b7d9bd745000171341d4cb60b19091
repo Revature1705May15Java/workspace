@@ -1,0 +1,9 @@
+package com.ex.dao;
+
+public class HoneyPot {
+	
+	private int id;
+	private double honeyAmount;
+	
+
+}

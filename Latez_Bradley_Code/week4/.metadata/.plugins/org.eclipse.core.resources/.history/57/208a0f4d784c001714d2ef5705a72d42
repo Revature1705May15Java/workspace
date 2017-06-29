@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hand TYPED JSON</title>
+</head>
+<body>
+
+<button id="myBtn">This does nothing</button>
+<div id="stuff"></div>
+
+
+	<script type="text/javascript">
+	var myPerson
+	
+	function handleEvent(){
+		var xhr = XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if(){
+				document.getElementById("stuff").innerHTML = xhr.responseText;
+				
+			}
+		}
+	}
+</body>
+</html>

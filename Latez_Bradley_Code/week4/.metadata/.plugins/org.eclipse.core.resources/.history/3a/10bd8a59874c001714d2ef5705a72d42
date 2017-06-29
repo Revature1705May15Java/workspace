@@ -1,0 +1,33 @@
+var pokemonVar;
+
+function getPokemon(){
+	var pokemonId = document.getElementById("pokemonId").value;
+	console.log("sending pokemon id: "+pokemonId);
+	//STEP 1: OPEN XHR
+	var xhttp = new XMLHttpRequest();
+	//typically we will use this to store JSON
+	
+	//STEP 2: Write function to handle the ready state change
+	// of the response
+	
+	xhttp.onreadystatechange = function(){
+		if(xhttpreadyState==4 && xhttp.status==200){
+			var pokemon = JSON.parse(xhttp.responseText);
+			setValues(pokemon);
+			pokemonVar = pokemon;
+		}
+	};
+	
+	//STEP 3: OPEN XHR
+	
+	xhttp.open("GET", "http://pokeapi.co/api/v2/pokemon/"+pokemonId, true);
+	
+	//STEP 4: SEND
+	xhttp.send();
+}
+
+function setValues(pokemon){}
+
+window.onload = function(){
+	document.getElementById("pokemonSubmit").addEventListener("click", getPokemon);
+}

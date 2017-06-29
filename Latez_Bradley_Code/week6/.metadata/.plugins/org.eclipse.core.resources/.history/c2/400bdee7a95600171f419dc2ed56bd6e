@@ -1,0 +1,10 @@
+package com.ex.service;
+
+import com.ex.repo.CustomerRepo;
+
+public class CustomerServiceImpl {
+	
+	private CustomerRepo cr = new CustomerRepoImpl();
+	
+
+}
