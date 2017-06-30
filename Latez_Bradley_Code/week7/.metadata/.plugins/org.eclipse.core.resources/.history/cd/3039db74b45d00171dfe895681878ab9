@@ -1,0 +1,7 @@
+/**
+ * 
+ */
+
+var appTopStory = angular.module('topStoryApp',[]);
+
+appTopStory.controller('')

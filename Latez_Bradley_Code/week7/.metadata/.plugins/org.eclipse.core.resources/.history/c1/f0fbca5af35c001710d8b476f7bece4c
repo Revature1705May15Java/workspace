@@ -1,0 +1,20 @@
+/*
+*
+*/
+
+var app  = angular.module('routingApp',['ngRoute']);
+app.config(function($routeProvider){
+	$routeProvider
+	
+	.when('/', {
+		
+	})
+	
+	.when('/about',{
+		
+	})
+	
+	.when('/contact',{
+		
+	})
+})

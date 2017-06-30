@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ng-app="topStoryApp" >
+	<div ng-controller="selectedStoryCtrl">
+		<select ng-model="selectedStory"
+			ng-options="storyID for StoryID in storyList"
+			ng-change="update(selectedStory)">
+			<option value="">Choose a story ID</option>
+		</select> </br>
+		<div>{{selectedStory}}</div>
+		<div>
+			Selected story is <a href="" ng-click="gotostory(storyInfo.url)">{{storyInfo.title}}</a>
+		</div>
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
+		src = "ctrl.js"
+	</script>
+</body>
+</html>

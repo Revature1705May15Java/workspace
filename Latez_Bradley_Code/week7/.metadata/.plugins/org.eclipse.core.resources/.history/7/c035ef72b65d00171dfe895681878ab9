@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ng-app="topStoryApp" ng-controller="selectedStoryCtrl">
+<div>
+<select ng-model="selectedStory" ng-options="storyID for StoryID in storyList" ng-change="update(selectedStory)">
+<option value="">Choose a story ID</option>
+</select>
+</br>
+<div>
+{{selectedStory}}
+</div>
+<div>
+Selected story is <a href="" ng-click="gotostory(storyInfo.url)">{{storyInfo.title}}</a></div>
+
+ </div>
+</body>
+</html>

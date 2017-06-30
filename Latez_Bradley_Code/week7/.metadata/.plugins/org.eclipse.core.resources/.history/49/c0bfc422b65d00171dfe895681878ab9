@@ -1,0 +1,15 @@
+/**
+ * 
+ */
+
+var appTopStory = angular.module('topStoryApp',[]);
+
+appTopStory.controller('selectedStoryCtrl', function TopStory($scope, $http, $window){
+	/**hhtp = XMLHttpRequest object to communicated to HTTP servers
+	 * 
+	 * http is a promise
+	 * 
+	 * 
+	 */
+	
+})
