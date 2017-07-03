@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS : Change links dynamically</title>
+</head>
+<body ng-app="topStoryApp">
+
+<div ng-controller="selectedStoryCtrl">
+
+
+</div>
+
+
+
+</body>
+</html>

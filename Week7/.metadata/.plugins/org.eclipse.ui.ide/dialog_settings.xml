@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService"/>
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample"/>
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
 	<section name="WORKBENCH_SETTINGS">
 		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">

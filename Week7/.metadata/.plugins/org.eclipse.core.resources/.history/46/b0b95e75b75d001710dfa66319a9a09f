@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AngularJS : Change links dynamically</title>
+</head>
+<body ng-app="topStoryApp">
+
+	<div ng-controller="selectedStoryCtrl">
+		<select ng-model="selectedStory"
+			ng-options="storyTitle for storyTitle in storyList"
+			ng-change="update(selectedStory)">
+			<option value="">Choose a story ID</option>
+		</select>
+		</br>
+		<div>{{selectedStory}}</div>
+		<div>
+		Selected story is 
+		<a href="" ng-click="gotostory(storyInfo.url)">{{storyInfo.title}}</a>
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="ctrl.js"></script>
+</body>
+</html>

@@ -2,15 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.ex"/>
 		</list>
 		<list key="name">
-			<item value="RefactoredERS"/>
-			<item value="ComprehensiveERS"/>
 		</list>
 		<list key="artifactId">
-			<item value="RefactoredERS"/>
-			<item value="ComprehensiveERS"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -38,6 +33,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\AngularJSTodoList"/>
 			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\ORMClassDemo"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -60,8 +56,16 @@
 			<item value="[name]"/>
 		</list>
 	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.preferences.RemoteArchetypeCatalogDialog">
+		<list key="catalogUrl">
+			<item value="https://repo.maven.apache.org/maven2/archetype-catalog.xml"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\java\com\ex\helloservice\HelloWorldImpl.java"/>
+			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia"/>
+			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\SOAPDemo"/>
 			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\ComprehensiveERS"/>
 			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\WelcomeToAngular\WebContent\index.html"/>
 		</list>
@@ -76,10 +80,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.ex.helloconsumer"/>
+			<item value="com.ex.helloservice"/>
 		</list>
 		<list key="groupId">
+			<item value="com.ex"/>
 		</list>
 		<list key="artifactId">
+			<item value="helloconsumer"/>
+			<item value="helloservice"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

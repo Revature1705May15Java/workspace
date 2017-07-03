@@ -1602,3 +1602,599 @@ Caused by: org.eclipse.core.runtime.CoreException: One or more constraints have 
 2017-06-29 13:16:06,181 [Worker-280] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2017-06-29 13:16:06,194 [Worker-280] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\test\resources
 2017-06-29 13:19:33,745 [Worker-274] ERROR o.e.m.c.i.URLConnectionCaches - Unexpected URLConnection defaultUseCaches enabled
+2017-06-30 09:51:26,361 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:RoutingExample:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\pom.xml.
+2017-06-30 09:51:27,211 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:51:27,220 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\main\resources
+2017-06-30 09:51:27,222 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:51:27,229 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\RoutingExample\src\test\resources
+2017-06-30 09:58:41,126 [Worker-6] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:ORMClassDemo:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\ORMClassDemo\pom.xml.
+2017-06-30 09:58:41,535 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-30 09:58:47,752 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle.ojdbc:ojdbc:jar:12.1.0.1 is missing, no dependency information available
+2017-06-30 09:58:48,484 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:58:48,486 [Worker-31] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:BankApp:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\pom.xml.
+2017-06-30 09:58:48,514 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-30 09:58:48,531 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:58:48,549 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 09:58:50,024 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:58:50,033 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\main\resources
+2017-06-30 09:58:50,036 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 09:58:50,052 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\Extra AngularJS\examples\BankApp\src\test\resources
+2017-06-30 10:01:33,778 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/maven-metadata.xml
+2017-06-30 10:01:33,834 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/maven-metadata.xml
+2017-06-30 10:01:33,862 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.10/maven-eclipse-plugin-2.10.pom
+2017-06-30 10:01:33,913 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.10/maven-eclipse-plugin-2.10.pom
+2017-06-30 10:01:34,010 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.10/maven-eclipse-plugin-2.10.jar
+2017-06-30 10:01:34,106 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-eclipse-plugin/2.10/maven-eclipse-plugin-2.10.jar
+2017-06-30 10:01:34,302 [Worker-28] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryService:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\pom.xml.
+2017-06-30 10:01:34,404 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.6/cxf-rt-frontend-jaxws-3.1.6.pom
+2017-06-30 10:01:34,427 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.6/cxf-rt-frontend-jaxws-3.1.6.pom
+2017-06-30 10:01:34,453 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.6/cxf-parent-3.1.6.pom
+2017-06-30 10:01:34,529 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.6/cxf-parent-3.1.6.pom
+2017-06-30 10:01:34,572 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.6/cxf-3.1.6.pom
+2017-06-30 10:01:34,599 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.6/cxf-3.1.6.pom
+2017-06-30 10:01:34,675 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.6/cxf-core-3.1.6.pom
+2017-06-30 10:01:34,693 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.6/cxf-core-3.1.6.pom
+2017-06-30 10:01:34,821 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.6/cxf-rt-bindings-soap-3.1.6.pom
+2017-06-30 10:01:34,918 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.6/cxf-rt-bindings-soap-3.1.6.pom
+2017-06-30 10:01:34,952 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.6/cxf-rt-wsdl-3.1.6.pom
+2017-06-30 10:01:34,983 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.6/cxf-rt-wsdl-3.1.6.pom
+2017-06-30 10:01:35,113 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.6/cxf-rt-databinding-jaxb-3.1.6.pom
+2017-06-30 10:01:35,142 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.6/cxf-rt-databinding-jaxb-3.1.6.pom
+2017-06-30 10:01:35,238 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:01:35,258 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:01:35,278 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.6/cxf-rt-bindings-xml-3.1.6.pom
+2017-06-30 10:01:35,304 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.6/cxf-rt-bindings-xml-3.1.6.pom
+2017-06-30 10:01:35,327 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.6/cxf-rt-frontend-simple-3.1.6.pom
+2017-06-30 10:01:35,351 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.6/cxf-rt-frontend-simple-3.1.6.pom
+2017-06-30 10:01:35,375 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.6/cxf-rt-ws-addr-3.1.6.pom
+2017-06-30 10:01:35,394 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.6/cxf-rt-ws-addr-3.1.6.pom
+2017-06-30 10:01:35,426 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.6/cxf-rt-ws-policy-3.1.6.pom
+2017-06-30 10:01:35,444 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.6/cxf-rt-ws-policy-3.1.6.pom
+2017-06-30 10:01:35,482 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.6/cxf-rt-transports-http-3.1.6.pom
+2017-06-30 10:01:35,501 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.6/cxf-rt-transports-http-3.1.6.pom
+2017-06-30 10:01:35,524 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,542 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,562 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,578 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,598 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,614 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,633 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,651 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,676 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,694 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,713 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,733 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.pom
+2017-06-30 10:01:35,816 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.6/cxf-rt-frontend-jaxws-3.1.6.jar
+2017-06-30 10:01:35,909 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.6/cxf-rt-frontend-jaxws-3.1.6.jar
+2017-06-30 10:01:35,948 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.6/cxf-core-3.1.6.jar
+2017-06-30 10:01:36,217 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.6/cxf-core-3.1.6.jar
+2017-06-30 10:01:36,237 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.6/cxf-rt-bindings-soap-3.1.6.jar
+2017-06-30 10:01:36,317 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.6/cxf-rt-bindings-soap-3.1.6.jar
+2017-06-30 10:01:36,338 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.6/cxf-rt-wsdl-3.1.6.jar
+2017-06-30 10:01:36,416 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.6/cxf-rt-wsdl-3.1.6.jar
+2017-06-30 10:01:36,430 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.6/cxf-rt-databinding-jaxb-3.1.6.jar
+2017-06-30 10:01:36,499 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.6/cxf-rt-databinding-jaxb-3.1.6.jar
+2017-06-30 10:01:36,511 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.6/cxf-rt-bindings-xml-3.1.6.jar
+2017-06-30 10:01:36,813 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.6/cxf-rt-bindings-xml-3.1.6.jar
+2017-06-30 10:01:36,823 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.6/cxf-rt-frontend-simple-3.1.6.jar
+2017-06-30 10:01:36,850 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.6/cxf-rt-frontend-simple-3.1.6.jar
+2017-06-30 10:01:36,865 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.6/cxf-rt-ws-addr-3.1.6.jar
+2017-06-30 10:01:36,891 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.6/cxf-rt-ws-addr-3.1.6.jar
+2017-06-30 10:01:36,904 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.6/cxf-rt-ws-policy-3.1.6.jar
+2017-06-30 10:01:36,981 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.6/cxf-rt-ws-policy-3.1.6.jar
+2017-06-30 10:01:37,004 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.6/cxf-rt-transports-http-3.1.6.jar
+2017-06-30 10:01:37,068 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.6/cxf-rt-transports-http-3.1.6.jar
+2017-06-30 10:01:37,089 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,223 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,249 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,352 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,365 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,593 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,627 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,802 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,817 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,880 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.jar
+2017-06-30 10:01:37,902 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.jar
+2017-06-30 10:01:38,051 [Worker-28] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.jar
+2017-06-30 10:01:39,707 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:39,712 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:39,718 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:39,727 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:40,147 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:01:40,157 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:01:40,227 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,234 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:40,235 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,241 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:40,456 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,514 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:40,515 [Worker-34] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,524 [Worker-34] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:40,829 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,908 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:40,911 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:40,962 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:41,399 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,415 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:41,420 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,429 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:41,659 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,667 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:41,672 [Worker-39] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,685 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:41,790 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,800 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:41,801 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,815 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:01:41,926 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,933 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 10:01:41,935 [Worker-31] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:01:41,942 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 10:14:05,446 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:14:05,484 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:14:05,487 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:14:05,494 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:33,253 [Worker-54] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 10:27:33,380 [Worker-54] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/main/java
+2017-06-30 10:27:33,380 [Worker-54] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/main/resources
+2017-06-30 10:27:33,381 [Worker-54] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/test/java
+2017-06-30 10:27:33,386 [Worker-54] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/test/resources
+2017-06-30 10:27:34,189 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:34,206 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:34,212 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:34,224 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:35,304 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:35,320 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:35,323 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:35,348 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:45,206 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:45,217 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:27:45,223 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:27:45,235 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:15,946 [Worker-48] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 10:28:16,059 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.3/cxf-rt-frontend-jaxws-3.1.3.pom
+2017-06-30 10:28:16,082 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.3/cxf-rt-frontend-jaxws-3.1.3.pom
+2017-06-30 10:28:16,109 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.3/cxf-parent-3.1.3.pom
+2017-06-30 10:28:16,190 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.3/cxf-parent-3.1.3.pom
+2017-06-30 10:28:16,262 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.3/cxf-3.1.3.pom
+2017-06-30 10:28:16,299 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.3/cxf-3.1.3.pom
+2017-06-30 10:28:16,350 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.3/cxf-core-3.1.3.pom
+2017-06-30 10:28:16,379 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.3/cxf-core-3.1.3.pom
+2017-06-30 10:28:16,420 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.3/cxf-rt-bindings-soap-3.1.3.pom
+2017-06-30 10:28:16,445 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.3/cxf-rt-bindings-soap-3.1.3.pom
+2017-06-30 10:28:16,475 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.3/cxf-rt-wsdl-3.1.3.pom
+2017-06-30 10:28:16,556 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.3/cxf-rt-wsdl-3.1.3.pom
+2017-06-30 10:28:16,582 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.3/cxf-rt-databinding-jaxb-3.1.3.pom
+2017-06-30 10:28:16,603 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.3/cxf-rt-databinding-jaxb-3.1.3.pom
+2017-06-30 10:28:16,634 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:16,645 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:16,675 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.3/cxf-rt-bindings-xml-3.1.3.pom
+2017-06-30 10:28:16,698 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.3/cxf-rt-bindings-xml-3.1.3.pom
+2017-06-30 10:28:16,740 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.3/cxf-rt-frontend-simple-3.1.3.pom
+2017-06-30 10:28:16,764 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.3/cxf-rt-frontend-simple-3.1.3.pom
+2017-06-30 10:28:16,787 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.3/cxf-rt-ws-addr-3.1.3.pom
+2017-06-30 10:28:16,806 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.3/cxf-rt-ws-addr-3.1.3.pom
+2017-06-30 10:28:16,837 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.3/cxf-rt-ws-policy-3.1.3.pom
+2017-06-30 10:28:16,911 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.3/cxf-rt-ws-policy-3.1.3.pom
+2017-06-30 10:28:16,971 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.3/cxf-rt-transports-http-3.1.3.pom
+2017-06-30 10:28:16,995 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.3/cxf-rt-transports-http-3.1.3.pom
+2017-06-30 10:28:17,040 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/ws/jaxws-api/2.2/jaxws-api-2.2.pom
+2017-06-30 10:28:17,079 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/ws/jaxws-api/2.2/jaxws-api-2.2.pom
+2017-06-30 10:28:17,102 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.pom
+2017-06-30 10:28:17,121 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.pom
+2017-06-30 10:28:17,147 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom
+2017-06-30 10:28:17,168 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom
+2017-06-30 10:28:17,200 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/soap/saaj-api/1.3.1/saaj-api-1.3.1.pom
+2017-06-30 10:28:17,219 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/soap/saaj-api/1.3.1/saaj-api-1.3.1.pom
+2017-06-30 10:28:17,291 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.3/cxf-rt-frontend-jaxws-3.1.3.jar
+2017-06-30 10:28:17,422 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.3/cxf-rt-frontend-jaxws-3.1.3.jar
+2017-06-30 10:28:17,458 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.3/cxf-core-3.1.3.jar
+2017-06-30 10:28:17,748 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.3/cxf-core-3.1.3.jar
+2017-06-30 10:28:17,766 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.3/cxf-rt-bindings-soap-3.1.3.jar
+2017-06-30 10:28:17,852 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.3/cxf-rt-bindings-soap-3.1.3.jar
+2017-06-30 10:28:17,878 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.3/cxf-rt-wsdl-3.1.3.jar
+2017-06-30 10:28:18,075 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.3/cxf-rt-wsdl-3.1.3.jar
+2017-06-30 10:28:18,217 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.3/cxf-rt-databinding-jaxb-3.1.3.jar
+2017-06-30 10:28:18,395 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.3/cxf-rt-databinding-jaxb-3.1.3.jar
+2017-06-30 10:28:18,485 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.3/cxf-rt-bindings-xml-3.1.3.jar
+2017-06-30 10:28:18,898 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.3/cxf-rt-bindings-xml-3.1.3.jar
+2017-06-30 10:28:18,936 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.3/cxf-rt-frontend-simple-3.1.3.jar
+2017-06-30 10:28:19,054 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.3/cxf-rt-frontend-simple-3.1.3.jar
+2017-06-30 10:28:19,091 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.3/cxf-rt-ws-addr-3.1.3.jar
+2017-06-30 10:28:19,202 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.3/cxf-rt-ws-addr-3.1.3.jar
+2017-06-30 10:28:19,238 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.3/cxf-rt-ws-policy-3.1.3.jar
+2017-06-30 10:28:19,346 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.3/cxf-rt-ws-policy-3.1.3.jar
+2017-06-30 10:28:19,382 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.3/cxf-rt-transports-http-3.1.3.jar
+2017-06-30 10:28:19,485 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.3/cxf-rt-transports-http-3.1.3.jar
+2017-06-30 10:28:19,509 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/ws/jaxws-api/2.2/jaxws-api-2.2.jar
+2017-06-30 10:28:19,560 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/ws/jaxws-api/2.2/jaxws-api-2.2.jar
+2017-06-30 10:28:19,578 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.jar
+2017-06-30 10:28:19,619 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/bind/jaxb-api/2.2/jaxb-api-2.2.jar
+2017-06-30 10:28:19,637 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar
+2017-06-30 10:28:19,802 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar
+2017-06-30 10:28:19,815 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/xml/soap/saaj-api/1.3.1/saaj-api-1.3.1.jar
+2017-06-30 10:28:20,024 [Worker-48] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/xml/soap/saaj-api/1.3.1/saaj-api-1.3.1.jar
+2017-06-30 10:28:21,856 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:21,864 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:21,867 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:21,883 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:23,155 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:23,166 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:23,221 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:23,237 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:23,244 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:23,252 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:27,760 [Worker-59] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-30 10:28:28,229 [Worker-59] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 10:28:28,277 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:28,292 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:28,406 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/main/java
+2017-06-30 10:28:28,407 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/main/resources
+2017-06-30 10:28:28,415 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/test/java
+2017-06-30 10:28:28,415 [Worker-59] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/test/resources
+2017-06-30 10:28:28,635 [Worker-59] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-30 10:28:28,989 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:29,008 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:28:29,077 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:29,084 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:28:29,085 [Worker-56] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:28:29,097 [Worker-56] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:29:21,901 [Worker-48] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 10:29:21,931 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:21,938 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:22,009 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:22,018 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:22,220 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:29:22,225 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:29:22,230 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:29:22,236 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:29:22,236 [Worker-48] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of LibraryClient
+2017-06-30 10:29:22,237 [Worker-48] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for LibraryClient
+2017-06-30 10:29:22,246 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:29:38,851 [Worker-48] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-30 10:29:39,237 [Worker-48] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 10:29:39,281 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,289 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,408 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,416 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,531 [Worker-48] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/main/java
+2017-06-30 10:29:39,537 [Worker-48] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/main/resources
+2017-06-30 10:29:39,537 [Worker-48] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /LibraryClient/src/test/java
+2017-06-30 10:29:39,543 [Worker-48] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /LibraryClient/src/test/resources
+2017-06-30 10:29:39,706 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,718 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:39,833 [Worker-48] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for LibraryClient
+2017-06-30 10:29:39,844 [Worker-48] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-30 10:29:40,492 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:40,507 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 10:29:40,549 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:29:40,554 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:29:40,555 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:29:40,565 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:29:40,565 [Worker-52] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of LibraryClient
+2017-06-30 10:29:40,565 [Worker-52] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for LibraryClient
+2017-06-30 10:29:40,569 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:28,238 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:28,245 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:31:28,246 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:28,253 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:31:38,655 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:38,661 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:31:38,662 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:38,668 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:31:58,388 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:58,402 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:31:58,403 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:31:58,416 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:33:12,746 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:33:12,752 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:33:12,753 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:33:12,761 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:33:51,741 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:33:51,755 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:33:51,757 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:33:51,767 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:34:05,834 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:34:05,849 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:34:05,856 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:34:05,862 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:34:27,405 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:34:27,413 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:34:27,414 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:34:27,421 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:35:43,449 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:35:43,458 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:35:43,462 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:35:43,467 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:35:58,263 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:35:58,274 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:35:58,275 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:35:58,282 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:36:47,543 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:36:47,554 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 10:36:47,562 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 10:36:47,567 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 11:00:51,538 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @73373444ms
+2017-06-30 11:00:51,664 [main] INFO  org.eclipse.jetty.server.Server - jetty-9.2.13.v20150730
+2017-06-30 11:00:51,717 [main] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@6b6ac39b{/wse,null,AVAILABLE}
+2017-06-30 11:00:51,737 [main] INFO  o.e.jetty.server.ServerConnector - Started ServerConnector@67e59037{HTTP/1.1}{0.0.0.0:52507}
+2017-06-30 11:00:51,744 [main] INFO  org.eclipse.jetty.server.Server - Started @73373650ms
+2017-06-30 11:54:03,086 [Worker-86] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryClient:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\LibraryClient\pom.xml.
+2017-06-30 11:54:03,154 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:03,171 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:03,261 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:03,269 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:04,804 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:04,814 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:54:04,862 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 11:54:04,872 [Worker-78] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 11:54:04,878 [Worker-78] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 11:54:04,884 [Worker-78] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 11:55:29,610 [Worker-84] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:LibraryService:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\pom.xml.
+2017-06-30 11:55:29,658 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:55:29,669 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:55:29,939 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:55:29,953 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 11:55:30,011 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 11:55:30,020 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\main\resources
+2017-06-30 11:55:30,021 [Worker-89] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 11:55:30,038 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_7_WS_AngularJS\LibraryService\src\test\resources
+2017-06-30 12:15:13,576 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 12:15:13,597 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 12:15:13,607 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 12:15:13,621 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-30 13:48:15,016 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.11/cxf-jaxws-javafirst-3.1.11.jar
+2017-06-30 13:48:15,040 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.11/cxf-jaxws-javafirst-3.1.11.jar
+2017-06-30 13:48:15,062 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.11/cxf-jaxws-javafirst-3.1.11.pom
+2017-06-30 13:48:15,085 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.11/cxf-jaxws-javafirst-3.1.11.pom
+2017-06-30 13:49:03,517 [Worker-122] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\pom.xml
+2017-06-30 13:49:04,020 [Worker-122] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:hotel:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\pom.xml.
+2017-06-30 13:49:04,149 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.11/cxf-rt-frontend-jaxws-3.1.11.pom
+2017-06-30 13:49:04,171 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.11/cxf-rt-frontend-jaxws-3.1.11.pom
+2017-06-30 13:49:04,201 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.11/cxf-parent-3.1.11.pom
+2017-06-30 13:49:04,255 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-parent/3.1.11/cxf-parent-3.1.11.pom
+2017-06-30 13:49:04,275 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.11/cxf-3.1.11.pom
+2017-06-30 13:49:04,301 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf/3.1.11/cxf-3.1.11.pom
+2017-06-30 13:49:04,401 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.11/cxf-core-3.1.11.pom
+2017-06-30 13:49:04,429 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.11/cxf-core-3.1.11.pom
+2017-06-30 13:49:04,542 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.11/cxf-rt-bindings-soap-3.1.11.pom
+2017-06-30 13:49:04,566 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.11/cxf-rt-bindings-soap-3.1.11.pom
+2017-06-30 13:49:04,602 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.11/cxf-rt-wsdl-3.1.11.pom
+2017-06-30 13:49:04,646 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.11/cxf-rt-wsdl-3.1.11.pom
+2017-06-30 13:49:04,684 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.11/cxf-rt-databinding-jaxb-3.1.11.pom
+2017-06-30 13:49:04,708 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.11/cxf-rt-databinding-jaxb-3.1.11.pom
+2017-06-30 13:49:04,808 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:04,831 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:04,852 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.11/cxf-rt-bindings-xml-3.1.11.pom
+2017-06-30 13:49:04,874 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.11/cxf-rt-bindings-xml-3.1.11.pom
+2017-06-30 13:49:04,908 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.11/cxf-rt-frontend-simple-3.1.11.pom
+2017-06-30 13:49:04,929 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.11/cxf-rt-frontend-simple-3.1.11.pom
+2017-06-30 13:49:04,962 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.11/cxf-rt-ws-addr-3.1.11.pom
+2017-06-30 13:49:04,990 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.11/cxf-rt-ws-addr-3.1.11.pom
+2017-06-30 13:49:05,022 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.11/cxf-rt-ws-policy-3.1.11.pom
+2017-06-30 13:49:05,050 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.11/cxf-rt-ws-policy-3.1.11.pom
+2017-06-30 13:49:05,120 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.11/cxf-rt-transports-http-3.1.11.pom
+2017-06-30 13:49:05,175 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.11/cxf-rt-transports-http-3.1.11.pom
+2017-06-30 13:49:05,354 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.11/cxf-rt-frontend-jaxws-3.1.11.jar
+2017-06-30 13:49:05,431 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.11/cxf-rt-frontend-jaxws-3.1.11.jar
+2017-06-30 13:49:05,457 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.11/cxf-core-3.1.11.jar
+2017-06-30 13:49:05,631 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-core/3.1.11/cxf-core-3.1.11.jar
+2017-06-30 13:49:05,656 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.11/cxf-rt-bindings-soap-3.1.11.jar
+2017-06-30 13:49:05,710 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-soap/3.1.11/cxf-rt-bindings-soap-3.1.11.jar
+2017-06-30 13:49:05,721 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.11/cxf-rt-wsdl-3.1.11.jar
+2017-06-30 13:49:05,760 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-wsdl/3.1.11/cxf-rt-wsdl-3.1.11.jar
+2017-06-30 13:49:05,771 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.11/cxf-rt-databinding-jaxb-3.1.11.jar
+2017-06-30 13:49:05,814 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.11/cxf-rt-databinding-jaxb-3.1.11.jar
+2017-06-30 13:49:05,824 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.11/cxf-rt-bindings-xml-3.1.11.jar
+2017-06-30 13:49:06,003 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-bindings-xml/3.1.11/cxf-rt-bindings-xml-3.1.11.jar
+2017-06-30 13:49:06,014 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.11/cxf-rt-frontend-simple-3.1.11.jar
+2017-06-30 13:49:06,039 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-frontend-simple/3.1.11/cxf-rt-frontend-simple-3.1.11.jar
+2017-06-30 13:49:06,055 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.11/cxf-rt-ws-addr-3.1.11.jar
+2017-06-30 13:49:06,078 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-addr/3.1.11/cxf-rt-ws-addr-3.1.11.jar
+2017-06-30 13:49:06,089 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.11/cxf-rt-ws-policy-3.1.11.jar
+2017-06-30 13:49:06,122 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-ws-policy/3.1.11/cxf-rt-ws-policy-3.1.11.jar
+2017-06-30 13:49:06,132 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.11/cxf-rt-transports-http-3.1.11.jar
+2017-06-30 13:49:06,190 [Worker-122] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/cxf-rt-transports-http/3.1.11/cxf-rt-transports-http-3.1.11.jar
+2017-06-30 13:49:07,204 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /hotel/src/main/java
+2017-06-30 13:49:07,205 [Worker-122] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /hotel/src/test/java
+2017-06-30 13:49:08,156 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:08,165 [Worker-122] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:08,229 [Worker-122] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2017-06-30 13:49:10,248 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:10,256 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 13:49:10,337 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:49:10,342 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\main\resources
+2017-06-30 13:49:10,348 [Worker-125] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:49:10,353 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\test\resources
+2017-06-30 13:49:28,984 [Worker-128] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Client references closed project LibraryClient
+org.eclipse.core.runtime.CoreException: Launch configuration Client references closed project LibraryClient
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:309) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-30 13:49:28,995 [Worker-128] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Client references closed project LibraryClient
+org.eclipse.core.runtime.CoreException: Launch configuration Client references closed project LibraryClient
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:552) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:425) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:310) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-30 13:49:29,016 [Worker-128] ERROR o.e.m.j.i.l.MavenLaunchConfigurationListener - Launch configuration Client references closed project LibraryClient
+org.eclipse.core.runtime.CoreException: Launch configuration Client references closed project LibraryClient
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1408) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1280) ~[org.eclipse.jdt.launching_3.8.0.v20150527-0946.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:53) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:38) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:229) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) [org.eclipse.equinox.common_3.7.0.v20150402-1709.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2166) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:384) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173) [org.eclipse.debug.core_3.10.0.v20150303-1130.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:311) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:335) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:70) [org.eclipse.m2e.jdt_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:783) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:930) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:98) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob$1.call(ProjectRegistryRefreshJob.java:1) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:176) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:151) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:99) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1355) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:81) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.7.0.v20150330-2103.jar:na]
+2017-06-30 13:52:38,620 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:52:38,645 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\main\resources
+2017-06-30 13:52:38,646 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:52:38,666 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\test\resources
+2017-06-30 13:57:31,090 [Worker-126] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:57:31,119 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\main\resources
+2017-06-30 13:57:31,131 [Worker-126] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:57:31,155 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\test\resources
+2017-06-30 13:57:46,712 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:57:46,738 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\main\resources
+2017-06-30 13:57:46,750 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 13:57:46,770 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\hotel\src\test\resources
+2017-06-30 14:00:48,090 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2017-06-30 14:00:48,160 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.jar
+2017-06-30 14:00:48,190 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2017-06-30 14:00:48,253 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/archetypes/maven-archetype-quickstart/1.1/maven-archetype-quickstart-1.1.pom
+2017-06-30 14:01:00,514 [Worker-131] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\pom.xml
+2017-06-30 14:01:00,840 [Worker-131] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:expedia:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\pom.xml.
+2017-06-30 14:01:01,874 [Worker-131] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /expedia/src/main/java
+2017-06-30 14:01:01,887 [Worker-131] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /expedia/src/test/java
+2017-06-30 14:01:01,953 [Worker-131] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2017-06-30 14:01:02,332 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:01:02,332 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\main\resources
+2017-06-30 14:01:02,333 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:01:02,333 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\test\resources
+2017-06-30 14:01:28,042 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:01:28,043 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\main\resources
+2017-06-30 14:01:28,043 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:01:28,044 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\test\resources
+2017-06-30 14:06:19,818 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:06:19,823 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\main\resources
+2017-06-30 14:06:19,827 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:06:19,828 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\test\resources
+2017-06-30 14:10:35,583 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:10:35,583 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\main\resources
+2017-06-30 14:10:35,584 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:10:35,585 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\expedia\src\test\resources
+2017-06-30 14:16:50,326 [Worker-132] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\pom.xml
+2017-06-30 14:16:50,495 [Worker-132] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.ex:helloservice:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\pom.xml.
+2017-06-30 14:16:50,561 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:50,597 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:50,850 [Worker-132] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /helloservice/src/main/java
+2017-06-30 14:16:50,850 [Worker-132] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /helloservice/src/test/java
+2017-06-30 14:16:51,835 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:51,853 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:52,004 [Worker-132] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 1 sec
+2017-06-30 14:16:52,697 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:52,717 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-06-30 14:16:52,779 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:16:52,795 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-06-30 14:16:52,796 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:16:52,804 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-06-30 14:21:02,464 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:21:02,476 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-06-30 14:21:02,484 [Worker-132] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:21:02,494 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-06-30 14:26:22,249 [Worker-133] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\pom.xml
+2017-06-30 14:26:22,395 [Worker-133] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ex:helloconsumer:0.0.1-SNAPSHOT @ C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\pom.xml.
+2017-06-30 14:26:22,562 [Worker-133] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /helloconsumer/src/main/java
+2017-06-30 14:26:22,580 [Worker-133] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /helloconsumer/src/test/java
+2017-06-30 14:26:22,645 [Worker-133] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-30 14:26:23,017 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:26:23,017 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 14:26:23,018 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:26:23,018 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 14:34:58,402 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:34:58,402 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 14:34:58,402 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:34:58,403 [Worker-126] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 14:37:52,695 [Worker-129] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:37:52,712 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-06-30 14:37:52,719 [Worker-129] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:37:52,727 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-06-30 14:37:57,097 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:37:57,106 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-06-30 14:37:57,107 [Worker-124] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-30 14:37:57,114 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-06-30 14:43:30,732 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:43:30,736 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 14:43:30,740 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:43:30,740 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 14:44:23,099 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:44:23,101 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 14:44:23,103 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:44:23,103 [Worker-133] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 14:47:11,789 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:47:11,793 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 14:47:11,799 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 14:47:11,799 [Worker-135] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 15:07:37,483 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 15:07:37,483 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\main\resources
+2017-06-30 15:07:37,484 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-06-30 15:07:37,484 [Worker-137] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloconsumer\src\test\resources
+2017-06-30 15:07:40,340 [Framework stop] INFO  o.e.jetty.server.ServerConnector - Stopped ServerConnector@67e59037{HTTP/1.1}{0.0.0.0:0}
+2017-06-30 15:07:40,433 [Framework stop] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@6b6ac39b{/wse,null,UNAVAILABLE}
+2017-07-03 12:32:03,243 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-impl:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-07-03 12:32:03,368 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.sun.xml.bind:jaxb-core:jar:2.2.11 is invalid, transitive dependencies (if any) will not be available, enable debug logging for more details
+2017-07-03 12:32:25,087 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 12:32:25,092 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-07-03 12:32:25,097 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 12:32:25,113 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-07-03 12:41:32,562 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.12/cxf-jaxws-javafirst-3.1.12.jar
+2017-07-03 12:41:32,611 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.12/cxf-jaxws-javafirst-3.1.12.jar
+2017-07-03 12:41:32,648 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.12/cxf-jaxws-javafirst-3.1.12.pom
+2017-07-03 12:41:32,670 [ModalContext] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/cxf/archetype/cxf-jaxws-javafirst/3.1.12/cxf-jaxws-javafirst-3.1.12.pom
+2017-07-03 12:42:36,343 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 12:42:36,360 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-07-03 12:42:36,361 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 12:42:36,369 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-07-03 13:13:37,883 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 13:13:37,890 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-07-03 13:13:37,896 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 13:13:37,900 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources
+2017-07-03 13:14:00,781 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 13:14:00,787 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\main\resources
+2017-07-03 13:14:00,793 [Worker-38] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-07-03 13:14:00,801 [Worker-38] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Genesis\my_git_repos\1705_May15_Java\Week7\helloservice\src\test\resources

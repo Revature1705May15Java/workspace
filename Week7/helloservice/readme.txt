@@ -1,0 +1,15 @@
+Hello all, 
+
+This is a really simple sort of "Hello World" project, intro
+to SOAP. We set this up by creating a cxf-jaxws-javafirst maven project
+Steps to do so:
+1. New maven project
+2. do not click create simple project, we will be selecting an archetype
+3. type in cxf and if nothing shows up you must import the archetype directory
+	- to do this, Window > Preferences > Maven > Archetypes > Add Remote Catalog >
+	paste the following link https://repo.maven.apache.org/maven2/archetype-catalog.xml
+	in the catelog file input, and give a simple name to description
+	apply, try again to give the archetype cxf-jaxws-javafirst to maven project
+4. name it the same way as we typically do with our maven projects
+5. run project on server via web.xml, make sure server is started and synchronized
+6. check http://localhost:8081/helloservice to see service deployed

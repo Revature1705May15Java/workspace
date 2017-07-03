@@ -1,0 +1,13 @@
+
+package com.ex.hotel;
+
+import javax.jws.WebService;
+
+@WebService(endpointInterface = "com.ex.hotel.HelloWorld")
+public class HelloWorldImpl implements HelloWorld {
+
+    public String sayHi(String text) {
+        return "Hello " + text;
+    }
+}
+

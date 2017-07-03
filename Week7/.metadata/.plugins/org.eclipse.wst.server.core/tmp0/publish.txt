@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Thu Jun 29 14:26:23 EDT 2017
-org.eclipse.jst.jee.server\:RoutingClassDemo=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\RoutingClassDemo
-org.eclipse.jst.jee.server\:NgRouteDemo=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\NgRouteDemo
+#Mon Jul 03 12:55:39 EDT 2017
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Genesis\\.m2\\repository\\org\\springframework\\spring-web\\4.1.9.RELEASE\\spring-web-4.1.9.RELEASE.jar=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\hotel\\WEB-INF\\lib\\spring-web-4.1.9.RELEASE.jar
+org.eclipse.jst.j2ee.server\:helloservice=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\helloservice
+org.eclipse.jst.j2ee.server\:hotel=C\:\\Users\\Genesis\\Downloads\\apache-tomcat-8.0.39\\wtpwebapps\\hotel
