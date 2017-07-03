@@ -1,0 +1,16 @@
+<form name="opForm">
+
+	<div class="form-group">
+		<label for="amount">Amount:</label>
+		<input type="number" 
+				class="form-control" 
+				name="amount" 
+				ng-model="account.amount">
+	</div>
+	
+	<div class="btn-group">
+		<button class="btn btn-success" ng-click="account.deposit()">Deposit</button>
+		<button class="btn btn-danger" ng-click="account.withdraw()">Withdraw</button>
+	</div>
+
+</form>

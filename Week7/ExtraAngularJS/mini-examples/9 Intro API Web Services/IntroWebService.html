@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>AngularJS: Consuming Web Services</title>
+</head>
+<!--  -->
+<body ng-app="topStoryApp">
+	<!-- angular controller to get link for top story of the day -->
+	<div ng-controller="topStoryCtrl">
+		Top Story is <a href="{{storyInfo.url}}">{{storyInfo.title}}</a>
+	</div>
+	<!-- import AngularJS library from CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<!-- import local custom AngularJS library -->
+	<script src="./GetTopStory.js"></script>
+</body>
+</html>
