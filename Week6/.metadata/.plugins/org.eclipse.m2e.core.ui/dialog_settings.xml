@@ -2,12 +2,27 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.ex"/>
 			<item value="com.revature"/>
 		</list>
 		<list key="name">
+			<item value="ORMClassDemo"/>
+			<item value="SpringORMDemo"/>
+			<item value="SpringMVCDemo"/>
+			<item value="ClassDemo"/>
+			<item value="AOPDemo"/>
+			<item value="Demos"/>
+			<item value="SpringIntro"/>
 			<item value="HelloSpring"/>
 		</list>
 		<list key="artifactId">
+			<item value="ORMClassDemo"/>
+			<item value="SpringORMDemo"/>
+			<item value="SpringMVCDemo"/>
+			<item value="ClassDemo"/>
+			<item value="AOPDemo"/>
+			<item value="Demos"/>
+			<item value="SpringIntro"/>
 			<item value="HelloSpring"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -34,6 +49,23 @@
 		<list key="issueManagementUrl">
 		</list>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_6_Spring\SpringORM"/>
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_6_Spring\SpringHibernateNoORM"/>
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_6_Spring\SpringMVCclass"/>
+			<item value="C:\Users\Genesis\my_git_repos\1608_Aug15_Java_Steven\Week_6_Spring\bean-lifecycle"/>
+			<item value="C:\Users\Genesis\Documents\workspaces\QuickExamples\PizzaAOP"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -46,6 +78,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\Demos"/>
+			<item value="C:\Users\Genesis\my_git_repos\1705_May15_Java\Week6\SpringIntro"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

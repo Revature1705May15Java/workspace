@@ -11,7 +11,7 @@
 	<!-- enable @Transactional -->
 	<tx:annotation-driven />
 
-	<!-- enable autowiring -->
+	<!-- enable auto-wiring -->
 	<context:component-scan base-package="com.ex" />
 
 	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">

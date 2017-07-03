@@ -14,8 +14,8 @@ public class Driver {
 		AbstractApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		Dao dao = (Dao) ac.getBean("myDao");
 		
-		Cave c = new Cave("My Cozy Cave");
-		Bear b = new Bear("Gen", 40, c);
+		Cave c = new Cave("My Cave");
+		Bear b = new Bear("bonds", 140, c);
 		
 		dao.makeBear(b);
 		ac.close();

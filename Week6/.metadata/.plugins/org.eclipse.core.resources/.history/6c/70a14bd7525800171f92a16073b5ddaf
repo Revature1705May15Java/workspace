@@ -1,0 +1,32 @@
+package com.revature.test;
+
+import com.revature.dao.DAO;
+import com.revature.dao.DaoImplementation;
+import com.revature.pojo.User;
+import com.revature.service.Service;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Service s = new Service();
+		DaoImplementation d = new DaoImplementation();
+		
+	//	User me = s.validateUser("gab12", "123");
+	//	System.out.println(me.toString());
+		
+	//	s.updateInfo(me, "gengen", me.getU_password(), "GBo", me.getU_lastname(), "hello@world.edu");
+	//	System.out.println(me.toString());
+		
+		//s.updateRequestStatus(1,8, 2);
+	
+		User u = new User("thisisa", "test"));
+		
+		//System.out.println(s.getAllResolvedReimbursements().toString());
+System.out.println("test:");
+		System.out.println(s.getAllEmployees().toString());
+	//	System.out.println(d.pendingRequests(me).toString());
+	}
+
+}

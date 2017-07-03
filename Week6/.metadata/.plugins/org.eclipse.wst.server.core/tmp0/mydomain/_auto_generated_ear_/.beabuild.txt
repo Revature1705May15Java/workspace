@@ -1,0 +1,3 @@
+C\:/Users/Genesis/my_git_repos/1608_Aug15_Java_Steven/Genesis_Bonds_Code/Project1/WebContent = Project1.war
+C\:/Users/Genesis/my_git_repos/1705_May15_Java/Week6/.metadata/.plugins/org.eclipse.core.resources/Project1/build/weboutput = Project1.war
+C\:/Users/Genesis/my_git_repos/1608_Aug15_Java_Steven/Genesis_Bonds_Code/Project1/build/classes = Project1.war/WEB-INF/classes

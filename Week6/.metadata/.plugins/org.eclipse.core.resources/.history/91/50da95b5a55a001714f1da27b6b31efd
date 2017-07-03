@@ -1,0 +1,47 @@
+package com.revature.aspects;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Component;
+
+@Component 
+@Aspect
+public class Operations {
+	// return type 
+	// method address
+	// parameter type
+	@Before("execution(* com.revature.beans.Pizza.d* (..))")
+	public void yay(){
+		System.out.println("first before method");
+	}
+	@After("where()")
+	public void done(){
+		System.out.println("done");
+	}
+	
+	@Around("where()")
+	public void doAround(ProceedingJoinPoint pjp){
+		System.out.println("in around ...1 ....2.....3");
+		try {
+			pjp.proceed();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("done with around");
+	}
+	
+	@Pointcut("execution(* com.revature.beans.Pizza.* (..))")
+	public void where(){}
+	
+	@Before("execution(* com.revature.beans.Pizza.d* (..))")
+	public void yay2(){
+		System.out.println("in second before method");
+	}
+	
+
+}

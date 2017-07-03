@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+html{
+	height:100%;
+}
+body{
+	height:100%;
+	margin:0px;
+	font-weight:300;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-color: rgba(10,50,100,.5);
+}
