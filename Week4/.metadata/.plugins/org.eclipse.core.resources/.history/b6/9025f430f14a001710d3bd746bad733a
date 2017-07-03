@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<style>
+.bubVScap{
+margin : 20px;
+border : 1px solid blue;
+}
+
+</style>
+
+</head>
+<body>
+
+
+
+	<h1>Enter Student Information</h1>
+	Count:
+	<div id="counter"></div>
+
+	<br> Id:
+	<input type="text" id="t_id" />
+	<br>
+	<br> Name:
+	<input type="text" id="t_name" />
+	<br>
+	<br> Major:
+	<input type="text" id="t_major" />
+	<br>
+	<br>
+
+	<button id="add">Add Student</button>
+
+	<table id="students">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>major</th>
+		</tr>
+	</table>
+	<br>
+
+	<br>
+
+	<form class="bubVScap" onclick="alert('form!')"> FORM
+		<div class="bubVScap" onclick="alert('div')"> DIV
+			<p class="bubVScap" onclick="alert('p')">P</p>
+		</div>
+
+
+	</form>
+
+
+
+	<script src="js/examples.js"></script>
+	<script src="js/jsHomework.js"></script>
+
+</body>
+</html>

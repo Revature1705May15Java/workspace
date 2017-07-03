@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Students</title>
+</head>
+<body>
+	<h1>Enter Student Information</h1>
+	<br /> Id:
+	<input type="text" id="t_id" />
+	<br />
+	<br /> Name:
+	<input type="text" id="t_name" />
+	<br />
+	<br /> Major:
+	<input type="text" id="t_major" />
+	<br />
+	<br />
+
+	<button id="add">Add Student</button>
+
+	<table id="students">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>major</th>
+		</tr>
+	</table>
+	<br>
+	<form id="studentForm" action="addStudents.do" method="POST">
+		<input type="password" value="p4ssw0rd" /> <input type="submit"
+			value="Add Students to Database" /> <br>
+	</form>
+
+	<script type="text/javascript" src="js/form.js"></script>
+</body>
+</html>

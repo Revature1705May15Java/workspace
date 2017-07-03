@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Homework Viewer</title>
+</head>
+<body>
+
+enter:
+
+<input type="number" id="fibNum" name="fib" />
+<br>
+<button id="doFib"/>Run Fibonacci!</button>
+<br>Fibonacci: <p id="fibdisplay"></p> 
+
+
+
+
+<script type="text/javascript" src="js/jsHomework.js"></script>
+
+</body>
+</html>

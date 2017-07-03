@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="page">
+		<h1 id="header">List</h1>
+		<h2>Buy groceries</h2>
+		
+		<input type="text" id="newItem" placeholder="Anything else?"/> <br>
+		<button id="add">Add Item</button>
+
+		<ul>
+			<li id="one" class="hot"><em>fresh</em> figs</li>
+			<li id="two" class="hot">pine nuts</li>
+			<li id="three" class="hot">honey</li>
+			<li id="four" class="hot">balsamic vinegar</li>
+		</ul>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous"></script>
+
+	<script>
+  $('header').addClass('headline');
+  $('li:even').hide().fadeIn(1500);
+  $('li').on('click', function(){
+ 	 $(this).remove();
+ 	 });
+ 	 var n = document.createElement('li');
+ 	 $('#add').on('click', function(){
+ 	 n.innerHTML=$('#newItem').val();
+ 	 $('ul').append(n);
+ 	 });
+ 	 
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<style>
+#exampleSpace{
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+
+	<h1> Enter Student Information </h1>
+	<br /> Id:
+	<input type="text" id="t_id" />
+	<br />
+	<br /> Name:
+	<input type="text" id="t_name" />
+	<br />
+	<br /> Major:
+	<input type="text" id="t_major" />
+	<br />
+	<br />
+
+	<button id="add">Add Student</button>
+
+	<table id="students">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>major</th>
+		</tr>
+	</table>
+	<br>
+
+	<script src="js/examples.js"></script>
+	<script src="js/jsHomework.js"></script>
+
+</body>
+</html>

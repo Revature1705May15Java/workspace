@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AJAX - Grab a Pokemon</title>
+
+<link href="bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css"
+	rel="stylesheet" />
+
+</head>
+<body>
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1>Using RESTful Pokemon API</h1>
+		</div>
+
+		<div class="well">
+			<!-- User will enter a pokemon id -->
+			<input type="text" id="pokemonId" placeholder="Enter Pokemon ID">
+			<input type="submit" value="Get Pokemon Info" id="pokemonSubmit" class="btn btn-info"/>
+		</div>
+
+		<div class="well">
+			<div class="text-center">
+				<!-- API will return pokemon information
+					We will append that information to the page -->
+				<img id="pokemonImg" alt="" src="">
+				<h3 id="pokemonName"></h3>
+			</div> 
+		</div>
+
+
+	</div>
+<script type="text/javascript" src="js/Pokemon.js"></script>
+
+</body>
+</html>

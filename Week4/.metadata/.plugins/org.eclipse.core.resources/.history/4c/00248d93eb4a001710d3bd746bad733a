@@ -1,0 +1,217 @@
+//Variable Scopes and hoisting
+/*
+- Local or function-level scope
+- JS does not have block scope, simply function-level
+- Must always declare local variables before you use them
+- Hoisting can be used for global variables(all 
+	vars declared outside of a function)
+*/
+
+
+//global variables
+var a, b, c, d, e, f, g, h, i;
+a = 10;
+b = "10";
+c = true;
+d = {};
+e = null;
+//f
+g = (0/0);
+h=[];
+i = function(){};
+
+//--------------------Type coercion
+//5 == 5
+//5 === 5
+
+//5 == "5"
+//5 === "5"
+
+//false == "false" --false
+//false === "false" --false
+
+//false == 0 --true
+//false === 0 --false
+
+//5 != "5"
+//5 !== "5"
+
+a == b
+a === b
+d == e
+d === e
+
+//------------------Operators
+/*
+ * var x = 5 + 6;
+ * x = 5 + 6 + "hello";
+ * x = "hello" + 6 + 5;
+ * x = +"42";
+ */
+
+//Scopes in Global and Function
+
+//--------------Hoisting, bring declarations to the top of the scope
+function incrementX(){
+	x= 1;//implied global
+	return x;
+}
+
+
+//--------------Semicolon injection, Javascript attempted to not require semicolons 
+//										but you should defined your own
+function incrementY(){
+	var y;
+	y= "1";
+	return  //JS will inject a semicolon ; by the return statement, hard to debug
+			y;
+}
+
+
+//--------------------Strings are immutable
+var myString = 'hello';
+function changeString(myVar){
+	console.log(myVar);
+	myVar = "changed that string";
+	console.log(myVar);
+	return "did it change that string? check myString again"; //no it did not
+}
+
+
+/* Callback functions
+	- also called a higher-order function
+	a function that is passed to another function 
+	as a parameter, and the callback function is 
+	called, or executed, inside of the other function
+	This is essentially a sort of design pattern in
+	JS - a solution to a common problem
+	
+	
+	http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/
+	
+	
+*/
+
+var friends = ["Jon", "Jane", "Jill", "bob"];
+
+friends.forEach(function(eachName, index){
+	console.log(index + 1 + "." + eachName);
+	
+});
+
+
+
+//-------------No Function Overloading
+function sumNum(x,y,z){
+	console.log(x+y+z);
+}
+
+function sumNum(x,y){
+	console.log(x+y + " in x,y");
+}
+
+//--------Implicit arguments object
+function sumNum(){
+	console.log("nothing");
+	console.log(arguments[0]+ arguments[1] + arguments[2]);
+}
+
+
+
+
+var count = 0;
+
+//var birdCounter = 0;
+//var carCounter = 0;
+//
+
+//function countBird(){
+//	birdCounter++;
+//	return birdCounter + " birds";
+//}
+//
+//function countCar(){
+//	carCounter++;
+//	return carCounter + " Cars";
+//}
+
+//CLOSURE!!!!!!! 
+//JavaScript's Form of encapsulation
+// Global variables can be made local(private) with closures
+// Variables declared without the var keyword are always global, 
+// 		even if if they are created inside of a function
+function makeBirdCounter(){
+	var birdCounter = 0;
+	
+	function countBird(){
+		birdCounter++;
+		return birdCounter + " birds";
+	}
+	
+	return countBird;
+}
+
+function makeCarCounter(){
+	var carCounter = 0;
+	
+	return 	function (){
+		carCounter++;
+		return carCounter + " cars ";
+	}
+}
+
+function makeCounter(myTypeOfCounter){
+	var count = 0;
+	return function(){
+		count++;
+		return count +" " + myTypeOfCounter +"s";
+	}
+	
+}
+
+
+// dynamic table
+
+
+function add(){
+	
+	//Element Values
+	var id = document.getElementById("t_id").value;
+	var name = document.getElementById("t_name").value;
+	var major = document.getElementById("t_major").value;
+	
+	//Create Row Element
+	var row = document.createElement("tr");
+	
+	//Create Row Cells
+	var cell1 = document.createElement("td");
+	var cell2 = document.createElement("td");
+	var cell3 = document.createElement("td");
+	
+	//Append the cells to the row
+	row.appendChild(cell1);
+	row.appendChild(cell2);
+	row.appendChild(cell3);
+	
+	//add text
+	cell1.innerHTML = id;
+	cell2.innerHTML = name;
+	cell3.innerHTML = major;
+	
+	//append to the table
+	document.getElementById("students").appendChild(row);
+}
+
+//Add event listener to document
+document.getElementById("add").addEventListener("click", add, false);
+
+var count = 0;
+function hoverCounter(){
+	count++;
+	document.getElementById("counter").innerHTML = count;
+}
+
+document.getElementById("exampleSpace").addEventListener("onMouseOver", hoverCounter, false);
+
+
+

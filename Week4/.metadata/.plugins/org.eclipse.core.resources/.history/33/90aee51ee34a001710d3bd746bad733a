@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+enter:
+<input type="number" id="fib" />
+<br>
+
+<button id="doFib">Fibonacci!</button> <p id="fibdisplay"> </p>
+	
+
+
+<script type="text/javascript" src="js/jsHomework.js"></script>
+
+</body>
+</html>

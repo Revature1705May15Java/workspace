@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+	<div id="fib"></div>
+	
+	<p>hello</p>
+	<p>world</p>
+	<p>this</p>
+	<p>is a paragraph</p>
+	
+	
+	
+	
+
+	<script src="js/examples.js"></script>
+	<script src="js/jsHomework.js"></script>
+
+</body>
+</html>
