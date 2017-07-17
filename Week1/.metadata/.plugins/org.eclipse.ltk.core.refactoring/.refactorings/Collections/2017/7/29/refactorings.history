@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.rev.iter&apos; to &apos;Java Exercises/src&apos;&#x0D;&#x0A;- Original project: &apos;Collections&apos;&#x0D;&#x0A;- Destination element: &apos;Java Exercises/src&apos;&#x0D;&#x0A;- Original element: &apos;Collections/src/com.rev.iter&apos;" description="Copy package" destination="=Java Exercises/src" element1="/src&lt;com.rev.iter" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1500314109747" version="1.0"/>
+</session>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+	<firstname>Genesis</firstname>
+	<lastname>Bonds</lastname>
+	<age>100</age>
+</person>
+<person>
+	<firstname>test</firstname>
+	<lastname>case</lastname>
+	<age>10</age>
+</person>
+<person>
+	<firstname>Otherexample</firstname>
+	<lastname>aksfha</lastname>
+	<age>50</age>
+</person>

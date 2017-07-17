@@ -1,0 +1,39 @@
+package com.ex.xmlparsing;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+public class DOMParsing {
+
+	public static void main(String[] args) throws SAXException, IOException, ParserConfigurationException {
+		
+		/*
+		 * DocumentBuilderFactory
+		 * DocumentBuilder
+		 * Document -- represents our XML tree
+		 */
+		DocumentBuilderFactory dbf = 
+				DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(DOMParsing
+				.getFileInClasspath("sample.xml"));
+		document.normalize(); // good practice here
+
+		
+	}
+
+	public static InputStream getFileInClasspath(String filename){
+		return DOMParsing.class.getClassLoader().
+			getResourceAsStream(filename);
+	}
+
+	
+	
+}

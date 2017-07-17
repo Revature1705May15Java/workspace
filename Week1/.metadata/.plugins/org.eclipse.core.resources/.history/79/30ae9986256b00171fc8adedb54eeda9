@@ -1,0 +1,63 @@
+package com.rev.xml.parsing;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class SAXParsing {
+
+	
+	public static void main(String[] args) throws Exception{
+		SAXParserFactory spf = SAXParserFactory.newInstance();
+		SAXParser sax = spf.newSAXParser();
+		sax.parse(SAXParsing.class
+				.getClassLoader()
+				.getResourceAsStream("src/com/rev/xml/sample.xml"),
+				new SAXParsing().newMyXMLHandler("test"));
+	}
+	
+	public MyXMLHandler newMyXMLHandler(String query){
+		return new MyXMLHandler(query);
+	}
+	
+	class MyXMLHandler extends DefaultHandler{
+		private String query;
+		private boolean eventTag = false;
+
+		
+		public MyXMLHandler(String query){
+			this.query = query;
+		}
+		
+		public void startElement(String uri, String localName,
+				String qName, Attributes attributes)
+				throws SAXException {
+
+//			if(qName.equals("event") && attributes.
+//					getValue("date").equals(query))
+//					eventTag = true;
+			
+			System.out.println("<"+qName+">");
+		}
+		
+		@Override
+		public void characters(char[] ch, int start, int length)
+				throws SAXException {
+			if(eventTag){
+				System.out.println(new String(ch, start, length));
+				eventTag = false;
+			}
+		}
+		
+		@Override
+		public void endElement(String uri, String localName,
+				String qName) throws SAXException {
+			System.out.println("</" + qName + ">");
+		}
+
+				
+	}
+}

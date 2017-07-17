@@ -1,0 +1,28 @@
+package com.ex.xmlparsing;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+
+public class DOMParsing {
+
+	public static void main(String[] args) {
+		
+		/*
+		 * DocumentBuilderFactory
+		 * DocumentBuilder
+		 * Document -- represents our XML tree
+		 */
+		DocumentBuilderFactory dbf = 
+				DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(DOMParsing
+				.getFileInClasspath("sample.xml"));
+		document.normalize(); // good practice here
+
+		
+	}
+	
+	
+}

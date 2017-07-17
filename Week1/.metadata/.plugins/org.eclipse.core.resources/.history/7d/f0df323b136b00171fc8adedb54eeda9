@@ -1,0 +1,17 @@
+package com.ex.xmlparsing;
+
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+public class SAXParsing {
+
+	
+	public static void main(String[] args) {
+		SAXParserFactory spf = SAXParserFactory.newInstance();
+		SAXParser sax = spf.newSAXParser();
+		sax.parse(SAXParsing.class
+				.getClassLoader()
+				.getResourceAsStream("sample.xml"),
+				new SAXParsing().newXMLHandler("test"));
+	}
+}
