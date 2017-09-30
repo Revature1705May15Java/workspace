@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="com.revature.controller.LoginController"/>
+<fullyQualifiedTypeName name="com.revature.util.HibernateUtil"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="com.revature.controller.UploadImageController"/>
+<fullyQualifiedTypeName name="com.revature.model.User"/>
+<fullyQualifiedTypeName name="com.revature.dao.UserDaoHibernate"/>
+</qualifiedTypeNameHistroy>

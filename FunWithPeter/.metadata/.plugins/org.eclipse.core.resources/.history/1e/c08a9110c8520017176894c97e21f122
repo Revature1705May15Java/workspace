@@ -1,0 +1,18 @@
+package com.revature.request;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.revature.controller.LoginController;
+
+public class RequestHelper {
+	public String process(HttpServletRequest request){
+		switch(request.getRequestURI().toString()){
+		case "/FilesFile/revature.do":
+			System.out.println("\n\n\nIN!");
+			return LoginController.login(request);
+		default:
+		}
+		System.out.println("\n\n\n\n\n---> "+request.getRequestURI());
+		return "";
+	}
+}

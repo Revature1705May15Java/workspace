@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Defining our XML namespace - default space for beans.xml
+	xsi - XML Schema Instance
+	
+	SchemaLocation is added to our XML file and gives us context sensitive help inside of our age.
+	
+	The namespace acts like a library for the properties that we can use to create and inject into a bean.
+
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean name="CustomerRepository" class="com.ex.repository.CustomerRepositoryImpl"/>
+	
+	<!--
+	adding the following, is implanting our setter injection
+	<bean name="CustomerService" class="com.ex.service.CustomerServiceImpl">
+	<property name="cr" ref="CustomerRepository"/>
+	</bean>
+	-->
+	<!-- The following is constructor injection
+	<bean name="CustomerService" class="com.ex.service.CustomerServiceImpl">
+	<constructor-arg index="0" ref="CustomerRepository"/>
+	</bean>
+	-->
+	
+	<!-- The following is auto-wiring -->
+	<bean name="cr" class="com.ex.repository.CustomerRepositoryImpl" autowire="constructor"/>
+</beans>

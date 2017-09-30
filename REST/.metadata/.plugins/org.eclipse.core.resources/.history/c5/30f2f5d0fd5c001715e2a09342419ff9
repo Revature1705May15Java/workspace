@@ -1,0 +1,13 @@
+package com.revature;
+
+public class Main {
+
+	public static void main(String[] args) {
+		/*ApplicationContext appContext = new ClassPathXmlApplicationContext("beans.xml");
+		
+		UserDao userDao = (UserDao)appContext.getBean("userRepository");
+
+		//userDao.insert(new User(1,"peter","1234"));
+		System.out.println(userDao.selectByUsername(new User(1,"peter","1234")));*/
+	}
+}

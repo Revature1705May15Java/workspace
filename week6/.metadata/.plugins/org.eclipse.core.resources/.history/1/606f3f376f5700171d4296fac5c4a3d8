@@ -1,0 +1,9 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+
+@Entity
+public class Animal implements Serializable {
+	
+}

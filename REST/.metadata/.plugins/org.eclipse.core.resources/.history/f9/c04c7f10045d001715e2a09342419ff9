@@ -1,0 +1,46 @@
+package com.revature.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.revature.model.User;
+import com.revature.service.UserService;
+import com.revature.util.FinalUtil;
+
+@Controller
+@RequestMapping("/login.do")
+public class LoginController {
+
+	@Autowired
+	private UserService userService;
+
+	//@RequestMapping(value = "/login.do", method = RequestMethod.POST)
+	// This can be done but is best practice to have a Controller for each view.
+
+	@RequestMapping(method = RequestMethod.GET)
+	public String getLoginView(HttpServletRequest request) {
+		request.getSession().setAttribute("loginStatus", FinalUtil.EMPTY_STRING);
+		return "login";
+	}
+
+	@RequestMapping(method = RequestMethod.POST)
+	public String login(HttpServletRequest request) {
+		User loggedUser = userService.login(
+				new User(request.getParameter("username"),
+						request.getParameter("password"))
+				);
+
+		if(loggedUser.getUsername().equals(FinalUtil.EMPTY_STRING)) {
+			request.getSession().setAttribute("loginStatus", FinalUtil.FAILED_VALUE);
+		}
+		else {
+			request.getSession().setAttribute("loggedUser", loggedUser);
+		}
+
+		return "redirect:/home.do";
+	} 
+}

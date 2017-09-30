@@ -1,0 +1,29 @@
+package com.ex.service;
+
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.repository.CustomerRepository;
+import com.ex.repository.CustomerRepositoryImpl;
+
+public class CustomerServiceImpl implements CustomerService {
+	private CustomerRepository customerRepository;
+	//private CustomerRepository cr = new CustomerRepositoryImpl();
+	
+	
+	
+	
+	public CustomerRepository getCr() {
+		return customerRepository;
+	}
+
+	public void setCr(CustomerRepository cr) {
+		this.customerRepository = cr;
+	}
+
+	public List<Customer> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

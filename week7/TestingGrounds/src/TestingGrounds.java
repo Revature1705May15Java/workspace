@@ -1,16 +1,22 @@
-import java.util.*;
-class TestingGrounds{
+import java.util.Scanner;
 
-	public static void main(String []argh)
-	{
-		Integer[] arr = {1,2,3};
-		String[] arr2 = {"Hello", "World"};
-		
-		printArray(arr);
-		printArray(arr2);
+class TestingGrounds {
+
+	public static void main(String[] args) {
+		// Input
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		String[] s = new String[n + 2];
+		for (int i = 0; i < n; i++) {
+			s[i] = sc.next();
+		}
+		sc.close();
+		// Write your code here
+
+		// Output
+		for (int i = 0; i < n; i++) {
+			System.out.println(s[i]);
+		}
 	}
-	
-	public static <T> void printArray(T[] theArray){
-		for(int i = 0; i < theArray.length; i++) System.out.println(theArray[i]);
-	}
+
 }

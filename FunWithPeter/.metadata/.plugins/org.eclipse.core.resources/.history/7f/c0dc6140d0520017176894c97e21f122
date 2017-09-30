@@ -1,0 +1,16 @@
+package com.revature.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import com.revature.model.User;
+
+public class UploadImageController {
+	public static String uploadImage(HttpServletRequest request){
+		
+		User loggedUser = new User(1,"Lei","Raion",null,null);
+		
+		
+		
+		return "profile.jsp";
+	}
+}

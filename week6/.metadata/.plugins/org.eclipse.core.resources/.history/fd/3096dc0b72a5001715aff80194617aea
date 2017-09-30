@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="HelloWorld" class="com.ex.beans.HelloWorld">
+		<property name="message" value="Hello World! We are here!" />
+	</bean>
+	<bean>
+		<property name="note" value="Another message!" />
+	</bean>
+
+	<!-- Beans are the "backbone" of our application, and they are managed 
+		 by the Spring LoC container
+		 name, class, scope, constructor-arg, properties, auto-wiring mode, 
+		 initialization method, initialization mode, and destruction method
+	-->
+		 
+</beans>

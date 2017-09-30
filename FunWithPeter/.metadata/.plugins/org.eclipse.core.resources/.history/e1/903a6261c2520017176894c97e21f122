@@ -1,0 +1,15 @@
+package com.revature.request;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class RequestHelper {
+	public String process(HttpServletRequest request){
+		switch(request.getRequestURI()){
+		case "FilesFile/revature.do":
+			
+		default:
+		}
+		
+		return "";
+	}
+}

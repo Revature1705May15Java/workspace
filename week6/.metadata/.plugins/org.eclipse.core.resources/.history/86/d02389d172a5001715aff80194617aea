@@ -1,0 +1,13 @@
+package com.ex.beans;
+
+public class Note {
+	private String note;
+	
+	public void setMessage(String note){
+		this.note = note;
+	}
+	
+	public void getMessage(){
+		System.out.println("Message is: " + note);
+	}
+}

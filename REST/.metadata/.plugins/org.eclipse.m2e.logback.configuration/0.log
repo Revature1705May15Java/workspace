@@ -1,0 +1,492 @@
+2017-06-29 14:46:28,555 [Worker-23] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 14:46:28,833 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,862 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,884 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,903 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,936 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,964 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.pom
+2017-06-29 14:46:28,983 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,004 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,032 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,053 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,075 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,096 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,122 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,140 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,158 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/4.3.9.RELEASE/spring-orm-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,180 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-orm/4.3.9.RELEASE/spring-orm-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,198 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/4.3.9.RELEASE/spring-jdbc-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,218 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/4.3.9.RELEASE/spring-jdbc-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,236 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,269 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.pom
+2017-06-29 14:46:29,291 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.pom
+2017-06-29 14:46:29,317 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.pom
+2017-06-29 14:46:29,365 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/9/jboss-parent-9.pom
+2017-06-29 14:46:29,413 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jboss/jboss-parent/9/jboss-parent-9.pom
+2017-06-29 14:46:29,450 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:46:29,493 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,649 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.9.RELEASE/spring-webmvc-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,664 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,750 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.9.RELEASE/spring-aop-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,803 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,942 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.9.RELEASE/spring-beans-4.3.9.RELEASE.jar
+2017-06-29 14:46:29,979 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,344 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.9.RELEASE/spring-context-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,360 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,772 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,784 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,862 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.9.RELEASE/spring-expression-4.3.9.RELEASE.jar
+2017-06-29 14:46:30,872 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,185 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,200 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-orm/4.3.9.RELEASE/spring-orm-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,367 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-orm/4.3.9.RELEASE/spring-orm-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,380 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/4.3.9.RELEASE/spring-jdbc-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,534 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/4.3.9.RELEASE/spring-jdbc-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,551 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,643 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-tx/4.3.9.RELEASE/spring-tx-4.3.9.RELEASE.jar
+2017-06-29 14:46:31,656 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar
+2017-06-29 14:46:31,680 [Worker-23] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar
+2017-06-29 14:46:32,804 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 14:46:32,805 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 14:46:32,805 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 14:46:32,805 [Worker-23] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 14:46:33,981 [Worker-23] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:46:34,120 [Worker-23] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 7 sec
+2017-06-29 14:46:34,824 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:46:34,871 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:34,894 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 14:46:34,905 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:34,922 [Worker-24] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:46:38,049 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:38,057 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:46:38,062 [Worker-28] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:38,072 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:46:46,398 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:46,410 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:46:46,414 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:46:46,425 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:47:04,709 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:47:04,722 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 14:47:04,731 [Worker-14] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:47:04,742 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:47:23,318 [Worker-25] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 14:47:23,638 [Worker-25] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 14:47:23,785 [Worker-25] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/oracle/ojdbc7/12.1.0/ojdbc7-12.1.0.pom
+2017-06-29 14:47:23,795 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:47:23,911 [Worker-25] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/oracle/ojdbc7/12.1.0/ojdbc7-12.1.0.jar
+2017-06-29 14:47:23,958 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:47:24,383 [Worker-25] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 14:47:24,387 [Worker-25] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 14:47:24,387 [Worker-25] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 14:47:24,391 [Worker-25] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 14:47:24,562 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:47:24,644 [Worker-25] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 14:47:24,650 [Worker-25] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-06-29 14:47:25,252 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.oracle:ojdbc7:jar:12.1.0 is missing, no dependency information available
+2017-06-29 14:47:25,287 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:47:25,295 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 14:47:25,304 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:47:25,315 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 14:47:25,316 [Worker-27] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 14:47:25,317 [Worker-27] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 14:47:25,322 [Worker-27] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 14:55:11,456 [Worker-8] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM
+2017-06-29 14:55:11,457 [Worker-8] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install:install-file -Dfile=C:\Users\Darrin McIntyre\Downloads -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+2017-06-29 14:56:18,670 [Worker-12] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM
+2017-06-29 14:56:18,670 [Worker-12] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install:install-file -Dfile='C:\Users\Darrin McIntyre\Downloads' -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+2017-06-29 14:56:48,648 [Worker-30] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM
+2017-06-29 14:56:48,648 [Worker-30] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install:install-file -Dfile="C:\Users\Darrin McIntyre\Downloads" -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+2017-06-29 14:57:20,965 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/takari/m2e/workspace/org.eclipse.m2e.workspace.cli/0.3.1/org.eclipse.m2e.workspace.cli-0.3.1-sources.jar
+2017-06-29 14:57:21,031 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/takari/m2e/workspace/org.eclipse.m2e.workspace.cli/0.3.1/org.eclipse.m2e.workspace.cli-0.3.1-sources.jar
+2017-06-29 14:57:21,262 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2-sources.jar
+2017-06-29 14:57:21,488 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2-sources.jar
+2017-06-29 14:57:21,691 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9-sources.jar
+2017-06-29 14:57:21,860 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.3.9/maven-core-3.3.9-sources.jar
+2017-06-29 14:57:22,046 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9-sources.jar
+2017-06-29 14:57:22,167 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.3.9/maven-model-3.3.9-sources.jar
+2017-06-29 14:57:22,389 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9-sources.jar
+2017-06-29 14:57:22,564 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.3.9/maven-settings-3.3.9-sources.jar
+2017-06-29 14:57:22,779 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9-sources.jar
+2017-06-29 14:57:22,983 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.3.9/maven-settings-builder-3.3.9-sources.jar
+2017-06-29 14:57:23,164 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9-sources.jar
+2017-06-29 14:57:23,262 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.3.9/maven-builder-support-3.3.9-sources.jar
+2017-06-29 14:57:23,431 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9-sources.jar
+2017-06-29 14:57:23,537 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.3.9/maven-repository-metadata-3.3.9-sources.jar
+2017-06-29 14:57:23,716 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9-sources.jar
+2017-06-29 14:57:23,910 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.3.9/maven-artifact-3.3.9-sources.jar
+2017-06-29 14:57:24,078 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9-sources.jar
+2017-06-29 14:57:24,294 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.3.9/maven-plugin-api-3.3.9-sources.jar
+2017-06-29 14:57:24,472 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9-sources.jar
+2017-06-29 14:57:24,610 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.3.9/maven-model-builder-3.3.9-sources.jar
+2017-06-29 14:57:24,785 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9-sources.jar
+2017-06-29 14:57:24,973 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.3.9/maven-aether-provider-3.3.9-sources.jar
+2017-06-29 14:57:25,154 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:25,266 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.2.v20150114/aether-api-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:25,462 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:25,560 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.2.v20150114/aether-util-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:25,771 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21-sources.jar
+2017-06-29 14:57:25,858 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21-sources.jar
+2017-06-29 14:57:26,046 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22-sources.jar
+2017-06-29 14:57:26,332 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22-sources.jar
+2017-06-29 14:57:26,539 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6-sources.jar
+2017-06-29 14:57:26,587 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6-sources.jar
+2017-06-29 14:57:26,789 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3-sources.jar
+2017-06-29 14:57:26,894 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3-sources.jar
+2017-06-29 14:57:27,086 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar
+2017-06-29 14:57:27,317 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar
+2017-06-29 14:57:27,507 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-embedder/3.3.9/maven-embedder-3.3.9-sources.jar
+2017-06-29 14:57:27,596 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-embedder/3.3.9/maven-embedder-3.3.9-sources.jar
+2017-06-29 14:57:27,778 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.7/plexus-cipher-1.7-sources.jar
+2017-06-29 14:57:27,842 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.7/plexus-cipher-1.7-sources.jar
+2017-06-29 14:57:28,015 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2-sources.jar
+2017-06-29 14:57:28,212 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2-sources.jar
+2017-06-29 14:57:28,479 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9-sources.jar
+2017-06-29 14:57:28,651 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.3.9/maven-compat-3.3.9-sources.jar
+2017-06-29 14:57:28,830 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10-sources.jar
+2017-06-29 14:57:28,927 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/2.10/wagon-provider-api-2.10-sources.jar
+2017-06-29 14:57:29,198 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0-sources.jar
+2017-06-29 14:57:29,306 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0-sources.jar
+2017-06-29 14:57:29,521 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0-sources.jar
+2017-06-29 14:57:29,883 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0-sources.jar
+2017-06-29 14:57:30,103 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:30,198 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.2.v20150114/aether-impl-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:30,369 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:30,600 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.2.v20150114/aether-spi-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:30,778 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/io/takari/aether/aether-connector-okhttp/0.16.0/aether-connector-okhttp-0.16.0-sources.jar
+2017-06-29 14:57:30,905 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/io/takari/aether/aether-connector-okhttp/0.16.0/aether-connector-okhttp-0.16.0-sources.jar
+2017-06-29 14:57:31,119 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0-sources.jar
+2017-06-29 14:57:31,249 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/squareup/okhttp/okhttp/2.5.0/okhttp-2.5.0-sources.jar
+2017-06-29 14:57:31,434 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.6.0/okio-1.6.0-sources.jar
+2017-06-29 14:57:31,517 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.6.0/okio-1.6.0-sources.jar
+2017-06-29 14:57:31,687 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-connector-basic/1.0.2.v20150114/aether-connector-basic-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:31,785 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-connector-basic/1.0.2.v20150114/aether-connector-basic-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:31,963 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-transport-wagon/1.0.2.v20150114/aether-transport-wagon-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:32,057 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-transport-wagon/1.0.2.v20150114/aether-transport-wagon-1.0.2.v20150114-sources.jar
+2017-06-29 14:57:32,236 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-file/2.10/wagon-file-2.10-sources.jar
+2017-06-29 14:57:32,321 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-file/2.10/wagon-file-2.10-sources.jar
+2017-06-29 14:57:32,540 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar
+2017-06-29 14:57:32,766 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar
+2017-06-29 14:57:32,980 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5-sources.jar
+2017-06-29 14:57:33,039 [Worker-34] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-simple/1.7.5/slf4j-simple-1.7.5-sources.jar
+2017-06-29 14:59:47,024 [Worker-31] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM
+2017-06-29 14:59:47,024 [Worker-31] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install:install-file -Dfile="C:\\Users\\Darrin McIntyre\\Desktop\\ojdbc7.jar" -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+2017-06-29 15:02:40,148 [Worker-32] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:02:40,460 [Worker-32] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:02:40,979 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:02:40,984 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:02:40,989 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:02:40,989 [Worker-32] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:02:41,724 [Worker-32] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:02:41,728 [Worker-32] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-06-29 15:02:42,247 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:02:42,253 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:02:42,272 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:02:42,280 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:02:42,286 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:02:42,286 [Worker-30] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:02:42,290 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:03:21,123 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:03:21,131 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:03:21,135 [Worker-35] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:03:21,144 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:04:46,178 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:04:46,191 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:04:46,198 [Worker-30] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:04:46,211 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:13:29,037 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:13:29,045 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:13:29,054 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:13:29,070 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:42:29,034 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:42:29,050 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:42:29,050 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:42:29,066 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:49:29,800 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:49:29,816 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:49:29,816 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:49:29,832 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:51:21,644 [Worker-57] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:51:21,941 [Worker-57] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:51:22,363 [Worker-57] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:51:22,363 [Worker-57] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:51:22,363 [Worker-57] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:51:22,378 [Worker-57] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:51:22,597 [Worker-57] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:51:22,597 [Worker-57] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-29 15:51:23,097 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:51:23,097 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:51:23,112 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:51:23,112 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:51:23,112 [Worker-47] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:51:23,128 [Worker-47] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:51:23,128 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:54:50,957 [Worker-46] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:54:51,504 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.pom
+2017-06-29 15:54:51,535 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.pom
+2017-06-29 15:54:51,582 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-parent/2.6.4.RELEASE/spring-data-rest-parent-2.6.4.RELEASE.pom
+2017-06-29 15:54:51,629 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-parent/2.6.4.RELEASE/spring-data-rest-parent-2.6.4.RELEASE.pom
+2017-06-29 15:54:51,675 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-parent/1.9.4.RELEASE/spring-data-parent-1.9.4.RELEASE.pom
+2017-06-29 15:54:51,862 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-parent/1.9.4.RELEASE/spring-data-parent-1.9.4.RELEASE.pom
+2017-06-29 15:54:51,956 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-build/1.9.4.RELEASE/spring-data-build-1.9.4.RELEASE.pom
+2017-06-29 15:54:51,988 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/build/spring-data-build/1.9.4.RELEASE/spring-data-build-1.9.4.RELEASE.pom
+2017-06-29 15:54:52,019 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/4.3.9.RELEASE/spring-framework-bom-4.3.9.RELEASE.pom
+2017-06-29 15:54:52,050 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/4.3.9.RELEASE/spring-framework-bom-4.3.9.RELEASE.pom
+2017-06-29 15:54:52,081 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.pom
+2017-06-29 15:54:52,113 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.pom
+2017-06-29 15:54:52,160 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.pom
+2017-06-29 15:54:52,222 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.pom
+2017-06-29 15:54:52,269 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.5.RELEASE/spring-aop-4.3.5.RELEASE.pom
+2017-06-29 15:54:52,331 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.3.5.RELEASE/spring-aop-4.3.5.RELEASE.pom
+2017-06-29 15:54:52,425 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.5.RELEASE/spring-beans-4.3.5.RELEASE.pom
+2017-06-29 15:54:52,503 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.3.5.RELEASE/spring-beans-4.3.5.RELEASE.pom
+2017-06-29 15:54:52,764 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.5.RELEASE/spring-core-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,036 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.3.5.RELEASE/spring-core-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,130 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.5.RELEASE/spring-context-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,176 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.3.5.RELEASE/spring-context-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,192 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.5.RELEASE/spring-expression-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,223 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.3.5.RELEASE/spring-expression-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,270 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,317 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-web/4.3.5.RELEASE/spring-web-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,348 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.5.RELEASE/spring-webmvc-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,395 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/4.3.5.RELEASE/spring-webmvc-4.3.5.RELEASE.pom
+2017-06-29 15:54:53,442 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.22/slf4j-api-1.7.22.pom
+2017-06-29 15:54:53,504 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.22/slf4j-api-1.7.22.pom
+2017-06-29 15:54:53,536 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.22/slf4j-parent-1.7.22.pom
+2017-06-29 15:54:53,567 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.22/slf4j-parent-1.7.22.pom
+2017-06-29 15:54:53,598 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.pom
+2017-06-29 15:54:53,676 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.pom
+2017-06-29 15:54:53,708 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom
+2017-06-29 15:54:53,753 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom
+2017-06-29 15:54:53,785 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.25/slf4j-parent-1.7.25.pom
+2017-06-29 15:54:53,816 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.25/slf4j-parent-1.7.25.pom
+2017-06-29 15:54:53,847 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.pom
+2017-06-29 15:54:53,879 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.pom
+2017-06-29 15:54:53,910 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.pom
+2017-06-29 15:54:53,941 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.pom
+2017-06-29 15:54:53,972 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin/1.2.0.RELEASE/spring-plugin-1.2.0.RELEASE.pom
+2017-06-29 15:54:54,019 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin/1.2.0.RELEASE/spring-plugin-1.2.0.RELEASE.pom
+2017-06-29 15:54:54,051 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.0.9.RELEASE/spring-beans-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,082 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-beans/4.0.9.RELEASE/spring-beans-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,113 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.0.9.RELEASE/spring-core-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,144 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-core/4.0.9.RELEASE/spring-core-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,175 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.0.9.RELEASE/spring-context-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,207 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-context/4.0.9.RELEASE/spring-context-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,254 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.0.9.RELEASE/spring-aop-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,300 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-aop/4.0.9.RELEASE/spring-aop-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,332 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+2017-06-29 15:54:54,379 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.pom
+2017-06-29 15:54:54,410 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+2017-06-29 15:54:54,472 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/28/commons-parent-28.pom
+2017-06-29 15:54:54,504 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.0.9.RELEASE/spring-expression-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,535 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-expression/4.0.9.RELEASE/spring-expression-4.0.9.RELEASE.pom
+2017-06-29 15:54:54,566 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom
+2017-06-29 15:54:54,597 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.10/slf4j-api-1.7.10.pom
+2017-06-29 15:54:54,629 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom
+2017-06-29 15:54:54,660 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.7.10/slf4j-parent-1.7.10.pom
+2017-06-29 15:54:54,707 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2017-06-29 15:54:54,738 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.pom
+2017-06-29 15:54:54,767 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2017-06-29 15:54:54,800 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/parent/1.14/parent-1.14.pom
+2017-06-29 15:54:54,831 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.pom
+2017-06-29 15:54:54,863 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.pom
+2017-06-29 15:54:54,894 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.pom
+2017-06-29 15:54:54,925 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.pom
+2017-06-29 15:54:54,956 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom
+2017-06-29 15:54:54,988 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom
+2017-06-29 15:54:55,019 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.pom
+2017-06-29 15:54:55,066 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.pom
+2017-06-29 15:54:55,113 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,222 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,253 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,316 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,331 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,347 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.jar
+2017-06-29 15:54:55,425 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,456 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,456 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.jar
+2017-06-29 15:54:55,503 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar
+2017-06-29 15:54:55,600 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-core/2.6.4.RELEASE/spring-data-rest-core-2.6.4.RELEASE.jar
+2017-06-29 15:54:55,631 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.jar
+2017-06-29 15:54:55,727 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/hateoas/spring-hateoas/0.23.0.RELEASE/spring-hateoas-0.23.0.RELEASE.jar
+2017-06-29 15:54:55,748 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar
+2017-06-29 15:54:55,769 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2017-06-29 15:54:55,769 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar
+2017-06-29 15:54:55,894 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2017-06-29 15:54:55,910 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2017-06-29 15:54:55,925 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-commons/1.13.4.RELEASE/spring-data-commons-1.13.4.RELEASE.jar
+2017-06-29 15:54:55,941 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2017-06-29 15:54:55,972 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2017-06-29 15:54:56,004 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:56,082 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar
+2017-06-29 15:54:56,113 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2017-06-29 15:54:56,207 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/atteo/evo-inflector/1.2.2/evo-inflector-1.2.2.jar
+2017-06-29 15:54:56,238 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:56,269 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:56,316 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:56,332 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:56,379 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:56,394 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:56,425 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.jar
+2017-06-29 15:54:56,441 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:56,472 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.jar
+2017-06-29 15:54:56,488 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.jar
+2017-06-29 15:54:56,488 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+2017-06-29 15:54:56,519 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.8/jackson-annotations-2.8.8.jar
+2017-06-29 15:54:56,613 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+2017-06-29 15:54:56,629 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+2017-06-29 15:54:56,644 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+2017-06-29 15:54:56,707 [Worker-46] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+2017-06-29 15:54:56,878 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+2017-06-29 15:54:56,894 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+2017-06-29 15:54:57,019 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.25/jcl-over-slf4j-1.7.25.jar
+2017-06-29 15:54:57,534 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/libs-release/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:57,816 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/libs-release/com/fasterxml/jackson/core/jackson-databind/2.8.8/jackson-databind-2.8.8.jar
+2017-06-29 15:54:57,848 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.spring.io/libs-release/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:58,019 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.spring.io/libs-release/com/fasterxml/jackson/core/jackson-core/2.8.8/jackson-core-2.8.8.jar
+2017-06-29 15:54:58,238 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:54:58,254 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:54:58,254 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:54:58,269 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:54:58,269 [Worker-46] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:54:58,269 [Worker-46] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:54:58,269 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:00,176 [Worker-60] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:55:00,380 [Worker-60] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:55:00,863 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:55:00,863 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:55:00,863 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:55:00,863 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:55:01,113 [Worker-60] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:55:01,113 [Worker-60] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-29 15:55:02,160 [Worker-69] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:02,160 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:55:02,175 [Worker-69] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:02,191 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:55:02,191 [Worker-69] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:55:02,191 [Worker-69] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:55:02,206 [Worker-69] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:44,956 [Worker-64] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:55:45,159 [Worker-64] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:55:45,534 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:55:45,534 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:55:45,534 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:55:45,550 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:55:45,785 [Worker-64] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:55:45,785 [Worker-64] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-29 15:55:46,348 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:46,348 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:55:46,369 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:55:46,378 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:55:46,378 [Worker-65] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:55:46,381 [Worker-65] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:55:46,382 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:56:23,759 [Worker-64] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:56:23,926 [Worker-64] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:56:24,301 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:56:24,301 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:56:24,301 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:56:24,301 [Worker-64] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:56:24,566 [Worker-64] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:56:24,566 [Worker-64] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2017-06-29 15:56:25,145 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:56:25,160 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:56:25,176 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:56:25,192 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:56:25,192 [Worker-68] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:56:25,192 [Worker-68] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:56:25,192 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:58:15,503 [Worker-60] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2017-06-29 15:58:15,706 [Worker-60] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.revature:SpringSampleORM:0.0.1-SNAPSHOT @ C:\Users\Darrin McIntyre\my_git_repos\1705May15Java\REST\SpringSampleORM\pom.xml.
+2017-06-29 15:58:15,847 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.pom
+2017-06-29 15:58:15,863 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.pom
+2017-06-29 15:58:15,926 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:58:16,098 [Worker-60] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-rest-webmvc/2.6.4.RELEASE/spring-data-rest-webmvc-2.6.4.RELEASE.jar
+2017-06-29 15:58:16,519 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/main/java
+2017-06-29 15:58:16,519 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/main/resources
+2017-06-29 15:58:16,519 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /SpringSampleORM/src/test/java
+2017-06-29 15:58:16,519 [Worker-60] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /SpringSampleORM/src/test/resources
+2017-06-29 15:58:16,707 [Worker-60] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for SpringSampleORM
+2017-06-29 15:58:16,723 [Worker-60] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2017-06-29 15:58:17,334 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:58:17,349 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 15:58:17,349 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 15:58:17,365 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 15:58:17,365 [Worker-32] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of SpringSampleORM
+2017-06-29 15:58:17,365 [Worker-32] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for SpringSampleORM
+2017-06-29 15:58:17,381 [Worker-32] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:10:37,285 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:10:37,301 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:10:37,301 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:10:37,301 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:10:41,542 [Worker-69] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:10:41,558 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:10:41,558 [Worker-69] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:10:41,558 [Worker-69] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:11:23,179 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:11:23,194 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:11:23,194 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:11:23,210 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:14:45,854 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:14:45,854 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:14:45,854 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:14:45,870 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:15:14,919 [Worker-73] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:15:14,919 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:15:14,934 [Worker-73] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:15:14,934 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:18:38,865 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:18:38,865 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:18:38,880 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:18:38,880 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:19:04,133 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:19:04,149 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:19:04,149 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:19:04,165 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:28:08,348 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:28:08,348 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:28:08,348 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:28:08,363 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:29:19,629 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:29:19,645 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:29:19,645 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:29:19,645 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:31:43,395 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:31:43,410 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:31:43,410 [Worker-64] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:31:43,410 [Worker-64] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:32:03,303 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:32:03,318 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:32:03,318 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:32:03,318 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:32:20,348 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:32:20,348 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:32:20,364 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:32:20,364 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:33:09,380 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:09,380 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:33:09,380 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:09,395 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:33:12,255 [Worker-75] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:12,255 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:33:12,255 [Worker-75] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:12,270 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:33:13,520 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:13,535 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:33:13,535 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:13,551 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:33:27,973 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:27,973 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:33:27,989 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:33:27,989 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:36:16,114 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:36:16,114 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-29 16:36:16,129 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:36:16,129 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:38:59,350 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:38:59,350 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:38:59,350 [Worker-74] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:38:59,366 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:43:41,791 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:43:41,795 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-29 16:43:41,800 [Worker-55] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-29 16:43:41,804 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

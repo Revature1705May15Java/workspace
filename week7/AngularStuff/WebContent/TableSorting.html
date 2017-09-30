@@ -33,9 +33,9 @@
 </head>
 <body ng-controller="TableCtrl">
 	<div>
-		<input type="number" ng-model="num" placeholder="first number..."/>
+		<input required="true" type="number" ng-model="num" placeholder="Enter a number..."/>
 		<button class="btn btn-primary" ng-click="addItem(num)">Add</button>
-		<p ng-hide="itemCount()==0">TotalItems: {{ itemCount() }}</p>
+		<p ng-hide="itemCount()==0">Total Items: {{ itemCount() }}</p>
 		<p>Mouseover the unsorted table to remove things!</p>
 	</div>
 	<div style="float:left;">

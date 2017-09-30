@@ -1,3 +1,5 @@
 #Tomcat publish data
-#Wed Jun 28 10:43:48 EDT 2017
+#Thu Sep 28 18:39:50 EDT 2017
+org.eclipse.jst.j2ee.server\:HelloService=C\:\\Users\\Darrin McIntyre\\Desktop\\Revature\\apache-tomcat-8.0.44\\wtpwebapps\\HelloService
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Darrin\ McIntyre\\.m2\\repository\\org\\springframework\\spring-web\\4.1.9.RELEASE\\spring-web-4.1.9.RELEASE.jar=C\:\\Users\\Darrin McIntyre\\Desktop\\Revature\\apache-tomcat-8.0.44\\wtpwebapps\\HelloService\\WEB-INF\\lib\\spring-web-4.1.9.RELEASE.jar
 org.eclipse.jst.jee.server\:AngularStuff=C\:\\Users\\Darrin McIntyre\\Desktop\\Revature\\apache-tomcat-8.0.44\\wtpwebapps\\AngularStuff

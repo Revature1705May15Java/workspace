@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular stuff</title>
+
+</head>
+<body ng-app="topStoryApp">
+
+<div ng-controller="storyCtrl">
+	<select ng-model="selectedStory" ng-options="storyID for storyID in storyList" ng-change="update(selectedStory)">
+		<option value="">Choose a Story ID</option>
+	</select>
+	</br>
+	<div> {{ selectedStory }} </div>
+	<div>
+	Selected story is <a href="" ng-click="gotoStory(storyInfo.url)">{{storyInfo.title}}</a>
+	</div>
+	
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="ctrs.js"></script>
+
+</body>
+</html>

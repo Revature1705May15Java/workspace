@@ -1,0 +1,2 @@
+127.0.0.1 - - [15/Jun/2017:11:15:40 -0400] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [15/Jun/2017:11:15:41 -0400] "GET /introToAWS/WEB-INF/classes/com/ex/main/MainClass.java HTTP/1.1" 404 992

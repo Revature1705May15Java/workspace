@@ -1,0 +1,7 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+public class Bear implements Serializable {
+	
+}

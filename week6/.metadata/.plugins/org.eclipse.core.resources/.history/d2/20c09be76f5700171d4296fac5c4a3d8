@@ -1,0 +1,56 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+
+public class Bear implements Serializable {
+
+
+	private static final long serialVersionUID = -6348645824241620133L;
+	
+	private int weight;
+	
+	private String name;
+	
+
+	Cave cave;
+
+	public Bear(){}
+	
+	public Bear(int weight, String name, Cave cave) {
+		super();
+		this.weight = weight;
+		this.name = name;
+		this.cave = cave;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Cave getCave() {
+		return cave;
+	}
+
+	public void setCave(Cave cave) {
+		this.cave = cave;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+}

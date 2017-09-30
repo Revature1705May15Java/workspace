@@ -1,0 +1,22 @@
+import java.util.List;
+
+import com.ex.model.Customer;
+import com.ex.service.CustomerService;
+import com.ex.service.CustomerServiceImpl;
+
+public class Application {
+
+	public static void main(String[] args) {
+
+		CustomerService service = new CustomerServiceImpl();
+		
+		List<Customer> customers = service.findAll();
+		
+		for(i; i < 2; i++){
+			System.out.println(customers.get(0).getFirstname());
+		}
+		
+
+	}
+
+}

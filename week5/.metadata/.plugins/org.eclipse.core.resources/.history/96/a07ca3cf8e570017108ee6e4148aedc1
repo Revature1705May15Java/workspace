@@ -1,0 +1,8 @@
+package com.ex.pojos;
+
+public class Snippet {
+	public static void main(String[] args) {
+		com.ex.pojos;
+	}
+}
+

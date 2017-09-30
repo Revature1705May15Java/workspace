@@ -10,10 +10,24 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import com.ex.pojos.Person;
+import com.ex.pojos.User;
 import com.ex.util.ConnectionUtil;
 
 public class Impldao implements dao{
 
+	public void createUser(User p) {
+		Session session = ConnectionUtil.getSession();
+		
+		try{
+			Transaction ta = session.beginTransaction();
+			session.save(p);
+			ta.commit();
+		} 
+		finally {
+			session.close();
+		}
+	}
+	
 	@Override
 	public void deletePerson(Person p) {
 		Session session = ConnectionUtil.getSession();
@@ -109,9 +123,6 @@ public class Impldao implements dao{
 		
 		return people;
 	}
-	
-	
-	
 	
 	
 	public void deleteInHQL(Person p){

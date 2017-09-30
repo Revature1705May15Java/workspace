@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	Defining our XML namespace - default space for beans.xml
+	xsi - XML Schema Instance
+	
+	SchemaLocation is added to our XML file and gives us context sensitive help inside of our age.
+	
+	The namespace acts like a library for the properties that we can use to create and inject into a bean.
+
+ -->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+	
+	<!-- Tell spring to look for beans -->
+	<context:annotation-config/>
+	<context:component-scan base-package="com.ex"></context:component-scan>
+	
+	<!--
+	Stereotype Annotations:
+	#Component - used for any bean
+	#Service - used for business logic layer. NOT web service
+	#Repository - DAO layer
+	-->
+	
+	<!-- ENABLE AOP -->
+	<aop:aspectj-autoproxy/>
+	
+	
+</beans>
