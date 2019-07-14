@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Fri Jun 23 12:49:03 EDT 2017
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\LiqunZheng\\.m2\\repository\\org\\springframework\\spring-web\\4.2.5.RELEASE\\spring-web-4.2.5.RELEASE.jar=C\:\\Users\\LiqunZheng\\Documents\\tomcatApache\\apache-tomcat-8.0.44\\wtpwebapps\\SpringMVCExample\\WEB-INF\\lib\\spring-web-4.2.5.RELEASE.jar
+org.eclipse.jst.jee.server\:SpringMVCExample=C\:\\Users\\LiqunZheng\\Documents\\tomcatApache\\apache-tomcat-8.0.44\\wtpwebapps\\SpringMVCExample

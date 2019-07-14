@@ -1,0 +1,20 @@
+package com.rev.test;
+
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+import com.bank.pojos.User;
+
+public class test {
+	void myMethod() throws MyException{       throw new MyException3();    }
+ 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		DAO dao = new DaoImpl();
+//		//dao.addUser("test", "test", "test", "test");
+//		User temp = dao.getUser(100);
+//		System.out.println(temp);
+
+		
+
+	}
+
+}

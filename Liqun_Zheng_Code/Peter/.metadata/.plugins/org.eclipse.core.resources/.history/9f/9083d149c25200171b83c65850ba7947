@@ -1,0 +1,9 @@
+package com.revature.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+public class loginController {
+	public String login(HttpServletRequest request){
+		return "login.jsp";
+	}
+}

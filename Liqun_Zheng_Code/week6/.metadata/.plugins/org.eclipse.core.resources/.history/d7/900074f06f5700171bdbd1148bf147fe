@@ -1,0 +1,13 @@
+package com.ex.beans;
+
+import java.io.Serializable;
+
+public class Cave implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+
+}

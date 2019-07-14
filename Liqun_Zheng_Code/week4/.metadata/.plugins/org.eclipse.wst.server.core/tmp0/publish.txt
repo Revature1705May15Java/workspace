@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Thu Jun 15 22:09:08 EDT 2017
+org.eclipse.jst.jee.server\:StreetFighter=C\:\\Users\\LiqunZheng\\Documents\\tomcatApache\\apache-tomcat-8.0.44\\wtpwebapps\\StreetFighter
+org.eclipse.jst.jee.server\:JQueryIntro=C\:\\Users\\LiqunZheng\\Documents\\tomcatApache\\apache-tomcat-8.0.44\\wtpwebapps\\JQueryIntro
+org.eclipse.jst.jee.server\:JSExample=C\:\\Users\\LiqunZheng\\Documents\\tomcatApache\\apache-tomcat-8.0.44\\wtpwebapps\\JSExample

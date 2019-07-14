@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title><REVATURE &middot; BANK</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<header id="top" class="jumbotron container-fluid">
+<h2  style="color:blue;margin-left:30px;">REVATURE &middot; BANK &nbsp;&nbsp;
+<medium >Liqun Zheng </medium>
+<a href="https://github.com/Revature1705May15Java/1705May15Java/tree/Liqun_Zheng/Liqun_Zheng_Code">Visit my code page</a>
+</h2>
+</header>
+<nav>
+<ul>
+<a href="#top">
+<li>Top</li>
+</a><a href="#userStories">
+<li>User Stories</li>
+</a>
+<a href="#specialFeatures">
+<li>Features</li>
+</a>
+<a href="#ERD">
+<li>ERD</li>
+</a>
+<a href="#SQLSnippets">
+<li>SQL</li>
+</a>
+<a href="#patterns">
+<li>Patterns</li>
+</a>
+</ul>
+</nav>
+<main>
+<section id="main-desc">
+<video muted loop autoplay poster="./img/puppersnap.png">
+<source src="./img/pupper.mp4">
+</video>
+<div id="desc">
+<h4>A console-based banking application</h4>
+<p>Welcome to REVATURE &middot; BANK
+</p>
+
+</div>
+</section>
+<section id="userStories" class="container-fluid">
+<div id="storyContainer" class="container-fluid">
+<!--h3 User Stories-->
+<div class="row matchedCols">
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-user">
+</span>
+Create User
+</h4>
+<p>Prompts the user for their first name, last name, usrename,
+and password. New user must register with a unique username.
+It will check if username already taken, if it is taken then, re-enter information again to register.
+</p>
+</div>
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-log-in">
+</span>
+Log In/Out
+</h4>
+<p>Prompts the user for their username and password. User
+with given username and password must be match in order to sign in,
+password stored in the database.
+</p>
+</div>
+<div class="col-xs-4"><h4><span class="glyphicon glyphicon-piggy-bank">
+</span>
+Create Account
+</h4>
+<p>Once logged into the system, a user may create up to three accounts.
+Account may be one of the following types: Checking, Savings, Credit.
+</p>
+</div>
+</div>
+<div class="row matchedCols">
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-usd">
+</span>
+Check Balance
+</h4>
+<p>Once the user signed in, user can check all accounts information as long as it's active.
+</p>
+</div>
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-plus">
+</span>
+Deposit
+</h4>
+<p>User have to chooice one of active accounts and deposit a given amount into the account
+</p>
+</div>
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-minus">
+</span>Withdraw
+</h4>
+<p>User have to chooice one of active accounts and withdraw a given amount into the account, 
+if withdraw amount is greater than account balance, it will ask user to input another amount.
+</p>
+</div>
+</div>
+<div class="row matchedCols"><div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-transfer">
+</span>Transfer</h4>
+<p>User may transfer funds between user's active accounts, 
+if the senter account doesn't have enough fund, it will ask user to enter again.
+</p>
+</div>
+<div class="col-xs-4"><h4><span class="glyphicon glyphicon-paperclip">
+</span>Joint Accounts
+</h4>
+<p>User may able to joint existing account with another user, 
+and another user has to sign in in order to completed the process.
+One account has max of four users.
+</p>
+</div>
+<div class="col-xs-4">
+<h4>
+<span class="glyphicon glyphicon-remove">
+</span>Close Account
+</h4>
+<p>User may close an account any exsting accounts.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section id="ERD"><h3>Entity-Relationship Diagram
+</h3>
+<img src="./img/erd.png" alt="ERD">
+</section>
+<section id="SQLSnippets" class="container-fluid">
+<h3>SQL Snippets
+</h3>
+<div class="row"><div class="col-xs-3 col-xs-offset-2">
+<h4>Statement</h4>
+</div>
+<div class="col-xs-5">
+<div class="well">
+<pre>@Override
+	public void addUserAccount(int userId, int accountId){
+		try(Connection connection = ConnectionUtil.getConnection();){
+			String sql = "insert into user_account values( "+ userId + ", " + accountId + ")";
+			Statement statement = connection.createStatement();
+			int numRowsAffected = statement.executeUpdate(sql);
+			System.out.println("Num rows affected: "+ numRowsAffected);
+			logger.log("User_Account inserted UserId: " + userId + " AccountId: " + accountId);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.log(e.getSQLState());
+		}
+	}</pre>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-xs-3 col-xs-offset-2">
+<h4>PreparedStatement</h4>
+</div><div class="col-xs-5">
+<div class="well">
+<pre> 	@Override
+	public ArrayList<Account> findAccByUserId(int UserId) {
+		 ArrayList<Account> accounts = new ArrayList<Account>();
+		 DAO dao = new DaoImpl();
+		 Account acc = new Account();
+	        try (Connection conn = ConnectionUtil.getConnection()) {
+	            String sql = " SELECT account.acc_id, account.balance, account.opened, account.closed, accounttype.t_id "+
+                    " FROM user_account "+
+                    " INNER JOIN users ON user_account.user_id = users.u_id "+
+                    " INNER JOIN account ON user_account.account_id = account.acc_id "+
+                    " INNER JOIN accounttype ON accounttype.t_id = account.type_id " +
+                    " WHERE users.u_Id= ? ";
+	            PreparedStatement ps = conn.prepareStatement(sql);
+	            ps.setInt(1, UserId);
+
+	            ResultSet rs = ps.executeQuery();
+	            
+	            while (rs.next()) {
+	               
+	            	acc.setId(rs.getInt(1));
+	            	acc.setBalance(rs.getDouble(2));
+	        
+	                acc.setDateOpened(rs.getDate(3));
+	        
+	                        
+	                acc.setDateClosed(rs.getDate(4));
+	 
+	                acc.setType(dao.getTypeName(rs.getInt(5)));
+	     
+	                        
+	                accounts.add(acc);
+	                acc = new Account();
+	            }
+	            logger.log("Retrieved all accounts by userid " + accounts.toString());
+	            return accounts;
+
+	        } catch (SQLException e) {
+				// TODO Auto-generated catch block
+	        	e.printStackTrace();
+				logger.log(e.getSQLState());
+	        }
+
+	        return null;
+	    }
+</pre>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-3 col-xs-offset-2">
+<h4>CallableStatement</h4>
+</div>
+<div class="col-xs-5">
+<div class="well">
+<pre>	@Override
+	public int recentCreatedUser(){
+		int user_id=0;
+		try(Connection connection = ConnectionUtil.getConnection();){
+			String addOrder = "{ ? = call get_recent_userid}";
+			CallableStatement cs = connection.prepareCall(addOrder);
+			cs.registerOutParameter(1, Types.INTEGER);
+			cs.execute();
+			user_id = cs.getInt(1);
+			logger.log("Retrieved recent created user ID " + user_id);
+			return user_id;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			logger.log(e.getSQLState());
+		}
+		return user_id;
+	}
+</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="patterns">
+<h3>Design Patterns</h3>
+<div id="patternDesc">
+<p>This application makes extensive use of the Data Access Object (DAO) design pattern.
+The DAO is represented by the Dao.java interface and implemented by DaoImpl.java.
+Service.java acts as the service layer which contains the business logic that is, in turn,
+needed by View.java which is the console-based front-end.
+</p>
+<p>In addition, the Singleton and Factory patterns are made use of in ConnectionFactory.java
+to serve as a single access point for acquiring a connection to the database.
+</p>
+</div>
+</section>
+</main>
+<script src="./lib/jquery.min.js"></script><script src="./lib/bootstrap/bootstrap.min.js">
+</script>
+<script src="./js/bank.js">
+</script>
+</body>
+</html>

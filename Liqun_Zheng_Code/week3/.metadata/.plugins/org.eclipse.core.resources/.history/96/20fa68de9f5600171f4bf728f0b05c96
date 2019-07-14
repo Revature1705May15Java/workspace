@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+<link href="CSS/freelancer.min.css" rel="stylesheet">
+</style>
+
+<meta charset="UTF-8">
+<title>Bank App Login</title>
+
+
+<!-- Bootstrap Core CSS -->
+<link href="CSS/bootstrap.min.css" rel="stylesheet">
+
+<!-- Theme CSS -->
+<link href="CSS/freelancer.min.css" rel="stylesheet">
+<body>
+<div class="bg">
+	
+	<form name="loginform" action="login" method="POST">
+
+
+			<div id="fullscreen_bg" class="fullscreen_bg" />
+
+			<div class="container">
+
+					<h1 class="form-signin-heading text-muted">Welcome to ERS</h1>
+					<input type="text" class="form-control" placeholder="Username"
+						required="" autofocus="" name="username" > 
+						<input type="password"
+						class="form-control" placeholder="Password" required=""
+						name="password" />>
+					<button class="btn btn-lg btn-primary btn-block" type="submit">
+						Sign In</button>
+				
+
+			</div>
+	
+	</form>
+	
+</div>	
+</body>
+</html>

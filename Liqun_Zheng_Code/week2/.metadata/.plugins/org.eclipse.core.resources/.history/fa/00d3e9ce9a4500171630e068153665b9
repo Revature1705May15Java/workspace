@@ -1,0 +1,104 @@
+package com.bank.run;
+
+import java.util.Scanner;
+
+import com.bank.pojos.User;
+import com.bank.service.Service;
+
+public class RunBank {
+	
+	static Scanner scan;
+	static Service service = new Service();
+	
+	public static void main(String[] args) {
+		scan = new Scanner(System.in);
+		
+		User user=null;
+		System.out.println("WELCOME TO BOSS BANK"
+				+ "\n"
+				+ " Are you already a member? (Y/N)");
+		String yn = scan.nextLine();
+		if (yn.equals("N")){
+			do{
+				user = joinBank();
+				if(user == null){
+					System.out.println("Username already exist, re-enter your information");
+				}
+				else
+					System.out.println("User created");
+			}while(user ==null);
+		}
+		while(user == null){
+			user = signinBank();
+			if(user== null){
+				System.out.println("password does not match");
+			}
+			else{
+				System.out.println("Signin succussfully ");
+			}
+			
+		}
+		
+	}
+	static User userPage(User user){
+		System.out.println("Welcome " + user.getFn());
+		boolean loop = true;
+		int input;
+		do{
+			System.out.println("What would you like to do?");
+			System.out.println("Option 1 open account");
+			System.out.println("Option 2 close account");
+			System.out.println("Option 3 check balance");
+			System.out.println("Option 4 deposit");
+			System.out.println("Option 5 withdraw");
+			System.out.println("Option 6 create join account");
+			System.out.println("Option 7 transfer money");
+			System.out.println("Option 8 sign out");
+			input = scan.nextInt();
+			switch(input){
+				case 1:	openAcc();
+						break;
+				case 2: closeAcc();
+						break;
+				case 3: checkBala();
+						break;
+				case 4: deposit();
+						break;
+				case 5: withdraw();
+						break;
+				case 6: createJoinAcc();
+						break;
+				case 7: transferMoney();
+						break;
+				case 8: System.out.println("You successfully signed out");
+						loop = false;
+						break;
+			}
+		}while(loop);
+		return user;
+	}
+	
+	static User joinBank(){
+		scan = new Scanner(System.in);
+		System.out.println("Please enter your first name");
+		String fn = scan.nextLine();
+		System.out.println("Please enter your last name");
+		String ln = scan.nextLine();
+		System.out.println("Please enter your password");
+		String pw = scan.nextLine();
+		System.out.println("Please enter username or email address");
+		String uname = scan.nextLine();
+		
+		return service.addUser(fn, ln, uname, pw);
+		
+	}
+	static User signinBank(){
+		scan = new Scanner(System.in);
+		System.out.println("Please enter your username");
+		String uname = scan.nextLine();
+		System.out.println("Please enter your password");
+		String pw = scan.nextLine();
+		
+		return service.Signin(uname, pw);
+	}
+}

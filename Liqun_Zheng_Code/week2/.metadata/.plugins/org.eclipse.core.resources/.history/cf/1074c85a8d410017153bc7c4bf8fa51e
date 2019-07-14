@@ -1,0 +1,35 @@
+package com.bank.run;
+
+import java.util.Scanner;
+
+import com.bank.pojos.User;
+import com.bank.service.Service;
+
+public class RunBank {
+	
+	static Scanner scan;
+	static Service service = new Service();
+	
+	public static void main(String[] args) {
+		System.out.println("WELCOME TO BOSS BANK"
+				+ "\n"
+				+ " Are you already a member?");
+		User user = joinBank();
+		System.out.println(user);
+	}
+	
+	static User joinBank(){
+		scan = new Scanner(System.in);
+		System.out.println("Please enter your first name");
+		String fn = scan.nextLine();
+		System.out.println("Please enter your last name");
+		String ls = scan.nextLine();
+		System.out.println("Please enter your password");
+		String ps = scan.nextLine();
+		System.out.println("Please enter username or email address");
+		String uname = scan.nextLine();
+		
+		return service.addUser(fn, ln, uname, pw);
+		
+	}
+}

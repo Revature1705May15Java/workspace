@@ -1,0 +1,17 @@
+package com.rev.test;
+
+import com.bank.dao.DAO;
+import com.bank.dao.DaoImpl;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		DAO dao = new DaoImpl();
+		dao.addUser("test", "test", "test", "test");
+		dao.getUser(100);
+
+	}
+
+}

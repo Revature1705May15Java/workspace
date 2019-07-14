@@ -1,0 +1,34 @@
+package com.reim.dao;
+
+import java.util.ArrayList;
+
+import com.reim.pojos.Employee;
+import com.reim.pojos.Request;
+import com.reim.pojos.State_type;
+
+
+public interface Dao {
+	
+	
+	//find an employee by username
+	public Employee findEmpByUname(String uname);
+	
+	//update Employee by input first name, last name, username, and password
+	public int updateEmployee(int empId, String fname, String lname, String uname, String pw);
+	
+	//get all employees by input isEmployee to check if result are employees not manager
+	public ArrayList<Employee> getAllEmployee(int isEmployee);
+	
+	//get request by request id
+	Request getRequest(int requestId);
+	
+	//Get all Requests
+	public ArrayList<Request> getAllRequests();
+	
+	//Find Requests by employee id
+	public ArrayList<Request> findReqByEmpId(int emp_id);
+	Request addRequest(Employee u, String purpose, double amount);
+	public Request appDenReq(Employee emp, int r_id, State_type state, String note);
+	public State_type findTypeById(int type_id);
+	State_type findState(String state);
+}

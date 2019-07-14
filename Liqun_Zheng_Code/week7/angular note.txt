@@ -1,0 +1,17 @@
+ANGULARJS:
+- compiler - a compiler parses the template and instantiates the directives and expressions
+- controller - the business logic behind views 
+- data binding - sychronizes data between the model and the views
+- dependecy injection - creates and wires objects and functions
+- directives - extends HTML with custom attributes and elements
+- expressions - access variables and functions from the scope
+- filter - formats the value of an expression for display to the user. 
+used after |
+- injector - a dependency injection container
+- model - the model is the data shown to the user in the view and with which the user interacts
+- module - a module is a container for the different parts of an 
+app including controllers, services, filters, and directives which configures the injector
+- scope - the scope is the context where the model is stored so that controllers, directives, and exressions can access it (this ties the view to controllers!!)
+- view - the view is ultimately what the user sees
+- service - a service is reusable business logic which is independent of views 
+- template - HTML with additional markup 

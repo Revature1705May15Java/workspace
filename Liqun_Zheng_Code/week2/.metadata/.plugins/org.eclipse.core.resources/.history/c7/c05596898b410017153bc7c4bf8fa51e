@@ -1,0 +1,9 @@
+package com.bank.service;
+
+import com.bank.pojos.User;
+
+public class Service {
+	public User addUser(String fn, String ln, String uname, String pw){
+		return null;
+	}
+}
